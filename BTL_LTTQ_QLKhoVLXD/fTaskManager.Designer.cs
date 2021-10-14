@@ -29,212 +29,203 @@ namespace BTL_LTTQ_QLKhoVLXD
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlTotal = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnNhanVien = new System.Windows.Forms.Button();
-            this.btnQLND = new System.Windows.Forms.Button();
-            this.btnNCC = new System.Windows.Forms.Button();
-            this.btnKhachHang = new System.Windows.Forms.Button();
-            this.btnThongKe = new System.Windows.Forms.Button();
-            this.btnVatLieu = new System.Windows.Forms.Button();
-            this.btnHoaDon = new System.Windows.Forms.Button();
-            this.btnBanHang = new System.Windows.Forms.Button();
-            this.btnMuaHang = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblChucVu = new System.Windows.Forms.Label();
-            this.lblNguoiDung = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlTotal.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.lblPosition = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.tctlControl = new System.Windows.Forms.TabControl();
+            this.tpgBuy = new System.Windows.Forms.TabPage();
+            this.tpgSell = new System.Windows.Forms.TabPage();
+            this.tpgReceipt = new System.Windows.Forms.TabPage();
+            this.tpgMaterial = new System.Windows.Forms.TabPage();
+            this.tpgStatistic = new System.Windows.Forms.TabPage();
+            this.tpgCustomer = new System.Windows.Forms.TabPage();
+            this.tpgSupplier = new System.Windows.Forms.TabPage();
+            this.tpgEmployee = new System.Windows.Forms.TabPage();
+            this.tpgUserSetting = new System.Windows.Forms.TabPage();
             this.panel3.SuspendLayout();
+            this.tctlControl.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnlTotal
-            // 
-            this.pnlTotal.Controls.Add(this.panel1);
-            this.pnlTotal.Controls.Add(this.panel3);
-            this.pnlTotal.Controls.Add(this.panel2);
-            this.pnlTotal.Location = new System.Drawing.Point(8, 6);
-            this.pnlTotal.Name = "pnlTotal";
-            this.pnlTotal.Size = new System.Drawing.Size(780, 691);
-            this.pnlTotal.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnNhanVien);
-            this.panel2.Controls.Add(this.btnQLND);
-            this.panel2.Controls.Add(this.btnNCC);
-            this.panel2.Controls.Add(this.btnKhachHang);
-            this.panel2.Controls.Add(this.btnThongKe);
-            this.panel2.Controls.Add(this.btnVatLieu);
-            this.panel2.Controls.Add(this.btnHoaDon);
-            this.panel2.Controls.Add(this.btnBanHang);
-            this.panel2.Controls.Add(this.btnMuaHang);
-            this.panel2.Location = new System.Drawing.Point(14, 16);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(128, 607);
-            this.panel2.TabIndex = 1;
-            // 
-            // btnNhanVien
-            // 
-            this.btnNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhanVien.Location = new System.Drawing.Point(2, 472);
-            this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Size = new System.Drawing.Size(123, 61);
-            this.btnNhanVien.TabIndex = 7;
-            this.btnNhanVien.Text = "Nhân Viên";
-            this.btnNhanVien.UseVisualStyleBackColor = true;
-            // 
-            // btnQLND
-            // 
-            this.btnQLND.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLND.Location = new System.Drawing.Point(3, 539);
-            this.btnQLND.Name = "btnQLND";
-            this.btnQLND.Size = new System.Drawing.Size(123, 61);
-            this.btnQLND.TabIndex = 8;
-            this.btnQLND.Text = "Quản Lý Người Dùng";
-            this.btnQLND.UseVisualStyleBackColor = true;
-            // 
-            // btnNCC
-            // 
-            this.btnNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNCC.Location = new System.Drawing.Point(2, 405);
-            this.btnNCC.Name = "btnNCC";
-            this.btnNCC.Size = new System.Drawing.Size(123, 61);
-            this.btnNCC.TabIndex = 6;
-            this.btnNCC.Text = "Nhà Cung Cấp";
-            this.btnNCC.UseVisualStyleBackColor = true;
-            // 
-            // btnKhachHang
-            // 
-            this.btnKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKhachHang.Location = new System.Drawing.Point(3, 338);
-            this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Size = new System.Drawing.Size(123, 61);
-            this.btnKhachHang.TabIndex = 5;
-            this.btnKhachHang.Text = "Khách Hàng";
-            this.btnKhachHang.UseVisualStyleBackColor = true;
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKe.Location = new System.Drawing.Point(2, 271);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(123, 61);
-            this.btnThongKe.TabIndex = 4;
-            this.btnThongKe.Text = "Thống Kê";
-            this.btnThongKe.UseVisualStyleBackColor = true;
-            // 
-            // btnVatLieu
-            // 
-            this.btnVatLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVatLieu.Location = new System.Drawing.Point(3, 204);
-            this.btnVatLieu.Name = "btnVatLieu";
-            this.btnVatLieu.Size = new System.Drawing.Size(123, 61);
-            this.btnVatLieu.TabIndex = 3;
-            this.btnVatLieu.Text = "Vật Liệu";
-            this.btnVatLieu.UseVisualStyleBackColor = true;
-            // 
-            // btnHoaDon
-            // 
-            this.btnHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoaDon.Location = new System.Drawing.Point(2, 137);
-            this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Size = new System.Drawing.Size(123, 61);
-            this.btnHoaDon.TabIndex = 2;
-            this.btnHoaDon.Text = "Hóa Đơn";
-            this.btnHoaDon.UseVisualStyleBackColor = true;
-            // 
-            // btnBanHang
-            // 
-            this.btnBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBanHang.Location = new System.Drawing.Point(3, 70);
-            this.btnBanHang.Name = "btnBanHang";
-            this.btnBanHang.Size = new System.Drawing.Size(123, 61);
-            this.btnBanHang.TabIndex = 1;
-            this.btnBanHang.Text = "Bán Hàng";
-            this.btnBanHang.UseVisualStyleBackColor = true;
-            // 
-            // btnMuaHang
-            // 
-            this.btnMuaHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMuaHang.Location = new System.Drawing.Point(3, 3);
-            this.btnMuaHang.Name = "btnMuaHang";
-            this.btnMuaHang.Size = new System.Drawing.Size(123, 61);
-            this.btnMuaHang.TabIndex = 0;
-            this.btnMuaHang.Text = "Mua Hàng";
-            this.btnMuaHang.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.lblChucVu);
-            this.panel3.Controls.Add(this.lblNguoiDung);
-            this.panel3.Location = new System.Drawing.Point(14, 636);
+            this.panel3.Controls.Add(this.lblPosition);
+            this.panel3.Controls.Add(this.lblUser);
+            this.panel3.Location = new System.Drawing.Point(12, 660);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(745, 37);
+            this.panel3.Size = new System.Drawing.Size(776, 37);
             this.panel3.TabIndex = 3;
             // 
-            // lblChucVu
+            // lblPosition
             // 
-            this.lblChucVu.AutoSize = true;
-            this.lblChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChucVu.Location = new System.Drawing.Point(295, 17);
-            this.lblChucVu.Name = "lblChucVu";
-            this.lblChucVu.Size = new System.Drawing.Size(71, 17);
-            this.lblChucVu.TabIndex = 1;
-            this.lblChucVu.Text = "Chức vụ:";
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosition.Location = new System.Drawing.Point(295, 17);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(71, 17);
+            this.lblPosition.TabIndex = 1;
+            this.lblPosition.Text = "Chức vụ:";
             // 
-            // lblNguoiDung
+            // lblUser
             // 
-            this.lblNguoiDung.AutoSize = true;
-            this.lblNguoiDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNguoiDung.Location = new System.Drawing.Point(3, 17);
-            this.lblNguoiDung.Name = "lblNguoiDung";
-            this.lblNguoiDung.Size = new System.Drawing.Size(96, 17);
-            this.lblNguoiDung.TabIndex = 0;
-            this.lblNguoiDung.Text = "Người dùng:";
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Location = new System.Drawing.Point(3, 17);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(96, 17);
+            this.lblUser.TabIndex = 0;
+            this.lblUser.Text = "Người dùng:";
             // 
-            // panel1
+            // tctlControl
             // 
-            this.panel1.Location = new System.Drawing.Point(155, 16);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(603, 607);
-            this.panel1.TabIndex = 4;
+            this.tctlControl.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.tctlControl.Controls.Add(this.tpgBuy);
+            this.tctlControl.Controls.Add(this.tpgSell);
+            this.tctlControl.Controls.Add(this.tpgReceipt);
+            this.tctlControl.Controls.Add(this.tpgMaterial);
+            this.tctlControl.Controls.Add(this.tpgStatistic);
+            this.tctlControl.Controls.Add(this.tpgCustomer);
+            this.tctlControl.Controls.Add(this.tpgSupplier);
+            this.tctlControl.Controls.Add(this.tpgEmployee);
+            this.tctlControl.Controls.Add(this.tpgUserSetting);
+            this.tctlControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tctlControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.tctlControl.ItemSize = new System.Drawing.Size(55, 170);
+            this.tctlControl.Location = new System.Drawing.Point(0, 0);
+            this.tctlControl.Margin = new System.Windows.Forms.Padding(0);
+            this.tctlControl.Multiline = true;
+            this.tctlControl.Name = "tctlControl";
+            this.tctlControl.Padding = new System.Drawing.Point(0, 0);
+            this.tctlControl.SelectedIndex = 0;
+            this.tctlControl.Size = new System.Drawing.Size(1167, 615);
+            this.tctlControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tctlControl.TabIndex = 0;
+            this.tctlControl.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tctlControl_DrawItem);
+            // 
+            // tpgBuy
+            // 
+            this.tpgBuy.Location = new System.Drawing.Point(174, 4);
+            this.tpgBuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgBuy.Name = "tpgBuy";
+            this.tpgBuy.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgBuy.Size = new System.Drawing.Size(989, 607);
+            this.tpgBuy.TabIndex = 0;
+            this.tpgBuy.Text = "Mua hàng";
+            this.tpgBuy.UseVisualStyleBackColor = true;
+            // 
+            // tpgSell
+            // 
+            this.tpgSell.Location = new System.Drawing.Point(174, 4);
+            this.tpgSell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgSell.Name = "tpgSell";
+            this.tpgSell.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgSell.Size = new System.Drawing.Size(989, 607);
+            this.tpgSell.TabIndex = 1;
+            this.tpgSell.Text = "Bán hàng";
+            this.tpgSell.UseVisualStyleBackColor = true;
+            // 
+            // tpgReceipt
+            // 
+            this.tpgReceipt.Location = new System.Drawing.Point(174, 4);
+            this.tpgReceipt.Margin = new System.Windows.Forms.Padding(0);
+            this.tpgReceipt.Name = "tpgReceipt";
+            this.tpgReceipt.Size = new System.Drawing.Size(989, 607);
+            this.tpgReceipt.TabIndex = 2;
+            this.tpgReceipt.Text = "Hóa đơn";
+            this.tpgReceipt.UseVisualStyleBackColor = true;
+            // 
+            // tpgMaterial
+            // 
+            this.tpgMaterial.Location = new System.Drawing.Point(124, 4);
+            this.tpgMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgMaterial.Name = "tpgMaterial";
+            this.tpgMaterial.Size = new System.Drawing.Size(667, 607);
+            this.tpgMaterial.TabIndex = 3;
+            this.tpgMaterial.Text = "Vật liệu";
+            this.tpgMaterial.UseVisualStyleBackColor = true;
+            // 
+            // tpgStatistic
+            // 
+            this.tpgStatistic.Location = new System.Drawing.Point(124, 4);
+            this.tpgStatistic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgStatistic.Name = "tpgStatistic";
+            this.tpgStatistic.Size = new System.Drawing.Size(667, 607);
+            this.tpgStatistic.TabIndex = 4;
+            this.tpgStatistic.Text = "Thống kê";
+            this.tpgStatistic.UseVisualStyleBackColor = true;
+            // 
+            // tpgCustomer
+            // 
+            this.tpgCustomer.Location = new System.Drawing.Point(174, 4);
+            this.tpgCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgCustomer.Name = "tpgCustomer";
+            this.tpgCustomer.Size = new System.Drawing.Size(989, 607);
+            this.tpgCustomer.TabIndex = 5;
+            this.tpgCustomer.Text = "Khách hàng";
+            this.tpgCustomer.UseVisualStyleBackColor = true;
+            // 
+            // tpgSupplier
+            // 
+            this.tpgSupplier.Location = new System.Drawing.Point(174, 4);
+            this.tpgSupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgSupplier.Name = "tpgSupplier";
+            this.tpgSupplier.Size = new System.Drawing.Size(989, 607);
+            this.tpgSupplier.TabIndex = 6;
+            this.tpgSupplier.Text = "Nhà cung cấp";
+            this.tpgSupplier.UseVisualStyleBackColor = true;
+            // 
+            // tpgEmployee
+            // 
+            this.tpgEmployee.Location = new System.Drawing.Point(124, 4);
+            this.tpgEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgEmployee.Name = "tpgEmployee";
+            this.tpgEmployee.Size = new System.Drawing.Size(667, 607);
+            this.tpgEmployee.TabIndex = 7;
+            this.tpgEmployee.Text = "Nhân viên";
+            this.tpgEmployee.UseVisualStyleBackColor = true;
+            // 
+            // tpgUserSetting
+            // 
+            this.tpgUserSetting.Location = new System.Drawing.Point(124, 4);
+            this.tpgUserSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgUserSetting.Name = "tpgUserSetting";
+            this.tpgUserSetting.Size = new System.Drawing.Size(667, 607);
+            this.tpgUserSetting.TabIndex = 8;
+            this.tpgUserSetting.Text = "Quản lý người dùng";
+            this.tpgUserSetting.UseVisualStyleBackColor = true;
             // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 709);
-            this.Controls.Add(this.pnlTotal);
+            this.ClientSize = new System.Drawing.Size(1163, 709);
+            this.Controls.Add(this.tctlControl);
+            this.Controls.Add(this.panel3);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fTaskManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Kho Vật Liệu Xây Dựng";
-            this.pnlTotal.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.tctlControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlTotal;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lblChucVu;
-        private System.Windows.Forms.Label lblNguoiDung;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnNhanVien;
-        private System.Windows.Forms.Button btnQLND;
-        private System.Windows.Forms.Button btnNCC;
-        private System.Windows.Forms.Button btnKhachHang;
-        private System.Windows.Forms.Button btnThongKe;
-        private System.Windows.Forms.Button btnVatLieu;
-        private System.Windows.Forms.Button btnHoaDon;
-        private System.Windows.Forms.Button btnBanHang;
-        private System.Windows.Forms.Button btnMuaHang;
+        private System.Windows.Forms.Label lblPosition;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.TabControl tctlControl;
+        private System.Windows.Forms.TabPage tpgBuy;
+        private System.Windows.Forms.TabPage tpgSell;
+        private System.Windows.Forms.TabPage tpgReceipt;
+        private System.Windows.Forms.TabPage tpgMaterial;
+        private System.Windows.Forms.TabPage tpgStatistic;
+        private System.Windows.Forms.TabPage tpgCustomer;
+        private System.Windows.Forms.TabPage tpgSupplier;
+        private System.Windows.Forms.TabPage tpgEmployee;
+        private System.Windows.Forms.TabPage tpgUserSetting;
     }
 }
