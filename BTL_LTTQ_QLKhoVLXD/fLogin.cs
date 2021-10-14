@@ -20,15 +20,15 @@ namespace BTL_LTTQ_QLKhoVLXD
         private void btnLogin_Click(object sender, EventArgs e)
         {
             fTaskManager fTM = new fTaskManager();
-            this.Hide();
+            Hide();
             fTM.ShowDialog();
-            this.Show();
+            Show();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-                this.Close();
+                Close();
         }
     }
 }

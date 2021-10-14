@@ -24,7 +24,7 @@ namespace BTL_LTTQ_QLKhoVLXD
 
         private void btnMuaHang_Click(object sender, EventArgs e)
         {
-
+            //DatabaseProvider.connection.
         }
     }
 }
