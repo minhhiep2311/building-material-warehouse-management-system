@@ -1,0 +1,39 @@
+﻿using System.Data;
+using System.Data.SqlClient;
+
+namespace BTL_LTTQ_QLKhoVLXD
+{
+    static class DatabaseProvider
+    {
+        private static SqlConnection connection;
+
+        public static void Init()
+        {
+            string server = "14.225.255.234";
+            string database = "btl_lttq";
+            string uid = "lttq_account";
+            string pwd = "sqlServer00p@ssword,";
+            string intergratedSecurity = "false";
+
+            string connectionString = string.Format(
+                "Server={0};Database={1};UID={2};PWD={3};Integrated Security={4}",
+                server,
+                database,
+                uid,
+                pwd,
+                intergratedSecurity
+            );
+
+            connection = new SqlConnection(connectionString);
+            connection.Open();
+        }
+
+        public static void Dispose()
+        {
+            if (connection.State != ConnectionState.Closed)
+                connection.Close();
+
+            connection.Dispose();
+        }
+    }
+}
