@@ -24,16 +24,16 @@ namespace BTL_LTTQ_QLKhoVLXD
                 intergratedSecurity
             );
 
-            connection = new SqlConnection(connectionString);
-            connection.Open();
+            Connection = new SqlConnection(connectionString);
+            Connection.Open();
         }
 
         public static void Dispose()
         {
-            if (connection.State != ConnectionState.Closed)
-                connection.Close();
+            if (Connection.State != ConnectionState.Closed)
+                Connection.Close();
 
-            connection.Dispose();
+            Connection.Dispose();
         }
     }
 }
