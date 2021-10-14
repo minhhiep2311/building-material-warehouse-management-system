@@ -5,7 +5,7 @@ namespace BTL_LTTQ_QLKhoVLXD
 {
     static class DatabaseProvider
     {
-        private static SqlConnection connection;
+        public static SqlConnection Connection { get; private set; }
 
         public static void Init()
         {

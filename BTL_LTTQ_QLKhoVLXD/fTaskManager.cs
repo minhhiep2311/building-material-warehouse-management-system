@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace BTL_LTTQ_QLKhoVLXD
 {
@@ -19,7 +21,11 @@ namespace BTL_LTTQ_QLKhoVLXD
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            //SqlCommand sqlCommand = new SqlCommand
+            //{
+            //    Connection = DatabaseProvider.Connection,
+            //    CommandText = ""
+            //};
         }
 
         private void btnMuaHang_Click(object sender, EventArgs e)
