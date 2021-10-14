@@ -46,6 +46,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\TaskManager\Components\buy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaskManager\Components\customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaskManager\Components\employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaskManager\Components\material.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaskManager\Components\receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaskManager\Components\sell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaskManager\Components\statistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaskManager\Components\supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaskManager\Components\userSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Utils\DatabaseProvider.cs" />
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
@@ -53,10 +80,10 @@
     <Compile Include="fLogin.Designer.cs">
       <DependentUpon>fLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\fTaskManager.cs">
+    <Compile Include="Forms\TaskManager\fTaskManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\fTaskManager.Designer.cs">
+    <Compile Include="Forms\TaskManager\fTaskManager.Designer.cs">
       <DependentUpon>fTaskManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -64,7 +91,7 @@
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\fTaskManager.resx">
+    <EmbeddedResource Include="Forms\TaskManager\fTaskManager.resx">
       <DependentUpon>fTaskManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
