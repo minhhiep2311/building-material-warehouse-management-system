@@ -42,7 +42,6 @@ namespace BTL_LTTQ_QLKhoVLXD
             float y = e.Bounds.Top + (e.Bounds.Height - textSize.Height) / 2;
 
             g.DrawString(text, tctlControl.Font, Brushes.Black, x, y);
-
         }
     }
 }

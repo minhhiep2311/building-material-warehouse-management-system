@@ -37,6 +37,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.tpgSell = new System.Windows.Forms.TabPage();
             this.tpgReceipt = new System.Windows.Forms.TabPage();
             this.tpgMaterial = new System.Windows.Forms.TabPage();
+            this.dgvMaterial = new System.Windows.Forms.DataGridView();
             this.tpgStatistic = new System.Windows.Forms.TabPage();
             this.tpgCustomer = new System.Windows.Forms.TabPage();
             this.tpgSupplier = new System.Windows.Forms.TabPage();
@@ -44,6 +45,8 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.tpgUserSetting = new System.Windows.Forms.TabPage();
             this.panel3.SuspendLayout();
             this.tctlControl.SuspendLayout();
+            this.tpgMaterial.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -121,7 +124,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.tpgSell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgSell.Name = "tpgSell";
             this.tpgSell.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpgSell.Size = new System.Drawing.Size(989, 607);
+            this.tpgSell.Size = new System.Drawing.Size(985, 599);
             this.tpgSell.TabIndex = 1;
             this.tpgSell.Text = "Bán hàng";
             this.tpgSell.UseVisualStyleBackColor = true;
@@ -131,27 +134,40 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.tpgReceipt.Location = new System.Drawing.Point(174, 4);
             this.tpgReceipt.Margin = new System.Windows.Forms.Padding(0);
             this.tpgReceipt.Name = "tpgReceipt";
-            this.tpgReceipt.Size = new System.Drawing.Size(989, 607);
+            this.tpgReceipt.Size = new System.Drawing.Size(985, 599);
             this.tpgReceipt.TabIndex = 2;
             this.tpgReceipt.Text = "Hóa đơn";
             this.tpgReceipt.UseVisualStyleBackColor = true;
             // 
             // tpgMaterial
             // 
+            this.tpgMaterial.Controls.Add(this.dgvMaterial);
             this.tpgMaterial.Location = new System.Drawing.Point(174, 4);
             this.tpgMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgMaterial.Name = "tpgMaterial";
-            this.tpgMaterial.Size = new System.Drawing.Size(989, 607);
+            this.tpgMaterial.Size = new System.Drawing.Size(985, 599);
             this.tpgMaterial.TabIndex = 3;
             this.tpgMaterial.Text = "Vật liệu";
             this.tpgMaterial.UseVisualStyleBackColor = true;
+            this.tpgMaterial.Enter += new System.EventHandler(this.tpgMaterial_Enter);
+            // 
+            // dgvMaterial
+            // 
+            this.dgvMaterial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaterial.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMaterial.Location = new System.Drawing.Point(0, 0);
+            this.dgvMaterial.Name = "dgvMaterial";
+            this.dgvMaterial.RowHeadersWidth = 51;
+            this.dgvMaterial.RowTemplate.Height = 24;
+            this.dgvMaterial.Size = new System.Drawing.Size(985, 599);
+            this.dgvMaterial.TabIndex = 0;
             // 
             // tpgStatistic
             // 
             this.tpgStatistic.Location = new System.Drawing.Point(174, 4);
             this.tpgStatistic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgStatistic.Name = "tpgStatistic";
-            this.tpgStatistic.Size = new System.Drawing.Size(989, 607);
+            this.tpgStatistic.Size = new System.Drawing.Size(985, 599);
             this.tpgStatistic.TabIndex = 4;
             this.tpgStatistic.Text = "Thống kê";
             this.tpgStatistic.UseVisualStyleBackColor = true;
@@ -161,7 +177,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.tpgCustomer.Location = new System.Drawing.Point(174, 4);
             this.tpgCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgCustomer.Name = "tpgCustomer";
-            this.tpgCustomer.Size = new System.Drawing.Size(989, 607);
+            this.tpgCustomer.Size = new System.Drawing.Size(985, 599);
             this.tpgCustomer.TabIndex = 5;
             this.tpgCustomer.Text = "Khách hàng";
             this.tpgCustomer.UseVisualStyleBackColor = true;
@@ -171,7 +187,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.tpgSupplier.Location = new System.Drawing.Point(174, 4);
             this.tpgSupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgSupplier.Name = "tpgSupplier";
-            this.tpgSupplier.Size = new System.Drawing.Size(989, 607);
+            this.tpgSupplier.Size = new System.Drawing.Size(985, 599);
             this.tpgSupplier.TabIndex = 6;
             this.tpgSupplier.Text = "Nhà cung cấp";
             this.tpgSupplier.UseVisualStyleBackColor = true;
@@ -181,7 +197,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.tpgEmployee.Location = new System.Drawing.Point(174, 4);
             this.tpgEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgEmployee.Name = "tpgEmployee";
-            this.tpgEmployee.Size = new System.Drawing.Size(989, 607);
+            this.tpgEmployee.Size = new System.Drawing.Size(985, 599);
             this.tpgEmployee.TabIndex = 7;
             this.tpgEmployee.Text = "Nhân viên";
             this.tpgEmployee.UseVisualStyleBackColor = true;
@@ -191,7 +207,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.tpgUserSetting.Location = new System.Drawing.Point(174, 4);
             this.tpgUserSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgUserSetting.Name = "tpgUserSetting";
-            this.tpgUserSetting.Size = new System.Drawing.Size(989, 607);
+            this.tpgUserSetting.Size = new System.Drawing.Size(985, 599);
             this.tpgUserSetting.TabIndex = 8;
             this.tpgUserSetting.Text = "Quản lý người dùng";
             this.tpgUserSetting.UseVisualStyleBackColor = true;
@@ -211,6 +227,8 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.tctlControl.ResumeLayout(false);
+            this.tpgMaterial.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,5 +248,6 @@ namespace BTL_LTTQ_QLKhoVLXD
         private System.Windows.Forms.TabPage tpgSupplier;
         private System.Windows.Forms.TabPage tpgEmployee;
         private System.Windows.Forms.TabPage tpgUserSetting;
+        private System.Windows.Forms.DataGridView dgvMaterial;
     }
 }
