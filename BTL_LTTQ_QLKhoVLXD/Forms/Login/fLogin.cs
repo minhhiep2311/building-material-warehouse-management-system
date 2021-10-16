@@ -40,7 +40,7 @@ namespace BTL_LTTQ_QLKhoVLXD
         bool Login(string userName, string passWord)
         {
 
-            return false;
+            return true;
         }
 
 
