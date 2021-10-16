@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace BTL_LTTQ_QLKhoVLXD
 {
@@ -19,11 +20,29 @@ namespace BTL_LTTQ_QLKhoVLXD
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            fTaskManager fTM = new fTaskManager();
-            Hide();
-            fTM.ShowDialog();
-            Show();
+            string userName = txbUserName.Text;
+            string passWord = txbPassWord.Text;
+
+            if (Login(userName, passWord))
+            {
+                fTaskManager fTM = new fTaskManager();
+                Hide();
+                fTM.ShowDialog();
+                Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
+            }
+            
         }
+
+        bool Login(string userName, string passWord)
+        {
+
+            return false;
+        }
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {

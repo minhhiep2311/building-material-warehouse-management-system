@@ -30,6 +30,10 @@ namespace BTL_LTTQ_QLKhoVLXD
         private void InitializeComponent()
         {
             this.pnlTotal = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblChucVu = new System.Windows.Forms.Label();
+            this.lblNguoiDung = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnQLND = new System.Windows.Forms.Button();
@@ -40,13 +44,9 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.btnHoaDon = new System.Windows.Forms.Button();
             this.btnBanHang = new System.Windows.Forms.Button();
             this.btnMuaHang = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblChucVu = new System.Windows.Forms.Label();
-            this.lblNguoiDung = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTotal.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTotal
@@ -58,6 +58,43 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.pnlTotal.Name = "pnlTotal";
             this.pnlTotal.Size = new System.Drawing.Size(780, 691);
             this.pnlTotal.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(155, 16);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(603, 607);
+            this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lblChucVu);
+            this.panel3.Controls.Add(this.lblNguoiDung);
+            this.panel3.Location = new System.Drawing.Point(14, 636);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(745, 37);
+            this.panel3.TabIndex = 3;
+            // 
+            // lblChucVu
+            // 
+            this.lblChucVu.AutoSize = true;
+            this.lblChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChucVu.Location = new System.Drawing.Point(295, 17);
+            this.lblChucVu.Name = "lblChucVu";
+            this.lblChucVu.Size = new System.Drawing.Size(71, 17);
+            this.lblChucVu.TabIndex = 1;
+            this.lblChucVu.Text = "Chức vụ:";
+            // 
+            // lblNguoiDung
+            // 
+            this.lblNguoiDung.AutoSize = true;
+            this.lblNguoiDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNguoiDung.Location = new System.Drawing.Point(3, 17);
+            this.lblNguoiDung.Name = "lblNguoiDung";
+            this.lblNguoiDung.Size = new System.Drawing.Size(96, 17);
+            this.lblNguoiDung.TabIndex = 0;
+            this.lblNguoiDung.Text = "Người dùng:";
             // 
             // panel2
             // 
@@ -165,42 +202,6 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.btnMuaHang.Text = "Mua Hàng";
             this.btnMuaHang.UseVisualStyleBackColor = true;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.lblChucVu);
-            this.panel3.Controls.Add(this.lblNguoiDung);
-            this.panel3.Location = new System.Drawing.Point(14, 636);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(745, 37);
-            this.panel3.TabIndex = 3;
-            // 
-            // lblChucVu
-            // 
-            this.lblChucVu.AutoSize = true;
-            this.lblChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChucVu.Location = new System.Drawing.Point(295, 17);
-            this.lblChucVu.Name = "lblChucVu";
-            this.lblChucVu.Size = new System.Drawing.Size(71, 17);
-            this.lblChucVu.TabIndex = 1;
-            this.lblChucVu.Text = "Chức vụ:";
-            // 
-            // lblNguoiDung
-            // 
-            this.lblNguoiDung.AutoSize = true;
-            this.lblNguoiDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNguoiDung.Location = new System.Drawing.Point(3, 17);
-            this.lblNguoiDung.Name = "lblNguoiDung";
-            this.lblNguoiDung.Size = new System.Drawing.Size(96, 17);
-            this.lblNguoiDung.TabIndex = 0;
-            this.lblNguoiDung.Text = "Người dùng:";
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(155, 16);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(603, 607);
-            this.panel1.TabIndex = 4;
-            // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -210,10 +211,11 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.Name = "fTaskManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Kho Vật Liệu Xây Dựng";
+            this.Load += new System.EventHandler(this.fTaskManager_Load);
             this.pnlTotal.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

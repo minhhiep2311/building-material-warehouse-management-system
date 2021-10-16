@@ -26,5 +26,15 @@ namespace BTL_LTTQ_QLKhoVLXD
         {
             //DatabaseProvider.connection.
         }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void fTaskManager_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
