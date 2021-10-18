@@ -58,7 +58,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(434, 214);
+            this.btnExit.Location = new System.Drawing.Point(372, 215);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(105, 39);
             this.btnExit.TabIndex = 6;
@@ -68,7 +68,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(192, 214);
+            this.btnLogin.Location = new System.Drawing.Point(101, 215);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(105, 39);
             this.btnLogin.TabIndex = 5;
@@ -93,14 +93,15 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.panel3.Controls.Add(this.lblPassWord);
             this.panel3.Location = new System.Drawing.Point(25, 141);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(517, 53);
+            this.panel3.Size = new System.Drawing.Size(527, 53);
             this.panel3.TabIndex = 3;
             // 
             // txbPassWord
             // 
-            this.txbPassWord.Location = new System.Drawing.Point(167, 17);
+            this.txbPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPassWord.Location = new System.Drawing.Point(167, 3);
             this.txbPassWord.Name = "txbPassWord";
-            this.txbPassWord.Size = new System.Drawing.Size(347, 22);
+            this.txbPassWord.Size = new System.Drawing.Size(347, 26);
             this.txbPassWord.TabIndex = 1;
             this.txbPassWord.UseSystemPasswordChar = true;
             // 
@@ -108,7 +109,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             // 
             this.lblPassWord.AutoSize = true;
             this.lblPassWord.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassWord.Location = new System.Drawing.Point(2, 15);
+            this.lblPassWord.Location = new System.Drawing.Point(3, 3);
             this.lblPassWord.Name = "lblPassWord";
             this.lblPassWord.Size = new System.Drawing.Size(97, 24);
             this.lblPassWord.TabIndex = 0;
@@ -118,23 +119,24 @@ namespace BTL_LTTQ_QLKhoVLXD
             // 
             this.panel2.Controls.Add(this.txbUserName);
             this.panel2.Controls.Add(this.lblUserName);
-            this.panel2.Location = new System.Drawing.Point(25, 73);
+            this.panel2.Location = new System.Drawing.Point(25, 70);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(517, 53);
+            this.panel2.Size = new System.Drawing.Size(527, 53);
             this.panel2.TabIndex = 1;
             // 
             // txbUserName
             // 
-            this.txbUserName.Location = new System.Drawing.Point(167, 18);
+            this.txbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbUserName.Location = new System.Drawing.Point(170, 3);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(347, 22);
+            this.txbUserName.Size = new System.Drawing.Size(347, 26);
             this.txbUserName.TabIndex = 1;
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(2, 15);
+            this.lblUserName.Location = new System.Drawing.Point(3, 3);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(152, 24);
             this.lblUserName.TabIndex = 0;

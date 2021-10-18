@@ -23,6 +23,17 @@ namespace BTL_LTTQ_QLKhoVLXD
             string userName = txbUserName.Text;
             string passWord = txbPassWord.Text;
 
+            if (userName == "")
+            {
+                MessageBox.Show("Hãy nhập tài khoản!");
+                return;
+            }
+            else if (passWord == "")
+            {
+                MessageBox.Show("Hãy nhập mật khẩu!");
+                return;
+            }
+
             string query = $"SELECT COUNT(*) from dbo.account Where username = N'{userName}' AND password = N'{passWord}'";
             SqlCommand sqlCommand = new SqlCommand(query, DatabaseProvider.Connection);
 
@@ -37,7 +48,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             }
             else
             {
-                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
             }
         }
 
