@@ -9,10 +9,10 @@ namespace BTL_LTTQ_QLKhoVLXD
     {
         private void tpgMaterial_Enter(object sender, EventArgs e)
         {
-            loadMaterialData();
+            LoadMaterialData();
         }
 
-        private void configMaterialTable()
+        private void ConfigMaterialTable()
         {
             dgvMaterial.Columns[0].HeaderText = "Mã";
             dgvMaterial.Columns[1].HeaderText = "Tên vật liệu";
@@ -29,19 +29,21 @@ namespace BTL_LTTQ_QLKhoVLXD
             dgvMaterial.Columns[5].Width = 150;
         }
 
-        private void loadMaterialData()
+        private void LoadMaterialData()
         {
-            DataTable table = new DataTable();
-            string query = 
+            //DataTable table = new DataTable();
+            string query =
                 "SELECT m.id, m.name, importUnitPrice, exportUnitPrice, u.Name as unitName, specialization " +
                 "FROM material as m " +
                 "JOIN unit as u ON m.idUnit=u.id";
 
-            SqlDataAdapter adapter = new SqlDataAdapter(query, DatabaseProvider.Connection);
-            adapter.Fill(table);
-            dgvMaterial.DataSource = table;
+            dgvMaterial.DataSource = DatabaseProvider.Instance.ExecuteQuery(query);
 
-            configMaterialTable();
+            //SqlDataAdapter adapter = new SqlDataAdapter(query, DatabaseProvider.Connection);
+            //adapter.Fill(table);
+            //dgvMaterial.DataSource = table;
+
+            ConfigMaterialTable();
         }
     }
 }
