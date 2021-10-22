@@ -1,6 +1,7 @@
-﻿using System;
+﻿using BTL_LTTQ_QLKhoVLXD.Models;
+using System;
+using System.Data;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace BTL_LTTQ_QLKhoVLXD
 {
@@ -13,25 +14,7 @@ namespace BTL_LTTQ_QLKhoVLXD
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (!ValidInput())
-                return;
-
-            string userName = txbUserName.Text;
-            string passWord = txbPassWord.Text;
-
-            string query = $"SELECT COUNT(*) from dbo.account Where username = N'{userName}' AND password = N'{passWord}'";
-            int recordCount = Convert.ToInt32(DatabaseProvider.Instance.ExecuteScalar(query));
-
-            if (recordCount == 1)
-            {
-                fTaskManager fTM = new fTaskManager();
-                Hide();
-                fTM.ShowDialog();
-                txbPassWord.Text = "";
-                Show();
-            }
-            else
-                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Login();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -40,6 +23,51 @@ namespace BTL_LTTQ_QLKhoVLXD
                     "Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question
                 ) == DialogResult.Yes)
                 Close();
+        }
+        private void txbPassWord_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.Focus();
+                Login();
+            }
+        }
+
+        private void Login()
+        {
+            if (!ValidInput())
+                return;
+
+            string userName = txbUserName.Text;
+            string passWord = txbPassWord.Text;
+
+            string query2 = "SELECT e.name, p.name AS position " +
+                "FROM account AS a " +
+                "JOIN employee AS e ON e.id=a.idEmployee " +
+                "JOIN employeePosition AS p ON p.id = e.idPosition " +
+                $"WHERE a.username = N'{userName}' AND a.password = N'{passWord}'";
+            DataTable result = DatabaseProvider.Instance.ExecuteQuery(query2);
+
+            // If account exists
+            if (result.Rows.Count == 1)
+            {
+                var userInfo = result.Rows[0];
+                User user = new User
+                (
+                    Convert.ToString(userInfo["name"]),
+                    Convert.ToString(userInfo["position"])
+                );
+
+                fTaskManager fTM = new fTaskManager(user);
+                
+                Hide();
+                fTM.ShowDialog();
+                
+                txbPassWord.Text = "";
+                Show();
+            }
+            else
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private bool ValidInput()

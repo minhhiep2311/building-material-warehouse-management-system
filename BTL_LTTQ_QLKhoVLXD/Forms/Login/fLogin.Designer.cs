@@ -104,6 +104,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.txbPassWord.Size = new System.Drawing.Size(347, 26);
             this.txbPassWord.TabIndex = 1;
             this.txbPassWord.UseSystemPasswordChar = true;
+            this.txbPassWord.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbPassWord_KeyDown);
             // 
             // lblPassWord
             // 

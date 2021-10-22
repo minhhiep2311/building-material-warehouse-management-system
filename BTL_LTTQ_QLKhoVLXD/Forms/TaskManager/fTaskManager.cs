@@ -1,22 +1,18 @@
-﻿using System.Drawing;
+﻿using BTL_LTTQ_QLKhoVLXD.Models;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BTL_LTTQ_QLKhoVLXD
 {
     public partial class fTaskManager : Form
     {
-        public fTaskManager()
+        private readonly User User;
+
+        public fTaskManager(User user)
         {
             InitializeComponent();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            //SqlCommand sqlCommand = new SqlCommand
-            //{
-            //    Connection = DatabaseProvider.Connection,
-            //    CommandText = ""
-            //};
+            User = user;
+            DisplayUserInfo();
         }
 
         private void tctlControl_DrawItem(object sender, DrawItemEventArgs e)
@@ -42,6 +38,12 @@ namespace BTL_LTTQ_QLKhoVLXD
             float y = e.Bounds.Top + (e.Bounds.Height - textSize.Height) / 2;
 
             g.DrawString(text, tctlControl.Font, Brushes.Black, x, y);
+        }
+
+        private void DisplayUserInfo()
+        {
+            lblUser.Text = $"Người dùng: {User.Name}";
+            lblPosition.Text = $"Chức vụ: {User.Position}";
         }
     }
 }
