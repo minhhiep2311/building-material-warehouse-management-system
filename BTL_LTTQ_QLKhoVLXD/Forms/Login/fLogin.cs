@@ -14,7 +14,8 @@ namespace BTL_LTTQ_QLKhoVLXD
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Login();
+            ForceLogin();
+            //Login();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -84,6 +85,17 @@ namespace BTL_LTTQ_QLKhoVLXD
             }
 
             return true;
+        }
+
+        private void ForceLogin()
+        {
+            fTaskManager fTM = new fTaskManager(new User("Name", "Staff"));
+
+            Hide();
+            fTM.ShowDialog();
+
+            txbPassWord.Text = "";
+            Show();
         }
     }
 }
