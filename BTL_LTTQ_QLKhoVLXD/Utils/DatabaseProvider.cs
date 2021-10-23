@@ -1,11 +1,12 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace BTL_LTTQ_QLKhoVLXD
 {
     class DatabaseProvider
     {
-        private static readonly string connectionString = "Server=14.225.255.234;Database=btl_lttq;UID=lttq_account;PWD=sqlServer00p@ssword,;Integrated Security=false";
+        private static readonly ConnectionStringSettings connectionSettings = ConfigurationManager.ConnectionStrings["default"];
 
         private static DatabaseProvider instance;
         public static DatabaseProvider Instance
@@ -20,7 +21,7 @@ namespace BTL_LTTQ_QLKhoVLXD
         {
             DataTable data = new DataTable();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionSettings.ConnectionString))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
@@ -36,7 +37,7 @@ namespace BTL_LTTQ_QLKhoVLXD
         {
             int rowsAffected = 0;
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionSettings.ConnectionString))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
@@ -51,7 +52,7 @@ namespace BTL_LTTQ_QLKhoVLXD
         {
             object data = 0;
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionSettings.ConnectionString))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);

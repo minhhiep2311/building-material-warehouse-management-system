@@ -41,12 +41,12 @@ namespace BTL_LTTQ_QLKhoVLXD
             string userName = txbUserName.Text;
             string passWord = txbPassWord.Text;
 
-            string query2 = "SELECT e.name, p.name AS position " +
+            string query = "SELECT e.name, p.name AS position " +
                 "FROM account AS a " +
                 "JOIN employee AS e ON e.id=a.idEmployee " +
                 "JOIN employeePosition AS p ON p.id = e.idPosition " +
                 $"WHERE a.username = N'{userName}' AND a.password = N'{passWord}'";
-            DataTable result = DatabaseProvider.Instance.ExecuteQuery(query2);
+            DataTable result = DatabaseProvider.Instance.ExecuteQuery(query);
 
             // If account exists
             if (result.Rows.Count == 1)
