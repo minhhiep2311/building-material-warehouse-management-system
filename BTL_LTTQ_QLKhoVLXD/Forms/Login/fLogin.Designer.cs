@@ -39,6 +39,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.panel2 = new System.Windows.Forms.Panel();
             this.txbUserName = new System.Windows.Forms.TextBox();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.chkShowPassword = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -46,6 +47,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.chkShowPassword);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.lblTitle);
@@ -53,12 +55,12 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(12, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(568, 257);
+            this.panel1.Size = new System.Drawing.Size(568, 259);
             this.panel1.TabIndex = 0;
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(372, 215);
+            this.btnExit.Location = new System.Drawing.Point(372, 204);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(105, 39);
             this.btnExit.TabIndex = 6;
@@ -68,7 +70,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(101, 215);
+            this.btnLogin.Location = new System.Drawing.Point(101, 204);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(105, 39);
             this.btnLogin.TabIndex = 5;
@@ -91,15 +93,15 @@ namespace BTL_LTTQ_QLKhoVLXD
             // 
             this.panel3.Controls.Add(this.txbPassWord);
             this.panel3.Controls.Add(this.lblPassWord);
-            this.panel3.Location = new System.Drawing.Point(25, 141);
+            this.panel3.Location = new System.Drawing.Point(25, 127);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(527, 53);
+            this.panel3.Size = new System.Drawing.Size(527, 37);
             this.panel3.TabIndex = 3;
             // 
             // txbPassWord
             // 
             this.txbPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPassWord.Location = new System.Drawing.Point(167, 3);
+            this.txbPassWord.Location = new System.Drawing.Point(170, 3);
             this.txbPassWord.Name = "txbPassWord";
             this.txbPassWord.Size = new System.Drawing.Size(347, 26);
             this.txbPassWord.TabIndex = 1;
@@ -122,7 +124,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.panel2.Controls.Add(this.lblUserName);
             this.panel2.Location = new System.Drawing.Point(25, 70);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(527, 53);
+            this.panel2.Size = new System.Drawing.Size(527, 42);
             this.panel2.TabIndex = 1;
             // 
             // txbUserName
@@ -132,6 +134,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.Size = new System.Drawing.Size(347, 26);
             this.txbUserName.TabIndex = 1;
+            this.txbUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbUserName_KeyDown);
             // 
             // lblUserName
             // 
@@ -143,16 +146,30 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "Tên đăng nhập";
             // 
+            // chkShowPassword
+            // 
+            this.chkShowPassword.AutoSize = true;
+            this.chkShowPassword.Location = new System.Drawing.Point(222, 170);
+            this.chkShowPassword.Name = "chkShowPassword";
+            this.chkShowPassword.Size = new System.Drawing.Size(140, 21);
+            this.chkShowPassword.TabIndex = 7;
+            this.chkShowPassword.Text = "Hiển thị mật khẩu";
+            this.chkShowPassword.UseVisualStyleBackColor = true;
+            this.chkShowPassword.CheckStateChanged += new System.EventHandler(this.chkShowPassword_CheckStateChanged);
+            // 
             // fLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 275);
+            this.ClientSize = new System.Drawing.Size(597, 281);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fLogin_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -175,5 +192,6 @@ namespace BTL_LTTQ_QLKhoVLXD
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txbUserName;
         private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.CheckBox chkShowPassword;
     }
 }

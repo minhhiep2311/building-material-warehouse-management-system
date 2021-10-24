@@ -12,29 +12,47 @@ namespace BTL_LTTQ_QLKhoVLXD
             InitializeComponent();
         }
 
+        #region Events
+
+        private void chkShowPassword_CheckStateChanged(object sender, EventArgs e)
+        {
+            txbPassWord.UseSystemPasswordChar = !chkShowPassword.Checked;
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //ForceLogin();
-            Login();
+            TryLogin();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(
-                    "Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question
-                ) == DialogResult.Yes)
-                Close();
+            Close();
         }
+        private void txbUserName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                TryLogin();
+        }
+
         private void txbPassWord_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-            {
-                btnLogin.Focus();
-                Login();
-            }
+                TryLogin();
         }
 
-        private void Login()
+        private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = MessageBox.Show(
+                    "Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question
+                ) == DialogResult.No;
+        }
+
+        #endregion
+
+        #region Methods
+
+        private void TryLogin()
         {
             if (!ValidInput())
                 return;
@@ -52,24 +70,29 @@ namespace BTL_LTTQ_QLKhoVLXD
             // If account exists
             if (result.Rows.Count == 1)
             {
-                var userInfo = result.Rows[0];
-                User user = new User
-                (
-                    Convert.ToString(userInfo["name"]),
-                    Convert.ToString(userInfo["position"]),
-                    Convert.ToString(userInfo["username"])
-                );
-
-                fTaskManager fTM = new fTaskManager(user);
-                
                 Hide();
-                fTM.ShowDialog();
-                
+                Login(result);
+
+                // After close app form
                 txbPassWord.Text = "";
                 Show();
             }
             else
                 MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void Login(DataTable data)
+        {
+            var userInfo = data.Rows[0];
+            User user = new User
+            (
+                Convert.ToString(userInfo["name"]),
+                Convert.ToString(userInfo["position"]),
+                Convert.ToString(userInfo["username"])
+            );
+
+            fTaskManager fTM = new fTaskManager(user);
+            fTM.ShowDialog();
         }
 
         private bool ValidInput()
@@ -98,5 +121,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             txbPassWord.Text = "";
             Show();
         }
+
+        #endregion
     }
 }
