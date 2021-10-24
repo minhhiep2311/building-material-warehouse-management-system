@@ -97,21 +97,21 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(197, 155);
+            this.btnSave.Location = new System.Drawing.Point(172, 155);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 38);
+            this.btnSave.Size = new System.Drawing.Size(100, 38);
             this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Lưu";
+            this.btnSave.Text = "Lưu thay đổi";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(360, 155);
+            this.btnCancel.Location = new System.Drawing.Point(329, 155);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 38);
+            this.btnCancel.Size = new System.Drawing.Size(100, 38);
             this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Hủy";
+            this.btnCancel.Text = "Hủy bỏ";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -129,7 +129,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             this.Controls.Add(this.lblNew);
             this.Controls.Add(this.lblOld);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "fChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Đổi mật khẩu";
             this.ResumeLayout(false);
             this.PerformLayout();

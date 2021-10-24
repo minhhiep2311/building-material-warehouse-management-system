@@ -1,4 +1,5 @@
 ﻿using BTL_LTTQ_QLKhoVLXD.Models;
+using BTL_LTTQ_QLKhoVLXD.Services;
 using System;
 using System.Windows.Forms;
 
@@ -34,7 +35,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!ValidInput() || !CorrectOldPassword() || !ValidNewPassword())
+            if (!ValidInput() || !CorrectOldPassword() || !ValidNewPassword() || !ConfirmChange())
                 return;
 
             ChangePassword();
@@ -63,10 +64,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
 
         private bool CorrectOldPassword()
         {
-            string query = "SELECT COUNT(*) " +
-                "FROM account AS a " +
-                $"WHERE a.username = N'{User.Account}' AND a.password = N'{txtOld.Text}'";
-            bool accountExists = Convert.ToInt32(DatabaseProvider.Instance.ExecuteScalar(query)) > 0;
+            bool accountExists = AccountService.CheckPassword(User.Account, txtOld.Text);
 
             if (!accountExists)
                 MessageBox.Show("Mật khảu cũ không chính xác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -84,15 +82,23 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             return true;
         }
 
+        private bool ConfirmChange()
+        {
+            return MessageBox.Show(
+                "Mật khảu của bạn sẽ được thay đổi. Vẫn tiếp tục?",
+                "Thông báo",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+                ) == DialogResult.Yes;
+        }
+
         private void ChangePassword()
         {
-            string query = $"UPDATE account SET password=N'{txtNew.Text}' " +
-                $"WHERE username = N'{User.Account}'";
-            int rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
-            if (rowAffected == 0)
-                MessageBox.Show("Lỗi hệ thống! Hãy thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
+            bool changeSuccessfully = AccountService.ChangePassword(User.Account, txtNew.Text);
+            if (changeSuccessfully)
                 MessageBox.Show("Thay đổi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Lỗi hệ thống! Hãy thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BTL_LTTQ_QLKhoVLXD.Models;
+using BTL_LTTQ_QLKhoVLXD.Services;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -21,8 +22,8 @@ namespace BTL_LTTQ_QLKhoVLXD
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //ForceLogin();
-            TryLogin();
+            ForceLogin();
+            //TryLogin();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -60,18 +61,12 @@ namespace BTL_LTTQ_QLKhoVLXD
             string userName = txbUserName.Text;
             string passWord = txbPassWord.Text;
 
-            string query = "SELECT e.name, p.name AS position, a.username " +
-                "FROM account AS a " +
-                "JOIN employee AS e ON e.id=a.idEmployee " +
-                "JOIN employeePosition AS p ON p.id = e.idPosition " +
-                $"WHERE a.username = N'{userName}' AND a.password = N'{passWord}'";
-            DataTable result = DatabaseProvider.Instance.ExecuteQuery(query);
+            User user = AccountService.Auth(userName, passWord);
 
-            // If account exists
-            if (result.Rows.Count == 1)
+            if (user != null)
             {
                 Hide();
-                Login(result);
+                RedirectToApp(user);
 
                 // After close app form
                 txbPassWord.Text = "";
@@ -81,16 +76,8 @@ namespace BTL_LTTQ_QLKhoVLXD
                 MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void Login(DataTable data)
+        private void RedirectToApp(User user)
         {
-            var userInfo = data.Rows[0];
-            User user = new User
-            (
-                Convert.ToString(userInfo["name"]),
-                Convert.ToString(userInfo["position"]),
-                Convert.ToString(userInfo["username"])
-            );
-
             fTaskManager fTM = new fTaskManager(user);
             fTM.ShowDialog();
         }
@@ -113,7 +100,7 @@ namespace BTL_LTTQ_QLKhoVLXD
 
         private void ForceLogin()
         {
-            fTaskManager fTM = new fTaskManager(new User("Name", "Staff", "FooAccount"));
+            fTaskManager fTM = new fTaskManager(new User("Trần Minh Giang", "Quản lý", "tran_minh.giang"));
 
             Hide();
             fTM.ShowDialog();

@@ -53,6 +53,12 @@
     <Compile Include="Forms\ChangePassword\fChangePassword.Designer.cs">
       <DependentUpon>fChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CreateAccount\fCreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateAccount\fCreateAccount.Designer.cs">
+      <DependentUpon>fCreateAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TaskManager\Components\buy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Services\MaterialService.cs" />
+    <Compile Include="Settings\MessageBoxMananger.cs" />
     <Compile Include="Utils\DatabaseProvider.cs" />
     <Compile Include="Forms\Login\fLogin.cs">
       <SubType>Form</SubType>
@@ -104,6 +113,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\ChangePassword\fChangePassword.resx">
       <DependentUpon>fChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateAccount\fCreateAccount.resx">
+      <DependentUpon>fCreateAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
