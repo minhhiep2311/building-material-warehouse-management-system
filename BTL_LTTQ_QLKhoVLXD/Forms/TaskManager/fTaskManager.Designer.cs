@@ -222,7 +222,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             // 
             this.btnChangePassword_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources._lock;
             this.btnChangePassword_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChangePassword_userSetting.Location = new System.Drawing.Point(301, 55);
+            this.btnChangePassword_userSetting.Location = new System.Drawing.Point(316, 70);
             this.btnChangePassword_userSetting.Margin = new System.Windows.Forms.Padding(20);
             this.btnChangePassword_userSetting.Name = "btnChangePassword_userSetting";
             this.btnChangePassword_userSetting.Size = new System.Drawing.Size(206, 91);
@@ -237,7 +237,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.btnCreateAccount_userSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCreateAccount_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_add;
             this.btnCreateAccount_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreateAccount_userSetting.Location = new System.Drawing.Point(55, 55);
+            this.btnCreateAccount_userSetting.Location = new System.Drawing.Point(70, 70);
             this.btnCreateAccount_userSetting.Margin = new System.Windows.Forms.Padding(20);
             this.btnCreateAccount_userSetting.Name = "btnCreateAccount_userSetting";
             this.btnCreateAccount_userSetting.Size = new System.Drawing.Size(206, 91);
@@ -253,7 +253,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.flowLayoutPanel1.Controls.Add(this.btnChangePassword_userSetting);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(35);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(50);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(989, 603);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
