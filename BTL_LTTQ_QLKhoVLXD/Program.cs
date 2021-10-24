@@ -14,11 +14,9 @@ namespace BTL_LTTQ_QLKhoVLXD
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            DatabaseProvider.Init();
+            MessageBoxManager.Register();
 
             Application.Run(new fLogin());
-
-            DatabaseProvider.Dispose();
         }
     }
 }

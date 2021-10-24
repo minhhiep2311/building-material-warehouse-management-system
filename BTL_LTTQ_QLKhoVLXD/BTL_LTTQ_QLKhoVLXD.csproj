@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +47,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Constant\PermissionConstant.cs" />
+    <Compile Include="Forms\ChangePassword\fChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePassword\fChangePassword.Designer.cs">
+      <DependentUpon>fChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateAccount\fCreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateAccount\fCreateAccount.Designer.cs">
+      <DependentUpon>fCreateAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ResetPassword\fResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ResetPassword\fResetPassword.Designer.cs">
+      <DependentUpon>fResetPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TaskManager\Components\buy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,7 +93,18 @@
     <Compile Include="Forms\TaskManager\Components\userSetting.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Models\EmployeePosition.cs" />
     <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Services\EmployeeService.cs" />
+    <Compile Include="Services\MaterialService.cs" />
+    <Compile Include="Settings\MessageBoxMananger.cs" />
     <Compile Include="Utils\DatabaseProvider.cs" />
     <Compile Include="Forms\Login\fLogin.cs">
       <SubType>Form</SubType>
@@ -89,21 +120,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Helper.cs" />
+    <EmbeddedResource Include="Forms\ChangePassword\fChangePassword.resx">
+      <DependentUpon>fChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateAccount\fCreateAccount.resx">
+      <DependentUpon>fCreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ResetPassword\fResetPassword.resx">
+      <DependentUpon>fResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskManager\fTaskManager.resx">
       <DependentUpon>fTaskManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -118,7 +156,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Icons\user-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Icons\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Icons\unlock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,39 +1,66 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace BTL_LTTQ_QLKhoVLXD
 {
-    static class DatabaseProvider
+    class DatabaseProvider
     {
-        public static SqlConnection Connection { get; private set; }
+        private static readonly ConnectionStringSettings connectionSettings = ConfigurationManager.ConnectionStrings["default"];
 
-        public static void Init()
+        private static DatabaseProvider instance;
+        public static DatabaseProvider Instance
         {
-            string server = "14.225.255.234";
-            string database = "btl_lttq";
-            string uid = "lttq_account";
-            string pwd = "sqlServer00p@ssword,";
-            string intergratedSecurity = "false";
-
-            string connectionString = string.Format(
-                "Server={0};Database={1};UID={2};PWD={3};Integrated Security={4}",
-                server,
-                database,
-                uid,
-                pwd,
-                intergratedSecurity
-            );
-
-            Connection = new SqlConnection(connectionString);
-            Connection.Open();
+            get => instance ?? (instance = new DatabaseProvider());
+            private set => instance = value;
         }
 
-        public static void Dispose()
-        {
-            if (Connection.State != ConnectionState.Closed)
-                Connection.Close();
+        private DatabaseProvider() { }
 
-            Connection.Dispose();
+        public DataTable ExecuteQuery(string query)
+        {
+            DataTable data = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionSettings.ConnectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(data);
+                connection.Close();
+            }
+
+            return data;
+        }
+
+        public int ExecuteNonQuery(string query)
+        {
+            int rowsAffected = 0;
+
+            using (SqlConnection connection = new SqlConnection(connectionSettings.ConnectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                rowsAffected = command.ExecuteNonQuery();
+                connection.Close();
+            }
+
+            return rowsAffected;
+        }
+
+        public object ExecuteScalar(string query)
+        {
+            object data = 0;
+
+            using (SqlConnection connection = new SqlConnection(connectionSettings.ConnectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                data = command.ExecuteScalar();
+                connection.Close();
+            }
+
+            return data;
         }
     }
 }

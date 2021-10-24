@@ -1,22 +1,26 @@
-﻿using System.Drawing;
+﻿using BTL_LTTQ_QLKhoVLXD.Assets.Constant;
+using BTL_LTTQ_QLKhoVLXD.Models;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BTL_LTTQ_QLKhoVLXD
 {
     public partial class fTaskManager : Form
     {
-        public fTaskManager()
+        private readonly User User;
+
+        public fTaskManager(User user)
         {
             InitializeComponent();
+            User = user;
+            DisplayUserInfo();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        #region Events
+
+        private void fTaskManager_Load(object sender, System.EventArgs e)
         {
-            //SqlCommand sqlCommand = new SqlCommand
-            //{
-            //    Connection = DatabaseProvider.Connection,
-            //    CommandText = ""
-            //};
+            DisplayComponentsAccordsPermission();
         }
 
         private void tctlControl_DrawItem(object sender, DrawItemEventArgs e)
@@ -43,5 +47,30 @@ namespace BTL_LTTQ_QLKhoVLXD
 
             g.DrawString(text, tctlControl.Font, Brushes.Black, x, y);
         }
+        private void fTaskManager_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = MessageBox.Show(
+                    "Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question
+                ) == DialogResult.No;
+        }
+
+        #endregion
+
+        #region Methods
+        private void DisplayComponentsAccordsPermission()
+        {
+            if (!PermissionConstant.CreateAccount.Contains(User.Position.Id))
+                btnCreateAccount_userSetting.Visible = false;
+            if (!PermissionConstant.CreateAccount.Contains(User.Position.Id))
+                btnResetPassword_userSetting.Visible = false;
+        }
+
+        private void DisplayUserInfo()
+        {
+            lblUser.Text = $"Người dùng: {User.Name}";
+            lblPosition.Text = $"Chức vụ: {User.Position}";
+        }
+
+        #endregion
     }
 }
