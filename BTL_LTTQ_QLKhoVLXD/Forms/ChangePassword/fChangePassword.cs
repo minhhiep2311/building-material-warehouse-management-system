@@ -15,6 +15,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             User = user;
         }
 
+        #region Events
+
+        private void txtOld_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                TryChangePassword();
+        }
+        private void txtNew_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                TryChangePassword();
+        }
+
         private void btnOld_Click(object sender, EventArgs e)
         {
             txtOld.UseSystemPasswordChar = !txtOld.UseSystemPasswordChar;
@@ -35,15 +48,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!ValidInput() || !CorrectOldPassword() || !ValidNewPassword() || !ConfirmChange())
-                return;
-
-            ChangePassword();
+            TryChangePassword();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        #endregion
+
+        #region Methods
+
+        private void TryChangePassword()
+        {
+            if (!ValidInput() || !CorrectOldPassword() || !ValidNewPassword() || !ConfirmChange())
+                return;
+
+            ChangePassword();
         }
 
         private bool ValidInput()
@@ -96,9 +118,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
         {
             bool changeSuccessfully = AccountService.ChangePassword(User.Account, txtNew.Text);
             if (changeSuccessfully)
+            {
                 MessageBox.Show("Thay đổi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
+            }
             else
                 MessageBox.Show("Lỗi hệ thống! Hãy thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        #endregion
     }
 }

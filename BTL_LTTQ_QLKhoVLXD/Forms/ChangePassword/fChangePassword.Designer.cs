@@ -65,6 +65,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             this.txtOld.Size = new System.Drawing.Size(232, 26);
             this.txtOld.TabIndex = 2;
             this.txtOld.UseSystemPasswordChar = true;
+            this.txtOld.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtOld_KeyDown);
             // 
             // txtNew
             // 
@@ -74,6 +75,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             this.txtNew.Size = new System.Drawing.Size(232, 26);
             this.txtNew.TabIndex = 3;
             this.txtNew.UseSystemPasswordChar = true;
+            this.txtNew.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNew_KeyDown);
             // 
             // btnOld
             // 
