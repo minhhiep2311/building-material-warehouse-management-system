@@ -269,6 +269,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.Name = "fTaskManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Kho Vật Liệu Xây Dựng";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fTaskManager_FormClosing);
             this.Load += new System.EventHandler(this.fTaskManager_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

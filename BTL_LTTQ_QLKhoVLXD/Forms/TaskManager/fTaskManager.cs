@@ -47,6 +47,12 @@ namespace BTL_LTTQ_QLKhoVLXD
 
             g.DrawString(text, tctlControl.Font, Brushes.Black, x, y);
         }
+        private void fTaskManager_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = MessageBox.Show(
+                    "Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question
+                ) == DialogResult.No;
+        }
 
         #endregion
 
