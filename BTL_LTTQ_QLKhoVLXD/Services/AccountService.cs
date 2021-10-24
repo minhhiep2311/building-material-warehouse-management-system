@@ -8,7 +8,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
     {
         public static User Auth(string username, string password)
         {
-            string query = "SELECT e.name, p.name AS position, a.username " +
+            string query = "SELECT e.name, e.address, e.isMale, e.dob, e.idPosition, p.name AS position, a.username " +
                 "FROM account AS a " +
                 "JOIN employee AS e ON e.id=a.idEmployee " +
                 "JOIN employeePosition AS p ON p.id = e.idPosition " +
@@ -38,6 +38,32 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             int rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
 
             return rowAffected > 0;
+        }
+
+        public static bool CheckAccountExists(string username)
+        {
+            string query = "SELECT COUNT(*) FROM account " +
+                $"WHERE username = N'{username}'";
+            bool accountExists = Convert.ToInt32(DatabaseProvider.Instance.ExecuteScalar(query)) > 0;
+
+            return accountExists;
+        }
+
+        public static bool CreateAccount(User user, string password)
+        {
+            int newEmployeeId = EmployeeService.CreateEmployee(user);
+
+            if (newEmployeeId != -1)
+            {
+                string query = $"INSERT INTO account VALUES(N'{user.Account}', " +
+                    $"N'{password}', " +
+                    $"{newEmployeeId})";
+                int rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
+
+                return rowAffected > 0;
+            }
+
+            return false;
         }
     }
 }

@@ -31,7 +31,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
         {
             this.lblDob = new System.Windows.Forms.Label();
             this.grbInfo = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboPosition = new System.Windows.Forms.ComboBox();
             this.lblPosition = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
             // 
             // grbInfo
             // 
-            this.grbInfo.Controls.Add(this.comboBox1);
+            this.grbInfo.Controls.Add(this.cboPosition);
             this.grbInfo.Controls.Add(this.lblPosition);
             this.grbInfo.Controls.Add(this.txtPhone);
             this.grbInfo.Controls.Add(this.lblPhone);
@@ -86,13 +86,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
             this.grbInfo.TabStop = false;
             this.grbInfo.Text = "Thông tin cá nhân";
             // 
-            // comboBox1
+            // cboPosition
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(138, 208);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(312, 24);
-            this.comboBox1.TabIndex = 12;
+            this.cboPosition.FormattingEnabled = true;
+            this.cboPosition.Location = new System.Drawing.Point(138, 208);
+            this.cboPosition.Name = "cboPosition";
+            this.cboPosition.Size = new System.Drawing.Size(312, 24);
+            this.cboPosition.TabIndex = 12;
             // 
             // lblPosition
             // 
@@ -142,12 +142,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
             // rdoMale
             // 
             this.rdoMale.AutoSize = true;
-            this.rdoMale.Checked = true;
             this.rdoMale.Location = new System.Drawing.Point(138, 138);
             this.rdoMale.Name = "rdoMale";
             this.rdoMale.Size = new System.Drawing.Size(58, 21);
             this.rdoMale.TabIndex = 6;
-            this.rdoMale.TabStop = true;
             this.rdoMale.Text = "Nam";
             this.rdoMale.UseVisualStyleBackColor = true;
             // 
@@ -289,6 +287,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
             this.Name = "fCreateAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CreateAccount";
+            this.Load += new System.EventHandler(this.fCreateAccount_Load);
             this.grbInfo.ResumeLayout(false);
             this.grbInfo.PerformLayout();
             this.grbAccount.ResumeLayout(false);
@@ -307,7 +306,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
         private System.Windows.Forms.Label lblPosition;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboPosition;
         private System.Windows.Forms.GroupBox grbAccount;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtName;

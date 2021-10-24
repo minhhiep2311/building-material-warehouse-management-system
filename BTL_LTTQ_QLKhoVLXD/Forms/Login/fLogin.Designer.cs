@@ -30,6 +30,7 @@ namespace BTL_LTTQ_QLKhoVLXD
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkShowPassword = new System.Windows.Forms.CheckBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.panel2 = new System.Windows.Forms.Panel();
             this.txbUserName = new System.Windows.Forms.TextBox();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.chkShowPassword = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -58,12 +58,23 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.panel1.Size = new System.Drawing.Size(568, 259);
             this.panel1.TabIndex = 0;
             // 
+            // chkShowPassword
+            // 
+            this.chkShowPassword.AutoSize = true;
+            this.chkShowPassword.Location = new System.Drawing.Point(222, 170);
+            this.chkShowPassword.Name = "chkShowPassword";
+            this.chkShowPassword.Size = new System.Drawing.Size(140, 21);
+            this.chkShowPassword.TabIndex = 3;
+            this.chkShowPassword.Text = "Hiển thị mật khẩu";
+            this.chkShowPassword.UseVisualStyleBackColor = true;
+            this.chkShowPassword.CheckStateChanged += new System.EventHandler(this.chkShowPassword_CheckStateChanged);
+            // 
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(372, 204);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(105, 39);
-            this.btnExit.TabIndex = 6;
+            this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -73,7 +84,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.btnLogin.Location = new System.Drawing.Point(101, 204);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(105, 39);
-            this.btnLogin.TabIndex = 5;
+            this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -104,7 +115,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.txbPassWord.Location = new System.Drawing.Point(170, 3);
             this.txbPassWord.Name = "txbPassWord";
             this.txbPassWord.Size = new System.Drawing.Size(347, 26);
-            this.txbPassWord.TabIndex = 1;
+            this.txbPassWord.TabIndex = 2;
             this.txbPassWord.UseSystemPasswordChar = true;
             this.txbPassWord.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbPassWord_KeyDown);
             // 
@@ -145,17 +156,6 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.lblUserName.Size = new System.Drawing.Size(152, 24);
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "Tên đăng nhập";
-            // 
-            // chkShowPassword
-            // 
-            this.chkShowPassword.AutoSize = true;
-            this.chkShowPassword.Location = new System.Drawing.Point(222, 170);
-            this.chkShowPassword.Name = "chkShowPassword";
-            this.chkShowPassword.Size = new System.Drawing.Size(140, 21);
-            this.chkShowPassword.TabIndex = 7;
-            this.chkShowPassword.Text = "Hiển thị mật khẩu";
-            this.chkShowPassword.UseVisualStyleBackColor = true;
-            this.chkShowPassword.CheckStateChanged += new System.EventHandler(this.chkShowPassword_CheckStateChanged);
             // 
             // fLogin
             // 

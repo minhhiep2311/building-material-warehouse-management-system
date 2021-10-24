@@ -22,8 +22,8 @@ namespace BTL_LTTQ_QLKhoVLXD
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            ForceLogin();
-            //TryLogin();
+            //ForceLogin();
+            TryLogin();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -100,7 +100,8 @@ namespace BTL_LTTQ_QLKhoVLXD
 
         private void ForceLogin()
         {
-            fTaskManager fTM = new fTaskManager(new User("Trần Minh Giang", "Quản lý", "tran_minh.giang"));
+            User user = new User("Trần Minh Giang", "Cầu Giấy, Hà Nội", true, new DateTime(1999, 8, 11), new EmployeePosition(1, "Quản lý"), "tran_minh.giang");
+            fTaskManager fTM = new fTaskManager(user);
 
             Hide();
             fTM.ShowDialog();
