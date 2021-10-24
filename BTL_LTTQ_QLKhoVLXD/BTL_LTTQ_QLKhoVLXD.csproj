@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Constant\PermissionConstant.cs" />
     <Compile Include="Forms\ChangePassword\fChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,10 +150,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\icons\user-add.png" />
+    <None Include="Assets\Icons\user-add.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\icons\lock.png" />
+    <None Include="Assets\Icons\lock.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

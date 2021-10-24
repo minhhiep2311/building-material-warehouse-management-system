@@ -1,4 +1,5 @@
-﻿using BTL_LTTQ_QLKhoVLXD.Models;
+﻿using BTL_LTTQ_QLKhoVLXD.Assets.Constant;
+using BTL_LTTQ_QLKhoVLXD.Models;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -13,6 +14,13 @@ namespace BTL_LTTQ_QLKhoVLXD
             InitializeComponent();
             User = user;
             DisplayUserInfo();
+        }
+
+        #region Events
+
+        private void fTaskManager_Load(object sender, System.EventArgs e)
+        {
+            DisplayComponentsAccordsPermission();
         }
 
         private void tctlControl_DrawItem(object sender, DrawItemEventArgs e)
@@ -40,10 +48,22 @@ namespace BTL_LTTQ_QLKhoVLXD
             g.DrawString(text, tctlControl.Font, Brushes.Black, x, y);
         }
 
+        #endregion
+
+        #region Methods
+
+        private void DisplayComponentsAccordsPermission()
+        {
+            if (!PermissionConstant.CreateAccount.Contains(User.Position.Id))
+                btnCreateAccount_userSetting.Visible = false;
+        }
+
         private void DisplayUserInfo()
         {
             lblUser.Text = $"Người dùng: {User.Name}";
             lblPosition.Text = $"Chức vụ: {User.Position}";
         }
+
+        #endregion
     }
 }
