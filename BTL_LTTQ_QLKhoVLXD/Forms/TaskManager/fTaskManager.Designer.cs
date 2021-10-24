@@ -46,6 +46,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCreateAccount_userSetting = new System.Windows.Forms.Button();
             this.btnChangePassword_userSetting = new System.Windows.Forms.Button();
+            this.btnResetPassword_userSetting = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.tctlControl.SuspendLayout();
             this.tpgMaterial.SuspendLayout();
@@ -222,9 +223,10 @@ namespace BTL_LTTQ_QLKhoVLXD
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnCreateAccount_userSetting);
             this.flowLayoutPanel1.Controls.Add(this.btnChangePassword_userSetting);
+            this.flowLayoutPanel1.Controls.Add(this.btnResetPassword_userSetting);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(50);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(989, 603);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
@@ -233,7 +235,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.btnCreateAccount_userSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCreateAccount_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_add;
             this.btnCreateAccount_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreateAccount_userSetting.Location = new System.Drawing.Point(70, 70);
+            this.btnCreateAccount_userSetting.Location = new System.Drawing.Point(40, 40);
             this.btnCreateAccount_userSetting.Margin = new System.Windows.Forms.Padding(20);
             this.btnCreateAccount_userSetting.Name = "btnCreateAccount_userSetting";
             this.btnCreateAccount_userSetting.Size = new System.Drawing.Size(206, 91);
@@ -241,13 +243,12 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.btnCreateAccount_userSetting.Text = "Tạo tài khoản";
             this.btnCreateAccount_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreateAccount_userSetting.UseVisualStyleBackColor = true;
-            this.btnCreateAccount_userSetting.Click += new System.EventHandler(this.btnCreateAccount_userSetting_Click);
             // 
             // btnChangePassword_userSetting
             // 
             this.btnChangePassword_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources._lock;
             this.btnChangePassword_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChangePassword_userSetting.Location = new System.Drawing.Point(316, 70);
+            this.btnChangePassword_userSetting.Location = new System.Drawing.Point(286, 40);
             this.btnChangePassword_userSetting.Margin = new System.Windows.Forms.Padding(20);
             this.btnChangePassword_userSetting.Name = "btnChangePassword_userSetting";
             this.btnChangePassword_userSetting.Size = new System.Drawing.Size(206, 91);
@@ -255,7 +256,21 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.btnChangePassword_userSetting.Text = "Đổi mật khẩu";
             this.btnChangePassword_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChangePassword_userSetting.UseVisualStyleBackColor = true;
-            this.btnChangePassword_userSetting.Click += new System.EventHandler(this.btnChangePassword_userSetting_Click);
+            // 
+            // btnResetPassword_userSetting
+            // 
+            this.btnResetPassword_userSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnResetPassword_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.unlock;
+            this.btnResetPassword_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnResetPassword_userSetting.Location = new System.Drawing.Point(532, 40);
+            this.btnResetPassword_userSetting.Margin = new System.Windows.Forms.Padding(20);
+            this.btnResetPassword_userSetting.Name = "btnResetPassword_userSetting";
+            this.btnResetPassword_userSetting.Size = new System.Drawing.Size(206, 91);
+            this.btnResetPassword_userSetting.TabIndex = 2;
+            this.btnResetPassword_userSetting.Text = "Đặt lại mật khẩu";
+            this.btnResetPassword_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnResetPassword_userSetting.UseVisualStyleBackColor = true;
+            this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
             // 
             // fTaskManager
             // 
@@ -279,7 +294,6 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.tpgUserSetting.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
 
@@ -301,5 +315,6 @@ namespace BTL_LTTQ_QLKhoVLXD
         private System.Windows.Forms.Button btnChangePassword_userSetting;
         private System.Windows.Forms.Button btnCreateAccount_userSetting;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnResetPassword_userSetting;
     }
 }

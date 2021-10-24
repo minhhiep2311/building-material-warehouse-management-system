@@ -1,5 +1,6 @@
 ﻿using BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword;
 using BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount;
+using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
 using System.Windows.Forms;
 
 namespace BTL_LTTQ_QLKhoVLXD
@@ -16,6 +17,11 @@ namespace BTL_LTTQ_QLKhoVLXD
         {
             fChangePassword fCM = new fChangePassword(User);
             fCM.ShowDialog();
+        }
+        private void btnResetPassword_userSetting_Click(object sender, System.EventArgs e)
+        {
+            fResetPassword fRP = new fResetPassword(User);
+            fRP.ShowDialog();
         }
     }
 }

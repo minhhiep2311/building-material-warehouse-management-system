@@ -57,11 +57,12 @@ namespace BTL_LTTQ_QLKhoVLXD
         #endregion
 
         #region Methods
-
         private void DisplayComponentsAccordsPermission()
         {
             if (!PermissionConstant.CreateAccount.Contains(User.Position.Id))
                 btnCreateAccount_userSetting.Visible = false;
+            if (!PermissionConstant.CreateAccount.Contains(User.Position.Id))
+                btnResetPassword_userSetting.Visible = false;
         }
 
         private void DisplayUserInfo()

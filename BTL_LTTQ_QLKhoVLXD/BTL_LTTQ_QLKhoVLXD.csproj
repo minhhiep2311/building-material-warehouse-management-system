@@ -60,6 +60,12 @@
     <Compile Include="Forms\CreateAccount\fCreateAccount.Designer.cs">
       <DependentUpon>fCreateAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ResetPassword\fResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ResetPassword\fResetPassword.Designer.cs">
+      <DependentUpon>fResetPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TaskManager\Components\buy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     <EmbeddedResource Include="Forms\Login\fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ResetPassword\fResetPassword.resx">
+      <DependentUpon>fResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskManager\fTaskManager.resx">
       <DependentUpon>fTaskManager.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -157,6 +166,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Icons\unlock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
