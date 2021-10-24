@@ -121,7 +121,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.tpgBuy.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgBuy.Size = new System.Drawing.Size(985, 599);
             this.tpgBuy.TabIndex = 0;
-            this.tpgBuy.Text = "Mua hàng";
+            this.tpgBuy.Text = "Tạo Hóa Đơn Nhập ";
             this.tpgBuy.UseVisualStyleBackColor = true;
             // 
             // tpgSell
@@ -132,7 +132,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.tpgSell.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgSell.Size = new System.Drawing.Size(985, 599);
             this.tpgSell.TabIndex = 1;
-            this.tpgSell.Text = "Bán hàng";
+            this.tpgSell.Text = "Tạo Hóa Đơn Xuất";
             this.tpgSell.UseVisualStyleBackColor = true;
             // 
             // tpgReceipt
@@ -142,7 +142,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.tpgReceipt.Name = "tpgReceipt";
             this.tpgReceipt.Size = new System.Drawing.Size(985, 599);
             this.tpgReceipt.TabIndex = 2;
-            this.tpgReceipt.Text = "Hóa đơn";
+            this.tpgReceipt.Text = "Quản Lý Hóa đơn";
             this.tpgReceipt.UseVisualStyleBackColor = true;
             // 
             // tpgMaterial
