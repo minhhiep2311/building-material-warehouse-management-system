@@ -42,7 +42,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             // lblOld
             // 
             this.lblOld.AutoSize = true;
-            this.lblOld.Location = new System.Drawing.Point(39, 56);
+            this.lblOld.Location = new System.Drawing.Point(39, 55);
             this.lblOld.Name = "lblOld";
             this.lblOld.Size = new System.Drawing.Size(85, 17);
             this.lblOld.TabIndex = 0;
@@ -51,7 +51,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             // lblNew
             // 
             this.lblNew.AutoSize = true;
-            this.lblNew.Location = new System.Drawing.Point(39, 105);
+            this.lblNew.Location = new System.Drawing.Point(39, 104);
             this.lblNew.Name = "lblNew";
             this.lblNew.Size = new System.Drawing.Size(92, 17);
             this.lblNew.TabIndex = 1;
@@ -59,27 +59,27 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             // 
             // txtOld
             // 
+            this.txtOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOld.Location = new System.Drawing.Point(172, 50);
-            this.txtOld.Multiline = true;
             this.txtOld.Name = "txtOld";
-            this.txtOld.PasswordChar = '●';
-            this.txtOld.Size = new System.Drawing.Size(232, 28);
+            this.txtOld.Size = new System.Drawing.Size(232, 26);
             this.txtOld.TabIndex = 2;
+            this.txtOld.UseSystemPasswordChar = true;
             // 
             // txtNew
             // 
+            this.txtNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNew.Location = new System.Drawing.Point(172, 99);
-            this.txtNew.Multiline = true;
             this.txtNew.Name = "txtNew";
-            this.txtNew.PasswordChar = '●';
-            this.txtNew.Size = new System.Drawing.Size(232, 28);
+            this.txtNew.Size = new System.Drawing.Size(232, 26);
             this.txtNew.TabIndex = 3;
+            this.txtNew.UseSystemPasswordChar = true;
             // 
             // btnOld
             // 
             this.btnOld.Location = new System.Drawing.Point(440, 50);
             this.btnOld.Name = "btnOld";
-            this.btnOld.Size = new System.Drawing.Size(145, 28);
+            this.btnOld.Size = new System.Drawing.Size(145, 26);
             this.btnOld.TabIndex = 4;
             this.btnOld.Text = "Hiện mật khẩu";
             this.btnOld.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             // 
             this.btnNew.Location = new System.Drawing.Point(440, 99);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(145, 28);
+            this.btnNew.Size = new System.Drawing.Size(145, 26);
             this.btnNew.TabIndex = 5;
             this.btnNew.Text = "Hiện mật khẩu";
             this.btnNew.UseVisualStyleBackColor = true;

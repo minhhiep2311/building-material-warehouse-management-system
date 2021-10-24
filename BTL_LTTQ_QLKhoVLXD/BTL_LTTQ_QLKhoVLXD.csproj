@@ -131,16 +131,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\icons\user-add-16.png" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\icons\user-add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\icons\user-add-24.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\icons\lock.png" />

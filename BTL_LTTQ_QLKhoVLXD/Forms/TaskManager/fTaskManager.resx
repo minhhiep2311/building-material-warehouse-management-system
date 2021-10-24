@@ -117,25 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnChangePassword_userSetting.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAALRJREFUSEvt
-        lT0OwjAMhXM0Jqau3IfzcABWVg7AxsBRwF8lV1bqkth0KIgnfVJ+nvOyxCkLOgiXIEehSxifSbhYUzcB
-        826c9QkvNfdx1pDeJqruun9AU98bMAj2DTCOYOv2wky8RjV9CmfNtIkAPKdqzSMVYFuHtoYlwgHcutY7
-        /yoBZ8HzQjgAbCtm7HmUVIAtingn/X4AP53qKngeJRUAfImPas0jHdCLG0AXZGMNOEtUygtWRzCBrMAE
-        LAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnCreateAccount_userSetting.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAURJREFUSEu1
-        1a1LBEEcxvGNgnAYLAZRq4jFIDbBaNEgaBBMlzQIBjGJyXTp4OSOC4rYDDaboH+AwQsGQRQsVwWrfh/Y
-        kbnzt6+zPvBhb4e9Z3aHYTfKkU1c4xldLKOy3OLb0ERwDmGVOysIyhesYucCpTMJq9T3itKZgVXq+0Dp
-        TMAq9b0gKJ+wip0OgrIHq9hZQnCuYJWfoLJov5/hHqeYQyWZxi62Ma8BsoA61jGigTKZgt491tL4tAnO
-        oetzZxVvsAqTPCBXRvEEqyRLG5k5gvXnNHraA8wiM4+wSpLcYBwqb+EuPpqTjcEqSaMPjwyP9/BnEuvC
-        NJfQTemFp3PdvaKjzjXJwDYuOsEO1uLfG3CfUR2PofGBpyg6wRb+dYIGtET9+Hx4id4RtERaY3319r0x
-        Vy7uiX5Tgy4oSllEwjaNoh8mVQF6yiOj/gAAAABJRU5ErkJggg==
-</value>
-  </data>
 </root>

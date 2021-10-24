@@ -14,8 +14,8 @@ namespace BTL_LTTQ_QLKhoVLXD
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            ForceLogin();
-            //Login();
+            //ForceLogin();
+            Login();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             string userName = txbUserName.Text;
             string passWord = txbPassWord.Text;
 
-            string query = "SELECT e.name, p.name AS position " +
+            string query = "SELECT e.name, p.name AS position, a.username " +
                 "FROM account AS a " +
                 "JOIN employee AS e ON e.id=a.idEmployee " +
                 "JOIN employeePosition AS p ON p.id = e.idPosition " +
@@ -56,7 +56,8 @@ namespace BTL_LTTQ_QLKhoVLXD
                 User user = new User
                 (
                     Convert.ToString(userInfo["name"]),
-                    Convert.ToString(userInfo["position"])
+                    Convert.ToString(userInfo["position"]),
+                    Convert.ToString(userInfo["username"])
                 );
 
                 fTaskManager fTM = new fTaskManager(user);
@@ -78,7 +79,7 @@ namespace BTL_LTTQ_QLKhoVLXD
                 MessageBox.Show("Hãy nhập tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
-            else if (txbPassWord.Text == "")
+            if (txbPassWord.Text == "")
             {
                 MessageBox.Show("Hãy nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
@@ -89,7 +90,7 @@ namespace BTL_LTTQ_QLKhoVLXD
 
         private void ForceLogin()
         {
-            fTaskManager fTM = new fTaskManager(new User("Name", "Staff"));
+            fTaskManager fTM = new fTaskManager(new User("Name", "Staff", "FooAccount"));
 
             Hide();
             fTM.ShowDialog();

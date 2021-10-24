@@ -4,11 +4,13 @@
     {
         public string Name { get; }
         public string Position { get; }
+        public string Account { get; }
 
-        public User(string name, string position)
+        public User(string name, string position, string account)
         {
             Name = name;
             Position = position;
+            Account = account;
         }
     }
 }
