@@ -243,6 +243,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.btnCreateAccount_userSetting.Text = "Tạo tài khoản";
             this.btnCreateAccount_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreateAccount_userSetting.UseVisualStyleBackColor = true;
+            this.btnCreateAccount_userSetting.Click += new System.EventHandler(this.btnCreateAccount_userSetting_Click);
             // 
             // btnChangePassword_userSetting
             // 
@@ -256,6 +257,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.btnChangePassword_userSetting.Text = "Đổi mật khẩu";
             this.btnChangePassword_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChangePassword_userSetting.UseVisualStyleBackColor = true;
+            this.btnChangePassword_userSetting.Click += new System.EventHandler(this.btnChangePassword_userSetting_Click);
             // 
             // btnResetPassword_userSetting
             // 
@@ -294,6 +296,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.tpgUserSetting.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
 
 
