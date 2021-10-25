@@ -47,7 +47,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.chkShowPassword);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.lblTitle);
@@ -61,7 +60,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
             // chkShowPassword
             // 
             this.chkShowPassword.AutoSize = true;
-            this.chkShowPassword.Location = new System.Drawing.Point(222, 170);
+            this.chkShowPassword.Location = new System.Drawing.Point(170, 39);
             this.chkShowPassword.Name = "chkShowPassword";
             this.chkShowPassword.Size = new System.Drawing.Size(140, 21);
             this.chkShowPassword.TabIndex = 3;
@@ -102,11 +101,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.chkShowPassword);
             this.panel3.Controls.Add(this.txbPassWord);
             this.panel3.Controls.Add(this.lblPassWord);
             this.panel3.Location = new System.Drawing.Point(25, 127);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(527, 37);
+            this.panel3.Size = new System.Drawing.Size(527, 71);
             this.panel3.TabIndex = 2;
             // 
             // txbPassWord
