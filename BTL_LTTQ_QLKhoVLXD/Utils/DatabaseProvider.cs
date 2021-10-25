@@ -1,31 +1,27 @@
-﻿using System.Data;
+﻿using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
 
-namespace BTL_LTTQ_QLKhoVLXD
+namespace BTL_LTTQ_QLKhoVLXD.Utils
 {
     class DatabaseProvider
     {
-        private static readonly ConnectionStringSettings connectionSettings = ConfigurationManager.ConnectionStrings["default"];
+        private static readonly ConnectionStringSettings ConnectionSettings = ConfigurationManager.ConnectionStrings["default"];
 
-        private static DatabaseProvider instance;
-        public static DatabaseProvider Instance
-        {
-            get => instance ?? (instance = new DatabaseProvider());
-            private set => instance = value;
-        }
+        private static DatabaseProvider _instance;
+        public static DatabaseProvider Instance => _instance ?? (_instance = new DatabaseProvider());
 
         private DatabaseProvider() { }
 
         public DataTable ExecuteQuery(string query)
         {
-            DataTable data = new DataTable();
+            var data = new DataTable();
 
-            using (SqlConnection connection = new SqlConnection(connectionSettings.ConnectionString))
+            using (var connection = new SqlConnection(ConnectionSettings.ConnectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                var command = new SqlCommand(query, connection);
+                var adapter = new SqlDataAdapter(command);
                 adapter.Fill(data);
                 connection.Close();
             }
@@ -35,12 +31,12 @@ namespace BTL_LTTQ_QLKhoVLXD
 
         public int ExecuteNonQuery(string query)
         {
-            int rowsAffected = 0;
+            int rowsAffected;
 
-            using (SqlConnection connection = new SqlConnection(connectionSettings.ConnectionString))
+            using (var connection = new SqlConnection(ConnectionSettings.ConnectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
+                var command = new SqlCommand(query, connection);
                 rowsAffected = command.ExecuteNonQuery();
                 connection.Close();
             }
@@ -50,12 +46,12 @@ namespace BTL_LTTQ_QLKhoVLXD
 
         public object ExecuteScalar(string query)
         {
-            object data = 0;
+            object data;
 
-            using (SqlConnection connection = new SqlConnection(connectionSettings.ConnectionString))
+            using (var connection = new SqlConnection(ConnectionSettings.ConnectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
+                var command = new SqlCommand(query, connection);
                 data = command.ExecuteScalar();
                 connection.Close();
             }

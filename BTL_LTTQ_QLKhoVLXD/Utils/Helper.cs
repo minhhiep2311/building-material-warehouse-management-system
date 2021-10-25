@@ -2,7 +2,7 @@
 
 namespace BTL_LTTQ_QLKhoVLXD.Utils
 {
-    class Helper
+    internal class Helper
     {
         public class RegexValidate
         {
@@ -19,7 +19,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
             private static string RemoveAccent(string str)
             {
                 if (str == null)
-                    return str;
+                    return null;
 
                 str = Regex.Replace(str, @"à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ", "a");
                 str = Regex.Replace(str, @"è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ", "e");

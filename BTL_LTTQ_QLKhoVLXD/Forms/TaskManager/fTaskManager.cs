@@ -2,13 +2,13 @@
 using System.Drawing;
 using System.Resources;
 using System.Windows.Forms;
-using BTL_LTTQ_QLKhoVLXD.Assets.Constant;
 using BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword;
 using BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount;
 using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
 using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Services;
+using BTL_LTTQ_QLKhoVLXD.Utils;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
@@ -35,13 +35,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             // No draw selected border
             if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
-                e = new DrawItemEventArgs(e.Graphics,
-                                          e.Font,
-                                          e.Bounds,
-                                          e.Index,
-                                          e.State ^ DrawItemState.Selected,
-                                          e.ForeColor,
-                                          Color.YellowGreen);
+                e = new DrawItemEventArgs(
+                    e.Graphics,
+                    e.Font,
+                    e.Bounds,
+                    e.Index,
+                    e.State ^ DrawItemState.Selected,
+                    e.ForeColor,
+                    Color.YellowGreen
+                );
 
             e.DrawBackground();
 
@@ -97,13 +99,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void ConfigMaterialTable()
         {
-            dgvMaterial.Columns[0].HeaderText = "Mã";
-            dgvMaterial.Columns[1].HeaderText = "Tên vật liệu";
-            dgvMaterial.Columns[2].HeaderText = "Đơn giá nhập";
-            dgvMaterial.Columns[3].HeaderText = "Đơn giá xuất";
-            dgvMaterial.Columns[4].HeaderText = "Đơn vị tính";
-            dgvMaterial.Columns[5].HeaderText = "Quy cách";
-
             dgvMaterial.Columns[0].Width = 40;
             dgvMaterial.Columns[1].Width = 200;
             dgvMaterial.Columns[2].Width = 150;
