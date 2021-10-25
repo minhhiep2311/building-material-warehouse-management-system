@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Label_User" xml:space="preserve">
+	  <value>Người dùng: {0}</value>
+  </data>
+  <data name="Label_Position" xml:space="preserve">
+	  <value>Chức vụ: {0}</value>
+  </data>
+  <data name="Form_Message_WrongAccountInfo" xml:space="preserve">
+	  <value>Sai tên tài khoản hoặc mật khẩu!</value>
+  </data>
 </root>

@@ -4,6 +4,7 @@ using BTL_LTTQ_QLKhoVLXD.Utils;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using BTL_LTTQ_QLKhoVLXD.Properties;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
 {
@@ -58,15 +59,30 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
                 cboPosition.SelectedIndex != -1;
 
             if (!valid)
-                MessageBox.Show("Hãy nhập đầy đủ thông tin cá nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_EnterFullPersonalInfo,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             else if (!Helper.RegexValidate.Name(txtName.Text))
             {
-                MessageBox.Show("Định dạng họ tên không chính xác! Hãy thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_InvalidNameFormat,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
                 valid = false;
             }
             else if (!Helper.RegexValidate.PhoneNumber(txtPhone.Text))
             {
-                MessageBox.Show("Định dạng số điện thoại không chính xác! Hãy thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_InvalidPhoneNumberFormat,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
                 valid = false;
             }
 
@@ -75,21 +91,31 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
 
         private bool ValidAccount()
         {
-            bool valid = txtUsername.Text != "" &&
-                txtPhone.Text != "";
+            var valid = txtUsername.Text != "" &&
+                        txtPhone.Text != "";
             if (!valid)
-                MessageBox.Show("Hãy nhập đầy đủ thông tin tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_EnterFullAccountInfo,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
 
-            bool accountExists = AccountService.CheckAccountExists(txtUsername.Text);
+            var accountExists = AccountService.CheckAccountExists(txtUsername.Text);
             if (accountExists)
-                MessageBox.Show("Tên đăng nhập đã tồn tại! Vui lòng chọn tên đăng nhập khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_AccountExisted,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
 
             return valid && !accountExists;
         }
 
         private void CreateAccount()
         {
-            User user = new User(
+            var user = new User(
                 txtName.Text,
                 txtAddress.Text,
                 rdoMale.Checked,
@@ -98,14 +124,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
                 txtUsername.Text
             );
 
-            bool createSuccessfully = AccountService.CreateAccount(user, txtPassword.Text);
+            var createSuccessfully = AccountService.CreateAccount(user, txtPassword.Text);
             if (createSuccessfully)
             {
-                MessageBox.Show("Tạo tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_CreateAccountSuccessfully,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
                 Close();
             }
             else
-                MessageBox.Show("Lỗi hệ thống! Hãy thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_SystemError, 
+                    Resources.MessageBox_Caption_Notification, 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error
+                );
         }
 
         #endregion

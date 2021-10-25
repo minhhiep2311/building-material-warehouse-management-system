@@ -71,6 +71,213 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ẩn mật khẩu.
+        /// </summary>
+        internal static string Checkbox_HidePassword {
+            get {
+                return ResourceManager.GetString("Checkbox_HidePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hiện mật khẩu.
+        /// </summary>
+        internal static string Checkbox_ShowPassword {
+            get {
+                return ResourceManager.GetString("Checkbox_ShowPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thông báo.
+        /// </summary>
+        internal static string MessageBox_Caption_Notification {
+            get {
+                return ResourceManager.GetString("MessageBox_Caption_Notification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tên đăng nhập đã tồn tại! Vui lòng chọn tên đăng nhập khác.
+        /// </summary>
+        internal static string MessageBox_Message_AccountExisted {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_AccountExisted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tài khoản {0} không tồn tại!.
+        /// </summary>
+        internal static string MessageBox_Message_AccountNotExist {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_AccountNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Không thể đặt lại mật khẩu cho chính mình! Hãy sử dụng chức năng &quot;Đổi mật khẩu&quot;.
+        /// </summary>
+        internal static string MessageBox_Message_CannotSelfResetPassword {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_CannotSelfResetPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thay đổi thành công!.
+        /// </summary>
+        internal static string MessageBox_Message_ChangeSuccessfully {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ChangeSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mật khảu của bạn sẽ được thay đổi. Vẫn tiếp tục?.
+        /// </summary>
+        internal static string MessageBox_Message_ConfirmChangePassword {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ConfirmChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bạn có chắc chắn muốn thoát không?.
+        /// </summary>
+        internal static string MessageBox_Message_ConfirmExit {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ConfirmExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mật khảu của tài khoản {0} sẽ được thay đổi. Vẫn tiếp tục?.
+        /// </summary>
+        internal static string MessageBox_Message_ConfirmResetPassword {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ConfirmResetPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tạo tài khoản thành công!.
+        /// </summary>
+        internal static string MessageBox_Message_CreateAccountSuccessfully {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_CreateAccountSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mật khảu mới không được trùng mật khẩu cũ!.
+        /// </summary>
+        internal static string MessageBox_Message_DuplicatePassword {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_DuplicatePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hãy nhập đầy đủ thông tin tài khoản!.
+        /// </summary>
+        internal static string MessageBox_Message_EnterFullAccountInfo {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_EnterFullAccountInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hãy nhập đầy đủ thông tin cá nhân!.
+        /// </summary>
+        internal static string MessageBox_Message_EnterFullPersonalInfo {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_EnterFullPersonalInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hãy nhập mật khẩu mới!.
+        /// </summary>
+        internal static string MessageBox_Message_EnterNewPassword {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_EnterNewPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hãy nhập mật khẩu cũ!.
+        /// </summary>
+        internal static string MessageBox_Message_EnterOldPassword {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_EnterOldPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hãy nhập mật khẩu!.
+        /// </summary>
+        internal static string MessageBox_Message_EnterPassword {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_EnterPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hãy nhập tên đăng nhập.
+        /// </summary>
+        internal static string MessageBox_Message_EnterUsername {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_EnterUsername", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Định dạng họ tên không chính xác! Hãy thử lại.
+        /// </summary>
+        internal static string MessageBox_Message_InvalidNameFormat {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_InvalidNameFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Định dạng số điện thoại không chính xác! Hãy thử lại.
+        /// </summary>
+        internal static string MessageBox_Message_InvalidPhoneNumberFormat {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_InvalidPhoneNumberFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lỗi hệ thống! Hãy thử lại sau.
+        /// </summary>
+        internal static string MessageBox_Message_SystemError {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_SystemError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sai tên tài khoản hoặc mật khẩu!.
+        /// </summary>
+        internal static string MessageBox_Message_WrongAccountInfo {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_WrongAccountInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mật khảu cũ không chính xác!.
+        /// </summary>
+        internal static string MessageBox_Message_WrongOldPassword {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_WrongOldPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap unlock {
@@ -86,6 +293,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         internal static System.Drawing.Bitmap user_add {
             get {
                 object obj = ResourceManager.GetObject("user_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_setting {
+            get {
+                object obj = ResourceManager.GetObject("user-setting", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

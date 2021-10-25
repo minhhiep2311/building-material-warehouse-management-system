@@ -1,10 +1,10 @@
-﻿using BTL_LTTQ_QLKhoVLXD.Models;
-using BTL_LTTQ_QLKhoVLXD.Services;
-using System;
-using System.Data;
+﻿using System;
 using System.Windows.Forms;
+using BTL_LTTQ_QLKhoVLXD.Models;
+using BTL_LTTQ_QLKhoVLXD.Properties;
+using BTL_LTTQ_QLKhoVLXD.Services;
 
-namespace BTL_LTTQ_QLKhoVLXD
+namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
 {
     public partial class fLogin : Form
     {
@@ -22,8 +22,8 @@ namespace BTL_LTTQ_QLKhoVLXD
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //ForceLogin();
-            TryLogin();
+            ForceLogin();
+            //TryLogin();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace BTL_LTTQ_QLKhoVLXD
         private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = MessageBox.Show(
-                    "Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question
+                Resources.MessageBox_Message_ConfirmExit, Resources.MessageBox_Caption_Notification, MessageBoxButtons.YesNo, MessageBoxIcon.Question
                 ) == DialogResult.No;
         }
 
@@ -58,10 +58,10 @@ namespace BTL_LTTQ_QLKhoVLXD
             if (!ValidInput())
                 return;
 
-            string userName = txbUserName.Text;
-            string passWord = txbPassWord.Text;
+            var userName = txbUserName.Text;
+            var passWord = txbPassWord.Text;
 
-            User user = AccountService.Auth(userName, passWord);
+            var user = AccountService.Auth(userName, passWord);
 
             if (user != null)
             {
@@ -73,25 +73,25 @@ namespace BTL_LTTQ_QLKhoVLXD
                 Show();
             }
             else
-                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.MessageBox_Message_WrongAccountInfo, Resources.MessageBox_Caption_Notification, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void RedirectToApp(User user)
+        private static void RedirectToApp(User user)
         {
-            fTaskManager fTM = new fTaskManager(user);
-            fTM.ShowDialog();
+            var form = new TaskManager.fTaskManager(user);
+            form.ShowDialog();
         }
 
         private bool ValidInput()
         {
             if (txbUserName.Text == "")
             {
-                MessageBox.Show("Hãy nhập tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resources.MessageBox_Message_EnterUsername, Resources.MessageBox_Caption_Notification, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
             if (txbPassWord.Text == "")
             {
-                MessageBox.Show("Hãy nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resources.MessageBox_Message_EnterPassword, Resources.MessageBox_Caption_Notification, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
 
@@ -100,11 +100,11 @@ namespace BTL_LTTQ_QLKhoVLXD
 
         private void ForceLogin()
         {
-            User user = new User("Trần Minh Giang", "Cầu Giấy, Hà Nội", true, new DateTime(1999, 8, 11), new EmployeePosition(1, "Quản lý"), "tran_minh.giang");
-            fTaskManager fTM = new fTaskManager(user);
+            var user = new User("Trần Minh Giang", "Cầu Giấy, Hà Nội", true, new DateTime(1999, 8, 11), new EmployeePosition(1, "Quản lý"), "tran_minh.giang");
+            var form = new TaskManager.fTaskManager(user);
 
             Hide();
-            fTM.ShowDialog();
+            form.ShowDialog();
 
             txbPassWord.Text = "";
             Show();

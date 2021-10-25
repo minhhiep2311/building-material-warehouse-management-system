@@ -1,5 +1,5 @@
 ﻿
-namespace BTL_LTTQ_QLKhoVLXD
+namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
     partial class fTaskManager
     {
@@ -47,6 +47,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.btnCreateAccount_userSetting = new System.Windows.Forms.Button();
             this.btnChangePassword_userSetting = new System.Windows.Forms.Button();
             this.btnResetPassword_userSetting = new System.Windows.Forms.Button();
+            this.btnModifyInformation = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.tctlControl.SuspendLayout();
             this.tpgMaterial.SuspendLayout();
@@ -224,6 +225,7 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.flowLayoutPanel1.Controls.Add(this.btnCreateAccount_userSetting);
             this.flowLayoutPanel1.Controls.Add(this.btnChangePassword_userSetting);
             this.flowLayoutPanel1.Controls.Add(this.btnResetPassword_userSetting);
+            this.flowLayoutPanel1.Controls.Add(this.btnModifyInformation);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20);
@@ -274,6 +276,20 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.btnResetPassword_userSetting.UseVisualStyleBackColor = true;
             this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
             // 
+            // btnModifyInformation
+            // 
+            this.btnModifyInformation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnModifyInformation.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_setting;
+            this.btnModifyInformation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModifyInformation.Location = new System.Drawing.Point(40, 171);
+            this.btnModifyInformation.Margin = new System.Windows.Forms.Padding(20);
+            this.btnModifyInformation.Name = "btnModifyInformation";
+            this.btnModifyInformation.Size = new System.Drawing.Size(206, 91);
+            this.btnModifyInformation.TabIndex = 3;
+            this.btnModifyInformation.Text = "Thay đổi thông tin";
+            this.btnModifyInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModifyInformation.UseVisualStyleBackColor = true;
+            // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -296,7 +312,6 @@ namespace BTL_LTTQ_QLKhoVLXD
             this.tpgUserSetting.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
 
@@ -319,5 +334,6 @@ namespace BTL_LTTQ_QLKhoVLXD
         private System.Windows.Forms.Button btnCreateAccount_userSetting;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnResetPassword_userSetting;
+        private System.Windows.Forms.Button btnModifyInformation;
     }
 }

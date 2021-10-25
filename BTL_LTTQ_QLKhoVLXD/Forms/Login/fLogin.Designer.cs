@@ -1,5 +1,5 @@
 ﻿
-namespace BTL_LTTQ_QLKhoVLXD
+namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
 {
     partial class fLogin
     {
