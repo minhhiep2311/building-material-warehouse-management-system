@@ -72,37 +72,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel1_Buy = new System.Windows.Forms.Panel();
             this.lblTitle_Buy = new System.Windows.Forms.Label();
             this.tpgSell = new System.Windows.Forms.TabPage();
-            this.tpgReceipt = new System.Windows.Forms.TabPage();
-            this.tpgMaterial = new System.Windows.Forms.TabPage();
-            this.dgvMaterial = new System.Windows.Forms.DataGridView();
-            this.tpgStatistic = new System.Windows.Forms.TabPage();
-            this.tpgCustomer = new System.Windows.Forms.TabPage();
-            this.tpgSupplier = new System.Windows.Forms.TabPage();
-            this.tpgEmployee = new System.Windows.Forms.TabPage();
-            this.tpgUserSetting = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCreateAccount_userSetting = new System.Windows.Forms.Button();
-            this.btnChangeInformation_userSetting = new System.Windows.Forms.Button();
-            this.btnResetPassword_userSetting = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTitle_Sell = new System.Windows.Forms.Label();
-            this.grbGeneralInfor_Sell = new System.Windows.Forms.GroupBox();
-            this.lstCustomerId_Sell = new System.Windows.Forms.ListBox();
-            this.lstEmployeeId_Sell = new System.Windows.Forms.ListBox();
-            this.dtpReceiptDate_Sell = new System.Windows.Forms.DateTimePicker();
-            this.txtPhoneNumber_Sell = new System.Windows.Forms.TextBox();
-            this.txtAddress_Sell = new System.Windows.Forms.TextBox();
-            this.txtCustomerName_Sell = new System.Windows.Forms.TextBox();
-            this.txtEmployeeName_Sell = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.lblPhoneNumber_Sell = new System.Windows.Forms.Label();
-            this.lblAddress_Sell = new System.Windows.Forms.Label();
-            this.lblCustomerName_Sell = new System.Windows.Forms.Label();
-            this.lblCustomerId_Sell = new System.Windows.Forms.Label();
-            this.lblEmployeeName_Sell = new System.Windows.Forms.Label();
-            this.lblEmployeeId_Sell = new System.Windows.Forms.Label();
-            this.lblReceiptDate_Sell = new System.Windows.Forms.Label();
-            this.lblReceiptId_Sell = new System.Windows.Forms.Label();
             this.grbItemInfor_Sell = new System.Windows.Forms.GroupBox();
             this.btnPrintReceipt_Sell = new System.Windows.Forms.Button();
             this.btnCancelReceipt_Sell = new System.Windows.Forms.Button();
@@ -121,6 +90,37 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lblMaterialName_Sell = new System.Windows.Forms.Label();
             this.lblMaterialAmount_Sell = new System.Windows.Forms.Label();
             this.lblMaterialId_Sell = new System.Windows.Forms.Label();
+            this.grbGeneralInfor_Sell = new System.Windows.Forms.GroupBox();
+            this.lstCustomerId_Sell = new System.Windows.Forms.ListBox();
+            this.lstEmployeeId_Sell = new System.Windows.Forms.ListBox();
+            this.dtpReceiptDate_Sell = new System.Windows.Forms.DateTimePicker();
+            this.txtPhoneNumber_Sell = new System.Windows.Forms.TextBox();
+            this.txtAddress_Sell = new System.Windows.Forms.TextBox();
+            this.txtCustomerName_Sell = new System.Windows.Forms.TextBox();
+            this.txtEmployeeName_Sell = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.lblPhoneNumber_Sell = new System.Windows.Forms.Label();
+            this.lblAddress_Sell = new System.Windows.Forms.Label();
+            this.lblCustomerName_Sell = new System.Windows.Forms.Label();
+            this.lblCustomerId_Sell = new System.Windows.Forms.Label();
+            this.lblEmployeeName_Sell = new System.Windows.Forms.Label();
+            this.lblEmployeeId_Sell = new System.Windows.Forms.Label();
+            this.lblReceiptDate_Sell = new System.Windows.Forms.Label();
+            this.lblReceiptId_Sell = new System.Windows.Forms.Label();
+            this.panel1_sell = new System.Windows.Forms.Panel();
+            this.lblTitle_Sell = new System.Windows.Forms.Label();
+            this.tpgReceipt = new System.Windows.Forms.TabPage();
+            this.tpgMaterial = new System.Windows.Forms.TabPage();
+            this.dgvMaterial = new System.Windows.Forms.DataGridView();
+            this.tpgStatistic = new System.Windows.Forms.TabPage();
+            this.tpgCustomer = new System.Windows.Forms.TabPage();
+            this.tpgSupplier = new System.Windows.Forms.TabPage();
+            this.tpgEmployee = new System.Windows.Forms.TabPage();
+            this.tpgUserSetting = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCreateAccount_userSetting = new System.Windows.Forms.Button();
+            this.btnChangeInformation_userSetting = new System.Windows.Forms.Button();
+            this.btnResetPassword_userSetting = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.tctlControl.SuspendLayout();
             this.tpgBuy.SuspendLayout();
@@ -129,14 +129,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbGeneralInfor_Buy.SuspendLayout();
             this.panel1_Buy.SuspendLayout();
             this.tpgSell.SuspendLayout();
+            this.grbItemInfor_Sell.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_Sell)).BeginInit();
+            this.grbGeneralInfor_Sell.SuspendLayout();
+            this.panel1_sell.SuspendLayout();
             this.tpgMaterial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial)).BeginInit();
             this.tpgUserSetting.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.grbGeneralInfor_Sell.SuspendLayout();
-            this.grbItemInfor_Sell.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_Sell)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -564,7 +564,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.tpgSell.Controls.Add(this.grbItemInfor_Sell);
             this.tpgSell.Controls.Add(this.grbGeneralInfor_Sell);
-            this.tpgSell.Controls.Add(this.panel1);
+            this.tpgSell.Controls.Add(this.panel1_sell);
             this.tpgSell.Location = new System.Drawing.Point(174, 4);
             this.tpgSell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgSell.Name = "tpgSell";
@@ -573,324 +573,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSell.TabIndex = 1;
             this.tpgSell.Text = "Tạo Hóa Đơn Bán";
             this.tpgSell.UseVisualStyleBackColor = true;
-            // 
-            // tpgReceipt
-            // 
-            this.tpgReceipt.Location = new System.Drawing.Point(174, 4);
-            this.tpgReceipt.Margin = new System.Windows.Forms.Padding(0);
-            this.tpgReceipt.Name = "tpgReceipt";
-            this.tpgReceipt.Size = new System.Drawing.Size(985, 599);
-            this.tpgReceipt.TabIndex = 2;
-            this.tpgReceipt.Text = "Quản Lý Hóa đơn";
-            this.tpgReceipt.UseVisualStyleBackColor = true;
-            // 
-            // tpgMaterial
-            // 
-            this.tpgMaterial.Controls.Add(this.dgvMaterial);
-            this.tpgMaterial.Location = new System.Drawing.Point(174, 4);
-            this.tpgMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpgMaterial.Name = "tpgMaterial";
-            this.tpgMaterial.Size = new System.Drawing.Size(985, 599);
-            this.tpgMaterial.TabIndex = 3;
-            this.tpgMaterial.Text = "Vật liệu";
-            this.tpgMaterial.UseVisualStyleBackColor = true;
-            this.tpgMaterial.Enter += new System.EventHandler(this.tpgMaterial_Enter);
-            // 
-            // dgvMaterial
-            // 
-            this.dgvMaterial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaterial.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMaterial.Location = new System.Drawing.Point(0, 0);
-            this.dgvMaterial.Name = "dgvMaterial";
-            this.dgvMaterial.RowHeadersWidth = 51;
-            this.dgvMaterial.RowTemplate.Height = 24;
-            this.dgvMaterial.Size = new System.Drawing.Size(985, 599);
-            this.dgvMaterial.TabIndex = 0;
-            // 
-            // tpgStatistic
-            // 
-            this.tpgStatistic.Location = new System.Drawing.Point(174, 4);
-            this.tpgStatistic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpgStatistic.Name = "tpgStatistic";
-            this.tpgStatistic.Size = new System.Drawing.Size(985, 599);
-            this.tpgStatistic.TabIndex = 4;
-            this.tpgStatistic.Text = "Thống kê";
-            this.tpgStatistic.UseVisualStyleBackColor = true;
-            // 
-            // tpgCustomer
-            // 
-            this.tpgCustomer.Location = new System.Drawing.Point(174, 4);
-            this.tpgCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpgCustomer.Name = "tpgCustomer";
-            this.tpgCustomer.Size = new System.Drawing.Size(985, 599);
-            this.tpgCustomer.TabIndex = 5;
-            this.tpgCustomer.Text = "Khách hàng";
-            this.tpgCustomer.UseVisualStyleBackColor = true;
-            // 
-            // tpgSupplier
-            // 
-            this.tpgSupplier.Location = new System.Drawing.Point(174, 4);
-            this.tpgSupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpgSupplier.Name = "tpgSupplier";
-            this.tpgSupplier.Size = new System.Drawing.Size(985, 599);
-            this.tpgSupplier.TabIndex = 6;
-            this.tpgSupplier.Text = "Nhà cung cấp";
-            this.tpgSupplier.UseVisualStyleBackColor = true;
-            // 
-            // tpgEmployee
-            // 
-            this.tpgEmployee.Location = new System.Drawing.Point(174, 4);
-            this.tpgEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpgEmployee.Name = "tpgEmployee";
-            this.tpgEmployee.Size = new System.Drawing.Size(985, 599);
-            this.tpgEmployee.TabIndex = 7;
-            this.tpgEmployee.Text = "Nhân viên";
-            this.tpgEmployee.UseVisualStyleBackColor = true;
-            // 
-            // tpgUserSetting
-            // 
-            this.tpgUserSetting.Controls.Add(this.flowLayoutPanel1);
-            this.tpgUserSetting.Location = new System.Drawing.Point(174, 4);
-            this.tpgUserSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpgUserSetting.Name = "tpgUserSetting";
-            this.tpgUserSetting.Size = new System.Drawing.Size(985, 599);
-            this.tpgUserSetting.TabIndex = 8;
-            this.tpgUserSetting.Text = "Quản lý người dùng";
-            this.tpgUserSetting.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.btnCreateAccount_userSetting);
-            this.flowLayoutPanel1.Controls.Add(this.btnChangeInformation_userSetting);
-            this.flowLayoutPanel1.Controls.Add(this.btnResetPassword_userSetting);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(985, 599);
-            this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // btnCreateAccount_userSetting
-            // 
-            this.btnCreateAccount_userSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCreateAccount_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_add;
-            this.btnCreateAccount_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreateAccount_userSetting.Location = new System.Drawing.Point(40, 40);
-            this.btnCreateAccount_userSetting.Margin = new System.Windows.Forms.Padding(20);
-            this.btnCreateAccount_userSetting.Name = "btnCreateAccount_userSetting";
-            this.btnCreateAccount_userSetting.Size = new System.Drawing.Size(206, 91);
-            this.btnCreateAccount_userSetting.TabIndex = 0;
-            this.btnCreateAccount_userSetting.Text = "Tạo tài khoản";
-            this.btnCreateAccount_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCreateAccount_userSetting.UseVisualStyleBackColor = true;
-            this.btnCreateAccount_userSetting.Click += new System.EventHandler(this.btnCreateAccount_userSetting_Click);
-            // 
-            // btnChangeInformation_userSetting
-            // 
-            this.btnChangeInformation_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_setting;
-            this.btnChangeInformation_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChangeInformation_userSetting.Location = new System.Drawing.Point(286, 40);
-            this.btnChangeInformation_userSetting.Margin = new System.Windows.Forms.Padding(20);
-            this.btnChangeInformation_userSetting.Name = "btnChangeInformation_userSetting";
-            this.btnChangeInformation_userSetting.Size = new System.Drawing.Size(206, 91);
-            this.btnChangeInformation_userSetting.TabIndex = 1;
-            this.btnChangeInformation_userSetting.Text = "Thay đổi thông tin cá nhân";
-            this.btnChangeInformation_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChangeInformation_userSetting.UseVisualStyleBackColor = true;
-            this.btnChangeInformation_userSetting.Click += new System.EventHandler(this.btnChangeInformation_userSetting_Click);
-            // 
-            // btnResetPassword_userSetting
-            // 
-            this.btnResetPassword_userSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnResetPassword_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.unlock;
-            this.btnResetPassword_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnResetPassword_userSetting.Location = new System.Drawing.Point(532, 40);
-            this.btnResetPassword_userSetting.Margin = new System.Windows.Forms.Padding(20);
-            this.btnResetPassword_userSetting.Name = "btnResetPassword_userSetting";
-            this.btnResetPassword_userSetting.Size = new System.Drawing.Size(206, 91);
-            this.btnResetPassword_userSetting.TabIndex = 2;
-            this.btnResetPassword_userSetting.Text = "Đặt lại mật khẩu";
-            this.btnResetPassword_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnResetPassword_userSetting.UseVisualStyleBackColor = true;
-            this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblTitle_Sell);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(979, 38);
-            this.panel1.TabIndex = 1;
-            // 
-            // lblTitle_Sell
-            // 
-            this.lblTitle_Sell.AutoSize = true;
-            this.lblTitle_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitle_Sell.Location = new System.Drawing.Point(345, 3);
-            this.lblTitle_Sell.Name = "lblTitle_Sell";
-            this.lblTitle_Sell.Size = new System.Drawing.Size(306, 31);
-            this.lblTitle_Sell.TabIndex = 0;
-            this.lblTitle_Sell.Text = "HÓA ĐƠN BÁN HÀNG";
-            // 
-            // grbGeneralInfor_Sell
-            // 
-            this.grbGeneralInfor_Sell.Controls.Add(this.lstCustomerId_Sell);
-            this.grbGeneralInfor_Sell.Controls.Add(this.lstEmployeeId_Sell);
-            this.grbGeneralInfor_Sell.Controls.Add(this.dtpReceiptDate_Sell);
-            this.grbGeneralInfor_Sell.Controls.Add(this.txtPhoneNumber_Sell);
-            this.grbGeneralInfor_Sell.Controls.Add(this.txtAddress_Sell);
-            this.grbGeneralInfor_Sell.Controls.Add(this.txtCustomerName_Sell);
-            this.grbGeneralInfor_Sell.Controls.Add(this.txtEmployeeName_Sell);
-            this.grbGeneralInfor_Sell.Controls.Add(this.textBox5);
-            this.grbGeneralInfor_Sell.Controls.Add(this.lblPhoneNumber_Sell);
-            this.grbGeneralInfor_Sell.Controls.Add(this.lblAddress_Sell);
-            this.grbGeneralInfor_Sell.Controls.Add(this.lblCustomerName_Sell);
-            this.grbGeneralInfor_Sell.Controls.Add(this.lblCustomerId_Sell);
-            this.grbGeneralInfor_Sell.Controls.Add(this.lblEmployeeName_Sell);
-            this.grbGeneralInfor_Sell.Controls.Add(this.lblEmployeeId_Sell);
-            this.grbGeneralInfor_Sell.Controls.Add(this.lblReceiptDate_Sell);
-            this.grbGeneralInfor_Sell.Controls.Add(this.lblReceiptId_Sell);
-            this.grbGeneralInfor_Sell.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grbGeneralInfor_Sell.Location = new System.Drawing.Point(3, 40);
-            this.grbGeneralInfor_Sell.Name = "grbGeneralInfor_Sell";
-            this.grbGeneralInfor_Sell.Size = new System.Drawing.Size(979, 202);
-            this.grbGeneralInfor_Sell.TabIndex = 2;
-            this.grbGeneralInfor_Sell.TabStop = false;
-            this.grbGeneralInfor_Sell.Text = "Thông tin chung";
-            // 
-            // lstCustomerId_Sell
-            // 
-            this.lstCustomerId_Sell.FormattingEnabled = true;
-            this.lstCustomerId_Sell.ItemHeight = 20;
-            this.lstCustomerId_Sell.Location = new System.Drawing.Point(628, 34);
-            this.lstCustomerId_Sell.Name = "lstCustomerId_Sell";
-            this.lstCustomerId_Sell.Size = new System.Drawing.Size(283, 24);
-            this.lstCustomerId_Sell.TabIndex = 15;
-            // 
-            // lstEmployeeId_Sell
-            // 
-            this.lstEmployeeId_Sell.FormattingEnabled = true;
-            this.lstEmployeeId_Sell.ItemHeight = 20;
-            this.lstEmployeeId_Sell.Location = new System.Drawing.Point(151, 119);
-            this.lstEmployeeId_Sell.Name = "lstEmployeeId_Sell";
-            this.lstEmployeeId_Sell.Size = new System.Drawing.Size(283, 24);
-            this.lstEmployeeId_Sell.TabIndex = 14;
-            // 
-            // dtpReceiptDate_Sell
-            // 
-            this.dtpReceiptDate_Sell.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpReceiptDate_Sell.Location = new System.Drawing.Point(152, 75);
-            this.dtpReceiptDate_Sell.Name = "dtpReceiptDate_Sell";
-            this.dtpReceiptDate_Sell.Size = new System.Drawing.Size(282, 26);
-            this.dtpReceiptDate_Sell.TabIndex = 13;
-            // 
-            // txtPhoneNumber_Sell
-            // 
-            this.txtPhoneNumber_Sell.Location = new System.Drawing.Point(628, 160);
-            this.txtPhoneNumber_Sell.Name = "txtPhoneNumber_Sell";
-            this.txtPhoneNumber_Sell.Size = new System.Drawing.Size(283, 26);
-            this.txtPhoneNumber_Sell.TabIndex = 12;
-            // 
-            // txtAddress_Sell
-            // 
-            this.txtAddress_Sell.Location = new System.Drawing.Point(628, 123);
-            this.txtAddress_Sell.Name = "txtAddress_Sell";
-            this.txtAddress_Sell.Size = new System.Drawing.Size(283, 26);
-            this.txtAddress_Sell.TabIndex = 11;
-            // 
-            // txtCustomerName_Sell
-            // 
-            this.txtCustomerName_Sell.Location = new System.Drawing.Point(628, 75);
-            this.txtCustomerName_Sell.Name = "txtCustomerName_Sell";
-            this.txtCustomerName_Sell.Size = new System.Drawing.Size(283, 26);
-            this.txtCustomerName_Sell.TabIndex = 10;
-            // 
-            // txtEmployeeName_Sell
-            // 
-            this.txtEmployeeName_Sell.Location = new System.Drawing.Point(151, 157);
-            this.txtEmployeeName_Sell.Name = "txtEmployeeName_Sell";
-            this.txtEmployeeName_Sell.Size = new System.Drawing.Size(283, 26);
-            this.txtEmployeeName_Sell.TabIndex = 9;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(152, 34);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(283, 26);
-            this.textBox5.TabIndex = 8;
-            // 
-            // lblPhoneNumber_Sell
-            // 
-            this.lblPhoneNumber_Sell.AutoSize = true;
-            this.lblPhoneNumber_Sell.Location = new System.Drawing.Point(462, 163);
-            this.lblPhoneNumber_Sell.Name = "lblPhoneNumber_Sell";
-            this.lblPhoneNumber_Sell.Size = new System.Drawing.Size(100, 20);
-            this.lblPhoneNumber_Sell.TabIndex = 7;
-            this.lblPhoneNumber_Sell.Text = "Điện thoại:";
-            // 
-            // lblAddress_Sell
-            // 
-            this.lblAddress_Sell.AutoSize = true;
-            this.lblAddress_Sell.Location = new System.Drawing.Point(462, 119);
-            this.lblAddress_Sell.Name = "lblAddress_Sell";
-            this.lblAddress_Sell.Size = new System.Drawing.Size(74, 20);
-            this.lblAddress_Sell.TabIndex = 6;
-            this.lblAddress_Sell.Text = "Địa chỉ:";
-            // 
-            // lblCustomerName_Sell
-            // 
-            this.lblCustomerName_Sell.AutoSize = true;
-            this.lblCustomerName_Sell.Location = new System.Drawing.Point(462, 75);
-            this.lblCustomerName_Sell.Name = "lblCustomerName_Sell";
-            this.lblCustomerName_Sell.Size = new System.Drawing.Size(147, 20);
-            this.lblCustomerName_Sell.TabIndex = 5;
-            this.lblCustomerName_Sell.Text = "Tên khách hàng:";
-            // 
-            // lblCustomerId_Sell
-            // 
-            this.lblCustomerId_Sell.AutoSize = true;
-            this.lblCustomerId_Sell.Location = new System.Drawing.Point(462, 34);
-            this.lblCustomerId_Sell.Name = "lblCustomerId_Sell";
-            this.lblCustomerId_Sell.Size = new System.Drawing.Size(141, 20);
-            this.lblCustomerId_Sell.TabIndex = 4;
-            this.lblCustomerId_Sell.Text = "Mã khách hàng:";
-            // 
-            // lblEmployeeName_Sell
-            // 
-            this.lblEmployeeName_Sell.AutoSize = true;
-            this.lblEmployeeName_Sell.Location = new System.Drawing.Point(6, 166);
-            this.lblEmployeeName_Sell.Name = "lblEmployeeName_Sell";
-            this.lblEmployeeName_Sell.Size = new System.Drawing.Size(132, 20);
-            this.lblEmployeeName_Sell.TabIndex = 3;
-            this.lblEmployeeName_Sell.Text = "Tên nhân viên:";
-            // 
-            // lblEmployeeId_Sell
-            // 
-            this.lblEmployeeId_Sell.AutoSize = true;
-            this.lblEmployeeId_Sell.Location = new System.Drawing.Point(6, 123);
-            this.lblEmployeeId_Sell.Name = "lblEmployeeId_Sell";
-            this.lblEmployeeId_Sell.Size = new System.Drawing.Size(126, 20);
-            this.lblEmployeeId_Sell.TabIndex = 2;
-            this.lblEmployeeId_Sell.Text = "Mã nhân viên:";
-            // 
-            // lblReceiptDate_Sell
-            // 
-            this.lblReceiptDate_Sell.AutoSize = true;
-            this.lblReceiptDate_Sell.Location = new System.Drawing.Point(6, 75);
-            this.lblReceiptDate_Sell.Name = "lblReceiptDate_Sell";
-            this.lblReceiptDate_Sell.Size = new System.Drawing.Size(93, 20);
-            this.lblReceiptDate_Sell.TabIndex = 1;
-            this.lblReceiptDate_Sell.Text = "Ngày bán:";
-            // 
-            // lblReceiptId_Sell
-            // 
-            this.lblReceiptId_Sell.AutoSize = true;
-            this.lblReceiptId_Sell.Location = new System.Drawing.Point(6, 34);
-            this.lblReceiptId_Sell.Name = "lblReceiptId_Sell";
-            this.lblReceiptId_Sell.Size = new System.Drawing.Size(112, 20);
-            this.lblReceiptId_Sell.TabIndex = 0;
-            this.lblReceiptId_Sell.Text = "Mã hóa đơn:";
             // 
             // grbItemInfor_Sell
             // 
@@ -1063,6 +745,324 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lblMaterialId_Sell.TabIndex = 0;
             this.lblMaterialId_Sell.Text = "Mã hàng:";
             // 
+            // grbGeneralInfor_Sell
+            // 
+            this.grbGeneralInfor_Sell.Controls.Add(this.lstCustomerId_Sell);
+            this.grbGeneralInfor_Sell.Controls.Add(this.lstEmployeeId_Sell);
+            this.grbGeneralInfor_Sell.Controls.Add(this.dtpReceiptDate_Sell);
+            this.grbGeneralInfor_Sell.Controls.Add(this.txtPhoneNumber_Sell);
+            this.grbGeneralInfor_Sell.Controls.Add(this.txtAddress_Sell);
+            this.grbGeneralInfor_Sell.Controls.Add(this.txtCustomerName_Sell);
+            this.grbGeneralInfor_Sell.Controls.Add(this.txtEmployeeName_Sell);
+            this.grbGeneralInfor_Sell.Controls.Add(this.textBox5);
+            this.grbGeneralInfor_Sell.Controls.Add(this.lblPhoneNumber_Sell);
+            this.grbGeneralInfor_Sell.Controls.Add(this.lblAddress_Sell);
+            this.grbGeneralInfor_Sell.Controls.Add(this.lblCustomerName_Sell);
+            this.grbGeneralInfor_Sell.Controls.Add(this.lblCustomerId_Sell);
+            this.grbGeneralInfor_Sell.Controls.Add(this.lblEmployeeName_Sell);
+            this.grbGeneralInfor_Sell.Controls.Add(this.lblEmployeeId_Sell);
+            this.grbGeneralInfor_Sell.Controls.Add(this.lblReceiptDate_Sell);
+            this.grbGeneralInfor_Sell.Controls.Add(this.lblReceiptId_Sell);
+            this.grbGeneralInfor_Sell.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbGeneralInfor_Sell.Location = new System.Drawing.Point(3, 40);
+            this.grbGeneralInfor_Sell.Name = "grbGeneralInfor_Sell";
+            this.grbGeneralInfor_Sell.Size = new System.Drawing.Size(979, 202);
+            this.grbGeneralInfor_Sell.TabIndex = 2;
+            this.grbGeneralInfor_Sell.TabStop = false;
+            this.grbGeneralInfor_Sell.Text = "Thông tin chung";
+            // 
+            // lstCustomerId_Sell
+            // 
+            this.lstCustomerId_Sell.FormattingEnabled = true;
+            this.lstCustomerId_Sell.ItemHeight = 20;
+            this.lstCustomerId_Sell.Location = new System.Drawing.Point(628, 34);
+            this.lstCustomerId_Sell.Name = "lstCustomerId_Sell";
+            this.lstCustomerId_Sell.Size = new System.Drawing.Size(283, 24);
+            this.lstCustomerId_Sell.TabIndex = 15;
+            // 
+            // lstEmployeeId_Sell
+            // 
+            this.lstEmployeeId_Sell.FormattingEnabled = true;
+            this.lstEmployeeId_Sell.ItemHeight = 20;
+            this.lstEmployeeId_Sell.Location = new System.Drawing.Point(151, 119);
+            this.lstEmployeeId_Sell.Name = "lstEmployeeId_Sell";
+            this.lstEmployeeId_Sell.Size = new System.Drawing.Size(283, 24);
+            this.lstEmployeeId_Sell.TabIndex = 14;
+            // 
+            // dtpReceiptDate_Sell
+            // 
+            this.dtpReceiptDate_Sell.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpReceiptDate_Sell.Location = new System.Drawing.Point(152, 75);
+            this.dtpReceiptDate_Sell.Name = "dtpReceiptDate_Sell";
+            this.dtpReceiptDate_Sell.Size = new System.Drawing.Size(282, 26);
+            this.dtpReceiptDate_Sell.TabIndex = 13;
+            // 
+            // txtPhoneNumber_Sell
+            // 
+            this.txtPhoneNumber_Sell.Location = new System.Drawing.Point(628, 160);
+            this.txtPhoneNumber_Sell.Name = "txtPhoneNumber_Sell";
+            this.txtPhoneNumber_Sell.Size = new System.Drawing.Size(283, 26);
+            this.txtPhoneNumber_Sell.TabIndex = 12;
+            // 
+            // txtAddress_Sell
+            // 
+            this.txtAddress_Sell.Location = new System.Drawing.Point(628, 123);
+            this.txtAddress_Sell.Name = "txtAddress_Sell";
+            this.txtAddress_Sell.Size = new System.Drawing.Size(283, 26);
+            this.txtAddress_Sell.TabIndex = 11;
+            // 
+            // txtCustomerName_Sell
+            // 
+            this.txtCustomerName_Sell.Location = new System.Drawing.Point(628, 75);
+            this.txtCustomerName_Sell.Name = "txtCustomerName_Sell";
+            this.txtCustomerName_Sell.Size = new System.Drawing.Size(283, 26);
+            this.txtCustomerName_Sell.TabIndex = 10;
+            // 
+            // txtEmployeeName_Sell
+            // 
+            this.txtEmployeeName_Sell.Location = new System.Drawing.Point(151, 157);
+            this.txtEmployeeName_Sell.Name = "txtEmployeeName_Sell";
+            this.txtEmployeeName_Sell.Size = new System.Drawing.Size(283, 26);
+            this.txtEmployeeName_Sell.TabIndex = 9;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(152, 34);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(283, 26);
+            this.textBox5.TabIndex = 8;
+            // 
+            // lblPhoneNumber_Sell
+            // 
+            this.lblPhoneNumber_Sell.AutoSize = true;
+            this.lblPhoneNumber_Sell.Location = new System.Drawing.Point(462, 163);
+            this.lblPhoneNumber_Sell.Name = "lblPhoneNumber_Sell";
+            this.lblPhoneNumber_Sell.Size = new System.Drawing.Size(100, 20);
+            this.lblPhoneNumber_Sell.TabIndex = 7;
+            this.lblPhoneNumber_Sell.Text = "Điện thoại:";
+            // 
+            // lblAddress_Sell
+            // 
+            this.lblAddress_Sell.AutoSize = true;
+            this.lblAddress_Sell.Location = new System.Drawing.Point(462, 119);
+            this.lblAddress_Sell.Name = "lblAddress_Sell";
+            this.lblAddress_Sell.Size = new System.Drawing.Size(74, 20);
+            this.lblAddress_Sell.TabIndex = 6;
+            this.lblAddress_Sell.Text = "Địa chỉ:";
+            // 
+            // lblCustomerName_Sell
+            // 
+            this.lblCustomerName_Sell.AutoSize = true;
+            this.lblCustomerName_Sell.Location = new System.Drawing.Point(462, 75);
+            this.lblCustomerName_Sell.Name = "lblCustomerName_Sell";
+            this.lblCustomerName_Sell.Size = new System.Drawing.Size(147, 20);
+            this.lblCustomerName_Sell.TabIndex = 5;
+            this.lblCustomerName_Sell.Text = "Tên khách hàng:";
+            // 
+            // lblCustomerId_Sell
+            // 
+            this.lblCustomerId_Sell.AutoSize = true;
+            this.lblCustomerId_Sell.Location = new System.Drawing.Point(462, 34);
+            this.lblCustomerId_Sell.Name = "lblCustomerId_Sell";
+            this.lblCustomerId_Sell.Size = new System.Drawing.Size(141, 20);
+            this.lblCustomerId_Sell.TabIndex = 4;
+            this.lblCustomerId_Sell.Text = "Mã khách hàng:";
+            // 
+            // lblEmployeeName_Sell
+            // 
+            this.lblEmployeeName_Sell.AutoSize = true;
+            this.lblEmployeeName_Sell.Location = new System.Drawing.Point(6, 166);
+            this.lblEmployeeName_Sell.Name = "lblEmployeeName_Sell";
+            this.lblEmployeeName_Sell.Size = new System.Drawing.Size(132, 20);
+            this.lblEmployeeName_Sell.TabIndex = 3;
+            this.lblEmployeeName_Sell.Text = "Tên nhân viên:";
+            // 
+            // lblEmployeeId_Sell
+            // 
+            this.lblEmployeeId_Sell.AutoSize = true;
+            this.lblEmployeeId_Sell.Location = new System.Drawing.Point(6, 123);
+            this.lblEmployeeId_Sell.Name = "lblEmployeeId_Sell";
+            this.lblEmployeeId_Sell.Size = new System.Drawing.Size(126, 20);
+            this.lblEmployeeId_Sell.TabIndex = 2;
+            this.lblEmployeeId_Sell.Text = "Mã nhân viên:";
+            // 
+            // lblReceiptDate_Sell
+            // 
+            this.lblReceiptDate_Sell.AutoSize = true;
+            this.lblReceiptDate_Sell.Location = new System.Drawing.Point(6, 75);
+            this.lblReceiptDate_Sell.Name = "lblReceiptDate_Sell";
+            this.lblReceiptDate_Sell.Size = new System.Drawing.Size(93, 20);
+            this.lblReceiptDate_Sell.TabIndex = 1;
+            this.lblReceiptDate_Sell.Text = "Ngày bán:";
+            // 
+            // lblReceiptId_Sell
+            // 
+            this.lblReceiptId_Sell.AutoSize = true;
+            this.lblReceiptId_Sell.Location = new System.Drawing.Point(6, 34);
+            this.lblReceiptId_Sell.Name = "lblReceiptId_Sell";
+            this.lblReceiptId_Sell.Size = new System.Drawing.Size(112, 20);
+            this.lblReceiptId_Sell.TabIndex = 0;
+            this.lblReceiptId_Sell.Text = "Mã hóa đơn:";
+            // 
+            // panel1_sell
+            // 
+            this.panel1_sell.Controls.Add(this.lblTitle_Sell);
+            this.panel1_sell.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1_sell.Location = new System.Drawing.Point(3, 2);
+            this.panel1_sell.Name = "panel1_sell";
+            this.panel1_sell.Size = new System.Drawing.Size(979, 38);
+            this.panel1_sell.TabIndex = 1;
+            // 
+            // lblTitle_Sell
+            // 
+            this.lblTitle_Sell.AutoSize = true;
+            this.lblTitle_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.lblTitle_Sell.Location = new System.Drawing.Point(345, 3);
+            this.lblTitle_Sell.Name = "lblTitle_Sell";
+            this.lblTitle_Sell.Size = new System.Drawing.Size(306, 31);
+            this.lblTitle_Sell.TabIndex = 0;
+            this.lblTitle_Sell.Text = "HÓA ĐƠN BÁN HÀNG";
+            // 
+            // tpgReceipt
+            // 
+            this.tpgReceipt.Location = new System.Drawing.Point(174, 4);
+            this.tpgReceipt.Margin = new System.Windows.Forms.Padding(0);
+            this.tpgReceipt.Name = "tpgReceipt";
+            this.tpgReceipt.Size = new System.Drawing.Size(985, 599);
+            this.tpgReceipt.TabIndex = 2;
+            this.tpgReceipt.Text = "Quản Lý Hóa đơn";
+            this.tpgReceipt.UseVisualStyleBackColor = true;
+            // 
+            // tpgMaterial
+            // 
+            this.tpgMaterial.Controls.Add(this.dgvMaterial);
+            this.tpgMaterial.Location = new System.Drawing.Point(174, 4);
+            this.tpgMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgMaterial.Name = "tpgMaterial";
+            this.tpgMaterial.Size = new System.Drawing.Size(985, 599);
+            this.tpgMaterial.TabIndex = 3;
+            this.tpgMaterial.Text = "Vật liệu";
+            this.tpgMaterial.UseVisualStyleBackColor = true;
+            this.tpgMaterial.Enter += new System.EventHandler(this.tpgMaterial_Enter);
+            // 
+            // dgvMaterial
+            // 
+            this.dgvMaterial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaterial.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMaterial.Location = new System.Drawing.Point(0, 0);
+            this.dgvMaterial.Name = "dgvMaterial";
+            this.dgvMaterial.RowHeadersWidth = 51;
+            this.dgvMaterial.RowTemplate.Height = 24;
+            this.dgvMaterial.Size = new System.Drawing.Size(985, 599);
+            this.dgvMaterial.TabIndex = 0;
+            // 
+            // tpgStatistic
+            // 
+            this.tpgStatistic.Location = new System.Drawing.Point(174, 4);
+            this.tpgStatistic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgStatistic.Name = "tpgStatistic";
+            this.tpgStatistic.Size = new System.Drawing.Size(985, 599);
+            this.tpgStatistic.TabIndex = 4;
+            this.tpgStatistic.Text = "Thống kê";
+            this.tpgStatistic.UseVisualStyleBackColor = true;
+            // 
+            // tpgCustomer
+            // 
+            this.tpgCustomer.Location = new System.Drawing.Point(174, 4);
+            this.tpgCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgCustomer.Name = "tpgCustomer";
+            this.tpgCustomer.Size = new System.Drawing.Size(985, 599);
+            this.tpgCustomer.TabIndex = 5;
+            this.tpgCustomer.Text = "Khách hàng";
+            this.tpgCustomer.UseVisualStyleBackColor = true;
+            // 
+            // tpgSupplier
+            // 
+            this.tpgSupplier.Location = new System.Drawing.Point(174, 4);
+            this.tpgSupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgSupplier.Name = "tpgSupplier";
+            this.tpgSupplier.Size = new System.Drawing.Size(985, 599);
+            this.tpgSupplier.TabIndex = 6;
+            this.tpgSupplier.Text = "Nhà cung cấp";
+            this.tpgSupplier.UseVisualStyleBackColor = true;
+            // 
+            // tpgEmployee
+            // 
+            this.tpgEmployee.Location = new System.Drawing.Point(174, 4);
+            this.tpgEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgEmployee.Name = "tpgEmployee";
+            this.tpgEmployee.Size = new System.Drawing.Size(985, 599);
+            this.tpgEmployee.TabIndex = 7;
+            this.tpgEmployee.Text = "Nhân viên";
+            this.tpgEmployee.UseVisualStyleBackColor = true;
+            // 
+            // tpgUserSetting
+            // 
+            this.tpgUserSetting.Controls.Add(this.flowLayoutPanel1);
+            this.tpgUserSetting.Location = new System.Drawing.Point(174, 4);
+            this.tpgUserSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpgUserSetting.Name = "tpgUserSetting";
+            this.tpgUserSetting.Size = new System.Drawing.Size(985, 599);
+            this.tpgUserSetting.TabIndex = 8;
+            this.tpgUserSetting.Text = "Quản lý người dùng";
+            this.tpgUserSetting.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnCreateAccount_userSetting);
+            this.flowLayoutPanel1.Controls.Add(this.btnChangeInformation_userSetting);
+            this.flowLayoutPanel1.Controls.Add(this.btnResetPassword_userSetting);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(985, 599);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // btnCreateAccount_userSetting
+            // 
+            this.btnCreateAccount_userSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCreateAccount_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_add;
+            this.btnCreateAccount_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreateAccount_userSetting.Location = new System.Drawing.Point(40, 40);
+            this.btnCreateAccount_userSetting.Margin = new System.Windows.Forms.Padding(20);
+            this.btnCreateAccount_userSetting.Name = "btnCreateAccount_userSetting";
+            this.btnCreateAccount_userSetting.Size = new System.Drawing.Size(206, 91);
+            this.btnCreateAccount_userSetting.TabIndex = 0;
+            this.btnCreateAccount_userSetting.Text = "Tạo tài khoản";
+            this.btnCreateAccount_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCreateAccount_userSetting.UseVisualStyleBackColor = true;
+            this.btnCreateAccount_userSetting.Click += new System.EventHandler(this.btnCreateAccount_userSetting_Click);
+            // 
+            // btnChangeInformation_userSetting
+            // 
+            this.btnChangeInformation_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_setting;
+            this.btnChangeInformation_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChangeInformation_userSetting.Location = new System.Drawing.Point(286, 40);
+            this.btnChangeInformation_userSetting.Margin = new System.Windows.Forms.Padding(20);
+            this.btnChangeInformation_userSetting.Name = "btnChangeInformation_userSetting";
+            this.btnChangeInformation_userSetting.Size = new System.Drawing.Size(206, 91);
+            this.btnChangeInformation_userSetting.TabIndex = 1;
+            this.btnChangeInformation_userSetting.Text = "Thay đổi thông tin cá nhân";
+            this.btnChangeInformation_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChangeInformation_userSetting.UseVisualStyleBackColor = true;
+            this.btnChangeInformation_userSetting.Click += new System.EventHandler(this.btnChangeInformation_userSetting_Click);
+            // 
+            // btnResetPassword_userSetting
+            // 
+            this.btnResetPassword_userSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnResetPassword_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.unlock;
+            this.btnResetPassword_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnResetPassword_userSetting.Location = new System.Drawing.Point(532, 40);
+            this.btnResetPassword_userSetting.Margin = new System.Windows.Forms.Padding(20);
+            this.btnResetPassword_userSetting.Name = "btnResetPassword_userSetting";
+            this.btnResetPassword_userSetting.Size = new System.Drawing.Size(206, 91);
+            this.btnResetPassword_userSetting.TabIndex = 2;
+            this.btnResetPassword_userSetting.Text = "Đặt lại mật khẩu";
+            this.btnResetPassword_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnResetPassword_userSetting.UseVisualStyleBackColor = true;
+            this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
+            // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1089,17 +1089,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel1_Buy.ResumeLayout(false);
             this.panel1_Buy.PerformLayout();
             this.tpgSell.ResumeLayout(false);
+            this.grbItemInfor_Sell.ResumeLayout(false);
+            this.grbItemInfor_Sell.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_Sell)).EndInit();
+            this.grbGeneralInfor_Sell.ResumeLayout(false);
+            this.grbGeneralInfor_Sell.PerformLayout();
+            this.panel1_sell.ResumeLayout(false);
+            this.panel1_sell.PerformLayout();
             this.tpgMaterial.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial)).EndInit();
             this.tpgUserSetting.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.grbGeneralInfor_Sell.ResumeLayout(false);
-            this.grbGeneralInfor_Sell.PerformLayout();
-            this.grbItemInfor_Sell.ResumeLayout(false);
-            this.grbItemInfor_Sell.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_Sell)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1196,7 +1196,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Label lblEmployeeId_Sell;
         private System.Windows.Forms.Label lblReceiptDate_Sell;
         private System.Windows.Forms.Label lblReceiptId_Sell;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel1_sell;
         private System.Windows.Forms.Label lblTitle_Sell;
     }
 }
