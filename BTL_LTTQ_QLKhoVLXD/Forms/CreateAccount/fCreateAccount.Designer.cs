@@ -283,10 +283,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.grbAccount);
             this.Controls.Add(this.grbInfo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "fCreateAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "CreateAccount";
+            this.Text = "Tạo tài khoản";
             this.Load += new System.EventHandler(this.fCreateAccount_Load);
             this.grbInfo.ResumeLayout(false);
             this.grbInfo.PerformLayout();

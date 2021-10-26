@@ -47,12 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Constant\PermissionConstant.cs" />
     <Compile Include="Forms\ChangePassword\fChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ChangePassword\fChangePassword.Designer.cs">
       <DependentUpon>fChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\PermissionConstant.cs" />
+    <Compile Include="Forms\ChangeInformation\fChangeInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeInformation\fChangeInformation.Designer.cs">
+      <DependentUpon>fChangeInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CreateAccount\fCreateAccount.cs">
       <SubType>Form</SubType>
@@ -65,33 +71,6 @@
     </Compile>
     <Compile Include="Forms\ResetPassword\fResetPassword.Designer.cs">
       <DependentUpon>fResetPassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TaskManager\Components\buy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TaskManager\Components\customer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TaskManager\Components\employee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TaskManager\Components\material.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TaskManager\Components\receipt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TaskManager\Components\sell.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TaskManager\Components\statistic.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TaskManager\Components\supplier.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TaskManager\Components\userSetting.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\EmployeePosition.cs" />
     <Compile Include="Models\Material.cs" />
@@ -121,6 +100,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Helper.cs" />
+    <EmbeddedResource Include="Forms\ChangeInformation\fChangeInformation.resx">
+      <DependentUpon>fChangeInformation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangePassword\fChangePassword.resx">
       <DependentUpon>fChangePassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +152,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Icons\unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Icons\user-setting.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

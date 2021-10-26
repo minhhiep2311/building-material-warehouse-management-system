@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace BTL_LTTQ_QLKhoVLXD.Assets.Constant
+namespace BTL_LTTQ_QLKhoVLXD.Utils
 {
-    class PermissionConstant
+    internal class PermissionConstant
     {
         public static readonly List<int> CreateAccount = new List<int> { 1 };
 

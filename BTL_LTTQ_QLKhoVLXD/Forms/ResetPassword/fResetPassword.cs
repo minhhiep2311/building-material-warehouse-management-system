@@ -2,17 +2,18 @@
 using BTL_LTTQ_QLKhoVLXD.Services;
 using System;
 using System.Windows.Forms;
+using BTL_LTTQ_QLKhoVLXD.Properties;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
 {
     public partial class fResetPassword : Form
     {
-        private readonly User User;
+        private readonly User _user;
 
         public fResetPassword(User user)
         {
             InitializeComponent();
-            User = user;
+            _user = user;
         }
 
         #region Events
@@ -60,12 +61,22 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
         {
             if (txtUsername.Text == "")
             {
-                MessageBox.Show("Hãy nhập tên đăng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_EnterUsername,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
                 return false;
             }
             if (txtPassword.Text == "")
             {
-                MessageBox.Show("Hãy nhập mật khẩu mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_EnterNewPassword,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
                 return false;
             }
 
@@ -74,16 +85,26 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
 
         private bool ValidAccount()
         {
-            string username = txtUsername.Text;
+            var username = txtUsername.Text;
 
-            if (username == User.Account)
+            if (username == _user.Account)
             {
-                MessageBox.Show("Không thể đặt lại mật khẩu cho chính mình! Hãy sử dụng chức năng \"Đổi mật khẩu\"", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_CannotSelfResetPassword,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
                 return false;
             }
             if (!AccountService.CheckAccountExists(username))
             {
-                MessageBox.Show($"Tài khoản {username} không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    string.Format(Resources.MessageBox_Message_AccountNotExist, username), 
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
                 return false;
             }
 
@@ -93,22 +114,32 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
         private bool ConfirmChange()
         {
             return MessageBox.Show(
-                $"Mật khảu của tài khoản {txtUsername.Text} sẽ được thay đổi. Vẫn tiếp tục?",
-                "Thông báo",
+                string.Format(Resources.MessageBox_Message_ConfirmResetPassword, txtUsername.Text),
+                Resources.MessageBox_Caption_Notification,
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning
-                ) == DialogResult.Yes;
+            ) == DialogResult.Yes;
         }
 
         private void Reset()
         {
             if (AccountService.ChangePassword(txtUsername.Text, txtPassword.Text))
             {
-                MessageBox.Show("Thay đổi mật khẩu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_ChangeSuccessfully, 
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
                 Close();
             }
             else
-                MessageBox.Show("Lỗi hệ thống! Hãy thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_SystemError, 
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
         }
 
         #endregion
