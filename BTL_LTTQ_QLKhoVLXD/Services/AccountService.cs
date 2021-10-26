@@ -1,5 +1,6 @@
 ﻿using BTL_LTTQ_QLKhoVLXD.Models;
 using System;
+using System.Collections.Generic;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 
 namespace BTL_LTTQ_QLKhoVLXD.Services
@@ -16,6 +17,23 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             var result = DatabaseProvider.Instance.ExecuteQuery(query);
 
             return result.Rows.Count > 0 ? User.FromData(result.Rows[0]) : null;
+        }
+
+        public static List<string> GetPhoneNumber(string username)
+        {
+            var query = "SELECT p.phoneNumber FROM employeePhoneNumber AS p " +
+                        "JOIN employee AS e " +
+                        "ON e.id=p.idEmployee " +
+                        "JOIN account AS a ON " +
+                        "a.idEmployee=e.id " +
+                        $"WHERE a.username=N'{username}'";
+            var result = DatabaseProvider.Instance.ExecuteQuery(query);
+
+            var phoneList = new List<string>();
+            for (var i = 0; i < result.Rows.Count; i++)
+                phoneList.Add(Convert.ToString(result.Rows[i]["phoneNumber"]));
+
+            return phoneList;
         }
 
         public static bool CheckPassword(string username, string password)

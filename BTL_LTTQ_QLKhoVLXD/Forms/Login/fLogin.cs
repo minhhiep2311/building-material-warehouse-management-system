@@ -78,8 +78,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
 
         private static void RedirectToApp(User user)
         {
-            var form = new TaskManager.fTaskManager(user);
-            form.ShowDialog();
+            (new TaskManager.fTaskManager(user)).ShowDialog();
         }
 
         private bool ValidInput()

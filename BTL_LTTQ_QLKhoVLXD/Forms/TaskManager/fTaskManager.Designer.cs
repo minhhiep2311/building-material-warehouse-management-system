@@ -45,9 +45,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgUserSetting = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCreateAccount_userSetting = new System.Windows.Forms.Button();
-            this.btnChangePassword_userSetting = new System.Windows.Forms.Button();
+            this.btnChangeInformation_userSetting = new System.Windows.Forms.Button();
             this.btnResetPassword_userSetting = new System.Windows.Forms.Button();
-            this.btnModifyInformation = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.tctlControl.SuspendLayout();
             this.tpgMaterial.SuspendLayout();
@@ -223,13 +222,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnCreateAccount_userSetting);
-            this.flowLayoutPanel1.Controls.Add(this.btnChangePassword_userSetting);
+            this.flowLayoutPanel1.Controls.Add(this.btnChangeInformation_userSetting);
             this.flowLayoutPanel1.Controls.Add(this.btnResetPassword_userSetting);
-            this.flowLayoutPanel1.Controls.Add(this.btnModifyInformation);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(989, 603);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(985, 599);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // btnCreateAccount_userSetting
@@ -247,19 +246,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCreateAccount_userSetting.UseVisualStyleBackColor = true;
             this.btnCreateAccount_userSetting.Click += new System.EventHandler(this.btnCreateAccount_userSetting_Click);
             // 
-            // btnChangePassword_userSetting
+            // btnChangeInformation_userSetting
             // 
-            this.btnChangePassword_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources._lock;
-            this.btnChangePassword_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChangePassword_userSetting.Location = new System.Drawing.Point(286, 40);
-            this.btnChangePassword_userSetting.Margin = new System.Windows.Forms.Padding(20);
-            this.btnChangePassword_userSetting.Name = "btnChangePassword_userSetting";
-            this.btnChangePassword_userSetting.Size = new System.Drawing.Size(206, 91);
-            this.btnChangePassword_userSetting.TabIndex = 1;
-            this.btnChangePassword_userSetting.Text = "Đổi mật khẩu";
-            this.btnChangePassword_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChangePassword_userSetting.UseVisualStyleBackColor = true;
-            this.btnChangePassword_userSetting.Click += new System.EventHandler(this.btnChangePassword_userSetting_Click);
+            this.btnChangeInformation_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_setting;
+            this.btnChangeInformation_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChangeInformation_userSetting.Location = new System.Drawing.Point(286, 40);
+            this.btnChangeInformation_userSetting.Margin = new System.Windows.Forms.Padding(20);
+            this.btnChangeInformation_userSetting.Name = "btnChangeInformation_userSetting";
+            this.btnChangeInformation_userSetting.Size = new System.Drawing.Size(206, 91);
+            this.btnChangeInformation_userSetting.TabIndex = 1;
+            this.btnChangeInformation_userSetting.Text = "Thay đổi thông tin cá nhân";
+            this.btnChangeInformation_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChangeInformation_userSetting.UseVisualStyleBackColor = true;
+            this.btnChangeInformation_userSetting.Click += new System.EventHandler(this.btnChangeInformation_userSetting_Click);
             // 
             // btnResetPassword_userSetting
             // 
@@ -275,20 +274,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnResetPassword_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnResetPassword_userSetting.UseVisualStyleBackColor = true;
             this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
-            // 
-            // btnModifyInformation
-            // 
-            this.btnModifyInformation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnModifyInformation.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_setting;
-            this.btnModifyInformation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModifyInformation.Location = new System.Drawing.Point(40, 171);
-            this.btnModifyInformation.Margin = new System.Windows.Forms.Padding(20);
-            this.btnModifyInformation.Name = "btnModifyInformation";
-            this.btnModifyInformation.Size = new System.Drawing.Size(206, 91);
-            this.btnModifyInformation.TabIndex = 3;
-            this.btnModifyInformation.Text = "Thay đổi thông tin";
-            this.btnModifyInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnModifyInformation.UseVisualStyleBackColor = true;
             // 
             // fTaskManager
             // 
@@ -312,6 +297,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgUserSetting.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
 
 
@@ -330,10 +316,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.TabPage tpgEmployee;
         private System.Windows.Forms.TabPage tpgUserSetting;
         private System.Windows.Forms.DataGridView dgvMaterial;
-        private System.Windows.Forms.Button btnChangePassword_userSetting;
+        private System.Windows.Forms.Button btnChangeInformation_userSetting;
         private System.Windows.Forms.Button btnCreateAccount_userSetting;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnResetPassword_userSetting;
-        private System.Windows.Forms.Button btnModifyInformation;
     }
 }

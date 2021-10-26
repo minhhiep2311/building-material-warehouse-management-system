@@ -116,7 +116,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Không thể đặt lại mật khẩu cho chính mình! Hãy sử dụng chức năng &quot;Đổi mật khẩu&quot;.
+        ///   Looks up a localized string similar to Không thể đặt lại mật khẩu cho chính mình! Hãy sử dụng chức năng &quot;Thay đổi thông tin cá nhân&quot;.
         /// </summary>
         internal static string MessageBox_Message_CannotSelfResetPassword {
             get {
@@ -134,7 +134,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mật khảu của bạn sẽ được thay đổi. Vẫn tiếp tục?.
+        ///   Looks up a localized string similar to Thông tin của bạn sẽ được thay đổi. Vẫn tiếp tục?.
+        /// </summary>
+        internal static string MessageBox_Message_ConfirmChangeInfo {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ConfirmChangeInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mật khẩu của bạn sẽ được thay đổi. Vẫn tiếp tục?.
         /// </summary>
         internal static string MessageBox_Message_ConfirmChangePassword {
             get {

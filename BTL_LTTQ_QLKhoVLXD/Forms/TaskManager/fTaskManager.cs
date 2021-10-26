@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Resources;
 using System.Windows.Forms;
-using BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword;
+using BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation;
 using BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount;
 using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
 using BTL_LTTQ_QLKhoVLXD.Models;
@@ -121,19 +121,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnCreateAccount_userSetting_Click(object sender, EventArgs e)
         {
-            var form = new fCreateAccount();
-            form.ShowDialog();
+            new fCreateAccount().ShowDialog();
         }
 
-        private void btnChangePassword_userSetting_Click(object sender, EventArgs e)
+        private void btnChangeInformation_userSetting_Click(object sender, EventArgs e)
         {
-            var form = new fChangePassword(_user);
-            form.ShowDialog();
+            new fChangeInformation(_user).ShowDialog();
         }
         private void btnResetPassword_userSetting_Click(object sender, EventArgs e)
         {
-            var form = new fResetPassword(_user);
-            form.ShowDialog();
+            new fResetPassword(_user).ShowDialog();
         }
 
         #endregion
