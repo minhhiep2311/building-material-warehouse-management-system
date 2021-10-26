@@ -148,9 +148,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPassword);
             this.Controls.Add(this.pnlUsername);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "fResetPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ResetPassword";
+            this.Text = "Đặt lại mật khẩu";
             this.pnlUsername.ResumeLayout(false);
             this.pnlUsername.PerformLayout();
             this.pnlPassword.ResumeLayout(false);
