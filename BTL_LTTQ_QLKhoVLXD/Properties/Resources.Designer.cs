@@ -287,6 +287,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vị trí: {0}.
+        /// </summary>
+        internal static string TaskManager_Label_Position {
+            get {
+                return ResourceManager.GetString("TaskManager_Label_Position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Người dùng: {0}.
+        /// </summary>
+        internal static string TaskManager_Label_User {
+            get {
+                return ResourceManager.GetString("TaskManager_Label_User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap unlock {
