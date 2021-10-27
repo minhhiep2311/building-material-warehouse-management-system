@@ -45,8 +45,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
         private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = MessageBox.Show(
-                Resources.MessageBox_Message_ConfirmExit, Resources.MessageBox_Caption_Notification, MessageBoxButtons.YesNo, MessageBoxIcon.Question
-                ) == DialogResult.No;
+                Resources.MessageBox_Message_ConfirmExit,
+                Resources.MessageBox_Caption_Notification, 
+                MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Question
+            ) == DialogResult.No;
         }
 
         #endregion
@@ -73,7 +76,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
                 Show();
             }
             else
-                MessageBox.Show(Resources.MessageBox_Message_WrongAccountInfo, Resources.MessageBox_Caption_Notification, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_WrongAccountInfo,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error
+                );
         }
 
         private static void RedirectToApp(User user)
@@ -85,12 +93,22 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
         {
             if (txbUserName.Text == "")
             {
-                MessageBox.Show(Resources.MessageBox_Message_EnterUsername, Resources.MessageBox_Caption_Notification, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_EnterUsername,
+                    Resources.MessageBox_Caption_Notification, 
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
                 return false;
             }
             if (txbPassWord.Text == "")
             {
-                MessageBox.Show(Resources.MessageBox_Message_EnterPassword, Resources.MessageBox_Caption_Notification, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_EnterPassword, 
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information
+                );
                 return false;
             }
 
@@ -111,7 +129,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
                 Show();
             }
             else
-                MessageBox.Show(Resources.MessageBox_Message_WrongAccountInfo, Resources.MessageBox_Caption_Notification, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    Resources.MessageBox_Message_WrongAccountInfo,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
         }
 
         #endregion
