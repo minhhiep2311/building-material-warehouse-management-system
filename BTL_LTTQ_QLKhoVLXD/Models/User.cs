@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using BTL_LTTQ_QLKhoVLXD.Services;
+using BTL_LTTQ_QLKhoVLXD.Utils;
 
 namespace BTL_LTTQ_QLKhoVLXD.Models
 {
     public class User : IEquatable<User>
     {
+        #region Properties
+        
+        public string Id { get; }
         public string Name { get; }
         public string Address { get; }
         public bool IsMale { get; }
@@ -16,8 +19,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
         public string Account { get; }
         public List<string> PhoneNumber { get; }
 
+        #endregion
+
+        #region Constructors
+
         public User(string name, string address, bool isMale, DateTime dob, EmployeePosition position, string account)
         {
+            Id = null;
             Name = name;
             Address = address;
             IsMale = isMale;
@@ -27,10 +35,39 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             PhoneNumber = GetPhoneNumberData(account);
         }
 
+        public User(string id, string name, string address, bool isMale, DateTime dob, EmployeePosition position, string account)
+        {
+            Id = id;
+            Name = name;
+            Address = address;
+            IsMale = isMale;
+            Dob = dob;
+            Position = position;
+            Account = account;
+            PhoneNumber = GetPhoneNumberData(account);
+        }
+
+        public User(string id, string name, string address, bool isMale, DateTime dob, EmployeePosition position, string account, List<string> phoneNumber)
+        {
+            Id = id;
+            Name = name;
+            Address = address;
+            IsMale = isMale;
+            Dob = dob;
+            Position = position;
+            Account = account;
+            PhoneNumber = phoneNumber;
+        }
+
+        #endregion
+
+        #region Public Methods
+
         public static User FromData(DataRow data)
         {
             var account = Convert.ToString(data["username"]);
             return new User(
+                Convert.ToString(data["id"]),
                 Convert.ToString(data["name"]),
                 Convert.ToString(data["address"]),
                 Convert.ToInt32(data["isMale"]) == 1,
@@ -40,10 +77,18 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             );
         }
 
+        #endregion
+
+        #region Private Methods
+
         private static List<string> GetPhoneNumberData(string account)
         {
             return AccountService.GetPhoneNumber(account);
         }
+
+        #endregion
+
+        #region Overrides
 
         public bool Equals(User other)
         {
@@ -52,17 +97,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             if (ReferenceEquals(this, other))
                 return true;
 
-            var firstNotSecond = PhoneNumber.Except(other.PhoneNumber).ToList();
-            var secondNotFirst = other.PhoneNumber.Except(PhoneNumber).ToList();
-            var phoneNumberListIsEqual = !firstNotSecond.Any() && !secondNotFirst.Any();
-
             return Name == other.Name &&
                 Address == other.Address &&
                 IsMale == other.IsMale &&
                 Dob.Equals(other.Dob) &&
                 Equals(Position, other.Position) &&
                 Account == other.Account &&
-                phoneNumberListIsEqual;
+                Helper.List.AreEqual(PhoneNumber, other.PhoneNumber);
         }
 
         public override bool Equals(object obj)
@@ -89,5 +130,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
                 return hashCode;
             }
         }
+
+        #endregion
     }
 }

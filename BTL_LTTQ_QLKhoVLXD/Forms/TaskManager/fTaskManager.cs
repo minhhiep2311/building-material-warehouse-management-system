@@ -14,13 +14,21 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
     public partial class fTaskManager : Form
     {
-        private readonly User _user;
+        private User _user;
+        public User User
+        {
+            get => _user;
+            set
+            {
+                _user = value;
+                DisplayUserInfo();
+            }
+        }
 
         public fTaskManager(User user)
         {
             InitializeComponent();
-            _user = user;
-            DisplayUserInfo();
+            User = user;
         }
 
         #region Form
@@ -69,17 +77,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #region Form Methods
         private void DisplayComponentsAccordsPermission()
         {
-            if (!PermissionConstant.CreateAccount.Contains(_user.Position.Id))
+            if (!PermissionConstant.CreateAccount.Contains(User.Position.Id))
                 btnCreateAccount_userSetting.Visible = false;
-            if (!PermissionConstant.ResetPassword.Contains(_user.Position.Id))
+            if (!PermissionConstant.ResetPassword.Contains(User.Position.Id))
                 btnResetPassword_userSetting.Visible = false;
         }
 
         private void DisplayUserInfo()
         {
             var resources = new ResourceManager(typeof(fTaskManager));
-            lblUser.Text = string.Format((string)resources.GetObject("Label_User") ?? string.Empty, _user.Name);
-            lblPosition.Text = string.Format((string)resources.GetObject("Label_Position") ?? string.Empty, _user.Position);
+            lblUser.Text = string.Format((string)resources.GetObject("Label_User") ?? string.Empty, User.Name);
+            lblPosition.Text = string.Format((string)resources.GetObject("Label_Position") ?? string.Empty, User.Position);
         }
 
         #endregion
@@ -126,11 +134,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnChangeInformation_userSetting_Click(object sender, EventArgs e)
         {
-            new fChangeInformation(_user).ShowDialog();
+            new fChangeInformation(this).ShowDialog();
         }
         private void btnResetPassword_userSetting_Click(object sender, EventArgs e)
         {
-            new fResetPassword(_user).ShowDialog();
+            new fResetPassword(User).ShowDialog();
         }
 
         #endregion
