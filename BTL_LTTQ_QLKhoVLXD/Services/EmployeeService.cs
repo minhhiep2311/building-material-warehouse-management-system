@@ -9,6 +9,23 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 {
     internal static class EmployeeService
     {
+        public static List<User> GetAllEmployees()
+        {
+            const string query = "SELECT e.id, a.username, e.name, e.address, e.isMale, e.dob, e.idPosition, p.name AS position " +
+                "FROM employee AS e " +
+                "JOIN employeePosition AS p ON " +
+                "p.id = e.idPosition " +
+                "JOIN account As a ON " +
+                "a.idEmployee = e.id";
+            var result = DatabaseProvider.Instance.ExecuteQuery(query);
+
+            var employeeList = new List<User>();
+            for (var i = 0; i < result.Rows.Count; i++)
+                employeeList.Add(User.FromData(result.Rows[i]));
+
+            return employeeList;
+        }
+
         public static List<EmployeePosition> GetPositions()
         {
             const string query = "SELECT * FROM employeePosition";
@@ -19,8 +36,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 
         public static int CreateEmployee(User user)
         {
-            var query = $"INSERT INTO employee " +
-                        $"OUTPUT INSERTED.ID " +
+            var query = "INSERT INTO employee " +
+                        "OUTPUT INSERTED.ID " +
                         $"VALUES (N'{user.Name}', " +
                         $"N'{user.Address}', " +
                         $"{(user.IsMale ? "1" : "0")}, " +

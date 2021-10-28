@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Resources;
 using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation;
 using BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount;
@@ -9,6 +8,7 @@ using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
+using SortOrder = System.Data.SqlClient.SortOrder;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
@@ -37,6 +37,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void fTaskManager_Load(object sender, EventArgs e)
         {
             DisplayComponentsAccordsPermission();
+            Init_Employee();
         }
 
         private void tctlControl_DrawItem(object sender, DrawItemEventArgs e)
@@ -68,7 +69,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void fTaskManager_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = MessageBox.Show(
-                    Resources.MessageBox_Message_ConfirmExit, Resources.MessageBox_Caption_Notification, MessageBoxButtons.YesNo, MessageBoxIcon.Question
+                    Resources.MessageBox_Message_ConfirmExit,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
                 ) == DialogResult.No;
         }
 
@@ -85,9 +89,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void DisplayUserInfo()
         {
-            var resources = new ResourceManager(typeof(fTaskManager));
-            lblUser.Text = string.Format((string)resources.GetObject("Label_User") ?? string.Empty, User.Name);
-            lblPosition.Text = string.Format((string)resources.GetObject("Label_Position") ?? string.Empty, User.Position);
+            lblUser.Text = string.Format(Resources.TaskManager_Label_User, User.Name);
+            lblPosition.Text = string.Format(Resources.TaskManager_Label_Position, User.Position);
         }
 
         #endregion
@@ -105,20 +108,142 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #region Material Methods
 
-        private void ConfigMaterialTable()
-        {
-            dgvMaterial.Columns[0].Width = 40;
-            dgvMaterial.Columns[1].Width = 200;
-            dgvMaterial.Columns[2].Width = 150;
-            dgvMaterial.Columns[3].Width = 150;
-            dgvMaterial.Columns[4].Width = 120;
-            dgvMaterial.Columns[5].Width = 150;
-        }
-
         private void LoadMaterialData()
         {
-            dgvMaterial.DataSource = MaterialService.GetAll();
+            dgvMaterial_material.DataSource = MaterialService.GetAll();
             ConfigMaterialTable();
+        }
+
+        private void ConfigMaterialTable()
+        {
+            dgvMaterial_material.Columns[0].Width = 40;
+            dgvMaterial_material.Columns[1].Width = 200;
+            dgvMaterial_material.Columns[2].Width = 150;
+            dgvMaterial_material.Columns[3].Width = 150;
+            dgvMaterial_material.Columns[4].Width = 120;
+            dgvMaterial_material.Columns[5].Width = 150;
+        }
+
+        #endregion
+        #endregion
+
+        #region Employee
+        #region Employee Events
+
+        private void tpgEmployee_Enter(object sender, EventArgs e)
+        {
+            LoadData_Employee();
+        }
+
+        private void lvwEmployee_employee_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+            if (lvwEmployee_employee.SelectedItems.Count <= 0)
+                return;
+
+            var item = lvwEmployee_employee.SelectedItems[0];
+        }
+
+        private void lvwEmployee_employee_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            var sorter = (Helper.ItemComparer)lvwEmployee_employee.ListViewItemSorter;
+            if (sorter == null)
+            {
+                sorter = new Helper.ItemComparer(e.Column)
+                {
+                    Order = SortOrder.Ascending
+                };
+                lvwEmployee_employee.ListViewItemSorter = sorter;
+            }
+
+            if (e.Column == sorter.Column)
+                sorter.Order = 1 - sorter.Order;
+            else
+            {
+                sorter.Column = e.Column;
+                sorter.Order = SortOrder.Ascending;
+            }
+
+            lvwEmployee_employee.Sort();
+            DrawArrow_Employee(e.Column, sorter.Order);
+        }
+
+        private void txtName_employee_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAddress_employee_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPhone_employee_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdoAll_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdoMale_employee_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdoFemale_employee_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region Employee Methods
+
+        private void Init_Employee()
+        {
+            lvwEmployee_employee.Columns.Add("Họ tên", -2, HorizontalAlignment.Left);
+            lvwEmployee_employee.Columns.Add("Địa chỉ", -2, HorizontalAlignment.Left);
+            lvwEmployee_employee.Columns.Add("Giới tính", 80, HorizontalAlignment.Left);
+            lvwEmployee_employee.Columns.Add("Vị trí", -2, HorizontalAlignment.Left);
+        }
+
+        private void LoadData_Employee()
+        {
+            lvwEmployee_employee.Items.Clear();
+            var employeeList = EmployeeService.GetAllEmployees();
+            employeeList.ForEach(employee =>
+                {
+                    var row = new ListViewItem(employee.Name);
+                    row.SubItems.Add(employee.Address);
+                    row.SubItems.Add(employee.IsMale ? "Nam" : "Nữ");
+                    row.SubItems.Add(employee.Position.Name);
+                    lvwEmployee_employee.Items.Add(row);
+                }
+            );
+        }
+
+        private void DrawArrow_Employee(int colIdx, SortOrder order)
+        {
+            var upArrow = $"{Helper.Character.UpArrow}    ";
+            var downArrow = $"{Helper.Character.DownArrow}    ";
+
+            foreach (ColumnHeader column in lvwEmployee_employee.Columns)
+            {
+                if (column.Text.Contains(upArrow))
+                    column.Text = column.Text.Replace(upArrow, string.Empty);
+                else if (column.Text.Contains(downArrow))
+                    column.Text = column.Text.Replace(downArrow, string.Empty);
+            }
+
+            lvwEmployee_employee.Columns[colIdx].Text =
+                lvwEmployee_employee.Columns[colIdx].Text.Insert(0,
+                    order == SortOrder.Ascending
+                        ? downArrow
+                        : upArrow
+                );
         }
 
         #endregion
@@ -142,6 +267,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         }
 
         #endregion
+
         #endregion
     }
 }

@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using SortOrder = System.Data.SqlClient.SortOrder;
 
 namespace BTL_LTTQ_QLKhoVLXD.Utils
 {
@@ -50,6 +53,58 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
                 var secondNotFirst = l2.Except(l1).ToList();
                 return Tuple.Create(firstNotSecond, secondNotFirst);
             }
+        }
+
+        public class ItemComparer : IComparer
+        {
+            public int Column { get; set; }
+            public SortOrder Order { get; set; }
+
+            public ItemComparer(int columnIndex)
+            {
+                Column = columnIndex;
+                Order = SortOrder.Unspecified;
+            }
+
+            public int Compare(object x, object y)
+            {
+                var a = x as ListViewItem;
+                var b = y as ListViewItem;
+
+                if (a == null && b == null) 
+                    return CheckInvert(0);
+                if (a == null)
+                    return CheckInvert(-1);
+                if (b == null)
+                    return CheckInvert(1);
+
+                // Datetime Comparison
+                if (DateTime.TryParse(a.SubItems[Column].Text, out var dt1) &&
+                    DateTime.TryParse(b.SubItems[Column].Text, out var dt2))
+                    return CheckInvert(DateTime.Compare(dt1, dt2));
+
+                // Numeric Comparison
+                if (decimal.TryParse(a.SubItems[Column].Text, out var n1) &&
+                    decimal.TryParse(b.SubItems[Column].Text, out var n2))
+                    return CheckInvert(decimal.Compare(n1, n2));
+
+                // String Comparison
+                return CheckInvert(string.CompareOrdinal(a.SubItems[Column].Text, b.SubItems[Column].Text));
+
+            }
+
+            private int CheckInvert(int result)
+            {
+                if (Order == SortOrder.Descending)
+                    result *= -1;
+                return result;
+            }
+        }
+
+        public static class Character
+        {
+            public static readonly string UpArrow = "▲";
+            public static readonly string DownArrow = "▼";
         }
     }
 }
