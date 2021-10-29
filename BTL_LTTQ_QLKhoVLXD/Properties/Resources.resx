@@ -214,4 +214,13 @@
   <data name="MessageBox_Message_ChangeInfoNoChange" xml:space="preserve">
     <value>Không có thay đổi! Thông tin người dùng vẫn được giữ nguyên</value>
   </data>
+  <data name="Character_ArrowDown" xml:space="preserve">
+    <value>▼</value>
+  </data>
+  <data name="Character_ArrowUp" xml:space="preserve">
+    <value>▲</value>
+  </data>
+  <data name="Format_DateFormat" xml:space="preserve">
+    <value>dd-MM-yyyy</value>
+  </data>
 </root>

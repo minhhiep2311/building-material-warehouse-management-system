@@ -155,7 +155,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
                 txtAddress.Text,
                 rdoMale.Checked,
                 DateTime.ParseExact(Regex.Replace(dtpDob.Text, @"\s+", ""),
-                    Helper.DateTime.DateFormat,
+                    Resources.Format_DateFormat,
                     CultureInfo.InvariantCulture),
                 (EmployeePosition)cboPosition.SelectedItem,
                 _user.Account,

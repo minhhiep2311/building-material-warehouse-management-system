@@ -238,7 +238,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                     row.SubItems.Add(employee.Position.Name);
                     row.SubItems.Add(employee.Address);
                     row.SubItems.Add(employee.IsMale ? "Nam" : "Nữ");
-                    row.SubItems.Add(employee.Dob.ToString(Helper.DateTime.DateFormat));
+                    row.SubItems.Add(employee.Dob.ToString(Resources.Format_DateFormat));
                     lvwEmployee_employee.Items.Add(row);
                 }
             );
@@ -246,8 +246,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void DrawArrow_Employee(int colIdx, SortOrder order)
         {
-            var upArrow = $"{Helper.Character.UpArrow}    ";
-            var downArrow = $"{Helper.Character.DownArrow}    ";
+            var upArrow = $"{Resources.Character_ArrowUp}    ";
+            var downArrow = $"{Resources.Character_ArrowDown}    ";
 
             foreach (ColumnHeader column in lvwEmployee_employee.Columns)
             {

@@ -71,6 +71,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ▼.
+        /// </summary>
+        internal static string Character_ArrowDown {
+            get {
+                return ResourceManager.GetString("Character_ArrowDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ▲.
+        /// </summary>
+        internal static string Character_ArrowUp {
+            get {
+                return ResourceManager.GetString("Character_ArrowUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ẩn mật khẩu.
         /// </summary>
         internal static string Checkbox_HidePassword {
@@ -85,6 +103,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         internal static string Checkbox_ShowPassword {
             get {
                 return ResourceManager.GetString("Checkbox_ShowPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to dd-MM-yyyy.
+        /// </summary>
+        internal static string Format_DateFormat {
+            get {
+                return ResourceManager.GetString("Format_DateFormat", resourceCulture);
             }
         }
         
