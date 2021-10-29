@@ -171,7 +171,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel3.Location = new System.Drawing.Point(0, 607);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1251, 57);
+            this.panel3.Size = new System.Drawing.Size(1279, 57);
             this.panel3.TabIndex = 3;
             // 
             // lblPosition
@@ -216,7 +216,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tctlControl.Name = "tctlControl";
             this.tctlControl.Padding = new System.Drawing.Point(0, 0);
             this.tctlControl.SelectedIndex = 0;
-            this.tctlControl.Size = new System.Drawing.Size(1251, 607);
+            this.tctlControl.Size = new System.Drawing.Size(1279, 607);
             this.tctlControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tctlControl.TabIndex = 0;
             this.tctlControl.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tctlControl_DrawItem);
@@ -1017,7 +1017,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgEmployee.Location = new System.Drawing.Point(174, 4);
             this.tpgEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgEmployee.Name = "tpgEmployee";
-            this.tpgEmployee.Size = new System.Drawing.Size(1073, 599);
+            this.tpgEmployee.Size = new System.Drawing.Size(1101, 599);
             this.tpgEmployee.TabIndex = 7;
             this.tpgEmployee.Text = "Nhân viên";
             this.tpgEmployee.UseVisualStyleBackColor = true;
@@ -1027,9 +1027,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlFunction_employe.Controls.Add(this.grbSearch_employee);
             this.pnlFunction_employe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFunction_employe.Location = new System.Drawing.Point(493, 0);
+            this.pnlFunction_employe.Location = new System.Drawing.Point(558, 0);
             this.pnlFunction_employe.Name = "pnlFunction_employe";
-            this.pnlFunction_employe.Size = new System.Drawing.Size(580, 399);
+            this.pnlFunction_employe.Size = new System.Drawing.Size(543, 399);
             this.pnlFunction_employe.TabIndex = 4;
             // 
             // grbSearch_employee
@@ -1041,7 +1041,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbSearch_employee.Dock = System.Windows.Forms.DockStyle.Top;
             this.grbSearch_employee.Location = new System.Drawing.Point(0, 0);
             this.grbSearch_employee.Name = "grbSearch_employee";
-            this.grbSearch_employee.Size = new System.Drawing.Size(580, 197);
+            this.grbSearch_employee.Size = new System.Drawing.Size(543, 197);
             this.grbSearch_employee.TabIndex = 3;
             this.grbSearch_employee.TabStop = false;
             this.grbSearch_employee.Text = "Tìm kiếm";
@@ -1128,7 +1128,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.txtPhone_employee.Location = new System.Drawing.Point(132, 6);
             this.txtPhone_employee.Name = "txtPhone_employee";
-            this.txtPhone_employee.Size = new System.Drawing.Size(348, 26);
+            this.txtPhone_employee.Size = new System.Drawing.Size(318, 26);
             this.txtPhone_employee.TabIndex = 1;
             this.txtPhone_employee.TextChanged += new System.EventHandler(this.txtPhone_employee_TextChanged);
             // 
@@ -1155,7 +1155,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.txtAddress_employee.Location = new System.Drawing.Point(132, 6);
             this.txtAddress_employee.Name = "txtAddress_employee";
-            this.txtAddress_employee.Size = new System.Drawing.Size(348, 26);
+            this.txtAddress_employee.Size = new System.Drawing.Size(318, 26);
             this.txtAddress_employee.TabIndex = 1;
             this.txtAddress_employee.TextChanged += new System.EventHandler(this.txtAddress_employee_TextChanged);
             // 
@@ -1182,7 +1182,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.txtName_employee.Location = new System.Drawing.Point(132, 6);
             this.txtName_employee.Name = "txtName_employee";
-            this.txtName_employee.Size = new System.Drawing.Size(348, 26);
+            this.txtName_employee.Size = new System.Drawing.Size(318, 26);
             this.txtName_employee.TabIndex = 1;
             this.txtName_employee.TextChanged += new System.EventHandler(this.txtName_employee_TextChanged);
             // 
@@ -1194,11 +1194,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwEmployee_employee.HideSelection = false;
             this.lvwEmployee_employee.Location = new System.Drawing.Point(0, 0);
             this.lvwEmployee_employee.Name = "lvwEmployee_employee";
-            this.lvwEmployee_employee.Size = new System.Drawing.Size(493, 599);
+            this.lvwEmployee_employee.Size = new System.Drawing.Size(558, 599);
             this.lvwEmployee_employee.TabIndex = 2;
             this.lvwEmployee_employee.UseCompatibleStateImageBehavior = false;
             this.lvwEmployee_employee.View = System.Windows.Forms.View.Details;
             this.lvwEmployee_employee.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvwEmployee_employee_ColumnClick);
+            this.lvwEmployee_employee.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.lvwEmployee_employee_ColumnWidthChanging);
             this.lvwEmployee_employee.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwEmployee_employee_MouseDoubleClick);
             // 
             // tpgUserSetting
@@ -1272,7 +1273,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1251, 664);
+            this.ClientSize = new System.Drawing.Size(1279, 664);
             this.Controls.Add(this.tctlControl);
             this.Controls.Add(this.panel3);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
