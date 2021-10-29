@@ -14,12 +14,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
         {
             public static bool Name(string str)
             {
-                return Regex.Match(RemoveAccent(str), "^[a-zA-Z]+((['. -][a-zA-Z ])?[a-zA-Z]*)*$", RegexOptions.IgnoreCase).Success;
+                return !string.IsNullOrEmpty(str) &&
+                    Regex.Match(RemoveAccent(str), "^[a-zA-Z]+((['. -][a-zA-Z ])?[a-zA-Z]*)*$", RegexOptions.IgnoreCase).Success;
             }
 
             public static bool PhoneNumber(string str)
             {
-                return Regex.Match(str, @"^[+]?(\([0-9]{1,3}\))?[-\s\./0-9]{9,12}$").Success;
+                return !string.IsNullOrEmpty(str) &&
+                    Regex.Match(str, @"^[+]?(\([0-9]{1,3}\))?[-\s\./0-9]{9,12}$").Success;
             }
 
             private static string RemoveAccent(string str)
@@ -71,7 +73,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
                 var a = x as ListViewItem;
                 var b = y as ListViewItem;
 
-                if (a == null && b == null) 
+                if (a == null && b == null)
                     return CheckInvert(0);
                 if (a == null)
                     return CheckInvert(-1);

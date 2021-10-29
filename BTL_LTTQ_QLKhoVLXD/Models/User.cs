@@ -83,7 +83,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
         private static List<string> GetPhoneNumberData(string account)
         {
-            return AccountService.GetPhoneNumber(account);
+            return EmployeeService.GetPhoneNumber(account);
         }
 
         #endregion

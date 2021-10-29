@@ -52,7 +52,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
 
         private bool ValidInformation()
         {
-            bool valid = txtName.Text != "" &&
+            var valid = txtName.Text != "" &&
                 txtAddress.Text != "" &&
                 grbInfo.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked) != null &&
                 txtPhone.Text != "" &&

@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation;
 using BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount;
+using BTL_LTTQ_QLKhoVLXD.Forms.Employee;
 using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
 using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
@@ -24,6 +26,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 DisplayUserInfo();
             }
         }
+
+        private List<User> _employeeList_employee;
 
         public fTaskManager(User user)
         {
@@ -137,11 +141,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void lvwEmployee_employee_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
-            if (lvwEmployee_employee.SelectedItems.Count <= 0)
+            if (lvwEmployee_employee.SelectedIndices.Count <= 0)
                 return;
 
-            var item = lvwEmployee_employee.SelectedItems[0];
+            var employee = _employeeList_employee[lvwEmployee_employee.SelectedIndices[0]];
+            var editable = PermissionConstant.EditAccountInformation.Contains(User.Position.Id);
+            new fEmployee(employee, editable, this).Show();
         }
 
         private void lvwEmployee_employee_ColumnClick(object sender, ColumnClickEventArgs e)
@@ -166,6 +171,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             lvwEmployee_employee.Sort();
             DrawArrow_Employee(e.Column, sorter.Order);
+        }
+
+        private void lvwEmployee_employee_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            // ID column
+            if (e.ColumnIndex != 0)
+                return;
+
+            e.NewWidth = 0;
+            e.Cancel = true;
         }
 
         private void txtName_employee_TextChanged(object sender, EventArgs e)
@@ -204,22 +219,26 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void Init_Employee()
         {
+            lvwEmployee_employee.Columns.Add("ID", 0);
             lvwEmployee_employee.Columns.Add("Họ tên", -2, HorizontalAlignment.Left);
-            lvwEmployee_employee.Columns.Add("Địa chỉ", -2, HorizontalAlignment.Left);
-            lvwEmployee_employee.Columns.Add("Giới tính", 80, HorizontalAlignment.Left);
             lvwEmployee_employee.Columns.Add("Vị trí", -2, HorizontalAlignment.Left);
+            lvwEmployee_employee.Columns.Add("Địa chỉ", 150, HorizontalAlignment.Left);
+            lvwEmployee_employee.Columns.Add("Giới tính", -2, HorizontalAlignment.Left);
+            lvwEmployee_employee.Columns.Add("Ngày sinh", -2, HorizontalAlignment.Left);
         }
 
-        private void LoadData_Employee()
+        public void LoadData_Employee()
         {
             lvwEmployee_employee.Items.Clear();
-            var employeeList = EmployeeService.GetAllEmployees();
-            employeeList.ForEach(employee =>
+            _employeeList_employee = EmployeeService.GetAllEmployees();
+            _employeeList_employee.ForEach(employee =>
                 {
-                    var row = new ListViewItem(employee.Name);
+                    var row = new ListViewItem(employee.Id);
+                    row.SubItems.Add(employee.Name);
+                    row.SubItems.Add(employee.Position.Name);
                     row.SubItems.Add(employee.Address);
                     row.SubItems.Add(employee.IsMale ? "Nam" : "Nữ");
-                    row.SubItems.Add(employee.Position.Name);
+                    row.SubItems.Add(employee.Dob.ToString(Helper.DateTime.DateFormat));
                     lvwEmployee_employee.Items.Add(row);
                 }
             );

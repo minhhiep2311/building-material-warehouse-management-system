@@ -1,34 +1,63 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using BTL_LTTQ_QLKhoVLXD.Forms.TaskManager;
 using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Services;
-using BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword;
-using BTL_LTTQ_QLKhoVLXD.Forms.TaskManager;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 
-namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
+namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
 {
-    public partial class fChangeInformation : Form
+    public partial class fEmployee : Form
     {
+        private readonly bool _editable;
         private readonly User _user;
         private readonly fTaskManager _parentForm;
-        private string _previousLabelValue = "";
 
-        public fChangeInformation(fTaskManager parentForm)
+        public fEmployee(User user, bool editable, fTaskManager form)
         {
             InitializeComponent();
-            _parentForm = parentForm;
-            _user = parentForm.User;
+            _editable = editable;
+            _user = user;
+            _parentForm = form;
         }
 
         #region Events
 
-        private void fChangeInformation_Load(object sender, EventArgs e)
+        private void fEmployee_Load(object sender, EventArgs e)
         {
             InitControls();
             BindData();
+            ConfigureAccessibility();
+        }
+
+        private void chkEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkEdit.Checked)
+            {
+                txtName.ReadOnly = false;
+                dtpDob.Enabled = true;
+                rdoMale.Enabled = true;
+                rdoFemale.Enabled = true;
+                txtAddress.ReadOnly = false;
+                btnAddPhone.Enabled = true;
+                btnModifyPhone.Enabled = true;
+                btnRemovePhone.Enabled = true;
+            }
+            else
+            {
+                txtName.ReadOnly = true;
+                dtpDob.Enabled = false;
+                rdoMale.Enabled = false;
+                rdoFemale.Enabled = false;
+                txtAddress.ReadOnly = true;
+                btnAddPhone.Enabled = false;
+                btnModifyPhone.Enabled = false;
+                btnRemovePhone.Enabled = false;
+            }
         }
 
         private void btnAddPhone_Click(object sender, EventArgs e)
@@ -54,40 +83,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
                 lvwPhone.Items.Remove(item);
         }
 
-        private void lvwPhone_BeforeLabelEdit(object sender, LabelEditEventArgs e)
-        {
-            _previousLabelValue = lvwPhone.Items[e.Item].Text;
-        }
-
-        private void lvwPhone_AfterLabelEdit(object sender, LabelEditEventArgs e)
-        {
-            if (string.IsNullOrEmpty(e.Label))
-            {
-                e.CancelEdit = true;
-                if (string.IsNullOrEmpty(_previousLabelValue))
-                    lvwPhone.Items.RemoveAt(e.Item);
-                else
-                {
-                    e.CancelEdit = true;
-                    lvwPhone.Items[e.Item].Text = _previousLabelValue;
-                }
-            }
-            else if (!Helper.RegexValidate.PhoneNumber(e.Label))
-            {
-                MessageBox.Show(
-                    Resources.MessageBox_Message_InvalidPhoneNumberFormat,
-                    Resources.MessageBox_Caption_Notification,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-                e.CancelEdit = true;
-                if (string.IsNullOrEmpty(_previousLabelValue))
-                    lvwPhone.Items.RemoveAt(e.Item);
-                else
-                    lvwPhone.Items[e.Item].Text = _previousLabelValue;
-            }
-        }
-
         private void lvwPhone_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (lvwPhone.SelectedItems.Count <= 0)
@@ -96,11 +91,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             var item = lvwPhone.SelectedItems[0];
             if (item.Bounds.Contains(e.Location))
                 item.BeginEdit();
-        }
-
-        private void btnChangePassword_Click(object sender, EventArgs e)
-        {
-            new fChangePassword(_user).ShowDialog();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -125,27 +115,49 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
         private void BindData()
         {
             txtName.Text = _user.Name;
-            txtDob.Text = _user.Dob.ToShortDateString();
+            dtpDob.Text = _user.Dob.ToShortDateString();
             if (_user.IsMale)
                 rdoMale.Checked = true;
             else
                 rdoFemale.Checked = true;
             txtAddress.Text = _user.Address;
-            txtAddress.Text = _user.Address;
             _user.PhoneNumber.ForEach(phone =>
                 lvwPhone.Items.Add(new ListViewItem(phone))
             );
+            var positions = EmployeeService.GetPositions();
+            cboPosition.DataSource = positions;
+            cboPosition.SelectedIndex = positions.FindIndex(x => x.Name.Equals(_user.Position.Name));
         }
 
+        private void ConfigureAccessibility()
+        {
+            chkEdit.Visible = _editable && !_parentForm.User.Equals(_user);
+
+            if (_editable)
+                return;
+
+            txtName.ReadOnly = true;
+            dtpDob.Enabled = false;
+            rdoMale.Enabled = false;
+            rdoFemale.Enabled = false;
+            txtAddress.ReadOnly = true;
+            btnAddPhone.Visible = false;
+            btnModifyPhone.Visible = false;
+            btnRemovePhone.Visible = false;
+            btnSave.Visible = false;
+            btnCancel.Visible = false;
+        }
         private void TryChangeInformation()
         {
             var newUser = new User(
                 _user.Id,
-                _user.Name,
+                txtName.Text,
                 txtAddress.Text,
-                _user.IsMale,
-                _user.Dob,
-                _user.Position,
+                rdoMale.Checked,
+                DateTime.ParseExact(Regex.Replace(dtpDob.Text, @"\s+", ""),
+                    Helper.DateTime.DateFormat,
+                    CultureInfo.InvariantCulture),
+                (EmployeePosition)cboPosition.SelectedItem,
                 _user.Account,
                 lvwPhone.Items
                    .Cast<ListViewItem>()
@@ -161,7 +173,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
-
                 Close();
                 return;
             }
@@ -187,17 +198,29 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
                     MessageBoxIcon.Error
                 );
 
-            _parentForm.User = newUser;
+            _parentForm.LoadData_Employee();
             Close();
         }
 
         private bool ValidInput()
         {
-            if (txtAddress.Text != "")
+            if (txtName.Text == "" ||
+                txtAddress.Text == "")
+            {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_EnterFullPersonalInfo,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                return false;
+            }
+
+            if (Helper.RegexValidate.Name(txtName.Text))
                 return true;
 
             MessageBox.Show(
-                Resources.MessageBox_Message_EnterFullPersonalInfo,
+                Resources.MessageBox_Message_InvalidNameFormat,
                 Resources.MessageBox_Caption_Notification,
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error
@@ -205,10 +228,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             return false;
         }
 
-        private static bool ConfirmChange()
+        private bool ConfirmChange()
         {
             return MessageBox.Show(
-                Resources.MessageBox_Message_ConfirmChangeInfo,
+                string.Format(Resources.MessageBox_Message_ConfirmChangeEmployeeInfo, _user.Name),
                 Resources.MessageBox_Caption_Notification,
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning
@@ -217,7 +240,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
 
         private static bool ChangeInformation(User newUser)
         {
-            return EmployeeService.ChangePersonalInformation(newUser);
+            return EmployeeService.ChangeEmployeeInformation(newUser);
         }
 
         private bool ChangePhoneNumber(User newUser)
