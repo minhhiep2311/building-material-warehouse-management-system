@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation;
 using BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount;
@@ -16,6 +17,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
     public partial class fTaskManager : Form
     {
+        #region Form Properties
+
         private User _user;
         public User User
         {
@@ -27,7 +30,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             }
         }
 
+        private List<EmployeePosition> _positions = new List<EmployeePosition>();
+
+        #endregion
+
+        #region Employee Properties
+
         private List<User> _employeeList_employee;
+        private Helper.Debounce _debounce_employee;
+
+        #endregion
 
         public fTaskManager(User user)
         {
@@ -138,6 +150,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             LoadData_Employee();
         }
+        private void tpgEmployee_Leave(object sender, EventArgs e)
+        {
+            txtName_employee.Text = string.Empty;
+            txtAddress_employee.Text = string.Empty;
+            txtPhone_employee.Text = string.Empty;
+            rdoAll_employee.Checked = true;
+            _debounce_employee.Dispose();
+        }
 
         private void lvwEmployee_employee_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -185,32 +205,52 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void txtName_employee_TextChanged(object sender, EventArgs e)
         {
-
+            _debounce_employee.HandleUpdate();
         }
 
         private void txtAddress_employee_TextChanged(object sender, EventArgs e)
         {
-
+            _debounce_employee.HandleUpdate();
         }
 
         private void txtPhone_employee_TextChanged(object sender, EventArgs e)
         {
-
+            _debounce_employee.HandleUpdate();
         }
 
         private void rdoAll_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (rdoAll_employee.Checked)
+                _debounce_employee.HandleUpdate();
         }
 
         private void rdoMale_employee_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (rdoMale_employee.Checked)
+                _debounce_employee.HandleUpdate();
         }
 
         private void rdoFemale_employee_CheckedChanged(object sender, EventArgs e)
         {
+            if (rdoFemale_employee.Checked)
+                _debounce_employee.HandleUpdate();
+        }
 
+        private void CheckboxAllChange_employee(object sender, EventArgs e)
+        {
+            var checkboxes = Helper.ControlFilter.GetCheckBoxes(flpPosition_employee);
+            var shouldChecked = checkboxes[0].Checked;
+            foreach (var checkBox in checkboxes.Skip(1))
+                checkBox.Checked = shouldChecked;
+            _debounce_employee.HandleUpdate();
+        }
+
+        private void CheckboxChange_employee(object sender, EventArgs e)
+        {
+            var checkboxes = Helper.ControlFilter.GetCheckBoxes(flpPosition_employee);
+            var firstNotCheck = checkboxes.Skip(1).FirstOrDefault(x => !x.Checked);
+            checkboxes.First().Checked = firstNotCheck == null;
+            _debounce_employee.HandleUpdate();
         }
 
         #endregion
@@ -219,12 +259,36 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void Init_Employee()
         {
+            _debounce_employee = new Helper.Debounce(Search_Employee, 300);
+
             lvwEmployee_employee.Columns.Add("ID", 0);
             lvwEmployee_employee.Columns.Add("Họ tên", -2, HorizontalAlignment.Left);
             lvwEmployee_employee.Columns.Add("Vị trí", -2, HorizontalAlignment.Left);
             lvwEmployee_employee.Columns.Add("Địa chỉ", 150, HorizontalAlignment.Left);
             lvwEmployee_employee.Columns.Add("Giới tính", -2, HorizontalAlignment.Left);
             lvwEmployee_employee.Columns.Add("Ngày sinh", -2, HorizontalAlignment.Left);
+
+            _positions = EmployeeService.GetPositions();
+
+            // Load checkboxes
+            var chkAll = new CheckBox
+            {
+                Text = "Tất cả",
+                Font = lblPosition_employee.Font
+            };
+            chkAll.Click += CheckboxAllChange_employee;
+            flpPosition_employee.Controls.Add(chkAll);
+
+            _positions.ForEach(position =>
+            {
+                var checkbox = new CheckBox
+                {
+                    Text = position.Name,
+                    Font = lblPosition_employee.Font
+                };
+                checkbox.Click += CheckboxChange_employee;
+                flpPosition_employee.Controls.Add(checkbox);
+            });
         }
 
         public void LoadData_Employee()
@@ -242,6 +306,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                     lvwEmployee_employee.Items.Add(row);
                 }
             );
+            Helper.ControlFilter.GetCheckBoxes(flpPosition_employee).ForEach(x => x.Checked = true);
         }
 
         private void DrawArrow_Employee(int colIdx, SortOrder order)
@@ -263,6 +328,50 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                         ? downArrow
                         : upArrow
                 );
+        }
+
+        private void Search_Employee()
+        {
+            lvwEmployee_employee.Items.Clear();
+
+            var name = txtName_employee.Text;
+            var address = txtAddress_employee.Text;
+            var phone = txtPhone_employee.Text;
+            var gender = Helper.ControlFilter.GetRadioButtons(pnlGender_employee)
+               .FirstOrDefault(x => x.Checked)?.Text;
+            var positions = Helper.ControlFilter.GetCheckBoxes(flpPosition_employee)
+               .Where(x => x.Checked)
+               .Select(x => x.Text);
+
+            var employees = _employeeList_employee.FindAll(x =>
+            {
+                var matchName = string.IsNullOrEmpty(name) ||
+                    Helper.Normalize.ToLatinText(x.Name).ToLower()
+                       .Contains(Helper.Normalize.ToLatinText(name).ToLower());
+                var matchAddress = string.IsNullOrEmpty(address) ||
+                    Helper.Normalize.ToLatinText(x.Address).ToLower()
+                       .Contains(Helper.Normalize.ToLatinText(address).ToLower());
+                var matchPhone = string.IsNullOrEmpty(phone) ||
+                    x.PhoneNumber.FirstOrDefault(p => Helper.Normalize.ToNumericPhoneNumber(p)
+                       .Contains(Helper.Normalize.ToNumericPhoneNumber(phone)))
+                    != null;
+                var matchGender = gender == "Tất cả" || (gender == "Nam" && x.IsMale) || (gender == "Nữ" && !x.IsMale);
+                var matchPosition = positions.Contains(x.Position.Name);
+
+                return matchName && matchAddress && matchPhone && matchGender && matchPosition;
+            });
+
+            employees.ForEach(employee =>
+                {
+                    var row = new ListViewItem(employee.Id);
+                    row.SubItems.Add(employee.Name);
+                    row.SubItems.Add(employee.Position.Name);
+                    row.SubItems.Add(employee.Address);
+                    row.SubItems.Add(employee.IsMale ? "Nam" : "Nữ");
+                    row.SubItems.Add(employee.Dob.ToString(Resources.Format_DateFormat));
+                    lvwEmployee_employee.Items.Add(row);
+                }
+            );
         }
 
         #endregion

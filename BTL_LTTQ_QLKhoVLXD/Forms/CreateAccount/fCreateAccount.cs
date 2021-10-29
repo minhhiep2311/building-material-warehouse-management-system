@@ -54,7 +54,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
         {
             var valid = txtName.Text != "" &&
                 txtAddress.Text != "" &&
-                grbInfo.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked) != null &&
+                Helper.ControlFilter.GetRadioButtons(grbInfo).FirstOrDefault(x => x.Checked) != null &&
                 txtPhone.Text != "" &&
                 cboPosition.SelectedIndex != -1;
 
@@ -65,7 +65,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
-            else if (!Helper.RegexValidate.Name(txtName.Text))
+            else if (!Helper.Validate.Name(txtName.Text))
             {
                 MessageBox.Show(
                     Resources.MessageBox_Message_InvalidNameFormat,
@@ -75,7 +75,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
                 );
                 valid = false;
             }
-            else if (!Helper.RegexValidate.PhoneNumber(txtPhone.Text))
+            else if (!Helper.Validate.PhoneNumber(txtPhone.Text))
             {
                 MessageBox.Show(
                     Resources.MessageBox_Message_InvalidPhoneNumberFormat,
@@ -137,9 +137,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
             }
             else
                 MessageBox.Show(
-                    Resources.MessageBox_Message_SystemError, 
-                    Resources.MessageBox_Caption_Notification, 
-                    MessageBoxButtons.OK, 
+                    Resources.MessageBox_Message_SystemError,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
         }

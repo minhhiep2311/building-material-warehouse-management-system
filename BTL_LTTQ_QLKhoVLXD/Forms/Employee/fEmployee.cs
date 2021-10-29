@@ -216,7 +216,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
                 return false;
             }
 
-            if (Helper.RegexValidate.Name(txtName.Text))
+            if (Helper.Validate.Name(txtName.Text))
                 return true;
 
             MessageBox.Show(

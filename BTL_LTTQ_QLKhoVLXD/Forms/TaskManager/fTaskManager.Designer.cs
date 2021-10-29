@@ -121,7 +121,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlGender_employee = new System.Windows.Forms.Panel();
             this.rdoFemale_employee = new System.Windows.Forms.RadioButton();
             this.rdoMale_employee = new System.Windows.Forms.RadioButton();
-            this.rdoAll = new System.Windows.Forms.RadioButton();
+            this.rdoAll_employee = new System.Windows.Forms.RadioButton();
             this.lblGender_employee = new System.Windows.Forms.Label();
             this.pnlPhone_employee = new System.Windows.Forms.Panel();
             this.lblPhone_employee = new System.Windows.Forms.Label();
@@ -134,10 +134,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtName_employee = new System.Windows.Forms.TextBox();
             this.lvwEmployee_employee = new System.Windows.Forms.ListView();
             this.tpgUserSetting = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flp_userSetting = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCreateAccount_userSetting = new System.Windows.Forms.Button();
             this.btnChangeInformation_userSetting = new System.Windows.Forms.Button();
             this.btnResetPassword_userSetting = new System.Windows.Forms.Button();
+            this.pnlPosition_employee = new System.Windows.Forms.Panel();
+            this.lblPosition_employee = new System.Windows.Forms.Label();
+            this.flpPosition_employee = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3.SuspendLayout();
             this.tctlControl.SuspendLayout();
             this.tpgBuy.SuspendLayout();
@@ -160,7 +163,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlAddress_employee.SuspendLayout();
             this.pnlName_employee.SuspendLayout();
             this.tpgUserSetting.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.flp_userSetting.SuspendLayout();
+            this.pnlPosition_employee.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -230,7 +234,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgBuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgBuy.Name = "tpgBuy";
             this.tpgBuy.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpgBuy.Size = new System.Drawing.Size(1073, 599);
+            this.tpgBuy.Size = new System.Drawing.Size(1101, 599);
             this.tpgBuy.TabIndex = 0;
             this.tpgBuy.Text = "Tạo Hóa Đơn Nhập ";
             this.tpgBuy.UseVisualStyleBackColor = true;
@@ -257,7 +261,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbItemInfor_Buy.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grbItemInfor_Buy.Location = new System.Drawing.Point(3, 248);
             this.grbItemInfor_Buy.Name = "grbItemInfor_Buy";
-            this.grbItemInfor_Buy.Size = new System.Drawing.Size(1067, 349);
+            this.grbItemInfor_Buy.Size = new System.Drawing.Size(1095, 349);
             this.grbItemInfor_Buy.TabIndex = 2;
             this.grbItemInfor_Buy.TabStop = false;
             this.grbItemInfor_Buy.Text = "Thông tin các mặt hàng";
@@ -427,7 +431,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbGeneralInfor_Buy.Dock = System.Windows.Forms.DockStyle.Top;
             this.grbGeneralInfor_Buy.Location = new System.Drawing.Point(3, 40);
             this.grbGeneralInfor_Buy.Name = "grbGeneralInfor_Buy";
-            this.grbGeneralInfor_Buy.Size = new System.Drawing.Size(1067, 202);
+            this.grbGeneralInfor_Buy.Size = new System.Drawing.Size(1095, 202);
             this.grbGeneralInfor_Buy.TabIndex = 1;
             this.grbGeneralInfor_Buy.TabStop = false;
             this.grbGeneralInfor_Buy.Text = "Thông tin chung";
@@ -571,7 +575,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel1_Buy.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1_Buy.Location = new System.Drawing.Point(3, 2);
             this.panel1_Buy.Name = "panel1_Buy";
-            this.panel1_Buy.Size = new System.Drawing.Size(1067, 38);
+            this.panel1_Buy.Size = new System.Drawing.Size(1095, 38);
             this.panel1_Buy.TabIndex = 0;
             // 
             // lblTitle_Buy
@@ -593,7 +597,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgSell.Name = "tpgSell";
             this.tpgSell.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpgSell.Size = new System.Drawing.Size(1073, 599);
+            this.tpgSell.Size = new System.Drawing.Size(1101, 599);
             this.tpgSell.TabIndex = 1;
             this.tpgSell.Text = "Tạo Hóa Đơn Bán";
             this.tpgSell.UseVisualStyleBackColor = true;
@@ -620,7 +624,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbItemInfor_Sell.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grbItemInfor_Sell.Location = new System.Drawing.Point(3, 248);
             this.grbItemInfor_Sell.Name = "grbItemInfor_Sell";
-            this.grbItemInfor_Sell.Size = new System.Drawing.Size(1067, 349);
+            this.grbItemInfor_Sell.Size = new System.Drawing.Size(1095, 349);
             this.grbItemInfor_Sell.TabIndex = 3;
             this.grbItemInfor_Sell.TabStop = false;
             this.grbItemInfor_Sell.Text = "Thông tin các mặt hàng";
@@ -790,7 +794,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbGeneralInfor_Sell.Dock = System.Windows.Forms.DockStyle.Top;
             this.grbGeneralInfor_Sell.Location = new System.Drawing.Point(3, 40);
             this.grbGeneralInfor_Sell.Name = "grbGeneralInfor_Sell";
-            this.grbGeneralInfor_Sell.Size = new System.Drawing.Size(1067, 202);
+            this.grbGeneralInfor_Sell.Size = new System.Drawing.Size(1095, 202);
             this.grbGeneralInfor_Sell.TabIndex = 2;
             this.grbGeneralInfor_Sell.TabStop = false;
             this.grbGeneralInfor_Sell.Text = "Thông tin chung";
@@ -934,7 +938,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel1_sell.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1_sell.Location = new System.Drawing.Point(3, 2);
             this.panel1_sell.Name = "panel1_sell";
-            this.panel1_sell.Size = new System.Drawing.Size(1067, 38);
+            this.panel1_sell.Size = new System.Drawing.Size(1095, 38);
             this.panel1_sell.TabIndex = 1;
             // 
             // lblTitle_Sell
@@ -952,7 +956,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgReceipt.Location = new System.Drawing.Point(174, 4);
             this.tpgReceipt.Margin = new System.Windows.Forms.Padding(0);
             this.tpgReceipt.Name = "tpgReceipt";
-            this.tpgReceipt.Size = new System.Drawing.Size(1073, 599);
+            this.tpgReceipt.Size = new System.Drawing.Size(1101, 599);
             this.tpgReceipt.TabIndex = 2;
             this.tpgReceipt.Text = "Quản Lý Hóa đơn";
             this.tpgReceipt.UseVisualStyleBackColor = true;
@@ -963,7 +967,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgMaterial.Location = new System.Drawing.Point(174, 4);
             this.tpgMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgMaterial.Name = "tpgMaterial";
-            this.tpgMaterial.Size = new System.Drawing.Size(1073, 599);
+            this.tpgMaterial.Size = new System.Drawing.Size(1101, 599);
             this.tpgMaterial.TabIndex = 3;
             this.tpgMaterial.Text = "Vật liệu";
             this.tpgMaterial.UseVisualStyleBackColor = true;
@@ -977,7 +981,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.dgvMaterial_material.Name = "dgvMaterial_material";
             this.dgvMaterial_material.RowHeadersWidth = 51;
             this.dgvMaterial_material.RowTemplate.Height = 24;
-            this.dgvMaterial_material.Size = new System.Drawing.Size(1073, 599);
+            this.dgvMaterial_material.Size = new System.Drawing.Size(1101, 599);
             this.dgvMaterial_material.TabIndex = 0;
             // 
             // tpgStatistic
@@ -985,7 +989,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgStatistic.Location = new System.Drawing.Point(174, 4);
             this.tpgStatistic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgStatistic.Name = "tpgStatistic";
-            this.tpgStatistic.Size = new System.Drawing.Size(1073, 599);
+            this.tpgStatistic.Size = new System.Drawing.Size(1101, 599);
             this.tpgStatistic.TabIndex = 4;
             this.tpgStatistic.Text = "Thống kê";
             this.tpgStatistic.UseVisualStyleBackColor = true;
@@ -995,7 +999,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgCustomer.Location = new System.Drawing.Point(174, 4);
             this.tpgCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgCustomer.Name = "tpgCustomer";
-            this.tpgCustomer.Size = new System.Drawing.Size(1073, 599);
+            this.tpgCustomer.Size = new System.Drawing.Size(1101, 599);
             this.tpgCustomer.TabIndex = 5;
             this.tpgCustomer.Text = "Khách hàng";
             this.tpgCustomer.UseVisualStyleBackColor = true;
@@ -1005,7 +1009,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSupplier.Location = new System.Drawing.Point(174, 4);
             this.tpgSupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgSupplier.Name = "tpgSupplier";
-            this.tpgSupplier.Size = new System.Drawing.Size(1073, 599);
+            this.tpgSupplier.Size = new System.Drawing.Size(1101, 599);
             this.tpgSupplier.TabIndex = 6;
             this.tpgSupplier.Text = "Nhà cung cấp";
             this.tpgSupplier.UseVisualStyleBackColor = true;
@@ -1022,6 +1026,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgEmployee.Text = "Nhân viên";
             this.tpgEmployee.UseVisualStyleBackColor = true;
             this.tpgEmployee.Enter += new System.EventHandler(this.tpgEmployee_Enter);
+            this.tpgEmployee.Leave += new System.EventHandler(this.tpgEmployee_Leave);
             // 
             // pnlFunction_employe
             // 
@@ -1034,6 +1039,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // grbSearch_employee
             // 
+            this.grbSearch_employee.Controls.Add(this.pnlPosition_employee);
             this.grbSearch_employee.Controls.Add(this.pnlGender_employee);
             this.grbSearch_employee.Controls.Add(this.pnlPhone_employee);
             this.grbSearch_employee.Controls.Add(this.pnlAddress_employee);
@@ -1041,7 +1047,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbSearch_employee.Dock = System.Windows.Forms.DockStyle.Top;
             this.grbSearch_employee.Location = new System.Drawing.Point(0, 0);
             this.grbSearch_employee.Name = "grbSearch_employee";
-            this.grbSearch_employee.Size = new System.Drawing.Size(543, 197);
+            this.grbSearch_employee.Size = new System.Drawing.Size(543, 332);
             this.grbSearch_employee.TabIndex = 3;
             this.grbSearch_employee.TabStop = false;
             this.grbSearch_employee.Text = "Tìm kiếm";
@@ -1050,7 +1056,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlGender_employee.Controls.Add(this.rdoFemale_employee);
             this.pnlGender_employee.Controls.Add(this.rdoMale_employee);
-            this.pnlGender_employee.Controls.Add(this.rdoAll);
+            this.pnlGender_employee.Controls.Add(this.rdoAll_employee);
             this.pnlGender_employee.Controls.Add(this.lblGender_employee);
             this.pnlGender_employee.Location = new System.Drawing.Point(6, 151);
             this.pnlGender_employee.Name = "pnlGender_employee";
@@ -1081,19 +1087,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.rdoMale_employee.UseVisualStyleBackColor = true;
             this.rdoMale_employee.CheckedChanged += new System.EventHandler(this.rdoMale_employee_CheckedChanged);
             // 
-            // rdoAll
+            // rdoAll_employee
             // 
-            this.rdoAll.AutoSize = true;
-            this.rdoAll.Checked = true;
-            this.rdoAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rdoAll.Location = new System.Drawing.Point(133, 7);
-            this.rdoAll.Name = "rdoAll";
-            this.rdoAll.Size = new System.Drawing.Size(77, 24);
-            this.rdoAll.TabIndex = 1;
-            this.rdoAll.TabStop = true;
-            this.rdoAll.Text = "Tât cả";
-            this.rdoAll.UseVisualStyleBackColor = true;
-            this.rdoAll.CheckedChanged += new System.EventHandler(this.rdoAll_CheckedChanged);
+            this.rdoAll_employee.AutoSize = true;
+            this.rdoAll_employee.Checked = true;
+            this.rdoAll_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rdoAll_employee.Location = new System.Drawing.Point(133, 7);
+            this.rdoAll_employee.Name = "rdoAll_employee";
+            this.rdoAll_employee.Size = new System.Drawing.Size(77, 24);
+            this.rdoAll_employee.TabIndex = 1;
+            this.rdoAll_employee.TabStop = true;
+            this.rdoAll_employee.Text = "Tất cả";
+            this.rdoAll_employee.UseVisualStyleBackColor = true;
+            this.rdoAll_employee.CheckedChanged += new System.EventHandler(this.rdoAll_CheckedChanged);
             // 
             // lblGender_employee
             // 
@@ -1126,6 +1132,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // txtPhone_employee
             // 
+            this.txtPhone_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtPhone_employee.Location = new System.Drawing.Point(132, 6);
             this.txtPhone_employee.Name = "txtPhone_employee";
             this.txtPhone_employee.Size = new System.Drawing.Size(318, 26);
@@ -1153,6 +1160,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // txtAddress_employee
             // 
+            this.txtAddress_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtAddress_employee.Location = new System.Drawing.Point(132, 6);
             this.txtAddress_employee.Name = "txtAddress_employee";
             this.txtAddress_employee.Size = new System.Drawing.Size(318, 26);
@@ -1180,6 +1188,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // txtName_employee
             // 
+            this.txtName_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtName_employee.Location = new System.Drawing.Point(132, 6);
             this.txtName_employee.Name = "txtName_employee";
             this.txtName_employee.Size = new System.Drawing.Size(318, 26);
@@ -1204,26 +1213,26 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // tpgUserSetting
             // 
-            this.tpgUserSetting.Controls.Add(this.flowLayoutPanel1);
+            this.tpgUserSetting.Controls.Add(this.flp_userSetting);
             this.tpgUserSetting.Location = new System.Drawing.Point(174, 4);
             this.tpgUserSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgUserSetting.Name = "tpgUserSetting";
-            this.tpgUserSetting.Size = new System.Drawing.Size(1073, 599);
+            this.tpgUserSetting.Size = new System.Drawing.Size(1101, 599);
             this.tpgUserSetting.TabIndex = 8;
             this.tpgUserSetting.Text = "Quản lý người dùng";
             this.tpgUserSetting.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
+            // flp_userSetting
             // 
-            this.flowLayoutPanel1.Controls.Add(this.btnCreateAccount_userSetting);
-            this.flowLayoutPanel1.Controls.Add(this.btnChangeInformation_userSetting);
-            this.flowLayoutPanel1.Controls.Add(this.btnResetPassword_userSetting);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1073, 599);
-            this.flowLayoutPanel1.TabIndex = 2;
+            this.flp_userSetting.Controls.Add(this.btnCreateAccount_userSetting);
+            this.flp_userSetting.Controls.Add(this.btnChangeInformation_userSetting);
+            this.flp_userSetting.Controls.Add(this.btnResetPassword_userSetting);
+            this.flp_userSetting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flp_userSetting.Location = new System.Drawing.Point(0, 0);
+            this.flp_userSetting.Name = "flp_userSetting";
+            this.flp_userSetting.Padding = new System.Windows.Forms.Padding(20);
+            this.flp_userSetting.Size = new System.Drawing.Size(1101, 599);
+            this.flp_userSetting.TabIndex = 2;
             // 
             // btnCreateAccount_userSetting
             // 
@@ -1269,6 +1278,33 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnResetPassword_userSetting.UseVisualStyleBackColor = true;
             this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
             // 
+            // pnlPosition_employee
+            // 
+            this.pnlPosition_employee.AutoSize = true;
+            this.pnlPosition_employee.Controls.Add(this.flpPosition_employee);
+            this.pnlPosition_employee.Controls.Add(this.lblPosition_employee);
+            this.pnlPosition_employee.Location = new System.Drawing.Point(6, 196);
+            this.pnlPosition_employee.Name = "pnlPosition_employee";
+            this.pnlPosition_employee.Size = new System.Drawing.Size(496, 114);
+            this.pnlPosition_employee.TabIndex = 6;
+            // 
+            // lblPosition_employee
+            // 
+            this.lblPosition_employee.AutoSize = true;
+            this.lblPosition_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblPosition_employee.Location = new System.Drawing.Point(3, 10);
+            this.lblPosition_employee.Name = "lblPosition_employee";
+            this.lblPosition_employee.Size = new System.Drawing.Size(70, 20);
+            this.lblPosition_employee.TabIndex = 1;
+            this.lblPosition_employee.Text = "Chức vụ";
+            // 
+            // flpPosition_employee
+            // 
+            this.flpPosition_employee.Location = new System.Drawing.Point(132, 3);
+            this.flpPosition_employee.Name = "flpPosition_employee";
+            this.flpPosition_employee.Size = new System.Drawing.Size(318, 97);
+            this.flpPosition_employee.TabIndex = 0;
+            // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1307,6 +1343,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgEmployee.ResumeLayout(false);
             this.pnlFunction_employe.ResumeLayout(false);
             this.grbSearch_employee.ResumeLayout(false);
+            this.grbSearch_employee.PerformLayout();
             this.pnlGender_employee.ResumeLayout(false);
             this.pnlGender_employee.PerformLayout();
             this.pnlPhone_employee.ResumeLayout(false);
@@ -1316,7 +1353,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_employee.ResumeLayout(false);
             this.pnlName_employee.PerformLayout();
             this.tpgUserSetting.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flp_userSetting.ResumeLayout(false);
+            this.pnlPosition_employee.ResumeLayout(false);
+            this.pnlPosition_employee.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1339,7 +1378,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.DataGridView dgvMaterial_material;
         private System.Windows.Forms.Button btnChangeInformation_userSetting;
         private System.Windows.Forms.Button btnCreateAccount_userSetting;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flp_userSetting;
         private System.Windows.Forms.Button btnResetPassword_userSetting;
         private System.Windows.Forms.GroupBox grbItemInfor_Buy;
         private System.Windows.Forms.GroupBox grbGeneralInfor_Buy;
@@ -1430,7 +1469,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.TextBox txtPhone_employee;
         private System.Windows.Forms.RadioButton rdoFemale_employee;
         private System.Windows.Forms.RadioButton rdoMale_employee;
-        private System.Windows.Forms.RadioButton rdoAll;
+        private System.Windows.Forms.RadioButton rdoAll_employee;
         private System.Windows.Forms.Panel pnlFunction_employe;
+        private System.Windows.Forms.Panel pnlPosition_employee;
+        private System.Windows.Forms.Label lblPosition_employee;
+        private System.Windows.Forms.FlowLayoutPanel flpPosition_employee;
     }
 }

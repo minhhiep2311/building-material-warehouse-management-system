@@ -72,7 +72,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
                     lvwPhone.Items[e.Item].Text = _previousLabelValue;
                 }
             }
-            else if (!Helper.RegexValidate.PhoneNumber(e.Label))
+            else if (!Helper.Validate.PhoneNumber(e.Label))
             {
                 MessageBox.Show(
                     Resources.MessageBox_Message_InvalidPhoneNumberFormat,
