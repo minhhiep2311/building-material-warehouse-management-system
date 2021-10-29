@@ -208,4 +208,10 @@
   <data name="TaskManager_Label_User" xml:space="preserve">
     <value>Người dùng: {0}</value>
   </data>
+  <data name="MessageBox_Message_ConfirmChangeEmployeeInfo" xml:space="preserve">
+    <value>Thông tin của {0} sẽ được thay đổi. Vẫn tiếp tục?</value>
+  </data>
+  <data name="MessageBox_Message_ChangeInfoNoChange" xml:space="preserve">
+    <value>Không có thay đổi! Thông tin người dùng vẫn được giữ nguyên</value>
+  </data>
 </root>

@@ -45,7 +45,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
 
             var selectItem = lvwPhone.SelectedItems[0];
             lvwPhone.SelectedItems.Clear();
-                selectItem.BeginEdit();
+            selectItem.BeginEdit();
         }
 
         private void btnRemovePhone_Click(object sender, EventArgs e)
@@ -155,6 +155,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
 
             if (_user.Equals(newUser))
             {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_ChangeInfoNoChange,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
                 Close();
                 return;
             }
@@ -210,7 +217,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
 
         private static bool ChangeInformation(User newUser)
         {
-            return AccountService.ChangePersonalInformation(newUser);
+            return EmployeeService.ChangePersonalInformation(newUser);
         }
 
         private bool ChangePhoneNumber(User newUser)
