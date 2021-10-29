@@ -221,9 +221,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             this.groupBox1.Controls.Add(this.lvwPhone);
             this.groupBox1.Controls.Add(this.btnRemovePhone);
             this.groupBox1.Controls.Add(this.btnAddPhone);
-            this.groupBox1.Location = new System.Drawing.Point(524, 23);
+            this.groupBox1.Location = new System.Drawing.Point(524, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(505, 118);
+            this.groupBox1.Size = new System.Drawing.Size(505, 114);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Số điện thoại";

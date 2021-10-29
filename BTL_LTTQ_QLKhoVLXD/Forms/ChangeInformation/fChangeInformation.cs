@@ -24,31 +24,28 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
         }
 
         #region Events
+
         private void fChangeInformation_Load(object sender, EventArgs e)
         {
-            txtName.Text = _user.Name;
-            txtDob.Text = _user.Dob.ToShortDateString();
-            if (_user.IsMale)
-                rdoMale.Checked = true;
-            else
-                rdoFemale.Checked = true;
-            txtAddress.Text = _user.Address;
-            lvwPhone.Columns.Add("SDT", -2, HorizontalAlignment.Left);
-            _user.PhoneNumber.ForEach(phone =>
-                lvwPhone.Items.Add(new ListViewItem(phone))
-            );
+            InitControls();
+            BindData();
         }
 
         private void btnAddPhone_Click(object sender, EventArgs e)
         {
+            lvwPhone.SelectedItems.Clear();
             var item = lvwPhone.Items.Add("");
             item.BeginEdit();
         }
 
         private void btnModifyPhone_Click(object sender, EventArgs e)
         {
-            if (lvwPhone.SelectedItems.Count > 0)
-                lvwPhone.SelectedItems[0].BeginEdit();
+            if (lvwPhone.SelectedItems.Count <= 0)
+                return;
+
+            var selectItem = lvwPhone.SelectedItems[0];
+            lvwPhone.SelectedItems.Clear();
+                selectItem.BeginEdit();
         }
 
         private void btnRemovePhone_Click(object sender, EventArgs e)
@@ -119,6 +116,26 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
         #endregion
 
         #region Methods
+
+        private void InitControls()
+        {
+            lvwPhone.Columns.Add("SDT", -2, HorizontalAlignment.Left);
+        }
+
+        private void BindData()
+        {
+            txtName.Text = _user.Name;
+            txtDob.Text = _user.Dob.ToShortDateString();
+            if (_user.IsMale)
+                rdoMale.Checked = true;
+            else
+                rdoFemale.Checked = true;
+            txtAddress.Text = _user.Address;
+            txtAddress.Text = _user.Address;
+            _user.PhoneNumber.ForEach(phone =>
+                lvwPhone.Items.Add(new ListViewItem(phone))
+            );
+        }
 
         private void TryChangeInformation()
         {
