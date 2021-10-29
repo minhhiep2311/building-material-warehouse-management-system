@@ -82,7 +82,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             if (phoneList.Count == 0)
                 return true;
 
-            var values = phoneList.Select(phone => $"({user.Id}, {phone})");
+            var values = phoneList.Select(phone => $"(N'{user.Id}', N'{phone}')");
             var query = $"INSERT INTO employeePhoneNumber VALUES {string.Join(", ", values)}";
             var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
             return rowAffected == phoneList.Count;

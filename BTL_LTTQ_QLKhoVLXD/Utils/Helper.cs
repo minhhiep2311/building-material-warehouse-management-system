@@ -79,9 +79,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
                     return CheckInvert(1);
 
                 // Datetime Comparison
-                if (DateTime.TryParse(a.SubItems[Column].Text, out var dt1) &&
-                    DateTime.TryParse(b.SubItems[Column].Text, out var dt2))
-                    return CheckInvert(DateTime.Compare(dt1, dt2));
+                if (System.DateTime.TryParse(a.SubItems[Column].Text, out var dt1) &&
+                    System.DateTime.TryParse(b.SubItems[Column].Text, out var dt2))
+                    return CheckInvert(System.DateTime.Compare(dt1, dt2));
 
                 // Numeric Comparison
                 if (decimal.TryParse(a.SubItems[Column].Text, out var n1) &&
@@ -101,10 +101,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
             }
         }
 
-        public static class Character
+        public class Character
         {
             public static readonly string UpArrow = "▲";
             public static readonly string DownArrow = "▼";
+        }
+
+        public class DateTime
+        {
+            public static readonly string DateFormat = "dd-MM-yyyy";
         }
     }
 }
