@@ -210,7 +210,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
 
         private static bool ChangeInformation(User newUser)
         {
-            return AccountService.ChangePersonalInformation(newUser);
+            return EmployeeService.ChangePersonalInformation(newUser);
         }
 
         private bool ChangePhoneNumber(User newUser)

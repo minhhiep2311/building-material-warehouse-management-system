@@ -125,11 +125,29 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Không có thay đổi! Thông tin người dùng vẫn được giữ nguyên.
+        /// </summary>
+        internal static string MessageBox_Message_ChangeInfoNoChange {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ChangeInfoNoChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thay đổi thành công!.
         /// </summary>
         internal static string MessageBox_Message_ChangeSuccessfully {
             get {
                 return ResourceManager.GetString("MessageBox_Message_ChangeSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thông tin của {0} sẽ được thay đổi. Vẫn tiếp tục?.
+        /// </summary>
+        internal static string MessageBox_Message_ConfirmChangeEmployeeInfo {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ConfirmChangeEmployeeInfo", resourceCulture);
             }
         }
         
