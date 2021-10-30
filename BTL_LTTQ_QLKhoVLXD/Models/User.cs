@@ -9,8 +9,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
     public class User : IEquatable<User>
     {
         #region Properties
-        
-        public string Id { get; }
+
+        public int Id { get; set; }
         public string Name { get; }
         public string Address { get; }
         public bool IsMale { get; }
@@ -23,31 +23,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
         #region Constructors
 
+        public User(string name, string address, bool isMale, DateTime dob, EmployeePosition position, List<string> phoneNumber)
+            : this(-1, name, address, isMale, dob, position, null, phoneNumber)
+        { }
+
         public User(string name, string address, bool isMale, DateTime dob, EmployeePosition position, string account)
-        {
-            Id = null;
-            Name = name;
-            Address = address;
-            IsMale = isMale;
-            Dob = dob;
-            Position = position;
-            Account = account;
-            PhoneNumber = GetPhoneNumberData(account);
-        }
+            : this(-1, name, address, isMale, dob, position, account, GetPhoneNumberData(account))
+        { }
 
-        public User(string id, string name, string address, bool isMale, DateTime dob, EmployeePosition position, string account)
-        {
-            Id = id;
-            Name = name;
-            Address = address;
-            IsMale = isMale;
-            Dob = dob;
-            Position = position;
-            Account = account;
-            PhoneNumber = GetPhoneNumberData(account);
-        }
+        public User(int id, string name, string address, bool isMale, DateTime dob, EmployeePosition position, string account)
+            : this(id, name, address, isMale, dob, position, account, GetPhoneNumberData(account))
+        { }
 
-        public User(string id, string name, string address, bool isMale, DateTime dob, EmployeePosition position, string account, List<string> phoneNumber)
+        public User(int id, string name, string address, bool isMale, DateTime dob, EmployeePosition position, string account, List<string> phoneNumber)
         {
             Id = id;
             Name = name;
@@ -67,7 +55,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
         {
             var account = Convert.ToString(data["username"]);
             return new User(
-                Convert.ToString(data["id"]),
+                Convert.ToInt32(data["id"]),
                 Convert.ToString(data["name"]),
                 Convert.ToString(data["address"]),
                 Convert.ToInt32(data["isMale"]) == 1,

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -13,16 +14,25 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
 {
     public partial class fEmployee : Form
     {
-        private readonly bool _editable;
-        private readonly User _user;
         private readonly fTaskManager _parentForm;
+        private readonly User _user;
+        private readonly Mode _mode;
+        private readonly bool _startEdit;
 
-        public fEmployee(User user, bool editable, fTaskManager form)
+        public enum Mode
+        {
+            Read,
+            Write,
+            Create
+        }
+
+        public fEmployee(fTaskManager form, Mode mode = Mode.Create, User user = null, bool startEdit = false)
         {
             InitializeComponent();
-            _editable = editable;
+            _mode = mode;
             _user = user;
             _parentForm = form;
+            _startEdit = startEdit;
         }
 
         #region Events
@@ -95,7 +105,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            TryChangeInformation();
+            if (_mode == Mode.Create)
+                TryCreate();
+            else
+                TryChangeInformation();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -114,6 +127,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
 
         private void BindData()
         {
+            var positions = EmployeeService.GetPositions();
+            cboPosition.DataSource = positions;
+            cboPosition.SelectedIndex = -1;
+
+            if (_mode == Mode.Create)
+                return;
+
             txtName.Text = _user.Name;
             dtpDob.Text = _user.Dob.ToShortDateString();
             if (_user.IsMale)
@@ -124,46 +144,101 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             _user.PhoneNumber.ForEach(phone =>
                 lvwPhone.Items.Add(new ListViewItem(phone))
             );
-            var positions = EmployeeService.GetPositions();
-            cboPosition.DataSource = positions;
             cboPosition.SelectedIndex = positions.FindIndex(x => x.Name.Equals(_user.Position.Name));
         }
 
         private void ConfigureAccessibility()
         {
-            chkEdit.Visible = _editable && !_parentForm.User.Equals(_user);
+            // Only allow edit if mode is write and user that edited is not himself
+            chkEdit.Visible = _mode == Mode.Write && !_parentForm.User.Equals(_user);
 
-            if (_editable)
+            switch (_mode)
+            {
+                case Mode.Write:
+                    {
+                        if (_startEdit)
+                            chkEdit.Checked = true;
+                        return;
+                    }
+                case Mode.Create:
+                    chkEdit.Checked = true;
+                    btnSave.Text = Resources.Form_ButtonSave;
+                    return;
+                case Mode.Read:
+                    txtName.ReadOnly = true;
+                    dtpDob.Enabled = false;
+                    rdoMale.Enabled = false;
+                    rdoFemale.Enabled = false;
+                    txtAddress.ReadOnly = true;
+                    btnAddPhone.Visible = false;
+                    btnModifyPhone.Visible = false;
+                    btnRemovePhone.Visible = false;
+                    btnSave.Visible = false;
+                    btnCancel.Visible = false;
+                    return;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        private void TryCreate()
+        {
+            var name = txtName.Text;
+            var address = txtAddress.Text;
+            var isMale = rdoMale.Checked;
+            var dob = DateTime.ParseExact(Regex.Replace(dtpDob.Text, @"\s+", ""),
+                Resources.Format_DateFormat,
+                CultureInfo.InvariantCulture);
+            var position = (EmployeePosition)cboPosition.SelectedItem;
+            var phoneNumbers = lvwPhone.Items
+               .Cast<ListViewItem>()
+               .Select(item => item.Text)
+               .ToList();
+
+            var newUser = new User(name, address, isMale, dob, position, phoneNumbers);
+
+            if (!ValidInput())
                 return;
 
-            txtName.ReadOnly = true;
-            dtpDob.Enabled = false;
-            rdoMale.Enabled = false;
-            rdoFemale.Enabled = false;
-            txtAddress.ReadOnly = true;
-            btnAddPhone.Visible = false;
-            btnModifyPhone.Visible = false;
-            btnRemovePhone.Visible = false;
-            btnSave.Visible = false;
-            btnCancel.Visible = false;
+            if (CreateUser(ref newUser) &&
+                AddNewPhoneNumbers(phoneNumbers, newUser))
+            {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_AddEmployeeSuccessfully,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            else
+                MessageBox.Show(
+                    Resources.MessageBox_Message_SystemError,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+
+            _parentForm.LoadData_Employee();
+            Close();
         }
+
         private void TryChangeInformation()
         {
-            var newUser = new User(
-                _user.Id,
-                txtName.Text,
-                txtAddress.Text,
-                rdoMale.Checked,
-                DateTime.ParseExact(Regex.Replace(dtpDob.Text, @"\s+", ""),
-                    Resources.Format_DateFormat,
-                    CultureInfo.InvariantCulture),
-                (EmployeePosition)cboPosition.SelectedItem,
-                _user.Account,
-                lvwPhone.Items
-                   .Cast<ListViewItem>()
-                   .Select(item => item.Text)
-                   .ToList()
-            );
+            var id = _user.Id;
+            var name = txtName.Text;
+            var address = txtAddress.Text;
+            var isMale = rdoMale.Checked;
+            var dob = DateTime.ParseExact(Regex.Replace(dtpDob.Text, @"\s+", ""),
+                Resources.Format_DateFormat,
+                CultureInfo.InvariantCulture);
+            var position = (EmployeePosition)cboPosition.SelectedItem;
+            var account = _user.Account;
+            var phoneNumbers = lvwPhone.Items
+               .Cast<ListViewItem>()
+               .Select(item => item.Text)
+               .ToList();
+
+            var newUser = new User(id, name, address, isMale, dob, position, account, phoneNumbers);
 
             if (_user.Equals(newUser))
             {
@@ -238,6 +313,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             ) == DialogResult.Yes;
         }
 
+        private static bool CreateUser(ref User newUser)
+        {
+            newUser.Id = EmployeeService.CreateEmployee(newUser);
+            return newUser.Id != -1;
+        }
+
         private static bool ChangeInformation(User newUser)
         {
             return EmployeeService.ChangeEmployeeInformation(newUser);
@@ -251,8 +332,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
                     newUser.PhoneNumber
                 );
 
-            return EmployeeService.DeletePhoneNumbers(shouldDelete) &&
-                EmployeeService.AddNewPhoneNumber(_user, shouldAdd);
+            return DeletePhoneNumbers(shouldDelete) && AddNewPhoneNumbers(shouldAdd);
+        }
+
+        private static bool DeletePhoneNumbers(List<string> shouldDelete)
+        {
+            return EmployeeService.DeletePhoneNumbers(shouldDelete);
+        }
+
+        private bool AddNewPhoneNumbers(List<string> shouldAdd, User user = null)
+        {
+            return EmployeeService.AddNewPhoneNumbers(user ?? _user, shouldAdd);
         }
 
         #endregion

@@ -229,7 +229,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
                 );
 
             return EmployeeService.DeletePhoneNumbers(shouldDelete) &&
-                EmployeeService.AddNewPhoneNumber(_user, shouldAdd);
+                EmployeeService.AddNewPhoneNumbers(_user, shouldAdd);
         }
 
         #endregion

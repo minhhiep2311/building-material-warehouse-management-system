@@ -116,8 +116,21 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgCustomer = new System.Windows.Forms.TabPage();
             this.tpgSupplier = new System.Windows.Forms.TabPage();
             this.tpgEmployee = new System.Windows.Forms.TabPage();
+            this.spc_employee = new System.Windows.Forms.SplitContainer();
+            this.lvwEmployee_employee = new System.Windows.Forms.ListView();
+            this.flpFunction_employee = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAdd_employee = new System.Windows.Forms.Button();
+            this.btnEdit_employee = new System.Windows.Forms.Button();
+            this.btnRemoveAccount_employee = new System.Windows.Forms.Button();
+            this.btnRemoveEmployee_employee = new System.Windows.Forms.Button();
             this.pnlFunction_employe = new System.Windows.Forms.Panel();
             this.grbSearch_employee = new System.Windows.Forms.GroupBox();
+            this.pnlAccount_employee = new System.Windows.Forms.Panel();
+            this.lblAccount_employee = new System.Windows.Forms.Label();
+            this.txtAccount_employee = new System.Windows.Forms.TextBox();
+            this.pnlPosition_employee = new System.Windows.Forms.Panel();
+            this.flpPosition_employee = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblPosition_employee = new System.Windows.Forms.Label();
             this.pnlGender_employee = new System.Windows.Forms.Panel();
             this.rdoFemale_employee = new System.Windows.Forms.RadioButton();
             this.rdoMale_employee = new System.Windows.Forms.RadioButton();
@@ -132,15 +145,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_employee = new System.Windows.Forms.Panel();
             this.lblName_employee = new System.Windows.Forms.Label();
             this.txtName_employee = new System.Windows.Forms.TextBox();
-            this.lvwEmployee_employee = new System.Windows.Forms.ListView();
             this.tpgUserSetting = new System.Windows.Forms.TabPage();
             this.flp_userSetting = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCreateAccount_userSetting = new System.Windows.Forms.Button();
             this.btnChangeInformation_userSetting = new System.Windows.Forms.Button();
             this.btnResetPassword_userSetting = new System.Windows.Forms.Button();
-            this.pnlPosition_employee = new System.Windows.Forms.Panel();
-            this.lblPosition_employee = new System.Windows.Forms.Label();
-            this.flpPosition_employee = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3.SuspendLayout();
             this.tctlControl.SuspendLayout();
             this.tpgBuy.SuspendLayout();
@@ -156,15 +165,21 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgMaterial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial_material)).BeginInit();
             this.tpgEmployee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spc_employee)).BeginInit();
+            this.spc_employee.Panel1.SuspendLayout();
+            this.spc_employee.Panel2.SuspendLayout();
+            this.spc_employee.SuspendLayout();
+            this.flpFunction_employee.SuspendLayout();
             this.pnlFunction_employe.SuspendLayout();
             this.grbSearch_employee.SuspendLayout();
+            this.pnlAccount_employee.SuspendLayout();
+            this.pnlPosition_employee.SuspendLayout();
             this.pnlGender_employee.SuspendLayout();
             this.pnlPhone_employee.SuspendLayout();
             this.pnlAddress_employee.SuspendLayout();
             this.pnlName_employee.SuspendLayout();
             this.tpgUserSetting.SuspendLayout();
             this.flp_userSetting.SuspendLayout();
-            this.pnlPosition_employee.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -1016,8 +1031,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // tpgEmployee
             // 
-            this.tpgEmployee.Controls.Add(this.pnlFunction_employe);
-            this.tpgEmployee.Controls.Add(this.lvwEmployee_employee);
+            this.tpgEmployee.Controls.Add(this.spc_employee);
             this.tpgEmployee.Location = new System.Drawing.Point(174, 4);
             this.tpgEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgEmployee.Name = "tpgEmployee";
@@ -1028,17 +1042,112 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgEmployee.Enter += new System.EventHandler(this.tpgEmployee_Enter);
             this.tpgEmployee.Leave += new System.EventHandler(this.tpgEmployee_Leave);
             // 
+            // spc_employee
+            // 
+            this.spc_employee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spc_employee.Location = new System.Drawing.Point(0, 0);
+            this.spc_employee.Name = "spc_employee";
+            // 
+            // spc_employee.Panel1
+            // 
+            this.spc_employee.Panel1.Controls.Add(this.lvwEmployee_employee);
+            this.spc_employee.Panel1MinSize = 200;
+            // 
+            // spc_employee.Panel2
+            // 
+            this.spc_employee.Panel2.Controls.Add(this.flpFunction_employee);
+            this.spc_employee.Panel2.Controls.Add(this.pnlFunction_employe);
+            this.spc_employee.Panel2MinSize = 350;
+            this.spc_employee.Size = new System.Drawing.Size(1101, 599);
+            this.spc_employee.SplitterDistance = 590;
+            this.spc_employee.TabIndex = 5;
+            // 
+            // lvwEmployee_employee
+            // 
+            this.lvwEmployee_employee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvwEmployee_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lvwEmployee_employee.FullRowSelect = true;
+            this.lvwEmployee_employee.HideSelection = false;
+            this.lvwEmployee_employee.Location = new System.Drawing.Point(0, 0);
+            this.lvwEmployee_employee.Name = "lvwEmployee_employee";
+            this.lvwEmployee_employee.Size = new System.Drawing.Size(590, 599);
+            this.lvwEmployee_employee.TabIndex = 2;
+            this.lvwEmployee_employee.UseCompatibleStateImageBehavior = false;
+            this.lvwEmployee_employee.View = System.Windows.Forms.View.Details;
+            this.lvwEmployee_employee.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvwEmployee_employee_ColumnClick);
+            this.lvwEmployee_employee.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.lvwEmployee_employee_ColumnWidthChanging);
+            this.lvwEmployee_employee.SelectedIndexChanged += new System.EventHandler(this.lvwEmployee_employee_SelectedIndexChanged);
+            this.lvwEmployee_employee.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwEmployee_employee_MouseDoubleClick);
+            // 
+            // flpFunction_employee
+            // 
+            this.flpFunction_employee.Controls.Add(this.btnAdd_employee);
+            this.flpFunction_employee.Controls.Add(this.btnEdit_employee);
+            this.flpFunction_employee.Controls.Add(this.btnRemoveAccount_employee);
+            this.flpFunction_employee.Controls.Add(this.btnRemoveEmployee_employee);
+            this.flpFunction_employee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpFunction_employee.Location = new System.Drawing.Point(0, 351);
+            this.flpFunction_employee.Name = "flpFunction_employee";
+            this.flpFunction_employee.Padding = new System.Windows.Forms.Padding(5);
+            this.flpFunction_employee.Size = new System.Drawing.Size(507, 248);
+            this.flpFunction_employee.TabIndex = 4;
+            // 
+            // btnAdd_employee
+            // 
+            this.btnAdd_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAdd_employee.Location = new System.Drawing.Point(8, 8);
+            this.btnAdd_employee.Name = "btnAdd_employee";
+            this.btnAdd_employee.Size = new System.Drawing.Size(185, 47);
+            this.btnAdd_employee.TabIndex = 0;
+            this.btnAdd_employee.Text = "Thêm nhân viên";
+            this.btnAdd_employee.UseVisualStyleBackColor = true;
+            this.btnAdd_employee.Click += new System.EventHandler(this.btnAdd_employee_Click);
+            // 
+            // btnEdit_employee
+            // 
+            this.btnEdit_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnEdit_employee.Location = new System.Drawing.Point(199, 8);
+            this.btnEdit_employee.Name = "btnEdit_employee";
+            this.btnEdit_employee.Size = new System.Drawing.Size(185, 47);
+            this.btnEdit_employee.TabIndex = 2;
+            this.btnEdit_employee.Text = "Chỉnh sửa thông tin";
+            this.btnEdit_employee.UseVisualStyleBackColor = true;
+            this.btnEdit_employee.Click += new System.EventHandler(this.btnEdit_employee_Click);
+            // 
+            // btnRemoveAccount_employee
+            // 
+            this.btnRemoveAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnRemoveAccount_employee.Location = new System.Drawing.Point(8, 61);
+            this.btnRemoveAccount_employee.Name = "btnRemoveAccount_employee";
+            this.btnRemoveAccount_employee.Size = new System.Drawing.Size(185, 47);
+            this.btnRemoveAccount_employee.TabIndex = 3;
+            this.btnRemoveAccount_employee.Text = "Xóa tài khoản";
+            this.btnRemoveAccount_employee.UseVisualStyleBackColor = true;
+            this.btnRemoveAccount_employee.Click += new System.EventHandler(this.btnRemoveAccount_employee_Click);
+            // 
+            // btnRemoveEmployee_employee
+            // 
+            this.btnRemoveEmployee_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnRemoveEmployee_employee.Location = new System.Drawing.Point(199, 61);
+            this.btnRemoveEmployee_employee.Name = "btnRemoveEmployee_employee";
+            this.btnRemoveEmployee_employee.Size = new System.Drawing.Size(185, 47);
+            this.btnRemoveEmployee_employee.TabIndex = 1;
+            this.btnRemoveEmployee_employee.Text = "Xóa nhân viên";
+            this.btnRemoveEmployee_employee.UseVisualStyleBackColor = true;
+            this.btnRemoveEmployee_employee.Click += new System.EventHandler(this.btnRemoveEmployee_employee_Click);
+            // 
             // pnlFunction_employe
             // 
             this.pnlFunction_employe.Controls.Add(this.grbSearch_employee);
             this.pnlFunction_employe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFunction_employe.Location = new System.Drawing.Point(558, 0);
+            this.pnlFunction_employe.Location = new System.Drawing.Point(0, 0);
             this.pnlFunction_employe.Name = "pnlFunction_employe";
-            this.pnlFunction_employe.Size = new System.Drawing.Size(543, 399);
+            this.pnlFunction_employe.Size = new System.Drawing.Size(507, 351);
             this.pnlFunction_employe.TabIndex = 4;
             // 
             // grbSearch_employee
             // 
+            this.grbSearch_employee.Controls.Add(this.pnlAccount_employee);
             this.grbSearch_employee.Controls.Add(this.pnlPosition_employee);
             this.grbSearch_employee.Controls.Add(this.pnlGender_employee);
             this.grbSearch_employee.Controls.Add(this.pnlPhone_employee);
@@ -1047,10 +1156,65 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbSearch_employee.Dock = System.Windows.Forms.DockStyle.Top;
             this.grbSearch_employee.Location = new System.Drawing.Point(0, 0);
             this.grbSearch_employee.Name = "grbSearch_employee";
-            this.grbSearch_employee.Size = new System.Drawing.Size(543, 332);
+            this.grbSearch_employee.Size = new System.Drawing.Size(507, 335);
             this.grbSearch_employee.TabIndex = 3;
             this.grbSearch_employee.TabStop = false;
             this.grbSearch_employee.Text = "Tìm kiếm";
+            // 
+            // pnlAccount_employee
+            // 
+            this.pnlAccount_employee.Controls.Add(this.lblAccount_employee);
+            this.pnlAccount_employee.Controls.Add(this.txtAccount_employee);
+            this.pnlAccount_employee.Location = new System.Drawing.Point(6, 61);
+            this.pnlAccount_employee.Name = "pnlAccount_employee";
+            this.pnlAccount_employee.Size = new System.Drawing.Size(496, 39);
+            this.pnlAccount_employee.TabIndex = 3;
+            // 
+            // lblAccount_employee
+            // 
+            this.lblAccount_employee.AutoSize = true;
+            this.lblAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblAccount_employee.Location = new System.Drawing.Point(3, 9);
+            this.lblAccount_employee.Name = "lblAccount_employee";
+            this.lblAccount_employee.Size = new System.Drawing.Size(81, 20);
+            this.lblAccount_employee.TabIndex = 0;
+            this.lblAccount_employee.Text = "Tài khoản";
+            // 
+            // txtAccount_employee
+            // 
+            this.txtAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtAccount_employee.Location = new System.Drawing.Point(132, 6);
+            this.txtAccount_employee.Name = "txtAccount_employee";
+            this.txtAccount_employee.Size = new System.Drawing.Size(318, 26);
+            this.txtAccount_employee.TabIndex = 1;
+            this.txtAccount_employee.TextChanged += new System.EventHandler(this.txtAccount_employee_TextChanged);
+            // 
+            // pnlPosition_employee
+            // 
+            this.pnlPosition_employee.AutoSize = true;
+            this.pnlPosition_employee.Controls.Add(this.flpPosition_employee);
+            this.pnlPosition_employee.Controls.Add(this.lblPosition_employee);
+            this.pnlPosition_employee.Location = new System.Drawing.Point(8, 241);
+            this.pnlPosition_employee.Name = "pnlPosition_employee";
+            this.pnlPosition_employee.Size = new System.Drawing.Size(496, 62);
+            this.pnlPosition_employee.TabIndex = 6;
+            // 
+            // flpPosition_employee
+            // 
+            this.flpPosition_employee.Location = new System.Drawing.Point(132, 3);
+            this.flpPosition_employee.Name = "flpPosition_employee";
+            this.flpPosition_employee.Size = new System.Drawing.Size(318, 41);
+            this.flpPosition_employee.TabIndex = 0;
+            // 
+            // lblPosition_employee
+            // 
+            this.lblPosition_employee.AutoSize = true;
+            this.lblPosition_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblPosition_employee.Location = new System.Drawing.Point(3, 10);
+            this.lblPosition_employee.Name = "lblPosition_employee";
+            this.lblPosition_employee.Size = new System.Drawing.Size(70, 20);
+            this.lblPosition_employee.TabIndex = 1;
+            this.lblPosition_employee.Text = "Chức vụ";
             // 
             // pnlGender_employee
             // 
@@ -1058,7 +1222,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlGender_employee.Controls.Add(this.rdoMale_employee);
             this.pnlGender_employee.Controls.Add(this.rdoAll_employee);
             this.pnlGender_employee.Controls.Add(this.lblGender_employee);
-            this.pnlGender_employee.Location = new System.Drawing.Point(6, 151);
+            this.pnlGender_employee.Location = new System.Drawing.Point(8, 196);
             this.pnlGender_employee.Name = "pnlGender_employee";
             this.pnlGender_employee.Size = new System.Drawing.Size(496, 39);
             this.pnlGender_employee.TabIndex = 5;
@@ -1115,7 +1279,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlPhone_employee.Controls.Add(this.lblPhone_employee);
             this.pnlPhone_employee.Controls.Add(this.txtPhone_employee);
-            this.pnlPhone_employee.Location = new System.Drawing.Point(6, 106);
+            this.pnlPhone_employee.Location = new System.Drawing.Point(6, 151);
             this.pnlPhone_employee.Name = "pnlPhone_employee";
             this.pnlPhone_employee.Size = new System.Drawing.Size(496, 39);
             this.pnlPhone_employee.TabIndex = 4;
@@ -1143,7 +1307,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlAddress_employee.Controls.Add(this.lblAddress_employee);
             this.pnlAddress_employee.Controls.Add(this.txtAddress_employee);
-            this.pnlAddress_employee.Location = new System.Drawing.Point(6, 61);
+            this.pnlAddress_employee.Location = new System.Drawing.Point(6, 106);
             this.pnlAddress_employee.Name = "pnlAddress_employee";
             this.pnlAddress_employee.Size = new System.Drawing.Size(496, 39);
             this.pnlAddress_employee.TabIndex = 3;
@@ -1194,22 +1358,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtName_employee.Size = new System.Drawing.Size(318, 26);
             this.txtName_employee.TabIndex = 1;
             this.txtName_employee.TextChanged += new System.EventHandler(this.txtName_employee_TextChanged);
-            // 
-            // lvwEmployee_employee
-            // 
-            this.lvwEmployee_employee.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lvwEmployee_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lvwEmployee_employee.FullRowSelect = true;
-            this.lvwEmployee_employee.HideSelection = false;
-            this.lvwEmployee_employee.Location = new System.Drawing.Point(0, 0);
-            this.lvwEmployee_employee.Name = "lvwEmployee_employee";
-            this.lvwEmployee_employee.Size = new System.Drawing.Size(558, 599);
-            this.lvwEmployee_employee.TabIndex = 2;
-            this.lvwEmployee_employee.UseCompatibleStateImageBehavior = false;
-            this.lvwEmployee_employee.View = System.Windows.Forms.View.Details;
-            this.lvwEmployee_employee.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvwEmployee_employee_ColumnClick);
-            this.lvwEmployee_employee.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.lvwEmployee_employee_ColumnWidthChanging);
-            this.lvwEmployee_employee.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwEmployee_employee_MouseDoubleClick);
             // 
             // tpgUserSetting
             // 
@@ -1278,33 +1426,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnResetPassword_userSetting.UseVisualStyleBackColor = true;
             this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
             // 
-            // pnlPosition_employee
-            // 
-            this.pnlPosition_employee.AutoSize = true;
-            this.pnlPosition_employee.Controls.Add(this.flpPosition_employee);
-            this.pnlPosition_employee.Controls.Add(this.lblPosition_employee);
-            this.pnlPosition_employee.Location = new System.Drawing.Point(6, 196);
-            this.pnlPosition_employee.Name = "pnlPosition_employee";
-            this.pnlPosition_employee.Size = new System.Drawing.Size(496, 114);
-            this.pnlPosition_employee.TabIndex = 6;
-            // 
-            // lblPosition_employee
-            // 
-            this.lblPosition_employee.AutoSize = true;
-            this.lblPosition_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPosition_employee.Location = new System.Drawing.Point(3, 10);
-            this.lblPosition_employee.Name = "lblPosition_employee";
-            this.lblPosition_employee.Size = new System.Drawing.Size(70, 20);
-            this.lblPosition_employee.TabIndex = 1;
-            this.lblPosition_employee.Text = "Chức vụ";
-            // 
-            // flpPosition_employee
-            // 
-            this.flpPosition_employee.Location = new System.Drawing.Point(132, 3);
-            this.flpPosition_employee.Name = "flpPosition_employee";
-            this.flpPosition_employee.Size = new System.Drawing.Size(318, 97);
-            this.flpPosition_employee.TabIndex = 0;
-            // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1341,9 +1462,18 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgMaterial.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial_material)).EndInit();
             this.tpgEmployee.ResumeLayout(false);
+            this.spc_employee.Panel1.ResumeLayout(false);
+            this.spc_employee.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spc_employee)).EndInit();
+            this.spc_employee.ResumeLayout(false);
+            this.flpFunction_employee.ResumeLayout(false);
             this.pnlFunction_employe.ResumeLayout(false);
             this.grbSearch_employee.ResumeLayout(false);
             this.grbSearch_employee.PerformLayout();
+            this.pnlAccount_employee.ResumeLayout(false);
+            this.pnlAccount_employee.PerformLayout();
+            this.pnlPosition_employee.ResumeLayout(false);
+            this.pnlPosition_employee.PerformLayout();
             this.pnlGender_employee.ResumeLayout(false);
             this.pnlGender_employee.PerformLayout();
             this.pnlPhone_employee.ResumeLayout(false);
@@ -1354,8 +1484,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_employee.PerformLayout();
             this.tpgUserSetting.ResumeLayout(false);
             this.flp_userSetting.ResumeLayout(false);
-            this.pnlPosition_employee.ResumeLayout(false);
-            this.pnlPosition_employee.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1474,5 +1602,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Panel pnlPosition_employee;
         private System.Windows.Forms.Label lblPosition_employee;
         private System.Windows.Forms.FlowLayoutPanel flpPosition_employee;
+        private System.Windows.Forms.SplitContainer spc_employee;
+        private System.Windows.Forms.Panel pnlAccount_employee;
+        private System.Windows.Forms.Label lblAccount_employee;
+        private System.Windows.Forms.TextBox txtAccount_employee;
+        private System.Windows.Forms.FlowLayoutPanel flpFunction_employee;
+        private System.Windows.Forms.Button btnAdd_employee;
+        private System.Windows.Forms.Button btnRemoveEmployee_employee;
+        private System.Windows.Forms.Button btnEdit_employee;
+        private System.Windows.Forms.Button btnRemoveAccount_employee;
     }
 }

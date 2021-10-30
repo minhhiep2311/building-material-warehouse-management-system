@@ -30,6 +30,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
         private void InitializeComponent()
         {
             this.grbInfo = new System.Windows.Forms.GroupBox();
+            this.pnlPosition = new System.Windows.Forms.Panel();
+            this.lblPosition = new System.Windows.Forms.Label();
+            this.cboPosition = new System.Windows.Forms.ComboBox();
             this.pnlAddress = new System.Windows.Forms.Panel();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
@@ -52,17 +55,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.chkEdit = new System.Windows.Forms.CheckBox();
-            this.pnlPosition = new System.Windows.Forms.Panel();
-            this.lblPosition = new System.Windows.Forms.Label();
-            this.cboPosition = new System.Windows.Forms.ComboBox();
             this.grbInfo.SuspendLayout();
+            this.pnlPosition.SuspendLayout();
             this.pnlAddress.SuspendLayout();
             this.pnlGender.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.grbPhone.SuspendLayout();
             this.pnlButton.SuspendLayout();
-            this.pnlPosition.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbInfo
@@ -75,9 +75,35 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.grbInfo.Location = new System.Drawing.Point(12, 12);
             this.grbInfo.Name = "grbInfo";
             this.grbInfo.Size = new System.Drawing.Size(505, 213);
-            this.grbInfo.TabIndex = 11;
+            this.grbInfo.TabIndex = 0;
             this.grbInfo.TabStop = false;
             this.grbInfo.Text = "Thông tin cá nhân";
+            // 
+            // pnlPosition
+            // 
+            this.pnlPosition.Controls.Add(this.lblPosition);
+            this.pnlPosition.Controls.Add(this.cboPosition);
+            this.pnlPosition.Location = new System.Drawing.Point(3, 174);
+            this.pnlPosition.Name = "pnlPosition";
+            this.pnlPosition.Size = new System.Drawing.Size(496, 32);
+            this.pnlPosition.TabIndex = 13;
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.Location = new System.Drawing.Point(3, 8);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(59, 17);
+            this.lblPosition.TabIndex = 1;
+            this.lblPosition.Text = "Chức vụ";
+            // 
+            // cboPosition
+            // 
+            this.cboPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPosition.Location = new System.Drawing.Point(78, 3);
+            this.cboPosition.Name = "cboPosition";
+            this.cboPosition.Size = new System.Drawing.Size(414, 26);
+            this.cboPosition.TabIndex = 6;
             // 
             // pnlAddress
             // 
@@ -95,7 +121,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.ReadOnly = true;
             this.txtAddress.Size = new System.Drawing.Size(413, 24);
-            this.txtAddress.TabIndex = 3;
+            this.txtAddress.TabIndex = 5;
             // 
             // lblAddress
             // 
@@ -132,7 +158,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.rdoFemale.Location = new System.Drawing.Point(174, 1);
             this.rdoFemale.Name = "rdoFemale";
             this.rdoFemale.Size = new System.Drawing.Size(47, 21);
-            this.rdoFemale.TabIndex = 10;
+            this.rdoFemale.TabIndex = 4;
             this.rdoFemale.Text = "Nữ";
             this.rdoFemale.UseVisualStyleBackColor = true;
             // 
@@ -143,7 +169,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.rdoMale.Location = new System.Drawing.Point(79, 1);
             this.rdoMale.Name = "rdoMale";
             this.rdoMale.Size = new System.Drawing.Size(58, 21);
-            this.rdoMale.TabIndex = 9;
+            this.rdoMale.TabIndex = 3;
             this.rdoMale.Text = "Nam";
             this.rdoMale.UseVisualStyleBackColor = true;
             // 
@@ -154,7 +180,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.panel2.Location = new System.Drawing.Point(3, 62);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(496, 39);
-            this.panel2.TabIndex = 0;
+            this.panel2.TabIndex = 2;
             // 
             // dtpDob
             // 
@@ -165,7 +191,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.dtpDob.Location = new System.Drawing.Point(78, 6);
             this.dtpDob.Name = "dtpDob";
             this.dtpDob.Size = new System.Drawing.Size(414, 25);
-            this.dtpDob.TabIndex = 6;
+            this.dtpDob.TabIndex = 2;
             this.dtpDob.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // lblDob
@@ -193,7 +219,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(415, 24);
-            this.txtName.TabIndex = 2;
+            this.txtName.TabIndex = 1;
             // 
             // lblName
             // 
@@ -223,7 +249,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.btnModifyPhone.Location = new System.Drawing.Point(351, 52);
             this.btnModifyPhone.Name = "btnModifyPhone";
             this.btnModifyPhone.Size = new System.Drawing.Size(145, 26);
-            this.btnModifyPhone.TabIndex = 14;
+            this.btnModifyPhone.TabIndex = 9;
             this.btnModifyPhone.Text = "Chỉnh sửa";
             this.btnModifyPhone.UseVisualStyleBackColor = true;
             this.btnModifyPhone.Click += new System.EventHandler(this.btnModifyPhone_Click);
@@ -239,7 +265,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.lvwPhone.Location = new System.Drawing.Point(3, 18);
             this.lvwPhone.Name = "lvwPhone";
             this.lvwPhone.Size = new System.Drawing.Size(339, 93);
-            this.lvwPhone.TabIndex = 12;
+            this.lvwPhone.TabIndex = 7;
             this.lvwPhone.UseCompatibleStateImageBehavior = false;
             this.lvwPhone.View = System.Windows.Forms.View.Details;
             this.lvwPhone.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwPhone_MouseDoubleClick);
@@ -250,7 +276,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.btnRemovePhone.Location = new System.Drawing.Point(351, 85);
             this.btnRemovePhone.Name = "btnRemovePhone";
             this.btnRemovePhone.Size = new System.Drawing.Size(145, 26);
-            this.btnRemovePhone.TabIndex = 13;
+            this.btnRemovePhone.TabIndex = 10;
             this.btnRemovePhone.Text = "Xóa";
             this.btnRemovePhone.UseVisualStyleBackColor = true;
             this.btnRemovePhone.Click += new System.EventHandler(this.btnRemovePhone_Click);
@@ -261,7 +287,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.btnAddPhone.Location = new System.Drawing.Point(351, 18);
             this.btnAddPhone.Name = "btnAddPhone";
             this.btnAddPhone.Size = new System.Drawing.Size(145, 26);
-            this.btnAddPhone.TabIndex = 5;
+            this.btnAddPhone.TabIndex = 8;
             this.btnAddPhone.Text = "Thêm";
             this.btnAddPhone.UseVisualStyleBackColor = true;
             this.btnAddPhone.Click += new System.EventHandler(this.btnAddPhone_Click);
@@ -280,7 +306,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.btnCancel.Location = new System.Drawing.Point(277, 18);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(129, 38);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Hủy bỏ";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -290,7 +316,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.btnSave.Location = new System.Drawing.Point(58, 21);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(129, 38);
-            this.btnSave.TabIndex = 6;
+            this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Lưu thay đổi";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -301,37 +327,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.chkEdit.Location = new System.Drawing.Point(526, 132);
             this.chkEdit.Name = "chkEdit";
             this.chkEdit.Size = new System.Drawing.Size(152, 21);
-            this.chkEdit.TabIndex = 0;
+            this.chkEdit.TabIndex = 11;
             this.chkEdit.Text = "Chỉnh sửa thông tin";
             this.chkEdit.UseVisualStyleBackColor = true;
             this.chkEdit.CheckedChanged += new System.EventHandler(this.chkEdit_CheckedChanged);
-            // 
-            // pnlPosition
-            // 
-            this.pnlPosition.Controls.Add(this.lblPosition);
-            this.pnlPosition.Controls.Add(this.cboPosition);
-            this.pnlPosition.Location = new System.Drawing.Point(3, 174);
-            this.pnlPosition.Name = "pnlPosition";
-            this.pnlPosition.Size = new System.Drawing.Size(496, 32);
-            this.pnlPosition.TabIndex = 13;
-            // 
-            // lblPosition
-            // 
-            this.lblPosition.AutoSize = true;
-            this.lblPosition.Location = new System.Drawing.Point(3, 8);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(59, 17);
-            this.lblPosition.TabIndex = 1;
-            this.lblPosition.Text = "Chức vụ";
-            // 
-            // cboPosition
-            // 
-            this.cboPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboPosition.FormattingEnabled = true;
-            this.cboPosition.Location = new System.Drawing.Point(78, 3);
-            this.cboPosition.Name = "cboPosition";
-            this.cboPosition.Size = new System.Drawing.Size(414, 26);
-            this.cboPosition.TabIndex = 13;
             // 
             // fEmployee
             // 
@@ -349,6 +348,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.Text = "fEmployee";
             this.Load += new System.EventHandler(this.fEmployee_Load);
             this.grbInfo.ResumeLayout(false);
+            this.pnlPosition.ResumeLayout(false);
+            this.pnlPosition.PerformLayout();
             this.pnlAddress.ResumeLayout(false);
             this.pnlAddress.PerformLayout();
             this.pnlGender.ResumeLayout(false);
@@ -359,8 +360,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.panel1.PerformLayout();
             this.grbPhone.ResumeLayout(false);
             this.pnlButton.ResumeLayout(false);
-            this.pnlPosition.ResumeLayout(false);
-            this.pnlPosition.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

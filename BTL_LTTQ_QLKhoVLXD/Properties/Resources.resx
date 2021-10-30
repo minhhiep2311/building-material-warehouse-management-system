@@ -223,4 +223,13 @@
   <data name="Format_DateFormat" xml:space="preserve">
     <value>dd-MM-yyyy</value>
   </data>
+  <data name="Label_AllOption" xml:space="preserve">
+    <value>Tất cả</value>
+  </data>
+  <data name="Form_ButtonSave" xml:space="preserve">
+    <value>Lưu</value>
+  </data>
+  <data name="MessageBox_Message_AddEmployeeSuccessfully" xml:space="preserve">
+    <value>Thêm nhân viên thành công!</value>
+  </data>
 </root>

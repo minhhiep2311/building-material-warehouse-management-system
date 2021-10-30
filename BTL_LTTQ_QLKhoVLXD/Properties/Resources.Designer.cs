@@ -107,11 +107,29 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lưu.
+        /// </summary>
+        internal static string Form_ButtonSave {
+            get {
+                return ResourceManager.GetString("Form_ButtonSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to dd-MM-yyyy.
         /// </summary>
         internal static string Format_DateFormat {
             get {
                 return ResourceManager.GetString("Format_DateFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tất cả.
+        /// </summary>
+        internal static string Label_AllOption {
+            get {
+                return ResourceManager.GetString("Label_AllOption", resourceCulture);
             }
         }
         
@@ -139,6 +157,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         internal static string MessageBox_Message_AccountNotExist {
             get {
                 return ResourceManager.GetString("MessageBox_Message_AccountNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thêm nhân viên thành công!.
+        /// </summary>
+        internal static string MessageBox_Message_AddEmployeeSuccessfully {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_AddEmployeeSuccessfully", resourceCulture);
             }
         }
         

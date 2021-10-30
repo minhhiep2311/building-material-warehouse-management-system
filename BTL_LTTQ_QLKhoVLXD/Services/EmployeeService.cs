@@ -17,7 +17,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 "FROM employee AS e " +
                 "JOIN employeePosition AS p ON " +
                 "p.id = e.idPosition " +
-                "JOIN account As a ON " +
+                "LEFT JOIN account AS a ON " +
                 "a.idEmployee = e.id";
             var result = DatabaseProvider.Instance.ExecuteQuery(query);
 
@@ -78,7 +78,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             }
         }
 
-        public static bool AddNewPhoneNumber(User user, List<string> phoneList)
+        public static bool AddNewPhoneNumbers(User user, List<string> phoneList)
         {
             if (phoneList.Count == 0)
                 return true;
