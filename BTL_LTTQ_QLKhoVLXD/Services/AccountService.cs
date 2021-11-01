@@ -74,5 +74,18 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
         }
 
         #endregion
+
+        #region Delete
+
+        public static bool DeleteAccount(List<string> accountList)
+        {
+            var usernameList = string.Join(", ", accountList.Select(x => $"N'{x}'"));
+            var query = $"DELETE account WHERE username IN ({usernameList})";
+            var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
+
+            return rowAffected == accountList.Count;
+        }
+
+        #endregion
     }
 }

@@ -1,4 +1,4 @@
-﻿
+
 namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
     partial class fTaskManager
@@ -1117,7 +1117,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnRemoveAccount_employee
             // 
             this.btnRemoveAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnRemoveAccount_employee.Location = new System.Drawing.Point(8, 61);
+            this.btnRemoveAccount_employee.Location = new System.Drawing.Point(199, 61);
             this.btnRemoveAccount_employee.Name = "btnRemoveAccount_employee";
             this.btnRemoveAccount_employee.Size = new System.Drawing.Size(185, 47);
             this.btnRemoveAccount_employee.TabIndex = 3;
@@ -1128,7 +1128,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnRemoveEmployee_employee
             // 
             this.btnRemoveEmployee_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnRemoveEmployee_employee.Location = new System.Drawing.Point(199, 61);
+            this.btnRemoveEmployee_employee.Location = new System.Drawing.Point(8, 114);
             this.btnRemoveEmployee_employee.Name = "btnRemoveEmployee_employee";
             this.btnRemoveEmployee_employee.Size = new System.Drawing.Size(185, 47);
             this.btnRemoveEmployee_employee.TabIndex = 1;

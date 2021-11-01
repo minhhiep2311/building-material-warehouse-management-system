@@ -44,6 +44,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             ConfigureAccessibility();
         }
 
+        private void fEmployee_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _parentForm.LoadData_Employee();
+        }
+
         private void chkEdit_CheckedChanged(object sender, EventArgs e)
         {
             if (chkEdit.Checked)
@@ -183,6 +188,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
 
         private void TryCreate()
         {
+            if (!ValidInput())
+                return;
+
             var name = txtName.Text;
             var address = txtAddress.Text;
             var isMale = rdoMale.Checked;
@@ -196,9 +204,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
                .ToList();
 
             var newUser = new User(name, address, isMale, dob, position, phoneNumbers);
-
-            if (!ValidInput())
-                return;
 
             if (CreateUser(ref newUser) &&
                 AddNewPhoneNumbers(phoneNumbers, newUser))
@@ -273,7 +278,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
                     MessageBoxIcon.Error
                 );
 
-            _parentForm.LoadData_Employee();
             Close();
         }
 

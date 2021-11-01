@@ -232,4 +232,13 @@
   <data name="MessageBox_Message_AddEmployeeSuccessfully" xml:space="preserve">
     <value>Thêm nhân viên thành công!</value>
   </data>
+  <data name="MessageBox_Message_CannotSelfDeleteAccount" xml:space="preserve">
+    <value>Bạn không thể xóa tài khoản của mình!</value>
+  </data>
+  <data name="MessageBox_Message_ConfirmDeleteAccount" xml:space="preserve">
+    <value>Bạn có chắc chắc muốn xóa các tài khoản sau không? {0}</value>
+  </data>
+  <data name="MessageBox_Message_DeleteAccountSuccessfully" xml:space="preserve">
+    <value>Đã xóa {0} tài khoản!</value>
+  </data>
 </root>

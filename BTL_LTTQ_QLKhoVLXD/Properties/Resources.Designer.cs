@@ -170,6 +170,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bạn không thể xóa tài khoản của mình!.
+        /// </summary>
+        internal static string MessageBox_Message_CannotSelfDeleteAccount {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_CannotSelfDeleteAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Không thể đặt lại mật khẩu cho chính mình! Hãy sử dụng chức năng &quot;Thay đổi thông tin cá nhân&quot;.
         /// </summary>
         internal static string MessageBox_Message_CannotSelfResetPassword {
@@ -224,6 +233,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bạn có chắc chắc muốn xóa các tài khoản sau không? {0}.
+        /// </summary>
+        internal static string MessageBox_Message_ConfirmDeleteAccount {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ConfirmDeleteAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bạn có chắc chắn muốn thoát không?.
         /// </summary>
         internal static string MessageBox_Message_ConfirmExit {
@@ -247,6 +265,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         internal static string MessageBox_Message_CreateAccountSuccessfully {
             get {
                 return ResourceManager.GetString("MessageBox_Message_CreateAccountSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Đã xóa {0} tài khoản!.
+        /// </summary>
+        internal static string MessageBox_Message_DeleteAccountSuccessfully {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_DeleteAccountSuccessfully", resourceCulture);
             }
         }
         

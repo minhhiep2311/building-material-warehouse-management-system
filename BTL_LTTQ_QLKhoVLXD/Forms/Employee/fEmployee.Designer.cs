@@ -346,6 +346,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.Name = "fEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "fEmployee";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fEmployee_FormClosing);
             this.Load += new System.EventHandler(this.fEmployee_Load);
             this.grbInfo.ResumeLayout(false);
             this.pnlPosition.ResumeLayout(false);

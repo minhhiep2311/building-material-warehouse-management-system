@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -214,14 +214,40 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             if (lvwEmployee_employee.SelectedIndices.Count <= 0)
             {
-                btnEdit_employee.Enabled = false;
-                btnRemoveAccount_employee.Enabled = false;
-                btnRemoveEmployee_employee.Enabled = false;
+                ResetButtons_Employee();
             }
             else
             {
-                var employee = _employeeList_employee[lvwEmployee_employee.SelectedIndices[0]];
-                btnEdit_employee.Enabled = !employee.Equals(_user);
+                var selectedIndices = lvwEmployee_employee.SelectedIndices;
+                /*
+                 * If there is one employee is selected, and he is user, then disable edit button,
+                 * else if he is not user, then enable.
+                 */
+                var firstIndex = selectedIndices[0];
+                var firstEmployee = _employeeList_employee[firstIndex];
+                btnEdit_employee.Enabled = !firstEmployee.Equals(_user);
+
+                /*
+                 * Allow create account only if employee has no account
+                 */
+                btnCreateAccount_employee.Enabled = string.IsNullOrEmpty(firstEmployee.Account);
+
+                /*
+                 * From selected employees, only delete accounts of employees who has account,
+                 * and DO NOT self-delete account
+                 */
+                var accounts = selectedIndices.Cast<int>()
+                   .Select(x => _employeeList_employee[x].Account)
+                   .Where(account => !string.IsNullOrEmpty(account) && account != _user.Account);
+                btnRemoveAccount_employee.Enabled = accounts.Any();
+
+                /*
+                 * Delete selected employees and DO NOT self-delete 
+                 */
+                var employees = selectedIndices.Cast<int>()
+                   .Select(x => _employeeList_employee[x])
+                   .Where(employee => !employee.Equals(_user));
+                btnRemoveEmployee_employee.Enabled = employees.Any();
             }
         }
 
@@ -288,21 +314,21 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnEdit_employee_Click(object sender, EventArgs e)
         {
-            if (lvwEmployee_employee.SelectedIndices.Count <= 0)
-                return;
+            EditEmployee_employee();
+        }
 
-            var employee = _employeeList_employee[lvwEmployee_employee.SelectedIndices[0]];
-            new fEmployee(this, fEmployee.Mode.Write, employee, true).Show();
+
+
         }
 
         private void btnRemoveAccount_employee_Click(object sender, EventArgs e)
         {
-
+            TryDeleteAccount_employee();
         }
 
         private void btnRemoveEmployee_employee_Click(object sender, EventArgs e)
         {
-
+            TryDeleteEmployee_employee();
         }
 
         #endregion
@@ -345,6 +371,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 maxBottom = Math.Max(maxBottom, checkbox.Bottom);
             });
 
+            // Draw dynamic size
             flpPosition_employee.Height = maxBottom + 5;
             pnlPosition_employee.Height = flpPosition_employee.Bottom;
             grbSearch_employee.Height = pnlPosition_employee.Bottom + 5;
@@ -357,7 +384,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             txtPhone_employee.Text = string.Empty;
             rdoAll_employee.Checked = true;
             Helper.ControlFilter.GetCheckBoxes(flpPosition_employee).ForEach(x => x.Checked = true);
+            ResetButtons_Employee();
+        }
+
+        public void ResetButtons_Employee()
+        {
             btnEdit_employee.Enabled = false;
+            btnCreateAccount_employee.Enabled = false;
+            btnRemoveAccount_employee.Enabled = false;
+            btnRemoveEmployee_employee.Enabled = false;
         }
 
         public void LoadData_Employee(List<User> cache = null)
@@ -441,6 +476,147 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             LoadData_Employee(employees);
         }
 
+        private void EditEmployee_employee()
+        {
+            if (lvwEmployee_employee.SelectedIndices.Count <= 0)
+                return;
+
+            // Edit only first selected item
+            var firstIndex = lvwEmployee_employee.SelectedIndices[0];
+            var employee = _employeeList_employee[firstIndex];
+            new fEmployee(this, fEmployee.Mode.Write, employee, true).Show();
+        }
+
+        private void TryDeleteAccount_employee()
+        {
+            if (lvwEmployee_employee.SelectedIndices.Count <= 0)
+                return;
+
+            if (lvwEmployee_employee.SelectedIndices.Count == 1)
+            {
+                var firstIndex = lvwEmployee_employee.SelectedIndices[0];
+                if (_employeeList_employee[firstIndex].Equals(_user))
+                {
+                    MessageBox.Show(
+                        Resources.MessageBox_Message_CannotSelfDeleteAccount,
+                        Resources.MessageBox_Caption_Notification,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                    return;
+                }
+            }
+
+            var shouldDeleteAccounts = lvwEmployee_employee.SelectedIndices.Cast<int>()
+               .Select(x => _employeeList_employee[x].Account)
+               .Where(account => !string.IsNullOrEmpty(account) && account != _user.Account)
+               .ToList();
+
+            if (ConfirmDeleteAccount_employee(shouldDeleteAccounts))
+                DeleteAccount_employee(shouldDeleteAccounts);
+        }
+
+        private static bool ConfirmDeleteAccount_employee(IEnumerable<string> shouldDeleteAccounts)
+        {
+            var shouldDeleteStr = string.Join(", ", shouldDeleteAccounts);
+            return MessageBox.Show(
+                    string.Format(Resources.MessageBox_Message_ConfirmDeleteAccount, shouldDeleteStr),
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information
+                ) == DialogResult.Yes;
+        }
+
+        private void DeleteAccount_employee(List<string> shouldDeleteAccounts)
+        {
+            if (AccountService.DeleteAccount(shouldDeleteAccounts))
+            {
+                MessageBox.Show(
+                    string.Format(Resources.MessageBox_Message_DeleteAccountSuccessfully, shouldDeleteAccounts.Count),
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            else
+            {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_SystemError,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            LoadData_Employee();
+        }
+
+
+        private void TryDeleteEmployee_employee()
+        {
+            if (lvwEmployee_employee.SelectedIndices.Count <= 0)
+                return;
+
+            if (lvwEmployee_employee.SelectedIndices.Count == 1)
+            {
+                var firstIndex = lvwEmployee_employee.SelectedIndices[0];
+                if (_employeeList_employee[firstIndex].Equals(_user))
+                {
+                    MessageBox.Show(
+                        Resources.MessageBox_Message_CannotSelfDeleteAccount,
+                        Resources.MessageBox_Caption_Notification,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                    return;
+                }
+            }
+
+            var shouldDeleteEmployees = lvwEmployee_employee.SelectedIndices.Cast<int>()
+               .Select(x => _employeeList_employee[x])
+               .Where(employee => !employee.Equals(_user))
+               .ToList();
+
+            if (ConfirmDeleteEmployee_employee(shouldDeleteEmployees))
+                DeleteEmployee_employee(shouldDeleteEmployees);
+        }
+
+        private static bool ConfirmDeleteEmployee_employee(IEnumerable<User> shouldDeleteEmployees)
+        {
+            var shouldDeleteName = shouldDeleteEmployees.Select(x => x.Name);
+            var shouldDeleteStr = string.Join(", ", shouldDeleteName);
+            return MessageBox.Show(
+                    string.Format(Resources.MessageBox_Message_ConfirmDeleteAccount, shouldDeleteStr),
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information
+                ) == DialogResult.Yes;
+        }
+
+        private void DeleteEmployee_employee(List<User> shouldDeleteEmployees)
+        {
+            if (EmployeeService.DeleteEmployee(shouldDeleteEmployees))
+            {
+                MessageBox.Show(
+                    string.Format(Resources.MessageBox_Message_DeleteAccountSuccessfully, shouldDeleteEmployees.Count),
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            else
+            {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_SystemError,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            LoadData_Employee();
+        }
+
         #endregion
         #endregion
 
@@ -462,7 +638,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         }
 
         #endregion
-
         #endregion
     }
 }

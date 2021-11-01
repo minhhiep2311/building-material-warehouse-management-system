@@ -130,6 +130,28 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             return rowAffected == phoneList.Count;
         }
 
+        public static void DeletePhoneNumbers(List<User> userList)
+        {
+            if (userList.Count == 0)
+                return;
+
+            var ids = userList.Select(x => x.Id);
+
+            var query = $"DELETE employeePhoneNumber WHERE idEmployee IN ({string.Join(", ", ids)})";
+            DatabaseProvider.Instance.ExecuteNonQuery(query);
+        }
+
+        public static bool DeleteEmployee(List<User> employeeList)
+        {
+            DeletePhoneNumbers(employeeList);
+
+            var idList = string.Join(", ", employeeList.Select(x => x.Id));
+            var query = $"DELETE employee WHERE id IN ({idList})";
+            var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
+
+            return rowAffected == employeeList.Count;
+        }
+
         #endregion
     }
 }
