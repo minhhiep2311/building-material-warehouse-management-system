@@ -1,12 +1,12 @@
-﻿using BTL_LTTQ_QLKhoVLXD.Models;
-using BTL_LTTQ_QLKhoVLXD.Services;
-using BTL_LTTQ_QLKhoVLXD.Utils;
-using System;
+﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
+using BTL_LTTQ_QLKhoVLXD.Services;
+using BTL_LTTQ_QLKhoVLXD.Utils;
 
-namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
+namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
 {
     public partial class fCreateAccount : Form
     {

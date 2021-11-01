@@ -241,4 +241,7 @@
   <data name="MessageBox_Message_DeleteAccountSuccessfully" xml:space="preserve">
     <value>Đã xóa {0} tài khoản!</value>
   </data>
+  <data name="Form_Text_AddNewEmployee" xml:space="preserve">
+    <value>Thêm nhân viên mới</value>
+  </data>
 </root>

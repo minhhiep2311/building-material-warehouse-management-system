@@ -345,7 +345,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.MaximizeBox = false;
             this.Name = "fEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "fEmployee";
+            this.Text = "Nhân viên";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fEmployee_FormClosing);
             this.Load += new System.EventHandler(this.fEmployee_Load);
             this.grbInfo.ResumeLayout(false);

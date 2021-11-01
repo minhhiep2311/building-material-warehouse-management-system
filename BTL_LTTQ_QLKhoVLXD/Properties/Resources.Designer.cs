@@ -116,6 +116,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thêm nhân viên mới.
+        /// </summary>
+        internal static string Form_Text_AddNewEmployee {
+            get {
+                return ResourceManager.GetString("Form_Text_AddNewEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to dd-MM-yyyy.
         /// </summary>
         internal static string Format_DateFormat {

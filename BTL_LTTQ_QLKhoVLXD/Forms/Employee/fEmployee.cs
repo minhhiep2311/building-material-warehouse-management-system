@@ -168,6 +168,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
                 case Mode.Create:
                     chkEdit.Checked = true;
                     btnSave.Text = Resources.Form_ButtonSave;
+                    Text = Resources.Form_Text_AddNewEmployee;
                     return;
                 case Mode.Read:
                     txtName.ReadOnly = true;

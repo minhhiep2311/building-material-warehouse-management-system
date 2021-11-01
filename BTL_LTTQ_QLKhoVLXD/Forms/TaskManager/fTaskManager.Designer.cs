@@ -1,4 +1,4 @@
-
+﻿
 namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
     partial class fTaskManager
@@ -150,6 +150,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCreateAccount_userSetting = new System.Windows.Forms.Button();
             this.btnChangeInformation_userSetting = new System.Windows.Forms.Button();
             this.btnResetPassword_userSetting = new System.Windows.Forms.Button();
+            this.btnCreateAccount_employee = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.tctlControl.SuspendLayout();
             this.tpgBuy.SuspendLayout();
@@ -1083,6 +1084,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.flpFunction_employee.Controls.Add(this.btnAdd_employee);
             this.flpFunction_employee.Controls.Add(this.btnEdit_employee);
+            this.flpFunction_employee.Controls.Add(this.btnCreateAccount_employee);
             this.flpFunction_employee.Controls.Add(this.btnRemoveAccount_employee);
             this.flpFunction_employee.Controls.Add(this.btnRemoveEmployee_employee);
             this.flpFunction_employee.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1426,6 +1428,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnResetPassword_userSetting.UseVisualStyleBackColor = true;
             this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
             // 
+            // btnCreateAccount_employee
+            // 
+            this.btnCreateAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCreateAccount_employee.Location = new System.Drawing.Point(8, 61);
+            this.btnCreateAccount_employee.Name = "btnCreateAccount_employee";
+            this.btnCreateAccount_employee.Size = new System.Drawing.Size(185, 47);
+            this.btnCreateAccount_employee.TabIndex = 4;
+            this.btnCreateAccount_employee.Text = "Tạo tài khoản";
+            this.btnCreateAccount_employee.UseVisualStyleBackColor = true;
+            this.btnCreateAccount_employee.Click += new System.EventHandler(this.btnCreateAccount_employee_Click);
+            // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1611,5 +1624,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Button btnRemoveEmployee_employee;
         private System.Windows.Forms.Button btnEdit_employee;
         private System.Windows.Forms.Button btnRemoveAccount_employee;
+        private System.Windows.Forms.Button btnCreateAccount_employee;
     }
 }

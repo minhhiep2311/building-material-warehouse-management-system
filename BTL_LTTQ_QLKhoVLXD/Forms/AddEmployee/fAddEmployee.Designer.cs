@@ -1,5 +1,5 @@
 ﻿
-namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
+namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
 {
     partial class fCreateAccount
     {

@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee;
 using BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation;
-using BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount;
 using BTL_LTTQ_QLKhoVLXD.Forms.Employee;
 using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
 using BTL_LTTQ_QLKhoVLXD.Models;
@@ -317,7 +317,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             EditEmployee_employee();
         }
 
-
+        private void btnCreateAccount_employee_Click(object sender, EventArgs e)
+        {
 
         }
 
