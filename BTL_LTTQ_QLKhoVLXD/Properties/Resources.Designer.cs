@@ -242,7 +242,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bạn có chắc chắc muốn xóa các tài khoản sau không?\r\n {0}.
+        ///   Looks up a localized string similar to Bạn có chắc chắc muốn xóa các tài khoản sau không?
+        ///{0}.
         /// </summary>
         internal static string MessageBox_Message_ConfirmDeleteAccount {
             get {
@@ -251,7 +252,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bạn có chắc chắc muốn xóa các nhân viên sau không?\r\n {0}.
+        ///   Looks up a localized string similar to Bạn có chắc chắc muốn xóa các nhân viên sau không?
+        ///{0}.
         /// </summary>
         internal static string MessageBox_Message_ConfirmDeleteEmployee {
             get {

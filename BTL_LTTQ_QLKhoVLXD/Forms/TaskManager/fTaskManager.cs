@@ -166,15 +166,34 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             _debounce_employee.Pause();
         }
 
-        private void lvwEmployee_employee_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void lvwEmployee_employee_MouseClick(object sender, MouseEventArgs e)
         {
-            if (lvwEmployee_employee.SelectedIndices.Count <= 0)
+            if (e.Button != MouseButtons.Right)
                 return;
 
-            var employee = _employeeList_employee[lvwEmployee_employee.SelectedIndices[0]];
-            var editable = PermissionConstant.EditAccountInformation.Contains(User.Position.Id);
-            var mode = editable ? fEmployee.Mode.Write : fEmployee.Mode.Read;
-            new fEmployee(this, mode, employee).Show();
+            var focusItem = lvwEmployee_employee.FocusedItem;
+            if (focusItem == null || !focusItem.Bounds.Contains(e.Location))
+                return;
+
+            var focusIndex = lvwEmployee_employee.SelectedIndices[0];
+            var account = _employeeList_employee[focusIndex].Account;
+            if (string.IsNullOrEmpty(account))
+            {
+                tsmiCreateAccount_employee.Visible = true;
+                tsmiDeleteAccount_employee.Visible = false;
+            }
+            else
+            {
+                tsmiCreateAccount_employee.Visible = false;
+                tsmiDeleteAccount_employee.Visible = true;
+            }
+
+            cms_employee.Show(Cursor.Position);
+        }
+
+        private void lvwEmployee_employee_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ShowInformation_Employee();
         }
 
         private void lvwEmployee_employee_ColumnClick(object sender, ColumnClickEventArgs e)
@@ -320,13 +339,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnCreateAccount_employee_Click(object sender, EventArgs e)
         {
-            var selectedIndices = lvwEmployee_employee.SelectedIndices;
-            var firstIndex = selectedIndices[0];
-            var firstEmployee = _employeeList_employee[firstIndex];
-            if (string.IsNullOrEmpty(firstEmployee.Account))
-            {
-                new fCreateAccount(this, firstEmployee).ShowDialog();
-            }
+            CreateAccount_employee();
         }
 
         private void btnRemoveAccount_employee_Click(object sender, EventArgs e)
@@ -335,6 +348,26 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         }
 
         private void btnRemoveEmployee_employee_Click(object sender, EventArgs e)
+        {
+            TryDeleteEmployee_employee();
+        }
+
+        private void tsmiShowInformation_employee_Click(object sender, EventArgs e)
+        {
+            ShowInformation_Employee();
+        }
+
+        private void tsmiCreateAccount_employee_Click(object sender, EventArgs e)
+        {
+            CreateAccount_employee();
+        }
+
+        private void tsmiDeleteAccount_employee_Click(object sender, EventArgs e)
+        {
+            TryDeleteAccount_employee();
+        }
+
+        private void tsmiDeleteEmployee_employee_Click(object sender, EventArgs e)
         {
             TryDeleteEmployee_employee();
         }
@@ -448,6 +481,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 );
         }
 
+        private void ShowInformation_Employee()
+        {
+            if (lvwEmployee_employee.SelectedIndices.Count <= 0)
+                return;
+
+            var employee = _employeeList_employee[lvwEmployee_employee.SelectedIndices[0]];
+            var editable = PermissionConstant.EditAccountInformation.Contains(User.Position.Id);
+            var mode = editable ? fEmployee.Mode.Write : fEmployee.Mode.Read;
+            new fEmployee(this, mode, employee).Show();
+        }
+
         private void Search_Employee()
         {
             var name = txtName_employee.Text;
@@ -495,6 +539,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             new fEmployee(this, fEmployee.Mode.Write, employee, true).Show();
         }
 
+        private void CreateAccount_employee()
+        {
+            var selectedIndices = lvwEmployee_employee.SelectedIndices;
+            var firstIndex = selectedIndices[0];
+            var firstEmployee = _employeeList_employee[firstIndex];
+            if (string.IsNullOrEmpty(firstEmployee.Account))
+                new fCreateAccount(this, firstEmployee).ShowDialog();
+        }
+
         private void TryDeleteAccount_employee()
         {
             if (lvwEmployee_employee.SelectedIndices.Count <= 0)
@@ -531,7 +584,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                     string.Format(Resources.MessageBox_Message_ConfirmDeleteAccount, shouldDeleteStr),
                     Resources.MessageBox_Caption_Notification,
                     MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Information
+                    MessageBoxIcon.Warning
                 ) == DialogResult.Yes;
         }
 
@@ -597,7 +650,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                     string.Format(Resources.MessageBox_Message_ConfirmDeleteEmployee, shouldDeleteStr),
                     Resources.MessageBox_Caption_Notification,
                     MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Information
+                    MessageBoxIcon.Warning
                 ) == DialogResult.Yes;
         }
 
@@ -646,6 +699,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         }
 
         #endregion
+
         #endregion
     }
 }

@@ -29,6 +29,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
@@ -121,6 +122,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_employee = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAdd_employee = new System.Windows.Forms.Button();
             this.btnEdit_employee = new System.Windows.Forms.Button();
+            this.btnCreateAccount_employee = new System.Windows.Forms.Button();
             this.btnRemoveAccount_employee = new System.Windows.Forms.Button();
             this.btnRemoveEmployee_employee = new System.Windows.Forms.Button();
             this.pnlFunction_employe = new System.Windows.Forms.Panel();
@@ -150,7 +152,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCreateAccount_userSetting = new System.Windows.Forms.Button();
             this.btnChangeInformation_userSetting = new System.Windows.Forms.Button();
             this.btnResetPassword_userSetting = new System.Windows.Forms.Button();
-            this.btnCreateAccount_employee = new System.Windows.Forms.Button();
+            this.cms_employee = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiShowInformation_employee = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCreateAccount_employee = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDeleteAccount_employee = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDeleteEmployee_employee = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3.SuspendLayout();
             this.tctlControl.SuspendLayout();
             this.tpgBuy.SuspendLayout();
@@ -181,6 +187,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_employee.SuspendLayout();
             this.tpgUserSetting.SuspendLayout();
             this.flp_userSetting.SuspendLayout();
+            this.cms_employee.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -1078,6 +1085,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwEmployee_employee.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvwEmployee_employee_ColumnClick);
             this.lvwEmployee_employee.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.lvwEmployee_employee_ColumnWidthChanging);
             this.lvwEmployee_employee.SelectedIndexChanged += new System.EventHandler(this.lvwEmployee_employee_SelectedIndexChanged);
+            this.lvwEmployee_employee.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvwEmployee_employee_MouseClick);
             this.lvwEmployee_employee.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwEmployee_employee_MouseDoubleClick);
             // 
             // flpFunction_employee
@@ -1115,6 +1123,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnEdit_employee.Text = "Chỉnh sửa thông tin";
             this.btnEdit_employee.UseVisualStyleBackColor = true;
             this.btnEdit_employee.Click += new System.EventHandler(this.btnEdit_employee_Click);
+            // 
+            // btnCreateAccount_employee
+            // 
+            this.btnCreateAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCreateAccount_employee.Location = new System.Drawing.Point(8, 61);
+            this.btnCreateAccount_employee.Name = "btnCreateAccount_employee";
+            this.btnCreateAccount_employee.Size = new System.Drawing.Size(185, 47);
+            this.btnCreateAccount_employee.TabIndex = 4;
+            this.btnCreateAccount_employee.Text = "Tạo tài khoản";
+            this.btnCreateAccount_employee.UseVisualStyleBackColor = true;
+            this.btnCreateAccount_employee.Click += new System.EventHandler(this.btnCreateAccount_employee_Click);
             // 
             // btnRemoveAccount_employee
             // 
@@ -1428,16 +1447,44 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnResetPassword_userSetting.UseVisualStyleBackColor = true;
             this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
             // 
-            // btnCreateAccount_employee
+            // cms_employee
             // 
-            this.btnCreateAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnCreateAccount_employee.Location = new System.Drawing.Point(8, 61);
-            this.btnCreateAccount_employee.Name = "btnCreateAccount_employee";
-            this.btnCreateAccount_employee.Size = new System.Drawing.Size(185, 47);
-            this.btnCreateAccount_employee.TabIndex = 4;
-            this.btnCreateAccount_employee.Text = "Tạo tài khoản";
-            this.btnCreateAccount_employee.UseVisualStyleBackColor = true;
-            this.btnCreateAccount_employee.Click += new System.EventHandler(this.btnCreateAccount_employee_Click);
+            this.cms_employee.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cms_employee.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiShowInformation_employee,
+            this.tsmiCreateAccount_employee,
+            this.tsmiDeleteAccount_employee,
+            this.tsmiDeleteEmployee_employee});
+            this.cms_employee.Name = "cms_employee";
+            this.cms_employee.Size = new System.Drawing.Size(173, 100);
+            // 
+            // tsmiShowInformation_employee
+            // 
+            this.tsmiShowInformation_employee.Name = "tsmiShowInformation_employee";
+            this.tsmiShowInformation_employee.Size = new System.Drawing.Size(210, 24);
+            this.tsmiShowInformation_employee.Text = "Xem thông tin";
+            this.tsmiShowInformation_employee.Click += new System.EventHandler(this.tsmiShowInformation_employee_Click);
+            // 
+            // tsmiCreateAccount_employee
+            // 
+            this.tsmiCreateAccount_employee.Name = "tsmiCreateAccount_employee";
+            this.tsmiCreateAccount_employee.Size = new System.Drawing.Size(210, 24);
+            this.tsmiCreateAccount_employee.Text = "Tạo tài khoản";
+            this.tsmiCreateAccount_employee.Click += new System.EventHandler(this.tsmiCreateAccount_employee_Click);
+            // 
+            // tsmiDeleteAccount_employee
+            // 
+            this.tsmiDeleteAccount_employee.Name = "tsmiDeleteAccount_employee";
+            this.tsmiDeleteAccount_employee.Size = new System.Drawing.Size(210, 24);
+            this.tsmiDeleteAccount_employee.Text = "Xóa tài khoản";
+            this.tsmiDeleteAccount_employee.Click += new System.EventHandler(this.tsmiDeleteAccount_employee_Click);
+            // 
+            // tsmiDeleteEmployee_employee
+            // 
+            this.tsmiDeleteEmployee_employee.Name = "tsmiDeleteEmployee_employee";
+            this.tsmiDeleteEmployee_employee.Size = new System.Drawing.Size(210, 24);
+            this.tsmiDeleteEmployee_employee.Text = "Xóa nhân viên";
+            this.tsmiDeleteEmployee_employee.Click += new System.EventHandler(this.tsmiDeleteEmployee_employee_Click);
             // 
             // fTaskManager
             // 
@@ -1497,6 +1544,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_employee.PerformLayout();
             this.tpgUserSetting.ResumeLayout(false);
             this.flp_userSetting.ResumeLayout(false);
+            this.cms_employee.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1625,5 +1673,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Button btnEdit_employee;
         private System.Windows.Forms.Button btnRemoveAccount_employee;
         private System.Windows.Forms.Button btnCreateAccount_employee;
+        private System.Windows.Forms.ContextMenuStrip cms_employee;
+        private System.Windows.Forms.ToolStripMenuItem tsmiShowInformation_employee;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCreateAccount_employee;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDeleteAccount_employee;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDeleteEmployee_employee;
     }
 }
