@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee;
 using BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation;
+using BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount;
 using BTL_LTTQ_QLKhoVLXD.Forms.Employee;
 using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
 using BTL_LTTQ_QLKhoVLXD.Models;
@@ -319,7 +320,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnCreateAccount_employee_Click(object sender, EventArgs e)
         {
-
+            var selectedIndices = lvwEmployee_employee.SelectedIndices;
+            var firstIndex = selectedIndices[0];
+            var firstEmployee = _employeeList_employee[firstIndex];
+            if (string.IsNullOrEmpty(firstEmployee.Account))
+            {
+                new fCreateAccount(this, firstEmployee).ShowDialog();
+            }
         }
 
         private void btnRemoveAccount_employee_Click(object sender, EventArgs e)
@@ -378,7 +385,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             grbSearch_employee.Height = pnlPosition_employee.Bottom + 5;
         }
 
-        public void Reset_Employee()
+        private void Reset_Employee()
         {
             txtName_employee.Text = string.Empty;
             txtAddress_employee.Text = string.Empty;
@@ -388,7 +395,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             ResetButtons_Employee();
         }
 
-        public void ResetButtons_Employee()
+        private void ResetButtons_Employee()
         {
             btnEdit_employee.Enabled = false;
             btnCreateAccount_employee.Enabled = false;
@@ -626,7 +633,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnCreateAccount_userSetting_Click(object sender, EventArgs e)
         {
-            new fCreateAccount().ShowDialog();
+            new fAddEmployee().ShowDialog();
         }
 
         private void btnChangeInformation_userSetting_Click(object sender, EventArgs e)

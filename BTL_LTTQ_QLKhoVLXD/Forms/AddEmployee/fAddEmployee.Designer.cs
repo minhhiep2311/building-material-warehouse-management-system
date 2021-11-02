@@ -1,7 +1,7 @@
 ﻿
 namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
 {
-    partial class fCreateAccount
+    partial class fAddEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -274,7 +274,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // fCreateAccount
+            // fAddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -285,7 +285,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             this.Controls.Add(this.grbInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "fCreateAccount";
+            this.Name = "fAddEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Tạo tài khoản";
             this.Load += new System.EventHandler(this.fCreateAccount_Load);

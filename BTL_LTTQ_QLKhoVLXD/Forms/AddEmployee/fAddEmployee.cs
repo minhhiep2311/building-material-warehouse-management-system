@@ -8,9 +8,9 @@ using BTL_LTTQ_QLKhoVLXD.Utils;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
 {
-    public partial class fCreateAccount : Form
+    public partial class fAddEmployee : Form
     {
-        public fCreateAccount()
+        public fAddEmployee()
         {
             InitializeComponent();
         }
