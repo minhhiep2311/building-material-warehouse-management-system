@@ -242,11 +242,20 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bạn có chắc chắc muốn xóa các tài khoản sau không? {0}.
+        ///   Looks up a localized string similar to Bạn có chắc chắc muốn xóa các tài khoản sau không?\r\n {0}.
         /// </summary>
         internal static string MessageBox_Message_ConfirmDeleteAccount {
             get {
                 return ResourceManager.GetString("MessageBox_Message_ConfirmDeleteAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bạn có chắc chắc muốn xóa các nhân viên sau không?\r\n {0}.
+        /// </summary>
+        internal static string MessageBox_Message_ConfirmDeleteEmployee {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ConfirmDeleteEmployee", resourceCulture);
             }
         }
         
@@ -260,7 +269,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mật khảu của tài khoản {0} sẽ được thay đổi. Vẫn tiếp tục?.
+        ///   Looks up a localized string similar to Mật khẩu của tài khoản {0} sẽ được thay đổi. Vẫn tiếp tục?.
         /// </summary>
         internal static string MessageBox_Message_ConfirmResetPassword {
             get {

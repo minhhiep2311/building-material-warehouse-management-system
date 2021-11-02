@@ -47,14 +47,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 
         public static bool CreateAccount(User user, string password)
         {
-            var newEmployeeId = EmployeeService.CreateEmployee(user);
-
-            if (newEmployeeId == -1)
-                return false;
-
             var query = $"INSERT INTO account VALUES(N'{user.Account}', " +
                 $"N'{password}', " +
-                $"{newEmployeeId})";
+                $"{user.Id})";
             var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
 
             return rowAffected > 0;

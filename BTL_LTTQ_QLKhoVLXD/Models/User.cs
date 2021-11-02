@@ -16,7 +16,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
         public bool IsMale { get; }
         public DateTime Dob { get; }
         public EmployeePosition Position { get; }
-        public string Account { get; }
+        public string Account { get; set; }
         public List<string> PhoneNumber { get; }
 
         #endregion

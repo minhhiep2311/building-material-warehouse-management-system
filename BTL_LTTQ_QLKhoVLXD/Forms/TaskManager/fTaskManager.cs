@@ -594,7 +594,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var shouldDeleteName = shouldDeleteEmployees.Select(x => x.Name);
             var shouldDeleteStr = string.Join(", ", shouldDeleteName);
             return MessageBox.Show(
-                    string.Format(Resources.MessageBox_Message_ConfirmDeleteAccount, shouldDeleteStr),
+                    string.Format(Resources.MessageBox_Message_ConfirmDeleteEmployee, shouldDeleteStr),
                     Resources.MessageBox_Caption_Notification,
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Information
