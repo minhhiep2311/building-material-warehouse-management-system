@@ -175,17 +175,38 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             if (focusItem == null || !focusItem.Bounds.Contains(e.Location))
                 return;
 
-            var focusIndex = lvwEmployee_employee.SelectedIndices[0];
-            var account = _employeeList_employee[focusIndex].Account;
-            if (string.IsNullOrEmpty(account))
+            tsmiShowInformation_employee.Visible = true;
+            tsmiCreateAccount_employee.Visible = true;
+            tsmiDeleteAccount_employee.Visible = true;
+
+            var selectedIndices = lvwEmployee_employee.SelectedIndices;
+            var selectedEmployees = selectedIndices.Cast<int>()
+               .Select(idx => _employeeList_employee[idx])
+               .ToList();
+            var noAccountEmployee = selectedEmployees.FirstOrDefault(x => string.IsNullOrEmpty(x.Account));
+            var hadAccountEmployee = selectedEmployees.FirstOrDefault(x => !string.IsNullOrEmpty(x.Account));
+
+            if (selectedEmployees.Count > 1)
             {
-                tsmiCreateAccount_employee.Visible = true;
+                tsmiShowInformation_employee.Visible = false;
+            }
+
+            // If everyone has had account, then hide button "Create account"
+            if (noAccountEmployee == null)
+            {
+                tsmiCreateAccount_employee.Visible = false;
+            }
+            // If everyone hasn't had account yet, then hide button "Delete account"
+            else if (hadAccountEmployee == null)
+            {
                 tsmiDeleteAccount_employee.Visible = false;
             }
+            // If somebody has had account, and somebody hasn't,
+            // then hide both buttons "Create account" and "Delete account"
             else
             {
                 tsmiCreateAccount_employee.Visible = false;
-                tsmiDeleteAccount_employee.Visible = true;
+                tsmiDeleteAccount_employee.Visible = false;
             }
 
             cms_employee.Show(Cursor.Position);
@@ -489,6 +510,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var employee = _employeeList_employee[lvwEmployee_employee.SelectedIndices[0]];
             var editable = PermissionConstant.EditAccountInformation.Contains(User.Position.Id);
             var mode = editable ? fEmployee.Mode.Write : fEmployee.Mode.Read;
+
+            lvwEmployee_employee.SelectedItems.Clear();
+
             new fEmployee(this, mode, employee).Show();
         }
 
