@@ -1,38 +1,39 @@
-﻿using BTL_LTTQ_QLKhoVLXD.Models;
-using BTL_LTTQ_QLKhoVLXD.Services;
-using BTL_LTTQ_QLKhoVLXD.Utils;
-using System;
-using System.Linq;
+﻿using System;
 using System.Windows.Forms;
+using BTL_LTTQ_QLKhoVLXD.Forms.TaskManager;
+using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
+using BTL_LTTQ_QLKhoVLXD.Services;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
 {
     public partial class fCreateAccount : Form
     {
-        public fCreateAccount()
+        private readonly User _user;
+        private readonly fTaskManager _parentParentForm;
+
+        public fCreateAccount(fTaskManager parentForm, User user)
         {
             InitializeComponent();
+            _user = user;
+            _parentParentForm = parentForm;
         }
 
         #region Events
 
         private void fCreateAccount_Load(object sender, EventArgs e)
         {
-            LoadPositions();
+            BindData();
         }
 
         private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-            txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
+            txtPassword.UseSystemPasswordChar = !chkShowPassword.Checked;
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (!ValidInformation() || !ValidAccount())
-                return;
-
-            CreateAccount();
+            TryCreate();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -44,104 +45,73 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
 
         #region Methods
 
-        private void LoadPositions()
+        private void BindData()
         {
-            cboPosition.DataSource = EmployeeService.GetPositions();
-            cboPosition.SelectedIndex = -1;
+            txtName.Text = _user.Name;
         }
 
-        private bool ValidInformation()
+        private void TryCreate()
         {
-            bool valid = txtName.Text != "" &&
-                txtAddress.Text != "" &&
-                grbInfo.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked) != null &&
-                txtPhone.Text != "" &&
-                cboPosition.SelectedIndex != -1;
+            if (!ValidInput() || AccountExisted() || !Create())
+                return;
 
-            if (!valid)
-                MessageBox.Show(
-                    Resources.MessageBox_Message_EnterFullPersonalInfo,
-                    Resources.MessageBox_Caption_Notification,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-            else if (!Helper.RegexValidate.Name(txtName.Text))
-            {
-                MessageBox.Show(
-                    Resources.MessageBox_Message_InvalidNameFormat,
-                    Resources.MessageBox_Caption_Notification,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-                valid = false;
-            }
-            else if (!Helper.RegexValidate.PhoneNumber(txtPhone.Text))
-            {
-                MessageBox.Show(
-                    Resources.MessageBox_Message_InvalidPhoneNumberFormat,
-                    Resources.MessageBox_Caption_Notification,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-                valid = false;
-            }
-
-            return valid;
+            MessageBox.Show(
+                Resources.MessageBox_Message_CreateAccountSuccessfully,
+                Resources.MessageBox_Caption_Notification,
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+            _parentParentForm.LoadData_Employee();
+            Close();
         }
 
-        private bool ValidAccount()
+        private bool ValidInput()
         {
-            var valid = txtUsername.Text != "" &&
-                        txtPhone.Text != "";
+            var valid = !string.IsNullOrEmpty(txtAccount.Text) && !string.IsNullOrEmpty(txtPassword.Text);
             if (!valid)
+            {
                 MessageBox.Show(
                     Resources.MessageBox_Message_EnterFullAccountInfo,
                     Resources.MessageBox_Caption_Notification,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
+            }
 
-            var accountExists = AccountService.CheckAccountExists(txtUsername.Text);
-            if (accountExists)
+            return valid;
+        }
+
+        private bool AccountExisted()
+        {
+            var existed = AccountService.CheckAccountExists(txtAccount.Text);
+            if (existed)
+            {
                 MessageBox.Show(
                     Resources.MessageBox_Message_AccountExisted,
                     Resources.MessageBox_Caption_Notification,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
+            }
 
-            return valid && !accountExists;
+            return existed;
         }
 
-        private void CreateAccount()
+        private bool Create()
         {
-            var user = new User(
-                txtName.Text,
-                txtAddress.Text,
-                rdoMale.Checked,
-                dtpDob.Value,
-                cboPosition.SelectedItem as EmployeePosition,
-                txtUsername.Text
-            );
-
-            var createSuccessfully = AccountService.CreateAccount(user, txtPassword.Text);
-            if (createSuccessfully)
+            _user.Account = txtAccount.Text;
+            var createSuccessfully = AccountService.CreateAccount(_user, txtPassword.Text);
+            if (!createSuccessfully)
             {
                 MessageBox.Show(
-                    Resources.MessageBox_Message_CreateAccountSuccessfully,
+                    Resources.MessageBox_Message_SystemError,
                     Resources.MessageBox_Caption_Notification,
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
-                Close();
-            }
-            else
-                MessageBox.Show(
-                    Resources.MessageBox_Message_SystemError, 
-                    Resources.MessageBox_Caption_Notification, 
-                    MessageBoxButtons.OK, 
                     MessageBoxIcon.Error
                 );
+            }
+
+            return createSuccessfully;
         }
 
         #endregion

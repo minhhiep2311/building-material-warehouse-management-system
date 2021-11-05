@@ -194,12 +194,59 @@
     <value>Tài khoản {0} không tồn tại!</value>
   </data>
   <data name="MessageBox_Message_ConfirmResetPassword" xml:space="preserve">
-    <value>Mật khảu của tài khoản {0} sẽ được thay đổi. Vẫn tiếp tục?</value>
+    <value>Mật khẩu của tài khoản {0} sẽ được thay đổi. Vẫn tiếp tục?</value>
   </data>
   <data name="MessageBox_Message_ConfirmExit" xml:space="preserve">
     <value>Bạn có chắc chắn muốn thoát không?</value>
   </data>
   <data name="MessageBox_Message_ConfirmChangePassword" xml:space="preserve">
     <value>Mật khẩu của bạn sẽ được thay đổi. Vẫn tiếp tục?</value>
+  </data>
+  <data name="TaskManager_Label_Position" xml:space="preserve">
+    <value>Vị trí: {0}</value>
+  </data>
+  <data name="TaskManager_Label_User" xml:space="preserve">
+    <value>Người dùng: {0}</value>
+  </data>
+  <data name="MessageBox_Message_ConfirmChangeEmployeeInfo" xml:space="preserve">
+    <value>Thông tin của {0} sẽ được thay đổi. Vẫn tiếp tục?</value>
+  </data>
+  <data name="MessageBox_Message_ChangeInfoNoChange" xml:space="preserve">
+    <value>Không có thay đổi! Thông tin người dùng vẫn được giữ nguyên</value>
+  </data>
+  <data name="Character_ArrowDown" xml:space="preserve">
+    <value>▼</value>
+  </data>
+  <data name="Character_ArrowUp" xml:space="preserve">
+    <value>▲</value>
+  </data>
+  <data name="Format_DateFormat" xml:space="preserve">
+    <value>dd-MM-yyyy</value>
+  </data>
+  <data name="Label_AllOption" xml:space="preserve">
+    <value>Tất cả</value>
+  </data>
+  <data name="Form_ButtonSave" xml:space="preserve">
+    <value>Lưu</value>
+  </data>
+  <data name="MessageBox_Message_AddEmployeeSuccessfully" xml:space="preserve">
+    <value>Thêm nhân viên thành công!</value>
+  </data>
+  <data name="MessageBox_Message_CannotSelfDeleteAccount" xml:space="preserve">
+    <value>Bạn không thể xóa tài khoản của mình!</value>
+  </data>
+  <data name="MessageBox_Message_ConfirmDeleteAccount" xml:space="preserve">
+    <value>Bạn có chắc chắc muốn xóa các tài khoản sau không?
+{0}</value>
+  </data>
+  <data name="MessageBox_Message_DeleteAccountSuccessfully" xml:space="preserve">
+    <value>Đã xóa {0} tài khoản!</value>
+  </data>
+  <data name="Form_Text_AddNewEmployee" xml:space="preserve">
+    <value>Thêm nhân viên mới</value>
+  </data>
+  <data name="MessageBox_Message_ConfirmDeleteEmployee" xml:space="preserve">
+    <value>Bạn có chắc chắc muốn xóa các nhân viên sau không?
+{0}</value>
   </data>
 </root>

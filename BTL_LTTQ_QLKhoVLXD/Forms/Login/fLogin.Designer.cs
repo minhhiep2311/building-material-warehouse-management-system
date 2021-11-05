@@ -30,11 +30,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chkShowPassword = new System.Windows.Forms.CheckBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.chkShowPassword = new System.Windows.Forms.CheckBox();
             this.txbPassWord = new System.Windows.Forms.TextBox();
             this.lblPassWord = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,17 +56,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(568, 259);
             this.panel1.TabIndex = 0;
-            // 
-            // chkShowPassword
-            // 
-            this.chkShowPassword.AutoSize = true;
-            this.chkShowPassword.Location = new System.Drawing.Point(170, 39);
-            this.chkShowPassword.Name = "chkShowPassword";
-            this.chkShowPassword.Size = new System.Drawing.Size(140, 21);
-            this.chkShowPassword.TabIndex = 3;
-            this.chkShowPassword.Text = "Hiển thị mật khẩu";
-            this.chkShowPassword.UseVisualStyleBackColor = true;
-            this.chkShowPassword.CheckStateChanged += new System.EventHandler(this.chkShowPassword_CheckStateChanged);
             // 
             // btnExit
             // 
@@ -108,6 +97,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(527, 71);
             this.panel3.TabIndex = 2;
+            // 
+            // chkShowPassword
+            // 
+            this.chkShowPassword.AutoSize = true;
+            this.chkShowPassword.Location = new System.Drawing.Point(170, 39);
+            this.chkShowPassword.Name = "chkShowPassword";
+            this.chkShowPassword.Size = new System.Drawing.Size(140, 21);
+            this.chkShowPassword.TabIndex = 3;
+            this.chkShowPassword.Text = "Hiển thị mật khẩu";
+            this.chkShowPassword.UseVisualStyleBackColor = true;
+            this.chkShowPassword.CheckStateChanged += new System.EventHandler(this.chkShowPassword_CheckStateChanged);
             // 
             // txbPassWord
             // 

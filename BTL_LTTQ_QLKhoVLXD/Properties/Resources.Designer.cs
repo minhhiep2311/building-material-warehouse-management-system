@@ -71,6 +71,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ▼.
+        /// </summary>
+        internal static string Character_ArrowDown {
+            get {
+                return ResourceManager.GetString("Character_ArrowDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ▲.
+        /// </summary>
+        internal static string Character_ArrowUp {
+            get {
+                return ResourceManager.GetString("Character_ArrowUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ẩn mật khẩu.
         /// </summary>
         internal static string Checkbox_HidePassword {
@@ -85,6 +103,42 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         internal static string Checkbox_ShowPassword {
             get {
                 return ResourceManager.GetString("Checkbox_ShowPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lưu.
+        /// </summary>
+        internal static string Form_ButtonSave {
+            get {
+                return ResourceManager.GetString("Form_ButtonSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thêm nhân viên mới.
+        /// </summary>
+        internal static string Form_Text_AddNewEmployee {
+            get {
+                return ResourceManager.GetString("Form_Text_AddNewEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to dd-MM-yyyy.
+        /// </summary>
+        internal static string Format_DateFormat {
+            get {
+                return ResourceManager.GetString("Format_DateFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tất cả.
+        /// </summary>
+        internal static string Label_AllOption {
+            get {
+                return ResourceManager.GetString("Label_AllOption", resourceCulture);
             }
         }
         
@@ -116,6 +170,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thêm nhân viên thành công!.
+        /// </summary>
+        internal static string MessageBox_Message_AddEmployeeSuccessfully {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_AddEmployeeSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bạn không thể xóa tài khoản của mình!.
+        /// </summary>
+        internal static string MessageBox_Message_CannotSelfDeleteAccount {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_CannotSelfDeleteAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Không thể đặt lại mật khẩu cho chính mình! Hãy sử dụng chức năng &quot;Thay đổi thông tin cá nhân&quot;.
         /// </summary>
         internal static string MessageBox_Message_CannotSelfResetPassword {
@@ -125,11 +197,29 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Không có thay đổi! Thông tin người dùng vẫn được giữ nguyên.
+        /// </summary>
+        internal static string MessageBox_Message_ChangeInfoNoChange {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ChangeInfoNoChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thay đổi thành công!.
         /// </summary>
         internal static string MessageBox_Message_ChangeSuccessfully {
             get {
                 return ResourceManager.GetString("MessageBox_Message_ChangeSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thông tin của {0} sẽ được thay đổi. Vẫn tiếp tục?.
+        /// </summary>
+        internal static string MessageBox_Message_ConfirmChangeEmployeeInfo {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ConfirmChangeEmployeeInfo", resourceCulture);
             }
         }
         
@@ -152,6 +242,26 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bạn có chắc chắc muốn xóa các tài khoản sau không?
+        ///{0}.
+        /// </summary>
+        internal static string MessageBox_Message_ConfirmDeleteAccount {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ConfirmDeleteAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bạn có chắc chắc muốn xóa các nhân viên sau không?
+        ///{0}.
+        /// </summary>
+        internal static string MessageBox_Message_ConfirmDeleteEmployee {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ConfirmDeleteEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bạn có chắc chắn muốn thoát không?.
         /// </summary>
         internal static string MessageBox_Message_ConfirmExit {
@@ -161,7 +271,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mật khảu của tài khoản {0} sẽ được thay đổi. Vẫn tiếp tục?.
+        ///   Looks up a localized string similar to Mật khẩu của tài khoản {0} sẽ được thay đổi. Vẫn tiếp tục?.
         /// </summary>
         internal static string MessageBox_Message_ConfirmResetPassword {
             get {
@@ -175,6 +285,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         internal static string MessageBox_Message_CreateAccountSuccessfully {
             get {
                 return ResourceManager.GetString("MessageBox_Message_CreateAccountSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Đã xóa {0} tài khoản!.
+        /// </summary>
+        internal static string MessageBox_Message_DeleteAccountSuccessfully {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_DeleteAccountSuccessfully", resourceCulture);
             }
         }
         
@@ -283,6 +402,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         internal static string MessageBox_Message_WrongOldPassword {
             get {
                 return ResourceManager.GetString("MessageBox_Message_WrongOldPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vị trí: {0}.
+        /// </summary>
+        internal static string TaskManager_Label_Position {
+            get {
+                return ResourceManager.GetString("TaskManager_Label_Position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Người dùng: {0}.
+        /// </summary>
+        internal static string TaskManager_Label_User {
+            get {
+                return ResourceManager.GetString("TaskManager_Label_User", resourceCulture);
             }
         }
         
