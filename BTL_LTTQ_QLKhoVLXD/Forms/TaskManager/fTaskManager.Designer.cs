@@ -1347,6 +1347,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // txtAccount_employee
             // 
+            this.lvwEmployee_employee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtAccount_employee.Location = new System.Drawing.Point(132, 6);
             this.txtAccount_employee.Name = "txtAccount_employee";
@@ -1605,28 +1606,28 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // tsmiShowInformation_employee
             // 
             this.tsmiShowInformation_employee.Name = "tsmiShowInformation_employee";
-            this.tsmiShowInformation_employee.Size = new System.Drawing.Size(172, 24);
+            this.tsmiShowInformation_employee.Size = new System.Drawing.Size(210, 24);
             this.tsmiShowInformation_employee.Text = "Xem thông tin";
             this.tsmiShowInformation_employee.Click += new System.EventHandler(this.tsmiShowInformation_employee_Click);
             // 
             // tsmiCreateAccount_employee
             // 
             this.tsmiCreateAccount_employee.Name = "tsmiCreateAccount_employee";
-            this.tsmiCreateAccount_employee.Size = new System.Drawing.Size(172, 24);
+            this.tsmiCreateAccount_employee.Size = new System.Drawing.Size(210, 24);
             this.tsmiCreateAccount_employee.Text = "Tạo tài khoản";
             this.tsmiCreateAccount_employee.Click += new System.EventHandler(this.tsmiCreateAccount_employee_Click);
             // 
             // tsmiDeleteAccount_employee
             // 
             this.tsmiDeleteAccount_employee.Name = "tsmiDeleteAccount_employee";
-            this.tsmiDeleteAccount_employee.Size = new System.Drawing.Size(172, 24);
+            this.tsmiDeleteAccount_employee.Size = new System.Drawing.Size(210, 24);
             this.tsmiDeleteAccount_employee.Text = "Xóa tài khoản";
             this.tsmiDeleteAccount_employee.Click += new System.EventHandler(this.tsmiDeleteAccount_employee_Click);
             // 
             // tsmiDeleteEmployee_employee
             // 
             this.tsmiDeleteEmployee_employee.Name = "tsmiDeleteEmployee_employee";
-            this.tsmiDeleteEmployee_employee.Size = new System.Drawing.Size(172, 24);
+            this.tsmiDeleteEmployee_employee.Size = new System.Drawing.Size(210, 24);
             this.tsmiDeleteEmployee_employee.Text = "Xóa nhân viên";
             this.tsmiDeleteEmployee_employee.Click += new System.EventHandler(this.tsmiDeleteEmployee_employee_Click);
             // 
