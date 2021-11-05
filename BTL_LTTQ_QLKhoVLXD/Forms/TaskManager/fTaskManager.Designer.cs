@@ -1606,28 +1606,28 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // tsmiShowInformation_employee
             // 
             this.tsmiShowInformation_employee.Name = "tsmiShowInformation_employee";
-            this.tsmiShowInformation_employee.Size = new System.Drawing.Size(210, 24);
+            this.tsmiShowInformation_employee.Size = new System.Drawing.Size(172, 24);
             this.tsmiShowInformation_employee.Text = "Xem thông tin";
             this.tsmiShowInformation_employee.Click += new System.EventHandler(this.tsmiShowInformation_employee_Click);
             // 
             // tsmiCreateAccount_employee
             // 
             this.tsmiCreateAccount_employee.Name = "tsmiCreateAccount_employee";
-            this.tsmiCreateAccount_employee.Size = new System.Drawing.Size(210, 24);
+            this.tsmiCreateAccount_employee.Size = new System.Drawing.Size(172, 24);
             this.tsmiCreateAccount_employee.Text = "Tạo tài khoản";
             this.tsmiCreateAccount_employee.Click += new System.EventHandler(this.tsmiCreateAccount_employee_Click);
             // 
             // tsmiDeleteAccount_employee
             // 
             this.tsmiDeleteAccount_employee.Name = "tsmiDeleteAccount_employee";
-            this.tsmiDeleteAccount_employee.Size = new System.Drawing.Size(210, 24);
+            this.tsmiDeleteAccount_employee.Size = new System.Drawing.Size(172, 24);
             this.tsmiDeleteAccount_employee.Text = "Xóa tài khoản";
             this.tsmiDeleteAccount_employee.Click += new System.EventHandler(this.tsmiDeleteAccount_employee_Click);
             // 
             // tsmiDeleteEmployee_employee
             // 
             this.tsmiDeleteEmployee_employee.Name = "tsmiDeleteEmployee_employee";
-            this.tsmiDeleteEmployee_employee.Size = new System.Drawing.Size(210, 24);
+            this.tsmiDeleteEmployee_employee.Size = new System.Drawing.Size(172, 24);
             this.tsmiDeleteEmployee_employee.Text = "Xóa nhân viên";
             this.tsmiDeleteEmployee_employee.Click += new System.EventHandler(this.tsmiDeleteEmployee_employee_Click);
             // 
@@ -2114,6 +2114,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Kho Vật Liệu Xây Dựng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fTaskManager_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fTaskManager_FormClosed);
             this.Load += new System.EventHandler(this.fTaskManager_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
