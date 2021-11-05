@@ -93,6 +93,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 ) == DialogResult.No;
         }
 
+        private void fTaskManager_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _debounce_employee.Dispose();
+        }
+
         #endregion
 
         #region Form Methods
