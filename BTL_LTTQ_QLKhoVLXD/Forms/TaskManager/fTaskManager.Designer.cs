@@ -36,6 +36,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tctlControl = new System.Windows.Forms.TabControl();
             this.tpgBuy = new System.Windows.Forms.TabPage();
             this.grbItemInfor_Buy = new System.Windows.Forms.GroupBox();
+            this.lsvBuy_Buy = new System.Windows.Forms.ListView();
             this.btnPrintReceipt_Buy = new System.Windows.Forms.Button();
             this.btnCancelReceipt_Buy = new System.Windows.Forms.Button();
             this.btnSaveReceipt_Buy = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtMaterialName_Buy = new System.Windows.Forms.TextBox();
             this.txtMaterialAmount_Buy = new System.Windows.Forms.TextBox();
             this.lstMaterialId_Buy = new System.Windows.Forms.ListBox();
-            this.dataGridView1_Buy = new System.Windows.Forms.DataGridView();
             this.lblMoney_Buy = new System.Windows.Forms.Label();
             this.lblMaterialUnitPrice_Buy = new System.Windows.Forms.Label();
             this.lblMaterialName_Buy = new System.Windows.Forms.Label();
@@ -85,7 +85,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtMaterialName_Sell = new System.Windows.Forms.TextBox();
             this.txtMaterialAmount_Sell = new System.Windows.Forms.TextBox();
             this.lstMaterialId_Sell = new System.Windows.Forms.ListBox();
-            this.dataGridView1_Sell = new System.Windows.Forms.DataGridView();
             this.lblMoney_Sell = new System.Windows.Forms.Label();
             this.lblMaterialUnitPrice_Sell = new System.Windows.Forms.Label();
             this.lblMaterialName_Sell = new System.Windows.Forms.Label();
@@ -157,16 +156,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tsmiCreateAccount_employee = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteAccount_employee = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteEmployee_employee = new System.Windows.Forms.ToolStripMenuItem();
+            this.lsvSell_Sell = new System.Windows.Forms.ListView();
             this.panel3.SuspendLayout();
             this.tctlControl.SuspendLayout();
             this.tpgBuy.SuspendLayout();
             this.grbItemInfor_Buy.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_Buy)).BeginInit();
             this.grbGeneralInfor_Buy.SuspendLayout();
             this.panel1_Buy.SuspendLayout();
             this.tpgSell.SuspendLayout();
             this.grbItemInfor_Sell.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_Sell)).BeginInit();
             this.grbGeneralInfor_Sell.SuspendLayout();
             this.panel1_sell.SuspendLayout();
             this.tpgMaterial.SuspendLayout();
@@ -264,6 +262,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // grbItemInfor_Buy
             // 
+            this.grbItemInfor_Buy.Controls.Add(this.lsvBuy_Buy);
             this.grbItemInfor_Buy.Controls.Add(this.btnPrintReceipt_Buy);
             this.grbItemInfor_Buy.Controls.Add(this.btnCancelReceipt_Buy);
             this.grbItemInfor_Buy.Controls.Add(this.btnSaveReceipt_Buy);
@@ -275,49 +274,61 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbItemInfor_Buy.Controls.Add(this.txtMaterialName_Buy);
             this.grbItemInfor_Buy.Controls.Add(this.txtMaterialAmount_Buy);
             this.grbItemInfor_Buy.Controls.Add(this.lstMaterialId_Buy);
-            this.grbItemInfor_Buy.Controls.Add(this.dataGridView1_Buy);
             this.grbItemInfor_Buy.Controls.Add(this.lblMoney_Buy);
             this.grbItemInfor_Buy.Controls.Add(this.lblMaterialUnitPrice_Buy);
             this.grbItemInfor_Buy.Controls.Add(this.lblMaterialName_Buy);
             this.grbItemInfor_Buy.Controls.Add(this.lblMaterialAmount_Buy);
             this.grbItemInfor_Buy.Controls.Add(this.lblMaterialId_Buy);
-            this.grbItemInfor_Buy.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grbItemInfor_Buy.Location = new System.Drawing.Point(3, 248);
+            this.grbItemInfor_Buy.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbItemInfor_Buy.Location = new System.Drawing.Point(3, 242);
             this.grbItemInfor_Buy.Name = "grbItemInfor_Buy";
             this.grbItemInfor_Buy.Size = new System.Drawing.Size(1095, 349);
             this.grbItemInfor_Buy.TabIndex = 2;
             this.grbItemInfor_Buy.TabStop = false;
             this.grbItemInfor_Buy.Text = "Thông tin các mặt hàng";
             // 
+            // lsvBuy_Buy
+            // 
+            this.lsvBuy_Buy.HideSelection = false;
+            this.lsvBuy_Buy.Location = new System.Drawing.Point(6, 108);
+            this.lsvBuy_Buy.Name = "lsvBuy_Buy";
+            this.lsvBuy_Buy.Size = new System.Drawing.Size(1022, 154);
+            this.lsvBuy_Buy.TabIndex = 18;
+            this.lsvBuy_Buy.UseCompatibleStateImageBehavior = false;
+            // 
             // btnPrintReceipt_Buy
             // 
-            this.btnPrintReceipt_Buy.Location = new System.Drawing.Point(767, 315);
+            this.btnPrintReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnPrintReceipt_Buy.Location = new System.Drawing.Point(740, 315);
             this.btnPrintReceipt_Buy.Name = "btnPrintReceipt_Buy";
-            this.btnPrintReceipt_Buy.Size = new System.Drawing.Size(141, 28);
+            this.btnPrintReceipt_Buy.Size = new System.Drawing.Size(171, 28);
             this.btnPrintReceipt_Buy.TabIndex = 17;
             this.btnPrintReceipt_Buy.Text = "In hóa đơn";
             this.btnPrintReceipt_Buy.UseVisualStyleBackColor = true;
             // 
             // btnCancelReceipt_Buy
             // 
-            this.btnCancelReceipt_Buy.Location = new System.Drawing.Point(555, 315);
+            this.btnCancelReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCancelReceipt_Buy.Location = new System.Drawing.Point(530, 315);
             this.btnCancelReceipt_Buy.Name = "btnCancelReceipt_Buy";
-            this.btnCancelReceipt_Buy.Size = new System.Drawing.Size(179, 28);
+            this.btnCancelReceipt_Buy.Size = new System.Drawing.Size(172, 28);
             this.btnCancelReceipt_Buy.TabIndex = 16;
             this.btnCancelReceipt_Buy.Text = "Hủy hóa đơn";
             this.btnCancelReceipt_Buy.UseVisualStyleBackColor = true;
             // 
             // btnSaveReceipt_Buy
             // 
-            this.btnSaveReceipt_Buy.Location = new System.Drawing.Point(334, 315);
+            this.btnSaveReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnSaveReceipt_Buy.Location = new System.Drawing.Point(315, 315);
             this.btnSaveReceipt_Buy.Name = "btnSaveReceipt_Buy";
-            this.btnSaveReceipt_Buy.Size = new System.Drawing.Size(141, 28);
+            this.btnSaveReceipt_Buy.Size = new System.Drawing.Size(172, 28);
             this.btnSaveReceipt_Buy.TabIndex = 15;
             this.btnSaveReceipt_Buy.Text = "Lưu";
             this.btnSaveReceipt_Buy.UseVisualStyleBackColor = true;
             // 
             // btnAddReceipt_Buy
             // 
+            this.btnAddReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAddReceipt_Buy.Location = new System.Drawing.Point(96, 315);
             this.btnAddReceipt_Buy.Name = "btnAddReceipt_Buy";
             this.btnAddReceipt_Buy.Size = new System.Drawing.Size(172, 28);
@@ -327,43 +338,48 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // txtTotalMoney_Buy
             // 
-            this.txtTotalMoney_Buy.Location = new System.Drawing.Point(701, 268);
+            this.txtTotalMoney_Buy.Location = new System.Drawing.Point(769, 268);
             this.txtTotalMoney_Buy.Name = "txtTotalMoney_Buy";
-            this.txtTotalMoney_Buy.Size = new System.Drawing.Size(207, 26);
+            this.txtTotalMoney_Buy.Size = new System.Drawing.Size(255, 26);
             this.txtTotalMoney_Buy.TabIndex = 13;
             // 
             // lblTotalMoney_Buy
             // 
             this.lblTotalMoney_Buy.AutoSize = true;
-            this.lblTotalMoney_Buy.Location = new System.Drawing.Point(593, 274);
+            this.lblTotalMoney_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblTotalMoney_Buy.Location = new System.Drawing.Point(670, 274);
             this.lblTotalMoney_Buy.Name = "lblTotalMoney_Buy";
-            this.lblTotalMoney_Buy.Size = new System.Drawing.Size(93, 20);
+            this.lblTotalMoney_Buy.Size = new System.Drawing.Size(83, 20);
             this.lblTotalMoney_Buy.TabIndex = 12;
             this.lblTotalMoney_Buy.Text = "Tổng tiền:";
             // 
             // txtMoney_Buy
             // 
-            this.txtMoney_Buy.Location = new System.Drawing.Point(712, 31);
+            this.txtMoney_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtMoney_Buy.Location = new System.Drawing.Point(850, 25);
             this.txtMoney_Buy.Name = "txtMoney_Buy";
             this.txtMoney_Buy.Size = new System.Drawing.Size(132, 26);
             this.txtMoney_Buy.TabIndex = 11;
             // 
             // txtMaterialUnitPrice_Buy
             // 
-            this.txtMaterialUnitPrice_Buy.Location = new System.Drawing.Point(419, 76);
+            this.txtMaterialUnitPrice_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtMaterialUnitPrice_Buy.Location = new System.Drawing.Point(500, 79);
             this.txtMaterialUnitPrice_Buy.Name = "txtMaterialUnitPrice_Buy";
             this.txtMaterialUnitPrice_Buy.Size = new System.Drawing.Size(132, 26);
             this.txtMaterialUnitPrice_Buy.TabIndex = 10;
             // 
             // txtMaterialName_Buy
             // 
-            this.txtMaterialName_Buy.Location = new System.Drawing.Point(418, 33);
+            this.txtMaterialName_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtMaterialName_Buy.Location = new System.Drawing.Point(500, 28);
             this.txtMaterialName_Buy.Name = "txtMaterialName_Buy";
             this.txtMaterialName_Buy.Size = new System.Drawing.Size(132, 26);
             this.txtMaterialName_Buy.TabIndex = 9;
             // 
             // txtMaterialAmount_Buy
             // 
+            this.txtMaterialAmount_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtMaterialAmount_Buy.Location = new System.Drawing.Point(152, 76);
             this.txtMaterialAmount_Buy.Name = "txtMaterialAmount_Buy";
             this.txtMaterialAmount_Buy.Size = new System.Drawing.Size(132, 26);
@@ -371,6 +387,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // lstMaterialId_Buy
             // 
+            this.lstMaterialId_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lstMaterialId_Buy.FormattingEnabled = true;
             this.lstMaterialId_Buy.ItemHeight = 20;
             this.lstMaterialId_Buy.Location = new System.Drawing.Point(152, 36);
@@ -378,58 +395,53 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lstMaterialId_Buy.Size = new System.Drawing.Size(132, 24);
             this.lstMaterialId_Buy.TabIndex = 7;
             // 
-            // dataGridView1_Buy
-            // 
-            this.dataGridView1_Buy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1_Buy.Location = new System.Drawing.Point(0, 108);
-            this.dataGridView1_Buy.Name = "dataGridView1_Buy";
-            this.dataGridView1_Buy.RowHeadersWidth = 51;
-            this.dataGridView1_Buy.RowTemplate.Height = 24;
-            this.dataGridView1_Buy.Size = new System.Drawing.Size(908, 154);
-            this.dataGridView1_Buy.TabIndex = 6;
-            // 
             // lblMoney_Buy
             // 
             this.lblMoney_Buy.AutoSize = true;
-            this.lblMoney_Buy.Location = new System.Drawing.Point(593, 36);
+            this.lblMoney_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblMoney_Buy.Location = new System.Drawing.Point(724, 31);
             this.lblMoney_Buy.Name = "lblMoney_Buy";
-            this.lblMoney_Buy.Size = new System.Drawing.Size(103, 20);
+            this.lblMoney_Buy.Size = new System.Drawing.Size(92, 20);
             this.lblMoney_Buy.TabIndex = 4;
             this.lblMoney_Buy.Text = "Thành tiền:";
             // 
             // lblMaterialUnitPrice_Buy
             // 
             this.lblMaterialUnitPrice_Buy.AutoSize = true;
-            this.lblMaterialUnitPrice_Buy.Location = new System.Drawing.Point(311, 79);
+            this.lblMaterialUnitPrice_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblMaterialUnitPrice_Buy.Location = new System.Drawing.Point(392, 76);
             this.lblMaterialUnitPrice_Buy.Name = "lblMaterialUnitPrice_Buy";
-            this.lblMaterialUnitPrice_Buy.Size = new System.Drawing.Size(79, 20);
+            this.lblMaterialUnitPrice_Buy.Size = new System.Drawing.Size(71, 20);
             this.lblMaterialUnitPrice_Buy.TabIndex = 3;
             this.lblMaterialUnitPrice_Buy.Text = "Đơn giá:";
             // 
             // lblMaterialName_Buy
             // 
             this.lblMaterialName_Buy.AutoSize = true;
-            this.lblMaterialName_Buy.Location = new System.Drawing.Point(311, 39);
+            this.lblMaterialName_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblMaterialName_Buy.Location = new System.Drawing.Point(392, 36);
             this.lblMaterialName_Buy.Name = "lblMaterialName_Buy";
-            this.lblMaterialName_Buy.Size = new System.Drawing.Size(92, 20);
+            this.lblMaterialName_Buy.Size = new System.Drawing.Size(83, 20);
             this.lblMaterialName_Buy.TabIndex = 2;
             this.lblMaterialName_Buy.Text = "Tên hàng:";
             // 
             // lblMaterialAmount_Buy
             // 
             this.lblMaterialAmount_Buy.AutoSize = true;
+            this.lblMaterialAmount_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblMaterialAmount_Buy.Location = new System.Drawing.Point(52, 79);
             this.lblMaterialAmount_Buy.Name = "lblMaterialAmount_Buy";
-            this.lblMaterialAmount_Buy.Size = new System.Drawing.Size(88, 20);
+            this.lblMaterialAmount_Buy.Size = new System.Drawing.Size(79, 20);
             this.lblMaterialAmount_Buy.TabIndex = 1;
             this.lblMaterialAmount_Buy.Text = "Số lượng:";
             // 
             // lblMaterialId_Buy
             // 
             this.lblMaterialId_Buy.AutoSize = true;
+            this.lblMaterialId_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblMaterialId_Buy.Location = new System.Drawing.Point(52, 40);
             this.lblMaterialId_Buy.Name = "lblMaterialId_Buy";
-            this.lblMaterialId_Buy.Size = new System.Drawing.Size(86, 20);
+            this.lblMaterialId_Buy.Size = new System.Drawing.Size(78, 20);
             this.lblMaterialId_Buy.TabIndex = 0;
             this.lblMaterialId_Buy.Text = "Mã hàng:";
             // 
@@ -461,61 +473,69 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // lstSupplierId_Buy
             // 
+            this.lstSupplierId_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lstSupplierId_Buy.FormattingEnabled = true;
             this.lstSupplierId_Buy.ItemHeight = 20;
-            this.lstSupplierId_Buy.Location = new System.Drawing.Point(628, 34);
+            this.lstSupplierId_Buy.Location = new System.Drawing.Point(728, 30);
             this.lstSupplierId_Buy.Name = "lstSupplierId_Buy";
             this.lstSupplierId_Buy.Size = new System.Drawing.Size(283, 24);
             this.lstSupplierId_Buy.TabIndex = 15;
             // 
             // lstEmployeeId_Buy
             // 
+            this.lstEmployeeId_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lstEmployeeId_Buy.FormattingEnabled = true;
             this.lstEmployeeId_Buy.ItemHeight = 20;
-            this.lstEmployeeId_Buy.Location = new System.Drawing.Point(152, 119);
+            this.lstEmployeeId_Buy.Location = new System.Drawing.Point(179, 115);
             this.lstEmployeeId_Buy.Name = "lstEmployeeId_Buy";
             this.lstEmployeeId_Buy.Size = new System.Drawing.Size(283, 24);
             this.lstEmployeeId_Buy.TabIndex = 14;
             // 
             // dtpReceiptDate_Buy
             // 
+            this.dtpReceiptDate_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpReceiptDate_Buy.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpReceiptDate_Buy.Location = new System.Drawing.Point(152, 73);
+            this.dtpReceiptDate_Buy.Location = new System.Drawing.Point(180, 75);
             this.dtpReceiptDate_Buy.Name = "dtpReceiptDate_Buy";
             this.dtpReceiptDate_Buy.Size = new System.Drawing.Size(282, 26);
             this.dtpReceiptDate_Buy.TabIndex = 13;
             // 
             // txtPhoneNumber_Buy
             // 
-            this.txtPhoneNumber_Buy.Location = new System.Drawing.Point(628, 160);
+            this.txtPhoneNumber_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtPhoneNumber_Buy.Location = new System.Drawing.Point(728, 163);
             this.txtPhoneNumber_Buy.Name = "txtPhoneNumber_Buy";
             this.txtPhoneNumber_Buy.Size = new System.Drawing.Size(283, 26);
             this.txtPhoneNumber_Buy.TabIndex = 12;
             // 
             // txtAddress_Buy
             // 
-            this.txtAddress_Buy.Location = new System.Drawing.Point(628, 123);
+            this.txtAddress_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtAddress_Buy.Location = new System.Drawing.Point(728, 113);
             this.txtAddress_Buy.Name = "txtAddress_Buy";
             this.txtAddress_Buy.Size = new System.Drawing.Size(283, 26);
             this.txtAddress_Buy.TabIndex = 11;
             // 
             // txtSupplierName_Buy
             // 
-            this.txtSupplierName_Buy.Location = new System.Drawing.Point(628, 75);
+            this.txtSupplierName_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtSupplierName_Buy.Location = new System.Drawing.Point(728, 69);
             this.txtSupplierName_Buy.Name = "txtSupplierName_Buy";
             this.txtSupplierName_Buy.Size = new System.Drawing.Size(283, 26);
             this.txtSupplierName_Buy.TabIndex = 10;
             // 
             // txtEmployeeName_Buy
             // 
-            this.txtEmployeeName_Buy.Location = new System.Drawing.Point(152, 157);
+            this.txtEmployeeName_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtEmployeeName_Buy.Location = new System.Drawing.Point(179, 151);
             this.txtEmployeeName_Buy.Name = "txtEmployeeName_Buy";
             this.txtEmployeeName_Buy.Size = new System.Drawing.Size(283, 26);
             this.txtEmployeeName_Buy.TabIndex = 9;
             // 
             // txtReceiptId_Buy
             // 
-            this.txtReceiptId_Buy.Location = new System.Drawing.Point(152, 34);
+            this.txtReceiptId_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtReceiptId_Buy.Location = new System.Drawing.Point(180, 41);
             this.txtReceiptId_Buy.Name = "txtReceiptId_Buy";
             this.txtReceiptId_Buy.Size = new System.Drawing.Size(283, 26);
             this.txtReceiptId_Buy.TabIndex = 8;
@@ -523,72 +543,80 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // lblPhoneNumber_Buy
             // 
             this.lblPhoneNumber_Buy.AutoSize = true;
-            this.lblPhoneNumber_Buy.Location = new System.Drawing.Point(446, 163);
+            this.lblPhoneNumber_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblPhoneNumber_Buy.Location = new System.Drawing.Point(543, 157);
             this.lblPhoneNumber_Buy.Name = "lblPhoneNumber_Buy";
-            this.lblPhoneNumber_Buy.Size = new System.Drawing.Size(100, 20);
+            this.lblPhoneNumber_Buy.Size = new System.Drawing.Size(89, 20);
             this.lblPhoneNumber_Buy.TabIndex = 7;
             this.lblPhoneNumber_Buy.Text = "Điện thoại:";
             // 
             // lblAddress_Buy
             // 
             this.lblAddress_Buy.AutoSize = true;
-            this.lblAddress_Buy.Location = new System.Drawing.Point(446, 119);
+            this.lblAddress_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblAddress_Buy.Location = new System.Drawing.Point(543, 119);
             this.lblAddress_Buy.Name = "lblAddress_Buy";
-            this.lblAddress_Buy.Size = new System.Drawing.Size(74, 20);
+            this.lblAddress_Buy.Size = new System.Drawing.Size(66, 20);
             this.lblAddress_Buy.TabIndex = 6;
             this.lblAddress_Buy.Text = "Địa chỉ:";
             // 
             // lblSupplierName_Buy
             // 
             this.lblSupplierName_Buy.AutoSize = true;
-            this.lblSupplierName_Buy.Location = new System.Drawing.Point(446, 75);
+            this.lblSupplierName_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblSupplierName_Buy.Location = new System.Drawing.Point(543, 75);
             this.lblSupplierName_Buy.Name = "lblSupplierName_Buy";
-            this.lblSupplierName_Buy.Size = new System.Drawing.Size(164, 20);
+            this.lblSupplierName_Buy.Size = new System.Drawing.Size(147, 20);
             this.lblSupplierName_Buy.TabIndex = 5;
             this.lblSupplierName_Buy.Text = "Tên nhà cung cấp:";
             // 
             // lblSupplierId_Buy
             // 
             this.lblSupplierId_Buy.AutoSize = true;
-            this.lblSupplierId_Buy.Location = new System.Drawing.Point(446, 37);
+            this.lblSupplierId_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblSupplierId_Buy.Location = new System.Drawing.Point(543, 34);
             this.lblSupplierId_Buy.Name = "lblSupplierId_Buy";
-            this.lblSupplierId_Buy.Size = new System.Drawing.Size(158, 20);
+            this.lblSupplierId_Buy.Size = new System.Drawing.Size(142, 20);
             this.lblSupplierId_Buy.TabIndex = 4;
             this.lblSupplierId_Buy.Text = "Mã nhà cung cấp:";
             // 
             // lblEmployeeName_Buy
             // 
             this.lblEmployeeName_Buy.AutoSize = true;
-            this.lblEmployeeName_Buy.Location = new System.Drawing.Point(6, 166);
+            this.lblEmployeeName_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblEmployeeName_Buy.Location = new System.Drawing.Point(30, 160);
             this.lblEmployeeName_Buy.Name = "lblEmployeeName_Buy";
-            this.lblEmployeeName_Buy.Size = new System.Drawing.Size(132, 20);
+            this.lblEmployeeName_Buy.Size = new System.Drawing.Size(118, 20);
             this.lblEmployeeName_Buy.TabIndex = 3;
             this.lblEmployeeName_Buy.Text = "Tên nhân viên:";
             // 
             // lblEmployeeId_Buy
             // 
             this.lblEmployeeId_Buy.AutoSize = true;
-            this.lblEmployeeId_Buy.Location = new System.Drawing.Point(6, 123);
+            this.lblEmployeeId_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblEmployeeId_Buy.Location = new System.Drawing.Point(30, 119);
             this.lblEmployeeId_Buy.Name = "lblEmployeeId_Buy";
-            this.lblEmployeeId_Buy.Size = new System.Drawing.Size(126, 20);
+            this.lblEmployeeId_Buy.Size = new System.Drawing.Size(113, 20);
             this.lblEmployeeId_Buy.TabIndex = 2;
             this.lblEmployeeId_Buy.Text = "Mã nhân viên:";
             // 
             // lblReceiptDate_Buy
             // 
             this.lblReceiptDate_Buy.AutoSize = true;
-            this.lblReceiptDate_Buy.Location = new System.Drawing.Point(6, 75);
+            this.lblReceiptDate_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblReceiptDate_Buy.Location = new System.Drawing.Point(30, 75);
             this.lblReceiptDate_Buy.Name = "lblReceiptDate_Buy";
-            this.lblReceiptDate_Buy.Size = new System.Drawing.Size(93, 20);
+            this.lblReceiptDate_Buy.Size = new System.Drawing.Size(84, 20);
             this.lblReceiptDate_Buy.TabIndex = 1;
             this.lblReceiptDate_Buy.Text = "Ngày bán:";
             // 
             // lblReceiptId_Buy
             // 
             this.lblReceiptId_Buy.AutoSize = true;
-            this.lblReceiptId_Buy.Location = new System.Drawing.Point(6, 34);
+            this.lblReceiptId_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblReceiptId_Buy.Location = new System.Drawing.Point(30, 34);
             this.lblReceiptId_Buy.Name = "lblReceiptId_Buy";
-            this.lblReceiptId_Buy.Size = new System.Drawing.Size(112, 20);
+            this.lblReceiptId_Buy.Size = new System.Drawing.Size(101, 20);
             this.lblReceiptId_Buy.TabIndex = 0;
             this.lblReceiptId_Buy.Text = "Mã hóa đơn:";
             // 
@@ -627,6 +655,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // grbItemInfor_Sell
             // 
+            this.grbItemInfor_Sell.Controls.Add(this.lsvSell_Sell);
             this.grbItemInfor_Sell.Controls.Add(this.btnPrintReceipt_Sell);
             this.grbItemInfor_Sell.Controls.Add(this.btnCancelReceipt_Sell);
             this.grbItemInfor_Sell.Controls.Add(this.btnSaveReceipt_Sell);
@@ -638,14 +667,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbItemInfor_Sell.Controls.Add(this.txtMaterialName_Sell);
             this.grbItemInfor_Sell.Controls.Add(this.txtMaterialAmount_Sell);
             this.grbItemInfor_Sell.Controls.Add(this.lstMaterialId_Sell);
-            this.grbItemInfor_Sell.Controls.Add(this.dataGridView1_Sell);
             this.grbItemInfor_Sell.Controls.Add(this.lblMoney_Sell);
             this.grbItemInfor_Sell.Controls.Add(this.lblMaterialUnitPrice_Sell);
             this.grbItemInfor_Sell.Controls.Add(this.lblMaterialName_Sell);
             this.grbItemInfor_Sell.Controls.Add(this.lblMaterialAmount_Sell);
             this.grbItemInfor_Sell.Controls.Add(this.lblMaterialId_Sell);
-            this.grbItemInfor_Sell.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grbItemInfor_Sell.Location = new System.Drawing.Point(3, 248);
+            this.grbItemInfor_Sell.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbItemInfor_Sell.Location = new System.Drawing.Point(3, 242);
             this.grbItemInfor_Sell.Name = "grbItemInfor_Sell";
             this.grbItemInfor_Sell.Size = new System.Drawing.Size(1095, 349);
             this.grbItemInfor_Sell.TabIndex = 3;
@@ -654,33 +682,37 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // btnPrintReceipt_Sell
             // 
-            this.btnPrintReceipt_Sell.Location = new System.Drawing.Point(767, 315);
+            this.btnPrintReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnPrintReceipt_Sell.Location = new System.Drawing.Point(741, 315);
             this.btnPrintReceipt_Sell.Name = "btnPrintReceipt_Sell";
-            this.btnPrintReceipt_Sell.Size = new System.Drawing.Size(141, 28);
+            this.btnPrintReceipt_Sell.Size = new System.Drawing.Size(172, 28);
             this.btnPrintReceipt_Sell.TabIndex = 17;
             this.btnPrintReceipt_Sell.Text = "In hóa đơn";
             this.btnPrintReceipt_Sell.UseVisualStyleBackColor = true;
             // 
             // btnCancelReceipt_Sell
             // 
-            this.btnCancelReceipt_Sell.Location = new System.Drawing.Point(555, 315);
+            this.btnCancelReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCancelReceipt_Sell.Location = new System.Drawing.Point(531, 315);
             this.btnCancelReceipt_Sell.Name = "btnCancelReceipt_Sell";
-            this.btnCancelReceipt_Sell.Size = new System.Drawing.Size(179, 28);
+            this.btnCancelReceipt_Sell.Size = new System.Drawing.Size(172, 28);
             this.btnCancelReceipt_Sell.TabIndex = 16;
             this.btnCancelReceipt_Sell.Text = "Hủy hóa đơn";
             this.btnCancelReceipt_Sell.UseVisualStyleBackColor = true;
             // 
             // btnSaveReceipt_Sell
             // 
-            this.btnSaveReceipt_Sell.Location = new System.Drawing.Point(334, 315);
+            this.btnSaveReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnSaveReceipt_Sell.Location = new System.Drawing.Point(315, 315);
             this.btnSaveReceipt_Sell.Name = "btnSaveReceipt_Sell";
-            this.btnSaveReceipt_Sell.Size = new System.Drawing.Size(141, 28);
+            this.btnSaveReceipt_Sell.Size = new System.Drawing.Size(172, 28);
             this.btnSaveReceipt_Sell.TabIndex = 15;
             this.btnSaveReceipt_Sell.Text = "Lưu";
             this.btnSaveReceipt_Sell.UseVisualStyleBackColor = true;
             // 
             // btnAddReceipt_Sell
             // 
+            this.btnAddReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAddReceipt_Sell.Location = new System.Drawing.Point(96, 315);
             this.btnAddReceipt_Sell.Name = "btnAddReceipt_Sell";
             this.btnAddReceipt_Sell.Size = new System.Drawing.Size(172, 28);
@@ -690,43 +722,49 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // txtTotalMoney_Sell
             // 
-            this.txtTotalMoney_Sell.Location = new System.Drawing.Point(701, 268);
+            this.txtTotalMoney_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtTotalMoney_Sell.Location = new System.Drawing.Point(773, 268);
             this.txtTotalMoney_Sell.Name = "txtTotalMoney_Sell";
-            this.txtTotalMoney_Sell.Size = new System.Drawing.Size(207, 26);
+            this.txtTotalMoney_Sell.Size = new System.Drawing.Size(255, 26);
             this.txtTotalMoney_Sell.TabIndex = 13;
             // 
             // lblTotalMoney_Sell
             // 
             this.lblTotalMoney_Sell.AutoSize = true;
-            this.lblTotalMoney_Sell.Location = new System.Drawing.Point(593, 274);
+            this.lblTotalMoney_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblTotalMoney_Sell.Location = new System.Drawing.Point(659, 274);
             this.lblTotalMoney_Sell.Name = "lblTotalMoney_Sell";
-            this.lblTotalMoney_Sell.Size = new System.Drawing.Size(93, 20);
+            this.lblTotalMoney_Sell.Size = new System.Drawing.Size(83, 20);
             this.lblTotalMoney_Sell.TabIndex = 12;
             this.lblTotalMoney_Sell.Text = "Tổng tiền:";
             // 
             // txtMoney_Sell
             // 
-            this.txtMoney_Sell.Location = new System.Drawing.Point(712, 31);
+            this.txtMoney_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtMoney_Sell.Location = new System.Drawing.Point(845, 30);
             this.txtMoney_Sell.Name = "txtMoney_Sell";
             this.txtMoney_Sell.Size = new System.Drawing.Size(132, 26);
             this.txtMoney_Sell.TabIndex = 11;
             // 
             // txtMaterialUnitPrice_Sell
             // 
-            this.txtMaterialUnitPrice_Sell.Location = new System.Drawing.Point(419, 76);
+            this.txtMaterialUnitPrice_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtMaterialUnitPrice_Sell.Location = new System.Drawing.Point(519, 76);
             this.txtMaterialUnitPrice_Sell.Name = "txtMaterialUnitPrice_Sell";
             this.txtMaterialUnitPrice_Sell.Size = new System.Drawing.Size(132, 26);
             this.txtMaterialUnitPrice_Sell.TabIndex = 10;
             // 
             // txtMaterialName_Sell
             // 
-            this.txtMaterialName_Sell.Location = new System.Drawing.Point(418, 33);
+            this.txtMaterialName_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtMaterialName_Sell.Location = new System.Drawing.Point(515, 33);
             this.txtMaterialName_Sell.Name = "txtMaterialName_Sell";
             this.txtMaterialName_Sell.Size = new System.Drawing.Size(132, 26);
             this.txtMaterialName_Sell.TabIndex = 9;
             // 
             // txtMaterialAmount_Sell
             // 
+            this.txtMaterialAmount_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtMaterialAmount_Sell.Location = new System.Drawing.Point(152, 76);
             this.txtMaterialAmount_Sell.Name = "txtMaterialAmount_Sell";
             this.txtMaterialAmount_Sell.Size = new System.Drawing.Size(132, 26);
@@ -734,6 +772,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // lstMaterialId_Sell
             // 
+            this.lstMaterialId_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lstMaterialId_Sell.FormattingEnabled = true;
             this.lstMaterialId_Sell.ItemHeight = 20;
             this.lstMaterialId_Sell.Location = new System.Drawing.Point(152, 36);
@@ -741,58 +780,53 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lstMaterialId_Sell.Size = new System.Drawing.Size(132, 24);
             this.lstMaterialId_Sell.TabIndex = 7;
             // 
-            // dataGridView1_Sell
-            // 
-            this.dataGridView1_Sell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1_Sell.Location = new System.Drawing.Point(0, 108);
-            this.dataGridView1_Sell.Name = "dataGridView1_Sell";
-            this.dataGridView1_Sell.RowHeadersWidth = 51;
-            this.dataGridView1_Sell.RowTemplate.Height = 24;
-            this.dataGridView1_Sell.Size = new System.Drawing.Size(908, 154);
-            this.dataGridView1_Sell.TabIndex = 6;
-            // 
             // lblMoney_Sell
             // 
             this.lblMoney_Sell.AutoSize = true;
-            this.lblMoney_Sell.Location = new System.Drawing.Point(593, 36);
+            this.lblMoney_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblMoney_Sell.Location = new System.Drawing.Point(714, 36);
             this.lblMoney_Sell.Name = "lblMoney_Sell";
-            this.lblMoney_Sell.Size = new System.Drawing.Size(103, 20);
+            this.lblMoney_Sell.Size = new System.Drawing.Size(92, 20);
             this.lblMoney_Sell.TabIndex = 4;
             this.lblMoney_Sell.Text = "Thành tiền:";
             // 
             // lblMaterialUnitPrice_Sell
             // 
             this.lblMaterialUnitPrice_Sell.AutoSize = true;
-            this.lblMaterialUnitPrice_Sell.Location = new System.Drawing.Point(311, 79);
+            this.lblMaterialUnitPrice_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblMaterialUnitPrice_Sell.Location = new System.Drawing.Point(404, 79);
             this.lblMaterialUnitPrice_Sell.Name = "lblMaterialUnitPrice_Sell";
-            this.lblMaterialUnitPrice_Sell.Size = new System.Drawing.Size(79, 20);
+            this.lblMaterialUnitPrice_Sell.Size = new System.Drawing.Size(71, 20);
             this.lblMaterialUnitPrice_Sell.TabIndex = 3;
             this.lblMaterialUnitPrice_Sell.Text = "Đơn giá:";
             // 
             // lblMaterialName_Sell
             // 
             this.lblMaterialName_Sell.AutoSize = true;
-            this.lblMaterialName_Sell.Location = new System.Drawing.Point(311, 39);
+            this.lblMaterialName_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblMaterialName_Sell.Location = new System.Drawing.Point(404, 39);
             this.lblMaterialName_Sell.Name = "lblMaterialName_Sell";
-            this.lblMaterialName_Sell.Size = new System.Drawing.Size(92, 20);
+            this.lblMaterialName_Sell.Size = new System.Drawing.Size(83, 20);
             this.lblMaterialName_Sell.TabIndex = 2;
             this.lblMaterialName_Sell.Text = "Tên hàng:";
             // 
             // lblMaterialAmount_Sell
             // 
             this.lblMaterialAmount_Sell.AutoSize = true;
+            this.lblMaterialAmount_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblMaterialAmount_Sell.Location = new System.Drawing.Point(52, 79);
             this.lblMaterialAmount_Sell.Name = "lblMaterialAmount_Sell";
-            this.lblMaterialAmount_Sell.Size = new System.Drawing.Size(88, 20);
+            this.lblMaterialAmount_Sell.Size = new System.Drawing.Size(79, 20);
             this.lblMaterialAmount_Sell.TabIndex = 1;
             this.lblMaterialAmount_Sell.Text = "Số lượng:";
             // 
             // lblMaterialId_Sell
             // 
             this.lblMaterialId_Sell.AutoSize = true;
+            this.lblMaterialId_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblMaterialId_Sell.Location = new System.Drawing.Point(52, 40);
             this.lblMaterialId_Sell.Name = "lblMaterialId_Sell";
-            this.lblMaterialId_Sell.Size = new System.Drawing.Size(86, 20);
+            this.lblMaterialId_Sell.Size = new System.Drawing.Size(78, 20);
             this.lblMaterialId_Sell.TabIndex = 0;
             this.lblMaterialId_Sell.Text = "Mã hàng:";
             // 
@@ -824,61 +858,69 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // lstCustomerId_Sell
             // 
+            this.lstCustomerId_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lstCustomerId_Sell.FormattingEnabled = true;
             this.lstCustomerId_Sell.ItemHeight = 20;
-            this.lstCustomerId_Sell.Location = new System.Drawing.Point(628, 34);
+            this.lstCustomerId_Sell.Location = new System.Drawing.Point(732, 25);
             this.lstCustomerId_Sell.Name = "lstCustomerId_Sell";
             this.lstCustomerId_Sell.Size = new System.Drawing.Size(283, 24);
             this.lstCustomerId_Sell.TabIndex = 15;
             // 
             // lstEmployeeId_Sell
             // 
+            this.lstEmployeeId_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lstEmployeeId_Sell.FormattingEnabled = true;
             this.lstEmployeeId_Sell.ItemHeight = 20;
-            this.lstEmployeeId_Sell.Location = new System.Drawing.Point(151, 119);
+            this.lstEmployeeId_Sell.Location = new System.Drawing.Point(203, 113);
             this.lstEmployeeId_Sell.Name = "lstEmployeeId_Sell";
             this.lstEmployeeId_Sell.Size = new System.Drawing.Size(283, 24);
             this.lstEmployeeId_Sell.TabIndex = 14;
             // 
             // dtpReceiptDate_Sell
             // 
+            this.dtpReceiptDate_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpReceiptDate_Sell.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpReceiptDate_Sell.Location = new System.Drawing.Point(152, 75);
+            this.dtpReceiptDate_Sell.Location = new System.Drawing.Point(203, 70);
             this.dtpReceiptDate_Sell.Name = "dtpReceiptDate_Sell";
             this.dtpReceiptDate_Sell.Size = new System.Drawing.Size(282, 26);
             this.dtpReceiptDate_Sell.TabIndex = 13;
             // 
             // txtPhoneNumber_Sell
             // 
-            this.txtPhoneNumber_Sell.Location = new System.Drawing.Point(628, 160);
+            this.txtPhoneNumber_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtPhoneNumber_Sell.Location = new System.Drawing.Point(732, 157);
             this.txtPhoneNumber_Sell.Name = "txtPhoneNumber_Sell";
             this.txtPhoneNumber_Sell.Size = new System.Drawing.Size(283, 26);
             this.txtPhoneNumber_Sell.TabIndex = 12;
             // 
             // txtAddress_Sell
             // 
-            this.txtAddress_Sell.Location = new System.Drawing.Point(628, 123);
+            this.txtAddress_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtAddress_Sell.Location = new System.Drawing.Point(732, 113);
             this.txtAddress_Sell.Name = "txtAddress_Sell";
             this.txtAddress_Sell.Size = new System.Drawing.Size(283, 26);
             this.txtAddress_Sell.TabIndex = 11;
             // 
             // txtCustomerName_Sell
             // 
-            this.txtCustomerName_Sell.Location = new System.Drawing.Point(628, 75);
+            this.txtCustomerName_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtCustomerName_Sell.Location = new System.Drawing.Point(732, 69);
             this.txtCustomerName_Sell.Name = "txtCustomerName_Sell";
             this.txtCustomerName_Sell.Size = new System.Drawing.Size(283, 26);
             this.txtCustomerName_Sell.TabIndex = 10;
             // 
             // txtEmployeeName_Sell
             // 
-            this.txtEmployeeName_Sell.Location = new System.Drawing.Point(151, 157);
+            this.txtEmployeeName_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtEmployeeName_Sell.Location = new System.Drawing.Point(204, 151);
             this.txtEmployeeName_Sell.Name = "txtEmployeeName_Sell";
             this.txtEmployeeName_Sell.Size = new System.Drawing.Size(283, 26);
             this.txtEmployeeName_Sell.TabIndex = 9;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(152, 34);
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBox5.Location = new System.Drawing.Point(204, 34);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(283, 26);
             this.textBox5.TabIndex = 8;
@@ -886,72 +928,80 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // lblPhoneNumber_Sell
             // 
             this.lblPhoneNumber_Sell.AutoSize = true;
-            this.lblPhoneNumber_Sell.Location = new System.Drawing.Point(462, 163);
+            this.lblPhoneNumber_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblPhoneNumber_Sell.Location = new System.Drawing.Point(558, 157);
             this.lblPhoneNumber_Sell.Name = "lblPhoneNumber_Sell";
-            this.lblPhoneNumber_Sell.Size = new System.Drawing.Size(100, 20);
+            this.lblPhoneNumber_Sell.Size = new System.Drawing.Size(89, 20);
             this.lblPhoneNumber_Sell.TabIndex = 7;
             this.lblPhoneNumber_Sell.Text = "Điện thoại:";
             // 
             // lblAddress_Sell
             // 
             this.lblAddress_Sell.AutoSize = true;
-            this.lblAddress_Sell.Location = new System.Drawing.Point(462, 119);
+            this.lblAddress_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblAddress_Sell.Location = new System.Drawing.Point(558, 113);
             this.lblAddress_Sell.Name = "lblAddress_Sell";
-            this.lblAddress_Sell.Size = new System.Drawing.Size(74, 20);
+            this.lblAddress_Sell.Size = new System.Drawing.Size(66, 20);
             this.lblAddress_Sell.TabIndex = 6;
             this.lblAddress_Sell.Text = "Địa chỉ:";
             // 
             // lblCustomerName_Sell
             // 
             this.lblCustomerName_Sell.AutoSize = true;
-            this.lblCustomerName_Sell.Location = new System.Drawing.Point(462, 75);
+            this.lblCustomerName_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblCustomerName_Sell.Location = new System.Drawing.Point(558, 69);
             this.lblCustomerName_Sell.Name = "lblCustomerName_Sell";
-            this.lblCustomerName_Sell.Size = new System.Drawing.Size(147, 20);
+            this.lblCustomerName_Sell.Size = new System.Drawing.Size(132, 20);
             this.lblCustomerName_Sell.TabIndex = 5;
             this.lblCustomerName_Sell.Text = "Tên khách hàng:";
             // 
             // lblCustomerId_Sell
             // 
             this.lblCustomerId_Sell.AutoSize = true;
-            this.lblCustomerId_Sell.Location = new System.Drawing.Point(462, 34);
+            this.lblCustomerId_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblCustomerId_Sell.Location = new System.Drawing.Point(558, 34);
             this.lblCustomerId_Sell.Name = "lblCustomerId_Sell";
-            this.lblCustomerId_Sell.Size = new System.Drawing.Size(141, 20);
+            this.lblCustomerId_Sell.Size = new System.Drawing.Size(127, 20);
             this.lblCustomerId_Sell.TabIndex = 4;
             this.lblCustomerId_Sell.Text = "Mã khách hàng:";
             // 
             // lblEmployeeName_Sell
             // 
             this.lblEmployeeName_Sell.AutoSize = true;
-            this.lblEmployeeName_Sell.Location = new System.Drawing.Point(6, 166);
+            this.lblEmployeeName_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblEmployeeName_Sell.Location = new System.Drawing.Point(30, 157);
             this.lblEmployeeName_Sell.Name = "lblEmployeeName_Sell";
-            this.lblEmployeeName_Sell.Size = new System.Drawing.Size(132, 20);
+            this.lblEmployeeName_Sell.Size = new System.Drawing.Size(118, 20);
             this.lblEmployeeName_Sell.TabIndex = 3;
             this.lblEmployeeName_Sell.Text = "Tên nhân viên:";
             // 
             // lblEmployeeId_Sell
             // 
             this.lblEmployeeId_Sell.AutoSize = true;
-            this.lblEmployeeId_Sell.Location = new System.Drawing.Point(6, 123);
+            this.lblEmployeeId_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblEmployeeId_Sell.Location = new System.Drawing.Point(30, 116);
             this.lblEmployeeId_Sell.Name = "lblEmployeeId_Sell";
-            this.lblEmployeeId_Sell.Size = new System.Drawing.Size(126, 20);
+            this.lblEmployeeId_Sell.Size = new System.Drawing.Size(113, 20);
             this.lblEmployeeId_Sell.TabIndex = 2;
             this.lblEmployeeId_Sell.Text = "Mã nhân viên:";
             // 
             // lblReceiptDate_Sell
             // 
             this.lblReceiptDate_Sell.AutoSize = true;
-            this.lblReceiptDate_Sell.Location = new System.Drawing.Point(6, 75);
+            this.lblReceiptDate_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblReceiptDate_Sell.Location = new System.Drawing.Point(30, 70);
             this.lblReceiptDate_Sell.Name = "lblReceiptDate_Sell";
-            this.lblReceiptDate_Sell.Size = new System.Drawing.Size(93, 20);
+            this.lblReceiptDate_Sell.Size = new System.Drawing.Size(84, 20);
             this.lblReceiptDate_Sell.TabIndex = 1;
             this.lblReceiptDate_Sell.Text = "Ngày bán:";
             // 
             // lblReceiptId_Sell
             // 
             this.lblReceiptId_Sell.AutoSize = true;
-            this.lblReceiptId_Sell.Location = new System.Drawing.Point(6, 34);
+            this.lblReceiptId_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblReceiptId_Sell.Location = new System.Drawing.Point(30, 34);
             this.lblReceiptId_Sell.Name = "lblReceiptId_Sell";
-            this.lblReceiptId_Sell.Size = new System.Drawing.Size(112, 20);
+            this.lblReceiptId_Sell.Size = new System.Drawing.Size(101, 20);
             this.lblReceiptId_Sell.TabIndex = 0;
             this.lblReceiptId_Sell.Text = "Mã hóa đơn:";
             // 
@@ -1461,30 +1511,40 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // tsmiShowInformation_employee
             // 
             this.tsmiShowInformation_employee.Name = "tsmiShowInformation_employee";
-            this.tsmiShowInformation_employee.Size = new System.Drawing.Size(210, 24);
+            this.tsmiShowInformation_employee.Size = new System.Drawing.Size(172, 24);
             this.tsmiShowInformation_employee.Text = "Xem thông tin";
             this.tsmiShowInformation_employee.Click += new System.EventHandler(this.tsmiShowInformation_employee_Click);
             // 
             // tsmiCreateAccount_employee
             // 
             this.tsmiCreateAccount_employee.Name = "tsmiCreateAccount_employee";
-            this.tsmiCreateAccount_employee.Size = new System.Drawing.Size(210, 24);
+            this.tsmiCreateAccount_employee.Size = new System.Drawing.Size(172, 24);
             this.tsmiCreateAccount_employee.Text = "Tạo tài khoản";
             this.tsmiCreateAccount_employee.Click += new System.EventHandler(this.tsmiCreateAccount_employee_Click);
             // 
             // tsmiDeleteAccount_employee
             // 
             this.tsmiDeleteAccount_employee.Name = "tsmiDeleteAccount_employee";
-            this.tsmiDeleteAccount_employee.Size = new System.Drawing.Size(210, 24);
+            this.tsmiDeleteAccount_employee.Size = new System.Drawing.Size(172, 24);
             this.tsmiDeleteAccount_employee.Text = "Xóa tài khoản";
             this.tsmiDeleteAccount_employee.Click += new System.EventHandler(this.tsmiDeleteAccount_employee_Click);
             // 
             // tsmiDeleteEmployee_employee
             // 
             this.tsmiDeleteEmployee_employee.Name = "tsmiDeleteEmployee_employee";
-            this.tsmiDeleteEmployee_employee.Size = new System.Drawing.Size(210, 24);
+            this.tsmiDeleteEmployee_employee.Size = new System.Drawing.Size(172, 24);
             this.tsmiDeleteEmployee_employee.Text = "Xóa nhân viên";
             this.tsmiDeleteEmployee_employee.Click += new System.EventHandler(this.tsmiDeleteEmployee_employee_Click);
+            // 
+            // lsvSell_Sell
+            // 
+            this.lsvSell_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lsvSell_Sell.HideSelection = false;
+            this.lsvSell_Sell.Location = new System.Drawing.Point(6, 109);
+            this.lsvSell_Sell.Name = "lsvSell_Sell";
+            this.lsvSell_Sell.Size = new System.Drawing.Size(1022, 153);
+            this.lsvSell_Sell.TabIndex = 18;
+            this.lsvSell_Sell.UseCompatibleStateImageBehavior = false;
             // 
             // fTaskManager
             // 
@@ -1506,7 +1566,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgBuy.ResumeLayout(false);
             this.grbItemInfor_Buy.ResumeLayout(false);
             this.grbItemInfor_Buy.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_Buy)).EndInit();
             this.grbGeneralInfor_Buy.ResumeLayout(false);
             this.grbGeneralInfor_Buy.PerformLayout();
             this.panel1_Buy.ResumeLayout(false);
@@ -1514,7 +1573,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSell.ResumeLayout(false);
             this.grbItemInfor_Sell.ResumeLayout(false);
             this.grbItemInfor_Sell.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_Sell)).EndInit();
             this.grbGeneralInfor_Sell.ResumeLayout(false);
             this.grbGeneralInfor_Sell.PerformLayout();
             this.panel1_sell.ResumeLayout(false);
@@ -1589,7 +1647,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Label lblEmployeeId_Buy;
         private System.Windows.Forms.Label lblReceiptDate_Buy;
         private System.Windows.Forms.Label lblReceiptId_Buy;
-        private System.Windows.Forms.DataGridView dataGridView1_Buy;
         private System.Windows.Forms.Label lblMoney_Buy;
         private System.Windows.Forms.Label lblMaterialUnitPrice_Buy;
         private System.Windows.Forms.Label lblMaterialName_Buy;
@@ -1618,7 +1675,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.TextBox txtMaterialName_Sell;
         private System.Windows.Forms.TextBox txtMaterialAmount_Sell;
         private System.Windows.Forms.ListBox lstMaterialId_Sell;
-        private System.Windows.Forms.DataGridView dataGridView1_Sell;
         private System.Windows.Forms.Label lblMoney_Sell;
         private System.Windows.Forms.Label lblMaterialUnitPrice_Sell;
         private System.Windows.Forms.Label lblMaterialName_Sell;
@@ -1678,5 +1734,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.ToolStripMenuItem tsmiCreateAccount_employee;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteAccount_employee;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteEmployee_employee;
+        private System.Windows.Forms.ListView lsvBuy_Buy;
+        private System.Windows.Forms.ListView lsvSell_Sell;
     }
 }
