@@ -114,6 +114,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel1_Receipt = new System.Windows.Forms.Panel();
             this.lsvReceipt_Receipt = new System.Windows.Forms.ListView();
             this.panel2_Receipt = new System.Windows.Forms.Panel();
+            this.btnDelete_Receipt = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.grbInfor_Receipt = new System.Windows.Forms.GroupBox();
@@ -147,23 +148,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lblName_Customer = new System.Windows.Forms.Label();
             this.lblId_Customer = new System.Windows.Forms.Label();
             this.tpgSupplier = new System.Windows.Forms.TabPage();
-            this.panel2_Supplier = new System.Windows.Forms.Panel();
-            this.btnExport_Supplier = new System.Windows.Forms.Button();
-            this.btnSearch_Supplier = new System.Windows.Forms.Button();
-            this.btnDelete_Supplier = new System.Windows.Forms.Button();
-            this.btnFix_Supplier = new System.Windows.Forms.Button();
-            this.btnAdd_Supplier = new System.Windows.Forms.Button();
-            this.grbResearch_Supplier = new System.Windows.Forms.GroupBox();
-            this.txtPhoneNumber_Supplier = new System.Windows.Forms.TextBox();
-            this.txtAddress_Supplier = new System.Windows.Forms.TextBox();
-            this.txtName_Supplier = new System.Windows.Forms.TextBox();
-            this.txtId_Supplier = new System.Windows.Forms.TextBox();
-            this.lblPhoneNumber_Supplier = new System.Windows.Forms.Label();
-            this.lblAddress_Supplier = new System.Windows.Forms.Label();
-            this.lblName_Supplier = new System.Windows.Forms.Label();
-            this.lblId_Supplier = new System.Windows.Forms.Label();
-            this.panel1_Supplier = new System.Windows.Forms.Panel();
-            this.lsvSupplier_Supplier = new System.Windows.Forms.ListView();
+            this.spc_supplier = new System.Windows.Forms.SplitContainer();
+            this.lvwSupplier_Supplier = new System.Windows.Forms.ListView();
+            this.flpFunction_supplier = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAdd_supplier = new System.Windows.Forms.Button();
+            this.btnEdit_supplier = new System.Windows.Forms.Button();
+            this.btnDelete_supplier = new System.Windows.Forms.Button();
+            this.btnExport_supplier = new System.Windows.Forms.Button();
+            this.pnlSearch_supplier = new System.Windows.Forms.Panel();
+            this.grbSearch_supplier = new System.Windows.Forms.GroupBox();
+            this.pnlPhone_supplier = new System.Windows.Forms.Panel();
+            this.lblPhone_supplier = new System.Windows.Forms.Label();
+            this.txtPhone_supplier = new System.Windows.Forms.TextBox();
+            this.pnlAddress_supplier = new System.Windows.Forms.Panel();
+            this.lblAddress_supplier = new System.Windows.Forms.Label();
+            this.txtAddress_supplier = new System.Windows.Forms.TextBox();
+            this.pnlName_supplier = new System.Windows.Forms.Panel();
+            this.lblName_supplier = new System.Windows.Forms.Label();
+            this.txtName_supplier = new System.Windows.Forms.TextBox();
             this.tpgEmployee = new System.Windows.Forms.TabPage();
             this.spc_employee = new System.Windows.Forms.SplitContainer();
             this.lvwEmployee_employee = new System.Windows.Forms.ListView();
@@ -173,7 +175,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCreateAccount_employee = new System.Windows.Forms.Button();
             this.btnRemoveAccount_employee = new System.Windows.Forms.Button();
             this.btnRemoveEmployee_employee = new System.Windows.Forms.Button();
-            this.pnlFunction_employe = new System.Windows.Forms.Panel();
+            this.pnlSearch_employe = new System.Windows.Forms.Panel();
             this.grbSearch_employee = new System.Windows.Forms.GroupBox();
             this.pnlAccount_employee = new System.Windows.Forms.Panel();
             this.lblAccount_employee = new System.Windows.Forms.Label();
@@ -205,7 +207,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tsmiCreateAccount_employee = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteAccount_employee = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteEmployee_employee = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnDelete_Receipt = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.tctlControl.SuspendLayout();
             this.tpgBuy.SuspendLayout();
@@ -227,16 +228,23 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel2_Customer.SuspendLayout();
             this.grbInfor_Customer.SuspendLayout();
             this.tpgSupplier.SuspendLayout();
-            this.panel2_Supplier.SuspendLayout();
-            this.grbResearch_Supplier.SuspendLayout();
-            this.panel1_Supplier.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spc_supplier)).BeginInit();
+            this.spc_supplier.Panel1.SuspendLayout();
+            this.spc_supplier.Panel2.SuspendLayout();
+            this.spc_supplier.SuspendLayout();
+            this.flpFunction_supplier.SuspendLayout();
+            this.pnlSearch_supplier.SuspendLayout();
+            this.grbSearch_supplier.SuspendLayout();
+            this.pnlPhone_supplier.SuspendLayout();
+            this.pnlAddress_supplier.SuspendLayout();
+            this.pnlName_supplier.SuspendLayout();
             this.tpgEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spc_employee)).BeginInit();
             this.spc_employee.Panel1.SuspendLayout();
             this.spc_employee.Panel2.SuspendLayout();
             this.spc_employee.SuspendLayout();
             this.flpFunction_employee.SuspendLayout();
-            this.pnlFunction_employe.SuspendLayout();
+            this.pnlSearch_employe.SuspendLayout();
             this.grbSearch_employee.SuspendLayout();
             this.pnlAccount_employee.SuspendLayout();
             this.pnlPosition_employee.SuspendLayout();
@@ -1139,6 +1147,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel2_Receipt.Size = new System.Drawing.Size(432, 599);
             this.panel2_Receipt.TabIndex = 3;
             // 
+            // btnDelete_Receipt
+            // 
+            this.btnDelete_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnDelete_Receipt.Location = new System.Drawing.Point(149, 298);
+            this.btnDelete_Receipt.Name = "btnDelete_Receipt";
+            this.btnDelete_Receipt.Size = new System.Drawing.Size(128, 36);
+            this.btnDelete_Receipt.TabIndex = 5;
+            this.btnDelete_Receipt.Text = "Xóa";
+            this.btnDelete_Receipt.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -1471,8 +1489,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // tpgSupplier
             // 
-            this.tpgSupplier.Controls.Add(this.panel2_Supplier);
-            this.tpgSupplier.Controls.Add(this.panel1_Supplier);
+            this.tpgSupplier.Controls.Add(this.spc_supplier);
             this.tpgSupplier.Location = new System.Drawing.Point(174, 4);
             this.tpgSupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgSupplier.Name = "tpgSupplier";
@@ -1481,179 +1498,191 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSupplier.Text = "Nhà cung cấp";
             this.tpgSupplier.UseVisualStyleBackColor = true;
             // 
-            // panel2_Supplier
+            // spc_supplier
             // 
-            this.panel2_Supplier.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2_Supplier.Controls.Add(this.btnExport_Supplier);
-            this.panel2_Supplier.Controls.Add(this.btnSearch_Supplier);
-            this.panel2_Supplier.Controls.Add(this.btnDelete_Supplier);
-            this.panel2_Supplier.Controls.Add(this.btnFix_Supplier);
-            this.panel2_Supplier.Controls.Add(this.btnAdd_Supplier);
-            this.panel2_Supplier.Controls.Add(this.grbResearch_Supplier);
-            this.panel2_Supplier.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2_Supplier.Location = new System.Drawing.Point(669, 0);
-            this.panel2_Supplier.Name = "panel2_Supplier";
-            this.panel2_Supplier.Size = new System.Drawing.Size(432, 599);
-            this.panel2_Supplier.TabIndex = 1;
+            this.spc_supplier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spc_supplier.Location = new System.Drawing.Point(0, 0);
+            this.spc_supplier.Name = "spc_supplier";
             // 
-            // btnExport_Supplier
+            // spc_supplier.Panel1
             // 
-            this.btnExport_Supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnExport_Supplier.Location = new System.Drawing.Point(154, 346);
-            this.btnExport_Supplier.Name = "btnExport_Supplier";
-            this.btnExport_Supplier.Size = new System.Drawing.Size(128, 36);
-            this.btnExport_Supplier.TabIndex = 5;
-            this.btnExport_Supplier.Text = "Xuất file";
-            this.btnExport_Supplier.UseVisualStyleBackColor = true;
+            this.spc_supplier.Panel1.Controls.Add(this.lvwSupplier_Supplier);
+            this.spc_supplier.Panel1MinSize = 200;
             // 
-            // btnSearch_Supplier
+            // spc_supplier.Panel2
             // 
-            this.btnSearch_Supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnSearch_Supplier.Location = new System.Drawing.Point(19, 346);
-            this.btnSearch_Supplier.Name = "btnSearch_Supplier";
-            this.btnSearch_Supplier.Size = new System.Drawing.Size(128, 36);
-            this.btnSearch_Supplier.TabIndex = 4;
-            this.btnSearch_Supplier.Text = "Tìm kiếm";
-            this.btnSearch_Supplier.UseVisualStyleBackColor = true;
+            this.spc_supplier.Panel2.Controls.Add(this.flpFunction_supplier);
+            this.spc_supplier.Panel2.Controls.Add(this.pnlSearch_supplier);
+            this.spc_supplier.Panel2MinSize = 350;
+            this.spc_supplier.Size = new System.Drawing.Size(1101, 599);
+            this.spc_supplier.SplitterDistance = 590;
+            this.spc_supplier.TabIndex = 0;
             // 
-            // btnDelete_Supplier
+            // lvwSupplier_Supplier
             // 
-            this.btnDelete_Supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnDelete_Supplier.Location = new System.Drawing.Point(286, 283);
-            this.btnDelete_Supplier.Name = "btnDelete_Supplier";
-            this.btnDelete_Supplier.Size = new System.Drawing.Size(128, 36);
-            this.btnDelete_Supplier.TabIndex = 3;
-            this.btnDelete_Supplier.Text = "Xóa";
-            this.btnDelete_Supplier.UseVisualStyleBackColor = true;
+            this.lvwSupplier_Supplier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvwSupplier_Supplier.HideSelection = false;
+            this.lvwSupplier_Supplier.Location = new System.Drawing.Point(0, 0);
+            this.lvwSupplier_Supplier.Name = "lvwSupplier_Supplier";
+            this.lvwSupplier_Supplier.Size = new System.Drawing.Size(590, 599);
+            this.lvwSupplier_Supplier.TabIndex = 0;
+            this.lvwSupplier_Supplier.UseCompatibleStateImageBehavior = false;
             // 
-            // btnFix_Supplier
+            // flpFunction_supplier
             // 
-            this.btnFix_Supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnFix_Supplier.Location = new System.Drawing.Point(154, 283);
-            this.btnFix_Supplier.Name = "btnFix_Supplier";
-            this.btnFix_Supplier.Size = new System.Drawing.Size(128, 36);
-            this.btnFix_Supplier.TabIndex = 2;
-            this.btnFix_Supplier.Text = "Sửa";
-            this.btnFix_Supplier.UseVisualStyleBackColor = true;
+            this.flpFunction_supplier.Controls.Add(this.btnAdd_supplier);
+            this.flpFunction_supplier.Controls.Add(this.btnEdit_supplier);
+            this.flpFunction_supplier.Controls.Add(this.btnDelete_supplier);
+            this.flpFunction_supplier.Controls.Add(this.btnExport_supplier);
+            this.flpFunction_supplier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpFunction_supplier.Location = new System.Drawing.Point(0, 185);
+            this.flpFunction_supplier.Name = "flpFunction_supplier";
+            this.flpFunction_supplier.Padding = new System.Windows.Forms.Padding(5);
+            this.flpFunction_supplier.Size = new System.Drawing.Size(507, 414);
+            this.flpFunction_supplier.TabIndex = 6;
             // 
-            // btnAdd_Supplier
+            // btnAdd_supplier
             // 
-            this.btnAdd_Supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAdd_Supplier.Location = new System.Drawing.Point(19, 283);
-            this.btnAdd_Supplier.Name = "btnAdd_Supplier";
-            this.btnAdd_Supplier.Size = new System.Drawing.Size(128, 36);
-            this.btnAdd_Supplier.TabIndex = 1;
-            this.btnAdd_Supplier.Text = "Thêm";
-            this.btnAdd_Supplier.UseVisualStyleBackColor = true;
+            this.btnAdd_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAdd_supplier.Location = new System.Drawing.Point(8, 8);
+            this.btnAdd_supplier.Name = "btnAdd_supplier";
+            this.btnAdd_supplier.Size = new System.Drawing.Size(185, 47);
+            this.btnAdd_supplier.TabIndex = 1;
+            this.btnAdd_supplier.Text = "Thêm NCC";
+            this.btnAdd_supplier.UseVisualStyleBackColor = true;
             // 
-            // grbResearch_Supplier
+            // btnEdit_supplier
             // 
-            this.grbResearch_Supplier.Controls.Add(this.txtPhoneNumber_Supplier);
-            this.grbResearch_Supplier.Controls.Add(this.txtAddress_Supplier);
-            this.grbResearch_Supplier.Controls.Add(this.txtName_Supplier);
-            this.grbResearch_Supplier.Controls.Add(this.txtId_Supplier);
-            this.grbResearch_Supplier.Controls.Add(this.lblPhoneNumber_Supplier);
-            this.grbResearch_Supplier.Controls.Add(this.lblAddress_Supplier);
-            this.grbResearch_Supplier.Controls.Add(this.lblName_Supplier);
-            this.grbResearch_Supplier.Controls.Add(this.lblId_Supplier);
-            this.grbResearch_Supplier.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grbResearch_Supplier.Location = new System.Drawing.Point(0, 0);
-            this.grbResearch_Supplier.Name = "grbResearch_Supplier";
-            this.grbResearch_Supplier.Size = new System.Drawing.Size(428, 256);
-            this.grbResearch_Supplier.TabIndex = 0;
-            this.grbResearch_Supplier.TabStop = false;
-            this.grbResearch_Supplier.Text = "Thông tin Nhà cung cấp";
+            this.btnEdit_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnEdit_supplier.Location = new System.Drawing.Point(199, 8);
+            this.btnEdit_supplier.Name = "btnEdit_supplier";
+            this.btnEdit_supplier.Size = new System.Drawing.Size(185, 47);
+            this.btnEdit_supplier.TabIndex = 2;
+            this.btnEdit_supplier.Text = "Chỉnh sửa thông tin";
+            this.btnEdit_supplier.UseVisualStyleBackColor = true;
             // 
-            // txtPhoneNumber_Supplier
+            // btnDelete_supplier
             // 
-            this.txtPhoneNumber_Supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtPhoneNumber_Supplier.Location = new System.Drawing.Point(154, 183);
-            this.txtPhoneNumber_Supplier.Name = "txtPhoneNumber_Supplier";
-            this.txtPhoneNumber_Supplier.Size = new System.Drawing.Size(272, 26);
-            this.txtPhoneNumber_Supplier.TabIndex = 7;
+            this.btnDelete_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnDelete_supplier.Location = new System.Drawing.Point(8, 61);
+            this.btnDelete_supplier.Name = "btnDelete_supplier";
+            this.btnDelete_supplier.Size = new System.Drawing.Size(185, 47);
+            this.btnDelete_supplier.TabIndex = 3;
+            this.btnDelete_supplier.Text = "Xóa NCC";
+            this.btnDelete_supplier.UseVisualStyleBackColor = true;
             // 
-            // txtAddress_Supplier
+            // btnExport_supplier
             // 
-            this.txtAddress_Supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtAddress_Supplier.Location = new System.Drawing.Point(154, 139);
-            this.txtAddress_Supplier.Name = "txtAddress_Supplier";
-            this.txtAddress_Supplier.Size = new System.Drawing.Size(272, 26);
-            this.txtAddress_Supplier.TabIndex = 6;
+            this.btnExport_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnExport_supplier.Location = new System.Drawing.Point(199, 61);
+            this.btnExport_supplier.Name = "btnExport_supplier";
+            this.btnExport_supplier.Size = new System.Drawing.Size(185, 47);
+            this.btnExport_supplier.TabIndex = 5;
+            this.btnExport_supplier.Text = "Xuất file";
+            this.btnExport_supplier.UseVisualStyleBackColor = true;
             // 
-            // txtName_Supplier
+            // pnlSearch_supplier
             // 
-            this.txtName_Supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtName_Supplier.Location = new System.Drawing.Point(154, 97);
-            this.txtName_Supplier.Name = "txtName_Supplier";
-            this.txtName_Supplier.Size = new System.Drawing.Size(272, 26);
-            this.txtName_Supplier.TabIndex = 5;
+            this.pnlSearch_supplier.Controls.Add(this.grbSearch_supplier);
+            this.pnlSearch_supplier.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSearch_supplier.Location = new System.Drawing.Point(0, 0);
+            this.pnlSearch_supplier.Name = "pnlSearch_supplier";
+            this.pnlSearch_supplier.Size = new System.Drawing.Size(507, 185);
+            this.pnlSearch_supplier.TabIndex = 1;
             // 
-            // txtId_Supplier
+            // grbSearch_supplier
             // 
-            this.txtId_Supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtId_Supplier.Location = new System.Drawing.Point(154, 44);
-            this.txtId_Supplier.Name = "txtId_Supplier";
-            this.txtId_Supplier.Size = new System.Drawing.Size(272, 26);
-            this.txtId_Supplier.TabIndex = 4;
+            this.grbSearch_supplier.Controls.Add(this.pnlPhone_supplier);
+            this.grbSearch_supplier.Controls.Add(this.pnlAddress_supplier);
+            this.grbSearch_supplier.Controls.Add(this.pnlName_supplier);
+            this.grbSearch_supplier.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbSearch_supplier.Location = new System.Drawing.Point(0, 0);
+            this.grbSearch_supplier.Name = "grbSearch_supplier";
+            this.grbSearch_supplier.Size = new System.Drawing.Size(507, 153);
+            this.grbSearch_supplier.TabIndex = 7;
+            this.grbSearch_supplier.TabStop = false;
+            this.grbSearch_supplier.Text = "Tìm kiếm";
             // 
-            // lblPhoneNumber_Supplier
+            // pnlPhone_supplier
             // 
-            this.lblPhoneNumber_Supplier.AutoSize = true;
-            this.lblPhoneNumber_Supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPhoneNumber_Supplier.Location = new System.Drawing.Point(6, 186);
-            this.lblPhoneNumber_Supplier.Name = "lblPhoneNumber_Supplier";
-            this.lblPhoneNumber_Supplier.Size = new System.Drawing.Size(111, 20);
-            this.lblPhoneNumber_Supplier.TabIndex = 3;
-            this.lblPhoneNumber_Supplier.Text = "Số điện thoại:";
+            this.pnlPhone_supplier.Controls.Add(this.lblPhone_supplier);
+            this.pnlPhone_supplier.Controls.Add(this.txtPhone_supplier);
+            this.pnlPhone_supplier.Location = new System.Drawing.Point(5, 106);
+            this.pnlPhone_supplier.Name = "pnlPhone_supplier";
+            this.pnlPhone_supplier.Size = new System.Drawing.Size(496, 39);
+            this.pnlPhone_supplier.TabIndex = 4;
             // 
-            // lblAddress_Supplier
+            // lblPhone_supplier
             // 
-            this.lblAddress_Supplier.AutoSize = true;
-            this.lblAddress_Supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblAddress_Supplier.Location = new System.Drawing.Point(6, 142);
-            this.lblAddress_Supplier.Name = "lblAddress_Supplier";
-            this.lblAddress_Supplier.Size = new System.Drawing.Size(71, 20);
-            this.lblAddress_Supplier.TabIndex = 2;
-            this.lblAddress_Supplier.Text = "Địa chỉ :";
+            this.lblPhone_supplier.AutoSize = true;
+            this.lblPhone_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblPhone_supplier.Location = new System.Drawing.Point(3, 9);
+            this.lblPhone_supplier.Name = "lblPhone_supplier";
+            this.lblPhone_supplier.Size = new System.Drawing.Size(106, 20);
+            this.lblPhone_supplier.TabIndex = 0;
+            this.lblPhone_supplier.Text = "Số điện thoại";
             // 
-            // lblName_Supplier
+            // txtPhone_supplier
             // 
-            this.lblName_Supplier.AutoSize = true;
-            this.lblName_Supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblName_Supplier.Location = new System.Drawing.Point(6, 97);
-            this.lblName_Supplier.Name = "lblName_Supplier";
-            this.lblName_Supplier.Size = new System.Drawing.Size(147, 20);
-            this.lblName_Supplier.TabIndex = 1;
-            this.lblName_Supplier.Text = "Tên nhà cung cấp:";
+            this.txtPhone_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtPhone_supplier.Location = new System.Drawing.Point(132, 6);
+            this.txtPhone_supplier.Name = "txtPhone_supplier";
+            this.txtPhone_supplier.Size = new System.Drawing.Size(318, 26);
+            this.txtPhone_supplier.TabIndex = 1;
             // 
-            // lblId_Supplier
+            // pnlAddress_supplier
             // 
-            this.lblId_Supplier.AutoSize = true;
-            this.lblId_Supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblId_Supplier.Location = new System.Drawing.Point(6, 50);
-            this.lblId_Supplier.Name = "lblId_Supplier";
-            this.lblId_Supplier.Size = new System.Drawing.Size(142, 20);
-            this.lblId_Supplier.TabIndex = 0;
-            this.lblId_Supplier.Text = "Mã nhà cung cấp:";
+            this.pnlAddress_supplier.Controls.Add(this.lblAddress_supplier);
+            this.pnlAddress_supplier.Controls.Add(this.txtAddress_supplier);
+            this.pnlAddress_supplier.Location = new System.Drawing.Point(5, 61);
+            this.pnlAddress_supplier.Name = "pnlAddress_supplier";
+            this.pnlAddress_supplier.Size = new System.Drawing.Size(496, 39);
+            this.pnlAddress_supplier.TabIndex = 3;
             // 
-            // panel1_Supplier
+            // lblAddress_supplier
             // 
-            this.panel1_Supplier.Controls.Add(this.lsvSupplier_Supplier);
-            this.panel1_Supplier.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1_Supplier.Location = new System.Drawing.Point(0, 0);
-            this.panel1_Supplier.Name = "panel1_Supplier";
-            this.panel1_Supplier.Size = new System.Drawing.Size(1101, 599);
-            this.panel1_Supplier.TabIndex = 0;
+            this.lblAddress_supplier.AutoSize = true;
+            this.lblAddress_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblAddress_supplier.Location = new System.Drawing.Point(3, 9);
+            this.lblAddress_supplier.Name = "lblAddress_supplier";
+            this.lblAddress_supplier.Size = new System.Drawing.Size(61, 20);
+            this.lblAddress_supplier.TabIndex = 0;
+            this.lblAddress_supplier.Text = "Địa chỉ";
             // 
-            // lsvSupplier_Supplier
+            // txtAddress_supplier
             // 
-            this.lsvSupplier_Supplier.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lsvSupplier_Supplier.HideSelection = false;
-            this.lsvSupplier_Supplier.Location = new System.Drawing.Point(0, 0);
-            this.lsvSupplier_Supplier.Name = "lsvSupplier_Supplier";
-            this.lsvSupplier_Supplier.Size = new System.Drawing.Size(1101, 599);
-            this.lsvSupplier_Supplier.TabIndex = 0;
-            this.lsvSupplier_Supplier.UseCompatibleStateImageBehavior = false;
+            this.txtAddress_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtAddress_supplier.Location = new System.Drawing.Point(132, 6);
+            this.txtAddress_supplier.Name = "txtAddress_supplier";
+            this.txtAddress_supplier.Size = new System.Drawing.Size(318, 26);
+            this.txtAddress_supplier.TabIndex = 1;
+            // 
+            // pnlName_supplier
+            // 
+            this.pnlName_supplier.Controls.Add(this.lblName_supplier);
+            this.pnlName_supplier.Controls.Add(this.txtName_supplier);
+            this.pnlName_supplier.Location = new System.Drawing.Point(6, 16);
+            this.pnlName_supplier.Name = "pnlName_supplier";
+            this.pnlName_supplier.Size = new System.Drawing.Size(496, 39);
+            this.pnlName_supplier.TabIndex = 2;
+            // 
+            // lblName_supplier
+            // 
+            this.lblName_supplier.AutoSize = true;
+            this.lblName_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblName_supplier.Location = new System.Drawing.Point(3, 9);
+            this.lblName_supplier.Name = "lblName_supplier";
+            this.lblName_supplier.Size = new System.Drawing.Size(78, 20);
+            this.lblName_supplier.TabIndex = 0;
+            this.lblName_supplier.Text = "Tên NCC";
+            // 
+            // txtName_supplier
+            // 
+            this.txtName_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtName_supplier.Location = new System.Drawing.Point(132, 6);
+            this.txtName_supplier.Name = "txtName_supplier";
+            this.txtName_supplier.Size = new System.Drawing.Size(318, 26);
+            this.txtName_supplier.TabIndex = 1;
             // 
             // tpgEmployee
             // 
@@ -1682,7 +1711,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // spc_employee.Panel2
             // 
             this.spc_employee.Panel2.Controls.Add(this.flpFunction_employee);
-            this.spc_employee.Panel2.Controls.Add(this.pnlFunction_employe);
+            this.spc_employee.Panel2.Controls.Add(this.pnlSearch_employe);
             this.spc_employee.Panel2MinSize = 350;
             this.spc_employee.Size = new System.Drawing.Size(1101, 599);
             this.spc_employee.SplitterDistance = 590;
@@ -1775,14 +1804,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnRemoveEmployee_employee.UseVisualStyleBackColor = true;
             this.btnRemoveEmployee_employee.Click += new System.EventHandler(this.btnRemoveEmployee_employee_Click);
             // 
-            // pnlFunction_employe
+            // pnlSearch_employe
             // 
-            this.pnlFunction_employe.Controls.Add(this.grbSearch_employee);
-            this.pnlFunction_employe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFunction_employe.Location = new System.Drawing.Point(0, 0);
-            this.pnlFunction_employe.Name = "pnlFunction_employe";
-            this.pnlFunction_employe.Size = new System.Drawing.Size(507, 351);
-            this.pnlFunction_employe.TabIndex = 4;
+            this.pnlSearch_employe.Controls.Add(this.grbSearch_employee);
+            this.pnlSearch_employe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSearch_employe.Location = new System.Drawing.Point(0, 0);
+            this.pnlSearch_employe.Name = "pnlSearch_employe";
+            this.pnlSearch_employe.Size = new System.Drawing.Size(507, 351);
+            this.pnlSearch_employe.TabIndex = 4;
             // 
             // grbSearch_employee
             // 
@@ -2104,16 +2133,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tsmiDeleteEmployee_employee.Text = "Xóa nhân viên";
             this.tsmiDeleteEmployee_employee.Click += new System.EventHandler(this.tsmiDeleteEmployee_employee_Click);
             // 
-            // btnDelete_Receipt
-            // 
-            this.btnDelete_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnDelete_Receipt.Location = new System.Drawing.Point(149, 298);
-            this.btnDelete_Receipt.Name = "btnDelete_Receipt";
-            this.btnDelete_Receipt.Size = new System.Drawing.Size(128, 36);
-            this.btnDelete_Receipt.TabIndex = 5;
-            this.btnDelete_Receipt.Text = "Xóa";
-            this.btnDelete_Receipt.UseVisualStyleBackColor = true;
-            // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2159,17 +2178,26 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbInfor_Customer.ResumeLayout(false);
             this.grbInfor_Customer.PerformLayout();
             this.tpgSupplier.ResumeLayout(false);
-            this.panel2_Supplier.ResumeLayout(false);
-            this.grbResearch_Supplier.ResumeLayout(false);
-            this.grbResearch_Supplier.PerformLayout();
-            this.panel1_Supplier.ResumeLayout(false);
+            this.spc_supplier.Panel1.ResumeLayout(false);
+            this.spc_supplier.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spc_supplier)).EndInit();
+            this.spc_supplier.ResumeLayout(false);
+            this.flpFunction_supplier.ResumeLayout(false);
+            this.pnlSearch_supplier.ResumeLayout(false);
+            this.grbSearch_supplier.ResumeLayout(false);
+            this.pnlPhone_supplier.ResumeLayout(false);
+            this.pnlPhone_supplier.PerformLayout();
+            this.pnlAddress_supplier.ResumeLayout(false);
+            this.pnlAddress_supplier.PerformLayout();
+            this.pnlName_supplier.ResumeLayout(false);
+            this.pnlName_supplier.PerformLayout();
             this.tpgEmployee.ResumeLayout(false);
             this.spc_employee.Panel1.ResumeLayout(false);
             this.spc_employee.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spc_employee)).EndInit();
             this.spc_employee.ResumeLayout(false);
             this.flpFunction_employee.ResumeLayout(false);
-            this.pnlFunction_employe.ResumeLayout(false);
+            this.pnlSearch_employe.ResumeLayout(false);
             this.grbSearch_employee.ResumeLayout(false);
             this.grbSearch_employee.PerformLayout();
             this.pnlAccount_employee.ResumeLayout(false);
@@ -2299,7 +2327,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.RadioButton rdoFemale_employee;
         private System.Windows.Forms.RadioButton rdoMale_employee;
         private System.Windows.Forms.RadioButton rdoAll_employee;
-        private System.Windows.Forms.Panel pnlFunction_employe;
+        private System.Windows.Forms.Panel pnlSearch_employe;
         private System.Windows.Forms.Panel pnlPosition_employee;
         private System.Windows.Forms.Label lblPosition_employee;
         private System.Windows.Forms.FlowLayoutPanel flpPosition_employee;
@@ -2320,8 +2348,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteEmployee_employee;
         private System.Windows.Forms.ListView lsvBuy_Buy;
         private System.Windows.Forms.ListView lsvSell_Sell;
-        private System.Windows.Forms.Panel panel1_Supplier;
-        private System.Windows.Forms.ListView lsvSupplier_Supplier;
         private System.Windows.Forms.Panel panel1_Customer;
         private System.Windows.Forms.ListView lsvCustomer_Customer;
         private System.Windows.Forms.Panel panel2_Customer;
@@ -2339,21 +2365,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Label lblAddress_Customer;
         private System.Windows.Forms.Label lblName_Customer;
         private System.Windows.Forms.Label lblId_Customer;
-        private System.Windows.Forms.Panel panel2_Supplier;
-        private System.Windows.Forms.Button btnExport_Supplier;
-        private System.Windows.Forms.Button btnSearch_Supplier;
-        private System.Windows.Forms.Button btnDelete_Supplier;
-        private System.Windows.Forms.Button btnFix_Supplier;
-        private System.Windows.Forms.Button btnAdd_Supplier;
-        private System.Windows.Forms.GroupBox grbResearch_Supplier;
-        private System.Windows.Forms.TextBox txtPhoneNumber_Supplier;
-        private System.Windows.Forms.TextBox txtAddress_Supplier;
-        private System.Windows.Forms.TextBox txtName_Supplier;
-        private System.Windows.Forms.TextBox txtId_Supplier;
-        private System.Windows.Forms.Label lblPhoneNumber_Supplier;
-        private System.Windows.Forms.Label lblAddress_Supplier;
-        private System.Windows.Forms.Label lblName_Supplier;
-        private System.Windows.Forms.Label lblId_Supplier;
         private System.Windows.Forms.Panel panel1_Receipt;
         private System.Windows.Forms.Panel panel2_Receipt;
         private System.Windows.Forms.Button button1;
@@ -2369,5 +2380,23 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListView lsvReceipt_Receipt;
         private System.Windows.Forms.Button btnDelete_Receipt;
+        private System.Windows.Forms.SplitContainer spc_supplier;
+        private System.Windows.Forms.ListView lvwSupplier_Supplier;
+        private System.Windows.Forms.Panel pnlSearch_supplier;
+        private System.Windows.Forms.FlowLayoutPanel flpFunction_supplier;
+        private System.Windows.Forms.Button btnEdit_supplier;
+        private System.Windows.Forms.Button btnAdd_supplier;
+        private System.Windows.Forms.Button btnDelete_supplier;
+        private System.Windows.Forms.Button btnExport_supplier;
+        private System.Windows.Forms.GroupBox grbSearch_supplier;
+        private System.Windows.Forms.Panel pnlPhone_supplier;
+        private System.Windows.Forms.Label lblPhone_supplier;
+        private System.Windows.Forms.TextBox txtPhone_supplier;
+        private System.Windows.Forms.Panel pnlAddress_supplier;
+        private System.Windows.Forms.Label lblAddress_supplier;
+        private System.Windows.Forms.TextBox txtAddress_supplier;
+        private System.Windows.Forms.Panel pnlName_supplier;
+        private System.Windows.Forms.Label lblName_supplier;
+        private System.Windows.Forms.TextBox txtName_supplier;
     }
 }
