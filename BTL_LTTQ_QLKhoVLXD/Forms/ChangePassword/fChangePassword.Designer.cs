@@ -44,22 +44,23 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             this.lblOld.AutoSize = true;
             this.lblOld.Location = new System.Drawing.Point(39, 55);
             this.lblOld.Name = "lblOld";
-            this.lblOld.Size = new System.Drawing.Size(85, 17);
+            this.lblOld.Size = new System.Drawing.Size(89, 17);
             this.lblOld.TabIndex = 0;
-            this.lblOld.Text = "Mật khẩu cũ";
+            this.lblOld.Text = "Mật khẩu cũ:";
             // 
             // lblNew
             // 
             this.lblNew.AutoSize = true;
             this.lblNew.Location = new System.Drawing.Point(39, 104);
             this.lblNew.Name = "lblNew";
-            this.lblNew.Size = new System.Drawing.Size(92, 17);
+            this.lblNew.Size = new System.Drawing.Size(96, 17);
             this.lblNew.TabIndex = 1;
-            this.lblNew.Text = "Mật khẩu mới";
+            this.lblNew.Text = "Mật khẩu mới:";
             // 
             // txtOld
             // 
             this.txtOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOld.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.txtOld.Location = new System.Drawing.Point(172, 50);
             this.txtOld.Name = "txtOld";
             this.txtOld.Size = new System.Drawing.Size(232, 26);
@@ -70,6 +71,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             // txtNew
             // 
             this.txtNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.txtNew.Location = new System.Drawing.Point(172, 99);
             this.txtNew.Name = "txtNew";
             this.txtNew.Size = new System.Drawing.Size(232, 26);
@@ -79,48 +81,54 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             // 
             // btnOld
             // 
+            this.btnOld.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnOld.Location = new System.Drawing.Point(440, 50);
             this.btnOld.Name = "btnOld";
             this.btnOld.Size = new System.Drawing.Size(145, 26);
             this.btnOld.TabIndex = 4;
             this.btnOld.Text = "Hiện mật khẩu";
-            this.btnOld.UseVisualStyleBackColor = true;
+            this.btnOld.UseVisualStyleBackColor = false;
             this.btnOld.Click += new System.EventHandler(this.btnOld_Click);
             // 
             // btnNew
             // 
+            this.btnNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.Location = new System.Drawing.Point(440, 99);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(145, 26);
             this.btnNew.TabIndex = 5;
             this.btnNew.Text = "Hiện mật khẩu";
-            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnSave.Location = new System.Drawing.Point(172, 155);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 38);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Lưu thay đổi";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCancel.Location = new System.Drawing.Point(329, 155);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 38);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Hủy bỏ";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // fChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.ClientSize = new System.Drawing.Size(648, 214);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -130,6 +138,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             this.Controls.Add(this.txtOld);
             this.Controls.Add(this.lblNew);
             this.Controls.Add(this.lblOld);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "fChangePassword";
