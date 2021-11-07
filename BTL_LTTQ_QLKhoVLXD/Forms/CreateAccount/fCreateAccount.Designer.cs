@@ -59,6 +59,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
             // 
             this.txtName.Enabled = false;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.txtName.Location = new System.Drawing.Point(129, 6);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(335, 26);
@@ -69,9 +70,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
             this.lblName.AutoSize = true;
             this.lblName.Location = new System.Drawing.Point(3, 12);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(50, 17);
+            this.lblName.Size = new System.Drawing.Size(54, 17);
             this.lblName.TabIndex = 0;
-            this.lblName.Text = "Họ tên";
+            this.lblName.Text = "Họ tên:";
             // 
             // pnlAccount
             // 
@@ -85,6 +86,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
             // txtAccount
             // 
             this.txtAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.txtAccount.Location = new System.Drawing.Point(129, 3);
             this.txtAccount.Name = "txtAccount";
             this.txtAccount.Size = new System.Drawing.Size(335, 26);
@@ -95,9 +97,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
             this.lblAccount.AutoSize = true;
             this.lblAccount.Location = new System.Drawing.Point(3, 9);
             this.lblAccount.Name = "lblAccount";
-            this.lblAccount.Size = new System.Drawing.Size(105, 17);
+            this.lblAccount.Size = new System.Drawing.Size(109, 17);
             this.lblAccount.TabIndex = 0;
-            this.lblAccount.Text = "Tên đăng nhập";
+            this.lblAccount.Text = "Tên đăng nhập:";
             // 
             // pnlPassword
             // 
@@ -123,6 +125,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.txtPassword.Location = new System.Drawing.Point(129, 3);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(335, 26);
@@ -134,40 +137,44 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
             this.lblPassword.AutoSize = true;
             this.lblPassword.Location = new System.Drawing.Point(3, 9);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(66, 17);
+            this.lblPassword.Size = new System.Drawing.Size(70, 17);
             this.lblPassword.TabIndex = 0;
-            this.lblPassword.Text = "Mật khẩu";
+            this.lblPassword.Text = "Mật khẩu:";
             // 
             // btnCreate
             // 
+            this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCreate.Location = new System.Drawing.Point(93, 184);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(129, 39);
             this.btnCreate.TabIndex = 2;
             this.btnCreate.Text = "Tạo tài khoản";
-            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCancel.Location = new System.Drawing.Point(263, 184);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(129, 39);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // fCreateAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.ClientSize = new System.Drawing.Size(517, 241);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.pnlPassword);
             this.Controls.Add(this.pnlAccount);
             this.Controls.Add(this.pnlName);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "fCreateAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CreateAccount";
