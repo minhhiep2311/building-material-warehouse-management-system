@@ -18,6 +18,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
     public partial class fTaskManager : Form
     {
+        public fTaskManager(User user)
+        {
+            InitializeComponent();
+            User = user;
+        }
+
+        #region Form
+
         #region Form Properties
 
         private User _user;
@@ -35,25 +43,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #endregion
 
-        #region Employee Properties
-
-        private List<User> _employeeList_employee;
-        private Helper.Debounce _debounce_employee;
-
-        #endregion
-
-        public fTaskManager(User user)
-        {
-            InitializeComponent();
-            User = user;
-        }
-
-        #region Form
         #region Form Events
 
         private void fTaskManager_Load(object sender, EventArgs e)
         {
             DisplayComponentsAccordsPermission();
+            Init_Supplier();
             Init_Employee();
         }
 
@@ -124,6 +119,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         }
 
         #endregion
+
         #endregion
 
         #region Material
@@ -157,7 +153,138 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #endregion
         #endregion
 
+        #region Supplier
+
+        #region Supplier Properties
+
+        private Helper.Debounce _debounce_supplier;
+
+        #endregion
+
+        #region Supplier Events
+
+        private void tpgSupplier_Enter(object sender, EventArgs e)
+        {
+            Reset_Supplier();
+            //LoadData_Employee();
+            _debounce_supplier?.Continue();
+        }
+
+        private void tpgSupplier_Leave(object sender, EventArgs e)
+        {
+            _debounce_supplier.Pause();
+        }
+
+        #endregion
+
+        #region Supplier Methods
+        private void Init_Supplier()
+        {
+            _debounce_supplier = new Helper.Debounce(Search_Supplier, 300);
+
+            lvwSupplier_supplier.Columns.Add("ID", 0);
+            lvwSupplier_supplier.Columns.Add("Họ tên", -2, HorizontalAlignment.Left);
+            lvwSupplier_supplier.Columns.Add("Vị trí", -2, HorizontalAlignment.Left);
+            lvwSupplier_supplier.Columns.Add("Địa chỉ", 150, HorizontalAlignment.Left);
+            lvwSupplier_supplier.Columns.Add("Tài khoản", 100, HorizontalAlignment.Left);
+            lvwSupplier_supplier.Columns.Add("Giới tính", -2, HorizontalAlignment.Left);
+            lvwSupplier_supplier.Columns.Add("Ngày sinh", -2, HorizontalAlignment.Left);
+
+            _positions = EmployeeService.GetPositions();
+
+            // Load checkboxes
+            var maxBottom = 0;
+            var chkAll = new CheckBox
+            {
+                Text = Resources.Label_AllOption,
+                Font = lblPosition_employee.Font
+            };
+            chkAll.Click += CheckboxAllChange_employee;
+            flpPosition_employee.Controls.Add(chkAll);
+
+            _positions.ForEach(position =>
+            {
+                var checkbox = new CheckBox
+                {
+                    Text = position.Name,
+                    Font = lblPosition_employee.Font
+                };
+                checkbox.Click += CheckboxChange_employee;
+                flpPosition_employee.Controls.Add(checkbox);
+                maxBottom = Math.Max(maxBottom, checkbox.Bottom);
+            });
+
+            // Draw dynamic size
+            flpPosition_employee.Height = maxBottom + 5;
+            pnlPosition_employee.Height = flpPosition_employee.Bottom;
+            grbSearch_employee.Height = pnlPosition_employee.Bottom + 5;
+        }
+
+        private void Reset_Supplier()
+        {
+            txtName_supplier.Text = string.Empty;
+            txtPhone_supplier.Text = string.Empty;
+            txtAddress_supplier.Text = string.Empty;
+            ResetButtons_Supplier();
+        }
+
+        private void ResetButtons_Supplier()
+        {
+            btnAdd_supplier.Enabled = false;
+            btnEdit_supplier.Enabled = false;
+            btnDelete_supplier.Enabled = false;
+            btnExport_supplier.Enabled = false;
+        }
+
+        private void Search_Supplier()
+        {
+            var name = txtName_employee.Text;
+            var account = txtAccount_employee.Text;
+            var address = txtAddress_employee.Text;
+            var phone = txtPhone_employee.Text;
+            var gender = Helper.ControlFilter.GetRadioButtons(pnlGender_employee)
+               .FirstOrDefault(x => x.Checked)?.Text;
+            var positions = Helper.ControlFilter.GetCheckBoxes(flpPosition_employee)
+               .Where(x => x.Checked)
+               .Select(x => x.Text);
+
+            var employees = _employeeList_employee.FindAll(x =>
+            {
+                var matchName = string.IsNullOrEmpty(name) ||
+                    Helper.Normalize.ToLatinText(x.Name).ToLower()
+                       .Contains(Helper.Normalize.ToLatinText(name).ToLower());
+                var matchAccount = string.IsNullOrEmpty(account) ||
+                    x.Account.ToLower()
+                       .Contains(account.ToLower());
+                var matchAddress = string.IsNullOrEmpty(address) ||
+                    Helper.Normalize.ToLatinText(x.Address).ToLower()
+                       .Contains(Helper.Normalize.ToLatinText(address).ToLower());
+                var matchPhone = string.IsNullOrEmpty(phone) ||
+                    x.PhoneNumber.FirstOrDefault(p => Helper.Normalize.ToNumericPhoneNumber(p)
+                       .Contains(Helper.Normalize.ToNumericPhoneNumber(phone)))
+                    != null;
+                var matchGender = gender == "Tất cả" || (gender == "Nam" && x.IsMale) || (gender == "Nữ" && !x.IsMale);
+                var matchPosition = positions.Contains(x.Position.Name);
+
+                return matchName && matchAccount && matchAddress && matchPhone && matchGender && matchPosition;
+            });
+
+            LoadData_Employee(employees);
+        }
+
+        #endregion
+
+        #endregion
+
         #region Employee
+
+        #region Employee Properties
+
+        private List<User> _employeeList_employee;
+        private Helper.Debounce _debounce_employee;
+
+        #endregion
+
         #region Employee Events
 
         private void tpgEmployee_Enter(object sender, EventArgs e)
@@ -166,6 +293,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             LoadData_Employee();
             _debounce_employee?.Continue();
         }
+
         private void tpgEmployee_Leave(object sender, EventArgs e)
         {
             _debounce_employee.Pause();
@@ -708,6 +836,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         }
 
         #endregion
+
         #endregion
 
         #region UserSettings

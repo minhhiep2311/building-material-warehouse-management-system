@@ -149,7 +149,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lblId_Customer = new System.Windows.Forms.Label();
             this.tpgSupplier = new System.Windows.Forms.TabPage();
             this.spc_supplier = new System.Windows.Forms.SplitContainer();
-            this.lvwSupplier_Supplier = new System.Windows.Forms.ListView();
+            this.lvwSupplier_supplier = new System.Windows.Forms.ListView();
             this.flpFunction_supplier = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAdd_supplier = new System.Windows.Forms.Button();
             this.btnEdit_supplier = new System.Windows.Forms.Button();
@@ -1497,6 +1497,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSupplier.TabIndex = 6;
             this.tpgSupplier.Text = "Nhà cung cấp";
             this.tpgSupplier.UseVisualStyleBackColor = true;
+            this.tpgSupplier.Enter += new System.EventHandler(this.tpgSupplier_Enter);
+            this.tpgSupplier.Leave += new System.EventHandler(this.tpgSupplier_Leave);
             // 
             // spc_supplier
             // 
@@ -1506,7 +1508,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // spc_supplier.Panel1
             // 
-            this.spc_supplier.Panel1.Controls.Add(this.lvwSupplier_Supplier);
+            this.spc_supplier.Panel1.Controls.Add(this.lvwSupplier_supplier);
             this.spc_supplier.Panel1MinSize = 200;
             // 
             // spc_supplier.Panel2
@@ -1518,15 +1520,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_supplier.SplitterDistance = 590;
             this.spc_supplier.TabIndex = 0;
             // 
-            // lvwSupplier_Supplier
+            // lvwSupplier_supplier
             // 
-            this.lvwSupplier_Supplier.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwSupplier_Supplier.HideSelection = false;
-            this.lvwSupplier_Supplier.Location = new System.Drawing.Point(0, 0);
-            this.lvwSupplier_Supplier.Name = "lvwSupplier_Supplier";
-            this.lvwSupplier_Supplier.Size = new System.Drawing.Size(590, 599);
-            this.lvwSupplier_Supplier.TabIndex = 0;
-            this.lvwSupplier_Supplier.UseCompatibleStateImageBehavior = false;
+            this.lvwSupplier_supplier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvwSupplier_supplier.HideSelection = false;
+            this.lvwSupplier_supplier.Location = new System.Drawing.Point(0, 0);
+            this.lvwSupplier_supplier.Name = "lvwSupplier_supplier";
+            this.lvwSupplier_supplier.Size = new System.Drawing.Size(590, 599);
+            this.lvwSupplier_supplier.TabIndex = 0;
+            this.lvwSupplier_supplier.UseCompatibleStateImageBehavior = false;
             // 
             // flpFunction_supplier
             // 
@@ -2381,7 +2383,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.ListView lsvReceipt_Receipt;
         private System.Windows.Forms.Button btnDelete_Receipt;
         private System.Windows.Forms.SplitContainer spc_supplier;
-        private System.Windows.Forms.ListView lvwSupplier_Supplier;
+        private System.Windows.Forms.ListView lvwSupplier_supplier;
         private System.Windows.Forms.Panel pnlSearch_supplier;
         private System.Windows.Forms.FlowLayoutPanel flpFunction_supplier;
         private System.Windows.Forms.Button btnEdit_supplier;
