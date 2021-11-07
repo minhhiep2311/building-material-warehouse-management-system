@@ -79,6 +79,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             this.grbInfo.Controls.Add(this.lblName);
             this.grbInfo.Controls.Add(this.lblDob);
             this.grbInfo.Controls.Add(this.lblAddress);
+            this.grbInfo.ForeColor = System.Drawing.Color.White;
             this.grbInfo.Location = new System.Drawing.Point(12, 12);
             this.grbInfo.Name = "grbInfo";
             this.grbInfo.Size = new System.Drawing.Size(465, 248);
@@ -88,6 +89,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             // 
             // cboPosition
             // 
+            this.cboPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.cboPosition.FormattingEnabled = true;
             this.cboPosition.Location = new System.Drawing.Point(138, 208);
             this.cboPosition.Name = "cboPosition";
@@ -106,6 +108,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.txtPhone.Location = new System.Drawing.Point(138, 169);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(312, 26);
@@ -151,6 +154,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             // 
             // dtpDob
             // 
+            this.dtpDob.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.dtpDob.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.dtpDob.CalendarTrailingForeColor = System.Drawing.Color.Silver;
             this.dtpDob.CustomFormat = "                     dd-MM-yyyy";
             this.dtpDob.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -163,6 +169,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.txtAddress.Location = new System.Drawing.Point(138, 60);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(312, 26);
@@ -171,6 +178,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.txtName.Location = new System.Drawing.Point(138, 25);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(312, 26);
@@ -201,6 +209,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             this.grbAccount.Controls.Add(this.txtUsername);
             this.grbAccount.Controls.Add(this.lblUsername);
             this.grbAccount.Controls.Add(this.lblPassword);
+            this.grbAccount.ForeColor = System.Drawing.Color.White;
             this.grbAccount.Location = new System.Drawing.Point(483, 12);
             this.grbAccount.Name = "grbAccount";
             this.grbAccount.Size = new System.Drawing.Size(465, 129);
@@ -222,6 +231,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.txtPassword.Location = new System.Drawing.Point(138, 55);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(312, 26);
@@ -231,6 +241,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.txtUsername.Location = new System.Drawing.Point(138, 20);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(312, 26);
@@ -256,28 +267,33 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             // 
             // btnCreate
             // 
+            this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnCreate.ForeColor = System.Drawing.Color.White;
             this.btnCreate.Location = new System.Drawing.Point(552, 187);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(129, 38);
             this.btnCreate.TabIndex = 14;
             this.btnCreate.Text = "Tạo tài khoản";
-            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(738, 187);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(129, 38);
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Hủy bỏ";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // fAddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.ClientSize = new System.Drawing.Size(957, 281);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnCreate);
