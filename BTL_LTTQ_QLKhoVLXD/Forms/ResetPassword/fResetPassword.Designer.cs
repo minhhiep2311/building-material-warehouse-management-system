@@ -56,6 +56,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.txtUsername.Location = new System.Drawing.Point(124, 10);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(282, 26);
@@ -67,9 +68,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
             this.lblUsername.AutoSize = true;
             this.lblUsername.Location = new System.Drawing.Point(13, 10);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(105, 17);
+            this.lblUsername.Size = new System.Drawing.Size(109, 17);
             this.lblUsername.TabIndex = 0;
-            this.lblUsername.Text = "Tên đăng nhập";
+            this.lblUsername.Text = "Tên đăng nhập:";
             // 
             // pnlPassword
             // 
@@ -95,6 +96,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.txtPassword.Location = new System.Drawing.Point(124, 7);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(282, 26);
@@ -107,9 +109,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
             this.lblPassword.AutoSize = true;
             this.lblPassword.Location = new System.Drawing.Point(13, 10);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(92, 17);
+            this.lblPassword.Size = new System.Drawing.Size(96, 17);
             this.lblPassword.TabIndex = 0;
-            this.lblPassword.Text = "Mật khẩu mới";
+            this.lblPassword.Text = "Mật khẩu mới:";
             // 
             // panel1
             // 
@@ -122,32 +124,36 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCancel.Location = new System.Drawing.Point(230, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(116, 34);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnSave.Location = new System.Drawing.Point(63, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(116, 34);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Lưu thay đổi";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // fResetPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.ClientSize = new System.Drawing.Size(436, 194);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPassword);
             this.Controls.Add(this.pnlUsername);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "fResetPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
