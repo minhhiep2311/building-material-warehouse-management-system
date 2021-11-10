@@ -20,10 +20,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 "LEFT JOIN account AS a ON " +
                 "a.idEmployee = e.id";
             var result = DatabaseProvider.Instance.ExecuteQuery(query);
-
-            var employeeList = new List<User>();
-            for (var i = 0; i < result.Rows.Count; i++)
-                employeeList.Add(User.FromData(result.Rows[i]));
+            var employeeList = Helper.Mapper.MapArrayOfObject(result, User.FromData);
 
             return employeeList;
         }
@@ -31,9 +28,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
         public static List<EmployeePosition> GetPositions()
         {
             const string query = "SELECT * FROM employeePosition";
-            var data = DatabaseProvider.Instance.ExecuteQuery(query);
-
-            return (from DataRow row in data.Rows select EmployeePosition.FromData(row)).ToList();
+            var result = DatabaseProvider.Instance.ExecuteQuery(query);
+            var positionList = Helper.Mapper.MapArrayOfObject(result, EmployeePosition.FromData);
+            return positionList;
         }
 
         public static List<string> GetPhoneNumber(string username)
@@ -45,10 +42,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 "a.idEmployee=e.id " +
                 $"WHERE a.username=N'{username}'";
             var result = DatabaseProvider.Instance.ExecuteQuery(query);
-
-            var phoneList = new List<string>();
-            for (var i = 0; i < result.Rows.Count; i++)
-                phoneList.Add(Convert.ToString(result.Rows[i]["phoneNumber"]));
+            var phoneList = Helper.Mapper.MapArrayOfObjectProperty(result, "phoneNumber", Convert.ToString);
 
             return phoneList;
         }
@@ -136,7 +130,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 return;
 
             var ids = userList.Select(x => x.Id);
-
             var query = $"DELETE employeePhoneNumber WHERE idEmployee IN ({string.Join(", ", ids)})";
             DatabaseProvider.Instance.ExecuteNonQuery(query);
         }

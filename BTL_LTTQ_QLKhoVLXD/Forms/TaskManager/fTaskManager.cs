@@ -176,6 +176,21 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             _debounce_supplier.Pause();
         }
 
+        private void txtName_supplier_TextChanged(object sender, EventArgs e)
+        {
+            _debounce_supplier.HandleUpdate();
+        }
+
+        private void txtAddress_supplier_TextChanged(object sender, EventArgs e)
+        {
+            _debounce_supplier.HandleUpdate();
+        }
+
+        private void txtPhone_supplier_TextChanged(object sender, EventArgs e)
+        {
+            _debounce_supplier.HandleUpdate();
+        }
+
         #endregion
 
         #region Supplier Methods
@@ -184,7 +199,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             _debounce_supplier = new Helper.Debounce(Search_Supplier, 300);
 
             lvwSupplier_supplier.Columns.Add("ID", 0);
-            lvwSupplier_supplier.Columns.Add("Tên NCC", 250, HorizontalAlignment.Left);
+            lvwSupplier_supplier.Columns.Add("Tên NCC", 300, HorizontalAlignment.Left);
             lvwSupplier_supplier.Columns.Add("Địa chỉ", 150, HorizontalAlignment.Left);
         }
 
@@ -202,6 +217,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 {
                     var row = new ListViewItem(supplier.Id.ToString());
                     row.SubItems.Add(supplier.Name);
+                    row.SubItems.Add(supplier.Address);
                     lvwSupplier_supplier.Items.Add(row);
                 }
             );
@@ -225,24 +241,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void Search_Supplier()
         {
-            var name = txtName_employee.Text;
-            var account = txtAccount_employee.Text;
-            var address = txtAddress_employee.Text;
-            var phone = txtPhone_employee.Text;
-            var gender = Helper.ControlFilter.GetRadioButtons(pnlGender_employee)
-               .FirstOrDefault(x => x.Checked)?.Text;
-            var positions = Helper.ControlFilter.GetCheckBoxes(flpPosition_employee)
-               .Where(x => x.Checked)
-               .Select(x => x.Text);
+            var name = txtName_supplier.Text;
+            var address = txtAddress_supplier.Text;
+            var phone = txtPhone_supplier.Text;
 
-            var employees = _employeeList_employee.FindAll(x =>
+            var suppliers = _supplierList_supplier.FindAll(x =>
             {
                 var matchName = string.IsNullOrEmpty(name) ||
                     Helper.Normalize.ToLatinText(x.Name).ToLower()
                        .Contains(Helper.Normalize.ToLatinText(name).ToLower());
-                var matchAccount = string.IsNullOrEmpty(account) ||
-                    x.Account.ToLower()
-                       .Contains(account.ToLower());
                 var matchAddress = string.IsNullOrEmpty(address) ||
                     Helper.Normalize.ToLatinText(x.Address).ToLower()
                        .Contains(Helper.Normalize.ToLatinText(address).ToLower());
@@ -250,13 +257,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                     x.PhoneNumber.FirstOrDefault(p => Helper.Normalize.ToNumericPhoneNumber(p)
                        .Contains(Helper.Normalize.ToNumericPhoneNumber(phone)))
                     != null;
-                var matchGender = gender == "Tất cả" || (gender == "Nam" && x.IsMale) || (gender == "Nữ" && !x.IsMale);
-                var matchPosition = positions.Contains(x.Position.Name);
 
-                return matchName && matchAccount && matchAddress && matchPhone && matchGender && matchPosition;
+                return matchName && matchAddress && matchPhone;
             });
 
-            LoadData_Employee(employees);
+            LoadData_Supplier(suppliers);
         }
 
         #endregion

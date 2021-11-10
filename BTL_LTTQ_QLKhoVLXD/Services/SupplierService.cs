@@ -15,11 +15,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 "SELECT e.id, e.name, e.address " +
                 "FROM supplier AS e";
             var result = DatabaseProvider.Instance.ExecuteQuery(query);
-
-            var employeeList = new List<Supplier>();
-            for (var i = 0; i < result.Rows.Count; i++)
-                employeeList.Add(Supplier.FromData(result.Rows[i]));
-
+            var employeeList = Helper.Mapper.MapArrayOfObject(result, Supplier.FromData);
             return employeeList;
         }
 
@@ -30,11 +26,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 "ON s.id=p.idSupplier " +
                 $"WHERE s.id={id}";
             var result = DatabaseProvider.Instance.ExecuteQuery(query);
-
-            var phoneList = new List<string>();
-            for (var i = 0; i < result.Rows.Count; i++)
-                phoneList.Add(Convert.ToString(result.Rows[i]["phoneNumber"]));
-
+            var phoneList = Helper.Mapper.MapArrayOfObjectProperty(result, "phoneNumber", Convert.ToString);
             return phoneList;
         }
 

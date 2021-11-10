@@ -1634,6 +1634,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtPhone_supplier.Name = "txtPhone_supplier";
             this.txtPhone_supplier.Size = new System.Drawing.Size(318, 26);
             this.txtPhone_supplier.TabIndex = 1;
+            this.txtPhone_supplier.TextChanged += new System.EventHandler(this.txtPhone_supplier_TextChanged);
             // 
             // pnlAddress_supplier
             // 
@@ -1661,6 +1662,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtAddress_supplier.Name = "txtAddress_supplier";
             this.txtAddress_supplier.Size = new System.Drawing.Size(318, 26);
             this.txtAddress_supplier.TabIndex = 1;
+            this.txtAddress_supplier.TextChanged += new System.EventHandler(this.txtAddress_supplier_TextChanged);
             // 
             // pnlName_supplier
             // 
@@ -1688,6 +1690,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtName_supplier.Name = "txtName_supplier";
             this.txtName_supplier.Size = new System.Drawing.Size(318, 26);
             this.txtName_supplier.TabIndex = 1;
+            this.txtName_supplier.TextChanged += new System.EventHandler(this.txtName_supplier_TextChanged);
             // 
             // tpgEmployee
             // 

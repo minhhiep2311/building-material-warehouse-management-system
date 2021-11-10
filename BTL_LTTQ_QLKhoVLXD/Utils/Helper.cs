@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -188,6 +189,25 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
             public static List<RadioButton> GetRadioButtons(Control control)
             {
                 return control != null ? control.Controls.OfType<RadioButton>().ToList() : new List<RadioButton>();
+            }
+        }
+
+        public class Mapper
+        {
+            public static List<T> MapArrayOfObject<T>(DataTable data, Func<DataRow, T> parser)
+            {
+                var result = new List<T>();
+                for (var i = 0; i < data.Rows.Count; i++)
+                    result.Add(parser(data.Rows[i]));
+                return result;
+            }
+
+            public static List<T> MapArrayOfObjectProperty<T>(DataTable data, string property, Func<object, T> converter)
+            {
+                var result = new List<T>();
+                for (var i = 0; i < data.Rows.Count; i++)
+                    result.Add(converter(data.Rows[i][property]));
+                return result;
             }
         }
     }
