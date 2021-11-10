@@ -55,16 +55,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void tctlControl_DrawItem(object sender, DrawItemEventArgs e)
         {
             // No draw selected border
-            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
-                e = new DrawItemEventArgs(
-                    e.Graphics,
-                    e.Font,
-                    e.Bounds,
-                    e.Index,
-                    e.State ^ DrawItemState.Selected,
-                    e.ForeColor,
-                    Color.YellowGreen
-                );
+            var selected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+            e = new DrawItemEventArgs(
+                e.Graphics,
+                e.Font,
+                e.Bounds,
+                e.Index,
+                e.State ^ DrawItemState.Selected,
+                e.ForeColor,
+                selected ? Color.White : Color.FromArgb(48, 128, 189));
+
 
             e.DrawBackground();
 
@@ -76,7 +76,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var x = e.Bounds.Left + 10;
             var y = e.Bounds.Top + (e.Bounds.Height - textSize.Height) / 2;
 
-            g.DrawString(text, tctlControl.Font, Brushes.Black, x, y);
+            g.DrawString(text, tctlControl.Font, selected ? Brushes.Navy : Brushes.White, x, y);
         }
         private void fTaskManager_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -158,6 +158,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #region Supplier Properties
 
         private Helper.Debounce _debounce_supplier;
+        private List<Supplier> _supplierList_supplier;
 
         #endregion
 
@@ -166,7 +167,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void tpgSupplier_Enter(object sender, EventArgs e)
         {
             Reset_Supplier();
-            //LoadData_Employee();
+            LoadData_Supplier();
             _debounce_supplier?.Continue();
         }
 
@@ -183,41 +184,27 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             _debounce_supplier = new Helper.Debounce(Search_Supplier, 300);
 
             lvwSupplier_supplier.Columns.Add("ID", 0);
-            lvwSupplier_supplier.Columns.Add("Họ tên", -2, HorizontalAlignment.Left);
-            lvwSupplier_supplier.Columns.Add("Vị trí", -2, HorizontalAlignment.Left);
+            lvwSupplier_supplier.Columns.Add("Tên NCC", 250, HorizontalAlignment.Left);
             lvwSupplier_supplier.Columns.Add("Địa chỉ", 150, HorizontalAlignment.Left);
-            lvwSupplier_supplier.Columns.Add("Tài khoản", 100, HorizontalAlignment.Left);
-            lvwSupplier_supplier.Columns.Add("Giới tính", -2, HorizontalAlignment.Left);
-            lvwSupplier_supplier.Columns.Add("Ngày sinh", -2, HorizontalAlignment.Left);
+        }
 
-            _positions = EmployeeService.GetPositions();
+        public void LoadData_Supplier(List<Supplier> cache = null)
+        {
+            lvwSupplier_supplier.Items.Clear();
 
-            // Load checkboxes
-            var maxBottom = 0;
-            var chkAll = new CheckBox
+            if (cache == null)
             {
-                Text = Resources.Label_AllOption,
-                Font = lblPosition_employee.Font
-            };
-            chkAll.Click += CheckboxAllChange_employee;
-            flpPosition_employee.Controls.Add(chkAll);
+                _supplierList_supplier = SupplierService.GetAllSuppliers();
+                cache = _supplierList_supplier;
+            }
 
-            _positions.ForEach(position =>
-            {
-                var checkbox = new CheckBox
+            cache.ForEach(supplier =>
                 {
-                    Text = position.Name,
-                    Font = lblPosition_employee.Font
-                };
-                checkbox.Click += CheckboxChange_employee;
-                flpPosition_employee.Controls.Add(checkbox);
-                maxBottom = Math.Max(maxBottom, checkbox.Bottom);
-            });
-
-            // Draw dynamic size
-            flpPosition_employee.Height = maxBottom + 5;
-            pnlPosition_employee.Height = flpPosition_employee.Bottom;
-            grbSearch_employee.Height = pnlPosition_employee.Bottom + 5;
+                    var row = new ListViewItem(supplier.Id.ToString());
+                    row.SubItems.Add(supplier.Name);
+                    lvwSupplier_supplier.Items.Add(row);
+                }
+            );
         }
 
         private void Reset_Supplier()

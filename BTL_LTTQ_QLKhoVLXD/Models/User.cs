@@ -54,15 +54,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
         public static User FromData(DataRow data)
         {
             var account = Convert.ToString(data["username"]);
-            return new User(
-                Convert.ToInt32(data["id"]),
-                Convert.ToString(data["name"]),
-                Convert.ToString(data["address"]),
-                Convert.ToInt32(data["isMale"]) == 1,
-                Convert.ToDateTime(data["dob"]),
-                new EmployeePosition(data["idPosition"], data["position"]),
-                account
-            );
+            var id = Convert.ToInt32(data["id"]);
+            var name = Convert.ToString(data["name"]);
+            var address = Convert.ToString(data["address"]);
+            var isMale = Convert.ToInt32(data["isMale"]) == 1;
+            var dob = Convert.ToDateTime(data["dob"]);
+            var position = new EmployeePosition(data["idPosition"], data["position"]);
+
+            return new User(id, name, address, isMale, dob, position, account);
         }
 
         #endregion
@@ -113,7 +112,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
                 hashCode = (hashCode * 397) ^ IsMale.GetHashCode();
                 hashCode = (hashCode * 397) ^ Dob.GetHashCode();
                 hashCode = (hashCode * 397) ^ (Position != null ? Position.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (Account != null ? Account.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (PhoneNumber != null ? PhoneNumber.GetHashCode() : 0);
                 return hashCode;
             }

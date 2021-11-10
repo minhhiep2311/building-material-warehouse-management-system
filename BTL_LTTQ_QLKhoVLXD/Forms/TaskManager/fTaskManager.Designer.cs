@@ -1523,12 +1523,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // lvwSupplier_supplier
             // 
             this.lvwSupplier_supplier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvwSupplier_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lvwSupplier_supplier.FullRowSelect = true;
             this.lvwSupplier_supplier.HideSelection = false;
             this.lvwSupplier_supplier.Location = new System.Drawing.Point(0, 0);
             this.lvwSupplier_supplier.Name = "lvwSupplier_supplier";
             this.lvwSupplier_supplier.Size = new System.Drawing.Size(590, 599);
             this.lvwSupplier_supplier.TabIndex = 0;
             this.lvwSupplier_supplier.UseCompatibleStateImageBehavior = false;
+            this.lvwSupplier_supplier.View = System.Windows.Forms.View.Details;
             // 
             // flpFunction_supplier
             // 
