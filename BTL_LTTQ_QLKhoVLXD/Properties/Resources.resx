@@ -249,4 +249,28 @@
     <value>Bạn có chắc chắc muốn xóa các nhân viên sau không?
 {0}</value>
   </data>
+  <data name="Permission_AddEmployee" xml:space="preserve">
+    <value>AddEmployee</value>
+  </data>
+  <data name="Permission_CreateAccount" xml:space="preserve">
+    <value>CreateAccount</value>
+  </data>
+  <data name="Permission_DeleteAccount" xml:space="preserve">
+    <value>DeleteAccount</value>
+  </data>
+  <data name="Permission_DeleteEmployee" xml:space="preserve">
+    <value>DeleteEmployee</value>
+  </data>
+  <data name="Permission_DeleteSupplier" xml:space="preserve">
+    <value>DeleteSupplier</value>
+  </data>
+  <data name="Permission_EditAccountInformation" xml:space="preserve">
+    <value>EditAccountInformation</value>
+  </data>
+  <data name="Permission_EditSupplierInformation" xml:space="preserve">
+    <value>EditSupplierInformation</value>
+  </data>
+  <data name="Permission_ResetPassword" xml:space="preserve">
+    <value>ResetPassword</value>
+  </data>
 </root>

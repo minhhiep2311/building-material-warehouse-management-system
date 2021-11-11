@@ -406,6 +406,78 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AddEmployee.
+        /// </summary>
+        internal static string Permission_AddEmployee {
+            get {
+                return ResourceManager.GetString("Permission_AddEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CreateAccount.
+        /// </summary>
+        internal static string Permission_CreateAccount {
+            get {
+                return ResourceManager.GetString("Permission_CreateAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DeleteAccount.
+        /// </summary>
+        internal static string Permission_DeleteAccount {
+            get {
+                return ResourceManager.GetString("Permission_DeleteAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DeleteEmployee.
+        /// </summary>
+        internal static string Permission_DeleteEmployee {
+            get {
+                return ResourceManager.GetString("Permission_DeleteEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DeleteSupplier.
+        /// </summary>
+        internal static string Permission_DeleteSupplier {
+            get {
+                return ResourceManager.GetString("Permission_DeleteSupplier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EditAccountInformation.
+        /// </summary>
+        internal static string Permission_EditAccountInformation {
+            get {
+                return ResourceManager.GetString("Permission_EditAccountInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EditSupplierInformation.
+        /// </summary>
+        internal static string Permission_EditSupplierInformation {
+            get {
+                return ResourceManager.GetString("Permission_EditSupplierInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ResetPassword.
+        /// </summary>
+        internal static string Permission_ResetPassword {
+            get {
+                return ResourceManager.GetString("Permission_ResetPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vị trí: {0}.
         /// </summary>
         internal static string TaskManager_Label_Position {

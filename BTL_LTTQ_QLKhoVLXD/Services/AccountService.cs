@@ -17,7 +17,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                         "JOIN employee AS e ON e.id=a.idEmployee " +
                         "JOIN employeePosition AS p ON p.id = e.idPosition " +
                         $"WHERE a.username = N'{username}' AND a.password = N'{password}'";
-            var result = DatabaseProvider.Instance.ExecuteQuery(query);
+              var result = DatabaseProvider.Instance.ExecuteQuery(query);
 
             return result.Rows.Count > 0 ? User.FromData(result.Rows[0]) : null;
         }
