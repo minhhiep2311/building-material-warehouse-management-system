@@ -68,6 +68,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
 
             if (user != null)
             {
+                user.GrantPermission();
                 Hide();
                 RedirectToApp(user);
 
@@ -121,6 +122,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
 
             if (user != null)
             {
+                user.GrantPermission();
                 Hide();
                 RedirectToApp(user);
 

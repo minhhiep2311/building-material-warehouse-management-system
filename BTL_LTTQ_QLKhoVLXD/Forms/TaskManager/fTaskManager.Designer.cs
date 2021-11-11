@@ -207,6 +207,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tsmiCreateAccount_employee = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteAccount_employee = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteEmployee_employee = new System.Windows.Forms.ToolStripMenuItem();
+            this.cms_supplier = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiShowInformation_supplier = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDeleteSupplier_supplier = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3.SuspendLayout();
             this.tctlControl.SuspendLayout();
             this.tpgBuy.SuspendLayout();
@@ -255,6 +258,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgUserSetting.SuspendLayout();
             this.flp_userSetting.SuspendLayout();
             this.cms_employee.SuspendLayout();
+            this.cms_supplier.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -1532,6 +1536,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwSupplier_supplier.TabIndex = 0;
             this.lvwSupplier_supplier.UseCompatibleStateImageBehavior = false;
             this.lvwSupplier_supplier.View = System.Windows.Forms.View.Details;
+            this.lvwSupplier_supplier.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvwSupplier_supplier_ColumnClick);
+            this.lvwSupplier_supplier.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.lvwSupplier_supplier_ColumnWidthChanging);
+            this.lvwSupplier_supplier.SelectedIndexChanged += new System.EventHandler(this.lvwSupplier_supplier_SelectedIndexChanged);
+            this.lvwSupplier_supplier.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvwSupplier_supplier_MouseClick);
+            this.lvwSupplier_supplier.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwSupplier_supplier_MouseDoubleClick);
             // 
             // flpFunction_supplier
             // 
@@ -2141,6 +2150,29 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tsmiDeleteEmployee_employee.Text = "Xóa nhân viên";
             this.tsmiDeleteEmployee_employee.Click += new System.EventHandler(this.tsmiDeleteEmployee_employee_Click);
             // 
+            // cms_supplier
+            // 
+            this.cms_supplier.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cms_supplier.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiShowInformation_supplier,
+            this.tsmiDeleteSupplier_supplier});
+            this.cms_supplier.Name = "cms_supplier";
+            this.cms_supplier.Size = new System.Drawing.Size(211, 80);
+            // 
+            // tsmiShowInformation_supplier
+            // 
+            this.tsmiShowInformation_supplier.Name = "tsmiShowInformation_supplier";
+            this.tsmiShowInformation_supplier.Size = new System.Drawing.Size(210, 24);
+            this.tsmiShowInformation_supplier.Text = "Thêm thông tin";
+            this.tsmiShowInformation_supplier.Click += new System.EventHandler(this.tsmiShowInformation_supplier_Click);
+            // 
+            // tsmiDeleteSupplier_supplier
+            // 
+            this.tsmiDeleteSupplier_supplier.Name = "tsmiDeleteSupplier_supplier";
+            this.tsmiDeleteSupplier_supplier.Size = new System.Drawing.Size(210, 24);
+            this.tsmiDeleteSupplier_supplier.Text = "Xóa nhà cung cấp";
+            this.tsmiDeleteSupplier_supplier.Click += new System.EventHandler(this.tsmiDeleteSupplier_supplier_Click);
+            // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2223,6 +2255,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgUserSetting.ResumeLayout(false);
             this.flp_userSetting.ResumeLayout(false);
             this.cms_employee.ResumeLayout(false);
+            this.cms_supplier.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2406,5 +2439,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Panel pnlName_supplier;
         private System.Windows.Forms.Label lblName_supplier;
         private System.Windows.Forms.TextBox txtName_supplier;
+        private System.Windows.Forms.ContextMenuStrip cms_supplier;
+        private System.Windows.Forms.ToolStripMenuItem tsmiShowInformation_supplier;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSupplier_supplier;
     }
 }

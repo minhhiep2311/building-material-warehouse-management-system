@@ -98,24 +98,38 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #region Form Methods
         private void DisplayComponentsAccordsPermission()
         {
-            if (!PermissionConstant.CreateAccount.Contains(User.Position.Id))
+            if (!User.Permissions.Contains(Resources.Permission_CreateAccount))
                 btnCreateAccount_userSetting.Visible = false;
-            if (!PermissionConstant.ResetPassword.Contains(User.Position.Id))
+            if (!User.Permissions.Contains(Resources.Permission_ResetPassword))
                 btnResetPassword_userSetting.Visible = false;
-            if (!PermissionConstant.AddEmployee.Contains(User.Position.Id))
+            if (!User.Permissions.Contains(Resources.Permission_AddEmployee))
                 btnAdd_employee.Visible = false;
-            if (!PermissionConstant.EditAccountInformation.Contains(User.Position.Id))
+            if (!User.Permissions.Contains(Resources.Permission_EditAccountInformation))
                 btnEdit_employee.Visible = false;
-            if (!PermissionConstant.DeleteAccount.Contains(User.Position.Id))
+            if (!User.Permissions.Contains(Resources.Permission_DeleteAccount))
                 btnRemoveAccount_employee.Visible = false;
-            if (!PermissionConstant.DeleteEmployee.Contains(User.Position.Id))
+            if (!User.Permissions.Contains(Resources.Permission_DeleteEmployee))
                 btnRemoveEmployee_employee.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_EditSupplierInformation))
+                btnEdit_supplier.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_DeleteSupplier))
+                btnDelete_supplier.Visible = false;
         }
 
         private void DisplayUserInfo()
         {
             lblUser.Text = string.Format(Resources.TaskManager_Label_User, User.Name);
             lblPosition.Text = string.Format(Resources.TaskManager_Label_Position, User.Position);
+        }
+
+        private static void HandleChangeIdColumnWidth(ColumnWidthChangingEventArgs e)
+        {
+            // ID column
+            if (e.ColumnIndex != 0)
+                return;
+
+            e.NewWidth = 0;
+            e.Cancel = true;
         }
 
         #endregion
@@ -176,6 +190,51 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             _debounce_supplier.Pause();
         }
 
+        private void lvwSupplier_supplier_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Right)
+                return;
+
+            var focusItem = lvwSupplier_supplier.FocusedItem;
+            if (focusItem == null || !focusItem.Bounds.Contains(e.Location))
+                return;
+
+            tsmiShowInformation_supplier.Visible = true;
+            tsmiDeleteSupplier_supplier.Visible = User.Permissions.Contains(Resources.Permission_DeleteSupplier);
+
+            cms_employee.Show(Cursor.Position);
+        }
+
+        private void lvwSupplier_supplier_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ShowInformation_Supplier();
+        }
+
+        private void lvwSupplier_supplier_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            // TODO
+        }
+
+        private void lvwSupplier_supplier_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            HandleChangeIdColumnWidth(e);
+        }
+
+        private void lvwSupplier_supplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // TODO
+        }
+
+        private void tsmiShowInformation_supplier_Click(object sender, EventArgs e)
+        {
+            ShowInformation_Supplier();
+        }
+
+        private void tsmiDeleteSupplier_supplier_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtName_supplier_TextChanged(object sender, EventArgs e)
         {
             _debounce_supplier.HandleUpdate();
@@ -233,7 +292,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void ResetButtons_Supplier()
         {
-            btnAdd_supplier.Enabled = false;
             btnEdit_supplier.Enabled = false;
             btnDelete_supplier.Enabled = false;
             btnExport_supplier.Enabled = false;
@@ -262,6 +320,20 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             });
 
             LoadData_Supplier(suppliers);
+        }
+
+        private void ShowInformation_Supplier()
+        {
+            if (lvwEmployee_employee.SelectedIndices.Count <= 0)
+                return;
+
+            var supplier = _supplierList_supplier[lvwSupplier_supplier.SelectedIndices[0]];
+            var editable = User.Permissions.Contains(Resources.Permission_EditSupplierInformation);
+            var mode = editable ? fEmployee.Mode.Write : fEmployee.Mode.Read;
+
+            lvwEmployee_employee.SelectedItems.Clear();
+
+            //new fEmployee(this, mode, supplier).Show();
         }
 
         #endregion
@@ -301,8 +373,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 return;
 
             tsmiShowInformation_employee.Visible = true;
-            tsmiCreateAccount_employee.Visible = true;
-            tsmiDeleteAccount_employee.Visible = true;
+            tsmiCreateAccount_employee.Visible = User.Permissions.Contains(Resources.Permission_CreateAccount);
+            tsmiDeleteAccount_employee.Visible = User.Permissions.Contains(Resources.Permission_DeleteAccount);
 
             var selectedIndices = lvwEmployee_employee.SelectedIndices;
             var selectedEmployees = selectedIndices.Cast<int>()
@@ -368,12 +440,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void lvwEmployee_employee_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
-            // ID column
-            if (e.ColumnIndex != 0)
-                return;
-
-            e.NewWidth = 0;
-            e.Cancel = true;
+            HandleChangeIdColumnWidth(e);
         }
 
         private void lvwEmployee_employee_SelectedIndexChanged(object sender, EventArgs e)
@@ -633,7 +700,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 return;
 
             var employee = _employeeList_employee[lvwEmployee_employee.SelectedIndices[0]];
-            var editable = PermissionConstant.EditAccountInformation.Contains(User.Position.Id);
+            var editable = User.Permissions.Contains(Resources.Permission_EditAccountInformation);
             var mode = editable ? fEmployee.Mode.Write : fEmployee.Mode.Read;
 
             lvwEmployee_employee.SelectedItems.Clear();

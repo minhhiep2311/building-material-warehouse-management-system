@@ -10,5 +10,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
         public static readonly List<int> AddEmployee = new List<int> { 1 };
         public static readonly List<int> DeleteEmployee = new List<int> { 1 };
         public static readonly List<int> DeleteAccount = new List<int> { 1 };
+        public static readonly List<int> EditSupplierInformation = new List<int> { 1 };
+        public static readonly List<int> DeleteSupplier = new List<int> { 1 };
     }
 }

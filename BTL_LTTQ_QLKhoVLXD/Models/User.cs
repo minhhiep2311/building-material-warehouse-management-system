@@ -18,6 +18,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
         public EmployeePosition Position { get; }
         public string Account { get; set; }
         public List<string> PhoneNumber { get; }
+        public HashSet<string> Permissions { get; private set; }
 
         #endregion
 
@@ -62,6 +63,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             var position = new EmployeePosition(data["idPosition"], data["position"]);
 
             return new User(id, name, address, isMale, dob, position, account);
+        }
+
+        public void GrantPermission()
+        {
+            Permissions = new HashSet<string>();
+            foreach (var permission in typeof(PermissionConstant).GetFields())
+            {
+                if (permission.GetValue(null) is List<int> list && list.Contains(Position.Id))
+                    Permissions.Add(permission.Name);
+            }
         }
 
         #endregion
