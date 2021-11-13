@@ -141,7 +141,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void tpgMaterial_Enter(object sender, EventArgs e)
         {
-            LoadMaterialData();
+               LoadMaterialData();
         }
 
         #endregion
