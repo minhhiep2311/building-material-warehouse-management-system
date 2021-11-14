@@ -41,6 +41,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private List<EmployeePosition> _positions = new List<EmployeePosition>();
 
+        private static readonly string UpArrow = $"{Resources.Character_ArrowUp}    ";
+        private static readonly string DownArrow = $"{Resources.Character_ArrowDown}    ";
+
         #endregion
 
         #region Form Events
@@ -91,6 +94,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void fTaskManager_FormClosed(object sender, FormClosedEventArgs e)
         {
             _debounce_employee.Dispose();
+            _debounce_supplier.Dispose();
         }
 
         #endregion
@@ -137,6 +141,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #endregion
 
         #region Material
+
         #region Material Events
 
         private void tpgMaterial_Enter(object sender, EventArgs e)
@@ -165,6 +170,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         }
 
         #endregion
+
         #endregion
 
         #region Supplier
@@ -202,7 +208,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             tsmiShowInformation_supplier.Visible = true;
             tsmiDeleteSupplier_supplier.Visible = User.Permissions.Contains(Resources.Permission_DeleteSupplier);
 
-            cms_employee.Show(Cursor.Position);
+            cms_supplier.Show(Cursor.Position);
         }
 
         private void lvwSupplier_supplier_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -212,7 +218,26 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void lvwSupplier_supplier_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            // TODO
+            var sorter = (Helper.ItemComparer)lvwSupplier_supplier.ListViewItemSorter;
+            if (sorter == null)
+            {
+                sorter = new Helper.ItemComparer(e.Column)
+                {
+                    Order = SortOrder.Ascending
+                };
+                lvwSupplier_supplier.ListViewItemSorter = sorter;
+            }
+
+            if (e.Column == sorter.Column)
+                sorter.Order = 1 - sorter.Order;
+            else
+            {
+                sorter.Column = e.Column;
+                sorter.Order = SortOrder.Ascending;
+            }
+
+            lvwSupplier_supplier.Sort();
+            DrawArrow_Supplier(e.Column, sorter.Order);
         }
 
         private void lvwSupplier_supplier_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
@@ -222,7 +247,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void lvwSupplier_supplier_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // TODO
+            if (lvwSupplier_supplier.SelectedIndices.Count <= 0)
+            {
+                ResetButtons_Supplier();
+                return;
+            }
+
+            btnEdit_supplier.Enabled = true;
+            btnDelete_supplier.Enabled = true;
         }
 
         private void tsmiShowInformation_supplier_Click(object sender, EventArgs e)
@@ -294,7 +326,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             btnEdit_supplier.Enabled = false;
             btnDelete_supplier.Enabled = false;
-            btnExport_supplier.Enabled = false;
         }
 
         private void Search_Supplier()
@@ -334,6 +365,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             lvwEmployee_employee.SelectedItems.Clear();
 
             //new fEmployee(this, mode, supplier).Show();
+        }
+
+        private void DrawArrow_Supplier(int colIdx, SortOrder order)
+        {
+            foreach (ColumnHeader column in lvwSupplier_supplier.Columns)
+            {
+                if (column.Text.Contains(UpArrow))
+                    column.Text = column.Text.Replace(UpArrow, string.Empty);
+                else if (column.Text.Contains(DownArrow))
+                    column.Text = column.Text.Replace(DownArrow, string.Empty);
+            }
+
+            lvwSupplier_supplier.Columns[colIdx].Text =
+                lvwSupplier_supplier.Columns[colIdx].Text.Insert(0,
+                    order == SortOrder.Ascending
+                        ? DownArrow
+                        : UpArrow
+                );
         }
 
         #endregion
@@ -448,40 +497,39 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             if (lvwEmployee_employee.SelectedIndices.Count <= 0)
             {
                 ResetButtons_Employee();
+                return;
             }
-            else
-            {
-                var selectedIndices = lvwEmployee_employee.SelectedIndices;
-                /*
-                 * If there is one employee is selected, and he is user, then disable edit button,
-                 * else if he is not user, then enable.
-                 */
-                var firstIndex = selectedIndices[0];
-                var firstEmployee = _employeeList_employee[firstIndex];
-                btnEdit_employee.Enabled = !firstEmployee.Equals(_user);
 
-                /*
-                 * Allow create account only if employee has no account
-                 */
-                btnCreateAccount_employee.Enabled = string.IsNullOrEmpty(firstEmployee.Account);
+            var selectedIndices = lvwEmployee_employee.SelectedIndices;
+            /*
+             * If there is one employee is selected, and he is user, then disable edit button,
+             * else if he is not user, then enable.
+             */
+            var firstIndex = selectedIndices[0];
+            var firstEmployee = _employeeList_employee[firstIndex];
+            btnEdit_employee.Enabled = !firstEmployee.Equals(_user);
 
-                /*
-                 * From selected employees, only delete accounts of employees who has account,
-                 * and DO NOT self-delete account
-                 */
-                var accounts = selectedIndices.Cast<int>()
-                   .Select(x => _employeeList_employee[x].Account)
-                   .Where(account => !string.IsNullOrEmpty(account) && account != _user.Account);
-                btnRemoveAccount_employee.Enabled = accounts.Any();
+            /*
+             * Allow create account only if employee has no account
+             */
+            btnCreateAccount_employee.Enabled = string.IsNullOrEmpty(firstEmployee.Account);
 
-                /*
-                 * Delete selected employees and DO NOT self-delete 
-                 */
-                var employees = selectedIndices.Cast<int>()
-                   .Select(x => _employeeList_employee[x])
-                   .Where(employee => !employee.Equals(_user));
-                btnRemoveEmployee_employee.Enabled = employees.Any();
-            }
+            /*
+             * From selected employees, only delete accounts of employees who has account,
+             * and DO NOT self-delete account
+             */
+            var accounts = selectedIndices.Cast<int>()
+               .Select(x => _employeeList_employee[x].Account)
+               .Where(account => !string.IsNullOrEmpty(account) && account != _user.Account);
+            btnRemoveAccount_employee.Enabled = accounts.Any();
+
+            /*
+             * Delete selected employees and DO NOT self-delete 
+             */
+            var employees = selectedIndices.Cast<int>()
+               .Select(x => _employeeList_employee[x])
+               .Where(employee => !employee.Equals(_user));
+            btnRemoveEmployee_employee.Enabled = employees.Any();
         }
 
         private void txtName_employee_TextChanged(object sender, EventArgs e)
@@ -675,22 +723,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void DrawArrow_Employee(int colIdx, SortOrder order)
         {
-            var upArrow = $"{Resources.Character_ArrowUp}    ";
-            var downArrow = $"{Resources.Character_ArrowDown}    ";
-
             foreach (ColumnHeader column in lvwEmployee_employee.Columns)
             {
-                if (column.Text.Contains(upArrow))
-                    column.Text = column.Text.Replace(upArrow, string.Empty);
-                else if (column.Text.Contains(downArrow))
-                    column.Text = column.Text.Replace(downArrow, string.Empty);
+                if (column.Text.Contains(UpArrow))
+                    column.Text = column.Text.Replace(UpArrow, string.Empty);
+                else if (column.Text.Contains(DownArrow))
+                    column.Text = column.Text.Replace(DownArrow, string.Empty);
             }
 
             lvwEmployee_employee.Columns[colIdx].Text =
                 lvwEmployee_employee.Columns[colIdx].Text.Insert(0,
                     order == SortOrder.Ascending
-                        ? downArrow
-                        : upArrow
+                        ? DownArrow
+                        : UpArrow
                 );
         }
 

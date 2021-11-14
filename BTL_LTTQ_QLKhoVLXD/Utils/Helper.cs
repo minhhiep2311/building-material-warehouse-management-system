@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -76,8 +77,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
                     return CheckInvert(decimal.Compare(n1, n2));
 
                 // String Comparison
-                return CheckInvert(string.CompareOrdinal(a.SubItems[Column].Text, b.SubItems[Column].Text));
-
+                return CheckInvert(Comparer.String(
+                    a.SubItems[Column].Text,
+                    b.SubItems[Column].Text)
+                );
             }
 
             private int CheckInvert(int result)
@@ -208,6 +211,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
                 for (var i = 0; i < data.Rows.Count; i++)
                     result.Add(converter(data.Rows[i][property]));
                 return result;
+            }
+        }
+
+        public class Comparer
+        {
+            public static int String(string strA, string strB)
+            {
+                return string.Compare(
+                    strA,
+                    strB,
+                    CultureInfo.CurrentCulture,
+                    CompareOptions.IgnoreCase
+                );
             }
         }
     }

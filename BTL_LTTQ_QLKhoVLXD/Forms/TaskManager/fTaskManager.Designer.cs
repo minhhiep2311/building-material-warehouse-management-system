@@ -1560,7 +1560,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnAdd_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAdd_supplier.Location = new System.Drawing.Point(8, 8);
             this.btnAdd_supplier.Name = "btnAdd_supplier";
-            this.btnAdd_supplier.Size = new System.Drawing.Size(185, 47);
+            this.btnAdd_supplier.Size = new System.Drawing.Size(210, 47);
             this.btnAdd_supplier.TabIndex = 1;
             this.btnAdd_supplier.Text = "Thêm NCC";
             this.btnAdd_supplier.UseVisualStyleBackColor = true;
@@ -1568,9 +1568,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnEdit_supplier
             // 
             this.btnEdit_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnEdit_supplier.Location = new System.Drawing.Point(199, 8);
+            this.btnEdit_supplier.Location = new System.Drawing.Point(224, 8);
             this.btnEdit_supplier.Name = "btnEdit_supplier";
-            this.btnEdit_supplier.Size = new System.Drawing.Size(185, 47);
+            this.btnEdit_supplier.Size = new System.Drawing.Size(210, 47);
             this.btnEdit_supplier.TabIndex = 2;
             this.btnEdit_supplier.Text = "Chỉnh sửa thông tin";
             this.btnEdit_supplier.UseVisualStyleBackColor = true;
@@ -1580,7 +1580,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnDelete_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnDelete_supplier.Location = new System.Drawing.Point(8, 61);
             this.btnDelete_supplier.Name = "btnDelete_supplier";
-            this.btnDelete_supplier.Size = new System.Drawing.Size(185, 47);
+            this.btnDelete_supplier.Size = new System.Drawing.Size(210, 47);
             this.btnDelete_supplier.TabIndex = 3;
             this.btnDelete_supplier.Text = "Xóa NCC";
             this.btnDelete_supplier.UseVisualStyleBackColor = true;
@@ -1588,11 +1588,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnExport_supplier
             // 
             this.btnExport_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnExport_supplier.Location = new System.Drawing.Point(199, 61);
+            this.btnExport_supplier.Location = new System.Drawing.Point(224, 61);
             this.btnExport_supplier.Name = "btnExport_supplier";
-            this.btnExport_supplier.Size = new System.Drawing.Size(185, 47);
+            this.btnExport_supplier.Size = new System.Drawing.Size(210, 47);
             this.btnExport_supplier.TabIndex = 5;
-            this.btnExport_supplier.Text = "Xuất file";
+            this.btnExport_supplier.Text = "Xuất file danh sách NCC";
             this.btnExport_supplier.UseVisualStyleBackColor = true;
             // 
             // pnlSearch_supplier
@@ -2157,19 +2157,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tsmiShowInformation_supplier,
             this.tsmiDeleteSupplier_supplier});
             this.cms_supplier.Name = "cms_supplier";
-            this.cms_supplier.Size = new System.Drawing.Size(211, 80);
+            this.cms_supplier.Size = new System.Drawing.Size(197, 52);
             // 
             // tsmiShowInformation_supplier
             // 
             this.tsmiShowInformation_supplier.Name = "tsmiShowInformation_supplier";
-            this.tsmiShowInformation_supplier.Size = new System.Drawing.Size(210, 24);
+            this.tsmiShowInformation_supplier.Size = new System.Drawing.Size(196, 24);
             this.tsmiShowInformation_supplier.Text = "Thêm thông tin";
             this.tsmiShowInformation_supplier.Click += new System.EventHandler(this.tsmiShowInformation_supplier_Click);
             // 
             // tsmiDeleteSupplier_supplier
             // 
             this.tsmiDeleteSupplier_supplier.Name = "tsmiDeleteSupplier_supplier";
-            this.tsmiDeleteSupplier_supplier.Size = new System.Drawing.Size(210, 24);
+            this.tsmiDeleteSupplier_supplier.Size = new System.Drawing.Size(196, 24);
             this.tsmiDeleteSupplier_supplier.Text = "Xóa nhà cung cấp";
             this.tsmiDeleteSupplier_supplier.Click += new System.EventHandler(this.tsmiDeleteSupplier_supplier_Click);
             // 
