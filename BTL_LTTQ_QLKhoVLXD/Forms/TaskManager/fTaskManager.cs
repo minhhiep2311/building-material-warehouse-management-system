@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee;
 using BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation;
@@ -51,8 +52,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void fTaskManager_Load(object sender, EventArgs e)
         {
             DisplayComponentsAccordsPermission();
+
             Init_Supplier();
             Init_Employee();
+
+            new Thread(() =>
+            {
+                LoadData_Supplier();
+                LoadData_Employee();
+            }).Start();
         }
 
         private void tctlControl_DrawItem(object sender, DrawItemEventArgs e)
@@ -187,7 +195,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void tpgSupplier_Enter(object sender, EventArgs e)
         {
             Reset_Supplier();
-            LoadData_Supplier();
             _debounce_supplier?.Continue();
         }
 
@@ -280,6 +287,32 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void txtPhone_supplier_TextChanged(object sender, EventArgs e)
         {
             _debounce_supplier.HandleUpdate();
+        }
+
+        private void btnAdd_supplier_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_supplier_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_supplier_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExport_supplier_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void btnRefresh_supplier_Click(object sender, EventArgs e)
+        {
+            LoadData_Supplier();
         }
 
         #endregion
@@ -403,7 +436,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void tpgEmployee_Enter(object sender, EventArgs e)
         {
             Reset_Employee();
-            LoadData_Employee();
             _debounce_employee?.Continue();
         }
 
@@ -631,6 +663,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void tsmiDeleteEmployee_employee_Click(object sender, EventArgs e)
         {
             TryDeleteEmployee_employee();
+        }
+
+        private void btnRefresh_employee_Click(object sender, EventArgs e)
+        {
+            LoadData_Employee();
         }
 
         #endregion

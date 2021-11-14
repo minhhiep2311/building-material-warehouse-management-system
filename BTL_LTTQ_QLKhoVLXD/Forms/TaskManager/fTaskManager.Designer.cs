@@ -155,6 +155,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnEdit_supplier = new System.Windows.Forms.Button();
             this.btnDelete_supplier = new System.Windows.Forms.Button();
             this.btnExport_supplier = new System.Windows.Forms.Button();
+            this.btnRefresh_supplier = new System.Windows.Forms.Button();
             this.pnlSearch_supplier = new System.Windows.Forms.Panel();
             this.grbSearch_supplier = new System.Windows.Forms.GroupBox();
             this.pnlPhone_supplier = new System.Windows.Forms.Panel();
@@ -210,6 +211,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.cms_supplier = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiShowInformation_supplier = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteSupplier_supplier = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRefresh_employee = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.tctlControl.SuspendLayout();
             this.tpgBuy.SuspendLayout();
@@ -1548,6 +1550,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_supplier.Controls.Add(this.btnEdit_supplier);
             this.flpFunction_supplier.Controls.Add(this.btnDelete_supplier);
             this.flpFunction_supplier.Controls.Add(this.btnExport_supplier);
+            this.flpFunction_supplier.Controls.Add(this.btnRefresh_supplier);
             this.flpFunction_supplier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpFunction_supplier.Location = new System.Drawing.Point(0, 185);
             this.flpFunction_supplier.Name = "flpFunction_supplier";
@@ -1560,40 +1563,55 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnAdd_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAdd_supplier.Location = new System.Drawing.Point(8, 8);
             this.btnAdd_supplier.Name = "btnAdd_supplier";
-            this.btnAdd_supplier.Size = new System.Drawing.Size(210, 47);
+            this.btnAdd_supplier.Size = new System.Drawing.Size(185, 63);
             this.btnAdd_supplier.TabIndex = 1;
             this.btnAdd_supplier.Text = "Thêm NCC";
             this.btnAdd_supplier.UseVisualStyleBackColor = true;
+            this.btnAdd_supplier.Click += new System.EventHandler(this.btnAdd_supplier_Click);
             // 
             // btnEdit_supplier
             // 
             this.btnEdit_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnEdit_supplier.Location = new System.Drawing.Point(224, 8);
+            this.btnEdit_supplier.Location = new System.Drawing.Point(199, 8);
             this.btnEdit_supplier.Name = "btnEdit_supplier";
-            this.btnEdit_supplier.Size = new System.Drawing.Size(210, 47);
+            this.btnEdit_supplier.Size = new System.Drawing.Size(185, 63);
             this.btnEdit_supplier.TabIndex = 2;
             this.btnEdit_supplier.Text = "Chỉnh sửa thông tin";
             this.btnEdit_supplier.UseVisualStyleBackColor = true;
+            this.btnEdit_supplier.Click += new System.EventHandler(this.btnEdit_supplier_Click);
             // 
             // btnDelete_supplier
             // 
             this.btnDelete_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnDelete_supplier.Location = new System.Drawing.Point(8, 61);
+            this.btnDelete_supplier.Location = new System.Drawing.Point(8, 77);
             this.btnDelete_supplier.Name = "btnDelete_supplier";
-            this.btnDelete_supplier.Size = new System.Drawing.Size(210, 47);
+            this.btnDelete_supplier.Size = new System.Drawing.Size(185, 63);
             this.btnDelete_supplier.TabIndex = 3;
             this.btnDelete_supplier.Text = "Xóa NCC";
             this.btnDelete_supplier.UseVisualStyleBackColor = true;
+            this.btnDelete_supplier.Click += new System.EventHandler(this.btnDelete_supplier_Click);
             // 
             // btnExport_supplier
             // 
             this.btnExport_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnExport_supplier.Location = new System.Drawing.Point(224, 61);
+            this.btnExport_supplier.Location = new System.Drawing.Point(199, 77);
             this.btnExport_supplier.Name = "btnExport_supplier";
-            this.btnExport_supplier.Size = new System.Drawing.Size(210, 47);
+            this.btnExport_supplier.Size = new System.Drawing.Size(185, 63);
             this.btnExport_supplier.TabIndex = 5;
             this.btnExport_supplier.Text = "Xuất file danh sách NCC";
             this.btnExport_supplier.UseVisualStyleBackColor = true;
+            this.btnExport_supplier.Click += new System.EventHandler(this.btnExport_supplier_Click);
+            // 
+            // btnRefresh_supplier
+            // 
+            this.btnRefresh_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnRefresh_supplier.Location = new System.Drawing.Point(8, 146);
+            this.btnRefresh_supplier.Name = "btnRefresh_supplier";
+            this.btnRefresh_supplier.Size = new System.Drawing.Size(185, 63);
+            this.btnRefresh_supplier.TabIndex = 6;
+            this.btnRefresh_supplier.Text = "Làm mới";
+            this.btnRefresh_supplier.UseVisualStyleBackColor = true;
+            this.btnRefresh_supplier.Click += new System.EventHandler(this.btnRefresh_supplier_Click);
             // 
             // pnlSearch_supplier
             // 
@@ -1759,6 +1777,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_employee.Controls.Add(this.btnCreateAccount_employee);
             this.flpFunction_employee.Controls.Add(this.btnRemoveAccount_employee);
             this.flpFunction_employee.Controls.Add(this.btnRemoveEmployee_employee);
+            this.flpFunction_employee.Controls.Add(this.btnRefresh_employee);
             this.flpFunction_employee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpFunction_employee.Location = new System.Drawing.Point(0, 351);
             this.flpFunction_employee.Name = "flpFunction_employee";
@@ -2173,6 +2192,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tsmiDeleteSupplier_supplier.Text = "Xóa nhà cung cấp";
             this.tsmiDeleteSupplier_supplier.Click += new System.EventHandler(this.tsmiDeleteSupplier_supplier_Click);
             // 
+            // btnRefresh_employee
+            // 
+            this.btnRefresh_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnRefresh_employee.Location = new System.Drawing.Point(199, 114);
+            this.btnRefresh_employee.Name = "btnRefresh_employee";
+            this.btnRefresh_employee.Size = new System.Drawing.Size(185, 47);
+            this.btnRefresh_employee.TabIndex = 5;
+            this.btnRefresh_employee.Text = "Làm mới";
+            this.btnRefresh_employee.UseVisualStyleBackColor = true;
+            this.btnRefresh_employee.Click += new System.EventHandler(this.btnRefresh_employee_Click);
+            // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2442,5 +2472,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.ContextMenuStrip cms_supplier;
         private System.Windows.Forms.ToolStripMenuItem tsmiShowInformation_supplier;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSupplier_supplier;
+        private System.Windows.Forms.Button btnRefresh_supplier;
+        private System.Windows.Forms.Button btnRefresh_employee;
     }
 }
