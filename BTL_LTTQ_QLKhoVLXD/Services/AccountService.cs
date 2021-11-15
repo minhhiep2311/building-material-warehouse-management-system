@@ -52,7 +52,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 $"{user.Id})";
             var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
 
-            return rowAffected > 0;
+              return rowAffected > 0;
         }
 
         #endregion

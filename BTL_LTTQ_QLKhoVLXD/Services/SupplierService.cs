@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 
@@ -13,7 +14,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
         {
             const string query =
                 "SELECT e.id, e.name, e.address " +
-                "FROM supplier AS e";
+                "FROM supplier AS e " +
+                "WHERE isAvailable=1";
             var result = DatabaseProvider.Instance.ExecuteQuery(query);
             var employeeList = Helper.Mapper.MapArrayOfObject(result, Supplier.FromData);
             return employeeList;
@@ -28,6 +30,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             var result = DatabaseProvider.Instance.ExecuteQuery(query);
             var phoneList = Helper.Mapper.MapArrayOfObjectProperty(result, "phoneNumber", Convert.ToString);
             return phoneList;
+        }
+
+        #endregion
+
+        #region Delete
+
+        public static bool DeleteSupplier(List<int> supplierIdList)
+        {
+            var usernameList = string.Join(", ", supplierIdList.Select(x => $"N'{x}'"));
+            var query = $"UPDATE supplier SET isAvailable=0 WHERE id IN ({usernameList})";
+            var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
+
+            return rowAffected == supplierIdList.Count;
         }
 
         #endregion
