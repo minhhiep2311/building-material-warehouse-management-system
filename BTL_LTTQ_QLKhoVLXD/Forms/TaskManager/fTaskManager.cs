@@ -53,12 +53,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             DisplayComponentsAccordsPermission();
 
-            Init_Supplier();
-            Init_Employee();
-
             new Thread(() =>
             {
+                Init_Supplier();
                 LoadData_Supplier();
+            }).Start();
+            new Thread(() =>
+            {
+                Init_Employee();
                 LoadData_Employee();
             }).Start();
         }
@@ -271,7 +273,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void tsmiDeleteSupplier_supplier_Click(object sender, EventArgs e)
         {
-
+            TryDeleteSupplier_supplier();
         }
 
         private void txtName_supplier_TextChanged(object sender, EventArgs e)
@@ -301,7 +303,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnDelete_supplier_Click(object sender, EventArgs e)
         {
-
+            TryDeleteSupplier_supplier();
         }
 
         private void btnExport_supplier_Click(object sender, EventArgs e)
@@ -361,6 +363,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             btnDelete_supplier.Enabled = false;
         }
 
+        private void DrawArrow_Supplier(int colIdx, SortOrder order)
+        {
+            foreach (ColumnHeader column in lvwSupplier_supplier.Columns)
+            {
+                if (column.Text.Contains(UpArrow))
+                    column.Text = column.Text.Replace(UpArrow, string.Empty);
+                else if (column.Text.Contains(DownArrow))
+                    column.Text = column.Text.Replace(DownArrow, string.Empty);
+            }
+
+            lvwSupplier_supplier.Columns[colIdx].Text =
+                lvwSupplier_supplier.Columns[colIdx].Text.Insert(0,
+                    order == SortOrder.Ascending
+                        ? DownArrow
+                        : UpArrow
+                );
+        }
+
         private void Search_Supplier()
         {
             var name = txtName_supplier.Text;
@@ -400,22 +420,53 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             //new fEmployee(this, mode, supplier).Show();
         }
 
-        private void DrawArrow_Supplier(int colIdx, SortOrder order)
+        private void TryDeleteSupplier_supplier()
         {
-            foreach (ColumnHeader column in lvwSupplier_supplier.Columns)
+            if (lvwSupplier_supplier.SelectedIndices.Count <= 0)
+                return;
+
+            var shouldDeleteSuppliers = lvwSupplier_supplier.SelectedIndices.Cast<int>()
+               .Select(x => _supplierList_supplier[x]).ToList();
+            var shouldDeleteSupplierNames = shouldDeleteSuppliers.Select(x => x.Name);
+            var shouldDeleteSupplierIds = shouldDeleteSuppliers.Select(x => x.Id).ToList();
+
+            if (ConfirmDeleteSupplier_supplier(shouldDeleteSupplierNames))
+                DeleteSupplier_supplier(shouldDeleteSupplierIds);
+        }
+
+        private static bool ConfirmDeleteSupplier_supplier(IEnumerable<string> shouldDeleteSupplierNames)
+        {
+            var shouldDeleteStr = string.Join(", ", shouldDeleteSupplierNames);
+            return MessageBox.Show(
+                string.Format(Resources.MessageBox_Message_ConfirmDeleteSupplier, shouldDeleteStr),
+                Resources.MessageBox_Caption_Notification,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            ) == DialogResult.Yes;
+        }
+
+        private void DeleteSupplier_supplier(List<int> shouldDeleteSupplierIds)
+        {
+            if (SupplierService.DeleteSupplier(shouldDeleteSupplierIds))
             {
-                if (column.Text.Contains(UpArrow))
-                    column.Text = column.Text.Replace(UpArrow, string.Empty);
-                else if (column.Text.Contains(DownArrow))
-                    column.Text = column.Text.Replace(DownArrow, string.Empty);
+                MessageBox.Show(
+                    string.Format(Resources.MessageBox_Message_DeleteSupplierSuccessfully, shouldDeleteSupplierIds.Count),
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            else
+            {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_SystemError,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
 
-            lvwSupplier_supplier.Columns[colIdx].Text =
-                lvwSupplier_supplier.Columns[colIdx].Text.Insert(0,
-                    order == SortOrder.Ascending
-                        ? DownArrow
-                        : UpArrow
-                );
+            LoadData_Supplier();
         }
 
         #endregion

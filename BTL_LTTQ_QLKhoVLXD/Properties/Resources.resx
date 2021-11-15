@@ -256,7 +256,7 @@
     <value>CreateAccount</value>
   </data>
   <data name="Permission_DeleteAccount" xml:space="preserve">
-    <value>DeleteAccount</value>
+    <value>DeleteSupplier</value>
   </data>
   <data name="Permission_DeleteEmployee" xml:space="preserve">
     <value>DeleteEmployee</value>
@@ -272,5 +272,12 @@
   </data>
   <data name="Permission_ResetPassword" xml:space="preserve">
     <value>ResetPassword</value>
+  </data>
+  <data name="MessageBox_Message_ConfirmDeleteSupplier" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa các nhà cung cấp sau không?
+{0}</value>
+  </data>
+  <data name="MessageBox_Message_DeleteSupplierSuccessfully" xml:space="preserve">
+    <value>Đã xóa {0} nhà cung cấp!</value>
   </data>
 </root>

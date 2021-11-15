@@ -262,6 +262,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bạn có chắc chắn muốn xóa các nhà cung cấp sau không?
+        ///{0}.
+        /// </summary>
+        internal static string MessageBox_Message_ConfirmDeleteSupplier {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ConfirmDeleteSupplier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bạn có chắc chắn muốn thoát không?.
         /// </summary>
         internal static string MessageBox_Message_ConfirmExit {
@@ -294,6 +304,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         internal static string MessageBox_Message_DeleteAccountSuccessfully {
             get {
                 return ResourceManager.GetString("MessageBox_Message_DeleteAccountSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Đã xóa {0} nhà cung cấp!.
+        /// </summary>
+        internal static string MessageBox_Message_DeleteSupplierSuccessfully {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_DeleteSupplierSuccessfully", resourceCulture);
             }
         }
         
@@ -424,7 +443,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DeleteAccount.
+        ///   Looks up a localized string similar to DeleteSupplier.
         /// </summary>
         internal static string Permission_DeleteAccount {
             get {
