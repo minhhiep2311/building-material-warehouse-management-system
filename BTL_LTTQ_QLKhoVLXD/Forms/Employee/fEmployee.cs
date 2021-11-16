@@ -160,11 +160,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             switch (_mode)
             {
                 case Mode.Write:
-                    {
-                        if (_startEdit)
-                            chkEdit.Checked = true;
-                        return;
-                    }
+                    if (_startEdit)
+                        chkEdit.Checked = true;
+                    return;
                 case Mode.Create:
                     chkEdit.Checked = true;
                     btnSave.Text = Resources.Form_ButtonSave;

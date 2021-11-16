@@ -320,6 +320,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #endregion
 
         #region Supplier Methods
+
         private void Init_Supplier()
         {
             _debounce_supplier = new Helper.Debounce(Search_Supplier, 300);
