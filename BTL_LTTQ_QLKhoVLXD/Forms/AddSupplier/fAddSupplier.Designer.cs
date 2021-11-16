@@ -172,6 +172,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
             this.Controls.Add(this.grbInfo);
             this.Name = "fAddSupplier";
             this.Text = "Thêm nhà cung cấp";
+            this.Load += new System.EventHandler(this.fAddSupplier_Load);
             this.grbInfo.ResumeLayout(false);
             this.grbInfo.PerformLayout();
             this.ResumeLayout(false);

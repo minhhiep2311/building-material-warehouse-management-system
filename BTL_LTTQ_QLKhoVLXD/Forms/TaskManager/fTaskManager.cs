@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee;
+using BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier;
 using BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation;
 using BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount;
 using BTL_LTTQ_QLKhoVLXD.Forms.Employee;
@@ -293,7 +294,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnAdd_supplier_Click(object sender, EventArgs e)
         {
-
+            lvwSupplier_supplier.SelectedItems.Clear();
+            new fAddSupplier(this).ShowDialog();
         }
 
         private void btnEdit_supplier_Click(object sender, EventArgs e)
