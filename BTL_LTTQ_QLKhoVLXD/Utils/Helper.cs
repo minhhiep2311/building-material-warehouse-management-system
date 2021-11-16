@@ -189,6 +189,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
             {
                 return control != null ? control.Controls.OfType<CheckBox>().ToList() : new List<CheckBox>();
             }
+
             public static List<RadioButton> GetRadioButtons(Control control)
             {
                 return control != null ? control.Controls.OfType<RadioButton>().ToList() : new List<RadioButton>();

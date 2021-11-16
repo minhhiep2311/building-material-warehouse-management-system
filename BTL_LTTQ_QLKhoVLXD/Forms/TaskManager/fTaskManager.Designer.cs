@@ -150,12 +150,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSupplier = new System.Windows.Forms.TabPage();
             this.spc_supplier = new System.Windows.Forms.SplitContainer();
             this.lvwSupplier_supplier = new System.Windows.Forms.ListView();
-            this.flpFunction_supplier = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAdd_supplier = new System.Windows.Forms.Button();
-            this.btnEdit_supplier = new System.Windows.Forms.Button();
-            this.btnDelete_supplier = new System.Windows.Forms.Button();
-            this.btnExport_supplier = new System.Windows.Forms.Button();
-            this.btnRefresh_supplier = new System.Windows.Forms.Button();
             this.pnlSearch_supplier = new System.Windows.Forms.Panel();
             this.grbSearch_supplier = new System.Windows.Forms.GroupBox();
             this.pnlPhone_supplier = new System.Windows.Forms.Panel();
@@ -212,6 +206,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.cms_supplier = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiShowInformation_supplier = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteSupplier_supplier = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRefresh_supplier = new System.Windows.Forms.Button();
+            this.btnExport_supplier = new System.Windows.Forms.Button();
+            this.btnDelete_supplier = new System.Windows.Forms.Button();
+            this.btnEdit_supplier = new System.Windows.Forms.Button();
+            this.btnAdd_supplier = new System.Windows.Forms.Button();
+            this.flpFunction_supplier = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3.SuspendLayout();
             this.tctlControl.SuspendLayout();
             this.tpgBuy.SuspendLayout();
@@ -237,7 +237,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_supplier.Panel1.SuspendLayout();
             this.spc_supplier.Panel2.SuspendLayout();
             this.spc_supplier.SuspendLayout();
-            this.flpFunction_supplier.SuspendLayout();
             this.pnlSearch_supplier.SuspendLayout();
             this.grbSearch_supplier.SuspendLayout();
             this.pnlPhone_supplier.SuspendLayout();
@@ -261,6 +260,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flp_userSetting.SuspendLayout();
             this.cms_employee.SuspendLayout();
             this.cms_supplier.SuspendLayout();
+            this.flpFunction_supplier.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -1632,96 +1632,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwSupplier_supplier.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvwSupplier_supplier_MouseClick);
             this.lvwSupplier_supplier.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwSupplier_supplier_MouseDoubleClick);
             // 
-            // flpFunction_supplier
-            // 
-            this.flpFunction_supplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.flpFunction_supplier.Controls.Add(this.btnAdd_supplier);
-            this.flpFunction_supplier.Controls.Add(this.btnEdit_supplier);
-            this.flpFunction_supplier.Controls.Add(this.btnDelete_supplier);
-            this.flpFunction_supplier.Controls.Add(this.btnExport_supplier);
-            this.flpFunction_supplier.Controls.Add(this.btnRefresh_supplier);
-            this.flpFunction_supplier.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpFunction_supplier.Location = new System.Drawing.Point(0, 185);
-            this.flpFunction_supplier.Name = "flpFunction_supplier";
-            this.flpFunction_supplier.Padding = new System.Windows.Forms.Padding(5);
-            this.flpFunction_supplier.Size = new System.Drawing.Size(507, 414);
-            this.flpFunction_supplier.TabIndex = 6;
-            // 
-            // btnAdd_supplier
-            // 
-            this.btnAdd_supplier.BackColor = System.Drawing.Color.White;
-            this.btnAdd_supplier.FlatAppearance.BorderSize = 0;
-            this.btnAdd_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAdd_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnAdd_supplier.Location = new System.Drawing.Point(8, 8);
-            this.btnAdd_supplier.Name = "btnAdd_supplier";
-            this.btnAdd_supplier.Size = new System.Drawing.Size(185, 63);
-            this.btnAdd_supplier.TabIndex = 1;
-            this.btnAdd_supplier.Text = "Thêm NCC";
-            this.btnAdd_supplier.UseVisualStyleBackColor = false;
-            this.btnAdd_supplier.Click += new System.EventHandler(this.btnAdd_supplier_Click);
-            // 
-            // btnEdit_supplier
-            // 
-            this.btnEdit_supplier.BackColor = System.Drawing.Color.White;
-            this.btnEdit_supplier.FlatAppearance.BorderSize = 0;
-            this.btnEdit_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnEdit_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnEdit_supplier.Location = new System.Drawing.Point(199, 8);
-            this.btnEdit_supplier.Name = "btnEdit_supplier";
-            this.btnEdit_supplier.Size = new System.Drawing.Size(185, 63);
-            this.btnEdit_supplier.TabIndex = 2;
-            this.btnEdit_supplier.Text = "Chỉnh sửa thông tin";
-            this.btnEdit_supplier.UseVisualStyleBackColor = false;
-            this.btnEdit_supplier.Click += new System.EventHandler(this.btnEdit_supplier_Click);
-            // 
-            // btnDelete_supplier
-            // 
-            this.btnDelete_supplier.BackColor = System.Drawing.Color.White;
-            this.btnDelete_supplier.FlatAppearance.BorderSize = 0;
-            this.btnDelete_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnDelete_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnDelete_supplier.Location = new System.Drawing.Point(8, 77);
-            this.btnDelete_supplier.Name = "btnDelete_supplier";
-            this.btnDelete_supplier.Size = new System.Drawing.Size(185, 63);
-            this.btnDelete_supplier.TabIndex = 3;
-            this.btnDelete_supplier.Text = "Xóa NCC";
-            this.btnDelete_supplier.UseVisualStyleBackColor = false;
-            this.btnDelete_supplier.Click += new System.EventHandler(this.btnDelete_supplier_Click);
-            // 
-            // btnExport_supplier
-            // 
-            this.btnExport_supplier.BackColor = System.Drawing.Color.White;
-            this.btnExport_supplier.FlatAppearance.BorderSize = 0;
-            this.btnExport_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExport_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnExport_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnExport_supplier.Location = new System.Drawing.Point(199, 77);
-            this.btnExport_supplier.Name = "btnExport_supplier";
-            this.btnExport_supplier.Size = new System.Drawing.Size(185, 63);
-            this.btnExport_supplier.TabIndex = 5;
-            this.btnExport_supplier.Text = "Xuất file danh sách NCC";
-            this.btnExport_supplier.UseVisualStyleBackColor = false;
-            this.btnExport_supplier.Click += new System.EventHandler(this.btnExport_supplier_Click);
-            // 
-            // btnRefresh_supplier
-            // 
-            this.btnRefresh_supplier.BackColor = System.Drawing.Color.White;
-            this.btnRefresh_supplier.FlatAppearance.BorderSize = 0;
-            this.btnRefresh_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnRefresh_supplier.Location = new System.Drawing.Point(8, 146);
-            this.btnRefresh_supplier.Name = "btnRefresh_supplier";
-            this.btnRefresh_supplier.Size = new System.Drawing.Size(185, 63);
-            this.btnRefresh_supplier.TabIndex = 6;
-            this.btnRefresh_supplier.Text = "Làm mới";
-            this.btnRefresh_supplier.UseVisualStyleBackColor = false;
-            this.btnRefresh_supplier.Click += new System.EventHandler(this.btnRefresh_supplier_Click);
-            // 
             // pnlSearch_supplier
             // 
             this.pnlSearch_supplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -2352,6 +2262,96 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tsmiDeleteSupplier_supplier.Text = "Xóa nhà cung cấp";
             this.tsmiDeleteSupplier_supplier.Click += new System.EventHandler(this.tsmiDeleteSupplier_supplier_Click);
             // 
+            // btnRefresh_supplier
+            // 
+            this.btnRefresh_supplier.BackColor = System.Drawing.Color.White;
+            this.btnRefresh_supplier.FlatAppearance.BorderSize = 0;
+            this.btnRefresh_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnRefresh_supplier.Location = new System.Drawing.Point(8, 146);
+            this.btnRefresh_supplier.Name = "btnRefresh_supplier";
+            this.btnRefresh_supplier.Size = new System.Drawing.Size(185, 63);
+            this.btnRefresh_supplier.TabIndex = 6;
+            this.btnRefresh_supplier.Text = "Làm mới";
+            this.btnRefresh_supplier.UseVisualStyleBackColor = false;
+            this.btnRefresh_supplier.Click += new System.EventHandler(this.btnRefresh_supplier_Click);
+            // 
+            // btnExport_supplier
+            // 
+            this.btnExport_supplier.BackColor = System.Drawing.Color.White;
+            this.btnExport_supplier.FlatAppearance.BorderSize = 0;
+            this.btnExport_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnExport_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnExport_supplier.Location = new System.Drawing.Point(199, 77);
+            this.btnExport_supplier.Name = "btnExport_supplier";
+            this.btnExport_supplier.Size = new System.Drawing.Size(185, 63);
+            this.btnExport_supplier.TabIndex = 5;
+            this.btnExport_supplier.Text = "Xuất file danh sách NCC";
+            this.btnExport_supplier.UseVisualStyleBackColor = false;
+            this.btnExport_supplier.Click += new System.EventHandler(this.btnExport_supplier_Click);
+            // 
+            // btnDelete_supplier
+            // 
+            this.btnDelete_supplier.BackColor = System.Drawing.Color.White;
+            this.btnDelete_supplier.FlatAppearance.BorderSize = 0;
+            this.btnDelete_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDelete_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnDelete_supplier.Location = new System.Drawing.Point(8, 77);
+            this.btnDelete_supplier.Name = "btnDelete_supplier";
+            this.btnDelete_supplier.Size = new System.Drawing.Size(185, 63);
+            this.btnDelete_supplier.TabIndex = 3;
+            this.btnDelete_supplier.Text = "Xóa NCC";
+            this.btnDelete_supplier.UseVisualStyleBackColor = false;
+            this.btnDelete_supplier.Click += new System.EventHandler(this.btnDelete_supplier_Click);
+            // 
+            // btnEdit_supplier
+            // 
+            this.btnEdit_supplier.BackColor = System.Drawing.Color.White;
+            this.btnEdit_supplier.FlatAppearance.BorderSize = 0;
+            this.btnEdit_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEdit_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnEdit_supplier.Location = new System.Drawing.Point(199, 8);
+            this.btnEdit_supplier.Name = "btnEdit_supplier";
+            this.btnEdit_supplier.Size = new System.Drawing.Size(185, 63);
+            this.btnEdit_supplier.TabIndex = 2;
+            this.btnEdit_supplier.Text = "Chỉnh sửa thông tin";
+            this.btnEdit_supplier.UseVisualStyleBackColor = false;
+            this.btnEdit_supplier.Click += new System.EventHandler(this.btnEdit_supplier_Click);
+            // 
+            // btnAdd_supplier
+            // 
+            this.btnAdd_supplier.BackColor = System.Drawing.Color.White;
+            this.btnAdd_supplier.FlatAppearance.BorderSize = 0;
+            this.btnAdd_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAdd_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnAdd_supplier.Location = new System.Drawing.Point(8, 8);
+            this.btnAdd_supplier.Name = "btnAdd_supplier";
+            this.btnAdd_supplier.Size = new System.Drawing.Size(185, 63);
+            this.btnAdd_supplier.TabIndex = 1;
+            this.btnAdd_supplier.Text = "Thêm NCC";
+            this.btnAdd_supplier.UseVisualStyleBackColor = false;
+            this.btnAdd_supplier.Click += new System.EventHandler(this.btnAdd_supplier_Click);
+            // 
+            // flpFunction_supplier
+            // 
+            this.flpFunction_supplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.flpFunction_supplier.Controls.Add(this.btnAdd_supplier);
+            this.flpFunction_supplier.Controls.Add(this.btnEdit_supplier);
+            this.flpFunction_supplier.Controls.Add(this.btnDelete_supplier);
+            this.flpFunction_supplier.Controls.Add(this.btnExport_supplier);
+            this.flpFunction_supplier.Controls.Add(this.btnRefresh_supplier);
+            this.flpFunction_supplier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpFunction_supplier.Location = new System.Drawing.Point(0, 185);
+            this.flpFunction_supplier.Name = "flpFunction_supplier";
+            this.flpFunction_supplier.Padding = new System.Windows.Forms.Padding(5);
+            this.flpFunction_supplier.Size = new System.Drawing.Size(507, 414);
+            this.flpFunction_supplier.TabIndex = 6;
+            // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2401,7 +2401,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_supplier.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spc_supplier)).EndInit();
             this.spc_supplier.ResumeLayout(false);
-            this.flpFunction_supplier.ResumeLayout(false);
             this.pnlSearch_supplier.ResumeLayout(false);
             this.grbSearch_supplier.ResumeLayout(false);
             this.pnlPhone_supplier.ResumeLayout(false);
@@ -2435,6 +2434,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flp_userSetting.ResumeLayout(false);
             this.cms_employee.ResumeLayout(false);
             this.cms_supplier.ResumeLayout(false);
+            this.flpFunction_supplier.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2603,11 +2603,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.SplitContainer spc_supplier;
         private System.Windows.Forms.ListView lvwSupplier_supplier;
         private System.Windows.Forms.Panel pnlSearch_supplier;
-        private System.Windows.Forms.FlowLayoutPanel flpFunction_supplier;
-        private System.Windows.Forms.Button btnEdit_supplier;
-        private System.Windows.Forms.Button btnAdd_supplier;
-        private System.Windows.Forms.Button btnDelete_supplier;
-        private System.Windows.Forms.Button btnExport_supplier;
         private System.Windows.Forms.GroupBox grbSearch_supplier;
         private System.Windows.Forms.Panel pnlPhone_supplier;
         private System.Windows.Forms.Label lblPhone_supplier;
@@ -2621,7 +2616,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.ContextMenuStrip cms_supplier;
         private System.Windows.Forms.ToolStripMenuItem tsmiShowInformation_supplier;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSupplier_supplier;
-        private System.Windows.Forms.Button btnRefresh_supplier;
         private System.Windows.Forms.Button btnRefresh_employee;
+        private System.Windows.Forms.FlowLayoutPanel flpFunction_supplier;
+        private System.Windows.Forms.Button btnAdd_supplier;
+        private System.Windows.Forms.Button btnEdit_supplier;
+        private System.Windows.Forms.Button btnDelete_supplier;
+        private System.Windows.Forms.Button btnExport_supplier;
+        private System.Windows.Forms.Button btnRefresh_supplier;
     }
 }
