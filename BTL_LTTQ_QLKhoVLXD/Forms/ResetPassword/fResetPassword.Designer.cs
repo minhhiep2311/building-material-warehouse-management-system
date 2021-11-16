@@ -1,4 +1,6 @@
 ﻿
+using BTL_LTTQ_QLKhoVLXD.Controls;
+
 namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
 {
     partial class fResetPassword
@@ -37,8 +39,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new BmwButton();
+            this.btnSave = new BmwButton();
             this.pnlUsername.SuspendLayout();
             this.pnlPassword.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -177,7 +179,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.CheckBox chkShowPassword;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
+        private BmwButton btnCancel;
+        private BmwButton btnSave;
     }
 }

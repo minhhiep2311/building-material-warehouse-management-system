@@ -1,4 +1,6 @@
 ﻿
+using BTL_LTTQ_QLKhoVLXD.Controls;
+
 namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
 {
     partial class fEmployee
@@ -47,13 +49,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.grbPhone = new System.Windows.Forms.GroupBox();
-            this.btnModifyPhone = new System.Windows.Forms.Button();
+            this.btnModifyPhone = new BmwButton();
             this.lvwPhone = new System.Windows.Forms.ListView();
-            this.btnRemovePhone = new System.Windows.Forms.Button();
-            this.btnAddPhone = new System.Windows.Forms.Button();
+            this.btnRemovePhone = new BmwButton();
+            this.btnAddPhone = new BmwButton();
             this.pnlButton = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new BmwButton();
+            this.btnSave = new BmwButton();
             this.chkEdit = new System.Windows.Forms.CheckBox();
             this.grbInfo.SuspendLayout();
             this.pnlPosition.SuspendLayout();
@@ -405,13 +407,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.GroupBox grbPhone;
-        private System.Windows.Forms.Button btnModifyPhone;
+        private BmwButton btnModifyPhone;
         private System.Windows.Forms.ListView lvwPhone;
-        private System.Windows.Forms.Button btnRemovePhone;
-        private System.Windows.Forms.Button btnAddPhone;
+        private BmwButton btnRemovePhone;
+        private BmwButton btnAddPhone;
         private System.Windows.Forms.Panel pnlButton;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
+        private BmwButton btnCancel;
+        private BmwButton btnSave;
         private System.Windows.Forms.CheckBox chkEdit;
         private System.Windows.Forms.DateTimePicker dtpDob;
         private System.Windows.Forms.Panel pnlPosition;

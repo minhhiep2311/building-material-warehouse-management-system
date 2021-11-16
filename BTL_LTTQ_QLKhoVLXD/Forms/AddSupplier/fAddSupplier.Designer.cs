@@ -1,4 +1,6 @@
 ﻿
+using BTL_LTTQ_QLKhoVLXD.Controls;
+
 namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
 {
     partial class fAddSupplier
@@ -38,8 +40,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnCreate = new BmwButton();
+            this.btnCancel = new BmwButton();
             this.grbInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,7 +192,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Button btnCreate;
-        private System.Windows.Forms.Button btnCancel;
+        private BmwButton btnCreate;
+        private BmwButton btnCancel;
     }
 }

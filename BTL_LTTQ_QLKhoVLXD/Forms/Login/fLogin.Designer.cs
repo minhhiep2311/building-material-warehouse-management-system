@@ -1,4 +1,6 @@
 ﻿
+using BTL_LTTQ_QLKhoVLXD.Controls;
+
 namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
 {
     partial class fLogin
@@ -30,8 +32,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnExit = new BmwButton();
+            this.btnLogin = new BmwButton();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.chkShowPassword = new System.Windows.Forms.CheckBox();
@@ -202,8 +204,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnLogin;
+        private BmwButton btnExit;
+        private BmwButton btnLogin;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txbPassWord;

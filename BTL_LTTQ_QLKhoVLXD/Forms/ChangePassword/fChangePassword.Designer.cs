@@ -1,4 +1,6 @@
 ﻿
+using BTL_LTTQ_QLKhoVLXD.Controls;
+
 namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
 {
     partial class fChangePassword
@@ -33,10 +35,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             this.lblNew = new System.Windows.Forms.Label();
             this.txtOld = new System.Windows.Forms.TextBox();
             this.txtNew = new System.Windows.Forms.TextBox();
-            this.btnOld = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOld = new BmwButton();
+            this.btnNew = new BmwButton();
+            this.btnSave = new BmwButton();
+            this.btnCancel = new BmwButton();
             this.SuspendLayout();
             // 
             // lblOld
@@ -155,9 +157,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
         private System.Windows.Forms.Label lblNew;
         private System.Windows.Forms.TextBox txtOld;
         private System.Windows.Forms.TextBox txtNew;
-        private System.Windows.Forms.Button btnOld;
-        private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnCancel;
+        private BmwButton btnOld;
+        private BmwButton btnNew;
+        private BmwButton btnSave;
+        private BmwButton btnCancel;
     }
 }

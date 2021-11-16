@@ -1,4 +1,6 @@
 ﻿
+using BTL_LTTQ_QLKhoVLXD.Controls;
+
 namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
 {
     partial class fChangeInformation
@@ -29,8 +31,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new BmwButton();
+            this.btnCancel = new BmwButton();
             this.grbInfo = new System.Windows.Forms.GroupBox();
             this.pnlAddress = new System.Windows.Forms.Panel();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -46,12 +48,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnModifyPhone = new System.Windows.Forms.Button();
+            this.btnModifyPhone = new BmwButton();
             this.lvwPhone = new System.Windows.Forms.ListView();
-            this.btnRemovePhone = new System.Windows.Forms.Button();
-            this.btnAddPhone = new System.Windows.Forms.Button();
+            this.btnRemovePhone = new BmwButton();
+            this.btnAddPhone = new BmwButton();
             this.pnlButton = new System.Windows.Forms.Panel();
-            this.btnChangePassword = new System.Windows.Forms.Button();
+            this.btnChangePassword = new BmwButton();
             this.grbInfo.SuspendLayout();
             this.pnlAddress.SuspendLayout();
             this.pnlGender.SuspendLayout();
@@ -341,8 +343,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnCancel;
+        private BmwButton btnSave;
+        private BmwButton btnCancel;
         private System.Windows.Forms.GroupBox grbInfo;
         private System.Windows.Forms.Label lblDob;
         private System.Windows.Forms.Panel panel2;
@@ -359,10 +361,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListView lvwPhone;
-        private System.Windows.Forms.Button btnRemovePhone;
-        private System.Windows.Forms.Button btnAddPhone;
+        private BmwButton btnRemovePhone;
+        private BmwButton btnAddPhone;
         private System.Windows.Forms.Panel pnlButton;
-        private System.Windows.Forms.Button btnModifyPhone;
-        private System.Windows.Forms.Button btnChangePassword;
+        private BmwButton btnModifyPhone;
+        private BmwButton btnChangePassword;
     }
 }

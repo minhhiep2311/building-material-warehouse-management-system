@@ -1,4 +1,7 @@
 ﻿
+using System;
+using BTL_LTTQ_QLKhoVLXD.Controls;
+
 namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
     partial class fTaskManager
@@ -37,10 +40,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgBuy = new System.Windows.Forms.TabPage();
             this.grbItemInfor_Buy = new System.Windows.Forms.GroupBox();
             this.lsvBuy_Buy = new System.Windows.Forms.ListView();
-            this.btnPrintReceipt_Buy = new System.Windows.Forms.Button();
-            this.btnCancelReceipt_Buy = new System.Windows.Forms.Button();
-            this.btnSaveReceipt_Buy = new System.Windows.Forms.Button();
-            this.btnAddReceipt_Buy = new System.Windows.Forms.Button();
+            this.btnPrintReceipt_Buy = new BmwButton();
+            this.btnCancelReceipt_Buy = new BmwButton();
+            this.btnSaveReceipt_Buy = new BmwButton();
+            this.btnAddReceipt_Buy = new BmwButton();
             this.txtTotalMoney_Buy = new System.Windows.Forms.TextBox();
             this.lblTotalMoney_Buy = new System.Windows.Forms.Label();
             this.txtMoney_Buy = new System.Windows.Forms.TextBox();
@@ -75,10 +78,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSell = new System.Windows.Forms.TabPage();
             this.grbItemInfor_Sell = new System.Windows.Forms.GroupBox();
             this.lsvSell_Sell = new System.Windows.Forms.ListView();
-            this.btnPrintReceipt_Sell = new System.Windows.Forms.Button();
-            this.btnCancelReceipt_Sell = new System.Windows.Forms.Button();
-            this.btnSaveReceipt_Sell = new System.Windows.Forms.Button();
-            this.btnAddReceipt_Sell = new System.Windows.Forms.Button();
+            this.btnPrintReceipt_Sell = new BmwButton();
+            this.btnCancelReceipt_Sell = new BmwButton();
+            this.btnSaveReceipt_Sell = new BmwButton();
+            this.btnAddReceipt_Sell = new BmwButton();
             this.txtTotalMoney_Sell = new System.Windows.Forms.TextBox();
             this.lblTotalMoney_Sell = new System.Windows.Forms.Label();
             this.txtMoney_Sell = new System.Windows.Forms.TextBox();
@@ -114,9 +117,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel1_Receipt = new System.Windows.Forms.Panel();
             this.lsvReceipt_Receipt = new System.Windows.Forms.ListView();
             this.panel2_Receipt = new System.Windows.Forms.Panel();
-            this.btnDelete_Receipt = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDelete_Receipt = new BmwButton();
+            this.button1 = new BmwButton();
+            this.button2 = new BmwButton();
             this.grbInfor_Receipt = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -133,11 +136,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel1_Customer = new System.Windows.Forms.Panel();
             this.lsvCustomer_Customer = new System.Windows.Forms.ListView();
             this.panel2_Customer = new System.Windows.Forms.Panel();
-            this.btnExport_Customer = new System.Windows.Forms.Button();
-            this.btnRefresh_Customer = new System.Windows.Forms.Button();
-            this.btnDelete_Customer = new System.Windows.Forms.Button();
-            this.btnFix_Customer = new System.Windows.Forms.Button();
-            this.btnAdd_Customer = new System.Windows.Forms.Button();
+            this.btnExport_Customer = new BmwButton();
+            this.btnRefresh_Customer = new BmwButton();
+            this.btnDelete_Customer = new BmwButton();
+            this.btnFix_Customer = new BmwButton();
+            this.btnAdd_Customer = new BmwButton();
             this.grbInfor_Customer = new System.Windows.Forms.GroupBox();
             this.txtPhoneNumber_Customer = new System.Windows.Forms.TextBox();
             this.txtAddress_Customer = new System.Windows.Forms.TextBox();
@@ -150,6 +153,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSupplier = new System.Windows.Forms.TabPage();
             this.spc_supplier = new System.Windows.Forms.SplitContainer();
             this.lvwSupplier_supplier = new System.Windows.Forms.ListView();
+            this.flpFunction_supplier = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAdd_supplier = new BmwButton();
+            this.btnEdit_supplier = new BmwButton();
+            this.btnDelete_supplier = new BmwButton();
+            this.btnExport_supplier = new BmwButton();
+            this.btnRefresh_supplier = new BmwButton();
             this.pnlSearch_supplier = new System.Windows.Forms.Panel();
             this.grbSearch_supplier = new System.Windows.Forms.GroupBox();
             this.pnlPhone_supplier = new System.Windows.Forms.Panel();
@@ -165,12 +174,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_employee = new System.Windows.Forms.SplitContainer();
             this.lvwEmployee_employee = new System.Windows.Forms.ListView();
             this.flpFunction_employee = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAdd_employee = new System.Windows.Forms.Button();
-            this.btnEdit_employee = new System.Windows.Forms.Button();
-            this.btnCreateAccount_employee = new System.Windows.Forms.Button();
-            this.btnRemoveAccount_employee = new System.Windows.Forms.Button();
-            this.btnRemoveEmployee_employee = new System.Windows.Forms.Button();
-            this.btnRefresh_employee = new System.Windows.Forms.Button();
+            this.btnAdd_employee = new BmwButton();
+            this.btnEdit_employee = new BmwButton();
+            this.btnCreateAccount_employee = new BmwButton();
+            this.btnRemoveAccount_employee = new BmwButton();
+            this.btnRemoveEmployee_employee = new BmwButton();
+            this.btnRefresh_employee = new BmwButton();
             this.pnlSearch_employe = new System.Windows.Forms.Panel();
             this.grbSearch_employee = new System.Windows.Forms.GroupBox();
             this.pnlAccount_employee = new System.Windows.Forms.Panel();
@@ -195,9 +204,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtName_employee = new System.Windows.Forms.TextBox();
             this.tpgUserSetting = new System.Windows.Forms.TabPage();
             this.flp_userSetting = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCreateAccount_userSetting = new System.Windows.Forms.Button();
-            this.btnChangeInformation_userSetting = new System.Windows.Forms.Button();
-            this.btnResetPassword_userSetting = new System.Windows.Forms.Button();
+            this.btnCreateAccount_userSetting = new BmwButton();
+            this.btnChangeInformation_userSetting = new BmwButton();
+            this.btnResetPassword_userSetting = new BmwButton();
             this.cms_employee = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiShowInformation_employee = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCreateAccount_employee = new System.Windows.Forms.ToolStripMenuItem();
@@ -206,12 +215,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.cms_supplier = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiShowInformation_supplier = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteSupplier_supplier = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnRefresh_supplier = new System.Windows.Forms.Button();
-            this.btnExport_supplier = new System.Windows.Forms.Button();
-            this.btnDelete_supplier = new System.Windows.Forms.Button();
-            this.btnEdit_supplier = new System.Windows.Forms.Button();
-            this.btnAdd_supplier = new System.Windows.Forms.Button();
-            this.flpFunction_supplier = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3.SuspendLayout();
             this.tctlControl.SuspendLayout();
             this.tpgBuy.SuspendLayout();
@@ -237,6 +240,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_supplier.Panel1.SuspendLayout();
             this.spc_supplier.Panel2.SuspendLayout();
             this.spc_supplier.SuspendLayout();
+            this.flpFunction_supplier.SuspendLayout();
             this.pnlSearch_supplier.SuspendLayout();
             this.grbSearch_supplier.SuspendLayout();
             this.pnlPhone_supplier.SuspendLayout();
@@ -260,7 +264,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flp_userSetting.SuspendLayout();
             this.cms_employee.SuspendLayout();
             this.cms_supplier.SuspendLayout();
-            this.flpFunction_supplier.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -1632,6 +1635,96 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwSupplier_supplier.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvwSupplier_supplier_MouseClick);
             this.lvwSupplier_supplier.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwSupplier_supplier_MouseDoubleClick);
             // 
+            // flpFunction_supplier
+            // 
+            this.flpFunction_supplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.flpFunction_supplier.Controls.Add(this.btnAdd_supplier);
+            this.flpFunction_supplier.Controls.Add(this.btnEdit_supplier);
+            this.flpFunction_supplier.Controls.Add(this.btnDelete_supplier);
+            this.flpFunction_supplier.Controls.Add(this.btnExport_supplier);
+            this.flpFunction_supplier.Controls.Add(this.btnRefresh_supplier);
+            this.flpFunction_supplier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpFunction_supplier.Location = new System.Drawing.Point(0, 185);
+            this.flpFunction_supplier.Name = "flpFunction_supplier";
+            this.flpFunction_supplier.Padding = new System.Windows.Forms.Padding(5);
+            this.flpFunction_supplier.Size = new System.Drawing.Size(507, 414);
+            this.flpFunction_supplier.TabIndex = 6;
+            // 
+            // btnAdd_supplier
+            // 
+            this.btnAdd_supplier.BackColor = System.Drawing.Color.White;
+            this.btnAdd_supplier.FlatAppearance.BorderSize = 0;
+            this.btnAdd_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAdd_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnAdd_supplier.Location = new System.Drawing.Point(8, 8);
+            this.btnAdd_supplier.Name = "btnAdd_supplier";
+            this.btnAdd_supplier.Size = new System.Drawing.Size(185, 63);
+            this.btnAdd_supplier.TabIndex = 1;
+            this.btnAdd_supplier.Text = "Thêm NCC";
+            this.btnAdd_supplier.UseVisualStyleBackColor = false;
+            this.btnAdd_supplier.Click += new System.EventHandler(this.btnAdd_supplier_Click);
+            // 
+            // btnEdit_supplier
+            // 
+            this.btnEdit_supplier.BackColor = System.Drawing.Color.White;
+            this.btnEdit_supplier.FlatAppearance.BorderSize = 0;
+            this.btnEdit_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEdit_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnEdit_supplier.Location = new System.Drawing.Point(199, 8);
+            this.btnEdit_supplier.Name = "btnEdit_supplier";
+            this.btnEdit_supplier.Size = new System.Drawing.Size(185, 63);
+            this.btnEdit_supplier.TabIndex = 2;
+            this.btnEdit_supplier.Text = "Chỉnh sửa thông tin";
+            this.btnEdit_supplier.UseVisualStyleBackColor = false;
+            this.btnEdit_supplier.Click += new System.EventHandler(this.btnEdit_supplier_Click);
+            // 
+            // btnDelete_supplier
+            // 
+            this.btnDelete_supplier.BackColor = System.Drawing.Color.White;
+            this.btnDelete_supplier.FlatAppearance.BorderSize = 0;
+            this.btnDelete_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDelete_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnDelete_supplier.Location = new System.Drawing.Point(8, 77);
+            this.btnDelete_supplier.Name = "btnDelete_supplier";
+            this.btnDelete_supplier.Size = new System.Drawing.Size(185, 63);
+            this.btnDelete_supplier.TabIndex = 3;
+            this.btnDelete_supplier.Text = "Xóa NCC";
+            this.btnDelete_supplier.UseVisualStyleBackColor = false;
+            this.btnDelete_supplier.Click += new System.EventHandler(this.btnDelete_supplier_Click);
+            // 
+            // btnExport_supplier
+            // 
+            this.btnExport_supplier.BackColor = System.Drawing.Color.White;
+            this.btnExport_supplier.FlatAppearance.BorderSize = 0;
+            this.btnExport_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnExport_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnExport_supplier.Location = new System.Drawing.Point(199, 77);
+            this.btnExport_supplier.Name = "btnExport_supplier";
+            this.btnExport_supplier.Size = new System.Drawing.Size(185, 63);
+            this.btnExport_supplier.TabIndex = 5;
+            this.btnExport_supplier.Text = "Xuất file danh sách NCC";
+            this.btnExport_supplier.UseVisualStyleBackColor = false;
+            this.btnExport_supplier.Click += new System.EventHandler(this.btnExport_supplier_Click);
+            // 
+            // btnRefresh_supplier
+            // 
+            this.btnRefresh_supplier.BackColor = System.Drawing.Color.White;
+            this.btnRefresh_supplier.FlatAppearance.BorderSize = 0;
+            this.btnRefresh_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnRefresh_supplier.Location = new System.Drawing.Point(8, 146);
+            this.btnRefresh_supplier.Name = "btnRefresh_supplier";
+            this.btnRefresh_supplier.Size = new System.Drawing.Size(185, 63);
+            this.btnRefresh_supplier.TabIndex = 6;
+            this.btnRefresh_supplier.Text = "Làm mới";
+            this.btnRefresh_supplier.UseVisualStyleBackColor = false;
+            this.btnRefresh_supplier.Click += new System.EventHandler(this.btnRefresh_supplier_Click);
+            // 
             // pnlSearch_supplier
             // 
             this.pnlSearch_supplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1819,7 +1912,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnAdd_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnAdd_employee.Location = new System.Drawing.Point(8, 8);
             this.btnAdd_employee.Name = "btnAdd_employee";
-            this.btnAdd_employee.Size = new System.Drawing.Size(185, 47);
+            this.btnAdd_employee.Size = new System.Drawing.Size(185, 70);
             this.btnAdd_employee.TabIndex = 0;
             this.btnAdd_employee.Text = "Thêm nhân viên";
             this.btnAdd_employee.UseVisualStyleBackColor = false;
@@ -1834,9 +1927,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnEdit_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnEdit_employee.Location = new System.Drawing.Point(199, 8);
             this.btnEdit_employee.Name = "btnEdit_employee";
-            this.btnEdit_employee.Size = new System.Drawing.Size(185, 47);
+            this.btnEdit_employee.Size = new System.Drawing.Size(185, 70);
             this.btnEdit_employee.TabIndex = 2;
-            this.btnEdit_employee.Text = "Chỉnh sửa thông tin";
+            this.btnEdit_employee.Text = "Chỉnh sửa \n thông tin";
             this.btnEdit_employee.UseVisualStyleBackColor = false;
             this.btnEdit_employee.Click += new System.EventHandler(this.btnEdit_employee_Click);
             // 
@@ -1847,9 +1940,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCreateAccount_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnCreateAccount_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnCreateAccount_employee.Location = new System.Drawing.Point(8, 61);
+            this.btnCreateAccount_employee.Location = new System.Drawing.Point(8, 84);
             this.btnCreateAccount_employee.Name = "btnCreateAccount_employee";
-            this.btnCreateAccount_employee.Size = new System.Drawing.Size(185, 47);
+            this.btnCreateAccount_employee.Size = new System.Drawing.Size(185, 70);
             this.btnCreateAccount_employee.TabIndex = 4;
             this.btnCreateAccount_employee.Text = "Tạo tài khoản";
             this.btnCreateAccount_employee.UseVisualStyleBackColor = false;
@@ -1862,9 +1955,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnRemoveAccount_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnRemoveAccount_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnRemoveAccount_employee.Location = new System.Drawing.Point(199, 61);
+            this.btnRemoveAccount_employee.Location = new System.Drawing.Point(199, 84);
             this.btnRemoveAccount_employee.Name = "btnRemoveAccount_employee";
-            this.btnRemoveAccount_employee.Size = new System.Drawing.Size(185, 47);
+            this.btnRemoveAccount_employee.Size = new System.Drawing.Size(185, 70);
             this.btnRemoveAccount_employee.TabIndex = 3;
             this.btnRemoveAccount_employee.Text = "Xóa tài khoản";
             this.btnRemoveAccount_employee.UseVisualStyleBackColor = false;
@@ -1877,9 +1970,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnRemoveEmployee_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveEmployee_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnRemoveEmployee_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnRemoveEmployee_employee.Location = new System.Drawing.Point(8, 114);
+            this.btnRemoveEmployee_employee.Location = new System.Drawing.Point(8, 160);
             this.btnRemoveEmployee_employee.Name = "btnRemoveEmployee_employee";
-            this.btnRemoveEmployee_employee.Size = new System.Drawing.Size(185, 47);
+            this.btnRemoveEmployee_employee.Size = new System.Drawing.Size(185, 70);
             this.btnRemoveEmployee_employee.TabIndex = 1;
             this.btnRemoveEmployee_employee.Text = "Xóa nhân viên";
             this.btnRemoveEmployee_employee.UseVisualStyleBackColor = false;
@@ -1892,9 +1985,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnRefresh_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnRefresh_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnRefresh_employee.Location = new System.Drawing.Point(199, 114);
+            this.btnRefresh_employee.Location = new System.Drawing.Point(199, 160);
             this.btnRefresh_employee.Name = "btnRefresh_employee";
-            this.btnRefresh_employee.Size = new System.Drawing.Size(185, 47);
+            this.btnRefresh_employee.Size = new System.Drawing.Size(185, 70);
             this.btnRefresh_employee.TabIndex = 5;
             this.btnRefresh_employee.Text = "Làm mới";
             this.btnRefresh_employee.UseVisualStyleBackColor = false;
@@ -2262,96 +2355,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tsmiDeleteSupplier_supplier.Text = "Xóa nhà cung cấp";
             this.tsmiDeleteSupplier_supplier.Click += new System.EventHandler(this.tsmiDeleteSupplier_supplier_Click);
             // 
-            // btnRefresh_supplier
-            // 
-            this.btnRefresh_supplier.BackColor = System.Drawing.Color.White;
-            this.btnRefresh_supplier.FlatAppearance.BorderSize = 0;
-            this.btnRefresh_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnRefresh_supplier.Location = new System.Drawing.Point(8, 146);
-            this.btnRefresh_supplier.Name = "btnRefresh_supplier";
-            this.btnRefresh_supplier.Size = new System.Drawing.Size(185, 63);
-            this.btnRefresh_supplier.TabIndex = 6;
-            this.btnRefresh_supplier.Text = "Làm mới";
-            this.btnRefresh_supplier.UseVisualStyleBackColor = false;
-            this.btnRefresh_supplier.Click += new System.EventHandler(this.btnRefresh_supplier_Click);
-            // 
-            // btnExport_supplier
-            // 
-            this.btnExport_supplier.BackColor = System.Drawing.Color.White;
-            this.btnExport_supplier.FlatAppearance.BorderSize = 0;
-            this.btnExport_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExport_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnExport_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnExport_supplier.Location = new System.Drawing.Point(199, 77);
-            this.btnExport_supplier.Name = "btnExport_supplier";
-            this.btnExport_supplier.Size = new System.Drawing.Size(185, 63);
-            this.btnExport_supplier.TabIndex = 5;
-            this.btnExport_supplier.Text = "Xuất file danh sách NCC";
-            this.btnExport_supplier.UseVisualStyleBackColor = false;
-            this.btnExport_supplier.Click += new System.EventHandler(this.btnExport_supplier_Click);
-            // 
-            // btnDelete_supplier
-            // 
-            this.btnDelete_supplier.BackColor = System.Drawing.Color.White;
-            this.btnDelete_supplier.FlatAppearance.BorderSize = 0;
-            this.btnDelete_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnDelete_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnDelete_supplier.Location = new System.Drawing.Point(8, 77);
-            this.btnDelete_supplier.Name = "btnDelete_supplier";
-            this.btnDelete_supplier.Size = new System.Drawing.Size(185, 63);
-            this.btnDelete_supplier.TabIndex = 3;
-            this.btnDelete_supplier.Text = "Xóa NCC";
-            this.btnDelete_supplier.UseVisualStyleBackColor = false;
-            this.btnDelete_supplier.Click += new System.EventHandler(this.btnDelete_supplier_Click);
-            // 
-            // btnEdit_supplier
-            // 
-            this.btnEdit_supplier.BackColor = System.Drawing.Color.White;
-            this.btnEdit_supplier.FlatAppearance.BorderSize = 0;
-            this.btnEdit_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnEdit_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnEdit_supplier.Location = new System.Drawing.Point(199, 8);
-            this.btnEdit_supplier.Name = "btnEdit_supplier";
-            this.btnEdit_supplier.Size = new System.Drawing.Size(185, 63);
-            this.btnEdit_supplier.TabIndex = 2;
-            this.btnEdit_supplier.Text = "Chỉnh sửa thông tin";
-            this.btnEdit_supplier.UseVisualStyleBackColor = false;
-            this.btnEdit_supplier.Click += new System.EventHandler(this.btnEdit_supplier_Click);
-            // 
-            // btnAdd_supplier
-            // 
-            this.btnAdd_supplier.BackColor = System.Drawing.Color.White;
-            this.btnAdd_supplier.FlatAppearance.BorderSize = 0;
-            this.btnAdd_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAdd_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnAdd_supplier.Location = new System.Drawing.Point(8, 8);
-            this.btnAdd_supplier.Name = "btnAdd_supplier";
-            this.btnAdd_supplier.Size = new System.Drawing.Size(185, 63);
-            this.btnAdd_supplier.TabIndex = 1;
-            this.btnAdd_supplier.Text = "Thêm NCC";
-            this.btnAdd_supplier.UseVisualStyleBackColor = false;
-            this.btnAdd_supplier.Click += new System.EventHandler(this.btnAdd_supplier_Click);
-            // 
-            // flpFunction_supplier
-            // 
-            this.flpFunction_supplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.flpFunction_supplier.Controls.Add(this.btnAdd_supplier);
-            this.flpFunction_supplier.Controls.Add(this.btnEdit_supplier);
-            this.flpFunction_supplier.Controls.Add(this.btnDelete_supplier);
-            this.flpFunction_supplier.Controls.Add(this.btnExport_supplier);
-            this.flpFunction_supplier.Controls.Add(this.btnRefresh_supplier);
-            this.flpFunction_supplier.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpFunction_supplier.Location = new System.Drawing.Point(0, 185);
-            this.flpFunction_supplier.Name = "flpFunction_supplier";
-            this.flpFunction_supplier.Padding = new System.Windows.Forms.Padding(5);
-            this.flpFunction_supplier.Size = new System.Drawing.Size(507, 414);
-            this.flpFunction_supplier.TabIndex = 6;
-            // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2401,6 +2404,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_supplier.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spc_supplier)).EndInit();
             this.spc_supplier.ResumeLayout(false);
+            this.flpFunction_supplier.ResumeLayout(false);
             this.pnlSearch_supplier.ResumeLayout(false);
             this.grbSearch_supplier.ResumeLayout(false);
             this.pnlPhone_supplier.ResumeLayout(false);
@@ -2434,7 +2438,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flp_userSetting.ResumeLayout(false);
             this.cms_employee.ResumeLayout(false);
             this.cms_supplier.ResumeLayout(false);
-            this.flpFunction_supplier.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2455,10 +2458,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.TabPage tpgEmployee;
         private System.Windows.Forms.TabPage tpgUserSetting;
         private System.Windows.Forms.DataGridView dgvMaterial_material;
-        private System.Windows.Forms.Button btnChangeInformation_userSetting;
-        private System.Windows.Forms.Button btnCreateAccount_userSetting;
+        private BmwButton btnChangeInformation_userSetting;
+        private BmwButton btnCreateAccount_userSetting;
         private System.Windows.Forms.FlowLayoutPanel flp_userSetting;
-        private System.Windows.Forms.Button btnResetPassword_userSetting;
+        private BmwButton btnResetPassword_userSetting;
         private System.Windows.Forms.GroupBox grbItemInfor_Buy;
         private System.Windows.Forms.GroupBox grbGeneralInfor_Buy;
         private System.Windows.Forms.Panel panel1_Buy;
@@ -2489,17 +2492,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.TextBox txtMaterialName_Buy;
         private System.Windows.Forms.TextBox txtMaterialAmount_Buy;
         private System.Windows.Forms.ListBox lstMaterialId_Buy;
-        private System.Windows.Forms.Button btnPrintReceipt_Buy;
-        private System.Windows.Forms.Button btnCancelReceipt_Buy;
-        private System.Windows.Forms.Button btnSaveReceipt_Buy;
-        private System.Windows.Forms.Button btnAddReceipt_Buy;
+        private BmwButton btnPrintReceipt_Buy;
+        private BmwButton btnCancelReceipt_Buy;
+        private BmwButton btnSaveReceipt_Buy;
+        private BmwButton btnAddReceipt_Buy;
         private System.Windows.Forms.TextBox txtTotalMoney_Buy;
         private System.Windows.Forms.Label lblTotalMoney_Buy;
         private System.Windows.Forms.GroupBox grbItemInfor_Sell;
-        private System.Windows.Forms.Button btnPrintReceipt_Sell;
-        private System.Windows.Forms.Button btnCancelReceipt_Sell;
-        private System.Windows.Forms.Button btnSaveReceipt_Sell;
-        private System.Windows.Forms.Button btnAddReceipt_Sell;
+        private BmwButton btnPrintReceipt_Sell;
+        private BmwButton btnCancelReceipt_Sell;
+        private BmwButton btnSaveReceipt_Sell;
+        private BmwButton btnAddReceipt_Sell;
         private System.Windows.Forms.TextBox txtTotalMoney_Sell;
         private System.Windows.Forms.Label lblTotalMoney_Sell;
         private System.Windows.Forms.TextBox txtMoney_Sell;
@@ -2556,11 +2559,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Label lblAccount_employee;
         private System.Windows.Forms.TextBox txtAccount_employee;
         private System.Windows.Forms.FlowLayoutPanel flpFunction_employee;
-        private System.Windows.Forms.Button btnAdd_employee;
-        private System.Windows.Forms.Button btnRemoveEmployee_employee;
-        private System.Windows.Forms.Button btnEdit_employee;
-        private System.Windows.Forms.Button btnRemoveAccount_employee;
-        private System.Windows.Forms.Button btnCreateAccount_employee;
+        private BmwButton btnAdd_employee;
+        private BmwButton btnRemoveEmployee_employee;
+        private BmwButton btnEdit_employee;
+        private BmwButton btnCreateAccount_employee;
         private System.Windows.Forms.ContextMenuStrip cms_employee;
         private System.Windows.Forms.ToolStripMenuItem tsmiShowInformation_employee;
         private System.Windows.Forms.ToolStripMenuItem tsmiCreateAccount_employee;
@@ -2571,11 +2573,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Panel panel1_Customer;
         private System.Windows.Forms.ListView lsvCustomer_Customer;
         private System.Windows.Forms.Panel panel2_Customer;
-        private System.Windows.Forms.Button btnExport_Customer;
-        private System.Windows.Forms.Button btnRefresh_Customer;
-        private System.Windows.Forms.Button btnDelete_Customer;
-        private System.Windows.Forms.Button btnFix_Customer;
-        private System.Windows.Forms.Button btnAdd_Customer;
+        private BmwButton btnExport_Customer;
+        private BmwButton btnRefresh_Customer;
+        private BmwButton btnDelete_Customer;
+        private BmwButton btnFix_Customer;
+        private BmwButton btnAdd_Customer;
         private System.Windows.Forms.GroupBox grbInfor_Customer;
         private System.Windows.Forms.TextBox txtPhoneNumber_Customer;
         private System.Windows.Forms.TextBox txtAddress_Customer;
@@ -2587,8 +2589,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Label lblId_Customer;
         private System.Windows.Forms.Panel panel1_Receipt;
         private System.Windows.Forms.Panel panel2_Receipt;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private BmwButton button1;
+        private BmwButton button2;
         private System.Windows.Forms.GroupBox grbInfor_Receipt;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox1;
@@ -2599,7 +2601,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListView lsvReceipt_Receipt;
-        private System.Windows.Forms.Button btnDelete_Receipt;
+        private BmwButton btnDelete_Receipt;
         private System.Windows.Forms.SplitContainer spc_supplier;
         private System.Windows.Forms.ListView lvwSupplier_supplier;
         private System.Windows.Forms.Panel pnlSearch_supplier;
@@ -2616,12 +2618,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.ContextMenuStrip cms_supplier;
         private System.Windows.Forms.ToolStripMenuItem tsmiShowInformation_supplier;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSupplier_supplier;
-        private System.Windows.Forms.Button btnRefresh_employee;
+        private BmwButton btnRefresh_employee;
         private System.Windows.Forms.FlowLayoutPanel flpFunction_supplier;
-        private System.Windows.Forms.Button btnAdd_supplier;
-        private System.Windows.Forms.Button btnEdit_supplier;
-        private System.Windows.Forms.Button btnDelete_supplier;
-        private System.Windows.Forms.Button btnExport_supplier;
-        private System.Windows.Forms.Button btnRefresh_supplier;
+        private BmwButton btnAdd_supplier;
+        private BmwButton btnEdit_supplier;
+        private BmwButton btnDelete_supplier;
+        private BmwButton btnExport_supplier;
+        private BmwButton btnRefresh_supplier;
+        private BmwButton btnRemoveAccount_employee;
     }
 }

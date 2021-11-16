@@ -1,4 +1,6 @@
 ﻿
+using BTL_LTTQ_QLKhoVLXD.Controls;
+
 namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
 {
     partial class fAddEmployee
@@ -49,8 +51,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnCreate = new BmwButton();
+            this.btnCancel = new BmwButton();
             this.grbInfo.SuspendLayout();
             this.grbAccount.SuspendLayout();
             this.SuspendLayout();
@@ -340,7 +342,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.CheckBox chkShowPassword;
-        private System.Windows.Forms.Button btnCreate;
-        private System.Windows.Forms.Button btnCancel;
+        private BmwButton btnCreate;
+        private BmwButton btnCancel;
     }
 }

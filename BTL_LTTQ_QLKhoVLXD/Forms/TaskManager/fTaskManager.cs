@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee;
 using BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier;
@@ -54,16 +53,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             DisplayComponentsAccordsPermission();
 
-            new Thread(() =>
+            Invoke((MethodInvoker)(() =>
             {
                 Init_Supplier();
                 LoadData_Supplier();
-            }).Start();
-            new Thread(() =>
+            }));
+
+            Invoke((MethodInvoker)(() =>
             {
                 Init_Employee();
                 LoadData_Employee();
-            }).Start();
+            }));
         }
 
         private void tctlControl_DrawItem(object sender, DrawItemEventArgs e)
@@ -157,7 +157,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void tpgMaterial_Enter(object sender, EventArgs e)
         {
-               LoadMaterialData();
+            LoadMaterialData();
         }
 
         #endregion

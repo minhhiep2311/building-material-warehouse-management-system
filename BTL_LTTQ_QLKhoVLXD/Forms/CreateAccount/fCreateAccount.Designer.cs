@@ -1,4 +1,6 @@
 ﻿
+using BTL_LTTQ_QLKhoVLXD.Controls;
+
 namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
 {
     partial class fCreateAccount
@@ -39,8 +41,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
             this.chkShowPassword = new System.Windows.Forms.CheckBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnCreate = new BmwButton();
+            this.btnCancel = new BmwButton();
             this.pnlName.SuspendLayout();
             this.pnlAccount.SuspendLayout();
             this.pnlPassword.SuspendLayout();
@@ -201,7 +203,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.CheckBox chkShowPassword;
-        private System.Windows.Forms.Button btnCreate;
-        private System.Windows.Forms.Button btnCancel;
+        private BmwButton btnCreate;
+        private BmwButton btnCancel;
     }
 }
