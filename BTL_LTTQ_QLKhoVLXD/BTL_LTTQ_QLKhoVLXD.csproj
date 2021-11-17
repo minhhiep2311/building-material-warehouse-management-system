@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\BmwButton.cs">
+    <Compile Include="Controls\Button\BmwButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\AddCustomer\AddCustomer.cs">

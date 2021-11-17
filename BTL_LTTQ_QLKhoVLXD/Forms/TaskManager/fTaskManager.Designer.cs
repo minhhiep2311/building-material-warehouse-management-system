@@ -1,6 +1,7 @@
 ﻿
 using System;
 using BTL_LTTQ_QLKhoVLXD.Controls;
+using BTL_LTTQ_QLKhoVLXD.Controls.Button;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
@@ -40,10 +41,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgBuy = new System.Windows.Forms.TabPage();
             this.grbItemInfor_Buy = new System.Windows.Forms.GroupBox();
             this.lsvBuy_Buy = new System.Windows.Forms.ListView();
-            this.btnPrintReceipt_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnCancelReceipt_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnSaveReceipt_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnAddReceipt_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnPrintReceipt_Buy = new BmwButton();
+            this.btnCancelReceipt_Buy = new BmwButton();
+            this.btnSaveReceipt_Buy = new BmwButton();
+            this.btnAddReceipt_Buy = new BmwButton();
             this.txtTotalMoney_Buy = new System.Windows.Forms.TextBox();
             this.lblTotalMoney_Buy = new System.Windows.Forms.Label();
             this.txtMoney_Buy = new System.Windows.Forms.TextBox();
@@ -78,10 +79,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSell = new System.Windows.Forms.TabPage();
             this.grbItemInfor_Sell = new System.Windows.Forms.GroupBox();
             this.lsvSell_Sell = new System.Windows.Forms.ListView();
-            this.btnPrintReceipt_Sell = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnCancelReceipt_Sell = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnSaveReceipt_Sell = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnAddReceipt_Sell = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnPrintReceipt_Sell = new BmwButton();
+            this.btnCancelReceipt_Sell = new BmwButton();
+            this.btnSaveReceipt_Sell = new BmwButton();
+            this.btnAddReceipt_Sell = new BmwButton();
             this.txtTotalMoney_Sell = new System.Windows.Forms.TextBox();
             this.lblTotalMoney_Sell = new System.Windows.Forms.Label();
             this.txtMoney_Sell = new System.Windows.Forms.TextBox();
@@ -117,9 +118,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel1_Receipt = new System.Windows.Forms.Panel();
             this.lsvReceipt_Receipt = new System.Windows.Forms.ListView();
             this.panel2_Receipt = new System.Windows.Forms.Panel();
-            this.btnDelete_Receipt = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.button1 = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.button2 = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnDelete_Receipt = new BmwButton();
+            this.button1 = new BmwButton();
+            this.button2 = new BmwButton();
             this.grbInfor_Receipt = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -136,11 +137,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel1_Customer = new System.Windows.Forms.Panel();
             this.lsvCustomer_Customer = new System.Windows.Forms.ListView();
             this.panel2_Customer = new System.Windows.Forms.Panel();
-            this.btnExport_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnRefresh_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnDelete_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnFix_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnAdd_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnExport_Customer = new BmwButton();
+            this.btnRefresh_Customer = new BmwButton();
+            this.btnDelete_Customer = new BmwButton();
+            this.btnFix_Customer = new BmwButton();
+            this.btnAdd_Customer = new BmwButton();
             this.grbInfor_Customer = new System.Windows.Forms.GroupBox();
             this.txtPhoneNumber_Customer = new System.Windows.Forms.TextBox();
             this.txtAddress_Customer = new System.Windows.Forms.TextBox();
@@ -154,11 +155,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_supplier = new System.Windows.Forms.SplitContainer();
             this.lvwSupplier_supplier = new System.Windows.Forms.ListView();
             this.flpFunction_supplier = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAdd_supplier = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnEdit_supplier = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnDelete_supplier = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnExport_supplier = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnRefresh_supplier = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnAdd_supplier = new BmwButton();
+            this.btnEdit_supplier = new BmwButton();
+            this.btnDelete_supplier = new BmwButton();
+            this.btnExport_supplier = new BmwButton();
+            this.btnRefresh_supplier = new BmwButton();
             this.pnlSearch_supplier = new System.Windows.Forms.Panel();
             this.grbSearch_supplier = new System.Windows.Forms.GroupBox();
             this.pnlPhone_supplier = new System.Windows.Forms.Panel();
@@ -174,12 +175,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_employee = new System.Windows.Forms.SplitContainer();
             this.lvwEmployee_employee = new System.Windows.Forms.ListView();
             this.flpFunction_employee = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAdd_employee = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnEdit_employee = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnCreateAccount_employee = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnRemoveAccount_employee = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnRemoveEmployee_employee = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnRefresh_employee = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnAdd_employee = new BmwButton();
+            this.btnEdit_employee = new BmwButton();
+            this.btnCreateAccount_employee = new BmwButton();
+            this.btnRemoveAccount_employee = new BmwButton();
+            this.btnRemoveEmployee_employee = new BmwButton();
+            this.btnRefresh_employee = new BmwButton();
             this.pnlSearch_employe = new System.Windows.Forms.Panel();
             this.grbSearch_employee = new System.Windows.Forms.GroupBox();
             this.pnlAccount_employee = new System.Windows.Forms.Panel();
@@ -204,9 +205,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtName_employee = new System.Windows.Forms.TextBox();
             this.tpgUserSetting = new System.Windows.Forms.TabPage();
             this.flp_userSetting = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCreateAccount_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnChangeInformation_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnResetPassword_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnCreateAccount_userSetting = new BmwButton();
+            this.btnChangeInformation_userSetting = new BmwButton();
+            this.btnResetPassword_userSetting = new BmwButton();
             this.cms_employee = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiShowInformation_employee = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCreateAccount_employee = new System.Windows.Forms.ToolStripMenuItem();

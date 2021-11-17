@@ -2,9 +2,9 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace BTL_LTTQ_QLKhoVLXD.Controls
+namespace BTL_LTTQ_QLKhoVLXD.Controls.Button
 {
-    internal sealed class BmwButton : Button
+    internal sealed class BmwButton : System.Windows.Forms.Button
     {
         public BmwButton()
         {
