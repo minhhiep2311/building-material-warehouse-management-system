@@ -1,7 +1,5 @@
-﻿
-using System;
-using BTL_LTTQ_QLKhoVLXD.Controls;
-using BTL_LTTQ_QLKhoVLXD.Controls.Button;
+﻿using BTL_LTTQ_QLKhoVLXD.Controls.Button;
+using BTL_LTTQ_QLKhoVLXD.Controls.ListView;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
@@ -153,7 +151,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lblId_Customer = new System.Windows.Forms.Label();
             this.tpgSupplier = new System.Windows.Forms.TabPage();
             this.spc_supplier = new System.Windows.Forms.SplitContainer();
-            this.lvwSupplier_supplier = new System.Windows.Forms.ListView();
+            this.lvwSupplier_supplier = new BmwListView();
             this.flpFunction_supplier = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAdd_supplier = new BmwButton();
             this.btnEdit_supplier = new BmwButton();
@@ -173,7 +171,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtName_supplier = new System.Windows.Forms.TextBox();
             this.tpgEmployee = new System.Windows.Forms.TabPage();
             this.spc_employee = new System.Windows.Forms.SplitContainer();
-            this.lvwEmployee_employee = new System.Windows.Forms.ListView();
+            this.lvwEmployee_employee = new BmwListView();
             this.flpFunction_employee = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAdd_employee = new BmwButton();
             this.btnEdit_employee = new BmwButton();
@@ -1603,20 +1601,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // lvwSupplier_supplier
             // 
-            this.lvwSupplier_supplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.lvwSupplier_supplier.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwSupplier_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lvwSupplier_supplier.ForeColor = System.Drawing.Color.White;
-            this.lvwSupplier_supplier.FullRowSelect = true;
-            this.lvwSupplier_supplier.HideSelection = false;
             this.lvwSupplier_supplier.Location = new System.Drawing.Point(0, 0);
             this.lvwSupplier_supplier.Name = "lvwSupplier_supplier";
             this.lvwSupplier_supplier.Size = new System.Drawing.Size(590, 599);
             this.lvwSupplier_supplier.TabIndex = 0;
-            this.lvwSupplier_supplier.UseCompatibleStateImageBehavior = false;
-            this.lvwSupplier_supplier.View = System.Windows.Forms.View.Details;
-            this.lvwSupplier_supplier.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvwSupplier_supplier_ColumnClick);
-            this.lvwSupplier_supplier.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.lvwSupplier_supplier_ColumnWidthChanging);
             this.lvwSupplier_supplier.SelectedIndexChanged += new System.EventHandler(this.lvwSupplier_supplier_SelectedIndexChanged);
             this.lvwSupplier_supplier.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvwSupplier_supplier_MouseClick);
             this.lvwSupplier_supplier.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwSupplier_supplier_MouseDoubleClick);
@@ -1850,20 +1839,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // lvwEmployee_employee
             // 
-            this.lvwEmployee_employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.lvwEmployee_employee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwEmployee_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lvwEmployee_employee.ForeColor = System.Drawing.Color.White;
-            this.lvwEmployee_employee.FullRowSelect = true;
-            this.lvwEmployee_employee.HideSelection = false;
             this.lvwEmployee_employee.Location = new System.Drawing.Point(0, 0);
             this.lvwEmployee_employee.Name = "lvwEmployee_employee";
             this.lvwEmployee_employee.Size = new System.Drawing.Size(590, 599);
             this.lvwEmployee_employee.TabIndex = 2;
-            this.lvwEmployee_employee.UseCompatibleStateImageBehavior = false;
-            this.lvwEmployee_employee.View = System.Windows.Forms.View.Details;
-            this.lvwEmployee_employee.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvwEmployee_employee_ColumnClick);
-            this.lvwEmployee_employee.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.lvwEmployee_employee_ColumnWidthChanging);
             this.lvwEmployee_employee.SelectedIndexChanged += new System.EventHandler(this.lvwEmployee_employee_SelectedIndexChanged);
             this.lvwEmployee_employee.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvwEmployee_employee_MouseClick);
             this.lvwEmployee_employee.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwEmployee_employee_MouseDoubleClick);
@@ -2514,7 +2494,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Label lblTitle_Sell;
         private System.Windows.Forms.TextBox txtName_employee;
         private System.Windows.Forms.Label lblName_employee;
-        private System.Windows.Forms.ListView lvwEmployee_employee;
+        private BmwListView lvwEmployee_employee;
         private System.Windows.Forms.GroupBox grbSearch_employee;
         private System.Windows.Forms.Panel pnlName_employee;
         private System.Windows.Forms.Panel pnlAddress_employee;
@@ -2581,7 +2561,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.ListView lsvReceipt_Receipt;
         private BmwButton btnDelete_Receipt;
         private System.Windows.Forms.SplitContainer spc_supplier;
-        private System.Windows.Forms.ListView lvwSupplier_supplier;
+        private BmwListView lvwSupplier_supplier;
         private System.Windows.Forms.Panel pnlSearch_supplier;
         private System.Windows.Forms.GroupBox grbSearch_supplier;
         private System.Windows.Forms.Panel pnlPhone_supplier;

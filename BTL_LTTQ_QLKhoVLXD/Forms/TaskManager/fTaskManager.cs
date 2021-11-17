@@ -13,7 +13,6 @@ using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
-using SortOrder = System.Data.SqlClient.SortOrder;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
@@ -41,9 +40,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         }
 
         private List<EmployeePosition> _positions = new List<EmployeePosition>();
-
-        private static readonly string UpArrow = $"{Resources.Character_ArrowUp}    ";
-        private static readonly string DownArrow = $"{Resources.Character_ArrowDown}    ";
 
         #endregion
 
@@ -137,16 +133,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             lblPosition.Text = string.Format(Resources.TaskManager_Label_Position, User.Position);
         }
 
-        private static void HandleChangeIdColumnWidth(ColumnWidthChangingEventArgs e)
-        {
-            // ID column
-            if (e.ColumnIndex != 0)
-                return;
-
-            e.NewWidth = 0;
-            e.Cancel = true;
-        }
-
         #endregion
 
         #endregion
@@ -226,35 +212,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             ShowInformation_Supplier();
         }
 
-        private void lvwSupplier_supplier_ColumnClick(object sender, ColumnClickEventArgs e)
-        {
-            var sorter = (Helper.ItemComparer)lvwSupplier_supplier.ListViewItemSorter;
-            if (sorter == null)
-            {
-                sorter = new Helper.ItemComparer(e.Column)
-                {
-                    Order = SortOrder.Ascending
-                };
-                lvwSupplier_supplier.ListViewItemSorter = sorter;
-            }
-
-            if (e.Column == sorter.Column)
-                sorter.Order = 1 - sorter.Order;
-            else
-            {
-                sorter.Column = e.Column;
-                sorter.Order = SortOrder.Ascending;
-            }
-
-            lvwSupplier_supplier.Sort();
-            DrawArrow_Supplier(e.Column, sorter.Order);
-        }
-
-        private void lvwSupplier_supplier_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
-        {
-            HandleChangeIdColumnWidth(e);
-        }
-
         private void lvwSupplier_supplier_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lvwSupplier_supplier.SelectedIndices.Count <= 0)
@@ -325,7 +282,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void Init_Supplier()
         {
-            _debounce_supplier = new Helper.Debounce(Search_Supplier, 300);
+            _debounce_supplier = new Helper.Debounce(Search_Supplier);
 
             lvwSupplier_supplier.Columns.Add("ID", 0);
             lvwSupplier_supplier.Columns.Add("Tên NCC", 300, HorizontalAlignment.Left);
@@ -364,24 +321,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             btnEdit_supplier.Enabled = false;
             btnDelete_supplier.Enabled = false;
-        }
-
-        private void DrawArrow_Supplier(int colIdx, SortOrder order)
-        {
-            foreach (ColumnHeader column in lvwSupplier_supplier.Columns)
-            {
-                if (column.Text.Contains(UpArrow))
-                    column.Text = column.Text.Replace(UpArrow, string.Empty);
-                else if (column.Text.Contains(DownArrow))
-                    column.Text = column.Text.Replace(DownArrow, string.Empty);
-            }
-
-            lvwSupplier_supplier.Columns[colIdx].Text =
-                lvwSupplier_supplier.Columns[colIdx].Text.Insert(0,
-                    order == SortOrder.Ascending
-                        ? DownArrow
-                        : UpArrow
-                );
         }
 
         private void Search_Supplier()
@@ -549,35 +488,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             ShowInformation_Employee();
         }
 
-        private void lvwEmployee_employee_ColumnClick(object sender, ColumnClickEventArgs e)
-        {
-            var sorter = (Helper.ItemComparer)lvwEmployee_employee.ListViewItemSorter;
-            if (sorter == null)
-            {
-                sorter = new Helper.ItemComparer(e.Column)
-                {
-                    Order = SortOrder.Ascending
-                };
-                lvwEmployee_employee.ListViewItemSorter = sorter;
-            }
-
-            if (e.Column == sorter.Column)
-                sorter.Order = 1 - sorter.Order;
-            else
-            {
-                sorter.Column = e.Column;
-                sorter.Order = SortOrder.Ascending;
-            }
-
-            lvwEmployee_employee.Sort();
-            DrawArrow_Employee(e.Column, sorter.Order);
-        }
-
-        private void lvwEmployee_employee_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
-        {
-            HandleChangeIdColumnWidth(e);
-        }
-
         private void lvwEmployee_employee_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lvwEmployee_employee.SelectedIndices.Count <= 0)
@@ -730,7 +640,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void Init_Employee()
         {
-            _debounce_employee = new Helper.Debounce(Search_Employee, 300);
+            _debounce_employee = new Helper.Debounce(Search_Employee);
 
             lvwEmployee_employee.Columns.Add("ID", 0);
             lvwEmployee_employee.Columns.Add("Họ tên", -2, HorizontalAlignment.Left);
@@ -810,24 +720,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                     lvwEmployee_employee.Items.Add(row);
                 }
             );
-        }
-
-        private void DrawArrow_Employee(int colIdx, SortOrder order)
-        {
-            foreach (ColumnHeader column in lvwEmployee_employee.Columns)
-            {
-                if (column.Text.Contains(UpArrow))
-                    column.Text = column.Text.Replace(UpArrow, string.Empty);
-                else if (column.Text.Contains(DownArrow))
-                    column.Text = column.Text.Replace(DownArrow, string.Empty);
-            }
-
-            lvwEmployee_employee.Columns[colIdx].Text =
-                lvwEmployee_employee.Columns[colIdx].Text.Insert(0,
-                    order == SortOrder.Ascending
-                        ? DownArrow
-                        : UpArrow
-                );
         }
 
         private void ShowInformation_Employee()

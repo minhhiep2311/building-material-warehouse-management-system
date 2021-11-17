@@ -98,7 +98,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
             private bool _canUpdate;
             private bool _needUpdate;
 
-            public Debounce(Action updateAction, int interval, bool startNow = true)
+            public Debounce(Action updateAction, int interval = 300, bool startNow = true)
             {
                 _updateAction = updateAction;
                 _timer.Tick += TimerTick;
