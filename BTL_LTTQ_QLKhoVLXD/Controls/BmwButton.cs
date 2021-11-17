@@ -8,18 +8,23 @@ namespace BTL_LTTQ_QLKhoVLXD.Controls
     {
         public BmwButton()
         {
-            BackColor = Color.White;
             FlatAppearance.BorderSize = 0;
             FlatStyle = FlatStyle.Flat;
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold);
-            ForeColor = Color.FromArgb(48, 128, 189);
             UseVisualStyleBackColor = false;
+            EnabledChanged += BmwOnEnabledChanged;
         }
 
-        protected override void OnEnabledChanged(EventArgs e)
+        private void BmwOnEnabledChanged(object sender, EventArgs e)
         {
-            base.OnEnabledChanged(e);
-            BackColor = Enabled ? Color.White : Color.DarkGray;
+            if (Enabled)
+            {
+                BackColor = Color.White;
+            }
+            else
+            {
+                BackColor = Color.DarkGray;
+            }
         }
     }
 }

@@ -40,10 +40,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgBuy = new System.Windows.Forms.TabPage();
             this.grbItemInfor_Buy = new System.Windows.Forms.GroupBox();
             this.lsvBuy_Buy = new System.Windows.Forms.ListView();
-            this.btnPrintReceipt_Buy = new BmwButton();
-            this.btnCancelReceipt_Buy = new BmwButton();
-            this.btnSaveReceipt_Buy = new BmwButton();
-            this.btnAddReceipt_Buy = new BmwButton();
+            this.btnPrintReceipt_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnCancelReceipt_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnSaveReceipt_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnAddReceipt_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
             this.txtTotalMoney_Buy = new System.Windows.Forms.TextBox();
             this.lblTotalMoney_Buy = new System.Windows.Forms.Label();
             this.txtMoney_Buy = new System.Windows.Forms.TextBox();
@@ -78,10 +78,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSell = new System.Windows.Forms.TabPage();
             this.grbItemInfor_Sell = new System.Windows.Forms.GroupBox();
             this.lsvSell_Sell = new System.Windows.Forms.ListView();
-            this.btnPrintReceipt_Sell = new BmwButton();
-            this.btnCancelReceipt_Sell = new BmwButton();
-            this.btnSaveReceipt_Sell = new BmwButton();
-            this.btnAddReceipt_Sell = new BmwButton();
+            this.btnPrintReceipt_Sell = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnCancelReceipt_Sell = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnSaveReceipt_Sell = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnAddReceipt_Sell = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
             this.txtTotalMoney_Sell = new System.Windows.Forms.TextBox();
             this.lblTotalMoney_Sell = new System.Windows.Forms.Label();
             this.txtMoney_Sell = new System.Windows.Forms.TextBox();
@@ -117,9 +117,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel1_Receipt = new System.Windows.Forms.Panel();
             this.lsvReceipt_Receipt = new System.Windows.Forms.ListView();
             this.panel2_Receipt = new System.Windows.Forms.Panel();
-            this.btnDelete_Receipt = new BmwButton();
-            this.button1 = new BmwButton();
-            this.button2 = new BmwButton();
+            this.btnDelete_Receipt = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.button1 = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.button2 = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
             this.grbInfor_Receipt = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -136,11 +136,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel1_Customer = new System.Windows.Forms.Panel();
             this.lsvCustomer_Customer = new System.Windows.Forms.ListView();
             this.panel2_Customer = new System.Windows.Forms.Panel();
-            this.btnExport_Customer = new BmwButton();
-            this.btnRefresh_Customer = new BmwButton();
-            this.btnDelete_Customer = new BmwButton();
-            this.btnFix_Customer = new BmwButton();
-            this.btnAdd_Customer = new BmwButton();
+            this.btnExport_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnRefresh_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnDelete_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnFix_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnAdd_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
             this.grbInfor_Customer = new System.Windows.Forms.GroupBox();
             this.txtPhoneNumber_Customer = new System.Windows.Forms.TextBox();
             this.txtAddress_Customer = new System.Windows.Forms.TextBox();
@@ -154,11 +154,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_supplier = new System.Windows.Forms.SplitContainer();
             this.lvwSupplier_supplier = new System.Windows.Forms.ListView();
             this.flpFunction_supplier = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAdd_supplier = new BmwButton();
-            this.btnEdit_supplier = new BmwButton();
-            this.btnDelete_supplier = new BmwButton();
-            this.btnExport_supplier = new BmwButton();
-            this.btnRefresh_supplier = new BmwButton();
+            this.btnAdd_supplier = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnEdit_supplier = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnDelete_supplier = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnExport_supplier = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnRefresh_supplier = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
             this.pnlSearch_supplier = new System.Windows.Forms.Panel();
             this.grbSearch_supplier = new System.Windows.Forms.GroupBox();
             this.pnlPhone_supplier = new System.Windows.Forms.Panel();
@@ -174,12 +174,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_employee = new System.Windows.Forms.SplitContainer();
             this.lvwEmployee_employee = new System.Windows.Forms.ListView();
             this.flpFunction_employee = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAdd_employee = new BmwButton();
-            this.btnEdit_employee = new BmwButton();
-            this.btnCreateAccount_employee = new BmwButton();
-            this.btnRemoveAccount_employee = new BmwButton();
-            this.btnRemoveEmployee_employee = new BmwButton();
-            this.btnRefresh_employee = new BmwButton();
+            this.btnAdd_employee = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnEdit_employee = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnCreateAccount_employee = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnRemoveAccount_employee = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnRemoveEmployee_employee = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnRefresh_employee = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
             this.pnlSearch_employe = new System.Windows.Forms.Panel();
             this.grbSearch_employee = new System.Windows.Forms.GroupBox();
             this.pnlAccount_employee = new System.Windows.Forms.Panel();
@@ -204,9 +204,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtName_employee = new System.Windows.Forms.TextBox();
             this.tpgUserSetting = new System.Windows.Forms.TabPage();
             this.flp_userSetting = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCreateAccount_userSetting = new BmwButton();
-            this.btnChangeInformation_userSetting = new BmwButton();
-            this.btnResetPassword_userSetting = new BmwButton();
+            this.btnCreateAccount_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnChangeInformation_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnResetPassword_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
             this.cms_employee = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiShowInformation_employee = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCreateAccount_employee = new System.Windows.Forms.ToolStripMenuItem();
@@ -381,7 +381,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnPrintReceipt_Buy
             // 
             this.btnPrintReceipt_Buy.BackColor = System.Drawing.Color.White;
-            this.btnPrintReceipt_Buy.FlatAppearance.BorderSize = 0;
             this.btnPrintReceipt_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnPrintReceipt_Buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -395,7 +394,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnCancelReceipt_Buy
             // 
             this.btnCancelReceipt_Buy.BackColor = System.Drawing.Color.White;
-            this.btnCancelReceipt_Buy.FlatAppearance.BorderSize = 0;
             this.btnCancelReceipt_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnCancelReceipt_Buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -409,7 +407,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnSaveReceipt_Buy
             // 
             this.btnSaveReceipt_Buy.BackColor = System.Drawing.Color.White;
-            this.btnSaveReceipt_Buy.FlatAppearance.BorderSize = 0;
             this.btnSaveReceipt_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnSaveReceipt_Buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -423,7 +420,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnAddReceipt_Buy
             // 
             this.btnAddReceipt_Buy.BackColor = System.Drawing.Color.White;
-            this.btnAddReceipt_Buy.FlatAppearance.BorderSize = 0;
             this.btnAddReceipt_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnAddReceipt_Buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -796,7 +792,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnPrintReceipt_Sell
             // 
             this.btnPrintReceipt_Sell.BackColor = System.Drawing.Color.White;
-            this.btnPrintReceipt_Sell.FlatAppearance.BorderSize = 0;
             this.btnPrintReceipt_Sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnPrintReceipt_Sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -810,7 +805,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnCancelReceipt_Sell
             // 
             this.btnCancelReceipt_Sell.BackColor = System.Drawing.Color.White;
-            this.btnCancelReceipt_Sell.FlatAppearance.BorderSize = 0;
             this.btnCancelReceipt_Sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnCancelReceipt_Sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -824,7 +818,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnSaveReceipt_Sell
             // 
             this.btnSaveReceipt_Sell.BackColor = System.Drawing.Color.White;
-            this.btnSaveReceipt_Sell.FlatAppearance.BorderSize = 0;
             this.btnSaveReceipt_Sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnSaveReceipt_Sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -838,7 +831,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnAddReceipt_Sell
             // 
             this.btnAddReceipt_Sell.BackColor = System.Drawing.Color.White;
-            this.btnAddReceipt_Sell.FlatAppearance.BorderSize = 0;
             this.btnAddReceipt_Sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnAddReceipt_Sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1207,7 +1199,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnDelete_Receipt
             // 
             this.btnDelete_Receipt.BackColor = System.Drawing.Color.White;
-            this.btnDelete_Receipt.FlatAppearance.BorderSize = 0;
             this.btnDelete_Receipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnDelete_Receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1221,7 +1212,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1424,7 +1414,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnExport_Customer
             // 
             this.btnExport_Customer.BackColor = System.Drawing.Color.White;
-            this.btnExport_Customer.FlatAppearance.BorderSize = 0;
             this.btnExport_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExport_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnExport_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1438,7 +1427,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnRefresh_Customer
             // 
             this.btnRefresh_Customer.BackColor = System.Drawing.Color.White;
-            this.btnRefresh_Customer.FlatAppearance.BorderSize = 0;
             this.btnRefresh_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnRefresh_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1452,7 +1440,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnDelete_Customer
             // 
             this.btnDelete_Customer.BackColor = System.Drawing.Color.White;
-            this.btnDelete_Customer.FlatAppearance.BorderSize = 0;
             this.btnDelete_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnDelete_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1466,7 +1453,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnFix_Customer
             // 
             this.btnFix_Customer.BackColor = System.Drawing.Color.White;
-            this.btnFix_Customer.FlatAppearance.BorderSize = 0;
             this.btnFix_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFix_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnFix_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1480,7 +1466,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnAdd_Customer
             // 
             this.btnAdd_Customer.BackColor = System.Drawing.Color.White;
-            this.btnAdd_Customer.FlatAppearance.BorderSize = 0;
             this.btnAdd_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnAdd_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1653,7 +1638,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnAdd_supplier
             // 
             this.btnAdd_supplier.BackColor = System.Drawing.Color.White;
-            this.btnAdd_supplier.FlatAppearance.BorderSize = 0;
             this.btnAdd_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnAdd_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1668,7 +1652,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnEdit_supplier
             // 
             this.btnEdit_supplier.BackColor = System.Drawing.Color.White;
-            this.btnEdit_supplier.FlatAppearance.BorderSize = 0;
             this.btnEdit_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnEdit_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1683,7 +1666,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnDelete_supplier
             // 
             this.btnDelete_supplier.BackColor = System.Drawing.Color.White;
-            this.btnDelete_supplier.FlatAppearance.BorderSize = 0;
             this.btnDelete_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnDelete_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1698,7 +1680,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnExport_supplier
             // 
             this.btnExport_supplier.BackColor = System.Drawing.Color.White;
-            this.btnExport_supplier.FlatAppearance.BorderSize = 0;
             this.btnExport_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExport_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnExport_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1713,7 +1694,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnRefresh_supplier
             // 
             this.btnRefresh_supplier.BackColor = System.Drawing.Color.White;
-            this.btnRefresh_supplier.FlatAppearance.BorderSize = 0;
             this.btnRefresh_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnRefresh_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1906,7 +1886,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnAdd_employee
             // 
             this.btnAdd_employee.BackColor = System.Drawing.Color.White;
-            this.btnAdd_employee.FlatAppearance.BorderSize = 0;
             this.btnAdd_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnAdd_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1921,7 +1900,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnEdit_employee
             // 
             this.btnEdit_employee.BackColor = System.Drawing.Color.White;
-            this.btnEdit_employee.FlatAppearance.BorderSize = 0;
             this.btnEdit_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnEdit_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1936,7 +1914,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnCreateAccount_employee
             // 
             this.btnCreateAccount_employee.BackColor = System.Drawing.Color.White;
-            this.btnCreateAccount_employee.FlatAppearance.BorderSize = 0;
             this.btnCreateAccount_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnCreateAccount_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1951,7 +1928,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnRemoveAccount_employee
             // 
             this.btnRemoveAccount_employee.BackColor = System.Drawing.Color.White;
-            this.btnRemoveAccount_employee.FlatAppearance.BorderSize = 0;
             this.btnRemoveAccount_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnRemoveAccount_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1966,7 +1942,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnRemoveEmployee_employee
             // 
             this.btnRemoveEmployee_employee.BackColor = System.Drawing.Color.White;
-            this.btnRemoveEmployee_employee.FlatAppearance.BorderSize = 0;
             this.btnRemoveEmployee_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveEmployee_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnRemoveEmployee_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -1981,7 +1956,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnRefresh_employee
             // 
             this.btnRefresh_employee.BackColor = System.Drawing.Color.White;
-            this.btnRefresh_employee.FlatAppearance.BorderSize = 0;
             this.btnRefresh_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnRefresh_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
@@ -2246,7 +2220,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnCreateAccount_userSetting
             // 
             this.btnCreateAccount_userSetting.BackColor = System.Drawing.Color.White;
-            this.btnCreateAccount_userSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCreateAccount_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateAccount_userSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnCreateAccount_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCreateAccount_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_add;
             this.btnCreateAccount_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2263,8 +2238,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnChangeInformation_userSetting
             // 
             this.btnChangeInformation_userSetting.BackColor = System.Drawing.Color.White;
+            this.btnChangeInformation_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeInformation_userSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnChangeInformation_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnChangeInformation_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_setting;
             this.btnChangeInformation_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChangeInformation_userSetting.Location = new System.Drawing.Point(286, 40);
             this.btnChangeInformation_userSetting.Margin = new System.Windows.Forms.Padding(20);
@@ -2279,7 +2255,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // btnResetPassword_userSetting
             // 
             this.btnResetPassword_userSetting.BackColor = System.Drawing.Color.White;
-            this.btnResetPassword_userSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnResetPassword_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetPassword_userSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnResetPassword_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnResetPassword_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.unlock;
             this.btnResetPassword_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
