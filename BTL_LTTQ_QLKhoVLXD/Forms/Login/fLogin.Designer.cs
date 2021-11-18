@@ -1,6 +1,4 @@
-﻿
-using BTL_LTTQ_QLKhoVLXD.Controls;
-using BTL_LTTQ_QLKhoVLXD.Controls.Button;
+﻿using BTL_LTTQ_QLKhoVLXD.Controls.Button;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
 {

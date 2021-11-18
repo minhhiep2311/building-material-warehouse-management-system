@@ -50,6 +50,9 @@
     <Compile Include="Controls\Button\BmwButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\GroupBox\BmwGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\ListView\BmwListView.cs">
       <SubType>Component</SubType>
     </Compile>

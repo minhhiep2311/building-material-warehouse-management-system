@@ -1,4 +1,5 @@
 ﻿using BTL_LTTQ_QLKhoVLXD.Controls.Button;
+using BTL_LTTQ_QLKhoVLXD.Controls.GroupBox;
 using BTL_LTTQ_QLKhoVLXD.Controls.ListView;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
@@ -31,7 +32,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
         /// </summary>
         private void InitializeComponent()
         {
-            this.grbInfo = new System.Windows.Forms.GroupBox();
+            this.grbInfo = new BmwGroupBox();
             this.pnlPosition = new System.Windows.Forms.Panel();
             this.lblPosition = new System.Windows.Forms.Label();
             this.cboPosition = new System.Windows.Forms.ComboBox();
@@ -48,7 +49,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.grbPhone = new System.Windows.Forms.GroupBox();
+            this.grbPhone = new BmwGroupBox();
             this.btnModifyPhone = new BmwButton();
             this.lvwPhone = new BmwListView();
             this.btnRemovePhone = new BmwButton();
@@ -74,11 +75,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.grbInfo.Controls.Add(this.pnlGender);
             this.grbInfo.Controls.Add(this.panel2);
             this.grbInfo.Controls.Add(this.panel1);
-            this.grbInfo.ForeColor = System.Drawing.Color.White;
             this.grbInfo.Location = new System.Drawing.Point(12, 12);
             this.grbInfo.Name = "grbInfo";
             this.grbInfo.Size = new System.Drawing.Size(505, 213);
-            this.grbInfo.TabIndex = 0;
             this.grbInfo.TabStop = false;
             this.grbInfo.Text = "Thông tin cá nhân";
             // 
@@ -243,11 +242,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.grbPhone.Controls.Add(this.lvwPhone);
             this.grbPhone.Controls.Add(this.btnRemovePhone);
             this.grbPhone.Controls.Add(this.btnAddPhone);
-            this.grbPhone.ForeColor = System.Drawing.Color.White;
             this.grbPhone.Location = new System.Drawing.Point(523, 12);
             this.grbPhone.Name = "grbPhone";
             this.grbPhone.Size = new System.Drawing.Size(505, 114);
-            this.grbPhone.TabIndex = 12;
             this.grbPhone.TabStop = false;
             this.grbPhone.Text = "Số điện thoại";
             // 
@@ -369,7 +366,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grbInfo;
+        private BmwGroupBox grbInfo;
         private System.Windows.Forms.Panel pnlAddress;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lblAddress;
@@ -382,7 +379,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.GroupBox grbPhone;
+        private BmwGroupBox grbPhone;
         private BmwButton btnModifyPhone;
         private BmwListView lvwPhone;
         private BmwButton btnRemovePhone;

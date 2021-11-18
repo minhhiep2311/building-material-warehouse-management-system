@@ -1,6 +1,5 @@
-﻿
-using BTL_LTTQ_QLKhoVLXD.Controls;
-using BTL_LTTQ_QLKhoVLXD.Controls.Button;
+﻿using BTL_LTTQ_QLKhoVLXD.Controls.Button;
+using BTL_LTTQ_QLKhoVLXD.Controls.GroupBox;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
 {
@@ -32,7 +31,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
         /// </summary>
         private void InitializeComponent()
         {
-            this.grbInfo = new System.Windows.Forms.GroupBox();
+            this.grbInfo = new BmwGroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -56,12 +55,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
             this.grbInfo.Controls.Add(this.txtName);
             this.grbInfo.Controls.Add(this.lblName);
             this.grbInfo.Controls.Add(this.lblAddress);
-            this.grbInfo.ForeColor = System.Drawing.Color.White;
             this.grbInfo.Location = new System.Drawing.Point(12, 12);
             this.grbInfo.Name = "grbInfo";
             this.grbInfo.Size = new System.Drawing.Size(465, 189);
             this.grbInfo.TabIndex = 5;
-            this.grbInfo.TabStop = false;
             this.grbInfo.Text = "Thông tin nhà cung cấp";
             // 
             // textBox1
@@ -172,7 +169,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grbInfo;
+        private BmwGroupBox grbInfo;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPhone;

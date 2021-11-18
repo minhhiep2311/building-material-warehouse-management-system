@@ -1,6 +1,5 @@
-﻿
-using BTL_LTTQ_QLKhoVLXD.Controls;
-using BTL_LTTQ_QLKhoVLXD.Controls.Button;
+﻿using BTL_LTTQ_QLKhoVLXD.Controls.Button;
+using BTL_LTTQ_QLKhoVLXD.Controls.GroupBox;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
 {
@@ -33,7 +32,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
         private void InitializeComponent()
         {
             this.lblDob = new System.Windows.Forms.Label();
-            this.grbInfo = new System.Windows.Forms.GroupBox();
+            this.grbInfo = new BmwGroupBox();
             this.cboPosition = new System.Windows.Forms.ComboBox();
             this.lblPosition = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -46,7 +45,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.grbAccount = new System.Windows.Forms.GroupBox();
+            this.grbAccount = new BmwGroupBox();
             this.chkShowPassword = new System.Windows.Forms.CheckBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -82,12 +81,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             this.grbInfo.Controls.Add(this.lblName);
             this.grbInfo.Controls.Add(this.lblDob);
             this.grbInfo.Controls.Add(this.lblAddress);
-            this.grbInfo.ForeColor = System.Drawing.Color.White;
             this.grbInfo.Location = new System.Drawing.Point(12, 12);
             this.grbInfo.Name = "grbInfo";
             this.grbInfo.Size = new System.Drawing.Size(465, 248);
             this.grbInfo.TabIndex = 3;
-            this.grbInfo.TabStop = false;
             this.grbInfo.Text = "Thông tin cá nhân";
             // 
             // cboPosition
@@ -212,12 +209,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
             this.grbAccount.Controls.Add(this.txtUsername);
             this.grbAccount.Controls.Add(this.lblUsername);
             this.grbAccount.Controls.Add(this.lblPassword);
-            this.grbAccount.ForeColor = System.Drawing.Color.White;
             this.grbAccount.Location = new System.Drawing.Point(483, 12);
             this.grbAccount.Name = "grbAccount";
             this.grbAccount.Size = new System.Drawing.Size(465, 129);
             this.grbAccount.TabIndex = 13;
-            this.grbAccount.TabStop = false;
             this.grbAccount.Text = "Tài khoản";
             // 
             // chkShowPassword
@@ -312,7 +307,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
 
         #endregion
         private System.Windows.Forms.Label lblDob;
-        private System.Windows.Forms.GroupBox grbInfo;
+        private BmwGroupBox grbInfo;
         private System.Windows.Forms.DateTimePicker dtpDob;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.RadioButton rdoFemale;
@@ -321,7 +316,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.ComboBox cboPosition;
-        private System.Windows.Forms.GroupBox grbAccount;
+        private BmwGroupBox grbAccount;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;

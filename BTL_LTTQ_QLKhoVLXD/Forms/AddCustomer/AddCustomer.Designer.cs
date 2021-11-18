@@ -1,6 +1,5 @@
-﻿
-using BTL_LTTQ_QLKhoVLXD.Controls;
-using BTL_LTTQ_QLKhoVLXD.Controls.Button;
+﻿using BTL_LTTQ_QLKhoVLXD.Controls.Button;
+using BTL_LTTQ_QLKhoVLXD.Controls.GroupBox;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms
 {
@@ -32,7 +31,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.grbInfo = new System.Windows.Forms.GroupBox();
+            this.grbInfo = new BmwGroupBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -56,12 +55,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms
             this.grbInfo.Controls.Add(this.txtName);
             this.grbInfo.Controls.Add(this.lblName);
             this.grbInfo.Controls.Add(this.lblAddress);
-            this.grbInfo.ForeColor = System.Drawing.Color.White;
             this.grbInfo.Location = new System.Drawing.Point(12, 12);
             this.grbInfo.Name = "grbInfo";
             this.grbInfo.Size = new System.Drawing.Size(465, 189);
             this.grbInfo.TabIndex = 4;
-            this.grbInfo.TabStop = false;
             this.grbInfo.Text = "Thông tin khách hàng";
             // 
             // txtPhone
@@ -171,7 +168,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grbInfo;
+        private BmwGroupBox grbInfo;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.TextBox txtAddress;
