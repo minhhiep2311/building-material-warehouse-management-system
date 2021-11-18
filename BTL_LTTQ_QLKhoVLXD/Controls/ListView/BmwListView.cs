@@ -28,12 +28,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Controls.ListView
 
         #endregion
 
-        #region MyRegion
+        #region Private Properties
 
-        private static readonly Color NormalForeColor = Color.White;
-        private static readonly Color NormalBackColor = Color.FromArgb(48, 128, 189);
-        private static readonly Color SelectedForeColor = Color.Blue;
-        private static readonly Color SelectedBackColor = Color.AliceBlue;
+        internal static readonly Color NormalForeColor = Color.White;
+        internal static readonly Color NormalBackColor = Color.FromArgb(48, 128, 189);
+        internal static readonly Color SelectedForeColor = Color.Blue;
+        internal static readonly Color SelectedBackColor = Color.AliceBlue;
         private static readonly SolidBrush SelectedBackColorBrush = new SolidBrush(SelectedBackColor);
         private static readonly string UpArrow = $"{Resources.Character_ArrowUp}    ";
         private static readonly string DownArrow = $"{Resources.Character_ArrowDown}    ";
@@ -131,22 +131,22 @@ namespace BTL_LTTQ_QLKhoVLXD.Controls.ListView
 
         #region Behaviors
 
-        private void OnItemAdded(ListViewItem item)
+        internal void OnItemAdded(ListViewItem item)
         {
             ItemAdded?.Invoke(this, new BmwListViewItemEventArgs(item));
         }
 
-        private void OnItemRemoved(ListViewItem item)
+        internal void OnItemRemoved(ListViewItem item)
         {
             ItemRemoved?.Invoke(this, new BmwListViewItemEventArgs(item));
         }
 
-        private void OnColumnAdded(int columnIndex)
+        internal void OnColumnAdded(int columnIndex)
         {
             ColumnAdded?.Invoke(this, new BmwListViewColumnEventArgs(columnIndex));
         }
 
-        private void OnColumnRemoved(int columnIndex)
+        internal void OnColumnRemoved(int columnIndex)
         {
             ColumnRemoved?.Invoke(this, new BmwListViewColumnEventArgs(columnIndex));
         }
@@ -187,195 +187,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Controls.ListView
             e.NewWidth = 0;
             e.Cancel = true;
         }
-
-        #endregion
-
-        #region Inner Classes
-
-        #region ListViewItemCollection
-
-        public class BmwListViewItemCollection : ListViewItemCollection
-        {
-            private readonly BmwListView _owner;
-
-            public BmwListViewItemCollection(BmwListView owner) : base(owner)
-            {
-                _owner = owner;
-            }
-
-            public new ListViewItem Add(ListViewItem value)
-            {
-                value.BackColor = NormalBackColor;
-                var item = base.Add(value);
-                _owner.OnItemAdded(item);
-                return item;
-            }
-
-            public new ListViewItem Add(string text, string imageKey)
-            {
-                var value = new ListViewItem(text, imageKey)
-                {
-                    BackColor = NormalBackColor
-                };
-                var item = base.Add(value);
-                _owner.OnItemAdded(item);
-                return item;
-            }
-
-            public new ListViewItem Add(string key, string text, string imageKey)
-            {
-                var value = new ListViewItem(text, imageKey)
-                {
-                    Name = key,
-                    BackColor = NormalBackColor
-                };
-                var item = base.Add(value);
-                _owner.OnItemAdded(item);
-                return item;
-            }
-
-            public new ListViewItem Add(string key, string text, int imageIndex)
-            {
-                var value = new ListViewItem(text, imageIndex)
-                {
-                    Name = key,
-                    BackColor = NormalBackColor
-                };
-                var item = base.Add(value);
-                _owner.OnItemAdded(item);
-                return item;
-            }
-
-            public new void Remove(ListViewItem item)
-            {
-                base.Remove(item);
-                _owner.OnItemRemoved(item);
-            }
-        }
-
-        #endregion
-
-        #region ListViewColumnCollection
-
-        public class BmwListViewColumnCollection : ColumnHeaderCollection
-        {
-            private readonly BmwListView _owner;
-
-            public BmwListViewColumnCollection(BmwListView owner) : base(owner)
-            {
-                _owner = owner;
-            }
-
-            public new ColumnHeader Add(string text, int width, HorizontalAlignment textAlign)
-            {
-                var ch = base.Add(text, width, textAlign);
-                _owner.OnColumnAdded(ch.Index);
-                return ch;
-            }
-
-            public new int Add(ColumnHeader value)
-            {
-                var count = Count;
-                _owner.OnColumnAdded(count);
-                return count;
-            }
-
-            public new ColumnHeader Add(string text)
-            {
-                var ch = base.Add(text);
-                _owner.OnColumnAdded(ch.Index);
-                return ch;
-            }
-
-            public new ColumnHeader Add(string text, int width)
-            {
-                var ch = base.Add(text, width);
-                _owner.OnColumnAdded(ch.Index);
-                return ch;
-            }
-
-            public new ColumnHeader Add(string key, string text)
-            {
-                var ch = base.Add(key, text);
-                _owner.OnColumnAdded(ch.Index);
-                return ch;
-            }
-
-            public new ColumnHeader Add(string key, string text, int width)
-            {
-                var ch = base.Add(key, text, width);
-                _owner.OnColumnAdded(ch.Index);
-                return ch;
-            }
-
-            public new ColumnHeader Add(string key, string text, int width, HorizontalAlignment textAlign, string imageKey)
-            {
-                var ch = base.Add(key, text, width, textAlign, imageKey);
-                _owner.OnColumnAdded(ch.Index);
-                return ch;
-            }
-
-            public new ColumnHeader Add(string key, string text, int width, HorizontalAlignment textAlign, int imageKey)
-            {
-                var ch = base.Add(key, text, width, textAlign, imageKey);
-                _owner.OnColumnAdded(ch.Index);
-                return ch;
-            }
-
-            public new void Remove(ColumnHeader column)
-            {
-                var index = column.Index;
-                base.Remove(column);
-                _owner.OnColumnRemoved(index);
-            }
-
-            public new void Clear()
-            {
-                base.Clear();
-            }
-        }
-
-        #endregion
-
-        #region ListViewItemEventArgs
-
-        public class BmwListViewItemEventArgs : EventArgs
-        {
-            public ListViewItem Item { get; set; }
-            public ListViewItem[] Items { get; set; }
-
-            public BmwListViewItemEventArgs(ListViewItem item)
-            {
-                Item = item;
-            }
-
-            public BmwListViewItemEventArgs(ListViewItem[] items)
-            {
-                Items = items;
-            }
-        }
-
-        #endregion
-
-        #region ListViewItemEventArgs
-
-        public class BmwListViewColumnEventArgs : EventArgs
-        {
-            public int ColumnIndex { get; set; }
-            public int[] ColumnIndexes { get; set; }
-
-            public BmwListViewColumnEventArgs(int columnIndex)
-            {
-                ColumnIndex = columnIndex;
-            }
-
-            public BmwListViewColumnEventArgs(int[] columnIndexes)
-            {
-                ColumnIndexes = columnIndexes;
-            }
-        }
-
-        #endregion
 
         #endregion
     }

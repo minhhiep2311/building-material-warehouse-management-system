@@ -56,6 +56,10 @@
     <Compile Include="Controls\ListView\BmwListView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\ListView\BmwListViewColumnCollection.cs" />
+    <Compile Include="Controls\ListView\BmwListViewColumnEventArgs.cs" />
+    <Compile Include="Controls\ListView\BmwListViewItemCollection.cs" />
+    <Compile Include="Controls\ListView\BmwListViewItemEventArgs.cs" />
     <Compile Include="Forms\AddCustomer\AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
