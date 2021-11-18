@@ -280,7 +280,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.lblPosition.AutoSize = true;
             this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.lblPosition.Location = new System.Drawing.Point(423, 20);
             this.lblPosition.Name = "lblPosition";
             this.lblPosition.Size = new System.Drawing.Size(71, 17);
@@ -291,7 +290,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.lblUser.Location = new System.Drawing.Point(12, 20);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(96, 17);
@@ -379,55 +377,35 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // btnPrintReceipt_Buy
             // 
-            this.btnPrintReceipt_Buy.BackColor = System.Drawing.Color.White;
-            this.btnPrintReceipt_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnPrintReceipt_Buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnPrintReceipt_Buy.Location = new System.Drawing.Point(740, 315);
             this.btnPrintReceipt_Buy.Name = "btnPrintReceipt_Buy";
             this.btnPrintReceipt_Buy.Size = new System.Drawing.Size(171, 28);
             this.btnPrintReceipt_Buy.TabIndex = 17;
             this.btnPrintReceipt_Buy.Text = "In hóa đơn";
-            this.btnPrintReceipt_Buy.UseVisualStyleBackColor = false;
             // 
             // btnCancelReceipt_Buy
             // 
-            this.btnCancelReceipt_Buy.BackColor = System.Drawing.Color.White;
-            this.btnCancelReceipt_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnCancelReceipt_Buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCancelReceipt_Buy.Location = new System.Drawing.Point(530, 315);
             this.btnCancelReceipt_Buy.Name = "btnCancelReceipt_Buy";
             this.btnCancelReceipt_Buy.Size = new System.Drawing.Size(172, 28);
             this.btnCancelReceipt_Buy.TabIndex = 16;
             this.btnCancelReceipt_Buy.Text = "Hủy hóa đơn";
-            this.btnCancelReceipt_Buy.UseVisualStyleBackColor = false;
             // 
             // btnSaveReceipt_Buy
             // 
-            this.btnSaveReceipt_Buy.BackColor = System.Drawing.Color.White;
-            this.btnSaveReceipt_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSaveReceipt_Buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnSaveReceipt_Buy.Location = new System.Drawing.Point(315, 315);
             this.btnSaveReceipt_Buy.Name = "btnSaveReceipt_Buy";
             this.btnSaveReceipt_Buy.Size = new System.Drawing.Size(172, 28);
             this.btnSaveReceipt_Buy.TabIndex = 15;
             this.btnSaveReceipt_Buy.Text = "Lưu";
-            this.btnSaveReceipt_Buy.UseVisualStyleBackColor = false;
             // 
             // btnAddReceipt_Buy
             // 
-            this.btnAddReceipt_Buy.BackColor = System.Drawing.Color.White;
-            this.btnAddReceipt_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAddReceipt_Buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnAddReceipt_Buy.Location = new System.Drawing.Point(96, 315);
             this.btnAddReceipt_Buy.Name = "btnAddReceipt_Buy";
             this.btnAddReceipt_Buy.Size = new System.Drawing.Size(172, 28);
             this.btnAddReceipt_Buy.TabIndex = 14;
             this.btnAddReceipt_Buy.Text = "Thêm hóa đơn";
-            this.btnAddReceipt_Buy.UseVisualStyleBackColor = false;
             // 
             // txtTotalMoney_Buy
             // 
@@ -790,55 +768,35 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // btnPrintReceipt_Sell
             // 
-            this.btnPrintReceipt_Sell.BackColor = System.Drawing.Color.White;
-            this.btnPrintReceipt_Sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnPrintReceipt_Sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnPrintReceipt_Sell.Location = new System.Drawing.Point(741, 315);
             this.btnPrintReceipt_Sell.Name = "btnPrintReceipt_Sell";
             this.btnPrintReceipt_Sell.Size = new System.Drawing.Size(172, 28);
             this.btnPrintReceipt_Sell.TabIndex = 17;
             this.btnPrintReceipt_Sell.Text = "In hóa đơn";
-            this.btnPrintReceipt_Sell.UseVisualStyleBackColor = false;
             // 
             // btnCancelReceipt_Sell
             // 
-            this.btnCancelReceipt_Sell.BackColor = System.Drawing.Color.White;
-            this.btnCancelReceipt_Sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnCancelReceipt_Sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCancelReceipt_Sell.Location = new System.Drawing.Point(531, 315);
             this.btnCancelReceipt_Sell.Name = "btnCancelReceipt_Sell";
             this.btnCancelReceipt_Sell.Size = new System.Drawing.Size(172, 28);
             this.btnCancelReceipt_Sell.TabIndex = 16;
             this.btnCancelReceipt_Sell.Text = "Hủy hóa đơn";
-            this.btnCancelReceipt_Sell.UseVisualStyleBackColor = false;
             // 
             // btnSaveReceipt_Sell
             // 
-            this.btnSaveReceipt_Sell.BackColor = System.Drawing.Color.White;
-            this.btnSaveReceipt_Sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSaveReceipt_Sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnSaveReceipt_Sell.Location = new System.Drawing.Point(315, 315);
             this.btnSaveReceipt_Sell.Name = "btnSaveReceipt_Sell";
             this.btnSaveReceipt_Sell.Size = new System.Drawing.Size(172, 28);
             this.btnSaveReceipt_Sell.TabIndex = 15;
             this.btnSaveReceipt_Sell.Text = "Lưu";
-            this.btnSaveReceipt_Sell.UseVisualStyleBackColor = false;
             // 
             // btnAddReceipt_Sell
             // 
-            this.btnAddReceipt_Sell.BackColor = System.Drawing.Color.White;
-            this.btnAddReceipt_Sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAddReceipt_Sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnAddReceipt_Sell.Location = new System.Drawing.Point(96, 315);
             this.btnAddReceipt_Sell.Name = "btnAddReceipt_Sell";
             this.btnAddReceipt_Sell.Size = new System.Drawing.Size(172, 28);
             this.btnAddReceipt_Sell.TabIndex = 14;
             this.btnAddReceipt_Sell.Text = "Thêm hóa đơn";
-            this.btnAddReceipt_Sell.UseVisualStyleBackColor = false;
             // 
             // txtTotalMoney_Sell
             // 
@@ -1197,43 +1155,27 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // btnDelete_Receipt
             // 
-            this.btnDelete_Receipt.BackColor = System.Drawing.Color.White;
-            this.btnDelete_Receipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnDelete_Receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnDelete_Receipt.Location = new System.Drawing.Point(149, 298);
             this.btnDelete_Receipt.Name = "btnDelete_Receipt";
             this.btnDelete_Receipt.Size = new System.Drawing.Size(128, 36);
             this.btnDelete_Receipt.TabIndex = 5;
             this.btnDelete_Receipt.Text = "Xóa";
-            this.btnDelete_Receipt.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.button1.Location = new System.Drawing.Point(283, 298);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 36);
             this.button1.TabIndex = 6;
             this.button1.Text = "Xuất file";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.button2.Location = new System.Drawing.Point(10, 298);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(128, 36);
             this.button2.TabIndex = 4;
             this.button2.Text = "Tìm kiếm";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // grbInfor_Receipt
             // 
@@ -1412,68 +1354,43 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // btnExport_Customer
             // 
-            this.btnExport_Customer.BackColor = System.Drawing.Color.White;
-            this.btnExport_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExport_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnExport_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnExport_Customer.Location = new System.Drawing.Point(227, 352);
             this.btnExport_Customer.Name = "btnExport_Customer";
             this.btnExport_Customer.Size = new System.Drawing.Size(185, 63);
             this.btnExport_Customer.TabIndex = 5;
             this.btnExport_Customer.Text = "Xuất file danh sách NCC";
-            this.btnExport_Customer.UseVisualStyleBackColor = false;
             // 
             // btnRefresh_Customer
             // 
-            this.btnRefresh_Customer.BackColor = System.Drawing.Color.White;
-            this.btnRefresh_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnRefresh_Customer.Location = new System.Drawing.Point(19, 421);
             this.btnRefresh_Customer.Name = "btnRefresh_Customer";
             this.btnRefresh_Customer.Size = new System.Drawing.Size(185, 63);
             this.btnRefresh_Customer.TabIndex = 4;
             this.btnRefresh_Customer.Text = "Làm mới";
-            this.btnRefresh_Customer.UseVisualStyleBackColor = false;
             // 
             // btnDelete_Customer
             // 
-            this.btnDelete_Customer.BackColor = System.Drawing.Color.White;
-            this.btnDelete_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnDelete_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnDelete_Customer.Location = new System.Drawing.Point(19, 352);
             this.btnDelete_Customer.Name = "btnDelete_Customer";
             this.btnDelete_Customer.Size = new System.Drawing.Size(185, 63);
             this.btnDelete_Customer.TabIndex = 3;
             this.btnDelete_Customer.Text = "Xóa KH";
-            this.btnDelete_Customer.UseVisualStyleBackColor = false;
             // 
             // btnFix_Customer
             // 
-            this.btnFix_Customer.BackColor = System.Drawing.Color.White;
-            this.btnFix_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFix_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnFix_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnFix_Customer.Location = new System.Drawing.Point(227, 283);
             this.btnFix_Customer.Name = "btnFix_Customer";
             this.btnFix_Customer.Size = new System.Drawing.Size(185, 63);
             this.btnFix_Customer.TabIndex = 2;
             this.btnFix_Customer.Text = "Chỉnh sửa thông tin";
-            this.btnFix_Customer.UseVisualStyleBackColor = false;
             // 
             // btnAdd_Customer
             // 
-            this.btnAdd_Customer.BackColor = System.Drawing.Color.White;
-            this.btnAdd_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAdd_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnAdd_Customer.Location = new System.Drawing.Point(19, 283);
             this.btnAdd_Customer.Name = "btnAdd_Customer";
             this.btnAdd_Customer.Size = new System.Drawing.Size(185, 63);
             this.btnAdd_Customer.TabIndex = 1;
             this.btnAdd_Customer.Text = "Thêm KH";
-            this.btnAdd_Customer.UseVisualStyleBackColor = false;
             // 
             // grbInfor_Customer
             // 
@@ -1627,72 +1544,47 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // btnAdd_supplier
             // 
-            this.btnAdd_supplier.BackColor = System.Drawing.Color.White;
-            this.btnAdd_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAdd_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnAdd_supplier.Location = new System.Drawing.Point(8, 8);
             this.btnAdd_supplier.Name = "btnAdd_supplier";
             this.btnAdd_supplier.Size = new System.Drawing.Size(185, 63);
             this.btnAdd_supplier.TabIndex = 1;
             this.btnAdd_supplier.Text = "Thêm NCC";
-            this.btnAdd_supplier.UseVisualStyleBackColor = false;
             this.btnAdd_supplier.Click += new System.EventHandler(this.btnAdd_supplier_Click);
             // 
             // btnEdit_supplier
             // 
-            this.btnEdit_supplier.BackColor = System.Drawing.Color.White;
-            this.btnEdit_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnEdit_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnEdit_supplier.Location = new System.Drawing.Point(199, 8);
             this.btnEdit_supplier.Name = "btnEdit_supplier";
             this.btnEdit_supplier.Size = new System.Drawing.Size(185, 63);
             this.btnEdit_supplier.TabIndex = 2;
             this.btnEdit_supplier.Text = "Chỉnh sửa thông tin";
-            this.btnEdit_supplier.UseVisualStyleBackColor = false;
             this.btnEdit_supplier.Click += new System.EventHandler(this.btnEdit_supplier_Click);
             // 
             // btnDelete_supplier
             // 
-            this.btnDelete_supplier.BackColor = System.Drawing.Color.White;
-            this.btnDelete_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnDelete_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnDelete_supplier.Location = new System.Drawing.Point(8, 77);
             this.btnDelete_supplier.Name = "btnDelete_supplier";
             this.btnDelete_supplier.Size = new System.Drawing.Size(185, 63);
             this.btnDelete_supplier.TabIndex = 3;
             this.btnDelete_supplier.Text = "Xóa NCC";
-            this.btnDelete_supplier.UseVisualStyleBackColor = false;
             this.btnDelete_supplier.Click += new System.EventHandler(this.btnDelete_supplier_Click);
             // 
             // btnExport_supplier
             // 
-            this.btnExport_supplier.BackColor = System.Drawing.Color.White;
-            this.btnExport_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExport_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnExport_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnExport_supplier.Location = new System.Drawing.Point(199, 77);
             this.btnExport_supplier.Name = "btnExport_supplier";
             this.btnExport_supplier.Size = new System.Drawing.Size(185, 63);
             this.btnExport_supplier.TabIndex = 5;
             this.btnExport_supplier.Text = "Xuất file danh sách NCC";
-            this.btnExport_supplier.UseVisualStyleBackColor = false;
             this.btnExport_supplier.Click += new System.EventHandler(this.btnExport_supplier_Click);
             // 
             // btnRefresh_supplier
             // 
-            this.btnRefresh_supplier.BackColor = System.Drawing.Color.White;
-            this.btnRefresh_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnRefresh_supplier.Location = new System.Drawing.Point(8, 146);
             this.btnRefresh_supplier.Name = "btnRefresh_supplier";
             this.btnRefresh_supplier.Size = new System.Drawing.Size(185, 63);
             this.btnRefresh_supplier.TabIndex = 6;
             this.btnRefresh_supplier.Text = "Làm mới";
-            this.btnRefresh_supplier.UseVisualStyleBackColor = false;
             this.btnRefresh_supplier.Click += new System.EventHandler(this.btnRefresh_supplier_Click);
             // 
             // pnlSearch_supplier
@@ -1866,86 +1758,56 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // btnAdd_employee
             // 
-            this.btnAdd_employee.BackColor = System.Drawing.Color.White;
-            this.btnAdd_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAdd_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnAdd_employee.Location = new System.Drawing.Point(8, 8);
             this.btnAdd_employee.Name = "btnAdd_employee";
             this.btnAdd_employee.Size = new System.Drawing.Size(185, 70);
             this.btnAdd_employee.TabIndex = 0;
             this.btnAdd_employee.Text = "Thêm nhân viên";
-            this.btnAdd_employee.UseVisualStyleBackColor = false;
             this.btnAdd_employee.Click += new System.EventHandler(this.btnAdd_employee_Click);
             // 
             // btnEdit_employee
             // 
-            this.btnEdit_employee.BackColor = System.Drawing.Color.White;
-            this.btnEdit_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnEdit_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnEdit_employee.Location = new System.Drawing.Point(199, 8);
             this.btnEdit_employee.Name = "btnEdit_employee";
             this.btnEdit_employee.Size = new System.Drawing.Size(185, 70);
             this.btnEdit_employee.TabIndex = 2;
             this.btnEdit_employee.Text = "Chỉnh sửa \n thông tin";
-            this.btnEdit_employee.UseVisualStyleBackColor = false;
             this.btnEdit_employee.Click += new System.EventHandler(this.btnEdit_employee_Click);
             // 
             // btnCreateAccount_employee
             // 
-            this.btnCreateAccount_employee.BackColor = System.Drawing.Color.White;
-            this.btnCreateAccount_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnCreateAccount_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCreateAccount_employee.Location = new System.Drawing.Point(8, 84);
             this.btnCreateAccount_employee.Name = "btnCreateAccount_employee";
             this.btnCreateAccount_employee.Size = new System.Drawing.Size(185, 70);
             this.btnCreateAccount_employee.TabIndex = 4;
             this.btnCreateAccount_employee.Text = "Tạo tài khoản";
-            this.btnCreateAccount_employee.UseVisualStyleBackColor = false;
             this.btnCreateAccount_employee.Click += new System.EventHandler(this.btnCreateAccount_employee_Click);
             // 
             // btnRemoveAccount_employee
             // 
-            this.btnRemoveAccount_employee.BackColor = System.Drawing.Color.White;
-            this.btnRemoveAccount_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnRemoveAccount_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnRemoveAccount_employee.Location = new System.Drawing.Point(199, 84);
             this.btnRemoveAccount_employee.Name = "btnRemoveAccount_employee";
             this.btnRemoveAccount_employee.Size = new System.Drawing.Size(185, 70);
             this.btnRemoveAccount_employee.TabIndex = 3;
             this.btnRemoveAccount_employee.Text = "Xóa tài khoản";
-            this.btnRemoveAccount_employee.UseVisualStyleBackColor = false;
             this.btnRemoveAccount_employee.Click += new System.EventHandler(this.btnRemoveAccount_employee_Click);
             // 
             // btnRemoveEmployee_employee
             // 
-            this.btnRemoveEmployee_employee.BackColor = System.Drawing.Color.White;
-            this.btnRemoveEmployee_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveEmployee_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnRemoveEmployee_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnRemoveEmployee_employee.Location = new System.Drawing.Point(8, 160);
             this.btnRemoveEmployee_employee.Name = "btnRemoveEmployee_employee";
             this.btnRemoveEmployee_employee.Size = new System.Drawing.Size(185, 70);
             this.btnRemoveEmployee_employee.TabIndex = 1;
             this.btnRemoveEmployee_employee.Text = "Xóa nhân viên";
-            this.btnRemoveEmployee_employee.UseVisualStyleBackColor = false;
             this.btnRemoveEmployee_employee.Click += new System.EventHandler(this.btnRemoveEmployee_employee_Click);
             // 
             // btnRefresh_employee
             // 
-            this.btnRefresh_employee.BackColor = System.Drawing.Color.White;
-            this.btnRefresh_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnRefresh_employee.Location = new System.Drawing.Point(199, 160);
             this.btnRefresh_employee.Name = "btnRefresh_employee";
             this.btnRefresh_employee.Size = new System.Drawing.Size(185, 70);
             this.btnRefresh_employee.TabIndex = 5;
             this.btnRefresh_employee.Text = "Làm mới";
-            this.btnRefresh_employee.UseVisualStyleBackColor = false;
             this.btnRefresh_employee.Click += new System.EventHandler(this.btnRefresh_employee_Click);
             // 
             // pnlSearch_employe
@@ -2200,10 +2062,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // btnCreateAccount_userSetting
             // 
-            this.btnCreateAccount_userSetting.BackColor = System.Drawing.Color.White;
-            this.btnCreateAccount_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateAccount_userSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnCreateAccount_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCreateAccount_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_add;
             this.btnCreateAccount_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCreateAccount_userSetting.Location = new System.Drawing.Point(40, 40);
@@ -2213,15 +2071,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCreateAccount_userSetting.TabIndex = 0;
             this.btnCreateAccount_userSetting.Text = "Tạo tài khoản";
             this.btnCreateAccount_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCreateAccount_userSetting.UseVisualStyleBackColor = false;
             this.btnCreateAccount_userSetting.Click += new System.EventHandler(this.btnCreateAccount_userSetting_Click);
             // 
             // btnChangeInformation_userSetting
             // 
-            this.btnChangeInformation_userSetting.BackColor = System.Drawing.Color.White;
-            this.btnChangeInformation_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeInformation_userSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnChangeInformation_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnChangeInformation_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChangeInformation_userSetting.Location = new System.Drawing.Point(286, 40);
             this.btnChangeInformation_userSetting.Margin = new System.Windows.Forms.Padding(20);
@@ -2230,15 +2083,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnChangeInformation_userSetting.TabIndex = 1;
             this.btnChangeInformation_userSetting.Text = "Thay đổi thông tin cá nhân";
             this.btnChangeInformation_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChangeInformation_userSetting.UseVisualStyleBackColor = false;
             this.btnChangeInformation_userSetting.Click += new System.EventHandler(this.btnChangeInformation_userSetting_Click);
             // 
             // btnResetPassword_userSetting
             // 
-            this.btnResetPassword_userSetting.BackColor = System.Drawing.Color.White;
-            this.btnResetPassword_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetPassword_userSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnResetPassword_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnResetPassword_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.unlock;
             this.btnResetPassword_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnResetPassword_userSetting.Location = new System.Drawing.Point(532, 40);
@@ -2248,7 +2096,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnResetPassword_userSetting.TabIndex = 2;
             this.btnResetPassword_userSetting.Text = "Đặt lại mật khẩu";
             this.btnResetPassword_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnResetPassword_userSetting.UseVisualStyleBackColor = false;
             this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
             // 
             // cms_employee

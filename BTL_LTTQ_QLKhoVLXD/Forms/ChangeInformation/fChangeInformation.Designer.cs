@@ -1,6 +1,7 @@
 ﻿
 using BTL_LTTQ_QLKhoVLXD.Controls;
 using BTL_LTTQ_QLKhoVLXD.Controls.Button;
+using BTL_LTTQ_QLKhoVLXD.Controls.ListView;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
 {
@@ -50,7 +51,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             this.lblName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnModifyPhone = new BmwButton();
-            this.lvwPhone = new System.Windows.Forms.ListView();
+            this.lvwPhone = new BmwListView();
             this.btnRemovePhone = new BmwButton();
             this.btnAddPhone = new BmwButton();
             this.pnlButton = new System.Windows.Forms.Panel();
@@ -66,26 +67,20 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(193, 10);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(129, 38);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Lưu thay đổi";
-            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(368, 10);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(129, 38);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Hủy bỏ";
-            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // grbInfo
@@ -242,53 +237,41 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             // 
             // btnModifyPhone
             // 
-            this.btnModifyPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnModifyPhone.Location = new System.Drawing.Point(351, 53);
             this.btnModifyPhone.Name = "btnModifyPhone";
             this.btnModifyPhone.Size = new System.Drawing.Size(145, 26);
             this.btnModifyPhone.TabIndex = 14;
             this.btnModifyPhone.Text = "Chỉnh sửa";
-            this.btnModifyPhone.UseVisualStyleBackColor = false;
             this.btnModifyPhone.Click += new System.EventHandler(this.btnModifyPhone_Click);
             // 
             // lvwPhone
             // 
-            this.lvwPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.lvwPhone.FullRowSelect = true;
-            this.lvwPhone.GridLines = true;
             this.lvwPhone.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvwPhone.HideSelection = false;
             this.lvwPhone.LabelEdit = true;
             this.lvwPhone.Location = new System.Drawing.Point(6, 21);
             this.lvwPhone.Name = "lvwPhone";
             this.lvwPhone.Size = new System.Drawing.Size(339, 88);
             this.lvwPhone.TabIndex = 12;
-            this.lvwPhone.UseCompatibleStateImageBehavior = false;
-            this.lvwPhone.View = System.Windows.Forms.View.Details;
             this.lvwPhone.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.lvwPhone_AfterLabelEdit);
             this.lvwPhone.BeforeLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.lvwPhone_BeforeLabelEdit);
             this.lvwPhone.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwPhone_MouseDoubleClick);
             // 
             // btnRemovePhone
             // 
-            this.btnRemovePhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnRemovePhone.Location = new System.Drawing.Point(351, 83);
             this.btnRemovePhone.Name = "btnRemovePhone";
             this.btnRemovePhone.Size = new System.Drawing.Size(145, 26);
             this.btnRemovePhone.TabIndex = 13;
             this.btnRemovePhone.Text = "Xóa";
-            this.btnRemovePhone.UseVisualStyleBackColor = false;
             this.btnRemovePhone.Click += new System.EventHandler(this.btnRemovePhone_Click);
             // 
             // btnAddPhone
             // 
-            this.btnAddPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnAddPhone.Location = new System.Drawing.Point(351, 21);
             this.btnAddPhone.Name = "btnAddPhone";
             this.btnAddPhone.Size = new System.Drawing.Size(145, 26);
             this.btnAddPhone.TabIndex = 5;
             this.btnAddPhone.Text = "Thêm";
-            this.btnAddPhone.UseVisualStyleBackColor = false;
             this.btnAddPhone.Click += new System.EventHandler(this.btnAddPhone_Click);
             // 
             // pnlButton
@@ -303,14 +286,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnChangePassword.ForeColor = System.Drawing.Color.White;
             this.btnChangePassword.Location = new System.Drawing.Point(19, 10);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(129, 38);
             this.btnChangePassword.TabIndex = 8;
             this.btnChangePassword.Text = "Đổi mật khẩu";
-            this.btnChangePassword.UseVisualStyleBackColor = false;
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // fChangeInformation
@@ -361,7 +341,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView lvwPhone;
+        private BmwListView lvwPhone;
         private BmwButton btnRemovePhone;
         private BmwButton btnAddPhone;
         private System.Windows.Forms.Panel pnlButton;

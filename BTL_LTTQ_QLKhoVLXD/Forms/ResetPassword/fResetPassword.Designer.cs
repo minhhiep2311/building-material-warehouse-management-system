@@ -127,24 +127,20 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCancel.Location = new System.Drawing.Point(230, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(116, 34);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnSave.Location = new System.Drawing.Point(63, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(116, 34);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Lưu thay đổi";
-            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // fResetPassword

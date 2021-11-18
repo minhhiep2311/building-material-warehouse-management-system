@@ -1,6 +1,4 @@
-﻿
-using BTL_LTTQ_QLKhoVLXD.Controls;
-using BTL_LTTQ_QLKhoVLXD.Controls.Button;
+﻿using BTL_LTTQ_QLKhoVLXD.Controls.Button;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
 {
@@ -146,24 +144,20 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount
             // 
             // btnCreate
             // 
-            this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCreate.Location = new System.Drawing.Point(93, 184);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(129, 39);
             this.btnCreate.TabIndex = 2;
             this.btnCreate.Text = "Tạo tài khoản";
-            this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCancel.Location = new System.Drawing.Point(263, 184);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(129, 39);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // fCreateAccount

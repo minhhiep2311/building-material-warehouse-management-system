@@ -120,31 +120,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms
             // 
             // btnCreate
             // 
-            this.btnCreate.BackColor = System.Drawing.Color.White;
-            this.btnCreate.FlatAppearance.BorderSize = 0;
-            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCreate.Location = new System.Drawing.Point(53, 207);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(129, 59);
             this.btnCreate.TabIndex = 15;
             this.btnCreate.Text = "Thêm khách hàng";
-            this.btnCreate.UseVisualStyleBackColor = false;
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCancel.Location = new System.Drawing.Point(309, 207);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(129, 59);
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Hủy bỏ";
-            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
