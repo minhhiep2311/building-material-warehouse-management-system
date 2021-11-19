@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee;
@@ -62,32 +61,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             }));
         }
 
-        private void tctlControl_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            // No draw selected border
-            var selected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
-            e = new DrawItemEventArgs(
-                e.Graphics,
-                e.Font,
-                e.Bounds,
-                e.Index,
-                e.State ^ DrawItemState.Selected,
-                e.ForeColor,
-                selected ? Color.White : Color.FromArgb(48, 128, 189));
-
-
-            e.DrawBackground();
-
-            // Draw Text
-            var g = e.Graphics;
-            var text = tctlControl.TabPages[e.Index].Text;
-            var textSize = g.MeasureString(text, tctlControl.Font);
-
-            var x = e.Bounds.Left + 10;
-            var y = e.Bounds.Top + (e.Bounds.Height - textSize.Height) / 2;
-
-            g.DrawString(text, tctlControl.Font, selected ? Brushes.Navy : Brushes.White, x, y);
-        }
         private void fTaskManager_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = MessageBox.Show(
@@ -183,7 +156,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void tpgSupplier_Enter(object sender, EventArgs e)
         {
-            Reset_Supplier();
+            ResetButtons_Supplier();
             _debounce_supplier?.Continue();
         }
 
@@ -309,14 +282,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             );
         }
 
-        private void Reset_Supplier()
-        {
-            txtName_supplier.Text = string.Empty;
-            txtPhone_supplier.Text = string.Empty;
-            txtAddress_supplier.Text = string.Empty;
-            ResetButtons_Supplier();
-        }
-
         private void ResetButtons_Supplier()
         {
             btnEdit_supplier.Enabled = false;
@@ -428,7 +393,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void tpgEmployee_Enter(object sender, EventArgs e)
         {
-            Reset_Employee();
+            ResetButtons_Employee();
             _debounce_employee?.Continue();
         }
 
@@ -678,16 +643,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             flpPosition_employee.Height = maxBottom + 5;
             pnlPosition_employee.Height = flpPosition_employee.Bottom;
             grbSearch_employee.Height = pnlPosition_employee.Bottom + 5;
-        }
-
-        private void Reset_Employee()
-        {
-            txtName_employee.Text = string.Empty;
-            txtAddress_employee.Text = string.Empty;
-            txtPhone_employee.Text = string.Empty;
-            rdoAll_employee.Checked = true;
-            Helper.ControlFilter.GetCheckBoxes(flpPosition_employee).ForEach(x => x.Checked = true);
-            ResetButtons_Employee();
         }
 
         private void ResetButtons_Employee()

@@ -1,6 +1,7 @@
 ﻿using BTL_LTTQ_QLKhoVLXD.Controls.Button;
 using BTL_LTTQ_QLKhoVLXD.Controls.GroupBox;
 using BTL_LTTQ_QLKhoVLXD.Controls.ListView;
+using BTL_LTTQ_QLKhoVLXD.Controls.TabControl;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
@@ -36,7 +37,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
-            this.tctlControl = new System.Windows.Forms.TabControl();
+            this.tctlControl = new BmwTabControl();
             this.tpgBuy = new System.Windows.Forms.TabPage();
             this.grbItemInfor_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
             this.lsvBuy_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
@@ -299,7 +300,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // tctlControl
             // 
-            this.tctlControl.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.tctlControl.Controls.Add(this.tpgBuy);
             this.tctlControl.Controls.Add(this.tpgSell);
             this.tctlControl.Controls.Add(this.tpgReceipt);
@@ -310,19 +310,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tctlControl.Controls.Add(this.tpgEmployee);
             this.tctlControl.Controls.Add(this.tpgUserSetting);
             this.tctlControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tctlControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tctlControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.tctlControl.ItemSize = new System.Drawing.Size(55, 170);
             this.tctlControl.Location = new System.Drawing.Point(0, 0);
             this.tctlControl.Margin = new System.Windows.Forms.Padding(0);
-            this.tctlControl.Multiline = true;
             this.tctlControl.Name = "tctlControl";
             this.tctlControl.Padding = new System.Drawing.Point(0, 0);
-            this.tctlControl.SelectedIndex = 0;
             this.tctlControl.Size = new System.Drawing.Size(1279, 607);
-            this.tctlControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tctlControl.TabIndex = 0;
-            this.tctlControl.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tctlControl_DrawItem);
             // 
             // tpgBuy
             // 
@@ -2226,7 +2220,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblPosition;
         private System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.TabControl tctlControl;
+        private BmwTabControl tctlControl;
         private System.Windows.Forms.TabPage tpgBuy;
         private System.Windows.Forms.TabPage tpgSell;
         private System.Windows.Forms.TabPage tpgReceipt;
