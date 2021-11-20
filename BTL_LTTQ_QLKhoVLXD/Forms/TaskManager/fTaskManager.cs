@@ -59,6 +59,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 Init_Employee();
                 LoadData_Employee();
             }));
+
+            Invoke((MethodInvoker) (() =>
+            {
+                Init_Customer();
+                
+            }));
         }
 
         private void fTaskManager_FormClosing(object sender, FormClosingEventArgs e)
@@ -74,7 +80,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void fTaskManager_FormClosed(object sender, FormClosedEventArgs e)
         {
             _debounce_employee.Dispose();
-            _debounce_supplier.Dispose();
+            _debounce_Customer.Dispose();
         }
 
         #endregion
@@ -148,9 +154,27 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #region Customer Properties
 
+        private Helper.Debounce _debounce_customer;
+        private List<Customer> _customerList_customer;
+
         #endregion
 
         #region Customer Events
+
+        private void txtName_customer_TextChanged(object sender, EventArgs e)
+        {
+            _debounce_customer.HandleUpdate();
+        }
+
+        private void txtAddress_customer_TextChanged(object sender, EventArgs e)
+        {
+            _debounce_customer.HandleUpdate();
+        }
+
+        private void txtPhone_customer_TextChanged(object sender, EventArgs e)
+        {
+            _debounce_customer.HandleUpdate();
+        }
 
         private void btnAdd_Customer_Click(object sender, EventArgs e)
         {
@@ -181,6 +205,52 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #region Customer Behaviors
 
+        private void Init_Customer()
+        {
+            _debounce_customer = new Helper.Debounce(Search_Customer);
+
+            lvwCustomer_customer.Columns.Add("ID", 0);
+            lvwCustomer_customer.Columns.Add("Tên khách hàng", 300, HorizontalAlignment.Left);
+            lvwCustomer_customer.Columns.Add("Địa chỉ", 150, HorizontalAlignment.Left);
+        }
+
+        public void LoadData_Customer(List<Customer> cache = null)
+        {
+            lvwCustomer_customer.Items.Clear();
+
+            if (cache == null)
+            {
+                _customerList_customer = CustomerService.GetAllCustomers();
+                cache = _customerList_customer;
+            }
+
+            cache.ForEach(supplier =>
+                {
+                    var row = new ListViewItem(supplier.Id.ToString());
+                    row.SubItems.Add(supplier.Name);
+                    row.SubItems.Add(supplier.Address);
+                    lvwCustomer_customer.Items.Add(row);
+                }
+            );
+        }
+
+        private void Search_Customer()
+        {
+            var name = txtName_customer.Text;
+            var address = txtAddress_customer.Text;
+            var phone = txtPhone_customer.Text;
+
+            var customers = _customerList_customer.FindAll(x =>
+            {
+                var matchName = Helper.Matcher.Match(x.Name, name);
+                var matchAddress = Helper.Matcher.Match(x.Address, address);
+                var matchPhone = Helper.Matcher.Match(x.PhoneNumber, phone);
+
+                return matchName && matchAddress && matchPhone;
+            });
+
+            LoadData_Customer(customers);
+        }
 
 
         #endregion
@@ -191,7 +261,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #region Supplier Properties
 
-        private Helper.Debounce _debounce_supplier;
+        private Helper.Debounce _debounce_Customer;
         private List<Supplier> _supplierList_supplier;
 
         #endregion
@@ -201,12 +271,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void tpgSupplier_Enter(object sender, EventArgs e)
         {
             ResetButtons_Supplier();
-            _debounce_supplier?.Continue();
+            _debounce_Customer?.Continue();
         }
 
         private void tpgSupplier_Leave(object sender, EventArgs e)
         {
-            _debounce_supplier.Pause();
+            _debounce_Customer.Pause();
         }
 
         private void lvwSupplier_supplier_MouseClick(object sender, MouseEventArgs e)
@@ -253,17 +323,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void txtName_supplier_TextChanged(object sender, EventArgs e)
         {
-            _debounce_supplier.HandleUpdate();
+            _debounce_Customer.HandleUpdate();
         }
 
         private void txtAddress_supplier_TextChanged(object sender, EventArgs e)
         {
-            _debounce_supplier.HandleUpdate();
+            _debounce_Customer.HandleUpdate();
         }
 
         private void txtPhone_supplier_TextChanged(object sender, EventArgs e)
         {
-            _debounce_supplier.HandleUpdate();
+            _debounce_Customer.HandleUpdate();
         }
 
         private void btnAdd_supplier_Click(object sender, EventArgs e)
@@ -299,7 +369,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void Init_Supplier()
         {
-            _debounce_supplier = new Helper.Debounce(Search_Supplier);
+            _debounce_Customer = new Helper.Debounce(Search_Supplier);
 
             lvwSupplier_supplier.Columns.Add("ID", 0);
             lvwSupplier_supplier.Columns.Add("Tên NCC", 300, HorizontalAlignment.Left);
@@ -340,16 +410,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             var suppliers = _supplierList_supplier.FindAll(x =>
             {
-                var matchName = string.IsNullOrEmpty(name) ||
-                    Helper.Normalize.ToLatinText(x.Name).ToLower()
-                       .Contains(Helper.Normalize.ToLatinText(name).ToLower());
-                var matchAddress = string.IsNullOrEmpty(address) ||
-                    Helper.Normalize.ToLatinText(x.Address).ToLower()
-                       .Contains(Helper.Normalize.ToLatinText(address).ToLower());
-                var matchPhone = string.IsNullOrEmpty(phone) ||
-                    x.PhoneNumber.FirstOrDefault(p => Helper.Normalize.ToNumericPhoneNumber(p)
-                       .Contains(Helper.Normalize.ToNumericPhoneNumber(phone)))
-                    != null;
+                var matchName = Helper.Matcher.Match(x.Name, name);
+                var matchAddress = Helper.Matcher.Match(x.Address, address);
+                var matchPhone = Helper.Matcher.Match(x.PhoneNumber, phone);
 
                 return matchName && matchAddress && matchPhone;
             });
@@ -685,7 +748,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             // Draw dynamic size
             flpPosition_employee.Height = maxBottom + 5;
-            pnlPosition_employee.Height = flpPosition_employee.Bottom;
+            pnlPosition_employee.Height = flpPosition_employee.Bottom + 5;
             grbSearch_employee.Height = pnlPosition_employee.Bottom + 5;
         }
 
@@ -749,19 +812,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             var employees = _employeeList_employee.FindAll(x =>
             {
-                var matchName = string.IsNullOrEmpty(name) ||
-                    Helper.Normalize.ToLatinText(x.Name).ToLower()
-                       .Contains(Helper.Normalize.ToLatinText(name).ToLower());
-                var matchAccount = string.IsNullOrEmpty(account) ||
-                    x.Account.ToLower()
-                       .Contains(account.ToLower());
-                var matchAddress = string.IsNullOrEmpty(address) ||
-                    Helper.Normalize.ToLatinText(x.Address).ToLower()
-                       .Contains(Helper.Normalize.ToLatinText(address).ToLower());
-                var matchPhone = string.IsNullOrEmpty(phone) ||
-                    x.PhoneNumber.FirstOrDefault(p => Helper.Normalize.ToNumericPhoneNumber(p)
-                       .Contains(Helper.Normalize.ToNumericPhoneNumber(phone)))
-                    != null;
+                var matchName = Helper.Matcher.Match(x.Name, name);
+                var matchAccount = Helper.Matcher.Match(x.Account, account, false);
+                var matchAddress = Helper.Matcher.Match(x.Address, address);
+                var matchPhone = Helper.Matcher.Match(x.PhoneNumber, phone);
                 var matchGender = gender == "Tất cả" || (gender == "Nam" && x.IsMale) || (gender == "Nữ" && !x.IsMale);
                 var matchPosition = positions.Contains(x.Position.Name);
 

@@ -93,7 +93,9 @@
     <Compile Include="Forms\Employee\fEmployee.Designer.cs">
       <DependentUpon>fEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\SupplierService.cs" />
     <Compile Include="Utils\PermissionConstant.cs" />
     <Compile Include="Forms\ChangeInformation\fChangeInformation.cs">

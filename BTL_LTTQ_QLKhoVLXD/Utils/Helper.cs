@@ -227,5 +227,31 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
                 );
             }
         }
+
+        public class Matcher
+        {
+            public static bool Match(string sourceText, string text, bool checkLatinText = true)
+            {
+                if (!checkLatinText)
+                    return CheckMatch(sourceText, text);
+
+                sourceText = Normalize.ToLatinText(sourceText);
+                text = Normalize.ToLatinText(text);
+
+                return CheckMatch(sourceText, text);
+            }
+
+            public static bool Match(List<string> sourceTextList, string text)
+            {
+                return string.IsNullOrEmpty(text) ||
+                    sourceTextList.FirstOrDefault(p => Normalize.ToNumericPhoneNumber(p)
+                       .Contains(Normalize.ToNumericPhoneNumber(text))) != null;
+            }
+
+            private static bool CheckMatch(string sourceText, string text)
+            {
+                return string.IsNullOrEmpty(text) || sourceText.ToLower().Contains(text.ToLower());
+            }
+        }
     }
 }
