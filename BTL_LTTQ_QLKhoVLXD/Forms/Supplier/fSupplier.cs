@@ -1,21 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
+﻿using BTL_LTTQ_QLKhoVLXD.Forms.TaskManager;
+using System;
+using System.Data;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using BTL_LTTQ_QLKhoVLXD.Forms.TaskManager;
 using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
-using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
+using BTL_LTTQ_QLKhoVLXD.Services;
+using System.Collections.Generic;
 
-namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
+namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
 {
-    public partial class fEmployee : Form
+
+    public partial class fSupplier : Form
     {
         private readonly fTaskManager _parentForm;
-        private readonly User _user;
+        private readonly Supplier _supplier;
         private readonly Mode _mode;
         private readonly bool _startEdit;
 
@@ -26,37 +26,33 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             Create
         }
 
-        public fEmployee(fTaskManager form, Mode mode = Mode.Create, User user = null, bool startEdit = false)
+        public fSupplier(fTaskManager form, Mode mode = Mode.Create, Supplier supplier = null, bool startEdit = false)
         {
             InitializeComponent();
             _mode = mode;
-            _user = user;
+            _supplier = supplier ;
             _parentForm = form;
             _startEdit = startEdit;
         }
 
-        #region Events
 
-        private void fEmployee_Load(object sender, EventArgs e)
+        #region Events
+        private void fAddSupplier_Load(object sender, EventArgs e)
         {
             InitControls();
             BindData();
             ConfigureAccessibility();
         }
-
-        private void fEmployee_FormClosing(object sender, FormClosingEventArgs e)
+        private void fSupplier_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _parentForm.LoadData_Employee();
+            _parentForm.LoadData_Supplier();
         }
 
         private void chkEdit_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkEdit.Checked)
+            if(chkEdit.Checked)
             {
                 txtName.ReadOnly = false;
-                dtpDob.Enabled = true;
-                rdoMale.Enabled = true;
-                rdoFemale.Enabled = true;
                 txtAddress.ReadOnly = false;
                 btnAddPhone.Enabled = true;
                 btnModifyPhone.Enabled = true;
@@ -65,16 +61,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             else
             {
                 txtName.ReadOnly = true;
-                dtpDob.Enabled = false;
-                rdoMale.Enabled = false;
-                rdoFemale.Enabled = false;
                 txtAddress.ReadOnly = true;
                 btnAddPhone.Enabled = false;
                 btnModifyPhone.Enabled = false;
                 btnRemovePhone.Enabled = false;
             }
         }
-
         private void btnAddPhone_Click(object sender, EventArgs e)
         {
             lvwPhone.SelectedItems.Clear();
@@ -98,14 +90,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
                 lvwPhone.Items.Remove(item);
         }
 
-        private void lvwPhone_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (lvwPhone.SelectedItems.Count <= 0)
-                return;
-
-            var item = lvwPhone.SelectedItems[0];
-            if (item.Bounds.Contains(e.Location))
-                item.BeginEdit();
+            Close();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -115,16 +102,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             else
                 TryChangeInformation();
         }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         #endregion
 
         #region Methods
-
         private void InitControls()
         {
             lvwPhone.Columns.Add("SDT", -2, HorizontalAlignment.Left);
@@ -132,29 +112,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
 
         private void BindData()
         {
-            var positions = EmployeeService.GetPositions();
-            cboPosition.DataSource = positions;
-            cboPosition.SelectedIndex = -1;
-
             if (_mode == Mode.Create)
                 return;
 
-            txtName.Text = _user.Name;
-            dtpDob.Text = _user.Dob.ToShortDateString();
-            if (_user.IsMale)
-                rdoMale.Checked = true;
-            else
-                rdoFemale.Checked = true;
-            txtAddress.Text = _user.Address;
-            _user.PhoneNumber.ForEach(phone =>lvwPhone.Items.Add(new ListViewItem(phone)));
-            cboPosition.SelectedIndex = positions.FindIndex(x => x.Name.Equals(_user.Position.Name));
+            txtName.Text = _supplier.Name;
+            txtAddress.Text = _supplier.Address;
+            _supplier.PhoneNumber.ForEach(phone => lvwPhone.Items.Add(new ListViewItem(phone)));
         }
 
         private void ConfigureAccessibility()
         {
-            // Only allow edit if mode is write and user that edited is not himself
-            chkEdit.Visible = _mode == Mode.Write && !_parentForm.User.Equals(_user);
-
+            chkEdit.Visible = _mode == Mode.Write;
             switch (_mode)
             {
                 case Mode.Write:
@@ -164,13 +132,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
                 case Mode.Create:
                     chkEdit.Checked = true;
                     btnSave.Text = Resources.Form_ButtonSave;
-                    Text = Resources.Form_Text_AddNewEmployee;
-                    return;
+                    Text = Resources.Form_Text_AddNewSupplier;
+                    break;
                 case Mode.Read:
                     txtName.ReadOnly = true;
-                    dtpDob.Enabled = false;
-                    rdoMale.Enabled = false;
-                    rdoFemale.Enabled = false;
                     txtAddress.ReadOnly = true;
                     btnAddPhone.Visible = false;
                     btnModifyPhone.Visible = false;
@@ -178,6 +143,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
                     btnSave.Visible = false;
                     btnCancel.Visible = false;
                     return;
+
+
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -190,20 +157,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
 
             var name = txtName.Text;
             var address = txtAddress.Text;
-            var isMale = rdoMale.Checked;
-            var dob = DateTime.ParseExact(Regex.Replace(dtpDob.Text, @"\s+", ""),
-                Resources.Format_DateFormat,
-                CultureInfo.InvariantCulture);
-            var position = (EmployeePosition)cboPosition.SelectedItem;
             var phoneNumbers = lvwPhone.Items
                .Cast<ListViewItem>()
                .Select(item => item.Text)
                .ToList();
+            var newSupplier = new Supplier(name, address, phoneNumbers);
 
-            var newUser = new User(name, address, isMale, dob, position, phoneNumbers);
-
-            if (CreateUser(ref newUser) &&
-                AddNewPhoneNumbers(phoneNumbers, newUser))
+            if (CreateSupplier(ref newSupplier) &&
+                AddNewPhoneNumbers(phoneNumbers, newSupplier))
             {
                 MessageBox.Show(
                     Resources.MessageBox_Message_AddEmployeeSuccessfully,
@@ -220,29 +181,29 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
                     MessageBoxIcon.Error
                 );
 
-            _parentForm.LoadData_Employee();
+            _parentForm.LoadData_Supplier();
             Close();
+        }
+
+        private static bool CreateSupplier(ref Supplier newSupplier)
+        {
+            newSupplier.Id = SupplierService.CreateSupplier(newSupplier);
+            return newSupplier.Id != -1;
         }
 
         private void TryChangeInformation()
         {
-            var id = _user.Id;
+            var id = _supplier.Id;
             var name = txtName.Text;
             var address = txtAddress.Text;
-            var isMale = rdoMale.Checked;
-            var dob = DateTime.ParseExact(Regex.Replace(dtpDob.Text, @"\s+", ""),
-                Resources.Format_DateFormat,
-                CultureInfo.InvariantCulture);
-            var position = (EmployeePosition)cboPosition.SelectedItem;
-            var account = _user.Account;
             var phoneNumbers = lvwPhone.Items
                .Cast<ListViewItem>()
                .Select(item => item.Text)
                .ToList();
 
-            var newUser = new User(id, name, address, isMale, dob, position, account, phoneNumbers);
+            var newSupplier = new Supplier(id, name, address, phoneNumbers);
 
-            if (_user.Equals(newUser))
+            if (_supplier.Equals(newSupplier))
             {
                 MessageBox.Show(
                     Resources.MessageBox_Message_ChangeInfoNoChange,
@@ -257,8 +218,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             if (!ValidInput() || !ConfirmChange())
                 return;
 
-            if (ChangeInformation(newUser) &&
-                ChangePhoneNumber(newUser))
+            if (ChangeInformation(newSupplier) &&
+                ChangePhoneNumber(newSupplier))
             {
                 MessageBox.Show(
                     Resources.MessageBox_Message_ChangeSuccessfully,
@@ -292,45 +253,30 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
                 return false;
             }
 
-            if (Helper.Validate.Name(txtName.Text))
-                return true;
-
-            MessageBox.Show(
-                Resources.MessageBox_Message_InvalidNameFormat,
-                Resources.MessageBox_Caption_Notification,
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-            );
-            return false;
+            return true;
         }
 
         private bool ConfirmChange()
         {
             return MessageBox.Show(
-                string.Format(Resources.MessageBox_Message_ConfirmChangeEmployeeInfo, _user.Name),
+                string.Format(Resources.MessageBox_Message_ConfirmChangeEmployeeInfo, _supplier.Name),
                 Resources.MessageBox_Caption_Notification,
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning
             ) == DialogResult.Yes;
         }
 
-        private static bool CreateUser(ref User newUser)
+        private static bool ChangeInformation(Supplier newSupplier)
         {
-            newUser.Id = EmployeeService.CreateEmployee(newUser);
-            return newUser.Id != -1;
+             return SupplierService.ChangeSupplierInformation(newSupplier);
         }
 
-        private static bool ChangeInformation(User newUser)
-        {
-            return EmployeeService.ChangeEmployeeInformation(newUser);
-        }
-
-        private bool ChangePhoneNumber(User newUser)
+        private bool ChangePhoneNumber(Supplier newSupplier)
         {
             var (shouldDelete, shouldAdd) = Helper.List
                .Difference(
-                    _user.PhoneNumber,
-                    newUser.PhoneNumber
+                    _supplier.PhoneNumber,
+                    newSupplier.PhoneNumber
                 );
 
             return DeletePhoneNumbers(shouldDelete) && AddNewPhoneNumbers(shouldAdd);
@@ -338,14 +284,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
 
         private static bool DeletePhoneNumbers(List<string> shouldDelete)
         {
-            return EmployeeService.DeletePhoneNumbers(shouldDelete);
+            return SupplierService.DeletePhoneNumbers(shouldDelete);
         }
 
-        private bool AddNewPhoneNumbers(List<string> shouldAdd, User user = null)
+        private bool AddNewPhoneNumbers(List<string> shouldAdd, Supplier supplier = null)
         {
-            return EmployeeService.AddNewPhoneNumbers(user ?? _user, shouldAdd);
+            return SupplierService.AddNewPhoneNumbers(supplier ?? _supplier, shouldAdd);
         }
 
         #endregion
+
+
     }
 }

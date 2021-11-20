@@ -109,7 +109,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             return rowAffected > 0;
         }
 
-
         #endregion
 
         #region Delete

@@ -125,6 +125,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thêm nhà cung cấp mới.
+        /// </summary>
+        internal static string Form_Text_AddNewSupplier {
+            get {
+                return ResourceManager.GetString("Form_Text_AddNewSupplier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to dd-MM-yyyy.
         /// </summary>
         internal static string Format_DateFormat {

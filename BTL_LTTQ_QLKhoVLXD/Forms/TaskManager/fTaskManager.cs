@@ -295,12 +295,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void btnAdd_supplier_Click(object sender, EventArgs e)
         {
             lvwSupplier_supplier.SelectedItems.Clear();
-            new fAddSupplier(this).ShowDialog();
+            new fSupplier(this).ShowDialog();
         }
 
         private void btnEdit_supplier_Click(object sender, EventArgs e)
         {
-
+            EditSupplier_supplier();
         }
 
         private void btnDelete_supplier_Click(object sender, EventArgs e)
@@ -470,6 +470,18 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             }
 
             LoadData_Supplier();
+        }
+
+        private void EditSupplier_supplier()
+        {
+            if (lvwSupplier_supplier.SelectedIndices.Count <= 0)
+                return;
+
+            // Edit only first selected item
+            var firstIndex = lvwSupplier_supplier.SelectedIndices[0];
+            var supplier = _supplierList_supplier[firstIndex];
+
+            new fSupplier(this, fSupplier.Mode.Write, supplier, true).Show();
         }
 
         #endregion

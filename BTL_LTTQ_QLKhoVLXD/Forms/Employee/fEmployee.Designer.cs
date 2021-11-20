@@ -49,13 +49,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.grbPhone = new System.Windows.Forms.GroupBox();
-            this.btnModifyPhone = new BmwButton();
+            this.btnModifyPhone = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
             this.lvwPhone = new System.Windows.Forms.ListView();
-            this.btnRemovePhone = new BmwButton();
-            this.btnAddPhone = new BmwButton();
+            this.btnRemovePhone = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnAddPhone = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
             this.pnlButton = new System.Windows.Forms.Panel();
-            this.btnCancel = new BmwButton();
-            this.btnSave = new BmwButton();
+            this.btnCancel = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnSave = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
             this.chkEdit = new System.Windows.Forms.CheckBox();
             this.grbInfo.SuspendLayout();
             this.pnlPosition.SuspendLayout();
@@ -255,6 +255,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             // 
             this.btnModifyPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnModifyPhone.Enabled = false;
+            this.btnModifyPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifyPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnModifyPhone.Location = new System.Drawing.Point(351, 52);
             this.btnModifyPhone.Name = "btnModifyPhone";
             this.btnModifyPhone.Size = new System.Drawing.Size(145, 26);
@@ -284,6 +286,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             // 
             this.btnRemovePhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnRemovePhone.Enabled = false;
+            this.btnRemovePhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemovePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnRemovePhone.Location = new System.Drawing.Point(351, 85);
             this.btnRemovePhone.Name = "btnRemovePhone";
             this.btnRemovePhone.Size = new System.Drawing.Size(145, 26);
@@ -296,6 +300,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             // 
             this.btnAddPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnAddPhone.Enabled = false;
+            this.btnAddPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnAddPhone.Location = new System.Drawing.Point(351, 18);
             this.btnAddPhone.Name = "btnAddPhone";
             this.btnAddPhone.Size = new System.Drawing.Size(145, 26);
@@ -360,7 +366,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.ClientSize = new System.Drawing.Size(1043, 247);
+            this.ClientSize = new System.Drawing.Size(1043, 253);
             this.Controls.Add(this.chkEdit);
             this.Controls.Add(this.pnlButton);
             this.Controls.Add(this.grbPhone);

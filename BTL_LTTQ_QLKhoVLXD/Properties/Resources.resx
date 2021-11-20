@@ -280,4 +280,7 @@
   <data name="MessageBox_Message_DeleteSupplierSuccessfully" xml:space="preserve">
     <value>Đã xóa {0} nhà cung cấp!</value>
   </data>
+  <data name="Form_Text_AddNewSupplier" xml:space="preserve">
+    <value>Thêm nhà cung cấp mới</value>
+  </data>
 </root>
