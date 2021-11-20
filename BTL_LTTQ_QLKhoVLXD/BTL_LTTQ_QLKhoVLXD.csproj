@@ -202,7 +202,7 @@
     <None Include="Assets\Icons\lock.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Icons\unlock.png" />

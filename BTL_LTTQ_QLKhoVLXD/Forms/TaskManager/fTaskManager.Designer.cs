@@ -37,7 +37,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
-            this.tctlControl = new BmwTabControl();
+            this.tctlControl = new BTL_LTTQ_QLKhoVLXD.Controls.TabControl.BmwTabControl();
             this.tpgBuy = new System.Windows.Forms.TabPage();
             this.grbItemInfor_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
             this.lsvBuy_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
@@ -118,9 +118,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel1_Receipt = new System.Windows.Forms.Panel();
             this.lvwReceipt_Receipt = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
             this.panel2_Receipt = new System.Windows.Forms.Panel();
-            this.btnDelete_Receipt = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.button1 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.button2 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnDelete_receipt = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnExport_receipt = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.grbInfor_Receipt = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -135,13 +134,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgStatistic = new System.Windows.Forms.TabPage();
             this.tpgCustomer = new System.Windows.Forms.TabPage();
             this.panel1_Customer = new System.Windows.Forms.Panel();
+            this.spc_customer = new System.Windows.Forms.SplitContainer();
             this.lvwCustomer_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
-            this.panel2_Customer = new System.Windows.Forms.Panel();
+            this.pnlFunction_customer = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAdd_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnEdit_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnDelete_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnExport_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnRefresh_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.btnDelete_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.btnFix_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.btnAdd_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.grbInfor_Customer = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
             this.txtPhoneNumber_Customer = new System.Windows.Forms.TextBox();
             this.txtAddress_Customer = new System.Windows.Forms.TextBox();
@@ -234,7 +235,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial_material)).BeginInit();
             this.tpgCustomer.SuspendLayout();
             this.panel1_Customer.SuspendLayout();
-            this.panel2_Customer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spc_customer)).BeginInit();
+            this.spc_customer.Panel1.SuspendLayout();
+            this.spc_customer.Panel2.SuspendLayout();
+            this.spc_customer.SuspendLayout();
+            this.pnlFunction_customer.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.grbInfor_Customer.SuspendLayout();
             this.tpgSupplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spc_supplier)).BeginInit();
@@ -300,6 +306,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // tctlControl
             // 
+            this.tctlControl.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.tctlControl.Controls.Add(this.tpgBuy);
             this.tctlControl.Controls.Add(this.tpgSell);
             this.tctlControl.Controls.Add(this.tpgReceipt);
@@ -310,12 +317,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tctlControl.Controls.Add(this.tpgEmployee);
             this.tctlControl.Controls.Add(this.tpgUserSetting);
             this.tctlControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tctlControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tctlControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.tctlControl.ItemSize = new System.Drawing.Size(55, 170);
             this.tctlControl.Location = new System.Drawing.Point(0, 0);
             this.tctlControl.Margin = new System.Windows.Forms.Padding(0);
+            this.tctlControl.Multiline = true;
             this.tctlControl.Name = "tctlControl";
             this.tctlControl.Padding = new System.Drawing.Point(0, 0);
+            this.tctlControl.SelectedIndex = 0;
             this.tctlControl.Size = new System.Drawing.Size(1279, 607);
+            this.tctlControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tctlControl.TabIndex = 0;
             // 
             // tpgBuy
@@ -334,6 +346,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // grbItemInfor_Buy
             // 
+            this.grbItemInfor_Buy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.grbItemInfor_Buy.Controls.Add(this.lsvBuy_Buy);
             this.grbItemInfor_Buy.Controls.Add(this.btnPrintReceipt_Buy);
             this.grbItemInfor_Buy.Controls.Add(this.btnCancelReceipt_Buy);
@@ -352,16 +365,21 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbItemInfor_Buy.Controls.Add(this.lblMaterialAmount_Buy);
             this.grbItemInfor_Buy.Controls.Add(this.lblMaterialId_Buy);
             this.grbItemInfor_Buy.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbItemInfor_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grbItemInfor_Buy.ForeColor = System.Drawing.Color.White;
             this.grbItemInfor_Buy.Location = new System.Drawing.Point(3, 242);
             this.grbItemInfor_Buy.Name = "grbItemInfor_Buy";
             this.grbItemInfor_Buy.Size = new System.Drawing.Size(1095, 349);
             this.grbItemInfor_Buy.TabIndex = 2;
+            this.grbItemInfor_Buy.TabStop = false;
             this.grbItemInfor_Buy.Text = "Thông tin các mặt hàng";
             // 
             // lsvBuy_Buy
             // 
+            this.lsvBuy_Buy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.lsvBuy_Buy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lsvBuy_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lsvBuy_Buy.ForeColor = System.Drawing.Color.White;
             this.lsvBuy_Buy.FullRowSelect = true;
             this.lsvBuy_Buy.GridLines = true;
             this.lsvBuy_Buy.HideSelection = false;
@@ -370,38 +388,60 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lsvBuy_Buy.OwnerDraw = true;
             this.lsvBuy_Buy.Size = new System.Drawing.Size(1089, 324);
             this.lsvBuy_Buy.TabIndex = 18;
+            this.lsvBuy_Buy.UseCompatibleStateImageBehavior = false;
+            this.lsvBuy_Buy.View = System.Windows.Forms.View.Details;
             // 
             // btnPrintReceipt_Buy
             // 
+            this.btnPrintReceipt_Buy.BackColor = System.Drawing.Color.White;
+            this.btnPrintReceipt_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnPrintReceipt_Buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnPrintReceipt_Buy.Location = new System.Drawing.Point(740, 315);
             this.btnPrintReceipt_Buy.Name = "btnPrintReceipt_Buy";
             this.btnPrintReceipt_Buy.Size = new System.Drawing.Size(171, 28);
             this.btnPrintReceipt_Buy.TabIndex = 17;
             this.btnPrintReceipt_Buy.Text = "In hóa đơn";
+            this.btnPrintReceipt_Buy.UseVisualStyleBackColor = false;
             // 
             // btnCancelReceipt_Buy
             // 
+            this.btnCancelReceipt_Buy.BackColor = System.Drawing.Color.White;
+            this.btnCancelReceipt_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCancelReceipt_Buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCancelReceipt_Buy.Location = new System.Drawing.Point(530, 315);
             this.btnCancelReceipt_Buy.Name = "btnCancelReceipt_Buy";
             this.btnCancelReceipt_Buy.Size = new System.Drawing.Size(172, 28);
             this.btnCancelReceipt_Buy.TabIndex = 16;
             this.btnCancelReceipt_Buy.Text = "Hủy hóa đơn";
+            this.btnCancelReceipt_Buy.UseVisualStyleBackColor = false;
             // 
             // btnSaveReceipt_Buy
             // 
+            this.btnSaveReceipt_Buy.BackColor = System.Drawing.Color.White;
+            this.btnSaveReceipt_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnSaveReceipt_Buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnSaveReceipt_Buy.Location = new System.Drawing.Point(315, 315);
             this.btnSaveReceipt_Buy.Name = "btnSaveReceipt_Buy";
             this.btnSaveReceipt_Buy.Size = new System.Drawing.Size(172, 28);
             this.btnSaveReceipt_Buy.TabIndex = 15;
             this.btnSaveReceipt_Buy.Text = "Lưu";
+            this.btnSaveReceipt_Buy.UseVisualStyleBackColor = false;
             // 
             // btnAddReceipt_Buy
             // 
+            this.btnAddReceipt_Buy.BackColor = System.Drawing.Color.White;
+            this.btnAddReceipt_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAddReceipt_Buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnAddReceipt_Buy.Location = new System.Drawing.Point(96, 315);
             this.btnAddReceipt_Buy.Name = "btnAddReceipt_Buy";
             this.btnAddReceipt_Buy.Size = new System.Drawing.Size(172, 28);
             this.btnAddReceipt_Buy.TabIndex = 14;
             this.btnAddReceipt_Buy.Text = "Thêm hóa đơn";
+            this.btnAddReceipt_Buy.UseVisualStyleBackColor = false;
             // 
             // txtTotalMoney_Buy
             // 
@@ -514,6 +554,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // grbGeneralInfor_Buy
             // 
+            this.grbGeneralInfor_Buy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.grbGeneralInfor_Buy.Controls.Add(this.lstSupplierId_Buy);
             this.grbGeneralInfor_Buy.Controls.Add(this.lstEmployeeId_Buy);
             this.grbGeneralInfor_Buy.Controls.Add(this.dtpReceiptDate_Buy);
@@ -531,10 +572,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbGeneralInfor_Buy.Controls.Add(this.lblReceiptDate_Buy);
             this.grbGeneralInfor_Buy.Controls.Add(this.lblReceiptId_Buy);
             this.grbGeneralInfor_Buy.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbGeneralInfor_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grbGeneralInfor_Buy.ForeColor = System.Drawing.Color.White;
             this.grbGeneralInfor_Buy.Location = new System.Drawing.Point(3, 40);
             this.grbGeneralInfor_Buy.Name = "grbGeneralInfor_Buy";
             this.grbGeneralInfor_Buy.Size = new System.Drawing.Size(1095, 202);
             this.grbGeneralInfor_Buy.TabIndex = 1;
+            this.grbGeneralInfor_Buy.TabStop = false;
             this.grbGeneralInfor_Buy.Text = "Thông tin chung";
             // 
             // lstSupplierId_Buy
@@ -721,6 +765,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // grbItemInfor_Sell
             // 
+            this.grbItemInfor_Sell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.grbItemInfor_Sell.Controls.Add(this.lvwSell_sell);
             this.grbItemInfor_Sell.Controls.Add(this.btnPrintReceipt_Sell);
             this.grbItemInfor_Sell.Controls.Add(this.btnCancelReceipt_Sell);
@@ -739,51 +784,83 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbItemInfor_Sell.Controls.Add(this.lblMaterialAmount_Sell);
             this.grbItemInfor_Sell.Controls.Add(this.lblMaterialId_Sell);
             this.grbItemInfor_Sell.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbItemInfor_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grbItemInfor_Sell.ForeColor = System.Drawing.Color.White;
             this.grbItemInfor_Sell.Location = new System.Drawing.Point(3, 242);
             this.grbItemInfor_Sell.Name = "grbItemInfor_Sell";
             this.grbItemInfor_Sell.Size = new System.Drawing.Size(1095, 349);
             this.grbItemInfor_Sell.TabIndex = 3;
+            this.grbItemInfor_Sell.TabStop = false;
             this.grbItemInfor_Sell.Text = "Thông tin các mặt hàng";
             // 
             // lvwSell_sell
             // 
+            this.lvwSell_sell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.lvwSell_sell.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvwSell_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lvwSell_sell.ForeColor = System.Drawing.Color.White;
+            this.lvwSell_sell.FullRowSelect = true;
+            this.lvwSell_sell.GridLines = true;
+            this.lvwSell_sell.HideSelection = false;
             this.lvwSell_sell.Location = new System.Drawing.Point(3, 22);
             this.lvwSell_sell.Name = "lvwSell_sell";
+            this.lvwSell_sell.OwnerDraw = true;
             this.lvwSell_sell.Size = new System.Drawing.Size(1089, 324);
             this.lvwSell_sell.TabIndex = 18;
+            this.lvwSell_sell.UseCompatibleStateImageBehavior = false;
+            this.lvwSell_sell.View = System.Windows.Forms.View.Details;
             // 
             // btnPrintReceipt_Sell
             // 
+            this.btnPrintReceipt_Sell.BackColor = System.Drawing.Color.White;
+            this.btnPrintReceipt_Sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnPrintReceipt_Sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnPrintReceipt_Sell.Location = new System.Drawing.Point(741, 315);
             this.btnPrintReceipt_Sell.Name = "btnPrintReceipt_Sell";
             this.btnPrintReceipt_Sell.Size = new System.Drawing.Size(172, 28);
             this.btnPrintReceipt_Sell.TabIndex = 17;
             this.btnPrintReceipt_Sell.Text = "In hóa đơn";
+            this.btnPrintReceipt_Sell.UseVisualStyleBackColor = false;
             // 
             // btnCancelReceipt_Sell
             // 
+            this.btnCancelReceipt_Sell.BackColor = System.Drawing.Color.White;
+            this.btnCancelReceipt_Sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCancelReceipt_Sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCancelReceipt_Sell.Location = new System.Drawing.Point(531, 315);
             this.btnCancelReceipt_Sell.Name = "btnCancelReceipt_Sell";
             this.btnCancelReceipt_Sell.Size = new System.Drawing.Size(172, 28);
             this.btnCancelReceipt_Sell.TabIndex = 16;
             this.btnCancelReceipt_Sell.Text = "Hủy hóa đơn";
+            this.btnCancelReceipt_Sell.UseVisualStyleBackColor = false;
             // 
             // btnSaveReceipt_Sell
             // 
+            this.btnSaveReceipt_Sell.BackColor = System.Drawing.Color.White;
+            this.btnSaveReceipt_Sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnSaveReceipt_Sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnSaveReceipt_Sell.Location = new System.Drawing.Point(315, 315);
             this.btnSaveReceipt_Sell.Name = "btnSaveReceipt_Sell";
             this.btnSaveReceipt_Sell.Size = new System.Drawing.Size(172, 28);
             this.btnSaveReceipt_Sell.TabIndex = 15;
             this.btnSaveReceipt_Sell.Text = "Lưu";
+            this.btnSaveReceipt_Sell.UseVisualStyleBackColor = false;
             // 
             // btnAddReceipt_Sell
             // 
+            this.btnAddReceipt_Sell.BackColor = System.Drawing.Color.White;
+            this.btnAddReceipt_Sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddReceipt_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAddReceipt_Sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnAddReceipt_Sell.Location = new System.Drawing.Point(96, 315);
             this.btnAddReceipt_Sell.Name = "btnAddReceipt_Sell";
             this.btnAddReceipt_Sell.Size = new System.Drawing.Size(172, 28);
             this.btnAddReceipt_Sell.TabIndex = 14;
             this.btnAddReceipt_Sell.Text = "Thêm hóa đơn";
+            this.btnAddReceipt_Sell.UseVisualStyleBackColor = false;
             // 
             // txtTotalMoney_Sell
             // 
@@ -897,6 +974,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // grbGeneralInfor_Sell
             // 
+            this.grbGeneralInfor_Sell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.grbGeneralInfor_Sell.Controls.Add(this.lstCustomerId_Sell);
             this.grbGeneralInfor_Sell.Controls.Add(this.lstEmployeeId_Sell);
             this.grbGeneralInfor_Sell.Controls.Add(this.dtpReceiptDate_Sell);
@@ -914,10 +992,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbGeneralInfor_Sell.Controls.Add(this.lblReceiptDate_Sell);
             this.grbGeneralInfor_Sell.Controls.Add(this.lblReceiptId_Sell);
             this.grbGeneralInfor_Sell.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbGeneralInfor_Sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grbGeneralInfor_Sell.ForeColor = System.Drawing.Color.White;
             this.grbGeneralInfor_Sell.Location = new System.Drawing.Point(3, 40);
             this.grbGeneralInfor_Sell.Name = "grbGeneralInfor_Sell";
             this.grbGeneralInfor_Sell.Size = new System.Drawing.Size(1095, 202);
             this.grbGeneralInfor_Sell.TabIndex = 2;
+            this.grbGeneralInfor_Sell.TabStop = false;
             this.grbGeneralInfor_Sell.Text = "Thông tin chung";
             // 
             // lstCustomerId_Sell
@@ -1111,20 +1192,27 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // lvwReceipt_Receipt
             // 
+            this.lvwReceipt_Receipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.lvwReceipt_Receipt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvwReceipt_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lvwReceipt_Receipt.ForeColor = System.Drawing.Color.White;
+            this.lvwReceipt_Receipt.FullRowSelect = true;
+            this.lvwReceipt_Receipt.GridLines = true;
+            this.lvwReceipt_Receipt.HideSelection = false;
             this.lvwReceipt_Receipt.Location = new System.Drawing.Point(0, 0);
             this.lvwReceipt_Receipt.Name = "lvwReceipt_Receipt";
+            this.lvwReceipt_Receipt.OwnerDraw = true;
             this.lvwReceipt_Receipt.Size = new System.Drawing.Size(669, 599);
             this.lvwReceipt_Receipt.TabIndex = 0;
+            this.lvwReceipt_Receipt.UseCompatibleStateImageBehavior = false;
+            this.lvwReceipt_Receipt.View = System.Windows.Forms.View.Details;
             // 
             // panel2_Receipt
             // 
             this.panel2_Receipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.panel2_Receipt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2_Receipt.Controls.Add(this.btnDelete_Receipt);
-            this.panel2_Receipt.Controls.Add(this.button1);
-            this.panel2_Receipt.Controls.Add(this.button2);
+            this.panel2_Receipt.Controls.Add(this.btnDelete_receipt);
+            this.panel2_Receipt.Controls.Add(this.btnExport_receipt);
             this.panel2_Receipt.Controls.Add(this.grbInfor_Receipt);
             this.panel2_Receipt.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2_Receipt.ForeColor = System.Drawing.Color.White;
@@ -1133,32 +1221,35 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel2_Receipt.Size = new System.Drawing.Size(432, 599);
             this.panel2_Receipt.TabIndex = 3;
             // 
-            // btnDelete_Receipt
+            // btnDelete_receipt
             // 
-            this.btnDelete_Receipt.Location = new System.Drawing.Point(149, 298);
-            this.btnDelete_Receipt.Name = "btnDelete_Receipt";
-            this.btnDelete_Receipt.Size = new System.Drawing.Size(128, 36);
-            this.btnDelete_Receipt.TabIndex = 5;
-            this.btnDelete_Receipt.Text = "Xóa";
+            this.btnDelete_receipt.BackColor = System.Drawing.Color.White;
+            this.btnDelete_receipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnDelete_receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnDelete_receipt.Location = new System.Drawing.Point(149, 298);
+            this.btnDelete_receipt.Name = "btnDelete_receipt";
+            this.btnDelete_receipt.Size = new System.Drawing.Size(128, 36);
+            this.btnDelete_receipt.TabIndex = 5;
+            this.btnDelete_receipt.Text = "Xóa";
+            this.btnDelete_receipt.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnExport_receipt
             // 
-            this.button1.Location = new System.Drawing.Point(283, 298);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 36);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Xuất file";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(10, 298);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 36);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Tìm kiếm";
+            this.btnExport_receipt.BackColor = System.Drawing.Color.White;
+            this.btnExport_receipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnExport_receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnExport_receipt.Location = new System.Drawing.Point(283, 298);
+            this.btnExport_receipt.Name = "btnExport_receipt";
+            this.btnExport_receipt.Size = new System.Drawing.Size(128, 36);
+            this.btnExport_receipt.TabIndex = 6;
+            this.btnExport_receipt.Text = "Xuất file";
+            this.btnExport_receipt.UseVisualStyleBackColor = false;
             // 
             // grbInfor_Receipt
             // 
+            this.grbInfor_Receipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.grbInfor_Receipt.Controls.Add(this.dateTimePicker1);
             this.grbInfor_Receipt.Controls.Add(this.textBox1);
             this.grbInfor_Receipt.Controls.Add(this.textBox3);
@@ -1168,10 +1259,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbInfor_Receipt.Controls.Add(this.label3);
             this.grbInfor_Receipt.Controls.Add(this.label4);
             this.grbInfor_Receipt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbInfor_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grbInfor_Receipt.ForeColor = System.Drawing.Color.White;
             this.grbInfor_Receipt.Location = new System.Drawing.Point(0, 0);
             this.grbInfor_Receipt.Name = "grbInfor_Receipt";
             this.grbInfor_Receipt.Size = new System.Drawing.Size(428, 256);
             this.grbInfor_Receipt.TabIndex = 0;
+            this.grbInfor_Receipt.TabStop = false;
             this.grbInfor_Receipt.Text = "Thông tin hóa đơn";
             // 
             // dateTimePicker1
@@ -1283,7 +1377,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // tpgCustomer
             // 
             this.tpgCustomer.Controls.Add(this.panel1_Customer);
-            this.tpgCustomer.Controls.Add(this.panel2_Customer);
             this.tpgCustomer.Location = new System.Drawing.Point(174, 4);
             this.tpgCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgCustomer.Name = "tpgCustomer";
@@ -1294,80 +1387,148 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // panel1_Customer
             // 
-            this.panel1_Customer.Controls.Add(this.lvwCustomer_Customer);
+            this.panel1_Customer.Controls.Add(this.spc_customer);
             this.panel1_Customer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1_Customer.Location = new System.Drawing.Point(0, 0);
             this.panel1_Customer.Name = "panel1_Customer";
-            this.panel1_Customer.Size = new System.Drawing.Size(669, 599);
+            this.panel1_Customer.Size = new System.Drawing.Size(1101, 599);
             this.panel1_Customer.TabIndex = 3;
+            // 
+            // spc_customer
+            // 
+            this.spc_customer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spc_customer.Location = new System.Drawing.Point(0, 0);
+            this.spc_customer.Name = "spc_customer";
+            // 
+            // spc_customer.Panel1
+            // 
+            this.spc_customer.Panel1.Controls.Add(this.lvwCustomer_Customer);
+            // 
+            // spc_customer.Panel2
+            // 
+            this.spc_customer.Panel2.Controls.Add(this.pnlFunction_customer);
+            this.spc_customer.Size = new System.Drawing.Size(1101, 599);
+            this.spc_customer.SplitterDistance = 590;
+            this.spc_customer.SplitterWidth = 1;
+            this.spc_customer.TabIndex = 3;
             // 
             // lvwCustomer_Customer
             // 
+            this.lvwCustomer_Customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.lvwCustomer_Customer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvwCustomer_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lvwCustomer_Customer.ForeColor = System.Drawing.Color.White;
+            this.lvwCustomer_Customer.FullRowSelect = true;
+            this.lvwCustomer_Customer.GridLines = true;
+            this.lvwCustomer_Customer.HideSelection = false;
             this.lvwCustomer_Customer.Location = new System.Drawing.Point(0, 0);
             this.lvwCustomer_Customer.Name = "lvwCustomer_Customer";
-            this.lvwCustomer_Customer.Size = new System.Drawing.Size(669, 599);
+            this.lvwCustomer_Customer.OwnerDraw = true;
+            this.lvwCustomer_Customer.Size = new System.Drawing.Size(590, 599);
             this.lvwCustomer_Customer.TabIndex = 0;
+            this.lvwCustomer_Customer.UseCompatibleStateImageBehavior = false;
+            this.lvwCustomer_Customer.View = System.Windows.Forms.View.Details;
             // 
-            // panel2_Customer
+            // pnlFunction_customer
             // 
-            this.panel2_Customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.panel2_Customer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2_Customer.Controls.Add(this.btnExport_Customer);
-            this.panel2_Customer.Controls.Add(this.btnRefresh_Customer);
-            this.panel2_Customer.Controls.Add(this.btnDelete_Customer);
-            this.panel2_Customer.Controls.Add(this.btnFix_Customer);
-            this.panel2_Customer.Controls.Add(this.btnAdd_Customer);
-            this.panel2_Customer.Controls.Add(this.grbInfor_Customer);
-            this.panel2_Customer.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2_Customer.ForeColor = System.Drawing.Color.White;
-            this.panel2_Customer.Location = new System.Drawing.Point(669, 0);
-            this.panel2_Customer.Name = "panel2_Customer";
-            this.panel2_Customer.Size = new System.Drawing.Size(432, 599);
-            this.panel2_Customer.TabIndex = 2;
+            this.pnlFunction_customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.pnlFunction_customer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlFunction_customer.Controls.Add(this.flowLayoutPanel1);
+            this.pnlFunction_customer.Controls.Add(this.grbInfor_Customer);
+            this.pnlFunction_customer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlFunction_customer.ForeColor = System.Drawing.Color.White;
+            this.pnlFunction_customer.Location = new System.Drawing.Point(0, 0);
+            this.pnlFunction_customer.Name = "pnlFunction_customer";
+            this.pnlFunction_customer.Size = new System.Drawing.Size(510, 599);
+            this.pnlFunction_customer.TabIndex = 2;
             // 
-            // btnExport_Customer
+            // flowLayoutPanel1
             // 
-            this.btnExport_Customer.Location = new System.Drawing.Point(227, 352);
-            this.btnExport_Customer.Name = "btnExport_Customer";
-            this.btnExport_Customer.Size = new System.Drawing.Size(185, 63);
-            this.btnExport_Customer.TabIndex = 5;
-            this.btnExport_Customer.Text = "Xuất file danh sách NCC";
+            this.flowLayoutPanel1.Controls.Add(this.btnAdd_Customer);
+            this.flowLayoutPanel1.Controls.Add(this.btnEdit_Customer);
+            this.flowLayoutPanel1.Controls.Add(this.btnDelete_Customer);
+            this.flowLayoutPanel1.Controls.Add(this.btnExport_Customer);
+            this.flowLayoutPanel1.Controls.Add(this.btnRefresh_Customer);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 256);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(506, 339);
+            this.flowLayoutPanel1.TabIndex = 8;
             // 
-            // btnRefresh_Customer
+            // btnAdd_Customer
             // 
-            this.btnRefresh_Customer.Location = new System.Drawing.Point(19, 421);
-            this.btnRefresh_Customer.Name = "btnRefresh_Customer";
-            this.btnRefresh_Customer.Size = new System.Drawing.Size(185, 63);
-            this.btnRefresh_Customer.TabIndex = 4;
-            this.btnRefresh_Customer.Text = "Làm mới";
+            this.btnAdd_Customer.BackColor = System.Drawing.Color.White;
+            this.btnAdd_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAdd_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnAdd_Customer.Location = new System.Drawing.Point(8, 8);
+            this.btnAdd_Customer.Name = "btnAdd_Customer";
+            this.btnAdd_Customer.Size = new System.Drawing.Size(185, 63);
+            this.btnAdd_Customer.TabIndex = 1;
+            this.btnAdd_Customer.Text = "Thêm khách hàng";
+            this.btnAdd_Customer.UseVisualStyleBackColor = false;
+            this.btnAdd_Customer.Click += new System.EventHandler(this.btnAdd_Customer_Click);
+            // 
+            // btnEdit_Customer
+            // 
+            this.btnEdit_Customer.BackColor = System.Drawing.Color.White;
+            this.btnEdit_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnEdit_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnEdit_Customer.Location = new System.Drawing.Point(199, 8);
+            this.btnEdit_Customer.Name = "btnEdit_Customer";
+            this.btnEdit_Customer.Size = new System.Drawing.Size(185, 63);
+            this.btnEdit_Customer.TabIndex = 2;
+            this.btnEdit_Customer.Text = "Chỉnh sửa thông tin";
+            this.btnEdit_Customer.UseVisualStyleBackColor = false;
+            this.btnEdit_Customer.Click += new System.EventHandler(this.btnEdit_Customer_Click);
             // 
             // btnDelete_Customer
             // 
-            this.btnDelete_Customer.Location = new System.Drawing.Point(19, 352);
+            this.btnDelete_Customer.BackColor = System.Drawing.Color.White;
+            this.btnDelete_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnDelete_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnDelete_Customer.Location = new System.Drawing.Point(8, 77);
             this.btnDelete_Customer.Name = "btnDelete_Customer";
             this.btnDelete_Customer.Size = new System.Drawing.Size(185, 63);
             this.btnDelete_Customer.TabIndex = 3;
             this.btnDelete_Customer.Text = "Xóa KH";
+            this.btnDelete_Customer.UseVisualStyleBackColor = false;
+            this.btnDelete_Customer.Click += new System.EventHandler(this.btnDelete_Customer_Click);
             // 
-            // btnFix_Customer
+            // btnExport_Customer
             // 
-            this.btnFix_Customer.Location = new System.Drawing.Point(227, 283);
-            this.btnFix_Customer.Name = "btnFix_Customer";
-            this.btnFix_Customer.Size = new System.Drawing.Size(185, 63);
-            this.btnFix_Customer.TabIndex = 2;
-            this.btnFix_Customer.Text = "Chỉnh sửa thông tin";
+            this.btnExport_Customer.BackColor = System.Drawing.Color.White;
+            this.btnExport_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnExport_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnExport_Customer.Location = new System.Drawing.Point(199, 77);
+            this.btnExport_Customer.Name = "btnExport_Customer";
+            this.btnExport_Customer.Size = new System.Drawing.Size(185, 63);
+            this.btnExport_Customer.TabIndex = 5;
+            this.btnExport_Customer.Text = "Xuất file danh sách khách hàng";
+            this.btnExport_Customer.UseVisualStyleBackColor = false;
+            this.btnExport_Customer.Click += new System.EventHandler(this.btnExport_Customer_Click);
             // 
-            // btnAdd_Customer
+            // btnRefresh_Customer
             // 
-            this.btnAdd_Customer.Location = new System.Drawing.Point(19, 283);
-            this.btnAdd_Customer.Name = "btnAdd_Customer";
-            this.btnAdd_Customer.Size = new System.Drawing.Size(185, 63);
-            this.btnAdd_Customer.TabIndex = 1;
-            this.btnAdd_Customer.Text = "Thêm KH";
+            this.btnRefresh_Customer.BackColor = System.Drawing.Color.White;
+            this.btnRefresh_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnRefresh_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnRefresh_Customer.Location = new System.Drawing.Point(8, 146);
+            this.btnRefresh_Customer.Name = "btnRefresh_Customer";
+            this.btnRefresh_Customer.Size = new System.Drawing.Size(185, 63);
+            this.btnRefresh_Customer.TabIndex = 4;
+            this.btnRefresh_Customer.Text = "Làm mới";
+            this.btnRefresh_Customer.UseVisualStyleBackColor = false;
+            this.btnRefresh_Customer.Click += new System.EventHandler(this.btnRefresh_Customer_Click);
             // 
             // grbInfor_Customer
             // 
+            this.grbInfor_Customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.grbInfor_Customer.Controls.Add(this.txtPhoneNumber_Customer);
             this.grbInfor_Customer.Controls.Add(this.txtAddress_Customer);
             this.grbInfor_Customer.Controls.Add(this.txtName_Customer);
@@ -1377,10 +1538,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbInfor_Customer.Controls.Add(this.lblName_Customer);
             this.grbInfor_Customer.Controls.Add(this.lblId_Customer);
             this.grbInfor_Customer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbInfor_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grbInfor_Customer.ForeColor = System.Drawing.Color.White;
             this.grbInfor_Customer.Location = new System.Drawing.Point(0, 0);
             this.grbInfor_Customer.Name = "grbInfor_Customer";
-            this.grbInfor_Customer.Size = new System.Drawing.Size(428, 256);
+            this.grbInfor_Customer.Size = new System.Drawing.Size(506, 256);
             this.grbInfor_Customer.TabIndex = 0;
+            this.grbInfor_Customer.TabStop = false;
             this.grbInfor_Customer.Text = "Thông tin Khách hàng";
             // 
             // txtPhoneNumber_Customer
@@ -1486,16 +1650,25 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_supplier.Panel2MinSize = 350;
             this.spc_supplier.Size = new System.Drawing.Size(1101, 599);
             this.spc_supplier.SplitterDistance = 590;
+            this.spc_supplier.SplitterWidth = 1;
             this.spc_supplier.TabIndex = 0;
             // 
             // lvwSupplier_supplier
             // 
+            this.lvwSupplier_supplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.lvwSupplier_supplier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvwSupplier_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lvwSupplier_supplier.ForeColor = System.Drawing.Color.White;
+            this.lvwSupplier_supplier.FullRowSelect = true;
+            this.lvwSupplier_supplier.GridLines = true;
+            this.lvwSupplier_supplier.HideSelection = false;
             this.lvwSupplier_supplier.Location = new System.Drawing.Point(0, 0);
             this.lvwSupplier_supplier.Name = "lvwSupplier_supplier";
+            this.lvwSupplier_supplier.OwnerDraw = true;
             this.lvwSupplier_supplier.Size = new System.Drawing.Size(590, 599);
             this.lvwSupplier_supplier.TabIndex = 0;
+            this.lvwSupplier_supplier.UseCompatibleStateImageBehavior = false;
+            this.lvwSupplier_supplier.View = System.Windows.Forms.View.Details;
             this.lvwSupplier_supplier.SelectedIndexChanged += new System.EventHandler(this.lvwSupplier_supplier_SelectedIndexChanged);
             this.lvwSupplier_supplier.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvwSupplier_supplier_MouseClick);
             this.lvwSupplier_supplier.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwSupplier_supplier_MouseDoubleClick);
@@ -1512,52 +1685,77 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_supplier.Location = new System.Drawing.Point(0, 185);
             this.flpFunction_supplier.Name = "flpFunction_supplier";
             this.flpFunction_supplier.Padding = new System.Windows.Forms.Padding(5);
-            this.flpFunction_supplier.Size = new System.Drawing.Size(507, 414);
+            this.flpFunction_supplier.Size = new System.Drawing.Size(510, 414);
             this.flpFunction_supplier.TabIndex = 6;
             // 
             // btnAdd_supplier
             // 
+            this.btnAdd_supplier.BackColor = System.Drawing.Color.White;
+            this.btnAdd_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAdd_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnAdd_supplier.Location = new System.Drawing.Point(8, 8);
             this.btnAdd_supplier.Name = "btnAdd_supplier";
             this.btnAdd_supplier.Size = new System.Drawing.Size(185, 63);
             this.btnAdd_supplier.TabIndex = 1;
             this.btnAdd_supplier.Text = "Thêm NCC";
+            this.btnAdd_supplier.UseVisualStyleBackColor = false;
             this.btnAdd_supplier.Click += new System.EventHandler(this.btnAdd_supplier_Click);
             // 
             // btnEdit_supplier
             // 
+            this.btnEdit_supplier.BackColor = System.Drawing.Color.White;
+            this.btnEdit_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnEdit_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnEdit_supplier.Location = new System.Drawing.Point(199, 8);
             this.btnEdit_supplier.Name = "btnEdit_supplier";
             this.btnEdit_supplier.Size = new System.Drawing.Size(185, 63);
             this.btnEdit_supplier.TabIndex = 2;
             this.btnEdit_supplier.Text = "Chỉnh sửa thông tin";
+            this.btnEdit_supplier.UseVisualStyleBackColor = false;
             this.btnEdit_supplier.Click += new System.EventHandler(this.btnEdit_supplier_Click);
             // 
             // btnDelete_supplier
             // 
+            this.btnDelete_supplier.BackColor = System.Drawing.Color.White;
+            this.btnDelete_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnDelete_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnDelete_supplier.Location = new System.Drawing.Point(8, 77);
             this.btnDelete_supplier.Name = "btnDelete_supplier";
             this.btnDelete_supplier.Size = new System.Drawing.Size(185, 63);
             this.btnDelete_supplier.TabIndex = 3;
             this.btnDelete_supplier.Text = "Xóa NCC";
+            this.btnDelete_supplier.UseVisualStyleBackColor = false;
             this.btnDelete_supplier.Click += new System.EventHandler(this.btnDelete_supplier_Click);
             // 
             // btnExport_supplier
             // 
+            this.btnExport_supplier.BackColor = System.Drawing.Color.White;
+            this.btnExport_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnExport_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnExport_supplier.Location = new System.Drawing.Point(199, 77);
             this.btnExport_supplier.Name = "btnExport_supplier";
             this.btnExport_supplier.Size = new System.Drawing.Size(185, 63);
             this.btnExport_supplier.TabIndex = 5;
             this.btnExport_supplier.Text = "Xuất file danh sách NCC";
+            this.btnExport_supplier.UseVisualStyleBackColor = false;
             this.btnExport_supplier.Click += new System.EventHandler(this.btnExport_supplier_Click);
             // 
             // btnRefresh_supplier
             // 
+            this.btnRefresh_supplier.BackColor = System.Drawing.Color.White;
+            this.btnRefresh_supplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnRefresh_supplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnRefresh_supplier.Location = new System.Drawing.Point(8, 146);
             this.btnRefresh_supplier.Name = "btnRefresh_supplier";
             this.btnRefresh_supplier.Size = new System.Drawing.Size(185, 63);
             this.btnRefresh_supplier.TabIndex = 6;
             this.btnRefresh_supplier.Text = "Làm mới";
+            this.btnRefresh_supplier.UseVisualStyleBackColor = false;
             this.btnRefresh_supplier.Click += new System.EventHandler(this.btnRefresh_supplier_Click);
             // 
             // pnlSearch_supplier
@@ -1567,26 +1765,30 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlSearch_supplier.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSearch_supplier.Location = new System.Drawing.Point(0, 0);
             this.pnlSearch_supplier.Name = "pnlSearch_supplier";
-            this.pnlSearch_supplier.Size = new System.Drawing.Size(507, 185);
+            this.pnlSearch_supplier.Size = new System.Drawing.Size(510, 185);
             this.pnlSearch_supplier.TabIndex = 1;
             // 
             // grbSearch_supplier
             // 
+            this.grbSearch_supplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.grbSearch_supplier.Controls.Add(this.pnlPhone_supplier);
             this.grbSearch_supplier.Controls.Add(this.pnlAddress_supplier);
             this.grbSearch_supplier.Controls.Add(this.pnlName_supplier);
             this.grbSearch_supplier.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbSearch_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grbSearch_supplier.ForeColor = System.Drawing.Color.White;
             this.grbSearch_supplier.Location = new System.Drawing.Point(0, 0);
             this.grbSearch_supplier.Name = "grbSearch_supplier";
-            this.grbSearch_supplier.Size = new System.Drawing.Size(507, 153);
+            this.grbSearch_supplier.Size = new System.Drawing.Size(510, 179);
             this.grbSearch_supplier.TabIndex = 7;
+            this.grbSearch_supplier.TabStop = false;
             this.grbSearch_supplier.Text = "Tìm kiếm";
             // 
             // pnlPhone_supplier
             // 
             this.pnlPhone_supplier.Controls.Add(this.lblPhone_supplier);
             this.pnlPhone_supplier.Controls.Add(this.txtPhone_supplier);
-            this.pnlPhone_supplier.Location = new System.Drawing.Point(5, 106);
+            this.pnlPhone_supplier.Location = new System.Drawing.Point(10, 115);
             this.pnlPhone_supplier.Name = "pnlPhone_supplier";
             this.pnlPhone_supplier.Size = new System.Drawing.Size(496, 39);
             this.pnlPhone_supplier.TabIndex = 4;
@@ -1614,7 +1816,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlAddress_supplier.Controls.Add(this.lblAddress_supplier);
             this.pnlAddress_supplier.Controls.Add(this.txtAddress_supplier);
-            this.pnlAddress_supplier.Location = new System.Drawing.Point(5, 61);
+            this.pnlAddress_supplier.Location = new System.Drawing.Point(10, 70);
             this.pnlAddress_supplier.Name = "pnlAddress_supplier";
             this.pnlAddress_supplier.Size = new System.Drawing.Size(496, 39);
             this.pnlAddress_supplier.TabIndex = 3;
@@ -1642,7 +1844,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlName_supplier.Controls.Add(this.lblName_supplier);
             this.pnlName_supplier.Controls.Add(this.txtName_supplier);
-            this.pnlName_supplier.Location = new System.Drawing.Point(6, 16);
+            this.pnlName_supplier.Location = new System.Drawing.Point(11, 25);
             this.pnlName_supplier.Name = "pnlName_supplier";
             this.pnlName_supplier.Size = new System.Drawing.Size(496, 39);
             this.pnlName_supplier.TabIndex = 2;
@@ -1697,15 +1899,25 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_employee.Panel2MinSize = 350;
             this.spc_employee.Size = new System.Drawing.Size(1101, 599);
             this.spc_employee.SplitterDistance = 590;
+            this.spc_employee.SplitterWidth = 1;
             this.spc_employee.TabIndex = 5;
             // 
             // lvwEmployee_employee
             // 
+            this.lvwEmployee_employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.lvwEmployee_employee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvwEmployee_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lvwEmployee_employee.ForeColor = System.Drawing.Color.White;
+            this.lvwEmployee_employee.FullRowSelect = true;
+            this.lvwEmployee_employee.GridLines = true;
+            this.lvwEmployee_employee.HideSelection = false;
             this.lvwEmployee_employee.Location = new System.Drawing.Point(0, 0);
             this.lvwEmployee_employee.Name = "lvwEmployee_employee";
+            this.lvwEmployee_employee.OwnerDraw = true;
             this.lvwEmployee_employee.Size = new System.Drawing.Size(590, 599);
             this.lvwEmployee_employee.TabIndex = 2;
+            this.lvwEmployee_employee.UseCompatibleStateImageBehavior = false;
+            this.lvwEmployee_employee.View = System.Windows.Forms.View.Details;
             this.lvwEmployee_employee.SelectedIndexChanged += new System.EventHandler(this.lvwEmployee_employee_SelectedIndexChanged);
             this.lvwEmployee_employee.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvwEmployee_employee_MouseClick);
             this.lvwEmployee_employee.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwEmployee_employee_MouseDoubleClick);
@@ -1720,64 +1932,94 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_employee.Controls.Add(this.btnRemoveEmployee_employee);
             this.flpFunction_employee.Controls.Add(this.btnRefresh_employee);
             this.flpFunction_employee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpFunction_employee.Location = new System.Drawing.Point(0, 351);
+            this.flpFunction_employee.Location = new System.Drawing.Point(0, 333);
             this.flpFunction_employee.Name = "flpFunction_employee";
             this.flpFunction_employee.Padding = new System.Windows.Forms.Padding(5);
-            this.flpFunction_employee.Size = new System.Drawing.Size(507, 248);
+            this.flpFunction_employee.Size = new System.Drawing.Size(510, 266);
             this.flpFunction_employee.TabIndex = 4;
             // 
             // btnAdd_employee
             // 
+            this.btnAdd_employee.BackColor = System.Drawing.Color.White;
+            this.btnAdd_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAdd_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnAdd_employee.Location = new System.Drawing.Point(8, 8);
             this.btnAdd_employee.Name = "btnAdd_employee";
             this.btnAdd_employee.Size = new System.Drawing.Size(185, 70);
             this.btnAdd_employee.TabIndex = 0;
             this.btnAdd_employee.Text = "Thêm nhân viên";
+            this.btnAdd_employee.UseVisualStyleBackColor = false;
             this.btnAdd_employee.Click += new System.EventHandler(this.btnAdd_employee_Click);
             // 
             // btnEdit_employee
             // 
+            this.btnEdit_employee.BackColor = System.Drawing.Color.White;
+            this.btnEdit_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnEdit_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnEdit_employee.Location = new System.Drawing.Point(199, 8);
             this.btnEdit_employee.Name = "btnEdit_employee";
             this.btnEdit_employee.Size = new System.Drawing.Size(185, 70);
             this.btnEdit_employee.TabIndex = 2;
             this.btnEdit_employee.Text = "Chỉnh sửa \n thông tin";
+            this.btnEdit_employee.UseVisualStyleBackColor = false;
             this.btnEdit_employee.Click += new System.EventHandler(this.btnEdit_employee_Click);
             // 
             // btnCreateAccount_employee
             // 
+            this.btnCreateAccount_employee.BackColor = System.Drawing.Color.White;
+            this.btnCreateAccount_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCreateAccount_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCreateAccount_employee.Location = new System.Drawing.Point(8, 84);
             this.btnCreateAccount_employee.Name = "btnCreateAccount_employee";
             this.btnCreateAccount_employee.Size = new System.Drawing.Size(185, 70);
             this.btnCreateAccount_employee.TabIndex = 4;
             this.btnCreateAccount_employee.Text = "Tạo tài khoản";
+            this.btnCreateAccount_employee.UseVisualStyleBackColor = false;
             this.btnCreateAccount_employee.Click += new System.EventHandler(this.btnCreateAccount_employee_Click);
             // 
             // btnRemoveAccount_employee
             // 
+            this.btnRemoveAccount_employee.BackColor = System.Drawing.Color.White;
+            this.btnRemoveAccount_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveAccount_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnRemoveAccount_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnRemoveAccount_employee.Location = new System.Drawing.Point(199, 84);
             this.btnRemoveAccount_employee.Name = "btnRemoveAccount_employee";
             this.btnRemoveAccount_employee.Size = new System.Drawing.Size(185, 70);
             this.btnRemoveAccount_employee.TabIndex = 3;
             this.btnRemoveAccount_employee.Text = "Xóa tài khoản";
+            this.btnRemoveAccount_employee.UseVisualStyleBackColor = false;
             this.btnRemoveAccount_employee.Click += new System.EventHandler(this.btnRemoveAccount_employee_Click);
             // 
             // btnRemoveEmployee_employee
             // 
+            this.btnRemoveEmployee_employee.BackColor = System.Drawing.Color.White;
+            this.btnRemoveEmployee_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveEmployee_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnRemoveEmployee_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnRemoveEmployee_employee.Location = new System.Drawing.Point(8, 160);
             this.btnRemoveEmployee_employee.Name = "btnRemoveEmployee_employee";
             this.btnRemoveEmployee_employee.Size = new System.Drawing.Size(185, 70);
             this.btnRemoveEmployee_employee.TabIndex = 1;
             this.btnRemoveEmployee_employee.Text = "Xóa nhân viên";
+            this.btnRemoveEmployee_employee.UseVisualStyleBackColor = false;
             this.btnRemoveEmployee_employee.Click += new System.EventHandler(this.btnRemoveEmployee_employee_Click);
             // 
             // btnRefresh_employee
             // 
+            this.btnRefresh_employee.BackColor = System.Drawing.Color.White;
+            this.btnRefresh_employee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnRefresh_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnRefresh_employee.Location = new System.Drawing.Point(199, 160);
             this.btnRefresh_employee.Name = "btnRefresh_employee";
             this.btnRefresh_employee.Size = new System.Drawing.Size(185, 70);
             this.btnRefresh_employee.TabIndex = 5;
             this.btnRefresh_employee.Text = "Làm mới";
+            this.btnRefresh_employee.UseVisualStyleBackColor = false;
             this.btnRefresh_employee.Click += new System.EventHandler(this.btnRefresh_employee_Click);
             // 
             // pnlSearch_employe
@@ -1786,11 +2028,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlSearch_employe.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSearch_employe.Location = new System.Drawing.Point(0, 0);
             this.pnlSearch_employe.Name = "pnlSearch_employe";
-            this.pnlSearch_employe.Size = new System.Drawing.Size(507, 351);
+            this.pnlSearch_employe.Size = new System.Drawing.Size(510, 333);
             this.pnlSearch_employe.TabIndex = 4;
             // 
             // grbSearch_employee
             // 
+            this.grbSearch_employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.grbSearch_employee.Controls.Add(this.pnlAccount_employee);
             this.grbSearch_employee.Controls.Add(this.pnlPosition_employee);
             this.grbSearch_employee.Controls.Add(this.pnlGender_employee);
@@ -1798,17 +2041,20 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbSearch_employee.Controls.Add(this.pnlAddress_employee);
             this.grbSearch_employee.Controls.Add(this.pnlName_employee);
             this.grbSearch_employee.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbSearch_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grbSearch_employee.ForeColor = System.Drawing.Color.White;
             this.grbSearch_employee.Location = new System.Drawing.Point(0, 0);
             this.grbSearch_employee.Name = "grbSearch_employee";
-            this.grbSearch_employee.Size = new System.Drawing.Size(507, 335);
+            this.grbSearch_employee.Size = new System.Drawing.Size(510, 335);
             this.grbSearch_employee.TabIndex = 3;
+            this.grbSearch_employee.TabStop = false;
             this.grbSearch_employee.Text = "Tìm kiếm";
             // 
             // pnlAccount_employee
             // 
             this.pnlAccount_employee.Controls.Add(this.lblAccount_employee);
             this.pnlAccount_employee.Controls.Add(this.txtAccount_employee);
-            this.pnlAccount_employee.Location = new System.Drawing.Point(6, 61);
+            this.pnlAccount_employee.Location = new System.Drawing.Point(6, 70);
             this.pnlAccount_employee.Name = "pnlAccount_employee";
             this.pnlAccount_employee.Size = new System.Drawing.Size(496, 39);
             this.pnlAccount_employee.TabIndex = 3;
@@ -1837,7 +2083,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlPosition_employee.AutoSize = true;
             this.pnlPosition_employee.Controls.Add(this.flpPosition_employee);
             this.pnlPosition_employee.Controls.Add(this.lblPosition_employee);
-            this.pnlPosition_employee.Location = new System.Drawing.Point(8, 241);
+            this.pnlPosition_employee.Location = new System.Drawing.Point(8, 250);
             this.pnlPosition_employee.Name = "pnlPosition_employee";
             this.pnlPosition_employee.Size = new System.Drawing.Size(496, 62);
             this.pnlPosition_employee.TabIndex = 6;
@@ -1865,7 +2111,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlGender_employee.Controls.Add(this.rdoMale_employee);
             this.pnlGender_employee.Controls.Add(this.rdoAll_employee);
             this.pnlGender_employee.Controls.Add(this.lblGender_employee);
-            this.pnlGender_employee.Location = new System.Drawing.Point(8, 196);
+            this.pnlGender_employee.Location = new System.Drawing.Point(8, 205);
             this.pnlGender_employee.Name = "pnlGender_employee";
             this.pnlGender_employee.Size = new System.Drawing.Size(496, 39);
             this.pnlGender_employee.TabIndex = 5;
@@ -1922,7 +2168,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlPhone_employee.Controls.Add(this.lblPhone_employee);
             this.pnlPhone_employee.Controls.Add(this.txtPhone_employee);
-            this.pnlPhone_employee.Location = new System.Drawing.Point(6, 151);
+            this.pnlPhone_employee.Location = new System.Drawing.Point(6, 160);
             this.pnlPhone_employee.Name = "pnlPhone_employee";
             this.pnlPhone_employee.Size = new System.Drawing.Size(496, 39);
             this.pnlPhone_employee.TabIndex = 4;
@@ -1950,7 +2196,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlAddress_employee.Controls.Add(this.lblAddress_employee);
             this.pnlAddress_employee.Controls.Add(this.txtAddress_employee);
-            this.pnlAddress_employee.Location = new System.Drawing.Point(6, 106);
+            this.pnlAddress_employee.Location = new System.Drawing.Point(6, 115);
             this.pnlAddress_employee.Name = "pnlAddress_employee";
             this.pnlAddress_employee.Size = new System.Drawing.Size(496, 39);
             this.pnlAddress_employee.TabIndex = 3;
@@ -1978,7 +2224,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlName_employee.Controls.Add(this.lblName_employee);
             this.pnlName_employee.Controls.Add(this.txtName_employee);
-            this.pnlName_employee.Location = new System.Drawing.Point(6, 16);
+            this.pnlName_employee.Location = new System.Drawing.Point(6, 25);
             this.pnlName_employee.Name = "pnlName_employee";
             this.pnlName_employee.Size = new System.Drawing.Size(496, 39);
             this.pnlName_employee.TabIndex = 2;
@@ -2029,6 +2275,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // btnCreateAccount_userSetting
             // 
+            this.btnCreateAccount_userSetting.BackColor = System.Drawing.Color.White;
+            this.btnCreateAccount_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateAccount_userSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCreateAccount_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCreateAccount_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_add;
             this.btnCreateAccount_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCreateAccount_userSetting.Location = new System.Drawing.Point(40, 40);
@@ -2038,10 +2288,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCreateAccount_userSetting.TabIndex = 0;
             this.btnCreateAccount_userSetting.Text = "Tạo tài khoản";
             this.btnCreateAccount_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCreateAccount_userSetting.UseVisualStyleBackColor = false;
             this.btnCreateAccount_userSetting.Click += new System.EventHandler(this.btnCreateAccount_userSetting_Click);
             // 
             // btnChangeInformation_userSetting
             // 
+            this.btnChangeInformation_userSetting.BackColor = System.Drawing.Color.White;
+            this.btnChangeInformation_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeInformation_userSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnChangeInformation_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnChangeInformation_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChangeInformation_userSetting.Location = new System.Drawing.Point(286, 40);
             this.btnChangeInformation_userSetting.Margin = new System.Windows.Forms.Padding(20);
@@ -2055,6 +2310,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // btnResetPassword_userSetting
             // 
+            this.btnResetPassword_userSetting.BackColor = System.Drawing.Color.White;
+            this.btnResetPassword_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetPassword_userSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnResetPassword_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnResetPassword_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.unlock;
             this.btnResetPassword_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnResetPassword_userSetting.Location = new System.Drawing.Point(532, 40);
@@ -2064,6 +2323,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnResetPassword_userSetting.TabIndex = 2;
             this.btnResetPassword_userSetting.Text = "Đặt lại mật khẩu";
             this.btnResetPassword_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnResetPassword_userSetting.UseVisualStyleBackColor = false;
             this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
             // 
             // cms_employee
@@ -2169,7 +2429,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial_material)).EndInit();
             this.tpgCustomer.ResumeLayout(false);
             this.panel1_Customer.ResumeLayout(false);
-            this.panel2_Customer.ResumeLayout(false);
+            this.spc_customer.Panel1.ResumeLayout(false);
+            this.spc_customer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spc_customer)).EndInit();
+            this.spc_customer.ResumeLayout(false);
+            this.pnlFunction_customer.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.grbInfor_Customer.ResumeLayout(false);
             this.grbInfor_Customer.PerformLayout();
             this.tpgSupplier.ResumeLayout(false);
@@ -2345,11 +2610,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private BmwListView lvwSell_sell;
         private System.Windows.Forms.Panel panel1_Customer;
         private BmwListView lvwCustomer_Customer;
-        private System.Windows.Forms.Panel panel2_Customer;
+        private System.Windows.Forms.Panel pnlFunction_customer;
         private BmwButton btnExport_Customer;
         private BmwButton btnRefresh_Customer;
         private BmwButton btnDelete_Customer;
-        private BmwButton btnFix_Customer;
+        private BmwButton btnEdit_Customer;
         private BmwButton btnAdd_Customer;
         private BmwGroupBox grbInfor_Customer;
         private System.Windows.Forms.TextBox txtPhoneNumber_Customer;
@@ -2362,8 +2627,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Label lblId_Customer;
         private System.Windows.Forms.Panel panel1_Receipt;
         private System.Windows.Forms.Panel panel2_Receipt;
-        private BmwButton button1;
-        private BmwButton button2;
+        private BmwButton btnExport_receipt;
         private BmwGroupBox grbInfor_Receipt;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox1;
@@ -2374,7 +2638,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private BmwListView lvwReceipt_Receipt;
-        private BmwButton btnDelete_Receipt;
+        private BmwButton btnDelete_receipt;
         private System.Windows.Forms.SplitContainer spc_supplier;
         private BmwListView lvwSupplier_supplier;
         private System.Windows.Forms.Panel pnlSearch_supplier;
@@ -2399,5 +2663,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private BmwButton btnExport_supplier;
         private BmwButton btnRefresh_supplier;
         private BmwButton btnRemoveAccount_employee;
+        private System.Windows.Forms.SplitContainer spc_customer;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

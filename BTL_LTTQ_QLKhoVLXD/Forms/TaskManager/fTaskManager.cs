@@ -79,7 +79,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #endregion
 
-        #region Form Methods
+        #region Form Behaviors
+
         private void DisplayComponentsAccordsPermission()
         {
             if (!User.Permissions.Contains(Resources.Permission_CreateAccount))
@@ -121,7 +122,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #endregion
 
-        #region Material Methods
+        #region Material Behaviors
 
         private void LoadMaterialData()
         {
@@ -138,6 +139,49 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             dgvMaterial_material.Columns[4].Width = 120;
             dgvMaterial_material.Columns[5].Width = 150;
         }
+
+        #endregion
+
+        #endregion
+
+        #region Customer
+
+        #region Customer Properties
+
+        #endregion
+
+        #region Customer Events
+
+        private void btnAdd_Customer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Customer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Customer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExport_Customer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Customer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region Customer Behaviors
+
+
 
         #endregion
 
@@ -251,7 +295,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #endregion
 
-        #region Supplier Methods
+        #region Supplier Behaviors
 
         private void Init_Supplier()
         {
@@ -601,7 +645,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #endregion
 
-        #region Employee Methods
+        #region Employee Behaviors
 
         private void Init_Employee()
         {

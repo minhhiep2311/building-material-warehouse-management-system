@@ -9,6 +9,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Controls.GroupBox
             BackColor = Color.FromArgb(48, 128, 189);
             ForeColor = Color.White;
             TabStop = false;
+            Font = new Font("Microsoft Sans Serif", 10F);
         }
     }
 }
