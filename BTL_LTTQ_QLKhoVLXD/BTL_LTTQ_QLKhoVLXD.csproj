@@ -63,17 +63,17 @@
     <Compile Include="Controls\TabControl\BmwTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\AddCustomer\AddCustomer.cs">
+    <Compile Include="Forms\Customer\Customer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddCustomer\AddCustomer.Designer.cs">
-      <DependentUpon>AddCustomer.cs</DependentUpon>
+    <Compile Include="Forms\Customer\Customer.Designer.cs">
+      <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddSupplier\fAddSupplier.cs">
+    <Compile Include="Forms\Supplier\fSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddSupplier\fAddSupplier.Designer.cs">
-      <DependentUpon>fAddSupplier.cs</DependentUpon>
+    <Compile Include="Forms\Supplier\fSupplier.Designer.cs">
+      <DependentUpon>fSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ChangePassword\fChangePassword.cs">
       <SubType>Form</SubType>
@@ -144,11 +144,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Helper.cs" />
-    <EmbeddedResource Include="Forms\AddCustomer\AddCustomer.resx">
-      <DependentUpon>AddCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Customer\Customer.resx">
+      <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddSupplier\fAddSupplier.resx">
-      <DependentUpon>fAddSupplier.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Supplier\fSupplier.resx">
+      <DependentUpon>fSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeInformation\fChangeInformation.resx">
       <DependentUpon>fChangeInformation.cs</DependentUpon>

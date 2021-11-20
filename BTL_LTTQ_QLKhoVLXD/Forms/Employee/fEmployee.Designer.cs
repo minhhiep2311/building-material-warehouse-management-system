@@ -49,14 +49,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.grbPhone = new BmwGroupBox();
-            this.btnModifyPhone = new BmwButton();
-            this.lvwPhone = new BmwListView();
-            this.btnRemovePhone = new BmwButton();
-            this.btnAddPhone = new BmwButton();
+            this.grbPhone = new System.Windows.Forms.GroupBox();
+            this.btnModifyPhone = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.lvwPhone = new System.Windows.Forms.ListView();
+            this.btnRemovePhone = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnAddPhone = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
             this.pnlButton = new System.Windows.Forms.Panel();
-            this.btnCancel = new BmwButton();
-            this.btnSave = new BmwButton();
+            this.btnCancel = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnSave = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
             this.chkEdit = new System.Windows.Forms.CheckBox();
             this.grbInfo.SuspendLayout();
             this.pnlPosition.SuspendLayout();
@@ -78,6 +78,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.grbInfo.Location = new System.Drawing.Point(12, 12);
             this.grbInfo.Name = "grbInfo";
             this.grbInfo.Size = new System.Drawing.Size(505, 213);
+            this.grbInfo.TabIndex = 0;
             this.grbInfo.TabStop = false;
             this.grbInfo.Text = "Thông tin cá nhân";
             // 
@@ -245,6 +246,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.grbPhone.Location = new System.Drawing.Point(523, 12);
             this.grbPhone.Name = "grbPhone";
             this.grbPhone.Size = new System.Drawing.Size(505, 114);
+            this.grbPhone.TabIndex = 12;
             this.grbPhone.TabStop = false;
             this.grbPhone.Text = "Số điện thoại";
             // 
@@ -272,6 +274,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             // btnRemovePhone
             // 
             this.btnRemovePhone.Enabled = false;
+            this.btnRemovePhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemovePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnRemovePhone.Location = new System.Drawing.Point(351, 85);
             this.btnRemovePhone.Name = "btnRemovePhone";
             this.btnRemovePhone.Size = new System.Drawing.Size(145, 26);
@@ -282,6 +286,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             // btnAddPhone
             // 
             this.btnAddPhone.Enabled = false;
+            this.btnAddPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnAddPhone.Location = new System.Drawing.Point(351, 18);
             this.btnAddPhone.Name = "btnAddPhone";
             this.btnAddPhone.Size = new System.Drawing.Size(145, 26);
@@ -333,7 +339,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.ClientSize = new System.Drawing.Size(1043, 247);
+            this.ClientSize = new System.Drawing.Size(1043, 253);
             this.Controls.Add(this.chkEdit);
             this.Controls.Add(this.pnlButton);
             this.Controls.Add(this.grbPhone);
@@ -366,7 +372,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
 
         #endregion
 
-        private BmwGroupBox grbInfo;
+        private System.Windows.Forms.GroupBox grbInfo;
         private System.Windows.Forms.Panel pnlAddress;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lblAddress;
@@ -379,9 +385,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
-        private BmwGroupBox grbPhone;
+        private System.Windows.Forms.GroupBox grbPhone;
         private BmwButton btnModifyPhone;
-        private BmwListView lvwPhone;
+        private System.Windows.Forms.ListView lvwPhone;
         private BmwButton btnRemovePhone;
         private BmwButton btnAddPhone;
         private System.Windows.Forms.Panel pnlButton;
