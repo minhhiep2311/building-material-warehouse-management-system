@@ -50,13 +50,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.grbPhone = new System.Windows.Forms.GroupBox();
-            this.btnModifyPhone = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnModifyPhone = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.lvwPhone = new System.Windows.Forms.ListView();
-            this.btnRemovePhone = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnAddPhone = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnRemovePhone = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnAddPhone = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlButton = new System.Windows.Forms.Panel();
-            this.btnCancel = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
-            this.btnSave = new BTL_LTTQ_QLKhoVLXD.Controls.BmwButton();
+            this.btnCancel = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnSave = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.chkEdit = new System.Windows.Forms.CheckBox();
             this.grbInfo.SuspendLayout();
             this.pnlPosition.SuspendLayout();
