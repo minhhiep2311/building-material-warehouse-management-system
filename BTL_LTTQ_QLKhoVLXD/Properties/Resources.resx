@@ -170,7 +170,7 @@
     <value>Lỗi hệ thống! Hãy thử lại sau</value>
   </data>
   <data name="MessageBox_Message_EnterFullPersonalInfo" xml:space="preserve">
-    <value>Hãy nhập đầy đủ thông tin cá nhân!</value>
+    <value>Hãy nhập đầy đủ thông tin !</value>
   </data>
   <data name="MessageBox_Message_InvalidNameFormat" xml:space="preserve">
     <value>Định dạng họ tên không chính xác! Hãy thử lại</value>
@@ -212,7 +212,7 @@
     <value>Thông tin của {0} sẽ được thay đổi. Vẫn tiếp tục?</value>
   </data>
   <data name="MessageBox_Message_ChangeInfoNoChange" xml:space="preserve">
-    <value>Không có thay đổi! Thông tin người dùng vẫn được giữ nguyên</value>
+    <value>Không có thay đổi! Thông tin vẫn được giữ nguyên</value>
   </data>
   <data name="Character_ArrowDown" xml:space="preserve">
     <value>▼</value>
