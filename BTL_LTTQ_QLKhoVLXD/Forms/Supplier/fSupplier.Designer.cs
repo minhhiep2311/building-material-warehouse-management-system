@@ -238,7 +238,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             this.Name = "fSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin nhà cung cấp";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fSupplier_FormClosing);
             this.Load += new System.EventHandler(this.fAddSupplier_Load);
             this.grbInfo.ResumeLayout(false);
             this.grbInfo.PerformLayout();

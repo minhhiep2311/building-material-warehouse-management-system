@@ -41,6 +41,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         }
 
         private List<EmployeePosition> _positions = new List<EmployeePosition>();
+        private List<Models.Supplier> _suppliers = new List<Models.Supplier>();
+        private List<Models.Material> _materials = new List<Models.Material>();
 
         #endregion
 
@@ -49,6 +51,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void fTaskManager_Load(object sender, EventArgs e)
         {
             DisplayComponentsAccordsPermission();
+            Init_Buy();
+
+            Invoke((MethodInvoker)(() =>
+            {
+                LoadData_Material();
+            }));
 
             Invoke((MethodInvoker)(() =>
             {
@@ -119,33 +127,208 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #endregion
 
+        #region Buy
+
+        #region Buy Properties
+
+        private List<Models.Material> _items_buy = new List<Models.Material>();
+
+        #endregion
+
+        #region Buy Events
+
+        private void tpgBuy_Enter(object sender, EventArgs e)
+        {
+            ResetButtons_Buy();
+            BindData_Buy();
+        }
+
+        private void cboSupplier_buy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtAddress_buy.Text = (cboSupplier_buy.SelectedItem as Models.Supplier)?.Address;
+            lblAddress_Buy.Focus();
+        }
+
+        private void btnAddSupplier_buy_Click(object sender, EventArgs e)
+        {
+            new fSupplier(this).ShowDialog();
+        }
+
+        private void cboItem_buy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedItem = cboItem_buy.SelectedItem as Models.Material;
+            txtSpecializtion_buy.Text = selectedItem?.Specialization;
+            nmrUnitPrice_buy.Value = Convert.ToDecimal(selectedItem?.ImportUnitPrice);
+            lblSpecialization_buy.Focus();
+        }
+
+        private void btnAddMaterial_buy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddItem_buy_Click(object sender, EventArgs e)
+        {
+            lvwItem_buy.SelectedItems.Clear();
+            cboItem_buy.SelectedIndex = -1;
+            txtSpecializtion_buy.Text = "";
+            nmrUnitPrice_buy.Value = 0;
+            nmrNumerouse_sell.Value = 0;
+            cboItem_buy.Focus();
+        }
+
+        private void btnEditItem_buy_Click(object sender, EventArgs e)
+        {
+            var material = Helper.Control.FirstSelected(_materials, lvwItem_buy);
+            cboItem_buy.SelectedValue = material;
+            txtSpecializtion_buy.Text = material.Specialization;
+            nmrUnitPrice_buy.Value = Convert.ToDecimal(material.ImportUnitPrice);
+            nmrMaterialAmount_Buy.Value = Convert.ToDecimal(material.Numerous);
+            btnAddItem.Text = "OK";
+        }
+
+        private void btnDeleteItem_buy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvwItem_buy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvwItem_buy.SelectedItems.Count <= 0)
+            {
+                ResetButtons_Buy();
+                return;
+            }
+
+            btnEditItem_buy.Enabled = true;
+            btnDeleteItem_buy.Enabled = true;
+        }
+
+        private void btnCreateReceipt_Buy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrintReceipt_Buy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_buy_Click(object sender, EventArgs e)
+        {
+            lvwItem_buy.Items.Clear();
+        }
+
+        #endregion
+
+        #region Behaviors
+
+        private void Init_Buy()
+        {
+            lvwItem_buy.Columns.Add("ID", 0);
+            lvwItem_buy.Columns.Add("Tên vật liệu", 300, HorizontalAlignment.Left);
+            lvwItem_buy.Columns.Add("Đơn giá", 150, HorizontalAlignment.Left);
+            lvwItem_buy.Columns.Add("Số lượng", 150, HorizontalAlignment.Left);
+            lvwItem_buy.Columns.Add("Đơn vị", 150, HorizontalAlignment.Left);
+            lvwItem_buy.Columns.Add("Quy cách", 150, HorizontalAlignment.Left);
+        }
+
+        private void ResetButtons_Buy()
+        {
+            btnEditItem_buy.Enabled = false;
+            btnDeleteItem_buy.Enabled = false;
+        }
+
+        private void BindData_Buy()
+        {
+            cboSupplier_buy.DataSource = _suppliers;
+            cboSupplier_buy.SelectedIndex = -1;
+            cboItem_buy.DataSource = _materials;
+            cboItem_buy.SelectedIndex = -1;
+        }
+
+        private void TryDeleteItem_Buy()
+        {
+            if (lvwSupplier_supplier.SelectedIndices.Count <= 0)
+                return;
+
+            var shouldDeleteSupplierIds = lvwItem_buy.SelectedIndices.Cast<int>().ToList();
+            var shouldDeleteSupplierNames = shouldDeleteSupplierIds.Select(x => _items_buy[x].Name);
+
+            if (ConfirmDeleteItem_buy(shouldDeleteSupplierNames))
+                DeleteItem_buy(shouldDeleteSupplierIds);
+        }
+
+        private static bool ConfirmDeleteItem_buy(IEnumerable<string> shouldDeleteSupplierNames)
+        {
+            var shouldDeleteStr = string.Join(", ", shouldDeleteSupplierNames);
+            return MessageBox.Show(
+                string.Format(Resources.MessageBox_Message_ConfirmDeleteSupplier, shouldDeleteStr),
+                Resources.MessageBox_Caption_Notification,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            ) == DialogResult.Yes;
+        }
+
+        private void DeleteItem_buy(List<int> shouldDeleteSupplierIds)
+        {
+            shouldDeleteSupplierIds.ForEach(idx =>
+            {
+                _items_buy.RemoveAt(idx);
+                lvwItem_buy.Items.RemoveAt(idx);
+            });
+        }
+
+
+        #endregion
+
+        #endregion
+
+        #region Sell
+
+        private void txtCustomerName_sell_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
         #region Material
 
         #region Material Events
 
         private void tpgMaterial_Enter(object sender, EventArgs e)
         {
-            LoadMaterialData();
+            LoadData_Material();
         }
 
         #endregion
 
         #region Material Behaviors
 
-        private void LoadMaterialData()
+        private void Init_Material()
         {
-            dgvMaterial_material.DataSource = MaterialService.GetAll();
-            ConfigMaterialTable();
+            lvwMaterial_material.Columns.Add("ID", 0);
+            lvwMaterial_material.Columns.Add("Tên vật liệu", 300, HorizontalAlignment.Left);
+            lvwMaterial_material.Columns.Add("Đơn giá nhập", 150, HorizontalAlignment.Left);
+            lvwMaterial_material.Columns.Add("Đơn giá xuật", 150, HorizontalAlignment.Left);
+            lvwMaterial_material.Columns.Add("Đơn vị", 150, HorizontalAlignment.Left);
+            lvwMaterial_material.Columns.Add("Quy cách", 150, HorizontalAlignment.Left);
         }
 
-        private void ConfigMaterialTable()
+        private void LoadData_Material(List<Models.Material> cache = null)
         {
-            dgvMaterial_material.Columns[0].Width = 40;
-            dgvMaterial_material.Columns[1].Width = 200;
-            dgvMaterial_material.Columns[2].Width = 150;
-            dgvMaterial_material.Columns[3].Width = 150;
-            dgvMaterial_material.Columns[4].Width = 120;
-            dgvMaterial_material.Columns[5].Width = 150;
+
+            lvwMaterial_material.Items.Clear();
+
+            if (cache == null)
+            {
+                _materials = MaterialService.GetAllMaterials();
+                cache = _materials;
+                cboItem_buy.DataSource = _materials;
+            }
+
+            cache.ForEach(material => lvwMaterial_material.Items.Add(material.ToListViewItem(Material.Type.Import)));
         }
 
         #endregion
@@ -257,7 +440,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void EditCustomer_customer()
         {
-            var customer = Helper.Control.FirstItem(_customerList_customer, lvwCustomer_customer);
+            var customer = Helper.Control.FirstSelected(_customerList_customer, lvwCustomer_customer);
             if (customer != null)
                 new fCustomer(this, FormMode.Write, customer, true).Show();
 
@@ -273,7 +456,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #region Supplier Properties
 
         private Helper.Debounce _debounce_supplier;
-        private List<Models.Supplier> _supplierList_supplier;
 
         #endregion
 
@@ -393,16 +575,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             if (cache == null)
             {
-                _supplierList_supplier = SupplierService.GetAllSuppliers();
-                cache = _supplierList_supplier;
+                _suppliers = SupplierService.GetAllSuppliers();
+                cache = _suppliers;
+                cboSupplier_buy.DataSource = _suppliers;
             }
 
             cache.ForEach(supplier =>
                 {
-                    var row = new ListViewItem(supplier.Id.ToString());
-                    row.SubItems.Add(supplier.Name);
-                    row.SubItems.Add(supplier.Address);
-                    lvwSupplier_supplier.Items.Add(row);
+                    lvwSupplier_supplier.Items.Add(supplier.ToListViewItem());
                 }
             );
         }
@@ -419,7 +599,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var address = txtAddress_supplier.Text;
             var phone = txtPhone_supplier.Text;
 
-            var suppliers = _supplierList_supplier.FindAll(x =>
+            var suppliers = _suppliers.FindAll(x =>
             {
                 var matchName = Helper.Matcher.Match(x.Name, name);
                 var matchAddress = Helper.Matcher.Match(x.Address, address);
@@ -436,7 +616,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             if (lvwSupplier_supplier.SelectedIndices.Count <= 0)
                 return;
 
-            var supplier = _supplierList_supplier[lvwSupplier_supplier.SelectedIndices[0]];
+            var supplier = _suppliers[lvwSupplier_supplier.SelectedIndices[0]];
             var editable = User.Permissions.Contains(Resources.Permission_EditSupplierInformation);
             var mode = editable ? FormMode.Write : FormMode.Read;
 
@@ -451,7 +631,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 return;
 
             var shouldDeleteSuppliers = lvwSupplier_supplier.SelectedIndices.Cast<int>()
-               .Select(x => _supplierList_supplier[x]).ToList();
+               .Select(x => _suppliers[x]).ToList();
             var shouldDeleteSupplierNames = shouldDeleteSuppliers.Select(x => x.Name);
             var shouldDeleteSupplierIds = shouldDeleteSuppliers.Select(x => x.Id).ToList();
 
@@ -496,7 +676,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void EditSupplier_supplier()
         {
-            var supplier = Helper.Control.FirstItem(_supplierList_supplier, lvwSupplier_supplier);
+            var supplier = Helper.Control.FirstSelected(_suppliers, lvwSupplier_supplier);
             if (supplier != null)
                 new fSupplier(this, FormMode.Write, supplier, true).Show();
         }
@@ -845,7 +1025,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void EditEmployee_employee()
         {
-            var employee = Helper.Control.FirstItem(_employeeList_employee, lvwEmployee_employee);
+            var employee = Helper.Control.FirstSelected(_employeeList_employee, lvwEmployee_employee);
             if (employee != null)
                 new fEmployee(this, FormMode.Write, employee, true).Show();
         }

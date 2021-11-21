@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 
@@ -44,6 +45,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             return new Supplier(id, name, address);
         }
 
+        public ListViewItem ToListViewItem()
+        {
+            var row = new ListViewItem(Id.ToString());
+            row.SubItems.Add(Name);
+            row.SubItems.Add(Address);
+            return row;
+        }
+
         #endregion
 
         #region Private Methods
@@ -55,7 +64,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
         #endregion
 
-        #region
+        #region Overrides
+
+        public override string ToString()
+        {
+            return Name;
+        }
 
         public bool Equals(Supplier other)
         {

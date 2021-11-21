@@ -198,7 +198,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
                 }
             }
 
-            public static T FirstItem<T>(List<T> dataList, ListView listView)
+            public static T FirstSelected<T>(List<T> dataList, ListView listView)
             {
                 if (listView.SelectedIndices.Count <= 0)
                     return default;

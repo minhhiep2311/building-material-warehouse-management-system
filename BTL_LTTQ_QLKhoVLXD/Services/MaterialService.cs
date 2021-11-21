@@ -1,22 +1,26 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 
 namespace BTL_LTTQ_QLKhoVLXD.Services
 {
     internal static class MaterialService
     {
-        public static DataTable GetAll()
+        public static List<Material> GetAllMaterials()
         {
-            const string query = "SELECT m.id AS N'Mã', " +
-                                 "m.name AS N'Tên vật liệu', " +
-                                 "importUnitPrice AS N'Đơn giá nhập', " +
-                                 "exportUnitPrice AS N'Đơn giá xuất', " +
-                                 "u.Name AS N'Đơn vị tính', " +
-                                 "specialization AS N'Quy cách'" +
+            const string query = "SELECT m.id, " +
+                                 "m.name, " +
+                                 "importUnitPrice, " +
+                                 "exportUnitPrice, " +
+                                 "u.id AS unitId, " +
+                                 "u.Name AS unitName, " +
+                                 "specialization " +
                                  "FROM material AS m " +
                                  "JOIN unit AS u ON m.idUnit=u.id";
 
-            return DatabaseProvider.Instance.ExecuteQuery(query);
+            var result = DatabaseProvider.Instance.ExecuteQuery(query);
+            var materialList = Helper.Mapper.MapArrayOfObject(result, Material.FromData);
+            return materialList;
         }
     }
 }

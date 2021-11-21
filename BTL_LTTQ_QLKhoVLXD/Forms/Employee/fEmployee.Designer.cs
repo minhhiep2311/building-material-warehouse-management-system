@@ -1,4 +1,5 @@
 ﻿using BTL_LTTQ_QLKhoVLXD.Controls.Button;
+using BTL_LTTQ_QLKhoVLXD.Controls.ComboBox;
 using BTL_LTTQ_QLKhoVLXD.Controls.GroupBox;
 using BTL_LTTQ_QLKhoVLXD.Controls.ListView;
 
@@ -32,10 +33,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
         /// </summary>
         private void InitializeComponent()
         {
-            this.grbInfo = new BmwGroupBox();
+            this.grbInfo = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
             this.pnlPosition = new System.Windows.Forms.Panel();
             this.lblPosition = new System.Windows.Forms.Label();
-            this.cboPosition = new System.Windows.Forms.ComboBox();
+            this.cboPosition = new BmwComboBox();
             this.pnlAddress = new System.Windows.Forms.Panel();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
@@ -70,11 +71,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             // 
             // grbInfo
             // 
+            this.grbInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.grbInfo.Controls.Add(this.pnlPosition);
             this.grbInfo.Controls.Add(this.pnlAddress);
             this.grbInfo.Controls.Add(this.pnlGender);
             this.grbInfo.Controls.Add(this.panel2);
             this.grbInfo.Controls.Add(this.panel1);
+            this.grbInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grbInfo.ForeColor = System.Drawing.Color.White;
             this.grbInfo.Location = new System.Drawing.Point(12, 12);
             this.grbInfo.Name = "grbInfo";
             this.grbInfo.Size = new System.Drawing.Size(505, 213);
@@ -96,12 +100,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.lblPosition.AutoSize = true;
             this.lblPosition.Location = new System.Drawing.Point(3, 8);
             this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(59, 17);
+            this.lblPosition.Size = new System.Drawing.Size(70, 20);
             this.lblPosition.TabIndex = 1;
             this.lblPosition.Text = "Chức vụ";
             // 
             // cboPosition
             // 
+            this.cboPosition.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboPosition.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.cboPosition.Location = new System.Drawing.Point(78, 3);
@@ -133,7 +139,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.lblAddress.AutoSize = true;
             this.lblAddress.Location = new System.Drawing.Point(3, 8);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(51, 17);
+            this.lblAddress.Size = new System.Drawing.Size(61, 20);
             this.lblAddress.TabIndex = 1;
             this.lblAddress.Text = "Địa chỉ";
             // 
@@ -152,7 +158,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.lblGender.AutoSize = true;
             this.lblGender.Location = new System.Drawing.Point(3, 3);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(60, 17);
+            this.lblGender.Size = new System.Drawing.Size(71, 20);
             this.lblGender.TabIndex = 11;
             this.lblGender.Text = "Giới tính";
             // 
@@ -162,7 +168,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.rdoFemale.Enabled = false;
             this.rdoFemale.Location = new System.Drawing.Point(174, 1);
             this.rdoFemale.Name = "rdoFemale";
-            this.rdoFemale.Size = new System.Drawing.Size(47, 21);
+            this.rdoFemale.Size = new System.Drawing.Size(51, 24);
             this.rdoFemale.TabIndex = 4;
             this.rdoFemale.Text = "Nữ";
             this.rdoFemale.UseVisualStyleBackColor = true;
@@ -173,7 +179,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.rdoMale.Enabled = false;
             this.rdoMale.Location = new System.Drawing.Point(79, 1);
             this.rdoMale.Name = "rdoMale";
-            this.rdoMale.Size = new System.Drawing.Size(58, 21);
+            this.rdoMale.Size = new System.Drawing.Size(65, 24);
             this.rdoMale.TabIndex = 3;
             this.rdoMale.Text = "Nam";
             this.rdoMale.UseVisualStyleBackColor = true;
@@ -205,7 +211,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.lblDob.AutoSize = true;
             this.lblDob.Location = new System.Drawing.Point(3, 12);
             this.lblDob.Name = "lblDob";
-            this.lblDob.Size = new System.Drawing.Size(71, 17);
+            this.lblDob.Size = new System.Drawing.Size(83, 20);
             this.lblDob.TabIndex = 1;
             this.lblDob.Text = "Ngày sinh";
             // 
@@ -233,7 +239,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.lblName.AutoSize = true;
             this.lblName.Location = new System.Drawing.Point(3, 11);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(69, 17);
+            this.lblName.Size = new System.Drawing.Size(81, 20);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Họ và tên";
             // 
@@ -252,47 +258,60 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             // 
             // btnModifyPhone
             // 
+            this.btnModifyPhone.BackColor = System.Drawing.Color.White;
             this.btnModifyPhone.Enabled = false;
+            this.btnModifyPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifyPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnModifyPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnModifyPhone.Location = new System.Drawing.Point(351, 52);
             this.btnModifyPhone.Name = "btnModifyPhone";
             this.btnModifyPhone.Size = new System.Drawing.Size(145, 26);
             this.btnModifyPhone.TabIndex = 9;
             this.btnModifyPhone.Text = "Chỉnh sửa";
+            this.btnModifyPhone.UseVisualStyleBackColor = false;
             this.btnModifyPhone.Click += new System.EventHandler(this.btnModifyPhone_Click);
             // 
             // lvwPhone
             // 
             this.lvwPhone.Dock = System.Windows.Forms.DockStyle.Left;
             this.lvwPhone.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvwPhone.HideSelection = false;
             this.lvwPhone.LabelEdit = true;
             this.lvwPhone.Location = new System.Drawing.Point(3, 18);
             this.lvwPhone.Name = "lvwPhone";
             this.lvwPhone.Size = new System.Drawing.Size(339, 93);
             this.lvwPhone.TabIndex = 7;
+            this.lvwPhone.UseCompatibleStateImageBehavior = false;
             this.lvwPhone.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwPhone_MouseDoubleClick);
             // 
             // btnRemovePhone
             // 
+            this.btnRemovePhone.BackColor = System.Drawing.Color.White;
             this.btnRemovePhone.Enabled = false;
             this.btnRemovePhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemovePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnRemovePhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnRemovePhone.Location = new System.Drawing.Point(351, 85);
             this.btnRemovePhone.Name = "btnRemovePhone";
             this.btnRemovePhone.Size = new System.Drawing.Size(145, 26);
             this.btnRemovePhone.TabIndex = 10;
             this.btnRemovePhone.Text = "Xóa";
+            this.btnRemovePhone.UseVisualStyleBackColor = false;
             this.btnRemovePhone.Click += new System.EventHandler(this.btnRemovePhone_Click);
             // 
             // btnAddPhone
             // 
+            this.btnAddPhone.BackColor = System.Drawing.Color.White;
             this.btnAddPhone.Enabled = false;
             this.btnAddPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAddPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnAddPhone.Location = new System.Drawing.Point(351, 18);
             this.btnAddPhone.Name = "btnAddPhone";
             this.btnAddPhone.Size = new System.Drawing.Size(145, 26);
             this.btnAddPhone.TabIndex = 8;
             this.btnAddPhone.Text = "Thêm";
+            this.btnAddPhone.UseVisualStyleBackColor = false;
             this.btnAddPhone.Click += new System.EventHandler(this.btnAddPhone_Click);
             // 
             // pnlButton
@@ -306,21 +325,31 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCancel.Location = new System.Drawing.Point(277, 18);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(129, 38);
             this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Hủy bỏ";
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.White;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSave.Location = new System.Drawing.Point(58, 21);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(129, 38);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Lưu thay đổi";
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // chkEdit
@@ -371,8 +400,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox grbInfo;
         private System.Windows.Forms.Panel pnlAddress;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lblAddress;
@@ -397,6 +424,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
         private System.Windows.Forms.DateTimePicker dtpDob;
         private System.Windows.Forms.Panel pnlPosition;
         private System.Windows.Forms.Label lblPosition;
-        private System.Windows.Forms.ComboBox cboPosition;
+        private BmwComboBox cboPosition;
+        private BmwGroupBox grbInfo;
     }
 }
