@@ -54,7 +54,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee
         {
             var valid = txtName.Text != "" &&
                 txtAddress.Text != "" &&
-                Helper.ControlFilter.GetRadioButtons(grbInfo).FirstOrDefault(x => x.Checked) != null &&
+                Helper.Control.Filter.GetRadioButtons(grbInfo)
+                   .FirstOrDefault(x => x.Checked) != null &&
                 txtPhone.Text != "" &&
                 cboPosition.SelectedIndex != -1;
 
