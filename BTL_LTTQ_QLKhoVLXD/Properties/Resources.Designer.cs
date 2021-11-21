@@ -116,6 +116,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thêm nhà cung cấp mới.
+        /// </summary>
+        internal static string Form_Text_AddNewCustomer {
+            get {
+                return ResourceManager.GetString("Form_Text_AddNewCustomer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thêm nhân viên mới.
         /// </summary>
         internal static string Form_Text_AddNewEmployee {
@@ -179,7 +188,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thêm nhân viên thành công!.
+        ///   Looks up a localized string similar to Thêm thành công!.
         /// </summary>
         internal static string MessageBox_Message_AddEmployeeSuccessfully {
             get {

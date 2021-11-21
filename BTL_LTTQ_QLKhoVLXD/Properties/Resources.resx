@@ -230,7 +230,7 @@
     <value>Lưu</value>
   </data>
   <data name="MessageBox_Message_AddEmployeeSuccessfully" xml:space="preserve">
-    <value>Thêm nhân viên thành công!</value>
+    <value>Thêm thành công!</value>
   </data>
   <data name="MessageBox_Message_CannotSelfDeleteAccount" xml:space="preserve">
     <value>Bạn không thể xóa tài khoản của mình!</value>
@@ -281,6 +281,9 @@
     <value>Đã xóa {0} nhà cung cấp!</value>
   </data>
   <data name="Form_Text_AddNewSupplier" xml:space="preserve">
+    <value>Thêm nhà cung cấp mới</value>
+  </data>
+  <data name="Form_Text_AddNewCustomer" xml:space="preserve">
     <value>Thêm nhà cung cấp mới</value>
   </data>
 </root>

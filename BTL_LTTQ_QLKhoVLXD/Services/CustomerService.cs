@@ -34,6 +34,50 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 
         #endregion
 
+        #region Insert
+        public static int CreateCustomer(Customer customer)
+        {
+            var query = "INSERT INTO supplier " +
+                "OUTPUT INSERTED.ID " +
+                $"VALUES (N'{customer.Name}', " +
+                $"N'{customer.Address}')";
+
+            try
+            {
+                var supplierId = Convert.ToInt32(DatabaseProvider.Instance.ExecuteScalar(query));
+                return supplierId;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+        }
+
+        public static bool AddNewPhoneNumbers(Customer customer, List<string> phoneList)
+        {
+            if (phoneList.Count == 0)
+                return true;
+
+            var values = phoneList.Select(phone => $"(N'{customer.Id}', N'{phone}')");
+            var query = $"INSERT INTO customerPhoneNumber VALUES {string.Join(", ", values)}";
+            var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
+            return rowAffected == phoneList.Count;
+        }
+
+        #endregion
+
+        #region Update
+        public static bool ChangeCustomerInformation(Customer customer)
+        {
+            var query = $"UPDATE supplier SET name = N'{customer.Name}', " +
+                $"address = N'{customer.Address}', " +
+                $"WHERE id = N'{customer.Id}'";
+            var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
+
+            return rowAffected > 0;
+        }
+        #endregion
+
         #region Delete
 
         public static bool DeleteCustomer(List<int> customerIdList)
@@ -45,6 +89,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             return rowAffected == customerIdList.Count;
         }
 
+        public static bool DeletePhoneNumbers(List<string> phoneList)
+        {
+            if (phoneList.Count == 0)
+                return true;
+
+            var query = $"DELETE customerPhoneNumber WHERE phoneNumber IN ({string.Join(", ", phoneList)})";
+            var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
+            return rowAffected == phoneList.Count;
+        }
         #endregion
     }
 }

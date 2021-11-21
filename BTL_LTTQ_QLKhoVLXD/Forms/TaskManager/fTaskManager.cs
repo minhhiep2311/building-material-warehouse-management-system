@@ -260,6 +260,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var customer = Helper.Control.FirstItem(_customerList_customer, lvwCustomer_customer);
             if (customer != null)
                 new fCustomer(this, FormMode.Write, customer, true).Show();
+
         }
 
 
@@ -432,16 +433,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void ShowInformation_Supplier()
         {
-            if (lvwEmployee_employee.SelectedIndices.Count <= 0)
+            if (lvwSupplier_supplier.SelectedIndices.Count <= 0)
                 return;
 
             var supplier = _supplierList_supplier[lvwSupplier_supplier.SelectedIndices[0]];
             var editable = User.Permissions.Contains(Resources.Permission_EditSupplierInformation);
             var mode = editable ? FormMode.Write : FormMode.Read;
 
-            lvwEmployee_employee.SelectedItems.Clear();
+            lvwSupplier_supplier.SelectedItems.Clear();
 
-            //new fEmployee(this, mode, supplier).Show();
+            //new fSupplier(this, mode, supplier).Show();
         }
 
         private void TryDeleteSupplier_supplier()

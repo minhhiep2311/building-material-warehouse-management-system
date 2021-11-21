@@ -31,107 +31,61 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
         /// </summary>
         private void InitializeComponent()
         {
-            this.grbInfo = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.lblPhone = new System.Windows.Forms.Label();
+            this.grbInfo = new System.Windows.Forms.GroupBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.btnCreate = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.grbPhone = new System.Windows.Forms.GroupBox();
+            this.btnModifyPhone = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.lvwPhone = new System.Windows.Forms.ListView();
+            this.btnRemovePhone = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnAddPhone = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.chkEdit = new System.Windows.Forms.CheckBox();
+            this.pnlButton = new System.Windows.Forms.Panel();
             this.btnCancel = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnSave = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.grbInfo.SuspendLayout();
+            this.grbPhone.SuspendLayout();
+            this.pnlButton.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbInfo
             // 
-            this.grbInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.grbInfo.Controls.Add(this.textBox1);
-            this.grbInfo.Controls.Add(this.label1);
-            this.grbInfo.Controls.Add(this.txtPhone);
-            this.grbInfo.Controls.Add(this.lblPhone);
             this.grbInfo.Controls.Add(this.txtAddress);
             this.grbInfo.Controls.Add(this.txtName);
             this.grbInfo.Controls.Add(this.lblName);
             this.grbInfo.Controls.Add(this.lblAddress);
-            this.grbInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.grbInfo.ForeColor = System.Drawing.Color.White;
-            this.grbInfo.Location = new System.Drawing.Point(9, 10);
-            this.grbInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbInfo.Location = new System.Drawing.Point(12, 26);
             this.grbInfo.Name = "grbInfo";
-            this.grbInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grbInfo.Size = new System.Drawing.Size(349, 154);
-            this.grbInfo.TabIndex = 4;
+            this.grbInfo.Size = new System.Drawing.Size(841, 114);
+            this.grbInfo.TabIndex = 6;
             this.grbInfo.TabStop = false;
             this.grbInfo.Text = "Thông tin khách hàng";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.textBox1.Location = new System.Drawing.Point(104, 20);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(235, 23);
-            this.textBox1.TabIndex = 12;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 17);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Mã khách hàng";
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtPhone.Location = new System.Drawing.Point(104, 113);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(235, 23);
-            this.txtPhone.TabIndex = 10;
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(4, 118);
-            this.lblPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(91, 17);
-            this.lblPhone.TabIndex = 9;
-            this.lblPhone.Text = "Số điện thoại";
             // 
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtAddress.Location = new System.Drawing.Point(104, 83);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress.Location = new System.Drawing.Point(147, 67);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(235, 23);
+            this.txtAddress.Size = new System.Drawing.Size(680, 26);
             this.txtAddress.TabIndex = 4;
             // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtName.Location = new System.Drawing.Point(104, 51);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Location = new System.Drawing.Point(147, 23);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(235, 23);
+            this.txtName.Size = new System.Drawing.Size(680, 26);
             this.txtName.TabIndex = 3;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(4, 56);
-            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Location = new System.Drawing.Point(6, 29);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(111, 17);
             this.lblName.TabIndex = 0;
@@ -140,71 +94,176 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(4, 88);
-            this.lblAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddress.Location = new System.Drawing.Point(6, 67);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(51, 17);
             this.lblAddress.TabIndex = 1;
             this.lblAddress.Text = "Địa chỉ";
             // 
-            // btnCreate
+            // grbPhone
             // 
-            this.btnCreate.BackColor = System.Drawing.Color.White;
-            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnCreate.Location = new System.Drawing.Point(40, 168);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(97, 48);
-            this.btnCreate.TabIndex = 15;
-            this.btnCreate.Text = "Thêm khách hàng";
-            this.btnCreate.UseVisualStyleBackColor = false;
+            this.grbPhone.Controls.Add(this.btnModifyPhone);
+            this.grbPhone.Controls.Add(this.lvwPhone);
+            this.grbPhone.Controls.Add(this.btnRemovePhone);
+            this.grbPhone.Controls.Add(this.btnAddPhone);
+            this.grbPhone.ForeColor = System.Drawing.Color.White;
+            this.grbPhone.Location = new System.Drawing.Point(12, 161);
+            this.grbPhone.Name = "grbPhone";
+            this.grbPhone.Size = new System.Drawing.Size(841, 114);
+            this.grbPhone.TabIndex = 21;
+            this.grbPhone.TabStop = false;
+            this.grbPhone.Text = "Số điện thoại";
+            // 
+            // btnModifyPhone
+            // 
+            this.btnModifyPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnModifyPhone.Enabled = false;
+            this.btnModifyPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifyPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnModifyPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnModifyPhone.Location = new System.Drawing.Point(673, 53);
+            this.btnModifyPhone.Name = "btnModifyPhone";
+            this.btnModifyPhone.Size = new System.Drawing.Size(145, 26);
+            this.btnModifyPhone.TabIndex = 9;
+            this.btnModifyPhone.Text = "Chỉnh sửa";
+            this.btnModifyPhone.UseVisualStyleBackColor = false;
+            this.btnModifyPhone.Click += new System.EventHandler(this.btnModifyPhone_Click);
+            // 
+            // lvwPhone
+            // 
+            this.lvwPhone.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lvwPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.lvwPhone.FullRowSelect = true;
+            this.lvwPhone.GridLines = true;
+            this.lvwPhone.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvwPhone.HideSelection = false;
+            this.lvwPhone.LabelEdit = true;
+            this.lvwPhone.Location = new System.Drawing.Point(3, 18);
+            this.lvwPhone.Name = "lvwPhone";
+            this.lvwPhone.Size = new System.Drawing.Size(653, 93);
+            this.lvwPhone.TabIndex = 7;
+            this.lvwPhone.UseCompatibleStateImageBehavior = false;
+            this.lvwPhone.View = System.Windows.Forms.View.Details;
+            // 
+            // btnRemovePhone
+            // 
+            this.btnRemovePhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnRemovePhone.Enabled = false;
+            this.btnRemovePhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemovePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnRemovePhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnRemovePhone.Location = new System.Drawing.Point(673, 82);
+            this.btnRemovePhone.Name = "btnRemovePhone";
+            this.btnRemovePhone.Size = new System.Drawing.Size(145, 26);
+            this.btnRemovePhone.TabIndex = 10;
+            this.btnRemovePhone.Text = "Xóa";
+            this.btnRemovePhone.UseVisualStyleBackColor = false;
+            this.btnRemovePhone.Click += new System.EventHandler(this.btnRemovePhone_Click);
+            // 
+            // btnAddPhone
+            // 
+            this.btnAddPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnAddPhone.Enabled = false;
+            this.btnAddPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAddPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnAddPhone.Location = new System.Drawing.Point(673, 21);
+            this.btnAddPhone.Name = "btnAddPhone";
+            this.btnAddPhone.Size = new System.Drawing.Size(145, 26);
+            this.btnAddPhone.TabIndex = 8;
+            this.btnAddPhone.Text = "Thêm";
+            this.btnAddPhone.UseVisualStyleBackColor = false;
+            this.btnAddPhone.Click += new System.EventHandler(this.btnAddPhone_Click);
+            // 
+            // chkEdit
+            // 
+            this.chkEdit.AutoSize = true;
+            this.chkEdit.ForeColor = System.Drawing.Color.White;
+            this.chkEdit.Location = new System.Drawing.Point(12, 296);
+            this.chkEdit.Name = "chkEdit";
+            this.chkEdit.Size = new System.Drawing.Size(152, 21);
+            this.chkEdit.TabIndex = 22;
+            this.chkEdit.Text = "Chỉnh sửa thông tin";
+            this.chkEdit.UseVisualStyleBackColor = true;
+            // 
+            // pnlButton
+            // 
+            this.pnlButton.Controls.Add(this.btnCancel);
+            this.pnlButton.Controls.Add(this.btnSave);
+            this.pnlButton.Location = new System.Drawing.Point(204, 327);
+            this.pnlButton.Name = "pnlButton";
+            this.pnlButton.Size = new System.Drawing.Size(464, 58);
+            this.pnlButton.TabIndex = 23;
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnCancel.Location = new System.Drawing.Point(232, 168);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Location = new System.Drawing.Point(291, 3);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(97, 48);
-            this.btnCancel.TabIndex = 16;
+            this.btnCancel.Size = new System.Drawing.Size(110, 45);
+            this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "Hủy bỏ";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.White;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnSave.Location = new System.Drawing.Point(22, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(110, 45);
+            this.btnSave.TabIndex = 16;
+            this.btnSave.Text = "Lưu thay đổi";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // fCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.ClientSize = new System.Drawing.Size(368, 230);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnCreate);
+            this.ClientSize = new System.Drawing.Size(863, 393);
+            this.Controls.Add(this.pnlButton);
+            this.Controls.Add(this.chkEdit);
+            this.Controls.Add(this.grbPhone);
             this.Controls.Add(this.grbInfo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fCustomer";
-            this.Text = "Thêm khách hàng";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thông tin khách hàng";
+            this.Load += new System.EventHandler(this.fCustomer_Load);
             this.grbInfo.ResumeLayout(false);
             this.grbInfo.PerformLayout();
+            this.grbPhone.ResumeLayout(false);
+            this.pnlButton.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private BmwGroupBox grbInfo;
-        private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.GroupBox grbInfo;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblAddress;
-        private BmwButton btnCreate;
+        private System.Windows.Forms.GroupBox grbPhone;
+        private BmwButton btnModifyPhone;
+        private System.Windows.Forms.ListView lvwPhone;
+        private BmwButton btnRemovePhone;
+        private BmwButton btnAddPhone;
+        private System.Windows.Forms.CheckBox chkEdit;
+        private System.Windows.Forms.Panel pnlButton;
         private BmwButton btnCancel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private BmwButton btnSave;
     }
 }

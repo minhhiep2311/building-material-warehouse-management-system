@@ -17,6 +17,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
         #endregion
 
         #region Constructors
+        public Customer(string name, string address, List<string> phoneNumber) : this(-1, name, address, phoneNumber) { }
 
         public Customer(int id, string name, string address) : this(id, name, address, GetPhoneNumberData(id)) { }
 

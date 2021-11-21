@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Text.RegularExpressions;
+using System.Linq;
 using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.TaskManager;
-using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
@@ -15,334 +13,288 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
     public partial class fCustomer : Form
     {
         private readonly fTaskManager _parentForm;
-        private readonly Models.Customer _user;
+        private readonly Models.Customer _customer;
         private readonly FormMode _mode;
         private readonly bool _startEdit;
 
         public fCustomer(
             fTaskManager form,
             FormMode mode = FormMode.Create,
-            Models.Customer user = null,
+            Models.Customer customer = null,
             bool startEdit = false)
         {
             InitializeComponent();
             _mode = mode;
-            _user = user;
+            _customer = customer;
             _parentForm = form;
             _startEdit = startEdit;
         }
 
-        //#region Events
 
-        //private void fEmployee_Load(object sender, EventArgs e)
-        //{
-        //    InitControls();
-        //    BindData();
-        //    ConfigureAccessibility();
-        //}
+        #region Events
 
-        //private void fEmployee_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    _parentForm.LoadData_Employee();
-        //}
+        private void fCustomer_Load(object sender, EventArgs e)
+        {
+            InitControls();
+            BindData();
+            ConfigureAccessibility();
+        }
 
-        //private void chkEdit_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    if (chkEdit.Checked)
-        //    {
-        //        txtName.ReadOnly = false;
-        //        dtpDob.Enabled = true;
-        //        rdoMale.Enabled = true;
-        //        rdoFemale.Enabled = true;
-        //        txtAddress.ReadOnly = false;
-        //        btnAddPhone.Enabled = true;
-        //        btnModifyPhone.Enabled = true;
-        //        btnRemovePhone.Enabled = true;
-        //    }
-        //    else
-        //    {
-        //        txtName.ReadOnly = true;
-        //        dtpDob.Enabled = false;
-        //        rdoMale.Enabled = false;
-        //        rdoFemale.Enabled = false;
-        //        txtAddress.ReadOnly = true;
-        //        btnAddPhone.Enabled = false;
-        //        btnModifyPhone.Enabled = false;
-        //        btnRemovePhone.Enabled = false;
-        //    }
-        //}
+        private void fCustomer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           _parentForm.LoadData_Customer();
+        }
 
-        //private void btnAddPhone_Click(object sender, EventArgs e)
-        //{
-        //    lvwPhone.SelectedItems.Clear();
-        //    var item = lvwPhone.Items.Add("");
-        //    item.BeginEdit();
-        //}
+        private void chkEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkEdit.Checked)
+            {
+                txtName.ReadOnly = false;
+                txtAddress.ReadOnly = false;
+                btnAddPhone.Enabled = true;
+                btnModifyPhone.Enabled = true;
+                btnRemovePhone.Enabled = true;
+            }
+            else
+            {
+                txtName.ReadOnly = true;
+                txtAddress.ReadOnly = true;
+                btnAddPhone.Enabled = false;
+                btnModifyPhone.Enabled = false;
+                btnRemovePhone.Enabled = false;
+            }
+        }
 
-        //private void btnModifyPhone_Click(object sender, EventArgs e)
-        //{
-        //    if (lvwPhone.SelectedItems.Count <= 0)
-        //        return;
+        private void btnAddPhone_Click(object sender, EventArgs e)
+        {
+            lvwPhone.SelectedItems.Clear();
+            var item = lvwPhone.Items.Add("");
+            item.BeginEdit();
+        }
 
-        //    var selectItem = lvwPhone.SelectedItems[0];
-        //    lvwPhone.SelectedItems.Clear();
-        //    selectItem.BeginEdit();
-        //}
+        private void btnModifyPhone_Click(object sender, EventArgs e)
+        {
+            if (lvwPhone.SelectedItems.Count <= 0)
+                return;
 
-        //private void btnRemovePhone_Click(object sender, EventArgs e)
-        //{
-        //    foreach (ListViewItem item in lvwPhone.SelectedItems)
-        //        lvwPhone.Items.Remove(item);
-        //}
+            var selectItem = lvwPhone.SelectedItems[0];
+            lvwPhone.SelectedItems.Clear();
+            selectItem.BeginEdit();
+        }
 
-        //private void lvwPhone_MouseDoubleClick(object sender, MouseEventArgs e)
-        //{
-        //    if (lvwPhone.SelectedItems.Count <= 0)
-        //        return;
+        private void btnRemovePhone_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in lvwPhone.SelectedItems)
+                lvwPhone.Items.Remove(item);
+        }
 
-        //    var item = lvwPhone.SelectedItems[0];
-        //    if (item.Bounds.Contains(e.Location))
-        //        item.BeginEdit();
-        //}
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (_mode == FormMode.Create)
+                TryCreate();
+            else
+                TryChangeInformation();
+        }
 
-        //private void btnSave_Click(object sender, EventArgs e)
-        //{
-        //    if (_mode == Mode.Create)
-        //        TryCreate();
-        //    else
-        //        TryChangeInformation();
-        //}
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
 
-        //private void btnCancel_Click(object sender, EventArgs e)
-        //{
-        //    Close();
-        //}
 
-        //#endregion
+        #endregion
 
-        //#region Methods
+        #region Methods
 
-        //private void InitControls()
-        //{
-        //    lvwPhone.Columns.Add("SDT", -2, HorizontalAlignment.Left);
-        //}
+        private void InitControls()
+        {
+            lvwPhone.Columns.Add("SDT", -2, HorizontalAlignment.Left);
+        }
 
-        //private void BindData()
-        //{
-        //    var positions = EmployeeService.GetPositions();
-        //    cboPosition.DataSource = positions;
-        //    cboPosition.SelectedIndex = -1;
+        private void BindData()
+        {
+            if (_mode == FormMode.Create)
+                return;
 
-        //    if (_mode == Mode.Create)
-        //        return;
+            txtName.Text = _customer.Name;
+            txtAddress.Text = _customer.Address;
+            _customer.PhoneNumber.ForEach(phone => lvwPhone.Items.Add(new ListViewItem(phone)));
+        }
 
-        //    txtName.Text = _user.Name;
-        //    dtpDob.Text = _user.Dob.ToShortDateString();
-        //    if (_user.IsMale)
-        //        rdoMale.Checked = true;
-        //    else
-        //        rdoFemale.Checked = true;
-        //    txtAddress.Text = _user.Address;
-        //    _user.PhoneNumber.ForEach(phone => lvwPhone.Items.Add(new ListViewItem(phone)));
-        //    cboPosition.SelectedIndex = positions.FindIndex(x => x.Name.Equals(_user.Position.Name));
-        //}
+        private void ConfigureAccessibility()
+        {
+            chkEdit.Visible = _mode == FormMode.Write;
+            switch (_mode)
+            {
+                case FormMode.Write:
+                    if (_startEdit)
+                        chkEdit.Checked = true;
+                    return;
+                case FormMode.Create:
+                    chkEdit.Checked = true;
+                    btnSave.Text = Resources.Form_ButtonSave;
+                    Text = Resources.Form_Text_AddNewCustomer;
+                    break;
+                case FormMode.Read:
+                    txtName.ReadOnly = true;
+                    txtAddress.ReadOnly = true;
+                    btnAddPhone.Visible = false;
+                    btnModifyPhone.Visible = false;
+                    btnRemovePhone.Visible = false;
+                    btnSave.Visible = false;
+                    btnCancel.Visible = false;
+                    return;
 
-        //private void ConfigureAccessibility()
-        //{
-        //    // Only allow edit if mode is write and user that edited is not himself
-        //    chkEdit.Visible = _mode == Mode.Write && !_parentForm.User.Equals(_user);
 
-        //    switch (_mode)
-        //    {
-        //        case Mode.Write:
-        //            if (_startEdit)
-        //                chkEdit.Checked = true;
-        //            return;
-        //        case Mode.Create:
-        //            chkEdit.Checked = true;
-        //            btnSave.Text = Resources.Form_ButtonSave;
-        //            Text = Resources.Form_Text_AddNewEmployee;
-        //            return;
-        //        case Mode.Read:
-        //            txtName.ReadOnly = true;
-        //            dtpDob.Enabled = false;
-        //            rdoMale.Enabled = false;
-        //            rdoFemale.Enabled = false;
-        //            txtAddress.ReadOnly = true;
-        //            btnAddPhone.Visible = false;
-        //            btnModifyPhone.Visible = false;
-        //            btnRemovePhone.Visible = false;
-        //            btnSave.Visible = false;
-        //            btnCancel.Visible = false;
-        //            return;
-        //        default:
-        //            throw new ArgumentOutOfRangeException();
-        //    }
-        //}
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
 
-        //private void TryCreate()
-        //{
-        //    if (!ValidInput())
-        //        return;
+        private void TryCreate()
+        {
+            if (!ValidInput())
+                return;
 
-        //    var name = txtName.Text;
-        //    var address = txtAddress.Text;
-        //    var isMale = rdoMale.Checked;
-        //    var dob = DateTime.ParseExact(Regex.Replace(dtpDob.Text, @"\s+", ""),
-        //        Resources.Format_DateFormat,
-        //        CultureInfo.InvariantCulture);
-        //    var position = (EmployeePosition)cboPosition.SelectedItem;
-        //    var phoneNumbers = lvwPhone.Items
-        //       .Cast<ListViewItem>()
-        //       .Select(item => item.Text)
-        //       .ToList();
+            var name = txtName.Text;
+            var address = txtAddress.Text;
+            var phoneNumbers = lvwPhone.Items
+               .Cast<ListViewItem>()
+               .Select(item => item.Text)
+               .ToList();
+            var newCustomer = new Models.Customer(name, address, phoneNumbers);
 
-        //    var newUser = new User(name, address, isMale, dob, position, phoneNumbers);
+            if (CreateCustomer(ref newCustomer) &&
+                AddNewPhoneNumbers(phoneNumbers, newCustomer))
+            {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_AddEmployeeSuccessfully,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            else
+                MessageBox.Show(
+                    Resources.MessageBox_Message_SystemError,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
 
-        //    if (CreateUser(ref newUser) &&
-        //        AddNewPhoneNumbers(phoneNumbers, newUser))
-        //    {
-        //        MessageBox.Show(
-        //            Resources.MessageBox_Message_AddEmployeeSuccessfully,
-        //            Resources.MessageBox_Caption_Notification,
-        //            MessageBoxButtons.OK,
-        //            MessageBoxIcon.Information
-        //        );
-        //    }
-        //    else
-        //        MessageBox.Show(
-        //            Resources.MessageBox_Message_SystemError,
-        //            Resources.MessageBox_Caption_Notification,
-        //            MessageBoxButtons.OK,
-        //            MessageBoxIcon.Error
-        //        );
+            _parentForm.LoadData_Customer();
+            Close();
+        }
 
-        //    _parentForm.LoadData_Employee();
-        //    Close();
-        //}
+        private static bool CreateCustomer(ref Models.Customer newCustomer)
+        {
+            newCustomer.Id = CustomerService.CreateCustomer(newCustomer);
+            return newCustomer.Id != -1;
+        }
 
-        //private void TryChangeInformation()
-        //{
-        //    var id = _user.Id;
-        //    var name = txtName.Text;
-        //    var address = txtAddress.Text;
-        //    var isMale = rdoMale.Checked;
-        //    var dob = DateTime.ParseExact(Regex.Replace(dtpDob.Text, @"\s+", ""),
-        //        Resources.Format_DateFormat,
-        //        CultureInfo.InvariantCulture);
-        //    var position = (EmployeePosition)cboPosition.SelectedItem;
-        //    var account = _user.Account;
-        //    var phoneNumbers = lvwPhone.Items
-        //       .Cast<ListViewItem>()
-        //       .Select(item => item.Text)
-        //       .ToList();
+        private void TryChangeInformation()
+        {
+            var id = _customer.Id;
+            var name = txtName.Text;
+            var address = txtAddress.Text;
+            var phoneNumbers = lvwPhone.Items
+               .Cast<ListViewItem>()
+               .Select(item => item.Text)
+               .ToList();
 
-        //    var newUser = new User(id, name, address, isMale, dob, position, account, phoneNumbers);
+            var newCustomer = new Models.Customer(name, address, phoneNumbers);
 
-        //    if (_user.Equals(newUser))
-        //    {
-        //        MessageBox.Show(
-        //            Resources.MessageBox_Message_ChangeInfoNoChange,
-        //            Resources.MessageBox_Caption_Notification,
-        //            MessageBoxButtons.OK,
-        //            MessageBoxIcon.Information
-        //        );
-        //        Close();
-        //        return;
-        //    }
+            if (_customer.Equals(newCustomer))
+            {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_ChangeInfoNoChange,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+                Close();
+                return;
+            }
 
-        //    if (!ValidInput() || !ConfirmChange())
-        //        return;
+            if (!ValidInput() || !ConfirmChange())
+                return;
 
-        //    if (ChangeInformation(newUser) &&
-        //        ChangePhoneNumber(newUser))
-        //    {
-        //        MessageBox.Show(
-        //            Resources.MessageBox_Message_ChangeSuccessfully,
-        //            Resources.MessageBox_Caption_Notification,
-        //            MessageBoxButtons.OK,
-        //            MessageBoxIcon.Information
-        //        );
-        //    }
-        //    else
-        //        MessageBox.Show(
-        //            Resources.MessageBox_Message_SystemError,
-        //            Resources.MessageBox_Caption_Notification,
-        //            MessageBoxButtons.OK,
-        //            MessageBoxIcon.Error
-        //        );
+            if (ChangeInformation(newCustomer) &&
+                ChangePhoneNumber(newCustomer))
+            {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_ChangeSuccessfully,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            else
+                MessageBox.Show(
+                    Resources.MessageBox_Message_SystemError,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
 
-        //    Close();
-        //}
+            Close();
+        }
 
-        //private bool ValidInput()
-        //{
-        //    if (txtName.Text == "" ||
-        //        txtAddress.Text == "")
-        //    {
-        //        MessageBox.Show(
-        //            Resources.MessageBox_Message_EnterFullPersonalInfo,
-        //            Resources.MessageBox_Caption_Notification,
-        //            MessageBoxButtons.OK,
-        //            MessageBoxIcon.Error
-        //        );
-        //        return false;
-        //    }
+        private bool ValidInput()
+        {
+            if (txtName.Text == "" ||
+                txtAddress.Text == "")
+            {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_EnterFullPersonalInfo,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                return false;
+            }
 
-        //    if (Helper.Validate.Name(txtName.Text))
-        //        return true;
+            return true;
+        }
 
-        //    MessageBox.Show(
-        //        Resources.MessageBox_Message_InvalidNameFormat,
-        //        Resources.MessageBox_Caption_Notification,
-        //        MessageBoxButtons.OK,
-        //        MessageBoxIcon.Error
-        //    );
-        //    return false;
-        //}
+        private bool ConfirmChange()
+        {
+            return MessageBox.Show(
+                string.Format(Resources.MessageBox_Message_ConfirmChangeEmployeeInfo, _customer.Name),
+                Resources.MessageBox_Caption_Notification,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            ) == DialogResult.Yes;
+        }
 
-        //private bool ConfirmChange()
-        //{
-        //    return MessageBox.Show(
-        //        string.Format(Resources.MessageBox_Message_ConfirmChangeEmployeeInfo, _user.Name),
-        //        Resources.MessageBox_Caption_Notification,
-        //        MessageBoxButtons.YesNo,
-        //        MessageBoxIcon.Warning
-        //    ) == DialogResult.Yes;
-        //}
+        private static bool ChangeInformation(Models.Customer newCustomer)
+        {
+            return CustomerService.ChangeCustomerInformation(newCustomer);
+        }
 
-        //private static bool CreateUser(ref User newUser)
-        //{
-        //    newUser.Id = EmployeeService.CreateEmployee(newUser);
-        //    return newUser.Id != -1;
-        //}
+        private bool ChangePhoneNumber(Models.Customer newCustomer)
+        {
+            var (shouldDelete, shouldAdd) = Helper.List
+               .Difference(
+                    _customer.PhoneNumber,
+                    newCustomer.PhoneNumber
+                );
 
-        //private static bool ChangeInformation(User newUser)
-        //{
-        //    return EmployeeService.ChangeEmployeeInformation(newUser);
-        //}
+            return DeletePhoneNumbers(shouldDelete) && AddNewPhoneNumbers(shouldAdd);
+        }
 
-        //private bool ChangePhoneNumber(User newUser)
-        //{
-        //    var (shouldDelete, shouldAdd) = Helper.List
-        //       .Difference(
-        //            _user.PhoneNumber,
-        //            newUser.PhoneNumber
-        //        );
+        private static bool DeletePhoneNumbers(List<string> shouldDelete)
+        {
+            return CustomerService.DeletePhoneNumbers(shouldDelete);
+        }
 
-        //    return DeletePhoneNumbers(shouldDelete) && AddNewPhoneNumbers(shouldAdd);
-        //}
+        private bool AddNewPhoneNumbers(List<string> shouldAdd, Models.Customer customer = null)
+        {
+            return CustomerService.AddNewPhoneNumbers(customer ?? _customer, shouldAdd);
+        }
 
-        //private static bool DeletePhoneNumbers(List<string> shouldDelete)
-        //{
-        //    return EmployeeService.DeletePhoneNumbers(shouldDelete);
-        //}
+        #endregion
 
-        //private bool AddNewPhoneNumbers(List<string> shouldAdd, User user = null)
-        //{
-        //    return EmployeeService.AddNewPhoneNumbers(user ?? _user, shouldAdd);
-        //}
-
-        //#endregion
+        
     }
 }

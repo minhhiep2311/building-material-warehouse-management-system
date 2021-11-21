@@ -103,7 +103,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             // 
             this.pnlButton.Controls.Add(this.btnCancel);
             this.pnlButton.Controls.Add(this.btnSave);
-            this.pnlButton.Location = new System.Drawing.Point(235, 320);
+            this.pnlButton.Location = new System.Drawing.Point(235, 313);
             this.pnlButton.Name = "pnlButton";
             this.pnlButton.Size = new System.Drawing.Size(464, 58);
             this.pnlButton.TabIndex = 18;
