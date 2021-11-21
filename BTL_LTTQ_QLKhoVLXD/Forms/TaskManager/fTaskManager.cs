@@ -201,7 +201,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnRefresh_Customer_Click(object sender, EventArgs e)
         {
-
+            LoadData_Customer();
         }
 
         #endregion

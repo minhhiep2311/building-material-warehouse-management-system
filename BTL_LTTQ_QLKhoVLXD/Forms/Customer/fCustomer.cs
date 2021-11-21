@@ -17,11 +17,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
         private readonly FormMode _mode;
         private readonly bool _startEdit;
 
-        public fCustomer(
-            fTaskManager form,
-            FormMode mode = FormMode.Create,
-            Models.Customer customer = null,
-            bool startEdit = false)
+        public fCustomer(fTaskManager form,FormMode mode = FormMode.Create,Models.Customer customer = null, bool startEdit = false)
         {
             InitializeComponent();
             _mode = mode;
