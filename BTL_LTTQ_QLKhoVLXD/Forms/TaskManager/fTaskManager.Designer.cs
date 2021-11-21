@@ -124,6 +124,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtName_customer = new System.Windows.Forms.TextBox();
             this.tpgStatistic = new System.Windows.Forms.TabPage();
             this.tpgMaterial = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.bmwListView3 = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.bmwButton16 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.bmwButton17 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.bmwButton18 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.bmwButton19 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.bmwButton20 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.bmwGroupBox3 = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
             this.tpgReceipt = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.bmwListView2 = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
@@ -217,7 +235,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnPrintReceipt_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlItem_buy = new System.Windows.Forms.Panel();
             this.btnDeleteItem_buy = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.btnEditItem_buy = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlSpecialization_buy = new System.Windows.Forms.Panel();
             this.txtSpecializtion_buy = new System.Windows.Forms.TextBox();
             this.lblSpecialization_buy = new System.Windows.Forms.Label();
@@ -241,24 +258,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlTitle_buy = new System.Windows.Forms.Panel();
             this.lblTitle_buy = new System.Windows.Forms.Label();
             this.tclMain = new BTL_LTTQ_QLKhoVLXD.Controls.TabControl.BmwTabControl();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.bmwListView3 = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.bmwButton16 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.bmwButton17 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.bmwButton18 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.bmwButton19 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.bmwButton20 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.bmwGroupBox3 = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.cms_employee.SuspendLayout();
             this.cms_supplier.SuspendLayout();
@@ -300,6 +299,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlAddress_customer.SuspendLayout();
             this.pnlName_customer.SuspendLayout();
             this.tpgMaterial.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.bmwGroupBox3.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.tpgReceipt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -345,15 +353,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbGeneralInfor_Buy.SuspendLayout();
             this.pnlTitle_buy.SuspendLayout();
             this.tclMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
-            this.bmwGroupBox3.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -579,6 +578,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwEmployee_employee.Name = "lvwEmployee_employee";
             this.lvwEmployee_employee.OwnerDraw = true;
             this.lvwEmployee_employee.Size = new System.Drawing.Size(589, 607);
+            this.lvwEmployee_employee.Sortable = true;
+            this.lvwEmployee_employee.SortableColumns = null;
             this.lvwEmployee_employee.TabIndex = 2;
             this.lvwEmployee_employee.UseCompatibleStateImageBehavior = false;
             this.lvwEmployee_employee.View = System.Windows.Forms.View.Details;
@@ -987,6 +988,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwSupplier_supplier.Name = "lvwSupplier_supplier";
             this.lvwSupplier_supplier.OwnerDraw = true;
             this.lvwSupplier_supplier.Size = new System.Drawing.Size(589, 607);
+            this.lvwSupplier_supplier.Sortable = true;
+            this.lvwSupplier_supplier.SortableColumns = null;
             this.lvwSupplier_supplier.TabIndex = 0;
             this.lvwSupplier_supplier.UseCompatibleStateImageBehavior = false;
             this.lvwSupplier_supplier.View = System.Windows.Forms.View.Details;
@@ -1252,6 +1255,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwCustomer_customer.Name = "lvwCustomer_customer";
             this.lvwCustomer_customer.OwnerDraw = true;
             this.lvwCustomer_customer.Size = new System.Drawing.Size(589, 607);
+            this.lvwCustomer_customer.Sortable = true;
+            this.lvwCustomer_customer.SortableColumns = null;
             this.lvwCustomer_customer.TabIndex = 0;
             this.lvwCustomer_customer.UseCompatibleStateImageBehavior = false;
             this.lvwCustomer_customer.View = System.Windows.Forms.View.Details;
@@ -1477,6 +1482,241 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgMaterial.UseVisualStyleBackColor = true;
             this.tpgMaterial.Enter += new System.EventHandler(this.tpgMaterial_Enter);
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.bmwListView3);
+            this.splitContainer2.Panel1MinSize = 200;
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel4);
+            this.splitContainer2.Panel2.Controls.Add(this.bmwGroupBox3);
+            this.splitContainer2.Panel2.Padding = new System.Windows.Forms.Padding(5);
+            this.splitContainer2.Panel2MinSize = 350;
+            this.splitContainer2.Size = new System.Drawing.Size(1101, 607);
+            this.splitContainer2.SplitterDistance = 589;
+            this.splitContainer2.SplitterWidth = 1;
+            this.splitContainer2.TabIndex = 4;
+            // 
+            // bmwListView3
+            // 
+            this.bmwListView3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.bmwListView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bmwListView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.bmwListView3.ForeColor = System.Drawing.Color.White;
+            this.bmwListView3.FullRowSelect = true;
+            this.bmwListView3.GridLines = true;
+            this.bmwListView3.HideSelection = false;
+            this.bmwListView3.Location = new System.Drawing.Point(0, 0);
+            this.bmwListView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bmwListView3.Name = "bmwListView3";
+            this.bmwListView3.OwnerDraw = true;
+            this.bmwListView3.Size = new System.Drawing.Size(589, 607);
+            this.bmwListView3.Sortable = true;
+            this.bmwListView3.SortableColumns = null;
+            this.bmwListView3.TabIndex = 0;
+            this.bmwListView3.UseCompatibleStateImageBehavior = false;
+            this.bmwListView3.View = System.Windows.Forms.View.Details;
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.flowLayoutPanel4.Controls.Add(this.bmwButton16);
+            this.flowLayoutPanel4.Controls.Add(this.bmwButton17);
+            this.flowLayoutPanel4.Controls.Add(this.bmwButton18);
+            this.flowLayoutPanel4.Controls.Add(this.bmwButton19);
+            this.flowLayoutPanel4.Controls.Add(this.bmwButton20);
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(5, 176);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Padding = new System.Windows.Forms.Padding(5);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(501, 426);
+            this.flowLayoutPanel4.TabIndex = 8;
+            // 
+            // bmwButton16
+            // 
+            this.bmwButton16.BackColor = System.Drawing.Color.White;
+            this.bmwButton16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bmwButton16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.bmwButton16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.bmwButton16.Location = new System.Drawing.Point(8, 7);
+            this.bmwButton16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bmwButton16.Name = "bmwButton16";
+            this.bmwButton16.Size = new System.Drawing.Size(185, 63);
+            this.bmwButton16.TabIndex = 1;
+            this.bmwButton16.Text = "Thêm khách hàng";
+            this.bmwButton16.UseVisualStyleBackColor = false;
+            // 
+            // bmwButton17
+            // 
+            this.bmwButton17.BackColor = System.Drawing.Color.White;
+            this.bmwButton17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bmwButton17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.bmwButton17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.bmwButton17.Location = new System.Drawing.Point(199, 7);
+            this.bmwButton17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bmwButton17.Name = "bmwButton17";
+            this.bmwButton17.Size = new System.Drawing.Size(185, 63);
+            this.bmwButton17.TabIndex = 2;
+            this.bmwButton17.Text = "Chỉnh sửa thông tin";
+            this.bmwButton17.UseVisualStyleBackColor = false;
+            // 
+            // bmwButton18
+            // 
+            this.bmwButton18.BackColor = System.Drawing.Color.White;
+            this.bmwButton18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bmwButton18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.bmwButton18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.bmwButton18.Location = new System.Drawing.Point(8, 74);
+            this.bmwButton18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bmwButton18.Name = "bmwButton18";
+            this.bmwButton18.Size = new System.Drawing.Size(185, 63);
+            this.bmwButton18.TabIndex = 3;
+            this.bmwButton18.Text = "Xóa KH";
+            this.bmwButton18.UseVisualStyleBackColor = false;
+            // 
+            // bmwButton19
+            // 
+            this.bmwButton19.BackColor = System.Drawing.Color.White;
+            this.bmwButton19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bmwButton19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.bmwButton19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.bmwButton19.Location = new System.Drawing.Point(199, 74);
+            this.bmwButton19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bmwButton19.Name = "bmwButton19";
+            this.bmwButton19.Size = new System.Drawing.Size(185, 63);
+            this.bmwButton19.TabIndex = 5;
+            this.bmwButton19.Text = "Xuất file danh sách khách hàng";
+            this.bmwButton19.UseVisualStyleBackColor = false;
+            // 
+            // bmwButton20
+            // 
+            this.bmwButton20.BackColor = System.Drawing.Color.White;
+            this.bmwButton20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bmwButton20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.bmwButton20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.bmwButton20.Location = new System.Drawing.Point(8, 141);
+            this.bmwButton20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bmwButton20.Name = "bmwButton20";
+            this.bmwButton20.Size = new System.Drawing.Size(185, 63);
+            this.bmwButton20.TabIndex = 4;
+            this.bmwButton20.Text = "Làm mới";
+            this.bmwButton20.UseVisualStyleBackColor = false;
+            // 
+            // bmwGroupBox3
+            // 
+            this.bmwGroupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.bmwGroupBox3.Controls.Add(this.panel10);
+            this.bmwGroupBox3.Controls.Add(this.panel11);
+            this.bmwGroupBox3.Controls.Add(this.panel12);
+            this.bmwGroupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bmwGroupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.bmwGroupBox3.ForeColor = System.Drawing.Color.White;
+            this.bmwGroupBox3.Location = new System.Drawing.Point(5, 5);
+            this.bmwGroupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bmwGroupBox3.Name = "bmwGroupBox3";
+            this.bmwGroupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bmwGroupBox3.Size = new System.Drawing.Size(501, 171);
+            this.bmwGroupBox3.TabIndex = 0;
+            this.bmwGroupBox3.TabStop = false;
+            this.bmwGroupBox3.Text = "Tìm kiếm";
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.label9);
+            this.panel10.Controls.Add(this.textBox10);
+            this.panel10.Location = new System.Drawing.Point(5, 114);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(461, 39);
+            this.panel10.TabIndex = 7;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label9.Location = new System.Drawing.Point(3, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(106, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Số điện thoại";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBox10.Location = new System.Drawing.Point(156, 6);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(295, 26);
+            this.textBox10.TabIndex = 1;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.label10);
+            this.panel11.Controls.Add(this.textBox11);
+            this.panel11.Location = new System.Drawing.Point(5, 70);
+            this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(461, 39);
+            this.panel11.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label10.Location = new System.Drawing.Point(3, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 20);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Địa chỉ";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBox11.Location = new System.Drawing.Point(156, 6);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(295, 26);
+            this.textBox11.TabIndex = 1;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.label11);
+            this.panel12.Controls.Add(this.textBox12);
+            this.panel12.Location = new System.Drawing.Point(5, 25);
+            this.panel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(461, 39);
+            this.panel12.TabIndex = 5;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label11.Location = new System.Drawing.Point(3, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(127, 20);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Tên khách hàng";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBox12.Location = new System.Drawing.Point(156, 6);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(295, 26);
+            this.textBox12.TabIndex = 1;
+            // 
             // tpgReceipt
             // 
             this.tpgReceipt.Controls.Add(this.splitContainer1);
@@ -1526,6 +1766,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.bmwListView2.Name = "bmwListView2";
             this.bmwListView2.OwnerDraw = true;
             this.bmwListView2.Size = new System.Drawing.Size(589, 607);
+            this.bmwListView2.Sortable = true;
+            this.bmwListView2.SortableColumns = null;
             this.bmwListView2.TabIndex = 0;
             this.bmwListView2.UseCompatibleStateImageBehavior = false;
             this.bmwListView2.View = System.Windows.Forms.View.Details;
@@ -1735,6 +1977,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwMaterial_material.Name = "lvwMaterial_material";
             this.lvwMaterial_material.OwnerDraw = true;
             this.lvwMaterial_material.Size = new System.Drawing.Size(589, 607);
+            this.lvwMaterial_material.Sortable = true;
+            this.lvwMaterial_material.SortableColumns = null;
             this.lvwMaterial_material.TabIndex = 0;
             this.lvwMaterial_material.UseCompatibleStateImageBehavior = false;
             this.lvwMaterial_material.View = System.Windows.Forms.View.Details;
@@ -1753,6 +1997,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.bmwListView1.Name = "bmwListView1";
             this.bmwListView1.OwnerDraw = true;
             this.bmwListView1.Size = new System.Drawing.Size(589, 607);
+            this.bmwListView1.Sortable = true;
+            this.bmwListView1.SortableColumns = null;
             this.bmwListView1.TabIndex = 0;
             this.bmwListView1.UseCompatibleStateImageBehavior = false;
             this.bmwListView1.View = System.Windows.Forms.View.Details;
@@ -2184,6 +2430,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwItem_sell.Name = "lvwItem_sell";
             this.lvwItem_sell.OwnerDraw = true;
             this.lvwItem_sell.Size = new System.Drawing.Size(1085, 241);
+            this.lvwItem_sell.Sortable = true;
+            this.lvwItem_sell.SortableColumns = null;
             this.lvwItem_sell.TabIndex = 19;
             this.lvwItem_sell.UseCompatibleStateImageBehavior = false;
             this.lvwItem_sell.View = System.Windows.Forms.View.Details;
@@ -2511,6 +2759,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwItem_buy.Name = "lvwItem_buy";
             this.lvwItem_buy.OwnerDraw = true;
             this.lvwItem_buy.Size = new System.Drawing.Size(1085, 241);
+            this.lvwItem_buy.Sortable = true;
+            this.lvwItem_buy.SortableColumns = null;
             this.lvwItem_buy.TabIndex = 19;
             this.lvwItem_buy.UseCompatibleStateImageBehavior = false;
             this.lvwItem_buy.View = System.Windows.Forms.View.Details;
@@ -2604,7 +2854,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // pnlItem_buy
             // 
             this.pnlItem_buy.Controls.Add(this.btnDeleteItem_buy);
-            this.pnlItem_buy.Controls.Add(this.btnEditItem_buy);
             this.pnlItem_buy.Controls.Add(this.pnlSpecialization_buy);
             this.pnlItem_buy.Controls.Add(this.btnAddItem_buy);
             this.pnlItem_buy.Controls.Add(this.pnlItemName_buy);
@@ -2623,28 +2872,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnDeleteItem_buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteItem_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnDeleteItem_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnDeleteItem_buy.Location = new System.Drawing.Point(799, 75);
+            this.btnDeleteItem_buy.Location = new System.Drawing.Point(799, 74);
             this.btnDeleteItem_buy.Name = "btnDeleteItem_buy";
             this.btnDeleteItem_buy.Size = new System.Drawing.Size(81, 32);
             this.btnDeleteItem_buy.TabIndex = 24;
             this.btnDeleteItem_buy.Text = "Xóa";
             this.btnDeleteItem_buy.UseVisualStyleBackColor = false;
             this.btnDeleteItem_buy.Click += new System.EventHandler(this.btnDeleteItem_buy_Click);
-            // 
-            // btnEditItem_buy
-            // 
-            this.btnEditItem_buy.BackColor = System.Drawing.Color.White;
-            this.btnEditItem_buy.FlatAppearance.BorderSize = 0;
-            this.btnEditItem_buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditItem_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnEditItem_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnEditItem_buy.Location = new System.Drawing.Point(709, 75);
-            this.btnEditItem_buy.Name = "btnEditItem_buy";
-            this.btnEditItem_buy.Size = new System.Drawing.Size(81, 32);
-            this.btnEditItem_buy.TabIndex = 23;
-            this.btnEditItem_buy.Text = "Sửa";
-            this.btnEditItem_buy.UseVisualStyleBackColor = false;
-            this.btnEditItem_buy.Click += new System.EventHandler(this.btnEditItem_buy_Click);
             // 
             // pnlSpecialization_buy
             // 
@@ -2679,7 +2913,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnAddItem_buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddItem_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAddItem_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnAddItem_buy.Location = new System.Drawing.Point(617, 75);
+            this.btnAddItem_buy.Location = new System.Drawing.Point(706, 74);
             this.btnAddItem_buy.Name = "btnAddItem_buy";
             this.btnAddItem_buy.Size = new System.Drawing.Size(81, 32);
             this.btnAddItem_buy.TabIndex = 21;
@@ -2750,10 +2984,21 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             -1,
             -1,
             0});
+            this.nmrMaterialAmount_Buy.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmrMaterialAmount_Buy.Name = "nmrMaterialAmount_Buy";
             this.nmrMaterialAmount_Buy.Size = new System.Drawing.Size(120, 26);
             this.nmrMaterialAmount_Buy.TabIndex = 9;
             this.nmrMaterialAmount_Buy.ThousandsSeparator = true;
+            this.nmrMaterialAmount_Buy.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmrMaterialAmount_Buy.ValueChanged += new System.EventHandler(this.nmrMaterialAmount_Buy_ValueChanged);
             // 
             // lblMaterialAmount_Buy
             // 
@@ -2927,239 +3172,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tclMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tclMain.TabIndex = 0;
             // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.bmwListView3);
-            this.splitContainer2.Panel1MinSize = 200;
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel4);
-            this.splitContainer2.Panel2.Controls.Add(this.bmwGroupBox3);
-            this.splitContainer2.Panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.splitContainer2.Panel2MinSize = 350;
-            this.splitContainer2.Size = new System.Drawing.Size(1101, 607);
-            this.splitContainer2.SplitterDistance = 589;
-            this.splitContainer2.SplitterWidth = 1;
-            this.splitContainer2.TabIndex = 4;
-            // 
-            // bmwListView3
-            // 
-            this.bmwListView3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwListView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bmwListView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwListView3.ForeColor = System.Drawing.Color.White;
-            this.bmwListView3.FullRowSelect = true;
-            this.bmwListView3.GridLines = true;
-            this.bmwListView3.HideSelection = false;
-            this.bmwListView3.Location = new System.Drawing.Point(0, 0);
-            this.bmwListView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwListView3.Name = "bmwListView3";
-            this.bmwListView3.OwnerDraw = true;
-            this.bmwListView3.Size = new System.Drawing.Size(589, 607);
-            this.bmwListView3.TabIndex = 0;
-            this.bmwListView3.UseCompatibleStateImageBehavior = false;
-            this.bmwListView3.View = System.Windows.Forms.View.Details;
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.flowLayoutPanel4.Controls.Add(this.bmwButton16);
-            this.flowLayoutPanel4.Controls.Add(this.bmwButton17);
-            this.flowLayoutPanel4.Controls.Add(this.bmwButton18);
-            this.flowLayoutPanel4.Controls.Add(this.bmwButton19);
-            this.flowLayoutPanel4.Controls.Add(this.bmwButton20);
-            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(5, 176);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Padding = new System.Windows.Forms.Padding(5);
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(501, 426);
-            this.flowLayoutPanel4.TabIndex = 8;
-            // 
-            // bmwButton16
-            // 
-            this.bmwButton16.BackColor = System.Drawing.Color.White;
-            this.bmwButton16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton16.Location = new System.Drawing.Point(8, 7);
-            this.bmwButton16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton16.Name = "bmwButton16";
-            this.bmwButton16.Size = new System.Drawing.Size(185, 63);
-            this.bmwButton16.TabIndex = 1;
-            this.bmwButton16.Text = "Thêm khách hàng";
-            this.bmwButton16.UseVisualStyleBackColor = false;
-            // 
-            // bmwButton17
-            // 
-            this.bmwButton17.BackColor = System.Drawing.Color.White;
-            this.bmwButton17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton17.Location = new System.Drawing.Point(199, 7);
-            this.bmwButton17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton17.Name = "bmwButton17";
-            this.bmwButton17.Size = new System.Drawing.Size(185, 63);
-            this.bmwButton17.TabIndex = 2;
-            this.bmwButton17.Text = "Chỉnh sửa thông tin";
-            this.bmwButton17.UseVisualStyleBackColor = false;
-            // 
-            // bmwButton18
-            // 
-            this.bmwButton18.BackColor = System.Drawing.Color.White;
-            this.bmwButton18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton18.Location = new System.Drawing.Point(8, 74);
-            this.bmwButton18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton18.Name = "bmwButton18";
-            this.bmwButton18.Size = new System.Drawing.Size(185, 63);
-            this.bmwButton18.TabIndex = 3;
-            this.bmwButton18.Text = "Xóa KH";
-            this.bmwButton18.UseVisualStyleBackColor = false;
-            // 
-            // bmwButton19
-            // 
-            this.bmwButton19.BackColor = System.Drawing.Color.White;
-            this.bmwButton19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton19.Location = new System.Drawing.Point(199, 74);
-            this.bmwButton19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton19.Name = "bmwButton19";
-            this.bmwButton19.Size = new System.Drawing.Size(185, 63);
-            this.bmwButton19.TabIndex = 5;
-            this.bmwButton19.Text = "Xuất file danh sách khách hàng";
-            this.bmwButton19.UseVisualStyleBackColor = false;
-            // 
-            // bmwButton20
-            // 
-            this.bmwButton20.BackColor = System.Drawing.Color.White;
-            this.bmwButton20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton20.Location = new System.Drawing.Point(8, 141);
-            this.bmwButton20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton20.Name = "bmwButton20";
-            this.bmwButton20.Size = new System.Drawing.Size(185, 63);
-            this.bmwButton20.TabIndex = 4;
-            this.bmwButton20.Text = "Làm mới";
-            this.bmwButton20.UseVisualStyleBackColor = false;
-            // 
-            // bmwGroupBox3
-            // 
-            this.bmwGroupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwGroupBox3.Controls.Add(this.panel10);
-            this.bmwGroupBox3.Controls.Add(this.panel11);
-            this.bmwGroupBox3.Controls.Add(this.panel12);
-            this.bmwGroupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bmwGroupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwGroupBox3.ForeColor = System.Drawing.Color.White;
-            this.bmwGroupBox3.Location = new System.Drawing.Point(5, 5);
-            this.bmwGroupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwGroupBox3.Name = "bmwGroupBox3";
-            this.bmwGroupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwGroupBox3.Size = new System.Drawing.Size(501, 171);
-            this.bmwGroupBox3.TabIndex = 0;
-            this.bmwGroupBox3.TabStop = false;
-            this.bmwGroupBox3.Text = "Tìm kiếm";
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.label9);
-            this.panel10.Controls.Add(this.textBox10);
-            this.panel10.Location = new System.Drawing.Point(5, 114);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(461, 39);
-            this.panel10.TabIndex = 7;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(3, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(106, 20);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Số điện thoại";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox10.Location = new System.Drawing.Point(156, 6);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(295, 26);
-            this.textBox10.TabIndex = 1;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.label10);
-            this.panel11.Controls.Add(this.textBox11);
-            this.panel11.Location = new System.Drawing.Point(5, 70);
-            this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(461, 39);
-            this.panel11.TabIndex = 6;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(3, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Địa chỉ";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox11.Location = new System.Drawing.Point(156, 6);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(295, 26);
-            this.textBox11.TabIndex = 1;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.label11);
-            this.panel12.Controls.Add(this.textBox12);
-            this.panel12.Location = new System.Drawing.Point(5, 25);
-            this.panel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(461, 39);
-            this.panel12.TabIndex = 5;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label11.Location = new System.Drawing.Point(3, 9);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(127, 20);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Tên khách hàng";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox12.Location = new System.Drawing.Point(156, 6);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(295, 26);
-            this.textBox12.TabIndex = 1;
-            // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -3230,6 +3242,18 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_customer.ResumeLayout(false);
             this.pnlName_customer.PerformLayout();
             this.tpgMaterial.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.bmwGroupBox3.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.tpgReceipt.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -3295,18 +3319,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbGeneralInfor_Buy.PerformLayout();
             this.pnlTitle_buy.ResumeLayout(false);
             this.tclMain.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.bmwGroupBox3.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3477,7 +3489,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private BmwButton btnPrintReceipt_Buy;
         private System.Windows.Forms.Panel pnlItem_buy;
         private BmwButton btnDeleteItem_buy;
-        private BmwButton btnEditItem_buy;
         private System.Windows.Forms.Panel pnlSpecialization_buy;
         private System.Windows.Forms.TextBox txtSpecializtion_buy;
         private System.Windows.Forms.Label lblSpecialization_buy;

@@ -268,5 +268,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
                 return string.IsNullOrEmpty(text) || sourceText.ToLower().Contains(text.ToLower());
             }
         }
+
+        public class Format
+        {
+            public static string String(double number)
+            {
+                return number.ToString("N0");
+            }
+        }
     }
 }

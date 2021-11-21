@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
-using System.Globalization;
 using System.Windows.Forms;
+using BTL_LTTQ_QLKhoVLXD.Utils;
 
 namespace BTL_LTTQ_QLKhoVLXD.Models
 {
@@ -18,17 +18,23 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
         public int Id { get; }
         public string Name { get; }
-        public double ImportUnitPrice { get; }
-        public double ExportUnitPrice { get; }
+        public double ImportUnitPrice { get; set; }
+        public double ExportUnitPrice { get; set; }
         public MaterialUnit Unit { get; }
         public string Specialization { get; }
-        public int Numerous { get; }
+        public int Numerous { get; set; }
 
         #endregion
 
         #region Constructor
 
-        public Material(int id, string name, double importUnitPrice, double exportUnitPrice, MaterialUnit unit, string specialization)
+        public Material(
+            int id,
+            string name,
+            double importUnitPrice,
+            double exportUnitPrice,
+            MaterialUnit unit,
+            string specialization)
         {
             Id = id;
             Name = name;
@@ -36,7 +42,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             ExportUnitPrice = exportUnitPrice;
             Unit = unit;
             Specialization = specialization;
-            Numerous = 0;
+            Numerous = 1;
         }
 
         #endregion
@@ -63,21 +69,21 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             {
                 case Type.Full:
                     row.SubItems.Add(Name);
-                    row.SubItems.Add(ImportUnitPrice.ToString(CultureInfo.CurrentCulture));
-                    row.SubItems.Add(ExportUnitPrice.ToString(CultureInfo.CurrentCulture));
+                    row.SubItems.Add(Helper.Format.String(ImportUnitPrice));
+                    row.SubItems.Add(Helper.Format.String(ExportUnitPrice));
                     row.SubItems.Add(Unit.Name);
                     row.SubItems.Add(Specialization);
                     break;
                 case Type.Import:
                     row.SubItems.Add(Name);
-                    row.SubItems.Add(ImportUnitPrice.ToString(CultureInfo.CurrentCulture));
+                    row.SubItems.Add(Helper.Format.String(ImportUnitPrice));
                     row.SubItems.Add(Numerous.ToString());
                     row.SubItems.Add(Unit.Name);
                     row.SubItems.Add(Specialization);
                     break;
                 case Type.Export:
                     row.SubItems.Add(Name);
-                    row.SubItems.Add(ExportUnitPrice.ToString(CultureInfo.CurrentCulture));
+                    row.SubItems.Add(Helper.Format.String(ExportUnitPrice));
                     row.SubItems.Add(Numerous.ToString());
                     row.SubItems.Add(Unit.Name);
                     row.SubItems.Add(Specialization);
@@ -89,6 +95,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             return row;
         }
 
+
+
         #endregion
 
         #region Overrides
@@ -98,6 +106,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             return Name;
         }
 
+        public Material Clone()
+        {
+            return new Material(Id, Name, ImportUnitPrice, ExportUnitPrice, Unit, Specialization);
+        }
 
         #endregion
     }

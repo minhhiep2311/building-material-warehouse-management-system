@@ -21,7 +21,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Controls.ListView
         public event ColumnAddedHandler ColumnAdded;
         public event ColumnRemovedHandler ColumnRemoved;
 
-        public int[] SortableColumns;
+        public int[] SortableColumns { get; set; }
+        public bool Sortable { get; set; }
 
         public new BmwListViewItemCollection Items { get; }
         public new BmwListViewColumnCollection Columns { get; }
@@ -61,6 +62,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Controls.ListView
             DrawColumnHeader += OnDrawColumnHeader;
             ColumnClick += OnColumnClick;
             ColumnWidthChanging += OnColumnWidthChanging;
+            Sortable = true;
         }
 
         #endregion
@@ -97,7 +99,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Controls.ListView
 
         private void OnColumnClick(object sender, ColumnClickEventArgs e)
         {
-            if (SortableColumns != null && Array.IndexOf(SortableColumns, e.Column) == -1)
+            if (!Sortable)
+                return;
+
+            if (SortableColumns != null &&
+                Array.IndexOf(SortableColumns, e.Column) == -1)
                 return;
 
             var sorter = (Helper.ItemComparer)ListViewItemSorter;

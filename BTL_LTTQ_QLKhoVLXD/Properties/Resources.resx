@@ -286,4 +286,14 @@
   <data name="Form_Text_AddNewCustomer" xml:space="preserve">
     <value>Thêm nhà cung cấp mới</value>
   </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Xác nhận</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MessageBox_Message_ConfirmDeleteItemFromImport" xml:space="preserve">
+    <value>Bạn có chắc chắc muốn xóa khỏi hóa đơn các vật liệu sau không?
+{0}</value>
+  </data>
 </root>
