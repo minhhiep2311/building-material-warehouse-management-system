@@ -50,6 +50,9 @@
     <Compile Include="Controls\Button\BmwButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\ComboBox\BmwComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\GroupBox\BmwGroupBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -60,6 +63,9 @@
     <Compile Include="Controls\ListView\BmwListViewColumnEventArgs.cs" />
     <Compile Include="Controls\ListView\BmwListViewItemCollection.cs" />
     <Compile Include="Controls\ListView\BmwListViewItemEventArgs.cs" />
+    <Compile Include="Controls\NumericUpDown\BmwNumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\TabControl\BmwTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -94,6 +100,7 @@
       <DependentUpon>fEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\MaterialUnit.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\SupplierService.cs" />

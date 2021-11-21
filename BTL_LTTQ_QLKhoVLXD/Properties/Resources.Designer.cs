@@ -206,7 +206,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Không có thay đổi! Thông tin người dùng vẫn được giữ nguyên.
+        ///   Looks up a localized string similar to Không có thay đổi! Thông tin vẫn được giữ nguyên.
         /// </summary>
         internal static string MessageBox_Message_ChangeInfoNoChange {
             get {
@@ -344,7 +344,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hãy nhập đầy đủ thông tin cá nhân!.
+        ///   Looks up a localized string similar to Hãy nhập đầy đủ thông tin !.
         /// </summary>
         internal static string MessageBox_Message_EnterFullPersonalInfo {
             get {

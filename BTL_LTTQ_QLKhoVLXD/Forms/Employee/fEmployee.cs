@@ -20,7 +20,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
         private readonly FormMode _mode;
         private readonly bool _startEdit;
 
-        public fEmployee(fTaskManager form, FormMode mode = FormMode.Create, User user = null, bool startEdit = false)
+        public fEmployee(
+            fTaskManager form,
+            FormMode mode = FormMode.Create, 
+            User user = null,
+            bool startEdit = false)
         {
             InitializeComponent();
             _mode = mode;

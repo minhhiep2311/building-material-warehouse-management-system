@@ -35,10 +35,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             BindData();
             ConfigureAccessibility();
         }
-        private void fSupplier_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            _parentForm.LoadData_Supplier();
-        }
 
         private void chkEdit_CheckedChanged(object sender, EventArgs e)
         {
@@ -136,7 +132,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
                     btnCancel.Visible = false;
                     return;
 
-
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -164,6 +159,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
+                _parentForm.LoadData_Supplier();
             }
             else
                 MessageBox.Show(
@@ -173,7 +169,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
                     MessageBoxIcon.Error
                 );
 
-            _parentForm.LoadData_Supplier();
             Close();
         }
 
@@ -228,24 +223,22 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
                     MessageBoxIcon.Error
                 );
 
+            _parentForm.LoadData_Supplier();
             Close();
         }
 
         private bool ValidInput()
         {
-            if (txtName.Text == "" ||
-                txtAddress.Text == "")
-            {
-                MessageBox.Show(
-                    Resources.MessageBox_Message_EnterFullPersonalInfo,
-                    Resources.MessageBox_Caption_Notification,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-                return false;
-            }
+            if (txtName.Text != "" && txtAddress.Text != "")
+                return true;
 
-            return true;
+            MessageBox.Show(
+                Resources.MessageBox_Message_EnterFullPersonalInfo,
+                Resources.MessageBox_Caption_Notification,
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+            );
+            return false;
         }
 
         private bool ConfirmChange()
