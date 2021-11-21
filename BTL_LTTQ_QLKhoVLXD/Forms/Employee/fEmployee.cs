@@ -9,6 +9,7 @@ using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
+using FormMode = BTL_LTTQ_QLKhoVLXD.Utils.Enum.FormMode;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
 {
@@ -16,17 +17,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
     {
         private readonly fTaskManager _parentForm;
         private readonly User _user;
-        private readonly Mode _mode;
+        private readonly FormMode _mode;
         private readonly bool _startEdit;
 
-        public enum Mode
-        {
-            Read,
-            Write,
-            Create
-        }
-
-        public fEmployee(fTaskManager form, Mode mode = Mode.Create, User user = null, bool startEdit = false)
+        public fEmployee(fTaskManager form, FormMode mode = FormMode.Create, User user = null, bool startEdit = false)
         {
             InitializeComponent();
             _mode = mode;
@@ -110,7 +104,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (_mode == Mode.Create)
+            if (_mode == FormMode.Create)
                 TryCreate();
             else
                 TryChangeInformation();
@@ -136,7 +130,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             cboPosition.DataSource = positions;
             cboPosition.SelectedIndex = -1;
 
-            if (_mode == Mode.Create)
+            if (_mode == FormMode.Create)
                 return;
 
             txtName.Text = _user.Name;
@@ -153,20 +147,20 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
         private void ConfigureAccessibility()
         {
             // Only allow edit if mode is write and user that edited is not himself
-            chkEdit.Visible = _mode == Mode.Write && !_parentForm.User.Equals(_user);
+            chkEdit.Visible = _mode == FormMode.Write && !_parentForm.User.Equals(_user);
 
             switch (_mode)
             {
-                case Mode.Write:
+                case FormMode.Write:
                     if (_startEdit)
                         chkEdit.Checked = true;
                     return;
-                case Mode.Create:
+                case FormMode.Create:
                     chkEdit.Checked = true;
                     btnSave.Text = Resources.Form_ButtonSave;
                     Text = Resources.Form_Text_AddNewEmployee;
                     return;
-                case Mode.Read:
+                case FormMode.Read:
                     txtName.ReadOnly = true;
                     dtpDob.Enabled = false;
                     rdoMale.Enabled = false;

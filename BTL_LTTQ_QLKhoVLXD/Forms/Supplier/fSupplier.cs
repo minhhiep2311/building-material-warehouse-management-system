@@ -1,32 +1,24 @@
-﻿using BTL_LTTQ_QLKhoVLXD.Forms.TaskManager;
-using System;
-using System.Data;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using BTL_LTTQ_QLKhoVLXD.Models;
+using BTL_LTTQ_QLKhoVLXD.Forms.TaskManager;
 using BTL_LTTQ_QLKhoVLXD.Properties;
-using BTL_LTTQ_QLKhoVLXD.Utils;
 using BTL_LTTQ_QLKhoVLXD.Services;
-using System.Collections.Generic;
+using BTL_LTTQ_QLKhoVLXD.Utils;
+using FormMode = BTL_LTTQ_QLKhoVLXD.Utils.Enum.FormMode;
 
-namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
+namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
 {
 
     public partial class fSupplier : Form
     {
         private readonly fTaskManager _parentForm;
-        private readonly Supplier _supplier;
-        private readonly Mode _mode;
+        private readonly Models.Supplier _supplier;
+        private readonly FormMode _mode;
         private readonly bool _startEdit;
 
-        public enum Mode
-        {
-            Read,
-            Write,
-            Create
-        }
-
-        public fSupplier(fTaskManager form, Mode mode = Mode.Create, Supplier supplier = null, bool startEdit = false)
+        public fSupplier(fTaskManager form, FormMode mode = FormMode.Create, Models.Supplier supplier = null, bool startEdit = false)
         {
             InitializeComponent();
             _mode = mode;
@@ -97,7 +89,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (_mode == Mode.Create)
+            if (_mode == FormMode.Create)
                 TryCreate();
             else
                 TryChangeInformation();
@@ -112,7 +104,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
 
         private void BindData()
         {
-            if (_mode == Mode.Create)
+            if (_mode == FormMode.Create)
                 return;
 
             txtName.Text = _supplier.Name;
@@ -122,19 +114,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
 
         private void ConfigureAccessibility()
         {
-            chkEdit.Visible = _mode == Mode.Write;
+            chkEdit.Visible = _mode == FormMode.Write;
             switch (_mode)
             {
-                case Mode.Write:
+                case FormMode.Write:
                     if (_startEdit)
                         chkEdit.Checked = true;
                     return;
-                case Mode.Create:
+                case FormMode.Create:
                     chkEdit.Checked = true;
                     btnSave.Text = Resources.Form_ButtonSave;
                     Text = Resources.Form_Text_AddNewSupplier;
                     break;
-                case Mode.Read:
+                case FormMode.Read:
                     txtName.ReadOnly = true;
                     txtAddress.ReadOnly = true;
                     btnAddPhone.Visible = false;
@@ -161,7 +153,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
                .Cast<ListViewItem>()
                .Select(item => item.Text)
                .ToList();
-            var newSupplier = new Supplier(name, address, phoneNumbers);
+            var newSupplier = new Models.Supplier(name, address, phoneNumbers);
 
             if (CreateSupplier(ref newSupplier) &&
                 AddNewPhoneNumbers(phoneNumbers, newSupplier))
@@ -185,7 +177,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
             Close();
         }
 
-        private static bool CreateSupplier(ref Supplier newSupplier)
+        private static bool CreateSupplier(ref Models.Supplier newSupplier)
         {
             newSupplier.Id = SupplierService.CreateSupplier(newSupplier);
             return newSupplier.Id != -1;
@@ -201,7 +193,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
                .Select(item => item.Text)
                .ToList();
 
-            var newSupplier = new Supplier(id, name, address, phoneNumbers);
+            var newSupplier = new Models.Supplier(id, name, address, phoneNumbers);
 
             if (_supplier.Equals(newSupplier))
             {
@@ -266,12 +258,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
             ) == DialogResult.Yes;
         }
 
-        private static bool ChangeInformation(Supplier newSupplier)
+        private static bool ChangeInformation(Models.Supplier newSupplier)
         {
              return SupplierService.ChangeSupplierInformation(newSupplier);
         }
 
-        private bool ChangePhoneNumber(Supplier newSupplier)
+        private bool ChangePhoneNumber(Models.Supplier newSupplier)
         {
             var (shouldDelete, shouldAdd) = Helper.List
                .Difference(
@@ -287,7 +279,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier
             return SupplierService.DeletePhoneNumbers(shouldDelete);
         }
 
-        private bool AddNewPhoneNumbers(List<string> shouldAdd, Supplier supplier = null)
+        private bool AddNewPhoneNumbers(List<string> shouldAdd, Models.Supplier supplier = null)
         {
             return SupplierService.AddNewPhoneNumbers(supplier ?? _supplier, shouldAdd);
         }
