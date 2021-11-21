@@ -7,6 +7,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 {
     public class Material
     {
+        public enum Type
+        {
+            Full,
+            Import,
+            Export
+        }
+
         #region Properties
 
         public int Id { get; }
@@ -15,6 +22,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
         public double ExportUnitPrice { get; }
         public MaterialUnit Unit { get; }
         public string Specialization { get; }
+        public int Numerous { get; }
 
         #endregion
 
@@ -28,6 +36,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             ExportUnitPrice = exportUnitPrice;
             Unit = unit;
             Specialization = specialization;
+            Numerous = 0;
         }
 
         #endregion
@@ -46,14 +55,37 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             return new Material(id, name, importUnitPrice, exportUnitPrice, unit, specialization);
         }
 
-        public ListViewItem ToListViewItem()
+        public ListViewItem ToListViewItem(Type type = Type.Full)
         {
             var row = new ListViewItem(Id.ToString());
-            row.SubItems.Add(Name);
-            row.SubItems.Add(ImportUnitPrice.ToString(CultureInfo.CurrentCulture));
-            row.SubItems.Add(ExportUnitPrice.ToString(CultureInfo.CurrentCulture));
-            row.SubItems.Add(Unit.Name);
-            row.SubItems.Add(Specialization);
+
+            switch (type)
+            {
+                case Type.Full:
+                    row.SubItems.Add(Name);
+                    row.SubItems.Add(ImportUnitPrice.ToString(CultureInfo.CurrentCulture));
+                    row.SubItems.Add(ExportUnitPrice.ToString(CultureInfo.CurrentCulture));
+                    row.SubItems.Add(Unit.Name);
+                    row.SubItems.Add(Specialization);
+                    break;
+                case Type.Import:
+                    row.SubItems.Add(Name);
+                    row.SubItems.Add(ImportUnitPrice.ToString(CultureInfo.CurrentCulture));
+                    row.SubItems.Add(Numerous.ToString());
+                    row.SubItems.Add(Unit.Name);
+                    row.SubItems.Add(Specialization);
+                    break;
+                case Type.Export:
+                    row.SubItems.Add(Name);
+                    row.SubItems.Add(ExportUnitPrice.ToString(CultureInfo.CurrentCulture));
+                    row.SubItems.Add(Numerous.ToString());
+                    row.SubItems.Add(Unit.Name);
+                    row.SubItems.Add(Specialization);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+            }
+
             return row;
         }
 

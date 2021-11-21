@@ -2514,6 +2514,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwItem_buy.TabIndex = 19;
             this.lvwItem_buy.UseCompatibleStateImageBehavior = false;
             this.lvwItem_buy.View = System.Windows.Forms.View.Details;
+            this.lvwItem_buy.SelectedIndexChanged += new System.EventHandler(this.lvwItem_buy_SelectedIndexChanged);
             // 
             // pnlBottom_buy
             // 
@@ -2540,6 +2541,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCancel_buy.TabIndex = 20;
             this.btnCancel_buy.Text = "Hủy hóa đơn";
             this.btnCancel_buy.UseVisualStyleBackColor = false;
+            this.btnCancel_buy.Click += new System.EventHandler(this.btnCancel_buy_Click);
             // 
             // pnlTotalMoney
             // 
@@ -2582,6 +2584,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCreateReceipt_Buy.TabIndex = 14;
             this.btnCreateReceipt_Buy.Text = "Tạo hóa đơn";
             this.btnCreateReceipt_Buy.UseVisualStyleBackColor = false;
+            this.btnCreateReceipt_Buy.Click += new System.EventHandler(this.btnCreateReceipt_Buy_Click);
             // 
             // btnPrintReceipt_Buy
             // 
@@ -2596,6 +2599,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnPrintReceipt_Buy.TabIndex = 17;
             this.btnPrintReceipt_Buy.Text = "In hóa đơn";
             this.btnPrintReceipt_Buy.UseVisualStyleBackColor = false;
+            this.btnPrintReceipt_Buy.Click += new System.EventHandler(this.btnPrintReceipt_Buy_Click);
             // 
             // pnlItem_buy
             // 
