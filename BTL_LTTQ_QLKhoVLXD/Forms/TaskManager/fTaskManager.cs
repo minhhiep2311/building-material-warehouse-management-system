@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee;
-using BTL_LTTQ_QLKhoVLXD.Forms.AddSupplier;
 using BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation;
 using BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount;
 using BTL_LTTQ_QLKhoVLXD.Forms.Employee;
+using BTL_LTTQ_QLKhoVLXD.Forms.Customer;
 using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
+using BTL_LTTQ_QLKhoVLXD.Forms.Supplier;
 using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
+using FormMode = BTL_LTTQ_QLKhoVLXD.Utils.Enum.FormMode;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
@@ -60,11 +62,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 LoadData_Employee();
             }));
 
-            Invoke((MethodInvoker) (() =>
-            {
-                Init_Customer();
-                
-            }));
+            Invoke((MethodInvoker)(() =>
+           {
+               Init_Customer();
+               LoadData_Customer();
+           }));
         }
 
         private void fTaskManager_FormClosing(object sender, FormClosingEventArgs e)
@@ -80,7 +82,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void fTaskManager_FormClosed(object sender, FormClosedEventArgs e)
         {
             _debounce_employee.Dispose();
-            _debounce_Customer.Dispose();
+            _debounce_supplier.Dispose();
         }
 
         #endregion
@@ -155,7 +157,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #region Customer Properties
 
         private Helper.Debounce _debounce_customer;
-        private List<Customer> _customerList_customer;
+        private List<Models.Customer> _customerList_customer;
 
         #endregion
 
@@ -178,12 +180,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnAdd_Customer_Click(object sender, EventArgs e)
         {
-
+            lvwCustomer_customer.SelectedItems.Clear();
+            new fCustomer(this).ShowDialog();
         }
 
         private void btnEdit_Customer_Click(object sender, EventArgs e)
         {
-
+            EditCustomer_customer();
         }
 
         private void btnDelete_Customer_Click(object sender, EventArgs e)
@@ -214,7 +217,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             lvwCustomer_customer.Columns.Add("Địa chỉ", 150, HorizontalAlignment.Left);
         }
 
-        public void LoadData_Customer(List<Customer> cache = null)
+        public void LoadData_Customer(List<Models.Customer> cache = null)
         {
             lvwCustomer_customer.Items.Clear();
 
@@ -252,6 +255,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             LoadData_Customer(customers);
         }
 
+        private void EditCustomer_customer()
+        {
+            var customer = Helper.Control.FirstItem(_customerList_customer, lvwCustomer_customer);
+            if (customer != null)
+                new fCustomer(this, FormMode.Write, customer, true).Show();
+        }
+
 
         #endregion
 
@@ -261,8 +271,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #region Supplier Properties
 
-        private Helper.Debounce _debounce_Customer;
-        private List<Supplier> _supplierList_supplier;
+        private Helper.Debounce _debounce_supplier;
+        private List<Models.Supplier> _supplierList_supplier;
 
         #endregion
 
@@ -271,12 +281,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void tpgSupplier_Enter(object sender, EventArgs e)
         {
             ResetButtons_Supplier();
-            _debounce_Customer?.Continue();
+            _debounce_supplier?.Continue();
         }
 
         private void tpgSupplier_Leave(object sender, EventArgs e)
         {
-            _debounce_Customer.Pause();
+            _debounce_supplier.Pause();
         }
 
         private void lvwSupplier_supplier_MouseClick(object sender, MouseEventArgs e)
@@ -323,17 +333,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void txtName_supplier_TextChanged(object sender, EventArgs e)
         {
-            _debounce_Customer.HandleUpdate();
+            _debounce_supplier.HandleUpdate();
         }
 
         private void txtAddress_supplier_TextChanged(object sender, EventArgs e)
         {
-            _debounce_Customer.HandleUpdate();
+            _debounce_supplier.HandleUpdate();
         }
 
         private void txtPhone_supplier_TextChanged(object sender, EventArgs e)
         {
-            _debounce_Customer.HandleUpdate();
+            _debounce_supplier.HandleUpdate();
         }
 
         private void btnAdd_supplier_Click(object sender, EventArgs e)
@@ -369,14 +379,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void Init_Supplier()
         {
-            _debounce_Customer = new Helper.Debounce(Search_Supplier);
+            _debounce_supplier = new Helper.Debounce(Search_Supplier);
 
             lvwSupplier_supplier.Columns.Add("ID", 0);
             lvwSupplier_supplier.Columns.Add("Tên NCC", 300, HorizontalAlignment.Left);
             lvwSupplier_supplier.Columns.Add("Địa chỉ", 150, HorizontalAlignment.Left);
         }
 
-        public void LoadData_Supplier(List<Supplier> cache = null)
+        public void LoadData_Supplier(List<Models.Supplier> cache = null)
         {
             lvwSupplier_supplier.Items.Clear();
 
@@ -427,7 +437,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             var supplier = _supplierList_supplier[lvwSupplier_supplier.SelectedIndices[0]];
             var editable = User.Permissions.Contains(Resources.Permission_EditSupplierInformation);
-            var mode = editable ? fEmployee.Mode.Write : fEmployee.Mode.Read;
+            var mode = editable ? FormMode.Write : FormMode.Read;
 
             lvwEmployee_employee.SelectedItems.Clear();
 
@@ -485,14 +495,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void EditSupplier_supplier()
         {
-            if (lvwSupplier_supplier.SelectedIndices.Count <= 0)
-                return;
-
-            // Edit only first selected item
-            var firstIndex = lvwSupplier_supplier.SelectedIndices[0];
-            var supplier = _supplierList_supplier[firstIndex];
-
-            new fSupplier(this, fSupplier.Mode.Write, supplier, true).Show();
+            var supplier = Helper.Control.FirstItem(_supplierList_supplier, lvwSupplier_supplier);
+            if (supplier != null)
+                new fSupplier(this, FormMode.Write, supplier, true).Show();
         }
 
         #endregion
@@ -652,7 +657,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void CheckboxAllChange_employee(object sender, EventArgs e)
         {
-            var checkboxes = Helper.ControlFilter.GetCheckBoxes(flpPosition_employee);
+            var checkboxes = Helper.Control.Filter.GetCheckBoxes(flpPosition_employee);
             var shouldChecked = checkboxes[0].Checked;
             foreach (var checkBox in checkboxes.Skip(1))
                 checkBox.Checked = shouldChecked;
@@ -661,7 +666,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void CheckboxChange_employee(object sender, EventArgs e)
         {
-            var checkboxes = Helper.ControlFilter.GetCheckBoxes(flpPosition_employee);
+            var checkboxes = Helper.Control.Filter.GetCheckBoxes(flpPosition_employee);
             var firstNotCheck = checkboxes.Skip(1).FirstOrDefault(x => !x.Checked);
             checkboxes.First().Checked = firstNotCheck == null;
             _debounce_employee.HandleUpdate();
@@ -803,7 +808,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             var employee = _employeeList_employee[lvwEmployee_employee.SelectedIndices[0]];
             var editable = User.Permissions.Contains(Resources.Permission_EditAccountInformation);
-            var mode = editable ? fEmployee.Mode.Write : fEmployee.Mode.Read;
+            var mode = editable ? FormMode.Write : FormMode.Read;
 
             lvwEmployee_employee.SelectedItems.Clear();
 
@@ -816,9 +821,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var account = txtAccount_employee.Text;
             var address = txtAddress_employee.Text;
             var phone = txtPhone_employee.Text;
-            var gender = Helper.ControlFilter.GetRadioButtons(pnlGender_employee)
+            var gender = Helper.Control.Filter.GetRadioButtons(pnlGender_employee)
                .FirstOrDefault(x => x.Checked)?.Text;
-            var positions = Helper.ControlFilter.GetCheckBoxes(flpPosition_employee)
+            var positions = Helper.Control.Filter.GetCheckBoxes(flpPosition_employee)
                .Where(x => x.Checked)
                .Select(x => x.Text);
 
@@ -839,13 +844,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void EditEmployee_employee()
         {
-            if (lvwEmployee_employee.SelectedIndices.Count <= 0)
-                return;
-
-            // Edit only first selected item
-            var firstIndex = lvwEmployee_employee.SelectedIndices[0];
-            var employee = _employeeList_employee[firstIndex];
-            new fEmployee(this, fEmployee.Mode.Write, employee, true).Show();
+            var employee = Helper.Control.FirstItem(_employeeList_employee, lvwEmployee_employee);
+            if (employee != null)
+                new fEmployee(this, FormMode.Write, employee, true).Show();
         }
 
         private void CreateAccount_employee()

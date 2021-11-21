@@ -63,11 +63,11 @@
     <Compile Include="Controls\TabControl\BmwTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\Customer\Customer.cs">
+    <Compile Include="Forms\Customer\fCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Customer\Customer.Designer.cs">
-      <DependentUpon>Customer.cs</DependentUpon>
+    <Compile Include="Forms\Customer\fCustomer.Designer.cs">
+      <DependentUpon>fCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Supplier\fSupplier.cs">
       <SubType>Form</SubType>
@@ -97,6 +97,7 @@
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\SupplierService.cs" />
+    <Compile Include="Utils\Enum.cs" />
     <Compile Include="Utils\PermissionConstant.cs" />
     <Compile Include="Forms\ChangeInformation\fChangeInformation.cs">
       <SubType>Form</SubType>
@@ -144,8 +145,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Helper.cs" />
-    <EmbeddedResource Include="Forms\Customer\Customer.resx">
-      <DependentUpon>Customer.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Customer\fCustomer.resx">
+      <DependentUpon>fCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Supplier\fSupplier.resx">
       <DependentUpon>fSupplier.cs</DependentUpon>

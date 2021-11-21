@@ -183,16 +183,31 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
             }
         }
 
-        public class ControlFilter
+        public class Control
         {
-            public static List<CheckBox> GetCheckBoxes(Control control)
+            public class Filter
             {
-                return control != null ? control.Controls.OfType<CheckBox>().ToList() : new List<CheckBox>();
+                public static List<CheckBox> GetCheckBoxes(System.Windows.Forms.Control control)
+                {
+                    return control != null ? control.Controls.OfType<CheckBox>().ToList() : new List<CheckBox>();
+                }
+
+                public static List<RadioButton> GetRadioButtons(System.Windows.Forms.Control control)
+                {
+                    return control != null ? control.Controls.OfType<RadioButton>().ToList() : new List<RadioButton>();
+                }
             }
 
-            public static List<RadioButton> GetRadioButtons(Control control)
+            public static T FirstItem<T>(List<T> dataList, ListView listView)
             {
-                return control != null ? control.Controls.OfType<RadioButton>().ToList() : new List<RadioButton>();
+                if (listView.SelectedIndices.Count <= 0)
+                    return default;
+
+                // Edit only first selected item
+                var firstIndex = listView.SelectedIndices[0];
+                var firstItem = dataList[firstIndex];
+
+                return firstItem;
             }
         }
 
