@@ -258,6 +258,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlTitle_buy = new System.Windows.Forms.Panel();
             this.lblTitle_buy = new System.Windows.Forms.Label();
             this.tclMain = new BTL_LTTQ_QLKhoVLXD.Controls.TabControl.BmwTabControl();
+            this.lblWarehouse_buy = new System.Windows.Forms.Label();
+            this.cboWarehouse_buy = new BTL_LTTQ_QLKhoVLXD.Controls.ComboBox.BmwComboBox();
             this.panel3.SuspendLayout();
             this.cms_employee.SuspendLayout();
             this.cms_supplier.SuspendLayout();
@@ -2737,11 +2739,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbItemInfor_Buy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grbItemInfor_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.grbItemInfor_Buy.ForeColor = System.Drawing.Color.White;
-            this.grbItemInfor_Buy.Location = new System.Drawing.Point(5, 162);
+            this.grbItemInfor_Buy.Location = new System.Drawing.Point(5, 203);
             this.grbItemInfor_Buy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grbItemInfor_Buy.Name = "grbItemInfor_Buy";
             this.grbItemInfor_Buy.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grbItemInfor_Buy.Size = new System.Drawing.Size(1091, 440);
+            this.grbItemInfor_Buy.Size = new System.Drawing.Size(1091, 399);
             this.grbItemInfor_Buy.TabIndex = 2;
             this.grbItemInfor_Buy.TabStop = false;
             this.grbItemInfor_Buy.Text = "Thông tin các mặt hàng";
@@ -2758,7 +2760,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwItem_buy.Location = new System.Drawing.Point(3, 148);
             this.lvwItem_buy.Name = "lvwItem_buy";
             this.lvwItem_buy.OwnerDraw = true;
-            this.lvwItem_buy.Size = new System.Drawing.Size(1085, 241);
+            this.lvwItem_buy.Size = new System.Drawing.Size(1085, 200);
             this.lvwItem_buy.Sortable = true;
             this.lvwItem_buy.SortableColumns = null;
             this.lvwItem_buy.TabIndex = 19;
@@ -2773,7 +2775,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlBottom_buy.Controls.Add(this.btnCreateReceipt_Buy);
             this.pnlBottom_buy.Controls.Add(this.btnPrintReceipt_Buy);
             this.pnlBottom_buy.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom_buy.Location = new System.Drawing.Point(3, 389);
+            this.pnlBottom_buy.Location = new System.Drawing.Point(3, 348);
             this.pnlBottom_buy.Name = "pnlBottom_buy";
             this.pnlBottom_buy.Size = new System.Drawing.Size(1085, 49);
             this.pnlBottom_buy.TabIndex = 18;
@@ -2971,14 +2973,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlNumerous_buy.Controls.Add(this.nmrMaterialAmount_Buy);
             this.pnlNumerous_buy.Controls.Add(this.lblMaterialAmount_Buy);
-            this.pnlNumerous_buy.Location = new System.Drawing.Point(329, 66);
+            this.pnlNumerous_buy.Location = new System.Drawing.Point(393, 66);
             this.pnlNumerous_buy.Name = "pnlNumerous_buy";
-            this.pnlNumerous_buy.Size = new System.Drawing.Size(266, 45);
+            this.pnlNumerous_buy.Size = new System.Drawing.Size(202, 45);
             this.pnlNumerous_buy.TabIndex = 19;
             // 
             // nmrMaterialAmount_Buy
             // 
-            this.nmrMaterialAmount_Buy.Location = new System.Drawing.Point(136, 9);
+            this.nmrMaterialAmount_Buy.Location = new System.Drawing.Point(88, 9);
             this.nmrMaterialAmount_Buy.Maximum = new decimal(new int[] {
             -1,
             -1,
@@ -2990,7 +2992,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             0,
             0});
             this.nmrMaterialAmount_Buy.Name = "nmrMaterialAmount_Buy";
-            this.nmrMaterialAmount_Buy.Size = new System.Drawing.Size(120, 26);
+            this.nmrMaterialAmount_Buy.Size = new System.Drawing.Size(104, 26);
             this.nmrMaterialAmount_Buy.TabIndex = 9;
             this.nmrMaterialAmount_Buy.ThousandsSeparator = true;
             this.nmrMaterialAmount_Buy.Value = new decimal(new int[] {
@@ -3004,7 +3006,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.lblMaterialAmount_Buy.AutoSize = true;
             this.lblMaterialAmount_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblMaterialAmount_Buy.Location = new System.Drawing.Point(20, 11);
+            this.lblMaterialAmount_Buy.Location = new System.Drawing.Point(3, 11);
             this.lblMaterialAmount_Buy.Name = "lblMaterialAmount_Buy";
             this.lblMaterialAmount_Buy.Size = new System.Drawing.Size(79, 20);
             this.lblMaterialAmount_Buy.TabIndex = 1;
@@ -3016,7 +3018,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlItemUnitPrice_buy.Controls.Add(this.lblMaterialUnitPrice_Buy);
             this.pnlItemUnitPrice_buy.Location = new System.Drawing.Point(12, 66);
             this.pnlItemUnitPrice_buy.Name = "pnlItemUnitPrice_buy";
-            this.pnlItemUnitPrice_buy.Size = new System.Drawing.Size(309, 45);
+            this.pnlItemUnitPrice_buy.Size = new System.Drawing.Size(378, 45);
             this.pnlItemUnitPrice_buy.TabIndex = 20;
             // 
             // nmrUnitPrice_buy
@@ -3034,7 +3036,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             -1,
             0});
             this.nmrUnitPrice_buy.Name = "nmrUnitPrice_buy";
-            this.nmrUnitPrice_buy.Size = new System.Drawing.Size(184, 26);
+            this.nmrUnitPrice_buy.Size = new System.Drawing.Size(247, 26);
             this.nmrUnitPrice_buy.TabIndex = 10;
             this.nmrUnitPrice_buy.ThousandsSeparator = true;
             // 
@@ -3042,7 +3044,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.lblMaterialUnitPrice_Buy.AutoSize = true;
             this.lblMaterialUnitPrice_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblMaterialUnitPrice_Buy.Location = new System.Drawing.Point(23, 15);
+            this.lblMaterialUnitPrice_Buy.Location = new System.Drawing.Point(23, 11);
             this.lblMaterialUnitPrice_Buy.Name = "lblMaterialUnitPrice_Buy";
             this.lblMaterialUnitPrice_Buy.Size = new System.Drawing.Size(71, 20);
             this.lblMaterialUnitPrice_Buy.TabIndex = 3;
@@ -3051,6 +3053,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // grbGeneralInfor_Buy
             // 
             this.grbGeneralInfor_Buy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.grbGeneralInfor_Buy.Controls.Add(this.cboWarehouse_buy);
+            this.grbGeneralInfor_Buy.Controls.Add(this.lblWarehouse_buy);
             this.grbGeneralInfor_Buy.Controls.Add(this.cboSupplier_buy);
             this.grbGeneralInfor_Buy.Controls.Add(this.btnAddSupplier_buy);
             this.grbGeneralInfor_Buy.Controls.Add(this.txtAddress_buy);
@@ -3063,7 +3067,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbGeneralInfor_Buy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grbGeneralInfor_Buy.Name = "grbGeneralInfor_Buy";
             this.grbGeneralInfor_Buy.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grbGeneralInfor_Buy.Size = new System.Drawing.Size(1091, 119);
+            this.grbGeneralInfor_Buy.Size = new System.Drawing.Size(1091, 160);
             this.grbGeneralInfor_Buy.TabIndex = 1;
             this.grbGeneralInfor_Buy.TabStop = false;
             this.grbGeneralInfor_Buy.Text = "Thông tin chung";
@@ -3171,6 +3175,25 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tclMain.Size = new System.Drawing.Size(1279, 615);
             this.tclMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tclMain.TabIndex = 0;
+            // 
+            // lblWarehouse_buy
+            // 
+            this.lblWarehouse_buy.AutoSize = true;
+            this.lblWarehouse_buy.Location = new System.Drawing.Point(32, 112);
+            this.lblWarehouse_buy.Name = "lblWarehouse_buy";
+            this.lblWarehouse_buy.Size = new System.Drawing.Size(43, 20);
+            this.lblWarehouse_buy.TabIndex = 0;
+            this.lblWarehouse_buy.Text = "Kho:";
+            // 
+            // cboWarehouse_buy
+            // 
+            this.cboWarehouse_buy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboWarehouse_buy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboWarehouse_buy.FormattingEnabled = true;
+            this.cboWarehouse_buy.Location = new System.Drawing.Point(217, 109);
+            this.cboWarehouse_buy.Name = "cboWarehouse_buy";
+            this.cboWarehouse_buy.Size = new System.Drawing.Size(669, 28);
+            this.cboWarehouse_buy.TabIndex = 4;
             // 
             // fTaskManager
             // 
@@ -3548,5 +3571,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox12;
+        private Controls.ComboBox.BmwComboBox cboWarehouse_buy;
+        private System.Windows.Forms.Label lblWarehouse_buy;
     }
 }
