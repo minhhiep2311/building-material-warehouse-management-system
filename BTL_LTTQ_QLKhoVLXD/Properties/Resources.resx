@@ -286,6 +286,9 @@
   <data name="Form_Text_AddNewCustomer" xml:space="preserve">
     <value>Thêm nhà cung cấp mới</value>
   </data>
+  <data name="Form_Text_AddNewMaterial" xml:space="preserve">
+    <value>Thêm vật liệu mới</value>
+  </data>
   <data name="Confirm" xml:space="preserve">
     <value>Xác nhận</value>
   </data>

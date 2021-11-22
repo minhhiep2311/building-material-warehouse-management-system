@@ -83,6 +83,12 @@
     <Compile Include="Forms\Customer\fCustomer.Designer.cs">
       <DependentUpon>fCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Material\fMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Material\fMaterial.Designer.cs">
+      <DependentUpon>fMaterial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Supplier\fSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     <Compile Include="Utils\Helper.cs" />
     <EmbeddedResource Include="Forms\Customer\fCustomer.resx">
       <DependentUpon>fCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Material\fMaterial.resx">
+      <DependentUpon>fMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Supplier\fSupplier.resx">
       <DependentUpon>fSupplier.cs</DependentUpon>

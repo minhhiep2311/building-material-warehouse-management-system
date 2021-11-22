@@ -16,7 +16,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
         #region Properties
 
-        public int Id { get; }
+        public int Id { get; set; }
         public string Name { get; }
         public double ImportUnitPrice { get; set; }
         public double ExportUnitPrice { get; set; }
@@ -27,14 +27,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
         #endregion
 
         #region Constructor
+        public Material(string name, double importUnitPrice, double exportUnitPrice, string specialization) : this(-1, name, importUnitPrice, exportUnitPrice) { }
 
         public Material(
-            int id,
-            string name,
+            int id, 
+            string name, 
             double importUnitPrice,
-            double exportUnitPrice,
-            MaterialUnit unit,
-            string specialization)
+            double exportUnitPrice, 
+            MaterialUnit unit = null,
+            string specialization = null)
         {
             Id = id;
             Name = name;

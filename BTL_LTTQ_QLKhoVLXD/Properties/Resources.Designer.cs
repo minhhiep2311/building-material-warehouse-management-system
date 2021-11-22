@@ -143,6 +143,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thêm vật liệu mới.
+        /// </summary>
+        internal static string Form_Text_AddNewMaterial {
+            get {
+                return ResourceManager.GetString("Form_Text_AddNewMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thêm nhà cung cấp mới.
         /// </summary>
         internal static string Form_Text_AddNewSupplier {
