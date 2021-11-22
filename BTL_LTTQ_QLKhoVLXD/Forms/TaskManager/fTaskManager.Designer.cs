@@ -124,26 +124,46 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtName_customer = new System.Windows.Forms.TextBox();
             this.tpgStatistic = new System.Windows.Forms.TabPage();
             this.tpgMaterial = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.lvwMaterial_material = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
+            this.flpFunction_material = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAdd_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnEdit_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnDelete_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnExport_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnRefersh_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.grbSearchMaterial_material = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
+            this.pnlSpecialization_material = new System.Windows.Forms.Panel();
+            this.lblSpecialization_material = new System.Windows.Forms.Label();
+            this.txtSpecialization_material = new System.Windows.Forms.TextBox();
+            this.pnllblExportUnitPrice_material = new System.Windows.Forms.Panel();
+            this.lblExportUnitPrice_material = new System.Windows.Forms.Label();
+            this.txtlblExportUnitPrice_material = new System.Windows.Forms.TextBox();
+            this.pnlImportUnitPrice_material = new System.Windows.Forms.Panel();
+            this.lblImportUnitPrice_material = new System.Windows.Forms.Label();
+            this.txtImportUnitPrice_material = new System.Windows.Forms.TextBox();
+            this.pnlNameMaterial_material = new System.Windows.Forms.Panel();
+            this.lblNameMaterial_material = new System.Windows.Forms.Label();
+            this.txtNameMaterial_material = new System.Windows.Forms.TextBox();
             this.tpgReceipt = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.bmwListView2 = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.bmwButton11 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.bmwButton12 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.bmwButton13 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.bmwButton14 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.bmwButton15 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.bmwGroupBox2 = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.lvwMaterial_material = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
+            this.lvwReceipt_Receipt = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
+            this.flpFunction_receipt = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAdd_Receipt = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnEdit_Receipt = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnDelete_Receipt = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnExport_Receipt = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnRefresh_Receipt = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.grbSearch_receipt = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
+            this.pnlPartner_receipt = new System.Windows.Forms.Panel();
+            this.lblPartner_receipt = new System.Windows.Forms.Label();
+            this.txtPrice_Receipt = new System.Windows.Forms.TextBox();
+            this.pnlDate_receipt = new System.Windows.Forms.Panel();
+            this.dtpDateFrom_receipt = new System.Windows.Forms.DateTimePicker();
+            this.lblDate_receipt = new System.Windows.Forms.Label();
+            this.pnlID_receipt = new System.Windows.Forms.Panel();
+            this.lblId_receipt = new System.Windows.Forms.Label();
+            this.txtId_receipt = new System.Windows.Forms.TextBox();
             this.bmwListView1 = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.bmwButton1 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
@@ -241,24 +261,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlTitle_buy = new System.Windows.Forms.Panel();
             this.lblTitle_buy = new System.Windows.Forms.Label();
             this.tclMain = new BTL_LTTQ_QLKhoVLXD.Controls.TabControl.BmwTabControl();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.bmwListView3 = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.bmwButton16 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.bmwButton17 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.bmwButton18 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.bmwButton19 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.bmwButton20 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.bmwGroupBox3 = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.dtpDateTo_receipt = new System.Windows.Forms.DateTimePicker();
+            this.pnlWareHouse_receipt = new System.Windows.Forms.Panel();
+            this.lblWareHouse_receipt = new System.Windows.Forms.Label();
+            this.cbbWareHouse_receipt = new BTL_LTTQ_QLKhoVLXD.Controls.ComboBox.BmwComboBox();
+            this.pnlReceiptType_receipt = new System.Windows.Forms.Panel();
+            this.lblReceiptType_receipt = new System.Windows.Forms.Label();
+            this.rdbImport_receipt = new System.Windows.Forms.RadioButton();
+            this.rdbExport_receipt = new System.Windows.Forms.RadioButton();
+            this.pnlEmployeeReceipt_receipt = new System.Windows.Forms.Panel();
+            this.lblEmployeeReceipt_receipt = new System.Windows.Forms.Label();
+            this.txtEmployeeReceipt_receipt = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.cms_employee.SuspendLayout();
             this.cms_supplier.SuspendLayout();
@@ -300,16 +313,26 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlAddress_customer.SuspendLayout();
             this.pnlName_customer.SuspendLayout();
             this.tpgMaterial.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.flpFunction_material.SuspendLayout();
+            this.grbSearchMaterial_material.SuspendLayout();
+            this.pnlSpecialization_material.SuspendLayout();
+            this.pnllblExportUnitPrice_material.SuspendLayout();
+            this.pnlImportUnitPrice_material.SuspendLayout();
+            this.pnlNameMaterial_material.SuspendLayout();
             this.tpgReceipt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
-            this.bmwGroupBox2.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
+            this.flpFunction_receipt.SuspendLayout();
+            this.grbSearch_receipt.SuspendLayout();
+            this.pnlPartner_receipt.SuspendLayout();
+            this.pnlDate_receipt.SuspendLayout();
+            this.pnlID_receipt.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.grbSearch_material.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -345,15 +368,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbGeneralInfor_Buy.SuspendLayout();
             this.pnlTitle_buy.SuspendLayout();
             this.tclMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
-            this.bmwGroupBox3.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
+            this.pnlWareHouse_receipt.SuspendLayout();
+            this.pnlReceiptType_receipt.SuspendLayout();
+            this.pnlEmployeeReceipt_receipt.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -1313,7 +1330,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnDelete_Customer.Name = "btnDelete_Customer";
             this.btnDelete_Customer.Size = new System.Drawing.Size(185, 63);
             this.btnDelete_Customer.TabIndex = 3;
-            this.btnDelete_Customer.Text = "Xóa KH";
+            this.btnDelete_Customer.Text = "Xóa khách hàng";
             this.btnDelete_Customer.UseVisualStyleBackColor = false;
             this.btnDelete_Customer.Click += new System.EventHandler(this.btnDelete_Customer_Click);
             // 
@@ -1477,6 +1494,274 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgMaterial.UseVisualStyleBackColor = true;
             this.tpgMaterial.Enter += new System.EventHandler(this.tpgMaterial_Enter);
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.lvwMaterial_material);
+            this.splitContainer2.Panel1MinSize = 200;
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.splitContainer2.Panel2.Controls.Add(this.flpFunction_material);
+            this.splitContainer2.Panel2.Controls.Add(this.grbSearchMaterial_material);
+            this.splitContainer2.Panel2.Padding = new System.Windows.Forms.Padding(5);
+            this.splitContainer2.Panel2MinSize = 350;
+            this.splitContainer2.Size = new System.Drawing.Size(1101, 607);
+            this.splitContainer2.SplitterDistance = 589;
+            this.splitContainer2.SplitterWidth = 1;
+            this.splitContainer2.TabIndex = 4;
+            // 
+            // lvwMaterial_material
+            // 
+            this.lvwMaterial_material.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.lvwMaterial_material.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvwMaterial_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lvwMaterial_material.ForeColor = System.Drawing.Color.White;
+            this.lvwMaterial_material.FullRowSelect = true;
+            this.lvwMaterial_material.GridLines = true;
+            this.lvwMaterial_material.HideSelection = false;
+            this.lvwMaterial_material.Location = new System.Drawing.Point(0, 0);
+            this.lvwMaterial_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvwMaterial_material.Name = "lvwMaterial_material";
+            this.lvwMaterial_material.OwnerDraw = true;
+            this.lvwMaterial_material.Size = new System.Drawing.Size(589, 607);
+            this.lvwMaterial_material.TabIndex = 0;
+            this.lvwMaterial_material.UseCompatibleStateImageBehavior = false;
+            this.lvwMaterial_material.View = System.Windows.Forms.View.Details;
+            // 
+            // flpFunction_material
+            // 
+            this.flpFunction_material.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.flpFunction_material.Controls.Add(this.btnAdd_material);
+            this.flpFunction_material.Controls.Add(this.btnEdit_material);
+            this.flpFunction_material.Controls.Add(this.btnDelete_material);
+            this.flpFunction_material.Controls.Add(this.btnExport_material);
+            this.flpFunction_material.Controls.Add(this.btnRefersh_material);
+            this.flpFunction_material.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpFunction_material.Location = new System.Drawing.Point(5, 230);
+            this.flpFunction_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flpFunction_material.Name = "flpFunction_material";
+            this.flpFunction_material.Padding = new System.Windows.Forms.Padding(5);
+            this.flpFunction_material.Size = new System.Drawing.Size(501, 372);
+            this.flpFunction_material.TabIndex = 8;
+            // 
+            // btnAdd_material
+            // 
+            this.btnAdd_material.BackColor = System.Drawing.Color.White;
+            this.btnAdd_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAdd_material.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnAdd_material.Location = new System.Drawing.Point(8, 7);
+            this.btnAdd_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd_material.Name = "btnAdd_material";
+            this.btnAdd_material.Size = new System.Drawing.Size(185, 63);
+            this.btnAdd_material.TabIndex = 1;
+            this.btnAdd_material.Text = "Thêm vật liệu";
+            this.btnAdd_material.UseVisualStyleBackColor = false;
+            this.btnAdd_material.Click += new System.EventHandler(this.btnAdd_Material_Click);
+            // 
+            // btnEdit_material
+            // 
+            this.btnEdit_material.BackColor = System.Drawing.Color.White;
+            this.btnEdit_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnEdit_material.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnEdit_material.Location = new System.Drawing.Point(199, 7);
+            this.btnEdit_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit_material.Name = "btnEdit_material";
+            this.btnEdit_material.Size = new System.Drawing.Size(185, 63);
+            this.btnEdit_material.TabIndex = 2;
+            this.btnEdit_material.Text = "Chỉnh sửa thông tin";
+            this.btnEdit_material.UseVisualStyleBackColor = false;
+            this.btnEdit_material.Click += new System.EventHandler(this.btnEdit_Material_Click);
+            // 
+            // btnDelete_material
+            // 
+            this.btnDelete_material.BackColor = System.Drawing.Color.White;
+            this.btnDelete_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnDelete_material.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnDelete_material.Location = new System.Drawing.Point(8, 74);
+            this.btnDelete_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete_material.Name = "btnDelete_material";
+            this.btnDelete_material.Size = new System.Drawing.Size(185, 63);
+            this.btnDelete_material.TabIndex = 3;
+            this.btnDelete_material.Text = "Xóa vật liệu";
+            this.btnDelete_material.UseVisualStyleBackColor = false;
+            this.btnDelete_material.Click += new System.EventHandler(this.btnDelete_Material_Click);
+            // 
+            // btnExport_material
+            // 
+            this.btnExport_material.BackColor = System.Drawing.Color.White;
+            this.btnExport_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnExport_material.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnExport_material.Location = new System.Drawing.Point(199, 74);
+            this.btnExport_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExport_material.Name = "btnExport_material";
+            this.btnExport_material.Size = new System.Drawing.Size(185, 63);
+            this.btnExport_material.TabIndex = 5;
+            this.btnExport_material.Text = "Xuất file danh sách vật liệu";
+            this.btnExport_material.UseVisualStyleBackColor = false;
+            this.btnExport_material.Click += new System.EventHandler(this.btnExport_Material_Click);
+            // 
+            // btnRefersh_material
+            // 
+            this.btnRefersh_material.BackColor = System.Drawing.Color.White;
+            this.btnRefersh_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefersh_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnRefersh_material.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnRefersh_material.Location = new System.Drawing.Point(8, 141);
+            this.btnRefersh_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRefersh_material.Name = "btnRefersh_material";
+            this.btnRefersh_material.Size = new System.Drawing.Size(185, 63);
+            this.btnRefersh_material.TabIndex = 4;
+            this.btnRefersh_material.Text = "Làm mới";
+            this.btnRefersh_material.UseVisualStyleBackColor = false;
+            this.btnRefersh_material.Click += new System.EventHandler(this.btnRefersh_Material_Click);
+            // 
+            // grbSearchMaterial_material
+            // 
+            this.grbSearchMaterial_material.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.grbSearchMaterial_material.Controls.Add(this.pnlSpecialization_material);
+            this.grbSearchMaterial_material.Controls.Add(this.pnllblExportUnitPrice_material);
+            this.grbSearchMaterial_material.Controls.Add(this.pnlImportUnitPrice_material);
+            this.grbSearchMaterial_material.Controls.Add(this.pnlNameMaterial_material);
+            this.grbSearchMaterial_material.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbSearchMaterial_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grbSearchMaterial_material.ForeColor = System.Drawing.Color.White;
+            this.grbSearchMaterial_material.Location = new System.Drawing.Point(5, 5);
+            this.grbSearchMaterial_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grbSearchMaterial_material.Name = "grbSearchMaterial_material";
+            this.grbSearchMaterial_material.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grbSearchMaterial_material.Size = new System.Drawing.Size(501, 225);
+            this.grbSearchMaterial_material.TabIndex = 0;
+            this.grbSearchMaterial_material.TabStop = false;
+            this.grbSearchMaterial_material.Text = "Tìm kiếm";
+            // 
+            // pnlSpecialization_material
+            // 
+            this.pnlSpecialization_material.Controls.Add(this.lblSpecialization_material);
+            this.pnlSpecialization_material.Controls.Add(this.txtSpecialization_material);
+            this.pnlSpecialization_material.Location = new System.Drawing.Point(6, 162);
+            this.pnlSpecialization_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlSpecialization_material.Name = "pnlSpecialization_material";
+            this.pnlSpecialization_material.Size = new System.Drawing.Size(461, 39);
+            this.pnlSpecialization_material.TabIndex = 8;
+            // 
+            // lblSpecialization_material
+            // 
+            this.lblSpecialization_material.AutoSize = true;
+            this.lblSpecialization_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblSpecialization_material.Location = new System.Drawing.Point(3, 9);
+            this.lblSpecialization_material.Name = "lblSpecialization_material";
+            this.lblSpecialization_material.Size = new System.Drawing.Size(80, 20);
+            this.lblSpecialization_material.TabIndex = 0;
+            this.lblSpecialization_material.Text = "Quy cách";
+            // 
+            // txtSpecialization_material
+            // 
+            this.txtSpecialization_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtSpecialization_material.Location = new System.Drawing.Point(156, 6);
+            this.txtSpecialization_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSpecialization_material.Name = "txtSpecialization_material";
+            this.txtSpecialization_material.Size = new System.Drawing.Size(295, 26);
+            this.txtSpecialization_material.TabIndex = 1;
+            // 
+            // pnllblExportUnitPrice_material
+            // 
+            this.pnllblExportUnitPrice_material.Controls.Add(this.lblExportUnitPrice_material);
+            this.pnllblExportUnitPrice_material.Controls.Add(this.txtlblExportUnitPrice_material);
+            this.pnllblExportUnitPrice_material.Location = new System.Drawing.Point(5, 114);
+            this.pnllblExportUnitPrice_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnllblExportUnitPrice_material.Name = "pnllblExportUnitPrice_material";
+            this.pnllblExportUnitPrice_material.Size = new System.Drawing.Size(461, 39);
+            this.pnllblExportUnitPrice_material.TabIndex = 7;
+            // 
+            // lblExportUnitPrice_material
+            // 
+            this.lblExportUnitPrice_material.AutoSize = true;
+            this.lblExportUnitPrice_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblExportUnitPrice_material.Location = new System.Drawing.Point(3, 9);
+            this.lblExportUnitPrice_material.Name = "lblExportUnitPrice_material";
+            this.lblExportUnitPrice_material.Size = new System.Drawing.Size(67, 20);
+            this.lblExportUnitPrice_material.TabIndex = 0;
+            this.lblExportUnitPrice_material.Text = "Giá bán";
+            // 
+            // txtlblExportUnitPrice_material
+            // 
+            this.txtlblExportUnitPrice_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtlblExportUnitPrice_material.Location = new System.Drawing.Point(156, 6);
+            this.txtlblExportUnitPrice_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtlblExportUnitPrice_material.Name = "txtlblExportUnitPrice_material";
+            this.txtlblExportUnitPrice_material.Size = new System.Drawing.Size(295, 26);
+            this.txtlblExportUnitPrice_material.TabIndex = 1;
+            // 
+            // pnlImportUnitPrice_material
+            // 
+            this.pnlImportUnitPrice_material.Controls.Add(this.lblImportUnitPrice_material);
+            this.pnlImportUnitPrice_material.Controls.Add(this.txtImportUnitPrice_material);
+            this.pnlImportUnitPrice_material.Location = new System.Drawing.Point(5, 70);
+            this.pnlImportUnitPrice_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlImportUnitPrice_material.Name = "pnlImportUnitPrice_material";
+            this.pnlImportUnitPrice_material.Size = new System.Drawing.Size(461, 39);
+            this.pnlImportUnitPrice_material.TabIndex = 6;
+            // 
+            // lblImportUnitPrice_material
+            // 
+            this.lblImportUnitPrice_material.AutoSize = true;
+            this.lblImportUnitPrice_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblImportUnitPrice_material.Location = new System.Drawing.Point(3, 9);
+            this.lblImportUnitPrice_material.Name = "lblImportUnitPrice_material";
+            this.lblImportUnitPrice_material.Size = new System.Drawing.Size(76, 20);
+            this.lblImportUnitPrice_material.TabIndex = 0;
+            this.lblImportUnitPrice_material.Text = "Giá nhập";
+            // 
+            // txtImportUnitPrice_material
+            // 
+            this.txtImportUnitPrice_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtImportUnitPrice_material.Location = new System.Drawing.Point(156, 6);
+            this.txtImportUnitPrice_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtImportUnitPrice_material.Name = "txtImportUnitPrice_material";
+            this.txtImportUnitPrice_material.Size = new System.Drawing.Size(295, 26);
+            this.txtImportUnitPrice_material.TabIndex = 1;
+            // 
+            // pnlNameMaterial_material
+            // 
+            this.pnlNameMaterial_material.Controls.Add(this.lblNameMaterial_material);
+            this.pnlNameMaterial_material.Controls.Add(this.txtNameMaterial_material);
+            this.pnlNameMaterial_material.Location = new System.Drawing.Point(5, 25);
+            this.pnlNameMaterial_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlNameMaterial_material.Name = "pnlNameMaterial_material";
+            this.pnlNameMaterial_material.Size = new System.Drawing.Size(461, 39);
+            this.pnlNameMaterial_material.TabIndex = 5;
+            // 
+            // lblNameMaterial_material
+            // 
+            this.lblNameMaterial_material.AutoSize = true;
+            this.lblNameMaterial_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblNameMaterial_material.Location = new System.Drawing.Point(3, 9);
+            this.lblNameMaterial_material.Name = "lblNameMaterial_material";
+            this.lblNameMaterial_material.Size = new System.Drawing.Size(95, 20);
+            this.lblNameMaterial_material.TabIndex = 0;
+            this.lblNameMaterial_material.Text = "Tên vật liệu";
+            // 
+            // txtNameMaterial_material
+            // 
+            this.txtNameMaterial_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtNameMaterial_material.Location = new System.Drawing.Point(156, 6);
+            this.txtNameMaterial_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNameMaterial_material.Name = "txtNameMaterial_material";
+            this.txtNameMaterial_material.Size = new System.Drawing.Size(295, 26);
+            this.txtNameMaterial_material.TabIndex = 1;
+            // 
             // tpgReceipt
             // 
             this.tpgReceipt.Controls.Add(this.splitContainer1);
@@ -1497,14 +1782,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.bmwListView2);
+            this.splitContainer1.Panel1.Controls.Add(this.lvwReceipt_Receipt);
             this.splitContainer1.Panel1MinSize = 200;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel3);
-            this.splitContainer1.Panel2.Controls.Add(this.bmwGroupBox2);
+            this.splitContainer1.Panel2.Controls.Add(this.flpFunction_receipt);
+            this.splitContainer1.Panel2.Controls.Add(this.grbSearch_receipt);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(5);
             this.splitContainer1.Panel2MinSize = 350;
             this.splitContainer1.Size = new System.Drawing.Size(1101, 607);
@@ -1512,232 +1797,219 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 4;
             // 
-            // bmwListView2
+            // lvwReceipt_Receipt
             // 
-            this.bmwListView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwListView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bmwListView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwListView2.ForeColor = System.Drawing.Color.White;
-            this.bmwListView2.FullRowSelect = true;
-            this.bmwListView2.GridLines = true;
-            this.bmwListView2.HideSelection = false;
-            this.bmwListView2.Location = new System.Drawing.Point(0, 0);
-            this.bmwListView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwListView2.Name = "bmwListView2";
-            this.bmwListView2.OwnerDraw = true;
-            this.bmwListView2.Size = new System.Drawing.Size(589, 607);
-            this.bmwListView2.TabIndex = 0;
-            this.bmwListView2.UseCompatibleStateImageBehavior = false;
-            this.bmwListView2.View = System.Windows.Forms.View.Details;
+            this.lvwReceipt_Receipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.lvwReceipt_Receipt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvwReceipt_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lvwReceipt_Receipt.ForeColor = System.Drawing.Color.White;
+            this.lvwReceipt_Receipt.FullRowSelect = true;
+            this.lvwReceipt_Receipt.GridLines = true;
+            this.lvwReceipt_Receipt.HideSelection = false;
+            this.lvwReceipt_Receipt.Location = new System.Drawing.Point(0, 0);
+            this.lvwReceipt_Receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvwReceipt_Receipt.Name = "lvwReceipt_Receipt";
+            this.lvwReceipt_Receipt.OwnerDraw = true;
+            this.lvwReceipt_Receipt.Size = new System.Drawing.Size(589, 607);
+            this.lvwReceipt_Receipt.TabIndex = 0;
+            this.lvwReceipt_Receipt.UseCompatibleStateImageBehavior = false;
+            this.lvwReceipt_Receipt.View = System.Windows.Forms.View.Details;
             // 
-            // flowLayoutPanel3
+            // flpFunction_receipt
             // 
-            this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.flowLayoutPanel3.Controls.Add(this.bmwButton11);
-            this.flowLayoutPanel3.Controls.Add(this.bmwButton12);
-            this.flowLayoutPanel3.Controls.Add(this.bmwButton13);
-            this.flowLayoutPanel3.Controls.Add(this.bmwButton14);
-            this.flowLayoutPanel3.Controls.Add(this.bmwButton15);
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(5, 176);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Padding = new System.Windows.Forms.Padding(5);
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(501, 426);
-            this.flowLayoutPanel3.TabIndex = 8;
+            this.flpFunction_receipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.flpFunction_receipt.Controls.Add(this.btnAdd_Receipt);
+            this.flpFunction_receipt.Controls.Add(this.btnEdit_Receipt);
+            this.flpFunction_receipt.Controls.Add(this.btnDelete_Receipt);
+            this.flpFunction_receipt.Controls.Add(this.btnExport_Receipt);
+            this.flpFunction_receipt.Controls.Add(this.btnRefresh_Receipt);
+            this.flpFunction_receipt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpFunction_receipt.Location = new System.Drawing.Point(5, 306);
+            this.flpFunction_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flpFunction_receipt.Name = "flpFunction_receipt";
+            this.flpFunction_receipt.Padding = new System.Windows.Forms.Padding(5);
+            this.flpFunction_receipt.Size = new System.Drawing.Size(501, 296);
+            this.flpFunction_receipt.TabIndex = 8;
             // 
-            // bmwButton11
+            // btnAdd_Receipt
             // 
-            this.bmwButton11.BackColor = System.Drawing.Color.White;
-            this.bmwButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton11.Location = new System.Drawing.Point(8, 7);
-            this.bmwButton11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton11.Name = "bmwButton11";
-            this.bmwButton11.Size = new System.Drawing.Size(185, 63);
-            this.bmwButton11.TabIndex = 1;
-            this.bmwButton11.Text = "Thêm khách hàng";
-            this.bmwButton11.UseVisualStyleBackColor = false;
+            this.btnAdd_Receipt.BackColor = System.Drawing.Color.White;
+            this.btnAdd_Receipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAdd_Receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnAdd_Receipt.Location = new System.Drawing.Point(8, 7);
+            this.btnAdd_Receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd_Receipt.Name = "btnAdd_Receipt";
+            this.btnAdd_Receipt.Size = new System.Drawing.Size(185, 63);
+            this.btnAdd_Receipt.TabIndex = 1;
+            this.btnAdd_Receipt.Text = "Thêm hóa đơn";
+            this.btnAdd_Receipt.UseVisualStyleBackColor = false;
             // 
-            // bmwButton12
+            // btnEdit_Receipt
             // 
-            this.bmwButton12.BackColor = System.Drawing.Color.White;
-            this.bmwButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton12.Location = new System.Drawing.Point(199, 7);
-            this.bmwButton12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton12.Name = "bmwButton12";
-            this.bmwButton12.Size = new System.Drawing.Size(185, 63);
-            this.bmwButton12.TabIndex = 2;
-            this.bmwButton12.Text = "Chỉnh sửa thông tin";
-            this.bmwButton12.UseVisualStyleBackColor = false;
+            this.btnEdit_Receipt.BackColor = System.Drawing.Color.White;
+            this.btnEdit_Receipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnEdit_Receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnEdit_Receipt.Location = new System.Drawing.Point(199, 7);
+            this.btnEdit_Receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit_Receipt.Name = "btnEdit_Receipt";
+            this.btnEdit_Receipt.Size = new System.Drawing.Size(185, 63);
+            this.btnEdit_Receipt.TabIndex = 2;
+            this.btnEdit_Receipt.Text = "Chỉnh sửa thông tin";
+            this.btnEdit_Receipt.UseVisualStyleBackColor = false;
             // 
-            // bmwButton13
+            // btnDelete_Receipt
             // 
-            this.bmwButton13.BackColor = System.Drawing.Color.White;
-            this.bmwButton13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton13.Location = new System.Drawing.Point(8, 74);
-            this.bmwButton13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton13.Name = "bmwButton13";
-            this.bmwButton13.Size = new System.Drawing.Size(185, 63);
-            this.bmwButton13.TabIndex = 3;
-            this.bmwButton13.Text = "Xóa KH";
-            this.bmwButton13.UseVisualStyleBackColor = false;
+            this.btnDelete_Receipt.BackColor = System.Drawing.Color.White;
+            this.btnDelete_Receipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnDelete_Receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnDelete_Receipt.Location = new System.Drawing.Point(8, 74);
+            this.btnDelete_Receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete_Receipt.Name = "btnDelete_Receipt";
+            this.btnDelete_Receipt.Size = new System.Drawing.Size(185, 63);
+            this.btnDelete_Receipt.TabIndex = 3;
+            this.btnDelete_Receipt.Text = "Xóa hóa đơn";
+            this.btnDelete_Receipt.UseVisualStyleBackColor = false;
             // 
-            // bmwButton14
+            // btnExport_Receipt
             // 
-            this.bmwButton14.BackColor = System.Drawing.Color.White;
-            this.bmwButton14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton14.Location = new System.Drawing.Point(199, 74);
-            this.bmwButton14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton14.Name = "bmwButton14";
-            this.bmwButton14.Size = new System.Drawing.Size(185, 63);
-            this.bmwButton14.TabIndex = 5;
-            this.bmwButton14.Text = "Xuất file danh sách khách hàng";
-            this.bmwButton14.UseVisualStyleBackColor = false;
+            this.btnExport_Receipt.BackColor = System.Drawing.Color.White;
+            this.btnExport_Receipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnExport_Receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnExport_Receipt.Location = new System.Drawing.Point(199, 74);
+            this.btnExport_Receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExport_Receipt.Name = "btnExport_Receipt";
+            this.btnExport_Receipt.Size = new System.Drawing.Size(185, 63);
+            this.btnExport_Receipt.TabIndex = 5;
+            this.btnExport_Receipt.Text = "Xuất file danh sách hóa đơn";
+            this.btnExport_Receipt.UseVisualStyleBackColor = false;
             // 
-            // bmwButton15
+            // btnRefresh_Receipt
             // 
-            this.bmwButton15.BackColor = System.Drawing.Color.White;
-            this.bmwButton15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton15.Location = new System.Drawing.Point(8, 141);
-            this.bmwButton15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton15.Name = "bmwButton15";
-            this.bmwButton15.Size = new System.Drawing.Size(185, 63);
-            this.bmwButton15.TabIndex = 4;
-            this.bmwButton15.Text = "Làm mới";
-            this.bmwButton15.UseVisualStyleBackColor = false;
+            this.btnRefresh_Receipt.BackColor = System.Drawing.Color.White;
+            this.btnRefresh_Receipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnRefresh_Receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnRefresh_Receipt.Location = new System.Drawing.Point(8, 141);
+            this.btnRefresh_Receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRefresh_Receipt.Name = "btnRefresh_Receipt";
+            this.btnRefresh_Receipt.Size = new System.Drawing.Size(185, 63);
+            this.btnRefresh_Receipt.TabIndex = 4;
+            this.btnRefresh_Receipt.Text = "Làm mới";
+            this.btnRefresh_Receipt.UseVisualStyleBackColor = false;
             // 
-            // bmwGroupBox2
+            // grbSearch_receipt
             // 
-            this.bmwGroupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwGroupBox2.Controls.Add(this.panel7);
-            this.bmwGroupBox2.Controls.Add(this.panel8);
-            this.bmwGroupBox2.Controls.Add(this.panel9);
-            this.bmwGroupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bmwGroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwGroupBox2.ForeColor = System.Drawing.Color.White;
-            this.bmwGroupBox2.Location = new System.Drawing.Point(5, 5);
-            this.bmwGroupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwGroupBox2.Name = "bmwGroupBox2";
-            this.bmwGroupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwGroupBox2.Size = new System.Drawing.Size(501, 171);
-            this.bmwGroupBox2.TabIndex = 0;
-            this.bmwGroupBox2.TabStop = false;
-            this.bmwGroupBox2.Text = "Tìm kiếm";
+            this.grbSearch_receipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.grbSearch_receipt.Controls.Add(this.pnlEmployeeReceipt_receipt);
+            this.grbSearch_receipt.Controls.Add(this.pnlReceiptType_receipt);
+            this.grbSearch_receipt.Controls.Add(this.pnlWareHouse_receipt);
+            this.grbSearch_receipt.Controls.Add(this.pnlPartner_receipt);
+            this.grbSearch_receipt.Controls.Add(this.pnlDate_receipt);
+            this.grbSearch_receipt.Controls.Add(this.pnlID_receipt);
+            this.grbSearch_receipt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbSearch_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grbSearch_receipt.ForeColor = System.Drawing.Color.White;
+            this.grbSearch_receipt.Location = new System.Drawing.Point(5, 5);
+            this.grbSearch_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grbSearch_receipt.Name = "grbSearch_receipt";
+            this.grbSearch_receipt.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grbSearch_receipt.Size = new System.Drawing.Size(501, 301);
+            this.grbSearch_receipt.TabIndex = 0;
+            this.grbSearch_receipt.TabStop = false;
+            this.grbSearch_receipt.Text = "Tìm kiếm";
             // 
-            // panel7
+            // pnlPartner_receipt
             // 
-            this.panel7.Controls.Add(this.label4);
-            this.panel7.Controls.Add(this.textBox6);
-            this.panel7.Location = new System.Drawing.Point(5, 114);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(461, 39);
-            this.panel7.TabIndex = 7;
+            this.pnlPartner_receipt.Controls.Add(this.lblPartner_receipt);
+            this.pnlPartner_receipt.Controls.Add(this.txtPrice_Receipt);
+            this.pnlPartner_receipt.Location = new System.Drawing.Point(5, 114);
+            this.pnlPartner_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlPartner_receipt.Name = "pnlPartner_receipt";
+            this.pnlPartner_receipt.Size = new System.Drawing.Size(461, 39);
+            this.pnlPartner_receipt.TabIndex = 7;
             // 
-            // label4
+            // lblPartner_receipt
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(3, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Số điện thoại";
+            this.lblPartner_receipt.AutoSize = true;
+            this.lblPartner_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblPartner_receipt.Location = new System.Drawing.Point(10, 9);
+            this.lblPartner_receipt.Name = "lblPartner_receipt";
+            this.lblPartner_receipt.Size = new System.Drawing.Size(56, 20);
+            this.lblPartner_receipt.TabIndex = 0;
+            this.lblPartner_receipt.Text = "Đơn vị";
             // 
-            // textBox6
+            // txtPrice_Receipt
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox6.Location = new System.Drawing.Point(156, 6);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(295, 26);
-            this.textBox6.TabIndex = 1;
+            this.txtPrice_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtPrice_Receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.txtPrice_Receipt.Location = new System.Drawing.Point(156, 6);
+            this.txtPrice_Receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPrice_Receipt.Name = "txtPrice_Receipt";
+            this.txtPrice_Receipt.Size = new System.Drawing.Size(295, 26);
+            this.txtPrice_Receipt.TabIndex = 1;
             // 
-            // panel8
+            // pnlDate_receipt
             // 
-            this.panel8.Controls.Add(this.label7);
-            this.panel8.Controls.Add(this.textBox8);
-            this.panel8.Location = new System.Drawing.Point(5, 70);
-            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(461, 39);
-            this.panel8.TabIndex = 6;
+            this.pnlDate_receipt.Controls.Add(this.dtpDateTo_receipt);
+            this.pnlDate_receipt.Controls.Add(this.dtpDateFrom_receipt);
+            this.pnlDate_receipt.Controls.Add(this.lblDate_receipt);
+            this.pnlDate_receipt.Location = new System.Drawing.Point(5, 70);
+            this.pnlDate_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlDate_receipt.Name = "pnlDate_receipt";
+            this.pnlDate_receipt.Size = new System.Drawing.Size(461, 39);
+            this.pnlDate_receipt.TabIndex = 6;
             // 
-            // label7
+            // dtpDateFrom_receipt
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(3, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 20);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Địa chỉ";
+            this.dtpDateFrom_receipt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateFrom_receipt.Location = new System.Drawing.Point(156, 6);
+            this.dtpDateFrom_receipt.Name = "dtpDateFrom_receipt";
+            this.dtpDateFrom_receipt.Size = new System.Drawing.Size(121, 26);
+            this.dtpDateFrom_receipt.TabIndex = 1;
             // 
-            // textBox8
+            // lblDate_receipt
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox8.Location = new System.Drawing.Point(156, 6);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(295, 26);
-            this.textBox8.TabIndex = 1;
+            this.lblDate_receipt.AutoSize = true;
+            this.lblDate_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblDate_receipt.Location = new System.Drawing.Point(10, 12);
+            this.lblDate_receipt.Name = "lblDate_receipt";
+            this.lblDate_receipt.Size = new System.Drawing.Size(74, 20);
+            this.lblDate_receipt.TabIndex = 0;
+            this.lblDate_receipt.Text = "Ngày lập";
             // 
-            // panel9
+            // pnlID_receipt
             // 
-            this.panel9.Controls.Add(this.label8);
-            this.panel9.Controls.Add(this.textBox9);
-            this.panel9.Location = new System.Drawing.Point(5, 25);
-            this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(461, 39);
-            this.panel9.TabIndex = 5;
+            this.pnlID_receipt.Controls.Add(this.lblId_receipt);
+            this.pnlID_receipt.Controls.Add(this.txtId_receipt);
+            this.pnlID_receipt.Location = new System.Drawing.Point(5, 25);
+            this.pnlID_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlID_receipt.Name = "pnlID_receipt";
+            this.pnlID_receipt.Size = new System.Drawing.Size(461, 39);
+            this.pnlID_receipt.TabIndex = 5;
             // 
-            // label8
+            // lblId_receipt
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(3, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(127, 20);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Tên khách hàng";
+            this.lblId_receipt.AutoSize = true;
+            this.lblId_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblId_receipt.Location = new System.Drawing.Point(10, 12);
+            this.lblId_receipt.Name = "lblId_receipt";
+            this.lblId_receipt.Size = new System.Drawing.Size(96, 20);
+            this.lblId_receipt.TabIndex = 0;
+            this.lblId_receipt.Text = "Mã hóa đơn";
             // 
-            // textBox9
+            // txtId_receipt
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox9.Location = new System.Drawing.Point(156, 6);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(295, 26);
-            this.textBox9.TabIndex = 1;
-            // 
-            // lvwMaterial_material
-            // 
-            this.lvwMaterial_material.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.lvwMaterial_material.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwMaterial_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lvwMaterial_material.ForeColor = System.Drawing.Color.White;
-            this.lvwMaterial_material.FullRowSelect = true;
-            this.lvwMaterial_material.GridLines = true;
-            this.lvwMaterial_material.HideSelection = false;
-            this.lvwMaterial_material.Location = new System.Drawing.Point(0, 0);
-            this.lvwMaterial_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lvwMaterial_material.Name = "lvwMaterial_material";
-            this.lvwMaterial_material.OwnerDraw = true;
-            this.lvwMaterial_material.Size = new System.Drawing.Size(589, 607);
-            this.lvwMaterial_material.TabIndex = 0;
-            this.lvwMaterial_material.UseCompatibleStateImageBehavior = false;
-            this.lvwMaterial_material.View = System.Windows.Forms.View.Details;
+            this.txtId_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtId_receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.txtId_receipt.Location = new System.Drawing.Point(156, 6);
+            this.txtId_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtId_receipt.Name = "txtId_receipt";
+            this.txtId_receipt.Size = new System.Drawing.Size(295, 26);
+            this.txtId_receipt.TabIndex = 1;
             // 
             // bmwListView1
             // 
@@ -2927,238 +3199,116 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tclMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tclMain.TabIndex = 0;
             // 
-            // splitContainer2
+            // dtpDateTo_receipt
             // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.splitContainer2.Name = "splitContainer2";
+            this.dtpDateTo_receipt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateTo_receipt.Location = new System.Drawing.Point(337, 6);
+            this.dtpDateTo_receipt.Name = "dtpDateTo_receipt";
+            this.dtpDateTo_receipt.Size = new System.Drawing.Size(114, 26);
+            this.dtpDateTo_receipt.TabIndex = 2;
             // 
-            // splitContainer2.Panel1
+            // pnlWareHouse_receipt
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.bmwListView3);
-            this.splitContainer2.Panel1MinSize = 200;
+            this.pnlWareHouse_receipt.Controls.Add(this.cbbWareHouse_receipt);
+            this.pnlWareHouse_receipt.Controls.Add(this.lblWareHouse_receipt);
+            this.pnlWareHouse_receipt.Location = new System.Drawing.Point(6, 156);
+            this.pnlWareHouse_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlWareHouse_receipt.Name = "pnlWareHouse_receipt";
+            this.pnlWareHouse_receipt.Size = new System.Drawing.Size(461, 39);
+            this.pnlWareHouse_receipt.TabIndex = 8;
             // 
-            // splitContainer2.Panel2
+            // lblWareHouse_receipt
             // 
-            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel4);
-            this.splitContainer2.Panel2.Controls.Add(this.bmwGroupBox3);
-            this.splitContainer2.Panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.splitContainer2.Panel2MinSize = 350;
-            this.splitContainer2.Size = new System.Drawing.Size(1101, 607);
-            this.splitContainer2.SplitterDistance = 589;
-            this.splitContainer2.SplitterWidth = 1;
-            this.splitContainer2.TabIndex = 4;
+            this.lblWareHouse_receipt.AutoSize = true;
+            this.lblWareHouse_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblWareHouse_receipt.Location = new System.Drawing.Point(9, 9);
+            this.lblWareHouse_receipt.Name = "lblWareHouse_receipt";
+            this.lblWareHouse_receipt.Size = new System.Drawing.Size(38, 20);
+            this.lblWareHouse_receipt.TabIndex = 0;
+            this.lblWareHouse_receipt.Text = "Kho";
             // 
-            // bmwListView3
+            // cbbWareHouse_receipt
             // 
-            this.bmwListView3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwListView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bmwListView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwListView3.ForeColor = System.Drawing.Color.White;
-            this.bmwListView3.FullRowSelect = true;
-            this.bmwListView3.GridLines = true;
-            this.bmwListView3.HideSelection = false;
-            this.bmwListView3.Location = new System.Drawing.Point(0, 0);
-            this.bmwListView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwListView3.Name = "bmwListView3";
-            this.bmwListView3.OwnerDraw = true;
-            this.bmwListView3.Size = new System.Drawing.Size(589, 607);
-            this.bmwListView3.TabIndex = 0;
-            this.bmwListView3.UseCompatibleStateImageBehavior = false;
-            this.bmwListView3.View = System.Windows.Forms.View.Details;
+            this.cbbWareHouse_receipt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbbWareHouse_receipt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbbWareHouse_receipt.FormattingEnabled = true;
+            this.cbbWareHouse_receipt.Location = new System.Drawing.Point(156, 3);
+            this.cbbWareHouse_receipt.Name = "cbbWareHouse_receipt";
+            this.cbbWareHouse_receipt.Size = new System.Drawing.Size(295, 28);
+            this.cbbWareHouse_receipt.TabIndex = 1;
             // 
-            // flowLayoutPanel4
+            // pnlReceiptType_receipt
             // 
-            this.flowLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.flowLayoutPanel4.Controls.Add(this.bmwButton16);
-            this.flowLayoutPanel4.Controls.Add(this.bmwButton17);
-            this.flowLayoutPanel4.Controls.Add(this.bmwButton18);
-            this.flowLayoutPanel4.Controls.Add(this.bmwButton19);
-            this.flowLayoutPanel4.Controls.Add(this.bmwButton20);
-            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(5, 176);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Padding = new System.Windows.Forms.Padding(5);
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(501, 426);
-            this.flowLayoutPanel4.TabIndex = 8;
+            this.pnlReceiptType_receipt.Controls.Add(this.rdbExport_receipt);
+            this.pnlReceiptType_receipt.Controls.Add(this.rdbImport_receipt);
+            this.pnlReceiptType_receipt.Controls.Add(this.lblReceiptType_receipt);
+            this.pnlReceiptType_receipt.Location = new System.Drawing.Point(6, 199);
+            this.pnlReceiptType_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlReceiptType_receipt.Name = "pnlReceiptType_receipt";
+            this.pnlReceiptType_receipt.Size = new System.Drawing.Size(461, 39);
+            this.pnlReceiptType_receipt.TabIndex = 8;
             // 
-            // bmwButton16
+            // lblReceiptType_receipt
             // 
-            this.bmwButton16.BackColor = System.Drawing.Color.White;
-            this.bmwButton16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton16.Location = new System.Drawing.Point(8, 7);
-            this.bmwButton16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton16.Name = "bmwButton16";
-            this.bmwButton16.Size = new System.Drawing.Size(185, 63);
-            this.bmwButton16.TabIndex = 1;
-            this.bmwButton16.Text = "Thêm khách hàng";
-            this.bmwButton16.UseVisualStyleBackColor = false;
+            this.lblReceiptType_receipt.AutoSize = true;
+            this.lblReceiptType_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblReceiptType_receipt.Location = new System.Drawing.Point(9, 10);
+            this.lblReceiptType_receipt.Name = "lblReceiptType_receipt";
+            this.lblReceiptType_receipt.Size = new System.Drawing.Size(106, 20);
+            this.lblReceiptType_receipt.TabIndex = 0;
+            this.lblReceiptType_receipt.Text = "Kiểu hóa đơn";
             // 
-            // bmwButton17
+            // rdbImport_receipt
             // 
-            this.bmwButton17.BackColor = System.Drawing.Color.White;
-            this.bmwButton17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton17.Location = new System.Drawing.Point(199, 7);
-            this.bmwButton17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton17.Name = "bmwButton17";
-            this.bmwButton17.Size = new System.Drawing.Size(185, 63);
-            this.bmwButton17.TabIndex = 2;
-            this.bmwButton17.Text = "Chỉnh sửa thông tin";
-            this.bmwButton17.UseVisualStyleBackColor = false;
+            this.rdbImport_receipt.AutoSize = true;
+            this.rdbImport_receipt.Location = new System.Drawing.Point(153, 8);
+            this.rdbImport_receipt.Name = "rdbImport_receipt";
+            this.rdbImport_receipt.Size = new System.Drawing.Size(100, 24);
+            this.rdbImport_receipt.TabIndex = 1;
+            this.rdbImport_receipt.TabStop = true;
+            this.rdbImport_receipt.Text = "HD Nhập";
+            this.rdbImport_receipt.UseVisualStyleBackColor = true;
             // 
-            // bmwButton18
+            // rdbExport_receipt
             // 
-            this.bmwButton18.BackColor = System.Drawing.Color.White;
-            this.bmwButton18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton18.Location = new System.Drawing.Point(8, 74);
-            this.bmwButton18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton18.Name = "bmwButton18";
-            this.bmwButton18.Size = new System.Drawing.Size(185, 63);
-            this.bmwButton18.TabIndex = 3;
-            this.bmwButton18.Text = "Xóa KH";
-            this.bmwButton18.UseVisualStyleBackColor = false;
+            this.rdbExport_receipt.AutoSize = true;
+            this.rdbExport_receipt.Location = new System.Drawing.Point(348, 8);
+            this.rdbExport_receipt.Name = "rdbExport_receipt";
+            this.rdbExport_receipt.Size = new System.Drawing.Size(95, 24);
+            this.rdbExport_receipt.TabIndex = 2;
+            this.rdbExport_receipt.TabStop = true;
+            this.rdbExport_receipt.Text = "HD Xuất";
+            this.rdbExport_receipt.UseVisualStyleBackColor = true;
             // 
-            // bmwButton19
+            // pnlEmployeeReceipt_receipt
             // 
-            this.bmwButton19.BackColor = System.Drawing.Color.White;
-            this.bmwButton19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton19.Location = new System.Drawing.Point(199, 74);
-            this.bmwButton19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton19.Name = "bmwButton19";
-            this.bmwButton19.Size = new System.Drawing.Size(185, 63);
-            this.bmwButton19.TabIndex = 5;
-            this.bmwButton19.Text = "Xuất file danh sách khách hàng";
-            this.bmwButton19.UseVisualStyleBackColor = false;
+            this.pnlEmployeeReceipt_receipt.Controls.Add(this.txtEmployeeReceipt_receipt);
+            this.pnlEmployeeReceipt_receipt.Controls.Add(this.lblEmployeeReceipt_receipt);
+            this.pnlEmployeeReceipt_receipt.Location = new System.Drawing.Point(8, 244);
+            this.pnlEmployeeReceipt_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlEmployeeReceipt_receipt.Name = "pnlEmployeeReceipt_receipt";
+            this.pnlEmployeeReceipt_receipt.Size = new System.Drawing.Size(461, 39);
+            this.pnlEmployeeReceipt_receipt.TabIndex = 9;
             // 
-            // bmwButton20
+            // lblEmployeeReceipt_receipt
             // 
-            this.bmwButton20.BackColor = System.Drawing.Color.White;
-            this.bmwButton20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton20.Location = new System.Drawing.Point(8, 141);
-            this.bmwButton20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton20.Name = "bmwButton20";
-            this.bmwButton20.Size = new System.Drawing.Size(185, 63);
-            this.bmwButton20.TabIndex = 4;
-            this.bmwButton20.Text = "Làm mới";
-            this.bmwButton20.UseVisualStyleBackColor = false;
+            this.lblEmployeeReceipt_receipt.AutoSize = true;
+            this.lblEmployeeReceipt_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblEmployeeReceipt_receipt.Location = new System.Drawing.Point(3, 6);
+            this.lblEmployeeReceipt_receipt.Name = "lblEmployeeReceipt_receipt";
+            this.lblEmployeeReceipt_receipt.Size = new System.Drawing.Size(143, 20);
+            this.lblEmployeeReceipt_receipt.TabIndex = 0;
+            this.lblEmployeeReceipt_receipt.Text = "Người lập hóa đơn";
             // 
-            // bmwGroupBox3
+            // txtEmployeeReceipt_receipt
             // 
-            this.bmwGroupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwGroupBox3.Controls.Add(this.panel10);
-            this.bmwGroupBox3.Controls.Add(this.panel11);
-            this.bmwGroupBox3.Controls.Add(this.panel12);
-            this.bmwGroupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bmwGroupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwGroupBox3.ForeColor = System.Drawing.Color.White;
-            this.bmwGroupBox3.Location = new System.Drawing.Point(5, 5);
-            this.bmwGroupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwGroupBox3.Name = "bmwGroupBox3";
-            this.bmwGroupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwGroupBox3.Size = new System.Drawing.Size(501, 171);
-            this.bmwGroupBox3.TabIndex = 0;
-            this.bmwGroupBox3.TabStop = false;
-            this.bmwGroupBox3.Text = "Tìm kiếm";
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.label9);
-            this.panel10.Controls.Add(this.textBox10);
-            this.panel10.Location = new System.Drawing.Point(5, 114);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(461, 39);
-            this.panel10.TabIndex = 7;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(3, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(106, 20);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Số điện thoại";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox10.Location = new System.Drawing.Point(156, 6);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(295, 26);
-            this.textBox10.TabIndex = 1;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.label10);
-            this.panel11.Controls.Add(this.textBox11);
-            this.panel11.Location = new System.Drawing.Point(5, 70);
-            this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(461, 39);
-            this.panel11.TabIndex = 6;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(3, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Địa chỉ";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox11.Location = new System.Drawing.Point(156, 6);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(295, 26);
-            this.textBox11.TabIndex = 1;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.label11);
-            this.panel12.Controls.Add(this.textBox12);
-            this.panel12.Location = new System.Drawing.Point(5, 25);
-            this.panel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(461, 39);
-            this.panel12.TabIndex = 5;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label11.Location = new System.Drawing.Point(3, 9);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(127, 20);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Tên khách hàng";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox12.Location = new System.Drawing.Point(156, 6);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(295, 26);
-            this.textBox12.TabIndex = 1;
+            this.txtEmployeeReceipt_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtEmployeeReceipt_receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.txtEmployeeReceipt_receipt.Location = new System.Drawing.Point(154, 6);
+            this.txtEmployeeReceipt_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmployeeReceipt_receipt.Name = "txtEmployeeReceipt_receipt";
+            this.txtEmployeeReceipt_receipt.Size = new System.Drawing.Size(295, 26);
+            this.txtEmployeeReceipt_receipt.TabIndex = 2;
             // 
             // fTaskManager
             // 
@@ -3230,19 +3380,33 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_customer.ResumeLayout(false);
             this.pnlName_customer.PerformLayout();
             this.tpgMaterial.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.flpFunction_material.ResumeLayout(false);
+            this.grbSearchMaterial_material.ResumeLayout(false);
+            this.pnlSpecialization_material.ResumeLayout(false);
+            this.pnlSpecialization_material.PerformLayout();
+            this.pnllblExportUnitPrice_material.ResumeLayout(false);
+            this.pnllblExportUnitPrice_material.PerformLayout();
+            this.pnlImportUnitPrice_material.ResumeLayout(false);
+            this.pnlImportUnitPrice_material.PerformLayout();
+            this.pnlNameMaterial_material.ResumeLayout(false);
+            this.pnlNameMaterial_material.PerformLayout();
             this.tpgReceipt.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.bmwGroupBox2.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
+            this.flpFunction_receipt.ResumeLayout(false);
+            this.grbSearch_receipt.ResumeLayout(false);
+            this.pnlPartner_receipt.ResumeLayout(false);
+            this.pnlPartner_receipt.PerformLayout();
+            this.pnlDate_receipt.ResumeLayout(false);
+            this.pnlDate_receipt.PerformLayout();
+            this.pnlID_receipt.ResumeLayout(false);
+            this.pnlID_receipt.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.grbSearch_material.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -3295,18 +3459,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbGeneralInfor_Buy.PerformLayout();
             this.pnlTitle_buy.ResumeLayout(false);
             this.tclMain.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.bmwGroupBox3.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
+            this.pnlWareHouse_receipt.ResumeLayout(false);
+            this.pnlWareHouse_receipt.PerformLayout();
+            this.pnlReceiptType_receipt.ResumeLayout(false);
+            this.pnlReceiptType_receipt.PerformLayout();
+            this.pnlEmployeeReceipt_receipt.ResumeLayout(false);
+            this.pnlEmployeeReceipt_receipt.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3403,7 +3561,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.TabPage tpgStatistic;
         private System.Windows.Forms.TabPage tpgMaterial;
         private System.Windows.Forms.TabPage tpgReceipt;
-        private BmwListView lvwMaterial_material;
         private BmwListView bmwListView1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private BmwButton bmwButton1;
@@ -3502,40 +3659,54 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Label lblTitle_buy;
         private BmwTabControl tclMain;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private BmwListView bmwListView2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private BmwButton bmwButton11;
-        private BmwButton bmwButton12;
-        private BmwButton bmwButton13;
-        private BmwButton bmwButton14;
-        private BmwButton bmwButton15;
-        private BmwGroupBox bmwGroupBox2;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox9;
+        private BmwListView lvwReceipt_Receipt;
+        private System.Windows.Forms.FlowLayoutPanel flpFunction_receipt;
+        private BmwButton btnAdd_Receipt;
+        private BmwButton btnEdit_Receipt;
+        private BmwButton btnDelete_Receipt;
+        private BmwButton btnExport_Receipt;
+        private BmwButton btnRefresh_Receipt;
+        private BmwGroupBox grbSearch_receipt;
+        private System.Windows.Forms.Panel pnlPartner_receipt;
+        private System.Windows.Forms.Label lblPartner_receipt;
+        private System.Windows.Forms.TextBox txtPrice_Receipt;
+        private System.Windows.Forms.Panel pnlDate_receipt;
+        private System.Windows.Forms.Label lblDate_receipt;
+        private System.Windows.Forms.Panel pnlID_receipt;
+        private System.Windows.Forms.Label lblId_receipt;
+        private System.Windows.Forms.TextBox txtId_receipt;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private BmwListView bmwListView3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private BmwButton bmwButton16;
-        private BmwButton bmwButton17;
-        private BmwButton bmwButton18;
-        private BmwButton bmwButton19;
-        private BmwButton bmwButton20;
-        private BmwGroupBox bmwGroupBox3;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox12;
+        private BmwListView lvwMaterial_material;
+        private System.Windows.Forms.FlowLayoutPanel flpFunction_material;
+        private BmwButton btnAdd_material;
+        private BmwButton btnEdit_material;
+        private BmwButton btnDelete_material;
+        private BmwButton btnExport_material;
+        private BmwButton btnRefersh_material;
+        private BmwGroupBox grbSearchMaterial_material;
+        private System.Windows.Forms.Panel pnllblExportUnitPrice_material;
+        private System.Windows.Forms.Label lblExportUnitPrice_material;
+        private System.Windows.Forms.TextBox txtlblExportUnitPrice_material;
+        private System.Windows.Forms.Panel pnlImportUnitPrice_material;
+        private System.Windows.Forms.Label lblImportUnitPrice_material;
+        private System.Windows.Forms.TextBox txtImportUnitPrice_material;
+        private System.Windows.Forms.Panel pnlNameMaterial_material;
+        private System.Windows.Forms.Label lblNameMaterial_material;
+        private System.Windows.Forms.TextBox txtNameMaterial_material;
+        private System.Windows.Forms.Panel pnlSpecialization_material;
+        private System.Windows.Forms.Label lblSpecialization_material;
+        private System.Windows.Forms.TextBox txtSpecialization_material;
+        private System.Windows.Forms.DateTimePicker dtpDateFrom_receipt;
+        private System.Windows.Forms.DateTimePicker dtpDateTo_receipt;
+        private System.Windows.Forms.Panel pnlWareHouse_receipt;
+        private System.Windows.Forms.Label lblWareHouse_receipt;
+        private Controls.ComboBox.BmwComboBox cbbWareHouse_receipt;
+        private System.Windows.Forms.Panel pnlReceiptType_receipt;
+        private System.Windows.Forms.Label lblReceiptType_receipt;
+        private System.Windows.Forms.RadioButton rdbImport_receipt;
+        private System.Windows.Forms.Panel pnlEmployeeReceipt_receipt;
+        private System.Windows.Forms.TextBox txtEmployeeReceipt_receipt;
+        private System.Windows.Forms.Label lblEmployeeReceipt_receipt;
+        private System.Windows.Forms.RadioButton rdbExport_receipt;
     }
 }

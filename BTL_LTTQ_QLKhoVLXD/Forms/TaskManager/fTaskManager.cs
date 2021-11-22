@@ -9,11 +9,13 @@ using BTL_LTTQ_QLKhoVLXD.Forms.Employee;
 using BTL_LTTQ_QLKhoVLXD.Forms.Customer;
 using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
 using BTL_LTTQ_QLKhoVLXD.Forms.Supplier;
+using BTL_LTTQ_QLKhoVLXD.Forms.Material;
 using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 using FormMode = BTL_LTTQ_QLKhoVLXD.Utils.Enum.FormMode;
+
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
@@ -294,6 +296,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #endregion
 
         #region Material
+        #region Material Properties
+
+        private Helper.Debounce _debounce_material;
+
+        #endregion
 
         #region Material Events
 
@@ -301,6 +308,31 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             LoadData_Material();
         }
+        private void btnAdd_Material_Click(object sender, EventArgs e)
+        {
+            lvwSupplier_supplier.SelectedItems.Clear();
+            new fMaterial(this).ShowDialog();
+        }
+
+        private void btnEdit_Material_Click(object sender, EventArgs e)
+        {
+            EditMaterial_material();
+        }
+        private void btnDelete_Material_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExport_Material_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefersh_Material_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         #endregion
 
@@ -316,7 +348,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             lvwMaterial_material.Columns.Add("Quy cách", 150, HorizontalAlignment.Left);
         }
 
-        private void LoadData_Material(List<Models.Material> cache = null)
+        public void LoadData_Material(List<Models.Material> cache = null)
         {
 
             lvwMaterial_material.Items.Clear();
@@ -328,7 +360,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 cboItem_buy.DataSource = _materials;
             }
 
-            cache.ForEach(material => lvwMaterial_material.Items.Add(material.ToListViewItem(Material.Type.Import)));
+            // TODO 
+            //cache.ForEach(material => lvwMaterial_material.Items.Add(material.ToListViewItem(FormMode.)));
+        }
+
+        private void EditMaterial_material()
+        {
+            /*var material = Helper.Control.FirstSelected(, lvwMaterial_material);
+            if (material != null)
+                new fMaterial(this, FormMode.Write, material , true).Show();*/
         }
 
         #endregion
@@ -1190,8 +1230,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             new fResetPassword(User).ShowDialog();
         }
 
+
+
+
+
         #endregion
 
         #endregion
+
+        
     }
 }
