@@ -171,7 +171,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnAddMaterial_buy_Click(object sender, EventArgs e)
         {
-
+            lvwSupplier_supplier.SelectedItems.Clear();
+            new fSupplier(this).ShowDialog();
         }
 
         private void nmrMaterialAmount_Buy_ValueChanged(object sender, EventArgs e)

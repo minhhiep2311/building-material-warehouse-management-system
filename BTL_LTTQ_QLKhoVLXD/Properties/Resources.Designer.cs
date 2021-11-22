@@ -125,7 +125,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thêm nhà cung cấp mới.
+        ///   Looks up a localized string similar to Thêm khách hàng mới.
         /// </summary>
         internal static string Form_Text_AddNewCustomer {
             get {

@@ -103,7 +103,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             // 
             this.pnlButton.Controls.Add(this.btnCancel);
             this.pnlButton.Controls.Add(this.btnSave);
-            this.pnlButton.Location = new System.Drawing.Point(235, 313);
+            this.pnlButton.Location = new System.Drawing.Point(233, 330);
             this.pnlButton.Name = "pnlButton";
             this.pnlButton.Size = new System.Drawing.Size(464, 58);
             this.pnlButton.TabIndex = 18;
@@ -142,7 +142,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             // 
             this.chkEdit.AutoSize = true;
             this.chkEdit.ForeColor = System.Drawing.Color.White;
-            this.chkEdit.Location = new System.Drawing.Point(11, 297);
+            this.chkEdit.Location = new System.Drawing.Point(12, 313);
             this.chkEdit.Name = "chkEdit";
             this.chkEdit.Size = new System.Drawing.Size(152, 21);
             this.chkEdit.TabIndex = 19;
@@ -159,7 +159,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             this.grbPhone.ForeColor = System.Drawing.Color.White;
             this.grbPhone.Location = new System.Drawing.Point(11, 161);
             this.grbPhone.Name = "grbPhone";
-            this.grbPhone.Size = new System.Drawing.Size(841, 114);
+            this.grbPhone.Size = new System.Drawing.Size(841, 136);
             this.grbPhone.TabIndex = 20;
             this.grbPhone.TabStop = false;
             this.grbPhone.Text = "Số điện thoại";
@@ -171,9 +171,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             this.btnModifyPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModifyPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnModifyPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnModifyPhone.Location = new System.Drawing.Point(673, 53);
+            this.btnModifyPhone.Location = new System.Drawing.Point(673, 57);
             this.btnModifyPhone.Name = "btnModifyPhone";
-            this.btnModifyPhone.Size = new System.Drawing.Size(145, 26);
+            this.btnModifyPhone.Size = new System.Drawing.Size(145, 30);
             this.btnModifyPhone.TabIndex = 9;
             this.btnModifyPhone.Text = "Chỉnh sửa";
             this.btnModifyPhone.UseVisualStyleBackColor = false;
@@ -190,7 +190,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             this.lvwPhone.LabelEdit = true;
             this.lvwPhone.Location = new System.Drawing.Point(3, 18);
             this.lvwPhone.Name = "lvwPhone";
-            this.lvwPhone.Size = new System.Drawing.Size(653, 93);
+            this.lvwPhone.Size = new System.Drawing.Size(653, 115);
             this.lvwPhone.TabIndex = 7;
             this.lvwPhone.UseCompatibleStateImageBehavior = false;
             this.lvwPhone.View = System.Windows.Forms.View.Details;
@@ -202,9 +202,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             this.btnRemovePhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemovePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnRemovePhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnRemovePhone.Location = new System.Drawing.Point(673, 82);
+            this.btnRemovePhone.Location = new System.Drawing.Point(673, 93);
             this.btnRemovePhone.Name = "btnRemovePhone";
-            this.btnRemovePhone.Size = new System.Drawing.Size(145, 26);
+            this.btnRemovePhone.Size = new System.Drawing.Size(145, 30);
             this.btnRemovePhone.TabIndex = 10;
             this.btnRemovePhone.Text = "Xóa";
             this.btnRemovePhone.UseVisualStyleBackColor = false;
@@ -219,7 +219,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             this.btnAddPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnAddPhone.Location = new System.Drawing.Point(673, 21);
             this.btnAddPhone.Name = "btnAddPhone";
-            this.btnAddPhone.Size = new System.Drawing.Size(145, 26);
+            this.btnAddPhone.Size = new System.Drawing.Size(145, 30);
             this.btnAddPhone.TabIndex = 8;
             this.btnAddPhone.Text = "Thêm";
             this.btnAddPhone.UseVisualStyleBackColor = false;
@@ -230,7 +230,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.ClientSize = new System.Drawing.Size(882, 383);
+            this.ClientSize = new System.Drawing.Size(882, 396);
             this.Controls.Add(this.grbPhone);
             this.Controls.Add(this.chkEdit);
             this.Controls.Add(this.pnlButton);

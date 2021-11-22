@@ -7,8 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-namespace BTL_LTTQ_QLKhoVLXD.Reports {
+/*namespace BTL_LTTQ_QLKhoVLXD.Reports {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -151,3 +150,4 @@ namespace BTL_LTTQ_QLKhoVLXD.Reports {
         }
     }
 }
+*/

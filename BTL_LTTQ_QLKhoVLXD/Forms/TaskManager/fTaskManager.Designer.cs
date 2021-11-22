@@ -739,7 +739,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbSearch_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grbSearch_employee.Name = "grbSearch_employee";
             this.grbSearch_employee.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grbSearch_employee.Size = new System.Drawing.Size(497, 335);
+            this.grbSearch_employee.Size = new System.Drawing.Size(497, 330);
             this.grbSearch_employee.TabIndex = 3;
             this.grbSearch_employee.TabStop = false;
             this.grbSearch_employee.Text = "Tìm kiếm";
@@ -751,7 +751,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlAccount_employee.Location = new System.Drawing.Point(5, 70);
             this.pnlAccount_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlAccount_employee.Name = "pnlAccount_employee";
-            this.pnlAccount_employee.Size = new System.Drawing.Size(459, 39);
+            this.pnlAccount_employee.Size = new System.Drawing.Size(421, 39);
             this.pnlAccount_employee.TabIndex = 3;
             // 
             // lblAccount_employee
@@ -770,7 +770,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtAccount_employee.Location = new System.Drawing.Point(132, 6);
             this.txtAccount_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAccount_employee.Name = "txtAccount_employee";
-            this.txtAccount_employee.Size = new System.Drawing.Size(319, 26);
+            this.txtAccount_employee.Size = new System.Drawing.Size(289, 26);
             this.txtAccount_employee.TabIndex = 1;
             this.txtAccount_employee.TextChanged += new System.EventHandler(this.txtAccount_employee_TextChanged);
             // 
@@ -782,7 +782,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlPosition_employee.Location = new System.Drawing.Point(8, 250);
             this.pnlPosition_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlPosition_employee.Name = "pnlPosition_employee";
-            this.pnlPosition_employee.Size = new System.Drawing.Size(456, 62);
+            this.pnlPosition_employee.Size = new System.Drawing.Size(421, 45);
             this.pnlPosition_employee.TabIndex = 6;
             // 
             // flpPosition_employee
@@ -790,7 +790,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpPosition_employee.Location = new System.Drawing.Point(132, 2);
             this.flpPosition_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpPosition_employee.Name = "flpPosition_employee";
-            this.flpPosition_employee.Size = new System.Drawing.Size(317, 41);
+            this.flpPosition_employee.Size = new System.Drawing.Size(286, 41);
             this.flpPosition_employee.TabIndex = 0;
             // 
             // lblPosition_employee
@@ -812,7 +812,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlGender_employee.Location = new System.Drawing.Point(8, 206);
             this.pnlGender_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlGender_employee.Name = "pnlGender_employee";
-            this.pnlGender_employee.Size = new System.Drawing.Size(456, 39);
+            this.pnlGender_employee.Size = new System.Drawing.Size(418, 39);
             this.pnlGender_employee.TabIndex = 5;
             // 
             // rdoFemale_employee
@@ -873,7 +873,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlPhone_employee.Location = new System.Drawing.Point(5, 160);
             this.pnlPhone_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlPhone_employee.Name = "pnlPhone_employee";
-            this.pnlPhone_employee.Size = new System.Drawing.Size(459, 39);
+            this.pnlPhone_employee.Size = new System.Drawing.Size(421, 39);
             this.pnlPhone_employee.TabIndex = 4;
             // 
             // lblPhone_employee
@@ -889,10 +889,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // txtPhone_employee
             // 
             this.txtPhone_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtPhone_employee.Location = new System.Drawing.Point(132, 6);
+            this.txtPhone_employee.Location = new System.Drawing.Point(132, 4);
             this.txtPhone_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhone_employee.Name = "txtPhone_employee";
-            this.txtPhone_employee.Size = new System.Drawing.Size(319, 26);
+            this.txtPhone_employee.Size = new System.Drawing.Size(289, 26);
             this.txtPhone_employee.TabIndex = 1;
             this.txtPhone_employee.TextChanged += new System.EventHandler(this.txtPhone_employee_TextChanged);
             // 
@@ -903,7 +903,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlAddress_employee.Location = new System.Drawing.Point(5, 114);
             this.pnlAddress_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlAddress_employee.Name = "pnlAddress_employee";
-            this.pnlAddress_employee.Size = new System.Drawing.Size(459, 39);
+            this.pnlAddress_employee.Size = new System.Drawing.Size(421, 39);
             this.pnlAddress_employee.TabIndex = 3;
             // 
             // lblAddress_employee
@@ -922,7 +922,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtAddress_employee.Location = new System.Drawing.Point(132, 6);
             this.txtAddress_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddress_employee.Name = "txtAddress_employee";
-            this.txtAddress_employee.Size = new System.Drawing.Size(319, 26);
+            this.txtAddress_employee.Size = new System.Drawing.Size(289, 26);
             this.txtAddress_employee.TabIndex = 1;
             this.txtAddress_employee.TextChanged += new System.EventHandler(this.txtAddress_employee_TextChanged);
             // 
@@ -933,7 +933,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_employee.Location = new System.Drawing.Point(5, 25);
             this.pnlName_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlName_employee.Name = "pnlName_employee";
-            this.pnlName_employee.Size = new System.Drawing.Size(459, 39);
+            this.pnlName_employee.Size = new System.Drawing.Size(421, 39);
             this.pnlName_employee.TabIndex = 2;
             // 
             // lblName_employee
@@ -952,7 +952,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtName_employee.Location = new System.Drawing.Point(132, 6);
             this.txtName_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName_employee.Name = "txtName_employee";
-            this.txtName_employee.Size = new System.Drawing.Size(319, 26);
+            this.txtName_employee.Size = new System.Drawing.Size(289, 26);
             this.txtName_employee.TabIndex = 1;
             this.txtName_employee.TextChanged += new System.EventHandler(this.txtName_employee_TextChanged);
             // 
@@ -1132,7 +1132,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlPhone_supplier.Location = new System.Drawing.Point(5, 114);
             this.pnlPhone_supplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlPhone_supplier.Name = "pnlPhone_supplier";
-            this.pnlPhone_supplier.Size = new System.Drawing.Size(459, 39);
+            this.pnlPhone_supplier.Size = new System.Drawing.Size(439, 39);
             this.pnlPhone_supplier.TabIndex = 4;
             // 
             // lblPhone_supplier
@@ -1148,10 +1148,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // txtPhone_supplier
             // 
             this.txtPhone_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtPhone_supplier.Location = new System.Drawing.Point(132, 6);
+            this.txtPhone_supplier.Location = new System.Drawing.Point(134, 6);
             this.txtPhone_supplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhone_supplier.Name = "txtPhone_supplier";
-            this.txtPhone_supplier.Size = new System.Drawing.Size(319, 26);
+            this.txtPhone_supplier.Size = new System.Drawing.Size(305, 26);
             this.txtPhone_supplier.TabIndex = 1;
             this.txtPhone_supplier.TextChanged += new System.EventHandler(this.txtPhone_supplier_TextChanged);
             // 
@@ -1162,7 +1162,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlAddress_supplier.Location = new System.Drawing.Point(5, 70);
             this.pnlAddress_supplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlAddress_supplier.Name = "pnlAddress_supplier";
-            this.pnlAddress_supplier.Size = new System.Drawing.Size(459, 39);
+            this.pnlAddress_supplier.Size = new System.Drawing.Size(439, 39);
             this.pnlAddress_supplier.TabIndex = 3;
             // 
             // lblAddress_supplier
@@ -1178,10 +1178,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // txtAddress_supplier
             // 
             this.txtAddress_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtAddress_supplier.Location = new System.Drawing.Point(132, 6);
+            this.txtAddress_supplier.Location = new System.Drawing.Point(134, 9);
             this.txtAddress_supplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddress_supplier.Name = "txtAddress_supplier";
-            this.txtAddress_supplier.Size = new System.Drawing.Size(319, 26);
+            this.txtAddress_supplier.Size = new System.Drawing.Size(305, 26);
             this.txtAddress_supplier.TabIndex = 1;
             this.txtAddress_supplier.TextChanged += new System.EventHandler(this.txtAddress_supplier_TextChanged);
             // 
@@ -1192,7 +1192,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_supplier.Location = new System.Drawing.Point(5, 25);
             this.pnlName_supplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlName_supplier.Name = "pnlName_supplier";
-            this.pnlName_supplier.Size = new System.Drawing.Size(459, 39);
+            this.pnlName_supplier.Size = new System.Drawing.Size(439, 39);
             this.pnlName_supplier.TabIndex = 2;
             // 
             // lblName_supplier
@@ -1208,10 +1208,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // txtName_supplier
             // 
             this.txtName_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtName_supplier.Location = new System.Drawing.Point(132, 6);
+            this.txtName_supplier.Location = new System.Drawing.Point(134, 9);
             this.txtName_supplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName_supplier.Name = "txtName_supplier";
-            this.txtName_supplier.Size = new System.Drawing.Size(319, 26);
+            this.txtName_supplier.Size = new System.Drawing.Size(305, 26);
             this.txtName_supplier.TabIndex = 1;
             this.txtName_supplier.TextChanged += new System.EventHandler(this.txtName_supplier_TextChanged);
             // 
@@ -1396,7 +1396,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlPhone_customer.Location = new System.Drawing.Point(5, 114);
             this.pnlPhone_customer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlPhone_customer.Name = "pnlPhone_customer";
-            this.pnlPhone_customer.Size = new System.Drawing.Size(461, 39);
+            this.pnlPhone_customer.Size = new System.Drawing.Size(431, 39);
             this.pnlPhone_customer.TabIndex = 7;
             // 
             // lblPhone_customer
@@ -1412,10 +1412,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // txtPhone_customer
             // 
             this.txtPhone_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtPhone_customer.Location = new System.Drawing.Point(156, 6);
+            this.txtPhone_customer.Location = new System.Drawing.Point(157, 4);
             this.txtPhone_customer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhone_customer.Name = "txtPhone_customer";
-            this.txtPhone_customer.Size = new System.Drawing.Size(295, 26);
+            this.txtPhone_customer.Size = new System.Drawing.Size(274, 26);
             this.txtPhone_customer.TabIndex = 1;
             this.txtPhone_customer.TextChanged += new System.EventHandler(this.txtPhone_customer_TextChanged);
             // 
@@ -1426,7 +1426,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlAddress_customer.Location = new System.Drawing.Point(5, 70);
             this.pnlAddress_customer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlAddress_customer.Name = "pnlAddress_customer";
-            this.pnlAddress_customer.Size = new System.Drawing.Size(461, 39);
+            this.pnlAddress_customer.Size = new System.Drawing.Size(431, 39);
             this.pnlAddress_customer.TabIndex = 6;
             // 
             // lblAddress_customer
@@ -1442,10 +1442,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // txtAddress_customer
             // 
             this.txtAddress_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtAddress_customer.Location = new System.Drawing.Point(156, 6);
+            this.txtAddress_customer.Location = new System.Drawing.Point(157, 6);
             this.txtAddress_customer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddress_customer.Name = "txtAddress_customer";
-            this.txtAddress_customer.Size = new System.Drawing.Size(295, 26);
+            this.txtAddress_customer.Size = new System.Drawing.Size(274, 26);
             this.txtAddress_customer.TabIndex = 1;
             this.txtAddress_customer.TextChanged += new System.EventHandler(this.txtAddress_customer_TextChanged);
             // 
@@ -1456,7 +1456,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_customer.Location = new System.Drawing.Point(5, 25);
             this.pnlName_customer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlName_customer.Name = "pnlName_customer";
-            this.pnlName_customer.Size = new System.Drawing.Size(461, 39);
+            this.pnlName_customer.Size = new System.Drawing.Size(431, 39);
             this.pnlName_customer.TabIndex = 5;
             // 
             // lblName_customer
@@ -1472,10 +1472,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // txtName_customer
             // 
             this.txtName_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtName_customer.Location = new System.Drawing.Point(156, 6);
+            this.txtName_customer.Location = new System.Drawing.Point(157, 6);
             this.txtName_customer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName_customer.Name = "txtName_customer";
-            this.txtName_customer.Size = new System.Drawing.Size(295, 26);
+            this.txtName_customer.Size = new System.Drawing.Size(274, 26);
             this.txtName_customer.TabIndex = 1;
             this.txtName_customer.TextChanged += new System.EventHandler(this.txtName_customer_TextChanged);
             // 
@@ -1662,7 +1662,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlSpecialization_material.Location = new System.Drawing.Point(6, 162);
             this.pnlSpecialization_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlSpecialization_material.Name = "pnlSpecialization_material";
-            this.pnlSpecialization_material.Size = new System.Drawing.Size(452, 39);
+            this.pnlSpecialization_material.Size = new System.Drawing.Size(430, 39);
             this.pnlSpecialization_material.TabIndex = 8;
             // 
             // lblSpecialization_material
@@ -1678,7 +1678,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // txtSpecialization_material
             // 
             this.txtSpecialization_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtSpecialization_material.Location = new System.Drawing.Point(135, 6);
+            this.txtSpecialization_material.Location = new System.Drawing.Point(116, 6);
             this.txtSpecialization_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSpecialization_material.Name = "txtSpecialization_material";
             this.txtSpecialization_material.Size = new System.Drawing.Size(295, 26);
@@ -1691,7 +1691,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnllblExportUnitPrice_material.Location = new System.Drawing.Point(5, 114);
             this.pnllblExportUnitPrice_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnllblExportUnitPrice_material.Name = "pnllblExportUnitPrice_material";
-            this.pnllblExportUnitPrice_material.Size = new System.Drawing.Size(453, 39);
+            this.pnllblExportUnitPrice_material.Size = new System.Drawing.Size(431, 39);
             this.pnllblExportUnitPrice_material.TabIndex = 7;
             // 
             // lblExportUnitPrice_material
@@ -1707,7 +1707,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // txtlblExportUnitPrice_material
             // 
             this.txtlblExportUnitPrice_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtlblExportUnitPrice_material.Location = new System.Drawing.Point(136, 5);
+            this.txtlblExportUnitPrice_material.Location = new System.Drawing.Point(117, 6);
             this.txtlblExportUnitPrice_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtlblExportUnitPrice_material.Name = "txtlblExportUnitPrice_material";
             this.txtlblExportUnitPrice_material.Size = new System.Drawing.Size(295, 26);
@@ -1720,7 +1720,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlImportUnitPrice_material.Location = new System.Drawing.Point(5, 70);
             this.pnlImportUnitPrice_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlImportUnitPrice_material.Name = "pnlImportUnitPrice_material";
-            this.pnlImportUnitPrice_material.Size = new System.Drawing.Size(453, 39);
+            this.pnlImportUnitPrice_material.Size = new System.Drawing.Size(431, 39);
             this.pnlImportUnitPrice_material.TabIndex = 6;
             // 
             // lblImportUnitPrice_material
@@ -1736,7 +1736,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // txtImportUnitPrice_material
             // 
             this.txtImportUnitPrice_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtImportUnitPrice_material.Location = new System.Drawing.Point(136, 6);
+            this.txtImportUnitPrice_material.Location = new System.Drawing.Point(117, 6);
             this.txtImportUnitPrice_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtImportUnitPrice_material.Name = "txtImportUnitPrice_material";
             this.txtImportUnitPrice_material.Size = new System.Drawing.Size(295, 26);
@@ -1749,7 +1749,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlNameMaterial_material.Location = new System.Drawing.Point(5, 25);
             this.pnlNameMaterial_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlNameMaterial_material.Name = "pnlNameMaterial_material";
-            this.pnlNameMaterial_material.Size = new System.Drawing.Size(453, 39);
+            this.pnlNameMaterial_material.Size = new System.Drawing.Size(431, 39);
             this.pnlNameMaterial_material.TabIndex = 5;
             // 
             // lblNameMaterial_material
@@ -1765,7 +1765,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // txtNameMaterial_material
             // 
             this.txtNameMaterial_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtNameMaterial_material.Location = new System.Drawing.Point(136, 6);
+            this.txtNameMaterial_material.Location = new System.Drawing.Point(117, 6);
             this.txtNameMaterial_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNameMaterial_material.Name = "txtNameMaterial_material";
             this.txtNameMaterial_material.Size = new System.Drawing.Size(295, 26);
@@ -1940,24 +1940,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlEmployeeReceipt_receipt.Location = new System.Drawing.Point(8, 244);
             this.pnlEmployeeReceipt_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlEmployeeReceipt_receipt.Name = "pnlEmployeeReceipt_receipt";
-            this.pnlEmployeeReceipt_receipt.Size = new System.Drawing.Size(447, 39);
+            this.pnlEmployeeReceipt_receipt.Size = new System.Drawing.Size(440, 39);
             this.pnlEmployeeReceipt_receipt.TabIndex = 9;
             // 
             // txtEmployeeReceipt_receipt
             // 
             this.txtEmployeeReceipt_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtEmployeeReceipt_receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtEmployeeReceipt_receipt.Location = new System.Drawing.Point(154, 6);
+            this.txtEmployeeReceipt_receipt.Location = new System.Drawing.Point(164, 6);
             this.txtEmployeeReceipt_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmployeeReceipt_receipt.Name = "txtEmployeeReceipt_receipt";
-            this.txtEmployeeReceipt_receipt.Size = new System.Drawing.Size(287, 26);
+            this.txtEmployeeReceipt_receipt.Size = new System.Drawing.Size(267, 26);
             this.txtEmployeeReceipt_receipt.TabIndex = 2;
             // 
             // lblEmployeeReceipt_receipt
             // 
             this.lblEmployeeReceipt_receipt.AutoSize = true;
             this.lblEmployeeReceipt_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblEmployeeReceipt_receipt.Location = new System.Drawing.Point(3, 6);
+            this.lblEmployeeReceipt_receipt.Location = new System.Drawing.Point(1, 9);
             this.lblEmployeeReceipt_receipt.Name = "lblEmployeeReceipt_receipt";
             this.lblEmployeeReceipt_receipt.Size = new System.Drawing.Size(143, 20);
             this.lblEmployeeReceipt_receipt.TabIndex = 0;
@@ -1968,16 +1968,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlReceiptType_receipt.Controls.Add(this.rdbExport_receipt);
             this.pnlReceiptType_receipt.Controls.Add(this.rdbImport_receipt);
             this.pnlReceiptType_receipt.Controls.Add(this.lblReceiptType_receipt);
-            this.pnlReceiptType_receipt.Location = new System.Drawing.Point(6, 199);
+            this.pnlReceiptType_receipt.Location = new System.Drawing.Point(8, 199);
             this.pnlReceiptType_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlReceiptType_receipt.Name = "pnlReceiptType_receipt";
-            this.pnlReceiptType_receipt.Size = new System.Drawing.Size(449, 39);
+            this.pnlReceiptType_receipt.Size = new System.Drawing.Size(437, 39);
             this.pnlReceiptType_receipt.TabIndex = 8;
             // 
             // rdbExport_receipt
             // 
             this.rdbExport_receipt.AutoSize = true;
-            this.rdbExport_receipt.Location = new System.Drawing.Point(283, 8);
+            this.rdbExport_receipt.Location = new System.Drawing.Point(300, 8);
             this.rdbExport_receipt.Name = "rdbExport_receipt";
             this.rdbExport_receipt.Size = new System.Drawing.Size(94, 24);
             this.rdbExport_receipt.TabIndex = 2;
@@ -1988,7 +1988,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // rdbImport_receipt
             // 
             this.rdbImport_receipt.AutoSize = true;
-            this.rdbImport_receipt.Location = new System.Drawing.Point(153, 8);
+            this.rdbImport_receipt.Location = new System.Drawing.Point(164, 8);
             this.rdbImport_receipt.Name = "rdbImport_receipt";
             this.rdbImport_receipt.Size = new System.Drawing.Size(99, 24);
             this.rdbImport_receipt.TabIndex = 1;
@@ -2000,7 +2000,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.lblReceiptType_receipt.AutoSize = true;
             this.lblReceiptType_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblReceiptType_receipt.Location = new System.Drawing.Point(9, 10);
+            this.lblReceiptType_receipt.Location = new System.Drawing.Point(1, 10);
             this.lblReceiptType_receipt.Name = "lblReceiptType_receipt";
             this.lblReceiptType_receipt.Size = new System.Drawing.Size(106, 20);
             this.lblReceiptType_receipt.TabIndex = 0;
@@ -2010,10 +2010,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlWareHouse_receipt.Controls.Add(this.cbbWareHouse_receipt);
             this.pnlWareHouse_receipt.Controls.Add(this.lblWareHouse_receipt);
-            this.pnlWareHouse_receipt.Location = new System.Drawing.Point(6, 156);
+            this.pnlWareHouse_receipt.Location = new System.Drawing.Point(8, 156);
             this.pnlWareHouse_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlWareHouse_receipt.Name = "pnlWareHouse_receipt";
-            this.pnlWareHouse_receipt.Size = new System.Drawing.Size(449, 39);
+            this.pnlWareHouse_receipt.Size = new System.Drawing.Size(437, 39);
             this.pnlWareHouse_receipt.TabIndex = 8;
             // 
             // cbbWareHouse_receipt
@@ -2021,16 +2021,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.cbbWareHouse_receipt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbbWareHouse_receipt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbWareHouse_receipt.FormattingEnabled = true;
-            this.cbbWareHouse_receipt.Location = new System.Drawing.Point(156, 3);
+            this.cbbWareHouse_receipt.Location = new System.Drawing.Point(164, 6);
             this.cbbWareHouse_receipt.Name = "cbbWareHouse_receipt";
-            this.cbbWareHouse_receipt.Size = new System.Drawing.Size(287, 28);
+            this.cbbWareHouse_receipt.Size = new System.Drawing.Size(267, 28);
             this.cbbWareHouse_receipt.TabIndex = 1;
             // 
             // lblWareHouse_receipt
             // 
             this.lblWareHouse_receipt.AutoSize = true;
             this.lblWareHouse_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblWareHouse_receipt.Location = new System.Drawing.Point(9, 9);
+            this.lblWareHouse_receipt.Location = new System.Drawing.Point(3, 9);
             this.lblWareHouse_receipt.Name = "lblWareHouse_receipt";
             this.lblWareHouse_receipt.Size = new System.Drawing.Size(38, 20);
             this.lblWareHouse_receipt.TabIndex = 0;
@@ -2040,17 +2040,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlPartner_receipt.Controls.Add(this.lblPartner_receipt);
             this.pnlPartner_receipt.Controls.Add(this.txtPrice_Receipt);
-            this.pnlPartner_receipt.Location = new System.Drawing.Point(5, 114);
+            this.pnlPartner_receipt.Location = new System.Drawing.Point(8, 113);
             this.pnlPartner_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlPartner_receipt.Name = "pnlPartner_receipt";
-            this.pnlPartner_receipt.Size = new System.Drawing.Size(450, 39);
+            this.pnlPartner_receipt.Size = new System.Drawing.Size(437, 39);
             this.pnlPartner_receipt.TabIndex = 7;
             // 
             // lblPartner_receipt
             // 
             this.lblPartner_receipt.AutoSize = true;
             this.lblPartner_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPartner_receipt.Location = new System.Drawing.Point(10, 9);
+            this.lblPartner_receipt.Location = new System.Drawing.Point(1, 8);
             this.lblPartner_receipt.Name = "lblPartner_receipt";
             this.lblPartner_receipt.Size = new System.Drawing.Size(56, 20);
             this.lblPartner_receipt.TabIndex = 0;
@@ -2060,10 +2060,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.txtPrice_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtPrice_Receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtPrice_Receipt.Location = new System.Drawing.Point(156, 6);
+            this.txtPrice_Receipt.Location = new System.Drawing.Point(164, 5);
             this.txtPrice_Receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrice_Receipt.Name = "txtPrice_Receipt";
-            this.txtPrice_Receipt.Size = new System.Drawing.Size(288, 26);
+            this.txtPrice_Receipt.Size = new System.Drawing.Size(267, 26);
             this.txtPrice_Receipt.TabIndex = 1;
             // 
             // pnlDate_receipt
@@ -2071,16 +2071,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlDate_receipt.Controls.Add(this.dtpDateTo_receipt);
             this.pnlDate_receipt.Controls.Add(this.dtpDateFrom_receipt);
             this.pnlDate_receipt.Controls.Add(this.lblDate_receipt);
-            this.pnlDate_receipt.Location = new System.Drawing.Point(5, 70);
+            this.pnlDate_receipt.Location = new System.Drawing.Point(8, 70);
             this.pnlDate_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDate_receipt.Name = "pnlDate_receipt";
-            this.pnlDate_receipt.Size = new System.Drawing.Size(450, 39);
+            this.pnlDate_receipt.Size = new System.Drawing.Size(437, 39);
             this.pnlDate_receipt.TabIndex = 6;
             // 
             // dtpDateTo_receipt
             // 
             this.dtpDateTo_receipt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateTo_receipt.Location = new System.Drawing.Point(330, 7);
+            this.dtpDateTo_receipt.Location = new System.Drawing.Point(317, 7);
             this.dtpDateTo_receipt.Name = "dtpDateTo_receipt";
             this.dtpDateTo_receipt.Size = new System.Drawing.Size(114, 26);
             this.dtpDateTo_receipt.TabIndex = 2;
@@ -2088,7 +2088,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // dtpDateFrom_receipt
             // 
             this.dtpDateFrom_receipt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateFrom_receipt.Location = new System.Drawing.Point(156, 6);
+            this.dtpDateFrom_receipt.Location = new System.Drawing.Point(164, 7);
             this.dtpDateFrom_receipt.Name = "dtpDateFrom_receipt";
             this.dtpDateFrom_receipt.Size = new System.Drawing.Size(121, 26);
             this.dtpDateFrom_receipt.TabIndex = 1;
@@ -2097,7 +2097,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.lblDate_receipt.AutoSize = true;
             this.lblDate_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblDate_receipt.Location = new System.Drawing.Point(10, 12);
+            this.lblDate_receipt.Location = new System.Drawing.Point(1, 12);
             this.lblDate_receipt.Name = "lblDate_receipt";
             this.lblDate_receipt.Size = new System.Drawing.Size(74, 20);
             this.lblDate_receipt.TabIndex = 0;
@@ -2107,17 +2107,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlID_receipt.Controls.Add(this.lblId_receipt);
             this.pnlID_receipt.Controls.Add(this.txtId_receipt);
-            this.pnlID_receipt.Location = new System.Drawing.Point(5, 25);
+            this.pnlID_receipt.Location = new System.Drawing.Point(8, 27);
             this.pnlID_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlID_receipt.Name = "pnlID_receipt";
-            this.pnlID_receipt.Size = new System.Drawing.Size(450, 39);
+            this.pnlID_receipt.Size = new System.Drawing.Size(437, 39);
             this.pnlID_receipt.TabIndex = 5;
             // 
             // lblId_receipt
             // 
             this.lblId_receipt.AutoSize = true;
             this.lblId_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblId_receipt.Location = new System.Drawing.Point(10, 12);
+            this.lblId_receipt.Location = new System.Drawing.Point(3, 6);
             this.lblId_receipt.Name = "lblId_receipt";
             this.lblId_receipt.Size = new System.Drawing.Size(96, 20);
             this.lblId_receipt.TabIndex = 0;
@@ -2127,10 +2127,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.txtId_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtId_receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtId_receipt.Location = new System.Drawing.Point(156, 6);
+            this.txtId_receipt.Location = new System.Drawing.Point(164, 6);
             this.txtId_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtId_receipt.Name = "txtId_receipt";
-            this.txtId_receipt.Size = new System.Drawing.Size(288, 26);
+            this.txtId_receipt.Size = new System.Drawing.Size(267, 26);
             this.txtId_receipt.TabIndex = 1;
             // 
             // bmwListView1
