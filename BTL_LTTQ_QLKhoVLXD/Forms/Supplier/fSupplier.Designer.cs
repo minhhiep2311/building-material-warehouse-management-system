@@ -159,7 +159,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             this.grbPhone.ForeColor = System.Drawing.Color.White;
             this.grbPhone.Location = new System.Drawing.Point(11, 161);
             this.grbPhone.Name = "grbPhone";
-            this.grbPhone.Size = new System.Drawing.Size(841, 136);
+            this.grbPhone.Size = new System.Drawing.Size(841, 130);
             this.grbPhone.TabIndex = 20;
             this.grbPhone.TabStop = false;
             this.grbPhone.Text = "Số điện thoại";
@@ -190,7 +190,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             this.lvwPhone.LabelEdit = true;
             this.lvwPhone.Location = new System.Drawing.Point(3, 18);
             this.lvwPhone.Name = "lvwPhone";
-            this.lvwPhone.Size = new System.Drawing.Size(653, 115);
+            this.lvwPhone.Size = new System.Drawing.Size(653, 109);
             this.lvwPhone.TabIndex = 7;
             this.lvwPhone.UseCompatibleStateImageBehavior = false;
             this.lvwPhone.View = System.Windows.Forms.View.Details;
@@ -235,6 +235,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             this.Controls.Add(this.chkEdit);
             this.Controls.Add(this.pnlButton);
             this.Controls.Add(this.grbInfo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "fSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin nhà cung cấp";

@@ -99,6 +99,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             this.grbInfo.Controls.Add(this.pnlGender);
             this.grbInfo.Controls.Add(this.panel2);
             this.grbInfo.Controls.Add(this.panel1);
+            this.grbInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.grbInfo.ForeColor = System.Drawing.Color.White;
             this.grbInfo.Location = new System.Drawing.Point(12, 12);
             this.grbInfo.Name = "grbInfo";
@@ -120,9 +121,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             // 
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtAddress.Location = new System.Drawing.Point(79, 2);
+            this.txtAddress.Location = new System.Drawing.Point(106, 2);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(413, 26);
+            this.txtAddress.Size = new System.Drawing.Size(386, 26);
             this.txtAddress.TabIndex = 3;
             // 
             // lblAddress
@@ -130,7 +131,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             this.lblAddress.AutoSize = true;
             this.lblAddress.Location = new System.Drawing.Point(3, 8);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(51, 17);
+            this.lblAddress.Size = new System.Drawing.Size(61, 20);
             this.lblAddress.TabIndex = 1;
             this.lblAddress.Text = "Địa chỉ";
             // 
@@ -149,7 +150,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             this.lblGender.AutoSize = true;
             this.lblGender.Location = new System.Drawing.Point(3, 3);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(60, 17);
+            this.lblGender.Size = new System.Drawing.Size(71, 20);
             this.lblGender.TabIndex = 11;
             this.lblGender.Text = "Giới tính";
             // 
@@ -157,9 +158,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             // 
             this.rdoFemale.AutoSize = true;
             this.rdoFemale.Enabled = false;
-            this.rdoFemale.Location = new System.Drawing.Point(174, 1);
+            this.rdoFemale.Location = new System.Drawing.Point(215, 1);
             this.rdoFemale.Name = "rdoFemale";
-            this.rdoFemale.Size = new System.Drawing.Size(47, 21);
+            this.rdoFemale.Size = new System.Drawing.Size(51, 24);
             this.rdoFemale.TabIndex = 10;
             this.rdoFemale.Text = "Nữ";
             this.rdoFemale.UseVisualStyleBackColor = true;
@@ -168,9 +169,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             // 
             this.rdoMale.AutoSize = true;
             this.rdoMale.Enabled = false;
-            this.rdoMale.Location = new System.Drawing.Point(79, 1);
+            this.rdoMale.Location = new System.Drawing.Point(106, 1);
             this.rdoMale.Name = "rdoMale";
-            this.rdoMale.Size = new System.Drawing.Size(58, 21);
+            this.rdoMale.Size = new System.Drawing.Size(65, 24);
             this.rdoMale.TabIndex = 9;
             this.rdoMale.Text = "Nam";
             this.rdoMale.UseVisualStyleBackColor = true;
@@ -189,9 +190,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             this.txtDob.Enabled = false;
             this.txtDob.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtDob.Location = new System.Drawing.Point(80, 8);
+            this.txtDob.Location = new System.Drawing.Point(106, 8);
             this.txtDob.Name = "txtDob";
-            this.txtDob.Size = new System.Drawing.Size(413, 26);
+            this.txtDob.Size = new System.Drawing.Size(387, 26);
             this.txtDob.TabIndex = 3;
             // 
             // lblDob
@@ -199,7 +200,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             this.lblDob.AutoSize = true;
             this.lblDob.Location = new System.Drawing.Point(3, 12);
             this.lblDob.Name = "lblDob";
-            this.lblDob.Size = new System.Drawing.Size(71, 17);
+            this.lblDob.Size = new System.Drawing.Size(83, 20);
             this.lblDob.TabIndex = 1;
             this.lblDob.Text = "Ngày sinh";
             // 
@@ -217,9 +218,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             this.txtName.Enabled = false;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtName.Location = new System.Drawing.Point(78, 7);
+            this.txtName.Location = new System.Drawing.Point(106, 7);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(415, 26);
+            this.txtName.Size = new System.Drawing.Size(387, 26);
             this.txtName.TabIndex = 2;
             // 
             // lblName
@@ -227,20 +228,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             this.lblName.AutoSize = true;
             this.lblName.Location = new System.Drawing.Point(3, 11);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(69, 17);
+            this.lblName.Size = new System.Drawing.Size(81, 20);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Họ và tên";
             // 
             // grbPhone
             // 
+            this.grbPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.grbPhone.Controls.Add(this.btnModifyPhone);
             this.grbPhone.Controls.Add(this.lvwPhone);
             this.grbPhone.Controls.Add(this.btnRemovePhone);
             this.grbPhone.Controls.Add(this.btnAddPhone);
+            this.grbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grbPhone.ForeColor = System.Drawing.Color.White;
             this.grbPhone.Location = new System.Drawing.Point(524, 12);
             this.grbPhone.Name = "grbPhone";
             this.grbPhone.Size = new System.Drawing.Size(505, 114);
             this.grbPhone.TabIndex = 11;
+            this.grbPhone.TabStop = false;
             this.grbPhone.Text = "Số điện thoại";
             // 
             // btnModifyPhone
@@ -251,7 +256,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             this.btnModifyPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnModifyPhone.Location = new System.Drawing.Point(351, 53);
             this.btnModifyPhone.Name = "btnModifyPhone";
-            this.btnModifyPhone.Size = new System.Drawing.Size(145, 26);
+            this.btnModifyPhone.Size = new System.Drawing.Size(145, 30);
             this.btnModifyPhone.TabIndex = 14;
             this.btnModifyPhone.Text = "Chỉnh sửa";
             this.btnModifyPhone.UseVisualStyleBackColor = false;
@@ -268,10 +273,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
             this.lvwPhone.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvwPhone.HideSelection = false;
             this.lvwPhone.LabelEdit = true;
-            this.lvwPhone.Location = new System.Drawing.Point(3, 18);
+            this.lvwPhone.Location = new System.Drawing.Point(3, 22);
             this.lvwPhone.Name = "lvwPhone";
             this.lvwPhone.OwnerDraw = true;
-            this.lvwPhone.Size = new System.Drawing.Size(499, 93);
+            this.lvwPhone.Size = new System.Drawing.Size(499, 89);
+            this.lvwPhone.Sortable = true;
+            this.lvwPhone.SortableColumns = null;
             this.lvwPhone.TabIndex = 12;
             this.lvwPhone.UseCompatibleStateImageBehavior = false;
             this.lvwPhone.View = System.Windows.Forms.View.Details;

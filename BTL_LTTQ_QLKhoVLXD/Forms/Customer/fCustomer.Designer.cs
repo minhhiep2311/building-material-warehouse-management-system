@@ -109,7 +109,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
             this.grbPhone.ForeColor = System.Drawing.Color.White;
             this.grbPhone.Location = new System.Drawing.Point(12, 161);
             this.grbPhone.Name = "grbPhone";
-            this.grbPhone.Size = new System.Drawing.Size(841, 140);
+            this.grbPhone.Size = new System.Drawing.Size(841, 127);
             this.grbPhone.TabIndex = 21;
             this.grbPhone.TabStop = false;
             this.grbPhone.Text = "Số điện thoại";
@@ -140,7 +140,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
             this.lvwPhone.LabelEdit = true;
             this.lvwPhone.Location = new System.Drawing.Point(3, 18);
             this.lvwPhone.Name = "lvwPhone";
-            this.lvwPhone.Size = new System.Drawing.Size(653, 119);
+            this.lvwPhone.Size = new System.Drawing.Size(653, 106);
             this.lvwPhone.TabIndex = 7;
             this.lvwPhone.UseCompatibleStateImageBehavior = false;
             this.lvwPhone.View = System.Windows.Forms.View.Details;
@@ -235,6 +235,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
             this.Controls.Add(this.chkEdit);
             this.Controls.Add(this.grbPhone);
             this.Controls.Add(this.grbInfo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
