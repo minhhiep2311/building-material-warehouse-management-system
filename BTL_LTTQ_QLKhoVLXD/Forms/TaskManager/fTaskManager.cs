@@ -16,7 +16,8 @@ using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 using FormMode = BTL_LTTQ_QLKhoVLXD.Utils.Enum.FormMode;
-
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Drawing;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
@@ -1563,6 +1564,91 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void bmwButton11_Click(object sender, EventArgs e)
         {
+            var supplier = cboSupplier_buy.SelectedItem as Models.Supplier;
+            var warehouse = cboWarehouse_buy.SelectedItem as Models.Warehouse;
+            var total = CalculateTotal_Buy();
+            var receipt = new ImportReceipt(User, supplier, warehouse, _items_buy, total);
+
+            //Khai báo và khởi tạo đối tượng 
+            Excel.Application exApp = new Excel.Application();
+            Excel.Workbook exBook = exApp.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
+            Excel.Worksheet exSheet = (Excel.Worksheet)exBook.Worksheets[1];
+            //Định dạng chung
+            Excel.Range employeeExel = (Excel.Range)exSheet.Cells[1, 1];
+            employeeExel.Font.Size = 12;
+            employeeExel.Font.Bold = true;
+            employeeExel.Font.Color = Color.Blue;
+            employeeExel.Value = "Nhân viên: " + receipt.Employee.Name ;
+
+            Excel.Range supplierExel = (Excel.Range)exSheet.Cells[2, 1];
+            supplierExel.Font.Size = 12;
+            supplierExel.Font.Bold = true;
+            supplierExel.Font.Color = Color.Blue;
+            supplierExel.Value = "Nhà cung cấp: " ;
+
+            Excel.Range idExel = (Excel.Range)exSheet.Cells[3, 1];
+            idExel.Font.Size = 12;
+            idExel.Font.Bold = true;
+            idExel.Font.Color = Color.Blue;
+            //Todo
+            idExel.Value = "Mã hóa đơn: " ;
+
+            Excel.Range header = (Excel.Range)exSheet.Cells[ 5, 2];
+            exSheet.get_Range("B5:G5").Merge(true);
+            header.Font.Size = 13;
+            header.Font.Bold = true;
+            header.Font.Color = Color.Red;
+            header.Value = "HÓA ĐƠN NHẬP";
+
+            
+            // Định dang tiêu đề bảng
+            exSheet.get_Range("A7:F7").Font.Bold = true;
+            exSheet.get_Range("A7:F7").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+            exSheet.get_Range("A7").Value = "ID";
+            exSheet.get_Range("B7").Value = "Tên hàng";
+            exSheet.get_Range("B7").ColumnWidth = 20;
+            exSheet.get_Range("C7").Value = "Quy cách";
+            exSheet.get_Range("D7").Value = "Số lượng";
+            exSheet.get_Range("E7").Value = "Đơn giá";
+
+            exSheet.get_Range("F7").Value = "Tổng tiền";
+
+            //In dữ liệu
+            int i = 8;
+            for ( int j = 0; i < _materials.Count; i++, j++)
+            {
+                exSheet.get_Range("A" + (i).ToString() + ":F" + (i).ToString()).Font.Bold = false;
+
+                exSheet.get_Range("A" + (i).ToString()).Value = _materials[j].Id.ToString();
+                exSheet.get_Range("B" + (i).ToString()).Value = _materials[j].Name;
+                exSheet.get_Range("C" + (i).ToString()).Value = _materials[j].Specialization;
+                exSheet.get_Range("D" + (i).ToString()).Value = _materials[j].Numerous;
+                exSheet.get_Range("E" + (i).ToString()).Value = _materials[j].ImportUnitPrice;
+            }
+
+            Excel.Range totalReceipt = (Excel.Range)exSheet.Cells[i, 1];
+            exSheet.get_Range($"A{i}:E{i}").Merge(true);
+            totalReceipt.Font.Bold = true;
+            totalReceipt.HorizontalAlignment = Excel.XlHAlign.xlHAlignRight;
+            totalReceipt.Value = "Tông tiền";
+
+            exSheet.get_Range("F" + (i).ToString()).Value = receipt.TotalPrice.ToString();
+
+            exSheet.Name = "hàng";
+            exBook.Activate();//kích hoạt
+
+            dlgSave.Filter = "Excel Document(*.xlsx)|*.xlsx ";
+            dlgSave.FilterIndex = 1;
+            dlgSave.AddExtension = true;
+            dlgSave.DefaultExt = ".xlsx";
+            if (dlgSave.ShowDialog() == DialogResult.OK)
+                exBook.SaveAs(dlgSave.FileName.ToString());//Lưu file Excel
+
+            exApp.Quit();
+
+
+
 
         }
     }

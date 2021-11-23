@@ -287,7 +287,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel6 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.bmwButton11 = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.dlgSave = new System.Windows.Forms.SaveFileDialog();
             this.panel3.SuspendLayout();
             this.cms_employee.SuspendLayout();
             this.cms_supplier.SuspendLayout();
@@ -614,7 +614,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgBuy.Location = new System.Drawing.Point(174, 4);
             this.tpgBuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgBuy.Name = "tpgBuy";
-            this.tpgBuy.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tpgBuy.Padding = new System.Windows.Forms.Padding(5);
             this.tpgBuy.Size = new System.Drawing.Size(1101, 611);
             this.tpgBuy.TabIndex = 0;
             this.tpgBuy.Text = "Tạo Hóa Đơn Nhập ";
@@ -661,7 +661,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // pnlBottom_buy
             // 
-            this.pnlBottom_buy.Controls.Add(this.bmwButton11);
             this.pnlBottom_buy.Controls.Add(this.btnCancel_buy);
             this.pnlBottom_buy.Controls.Add(this.pnlTotalMoney);
             this.pnlBottom_buy.Controls.Add(this.btnCreateReceipt_Buy);
@@ -1062,7 +1061,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSell.Location = new System.Drawing.Point(174, 4);
             this.tpgSell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgSell.Name = "tpgSell";
-            this.tpgSell.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tpgSell.Padding = new System.Windows.Forms.Padding(5);
             this.tpgSell.Size = new System.Drawing.Size(1101, 611);
             this.tpgSell.TabIndex = 1;
             this.tpgSell.Text = "Tạo Hóa Đơn Bán";
@@ -1606,7 +1605,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.splitContainer1.Panel2.Controls.Add(this.flpFunction_receipt);
             this.splitContainer1.Panel2.Controls.Add(this.grbSearch_receipt);
-            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(5);
             this.splitContainer1.Panel2MinSize = 350;
             this.splitContainer1.Size = new System.Drawing.Size(1101, 611);
             this.splitContainer1.SplitterDistance = 587;
@@ -1645,7 +1644,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_receipt.Location = new System.Drawing.Point(5, 307);
             this.flpFunction_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpFunction_receipt.Name = "flpFunction_receipt";
-            this.flpFunction_receipt.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.flpFunction_receipt.Padding = new System.Windows.Forms.Padding(5);
             this.flpFunction_receipt.Size = new System.Drawing.Size(503, 299);
             this.flpFunction_receipt.TabIndex = 8;
             // 
@@ -1974,7 +1973,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.splitContainer2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.splitContainer2.Panel2.Controls.Add(this.flpFunction_material);
             this.splitContainer2.Panel2.Controls.Add(this.grbSearchMaterial_material);
-            this.splitContainer2.Panel2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.splitContainer2.Panel2.Padding = new System.Windows.Forms.Padding(5);
             this.splitContainer2.Panel2MinSize = 350;
             this.splitContainer2.Size = new System.Drawing.Size(1101, 611);
             this.splitContainer2.SplitterDistance = 587;
@@ -2014,7 +2013,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_material.Location = new System.Drawing.Point(5, 230);
             this.flpFunction_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpFunction_material.Name = "flpFunction_material";
-            this.flpFunction_material.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.flpFunction_material.Padding = new System.Windows.Forms.Padding(5);
             this.flpFunction_material.Size = new System.Drawing.Size(503, 376);
             this.flpFunction_material.TabIndex = 8;
             // 
@@ -2291,7 +2290,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_customer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.spc_customer.Panel2.Controls.Add(this.flp_customer);
             this.spc_customer.Panel2.Controls.Add(this.grbSearch_Customer);
-            this.spc_customer.Panel2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.spc_customer.Panel2.Padding = new System.Windows.Forms.Padding(5);
             this.spc_customer.Panel2MinSize = 350;
             this.spc_customer.Size = new System.Drawing.Size(1101, 611);
             this.spc_customer.SplitterDistance = 587;
@@ -2330,7 +2329,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flp_customer.Location = new System.Drawing.Point(5, 176);
             this.flp_customer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flp_customer.Name = "flp_customer";
-            this.flp_customer.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.flp_customer.Padding = new System.Windows.Forms.Padding(5);
             this.flp_customer.Size = new System.Drawing.Size(503, 430);
             this.flp_customer.TabIndex = 8;
             // 
@@ -2589,7 +2588,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_supplier.Location = new System.Drawing.Point(7, 186);
             this.flpFunction_supplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpFunction_supplier.Name = "flpFunction_supplier";
-            this.flpFunction_supplier.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.flpFunction_supplier.Padding = new System.Windows.Forms.Padding(5);
             this.flpFunction_supplier.Size = new System.Drawing.Size(499, 419);
             this.flpFunction_supplier.TabIndex = 6;
             // 
@@ -2849,7 +2848,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_employee.Location = new System.Drawing.Point(7, 340);
             this.flpFunction_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpFunction_employee.Name = "flpFunction_employee";
-            this.flpFunction_employee.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.flpFunction_employee.Padding = new System.Windows.Forms.Padding(5);
             this.flpFunction_employee.Size = new System.Drawing.Size(499, 265);
             this.flpFunction_employee.TabIndex = 4;
             // 
@@ -3208,7 +3207,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flp_userSetting.Location = new System.Drawing.Point(0, 0);
             this.flp_userSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flp_userSetting.Name = "flp_userSetting";
-            this.flp_userSetting.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.flp_userSetting.Padding = new System.Windows.Forms.Padding(20);
             this.flp_userSetting.Size = new System.Drawing.Size(1101, 611);
             this.flp_userSetting.TabIndex = 2;
             // 
@@ -3221,7 +3220,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCreateAccount_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_add;
             this.btnCreateAccount_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCreateAccount_userSetting.Location = new System.Drawing.Point(40, 40);
-            this.btnCreateAccount_userSetting.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.btnCreateAccount_userSetting.Margin = new System.Windows.Forms.Padding(20);
             this.btnCreateAccount_userSetting.Name = "btnCreateAccount_userSetting";
             this.btnCreateAccount_userSetting.Size = new System.Drawing.Size(205, 91);
             this.btnCreateAccount_userSetting.TabIndex = 0;
@@ -3238,7 +3237,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnChangeInformation_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnChangeInformation_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChangeInformation_userSetting.Location = new System.Drawing.Point(285, 40);
-            this.btnChangeInformation_userSetting.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.btnChangeInformation_userSetting.Margin = new System.Windows.Forms.Padding(20);
             this.btnChangeInformation_userSetting.Name = "btnChangeInformation_userSetting";
             this.btnChangeInformation_userSetting.Size = new System.Drawing.Size(205, 91);
             this.btnChangeInformation_userSetting.TabIndex = 1;
@@ -3256,7 +3255,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnResetPassword_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.unlock;
             this.btnResetPassword_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnResetPassword_userSetting.Location = new System.Drawing.Point(530, 40);
-            this.btnResetPassword_userSetting.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.btnResetPassword_userSetting.Margin = new System.Windows.Forms.Padding(20);
             this.btnResetPassword_userSetting.Name = "btnResetPassword_userSetting";
             this.btnResetPassword_userSetting.Size = new System.Drawing.Size(205, 91);
             this.btnResetPassword_userSetting.TabIndex = 2;
@@ -3564,21 +3563,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(319, 26);
             this.textBox4.TabIndex = 1;
-            // 
-            // bmwButton11
-            // 
-            this.bmwButton11.BackColor = System.Drawing.Color.White;
-            this.bmwButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmwButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bmwButton11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.bmwButton11.Location = new System.Drawing.Point(404, 7);
-            this.bmwButton11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bmwButton11.Name = "bmwButton11";
-            this.bmwButton11.Size = new System.Drawing.Size(172, 34);
-            this.bmwButton11.TabIndex = 21;
-            this.bmwButton11.Text = "Xuất hóa đơn";
-            this.bmwButton11.UseVisualStyleBackColor = false;
-            this.bmwButton11.Click += new System.EventHandler(this.bmwButton11_Click);
             // 
             // fTaskManager
             // 
@@ -4000,6 +3984,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private BmwNumericUpDown nmrVat_sell;
         private System.Windows.Forms.Label lblVat_sell;
         private BmwButton btnWareHouse_material;
-        private BmwButton bmwButton11;
+        private System.Windows.Forms.SaveFileDialog dlgSave;
     }
 }
