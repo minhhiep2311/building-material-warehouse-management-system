@@ -114,6 +114,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "Hủy bỏ";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -128,6 +129,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
             this.btnSave.TabIndex = 16;
             this.btnSave.Text = "Lưu thay đổi";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // chkEdit
             // 
@@ -152,6 +154,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
             this.Name = "fWareHouse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin kho hàng";
+            this.Load += new System.EventHandler(this.fWareHouse_Load);
             this.grbInfo.ResumeLayout(false);
             this.grbInfo.PerformLayout();
             this.pnlButton.ResumeLayout(false);
