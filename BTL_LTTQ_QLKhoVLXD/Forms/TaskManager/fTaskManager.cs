@@ -1560,5 +1560,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #endregion
 
         #endregion
+
+        private void bmwButton11_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

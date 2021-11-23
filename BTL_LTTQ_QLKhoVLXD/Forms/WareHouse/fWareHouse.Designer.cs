@@ -37,7 +37,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
             this.pnlButton = new System.Windows.Forms.Panel();
             this.btnCancel = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnSave = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.chkEdit = new System.Windows.Forms.CheckBox();
             this.grbInfo.SuspendLayout();
             this.pnlButton.SuspendLayout();
             this.SuspendLayout();
@@ -96,7 +95,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
             // 
             this.pnlButton.Controls.Add(this.btnCancel);
             this.pnlButton.Controls.Add(this.btnSave);
-            this.pnlButton.Location = new System.Drawing.Point(21, 186);
+            this.pnlButton.Location = new System.Drawing.Point(21, 141);
             this.pnlButton.Name = "pnlButton";
             this.pnlButton.Size = new System.Drawing.Size(464, 58);
             this.pnlButton.TabIndex = 19;
@@ -131,35 +130,21 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // chkEdit
-            // 
-            this.chkEdit.AutoSize = true;
-            this.chkEdit.ForeColor = System.Drawing.Color.White;
-            this.chkEdit.Location = new System.Drawing.Point(12, 147);
-            this.chkEdit.Name = "chkEdit";
-            this.chkEdit.Size = new System.Drawing.Size(152, 21);
-            this.chkEdit.TabIndex = 20;
-            this.chkEdit.Text = "Chỉnh sửa thông tin";
-            this.chkEdit.UseVisualStyleBackColor = true;
-            // 
             // fWareHouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.ClientSize = new System.Drawing.Size(546, 255);
-            this.Controls.Add(this.chkEdit);
+            this.ClientSize = new System.Drawing.Size(546, 209);
             this.Controls.Add(this.pnlButton);
             this.Controls.Add(this.grbInfo);
             this.Name = "fWareHouse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin kho hàng";
-            this.Load += new System.EventHandler(this.fWareHouse_Load);
             this.grbInfo.ResumeLayout(false);
             this.grbInfo.PerformLayout();
             this.pnlButton.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -173,6 +158,5 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
         private System.Windows.Forms.Panel pnlButton;
         private Controls.Button.BmwButton btnCancel;
         private Controls.Button.BmwButton btnSave;
-        private System.Windows.Forms.CheckBox chkEdit;
     }
 }
