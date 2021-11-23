@@ -10,6 +10,7 @@ using BTL_LTTQ_QLKhoVLXD.Forms.Customer;
 using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
 using BTL_LTTQ_QLKhoVLXD.Forms.Supplier;
 using BTL_LTTQ_QLKhoVLXD.Forms.Material;
+using BTL_LTTQ_QLKhoVLXD.Forms.WareHouse;
 using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Services;
@@ -360,7 +361,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         }
 
+        private void btnWareHouse_material_Click(object sender, EventArgs e)
+        {
+            //new fWareHouse(this).ShowDialog();
 
+        }
         #endregion
 
         #region Material Behaviors
@@ -1255,6 +1260,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             new fResetPassword(User).ShowDialog();
         }
+
 
 
 

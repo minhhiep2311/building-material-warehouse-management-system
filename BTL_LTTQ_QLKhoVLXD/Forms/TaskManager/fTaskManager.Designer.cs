@@ -273,6 +273,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlTitle_buy = new System.Windows.Forms.Panel();
             this.lblTitle_buy = new System.Windows.Forms.Label();
             this.tclMain = new BTL_LTTQ_QLKhoVLXD.Controls.TabControl.BmwTabControl();
+            this.btnWareHouse_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.panel3.SuspendLayout();
             this.cms_employee.SuspendLayout();
             this.cms_supplier.SuspendLayout();
@@ -475,7 +476,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgUserSetting.Name = "tpgUserSetting";
             this.tpgUserSetting.Size = new System.Drawing.Size(1101, 607);
             this.tpgUserSetting.TabIndex = 8;
-            this.tpgUserSetting.Text = "Quản lý người dùng";
+            this.tpgUserSetting.Text = "Cài đặt chung";
             this.tpgUserSetting.UseVisualStyleBackColor = true;
             // 
             // flp_userSetting
@@ -1552,6 +1553,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_material.Controls.Add(this.btnEdit_material);
             this.flpFunction_material.Controls.Add(this.btnDelete_material);
             this.flpFunction_material.Controls.Add(this.btnExport_material);
+            this.flpFunction_material.Controls.Add(this.btnWareHouse_material);
             this.flpFunction_material.Controls.Add(this.btnRefersh_material);
             this.flpFunction_material.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpFunction_material.Location = new System.Drawing.Point(5, 230);
@@ -1627,7 +1629,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnRefersh_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefersh_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnRefersh_material.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnRefersh_material.Location = new System.Drawing.Point(8, 141);
+            this.btnRefersh_material.Location = new System.Drawing.Point(199, 141);
             this.btnRefersh_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefersh_material.Name = "btnRefersh_material";
             this.btnRefersh_material.Size = new System.Drawing.Size(185, 63);
@@ -1779,7 +1781,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgReceipt.Name = "tpgReceipt";
             this.tpgReceipt.Size = new System.Drawing.Size(1101, 607);
             this.tpgReceipt.TabIndex = 2;
-            this.tpgReceipt.Text = "Quản Lý Hóa đơn";
+            this.tpgReceipt.Text = "Quản lý hóa đơn";
             this.tpgReceipt.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
@@ -2547,7 +2549,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSell.Padding = new System.Windows.Forms.Padding(5);
             this.tpgSell.Size = new System.Drawing.Size(1101, 607);
             this.tpgSell.TabIndex = 1;
-            this.tpgSell.Text = "Tạo Hóa Đơn Bán";
+            this.tpgSell.Text = "Tạo hóa đơn bán";
             // 
             // grbItemInfor_sell
             // 
@@ -2875,7 +2877,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgBuy.Padding = new System.Windows.Forms.Padding(5);
             this.tpgBuy.Size = new System.Drawing.Size(1101, 607);
             this.tpgBuy.TabIndex = 0;
-            this.tpgBuy.Text = "Tạo Hóa Đơn Nhập ";
+            this.tpgBuy.Text = "Tạo hóa đơn nhập ";
             this.tpgBuy.Enter += new System.EventHandler(this.tpgBuy_Enter);
             // 
             // grbItemInfor_Buy
@@ -3343,6 +3345,21 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tclMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tclMain.TabIndex = 0;
             // 
+            // btnWareHouse_material
+            // 
+            this.btnWareHouse_material.BackColor = System.Drawing.Color.White;
+            this.btnWareHouse_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWareHouse_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnWareHouse_material.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnWareHouse_material.Location = new System.Drawing.Point(8, 141);
+            this.btnWareHouse_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnWareHouse_material.Name = "btnWareHouse_material";
+            this.btnWareHouse_material.Size = new System.Drawing.Size(185, 63);
+            this.btnWareHouse_material.TabIndex = 6;
+            this.btnWareHouse_material.Text = "Quản lý kho";
+            this.btnWareHouse_material.UseVisualStyleBackColor = false;
+            this.btnWareHouse_material.Click += new System.EventHandler(this.btnWareHouse_material_Click);
+            // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -3742,5 +3759,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.TextBox txtEmployeeReceipt_receipt;
         private System.Windows.Forms.Label lblEmployeeReceipt_receipt;
         private System.Windows.Forms.RadioButton rdbExport_receipt;
+        private BmwButton btnWareHouse_material;
     }
 }

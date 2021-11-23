@@ -113,6 +113,12 @@
     <Compile Include="Forms\Employee\fEmployee.Designer.cs">
       <DependentUpon>fEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\WareHouse\fWareHouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WareHouse\fWareHouse.Designer.cs">
+      <DependentUpon>fWareHouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MaterialUnit.cs" />
     <Compile Include="Models\Supplier.cs" />
@@ -206,6 +212,9 @@
     <EmbeddedResource Include="Forms\TaskManager\fTaskManager.resx">
       <DependentUpon>fTaskManager.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WareHouse\fWareHouse.resx">
+      <DependentUpon>fWareHouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
