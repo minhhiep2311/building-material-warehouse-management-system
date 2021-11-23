@@ -27,15 +27,22 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
         #endregion
 
         #region Constructor
-        public Material(string name, double importUnitPrice, double exportUnitPrice, string specialization) : this(-1, name, importUnitPrice, exportUnitPrice) { }
+        public Material(
+            string name,
+            double importUnitPrice,
+            double exportUnitPrice,
+            string specialization) :
+            this(-1, name, importUnitPrice, exportUnitPrice)
+        { }
 
         public Material(
-            int id, 
-            string name, 
+            int id,
+            string name,
             double importUnitPrice,
-            double exportUnitPrice, 
+            double exportUnitPrice,
             MaterialUnit unit = null,
-            string specialization = null)
+            string specialization = null,
+            int numerous = 0)
         {
             Id = id;
             Name = name;
@@ -43,7 +50,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             ExportUnitPrice = exportUnitPrice;
             Unit = unit;
             Specialization = specialization;
-            Numerous = 1;
+            Numerous = numerous;
         }
 
         #endregion
@@ -59,7 +66,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             var unit = new MaterialUnit(data["unitId"], data["unitName"]);
             var specialization = Convert.ToString(data["specialization"]);
 
-            return new Material(id, name, importUnitPrice, exportUnitPrice, unit, specialization);
+            try
+            {
+                var numerous = Convert.ToInt32(data["amount"]);
+                return new Material(id, name, importUnitPrice, exportUnitPrice, unit, specialization, numerous);
+            }
+            catch (Exception)
+            {
+                return new Material(id, name, importUnitPrice, exportUnitPrice, unit, specialization);
+            }
         }
 
         public ListViewItem ToListViewItem(Type type = Type.Full)

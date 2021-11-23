@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using BTL_LTTQ_QLKhoVLXD.Forms.TaskManager;
 using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
@@ -13,18 +12,22 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
 
     public partial class fSupplier : Form
     {
-        private readonly fTaskManager _parentForm;
+        private readonly Action _afterClosed;
         private readonly Models.Supplier _supplier;
         private readonly FormMode _mode;
         private readonly bool _startEdit;
 
-        public fSupplier(fTaskManager form, FormMode mode = FormMode.Create, Models.Supplier supplier = null, bool startEdit = false)
+        public fSupplier(
+            Action afterClosed = null,
+            FormMode mode = FormMode.Create,
+            Models.Supplier supplier = null,
+            bool startEdit = false)
         {
             InitializeComponent();
             _mode = mode;
-            _supplier = supplier ;
-            _parentForm = form;
+            _supplier = supplier;
             _startEdit = startEdit;
+            _afterClosed = afterClosed;
         }
 
 
@@ -38,7 +41,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
 
         private void chkEdit_CheckedChanged(object sender, EventArgs e)
         {
-            if(chkEdit.Checked)
+            if (chkEdit.Checked)
             {
                 txtName.ReadOnly = false;
                 txtAddress.ReadOnly = false;
@@ -159,15 +162,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
-                _parentForm.LoadData_Supplier();
+                _afterClosed();
             }
             else
+            {
                 MessageBox.Show(
                     Resources.MessageBox_Message_SystemError,
                     Resources.MessageBox_Caption_Notification,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
+            }
 
             Close();
         }
@@ -223,7 +228,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
                     MessageBoxIcon.Error
                 );
 
-            _parentForm.LoadData_Supplier();
+            _afterClosed();
             Close();
         }
 
@@ -253,7 +258,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
 
         private static bool ChangeInformation(Models.Supplier newSupplier)
         {
-             return SupplierService.ChangeSupplierInformation(newSupplier);
+            return SupplierService.ChangeSupplierInformation(newSupplier);
         }
 
         private bool ChangePhoneNumber(Models.Supplier newSupplier)

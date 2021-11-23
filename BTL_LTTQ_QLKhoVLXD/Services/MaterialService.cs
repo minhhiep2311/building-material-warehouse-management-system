@@ -9,6 +9,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
     internal static class MaterialService
     {
         #region Select
+
         public static List<Material> GetAllMaterials()
         {
             const string query = "SELECT m.id, " +
@@ -25,7 +26,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             var materialList = Helper.Mapper.MapArrayOfObject(result, Material.FromData);
             return materialList;
         }
+
         #endregion
+
         #region Insert
         public static int CreateMaterial(Material material)
         {
@@ -47,8 +50,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             }
         }
         #endregion
+        
         #region Delete
         #endregion
+        
         #region Update
         public static bool ChangeMaterialInformation(Material material)
         {
@@ -62,6 +67,5 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             return rowAffected > 0;
         }
         #endregion
-
     }
 }

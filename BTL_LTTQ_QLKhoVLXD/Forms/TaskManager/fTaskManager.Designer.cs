@@ -223,7 +223,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.lblItemName_sell = new System.Windows.Forms.Label();
             this.pnlNumerous_sell = new System.Windows.Forms.Panel();
-            this.nmrNumerouse_sell = new BTL_LTTQ_QLKhoVLXD.Controls.NumericUpDown.BmwNumericUpDown();
+            this.nmrNumerous_sell = new BTL_LTTQ_QLKhoVLXD.Controls.NumericUpDown.BmwNumericUpDown();
             this.lblNumerous_sell = new System.Windows.Forms.Label();
             this.pnlItemUnitPrice_sell = new System.Windows.Forms.Panel();
             this.lblItemUnitPrice_sell = new System.Windows.Forms.Label();
@@ -247,6 +247,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCreateReceipt_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnPrintReceipt_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlItem_buy = new System.Windows.Forms.Panel();
+            this.pnlNumerous_buy = new System.Windows.Forms.Panel();
+            this.txtNumerous_buy = new System.Windows.Forms.TextBox();
+            this.lblNumerous_buy = new System.Windows.Forms.Label();
             this.btnDeleteItem_buy = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlSpecialization_buy = new System.Windows.Forms.Panel();
             this.txtSpecializtion_buy = new System.Windows.Forms.TextBox();
@@ -256,7 +259,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnAddMaterial_buy = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.cboItem_buy = new BTL_LTTQ_QLKhoVLXD.Controls.ComboBox.BmwComboBox();
             this.lblMaterialName_Buy = new System.Windows.Forms.Label();
-            this.pnlNumerous_buy = new System.Windows.Forms.Panel();
+            this.pnlItemNumerous_buy = new System.Windows.Forms.Panel();
             this.nmrMaterialAmount_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.NumericUpDown.BmwNumericUpDown();
             this.lblMaterialAmount_Buy = new System.Windows.Forms.Label();
             this.pnlItemUnitPrice_buy = new System.Windows.Forms.Panel();
@@ -354,7 +357,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel4.SuspendLayout();
             this.pnlItemName_sell.SuspendLayout();
             this.pnlNumerous_sell.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrNumerouse_sell)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrNumerous_sell)).BeginInit();
             this.pnlItemUnitPrice_sell.SuspendLayout();
             this.grbGeneralInfor_sell.SuspendLayout();
             this.pnlTitle_sell.SuspendLayout();
@@ -363,9 +366,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlBottom_buy.SuspendLayout();
             this.pnlTotalMoney.SuspendLayout();
             this.pnlItem_buy.SuspendLayout();
+            this.pnlNumerous_buy.SuspendLayout();
             this.pnlSpecialization_buy.SuspendLayout();
             this.pnlItemName_buy.SuspendLayout();
-            this.pnlNumerous_buy.SuspendLayout();
+            this.pnlItemNumerous_buy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrMaterialAmount_Buy)).BeginInit();
             this.pnlItemUnitPrice_buy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrUnitPrice_buy)).BeginInit();
@@ -2709,25 +2713,25 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // pnlNumerous_sell
             // 
-            this.pnlNumerous_sell.Controls.Add(this.nmrNumerouse_sell);
+            this.pnlNumerous_sell.Controls.Add(this.nmrNumerous_sell);
             this.pnlNumerous_sell.Controls.Add(this.lblNumerous_sell);
             this.pnlNumerous_sell.Location = new System.Drawing.Point(357, 71);
             this.pnlNumerous_sell.Name = "pnlNumerous_sell";
             this.pnlNumerous_sell.Size = new System.Drawing.Size(260, 44);
             this.pnlNumerous_sell.TabIndex = 19;
             // 
-            // nmrNumerouse_sell
+            // nmrNumerous_sell
             // 
-            this.nmrNumerouse_sell.Location = new System.Drawing.Point(114, 8);
-            this.nmrNumerouse_sell.Maximum = new decimal(new int[] {
+            this.nmrNumerous_sell.Location = new System.Drawing.Point(114, 8);
+            this.nmrNumerous_sell.Maximum = new decimal(new int[] {
             -1,
             -1,
             -1,
             0});
-            this.nmrNumerouse_sell.Name = "nmrNumerouse_sell";
-            this.nmrNumerouse_sell.Size = new System.Drawing.Size(120, 26);
-            this.nmrNumerouse_sell.TabIndex = 9;
-            this.nmrNumerouse_sell.ThousandsSeparator = true;
+            this.nmrNumerous_sell.Name = "nmrNumerous_sell";
+            this.nmrNumerous_sell.Size = new System.Drawing.Size(120, 26);
+            this.nmrNumerous_sell.TabIndex = 9;
+            this.nmrNumerous_sell.ThousandsSeparator = true;
             // 
             // lblNumerous_sell
             // 
@@ -3003,17 +3007,44 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // pnlItem_buy
             // 
+            this.pnlItem_buy.Controls.Add(this.pnlNumerous_buy);
             this.pnlItem_buy.Controls.Add(this.btnDeleteItem_buy);
             this.pnlItem_buy.Controls.Add(this.pnlSpecialization_buy);
             this.pnlItem_buy.Controls.Add(this.btnAddItem_buy);
             this.pnlItem_buy.Controls.Add(this.pnlItemName_buy);
-            this.pnlItem_buy.Controls.Add(this.pnlNumerous_buy);
+            this.pnlItem_buy.Controls.Add(this.pnlItemNumerous_buy);
             this.pnlItem_buy.Controls.Add(this.pnlItemUnitPrice_buy);
             this.pnlItem_buy.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlItem_buy.Location = new System.Drawing.Point(3, 21);
             this.pnlItem_buy.Name = "pnlItem_buy";
             this.pnlItem_buy.Size = new System.Drawing.Size(1085, 127);
             this.pnlItem_buy.TabIndex = 11;
+            // 
+            // pnlNumerous_buy
+            // 
+            this.pnlNumerous_buy.Controls.Add(this.txtNumerous_buy);
+            this.pnlNumerous_buy.Controls.Add(this.lblNumerous_buy);
+            this.pnlNumerous_buy.Location = new System.Drawing.Point(827, 16);
+            this.pnlNumerous_buy.Name = "pnlNumerous_buy";
+            this.pnlNumerous_buy.Size = new System.Drawing.Size(202, 49);
+            this.pnlNumerous_buy.TabIndex = 23;
+            // 
+            // txtNumerous_buy
+            // 
+            this.txtNumerous_buy.Location = new System.Drawing.Point(105, 10);
+            this.txtNumerous_buy.Name = "txtNumerous_buy";
+            this.txtNumerous_buy.ReadOnly = true;
+            this.txtNumerous_buy.Size = new System.Drawing.Size(82, 26);
+            this.txtNumerous_buy.TabIndex = 1;
+            // 
+            // lblNumerous_buy
+            // 
+            this.lblNumerous_buy.AutoSize = true;
+            this.lblNumerous_buy.Location = new System.Drawing.Point(3, 13);
+            this.lblNumerous_buy.Name = "lblNumerous_buy";
+            this.lblNumerous_buy.Size = new System.Drawing.Size(74, 20);
+            this.lblNumerous_buy.TabIndex = 0;
+            this.lblNumerous_buy.Text = "Số lượng";
             // 
             // btnDeleteItem_buy
             // 
@@ -3022,7 +3053,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnDeleteItem_buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteItem_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnDeleteItem_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnDeleteItem_buy.Location = new System.Drawing.Point(799, 74);
+            this.btnDeleteItem_buy.Location = new System.Drawing.Point(726, 72);
             this.btnDeleteItem_buy.Name = "btnDeleteItem_buy";
             this.btnDeleteItem_buy.Size = new System.Drawing.Size(81, 32);
             this.btnDeleteItem_buy.TabIndex = 24;
@@ -3034,7 +3065,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlSpecialization_buy.Controls.Add(this.txtSpecializtion_buy);
             this.pnlSpecialization_buy.Controls.Add(this.lblSpecialization_buy);
-            this.pnlSpecialization_buy.Location = new System.Drawing.Point(601, 15);
+            this.pnlSpecialization_buy.Location = new System.Drawing.Point(528, 16);
             this.pnlSpecialization_buy.Name = "pnlSpecialization_buy";
             this.pnlSpecialization_buy.Size = new System.Drawing.Size(293, 49);
             this.pnlSpecialization_buy.TabIndex = 22;
@@ -3050,7 +3081,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // lblSpecialization_buy
             // 
             this.lblSpecialization_buy.AutoSize = true;
-            this.lblSpecialization_buy.Location = new System.Drawing.Point(12, 13);
+            this.lblSpecialization_buy.Location = new System.Drawing.Point(3, 13);
             this.lblSpecialization_buy.Name = "lblSpecialization_buy";
             this.lblSpecialization_buy.Size = new System.Drawing.Size(80, 20);
             this.lblSpecialization_buy.TabIndex = 0;
@@ -3063,7 +3094,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnAddItem_buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddItem_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAddItem_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnAddItem_buy.Location = new System.Drawing.Point(706, 74);
+            this.btnAddItem_buy.Location = new System.Drawing.Point(633, 72);
             this.btnAddItem_buy.Name = "btnAddItem_buy";
             this.btnAddItem_buy.Size = new System.Drawing.Size(81, 32);
             this.btnAddItem_buy.TabIndex = 21;
@@ -3076,9 +3107,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlItemName_buy.Controls.Add(this.btnAddMaterial_buy);
             this.pnlItemName_buy.Controls.Add(this.cboItem_buy);
             this.pnlItemName_buy.Controls.Add(this.lblMaterialName_Buy);
-            this.pnlItemName_buy.Location = new System.Drawing.Point(12, 13);
+            this.pnlItemName_buy.Location = new System.Drawing.Point(3, 14);
             this.pnlItemName_buy.Name = "pnlItemName_buy";
-            this.pnlItemName_buy.Size = new System.Drawing.Size(583, 51);
+            this.pnlItemName_buy.Size = new System.Drawing.Size(519, 51);
             this.pnlItemName_buy.TabIndex = 18;
             // 
             // btnAddMaterial_buy
@@ -3088,7 +3119,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnAddMaterial_buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddMaterial_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.btnAddMaterial_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnAddMaterial_buy.Location = new System.Drawing.Point(541, 12);
+            this.btnAddMaterial_buy.Location = new System.Drawing.Point(476, 12);
             this.btnAddMaterial_buy.Name = "btnAddMaterial_buy";
             this.btnAddMaterial_buy.Size = new System.Drawing.Size(32, 28);
             this.btnAddMaterial_buy.TabIndex = 14;
@@ -3100,10 +3131,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.cboItem_buy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboItem_buy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboItem_buy.Enabled = false;
             this.cboItem_buy.FormattingEnabled = true;
-            this.cboItem_buy.Location = new System.Drawing.Point(116, 12);
+            this.cboItem_buy.Location = new System.Drawing.Point(94, 12);
             this.cboItem_buy.Name = "cboItem_buy";
-            this.cboItem_buy.Size = new System.Drawing.Size(409, 28);
+            this.cboItem_buy.Size = new System.Drawing.Size(376, 28);
             this.cboItem_buy.TabIndex = 3;
             this.cboItem_buy.SelectedIndexChanged += new System.EventHandler(this.cboItem_buy_SelectedIndexChanged);
             // 
@@ -3111,20 +3143,20 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.lblMaterialName_Buy.AutoSize = true;
             this.lblMaterialName_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblMaterialName_Buy.Location = new System.Drawing.Point(23, 15);
+            this.lblMaterialName_Buy.Location = new System.Drawing.Point(5, 15);
             this.lblMaterialName_Buy.Name = "lblMaterialName_Buy";
             this.lblMaterialName_Buy.Size = new System.Drawing.Size(83, 20);
             this.lblMaterialName_Buy.TabIndex = 2;
             this.lblMaterialName_Buy.Text = "Tên hàng:";
             // 
-            // pnlNumerous_buy
+            // pnlItemNumerous_buy
             // 
-            this.pnlNumerous_buy.Controls.Add(this.nmrMaterialAmount_Buy);
-            this.pnlNumerous_buy.Controls.Add(this.lblMaterialAmount_Buy);
-            this.pnlNumerous_buy.Location = new System.Drawing.Point(393, 66);
-            this.pnlNumerous_buy.Name = "pnlNumerous_buy";
-            this.pnlNumerous_buy.Size = new System.Drawing.Size(202, 45);
-            this.pnlNumerous_buy.TabIndex = 19;
+            this.pnlItemNumerous_buy.Controls.Add(this.nmrMaterialAmount_Buy);
+            this.pnlItemNumerous_buy.Controls.Add(this.lblMaterialAmount_Buy);
+            this.pnlItemNumerous_buy.Location = new System.Drawing.Point(384, 67);
+            this.pnlItemNumerous_buy.Name = "pnlItemNumerous_buy";
+            this.pnlItemNumerous_buy.Size = new System.Drawing.Size(202, 45);
+            this.pnlItemNumerous_buy.TabIndex = 19;
             // 
             // nmrMaterialAmount_Buy
             // 
@@ -3134,20 +3166,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             -1,
             -1,
             0});
-            this.nmrMaterialAmount_Buy.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nmrMaterialAmount_Buy.Name = "nmrMaterialAmount_Buy";
             this.nmrMaterialAmount_Buy.Size = new System.Drawing.Size(104, 26);
             this.nmrMaterialAmount_Buy.TabIndex = 9;
             this.nmrMaterialAmount_Buy.ThousandsSeparator = true;
-            this.nmrMaterialAmount_Buy.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nmrMaterialAmount_Buy.ValueChanged += new System.EventHandler(this.nmrMaterialAmount_Buy_ValueChanged);
             // 
             // lblMaterialAmount_Buy
@@ -3164,7 +3186,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlItemUnitPrice_buy.Controls.Add(this.nmrUnitPrice_buy);
             this.pnlItemUnitPrice_buy.Controls.Add(this.lblMaterialUnitPrice_Buy);
-            this.pnlItemUnitPrice_buy.Location = new System.Drawing.Point(12, 66);
+            this.pnlItemUnitPrice_buy.Location = new System.Drawing.Point(3, 67);
             this.pnlItemUnitPrice_buy.Name = "pnlItemUnitPrice_buy";
             this.pnlItemUnitPrice_buy.Size = new System.Drawing.Size(378, 45);
             this.pnlItemUnitPrice_buy.TabIndex = 20;
@@ -3177,7 +3199,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             0,
             0,
             0});
-            this.nmrUnitPrice_buy.Location = new System.Drawing.Point(116, 9);
+            this.nmrUnitPrice_buy.Location = new System.Drawing.Point(94, 9);
             this.nmrUnitPrice_buy.Maximum = new decimal(new int[] {
             -1,
             -1,
@@ -3192,7 +3214,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.lblMaterialUnitPrice_Buy.AutoSize = true;
             this.lblMaterialUnitPrice_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblMaterialUnitPrice_Buy.Location = new System.Drawing.Point(23, 11);
+            this.lblMaterialUnitPrice_Buy.Location = new System.Drawing.Point(5, 11);
             this.lblMaterialUnitPrice_Buy.Name = "lblMaterialUnitPrice_Buy";
             this.lblMaterialUnitPrice_Buy.Size = new System.Drawing.Size(71, 20);
             this.lblMaterialUnitPrice_Buy.TabIndex = 3;
@@ -3225,15 +3247,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.cboWarehouse_buy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboWarehouse_buy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboWarehouse_buy.FormattingEnabled = true;
-            this.cboWarehouse_buy.Location = new System.Drawing.Point(217, 109);
+            this.cboWarehouse_buy.Location = new System.Drawing.Point(194, 110);
             this.cboWarehouse_buy.Name = "cboWarehouse_buy";
             this.cboWarehouse_buy.Size = new System.Drawing.Size(669, 28);
             this.cboWarehouse_buy.TabIndex = 4;
+            this.cboWarehouse_buy.SelectedIndexChanged += new System.EventHandler(this.cboWarehouse_buy_SelectedIndexChanged);
             // 
             // lblWarehouse_buy
             // 
             this.lblWarehouse_buy.AutoSize = true;
-            this.lblWarehouse_buy.Location = new System.Drawing.Point(32, 112);
+            this.lblWarehouse_buy.Location = new System.Drawing.Point(9, 113);
             this.lblWarehouse_buy.Name = "lblWarehouse_buy";
             this.lblWarehouse_buy.Size = new System.Drawing.Size(43, 20);
             this.lblWarehouse_buy.TabIndex = 0;
@@ -3244,7 +3267,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.cboSupplier_buy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboSupplier_buy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboSupplier_buy.FormattingEnabled = true;
-            this.cboSupplier_buy.Location = new System.Drawing.Point(217, 32);
+            this.cboSupplier_buy.Location = new System.Drawing.Point(194, 33);
             this.cboSupplier_buy.Name = "cboSupplier_buy";
             this.cboSupplier_buy.Size = new System.Drawing.Size(669, 28);
             this.cboSupplier_buy.TabIndex = 13;
@@ -3257,7 +3280,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnAddSupplier_buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddSupplier_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.btnAddSupplier_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnAddSupplier_buy.Location = new System.Drawing.Point(902, 32);
+            this.btnAddSupplier_buy.Location = new System.Drawing.Point(879, 33);
             this.btnAddSupplier_buy.Name = "btnAddSupplier_buy";
             this.btnAddSupplier_buy.Size = new System.Drawing.Size(32, 28);
             this.btnAddSupplier_buy.TabIndex = 12;
@@ -3268,7 +3291,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // txtAddress_buy
             // 
             this.txtAddress_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtAddress_buy.Location = new System.Drawing.Point(217, 71);
+            this.txtAddress_buy.Location = new System.Drawing.Point(194, 72);
             this.txtAddress_buy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddress_buy.Name = "txtAddress_buy";
             this.txtAddress_buy.ReadOnly = true;
@@ -3279,7 +3302,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.lblAddress_Buy.AutoSize = true;
             this.lblAddress_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblAddress_Buy.Location = new System.Drawing.Point(32, 74);
+            this.lblAddress_Buy.Location = new System.Drawing.Point(9, 75);
             this.lblAddress_Buy.Name = "lblAddress_Buy";
             this.lblAddress_Buy.Size = new System.Drawing.Size(66, 20);
             this.lblAddress_Buy.TabIndex = 6;
@@ -3289,7 +3312,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.lblSupplierName_Buy.AutoSize = true;
             this.lblSupplierName_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblSupplierName_Buy.Location = new System.Drawing.Point(32, 35);
+            this.lblSupplierName_Buy.Location = new System.Drawing.Point(9, 36);
             this.lblSupplierName_Buy.Name = "lblSupplierName_Buy";
             this.lblSupplierName_Buy.Size = new System.Drawing.Size(147, 20);
             this.lblSupplierName_Buy.TabIndex = 5;
@@ -3472,7 +3495,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlItemName_sell.PerformLayout();
             this.pnlNumerous_sell.ResumeLayout(false);
             this.pnlNumerous_sell.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrNumerouse_sell)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrNumerous_sell)).EndInit();
             this.pnlItemUnitPrice_sell.ResumeLayout(false);
             this.pnlItemUnitPrice_sell.PerformLayout();
             this.grbGeneralInfor_sell.ResumeLayout(false);
@@ -3484,12 +3507,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlTotalMoney.ResumeLayout(false);
             this.pnlTotalMoney.PerformLayout();
             this.pnlItem_buy.ResumeLayout(false);
+            this.pnlNumerous_buy.ResumeLayout(false);
+            this.pnlNumerous_buy.PerformLayout();
             this.pnlSpecialization_buy.ResumeLayout(false);
             this.pnlSpecialization_buy.PerformLayout();
             this.pnlItemName_buy.ResumeLayout(false);
             this.pnlItemName_buy.PerformLayout();
-            this.pnlNumerous_buy.ResumeLayout(false);
-            this.pnlNumerous_buy.PerformLayout();
+            this.pnlItemNumerous_buy.ResumeLayout(false);
+            this.pnlItemNumerous_buy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrMaterialAmount_Buy)).EndInit();
             this.pnlItemUnitPrice_buy.ResumeLayout(false);
             this.pnlItemUnitPrice_buy.PerformLayout();
@@ -3642,7 +3667,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label lblItemName_sell;
         private System.Windows.Forms.Panel pnlNumerous_sell;
-        private BmwNumericUpDown nmrNumerouse_sell;
+        private BmwNumericUpDown nmrNumerous_sell;
         private System.Windows.Forms.Label lblNumerous_sell;
         private System.Windows.Forms.Panel pnlItemUnitPrice_sell;
         private System.Windows.Forms.Label lblItemUnitPrice_sell;
@@ -3675,7 +3700,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private BmwButton btnAddMaterial_buy;
         private Controls.ComboBox.BmwComboBox cboItem_buy;
         private System.Windows.Forms.Label lblMaterialName_Buy;
-        private System.Windows.Forms.Panel pnlNumerous_buy;
+        private System.Windows.Forms.Panel pnlItemNumerous_buy;
         private BmwNumericUpDown nmrMaterialAmount_Buy;
         private System.Windows.Forms.Label lblMaterialAmount_Buy;
         private System.Windows.Forms.Panel pnlItemUnitPrice_buy;
@@ -3742,5 +3767,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.TextBox txtEmployeeReceipt_receipt;
         private System.Windows.Forms.Label lblEmployeeReceipt_receipt;
         private System.Windows.Forms.RadioButton rdbExport_receipt;
+        private System.Windows.Forms.Panel pnlNumerous_buy;
+        private System.Windows.Forms.TextBox txtNumerous_buy;
+        private System.Windows.Forms.Label lblNumerous_buy;
     }
 }
