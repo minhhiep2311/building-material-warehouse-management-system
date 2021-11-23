@@ -1650,8 +1650,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             idExcel.Font.Color = Color.Blue;
             idExcel.Value = $"Mã hóa đơn: {receipt.Id}";
 
+            var warehouseExcel = (Range)exSheet.Cells[4, 1];
+            warehouseExcel.Font.Size = 12;
+            warehouseExcel.Font.Bold = true;
+            warehouseExcel.Font.Color = Color.Blue;
+            warehouseExcel.Value = $"Kho hàng: {receipt.Warehouse.Name}";
+
             var header = (Range)exSheet.Cells[5, 2];
-            exSheet.Range["B5:G5"].Merge(true);
+            exSheet.Range["C6:E6"].Merge(true);
             header.Font.Size = 13;
             header.Font.Bold = true;
             header.Font.Color = Color.Red;
@@ -1659,16 +1665,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
 
             // Định dang tiêu đề bảng
-            exSheet.Range["A7:F7"].Font.Bold = true;
-            exSheet.Range["A7:F7"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
+            exSheet.Range["A8:G7"].Font.Bold = true;
+            exSheet.Range["A8:G8"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
 
-            exSheet.Range["A7"].Value = "ID";
-            exSheet.Range["B7"].Value = "Tên hàng";
-            exSheet.Range["B7"].ColumnWidth = 20;
-            exSheet.Range["C7"].Value = "Quy cách";
-            exSheet.Range["D7"].Value = "Số lượng";
-            exSheet.Range["E7"].Value = "Đơn giá";
-            exSheet.Range["F7"].Value = "Tổng tiền";
+            exSheet.Range["A8"].Value = "ID";
+            exSheet.Range["B8"].Value = "Tên hàng";
+            exSheet.Range["B8"].ColumnWidth = 20;
+            exSheet.Range["C8"].Value = "Quy cách";
+            exSheet.Range["D8"].Value = "Đơn vị";
+            exSheet.Range["E8"].Value = "Số lượng";
+            exSheet.Range["F8"].Value = "Đơn giá";
+            exSheet.Range["G8"].Value = "Tổng tiền";
 
             //In dữ liệu
             var i = 8;
@@ -1679,18 +1686,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 exSheet.Range[$"A{i}"].Value = material.Id.ToString();
                 exSheet.Range[$"B{i}"].Value = material.Name;
                 exSheet.Range[$"C{i}"].Value = material.Specialization;
-                exSheet.Range[$"D{i}"].Value = material.Numerous;
-                exSheet.Range[$"E{i}"].Value = material.ImportUnitPrice;
-                exSheet.Range[$"F{i}"].Value = material.ImportUnitPrice * material.Numerous;
+                exSheet.Range[$"D{i}"].Value = material.Unit.Name;
+                exSheet.Range[$"E{i}"].Value = material.Numerous;
+                exSheet.Range[$"F{i}"].Value = material.ImportUnitPrice;
+                exSheet.Range[$"G{i}"].Value = material.ImportUnitPrice * material.Numerous;
             }
 
             var totalReceipt = (Range)exSheet.Cells[i, 1];
-            exSheet.Range[$"A{i}:E{i}"].Merge(true);
+            exSheet.Range[$"A{i}:F{i}"].Merge(true);
             totalReceipt.Font.Bold = true;
             totalReceipt.HorizontalAlignment = XlHAlign.xlHAlignRight;
             totalReceipt.Value = "Tổng tiền";
 
-            exSheet.Range["F" + i].Value = Helper.Format.String(receipt.TotalPrice);
+            exSheet.Range[$"G{i}"].Value = Helper.Format.String(receipt.TotalPrice);
 
             exSheet.Name = "hàng";
             exBook.Activate();//kích hoạt
