@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee;
 using BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation;
 using BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount;
-using BTL_LTTQ_QLKhoVLXD.Forms.Employee;
 using BTL_LTTQ_QLKhoVLXD.Forms.Customer;
+using BTL_LTTQ_QLKhoVLXD.Forms.Employee;
+using BTL_LTTQ_QLKhoVLXD.Forms.Material;
 using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
 using BTL_LTTQ_QLKhoVLXD.Forms.Supplier;
-using BTL_LTTQ_QLKhoVLXD.Forms.Material;
 using BTL_LTTQ_QLKhoVLXD.Forms.WareHouse;
 using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
-using FormMode = BTL_LTTQ_QLKhoVLXD.Utils.Enum.FormMode;
-using Excel = Microsoft.Office.Interop.Excel;
-using System.Drawing;
+using Microsoft.Office.Interop.Excel;
+using Application = Microsoft.Office.Interop.Excel.Application;
+using CheckBox = System.Windows.Forms.CheckBox;
+using Enum = BTL_LTTQ_QLKhoVLXD.Utils.Enum;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
@@ -153,6 +155,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #region Buy Properties
 
         private readonly List<Models.Material> _items_buy = new List<Models.Material>();
+        private double _total_sell;
 
         #endregion
 
@@ -168,6 +171,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             txtAddress_buy.Text = (cboSupplier_buy.SelectedItem as Models.Supplier)?.Address;
             lblAddress_buy.Focus();
+            TryEnableCreateReceipt_Buy();
         }
 
         private void btnAddSupplier_buy_Click(object sender, EventArgs e)
@@ -193,6 +197,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             txtSpecialization_buy.Text = selectedItem.Specialization;
             nmrUnitPrice_buy.Value = Convert.ToDecimal(selectedItem.ImportUnitPrice);
             lblSpecialization_buy.Focus();
+            TryEnableCreateReceipt_Buy();
         }
 
         private void btnAddMaterial_buy_Click(object sender, EventArgs e)
@@ -235,6 +240,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             }
 
+            TryEnableCreateReceipt_Buy();
             BindTotal_Buy();
         }
 
@@ -254,13 +260,18 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             btnDeleteItem_buy.Enabled = true;
         }
 
+        private void nmrVat_sell_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnCreateReceipt_Buy_Click(object sender, EventArgs e)
         {
             if (!ConfirmCreateReceipt_Buy())
                 return;
 
-            var created = CreateReceipt_Buy();
-            if (created)
+            var receipt = CreateReceipt_Buy();
+            if (receipt != null)
             {
                 var export = MessageBox.Show(
                     Resources.MessageBox_Message_CreateReceiptSuccessfully,
@@ -268,7 +279,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Information
                 ) == DialogResult.Yes;
-
+                if (export)
+                {
+                    Export_Buy(receipt);
+                }
             }
             else
             {
@@ -279,11 +293,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                     MessageBoxIcon.Error
                 );
             }
-        }
-
-        private void btnPrintReceipt_Buy_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnCancel_buy_Click(object sender, EventArgs e)
@@ -342,8 +351,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var shouldDeleteItemIds = lvwItem_buy.SelectedIndices.Cast<int>().ToList();
             var shouldDeleteSupplierNames = shouldDeleteItemIds.Select(x => _items_buy[x].Name);
 
-            if (ConfirmDeleteItem_Buy(shouldDeleteSupplierNames))
-                DeleteItem_Buy(shouldDeleteItemIds);
+            if (!ConfirmDeleteItem_Buy(shouldDeleteSupplierNames))
+                return;
+
+            DeleteItem_Buy(shouldDeleteItemIds);
+            TryEnableCreateReceipt_Buy();
         }
 
         private static bool ConfirmDeleteItem_Buy(IEnumerable<string> shouldDeleteSupplierNames)
@@ -368,10 +380,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             BindTotal_Buy();
         }
 
+        private void TryEnableCreateReceipt_Buy()
+        {
+            btnCreateReceipt_Buy.Enabled = cboSupplier_buy.SelectedIndex != -1 &&
+                cboWarehouse_buy.SelectedIndex != -1 &&
+                lvwItem_buy.Items.Count > 0;
+        }
+
         private void BindTotal_Buy()
         {
             var sum = CalculateTotal_Buy();
-            txtTotalMoney_Buy.Text = Helper.Format.String(sum);
+            txtTotalMoney_buy.Text = Helper.Format.String(sum);
         }
 
         private double CalculateTotal_Buy()
@@ -389,13 +408,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             ) == DialogResult.Yes;
         }
 
-        private bool CreateReceipt_Buy()
+        private ImportReceipt CreateReceipt_Buy()
         {
             var supplier = cboSupplier_buy.SelectedItem as Models.Supplier;
-            var warehouse = cboWarehouse_buy.SelectedItem as Models.Warehouse;
+            var warehouse = cboWarehouse_buy.SelectedItem as Warehouse;
             var total = CalculateTotal_Buy();
             var receipt = new ImportReceipt(User, supplier, warehouse, _items_buy, total);
-            return ReceiptService.CreateImportReceipt(receipt);
+            receipt.Id = ReceiptService.CreateImportReceipt(receipt);
+            return receipt.Id != -1 ? receipt : null;
         }
 
         #endregion
@@ -406,7 +426,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #region Sell Properties
 
-        private List<Models.Material> _items_sell = new List<Models.Material>();
+        private readonly List<Models.Material> _items_sell = new List<Models.Material>();
 
         #endregion
 
@@ -493,7 +513,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             }
 
-            CalculateTotal_Sell();
+            txtTotalMoney_sell.Text = Helper.Format.String(CalculateTotal_Sell());
         }
 
         private void btnDeleteItem_sell_Click(object sender, EventArgs e)
@@ -519,17 +539,40 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnCreateReceipt_sell_Click(object sender, EventArgs e)
         {
+            if (!ConfirmCreateReceipt_Sell())
+                return;
 
-        }
+            var created = CreateReceipt_Sell();
+            if (created)
+            {
+                var export = MessageBox.Show(
+                    Resources.MessageBox_Message_CreateReceiptSuccessfully,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information
+                ) == DialogResult.Yes;
 
-        private void btnPrintReceipt_sell_Click(object sender, EventArgs e)
-        {
-
+            }
+            else
+            {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_SystemError,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
 
         private void btnCancelReceipt_sell_Click(object sender, EventArgs e)
         {
-
+            cboCustomer_sell.SelectedIndex = -1;
+            txtAddress_sell.Text = "";
+            cboWarehouse_sell.SelectedIndex = -1;
+            txtSpecialization_sell.Text = "";
+            nmrUnitPrice_sell.Value = 0;
+            nmrMaterialAmount_sell.Value = 0;
+            lvwItem_sell.Items.Clear();
         }
 
         #endregion
@@ -576,10 +619,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 nmrMaterialAmount_sell.Value != 0;
         }
 
-        private void CalculateTotal_Sell()
+        private double CalculateTotal_Sell()
         {
-            var sum = _items_sell.Select(x => x.ImportUnitPrice * x.Numerous).Sum(x => x);
-            txtTotalMoney_sell.Text = Helper.Format.String(sum);
+            return _items_sell.Select(x => x.ImportUnitPrice * x.Numerous).Sum(x => x);
         }
 
         private void TryDeleteItem_Sell()
@@ -613,7 +655,27 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 lvwItem_sell.Items.RemoveAt(idx);
             });
 
-            CalculateTotal_Sell();
+            txtTotalMoney_sell.Text = Helper.Format.String(CalculateTotal_Sell());
+        }
+
+        private static bool ConfirmCreateReceipt_Sell()
+        {
+            return MessageBox.Show(
+                Resources.MessageBox_Message_ConfirmCreateReceipt,
+                Resources.MessageBox_Caption_Notification,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            ) == DialogResult.Yes;
+        }
+
+        private bool CreateReceipt_Sell()
+        {
+            var supplier = cboCustomer_sell.SelectedItem as Models.Supplier;
+            var warehouse = cboWarehouse_sell.SelectedItem as Warehouse;
+            var total = CalculateTotal_Sell();
+            var vat = Convert.ToDouble(nmrVat_sell.Value);
+            var receipt = new ExportReceipt(User, supplier, warehouse, _items_sell, total, vat, "");
+            return ReceiptService.CreateExportReceipt(receipt);
         }
 
         #endregion
@@ -621,6 +683,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #endregion
 
         #region Material
+
         #region Material Properties
 
         #endregion
@@ -658,7 +721,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnWareHouse_material_Click(object sender, EventArgs e)
         {
-            new fWareHouse(this).ShowDialog();
+            new fWarehouse().ShowDialog();
         }
         #endregion
 
@@ -807,7 +870,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             var customer = Helper.Control.FirstSelected(_customerList_customer, lvwCustomer_customer);
             if (customer != null)
-                new fCustomer(this, FormMode.Write, customer, true).Show();
+                new fCustomer(this, Enum.FormMode.Write, customer, true).Show();
 
         }
 
@@ -982,7 +1045,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             var supplier = _suppliers[lvwSupplier_supplier.SelectedIndices[0]];
             var editable = User.Permissions.Contains(Resources.Permission_EditSupplierInformation);
-            var mode = editable ? FormMode.Write : FormMode.Read;
+            var mode = editable ? Enum.FormMode.Write : Enum.FormMode.Read;
 
             lvwSupplier_supplier.SelectedItems.Clear();
 
@@ -1042,7 +1105,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             var supplier = Helper.Control.FirstSelected(_suppliers, lvwSupplier_supplier);
             if (supplier != null)
-                new fSupplier(() => LoadData_Supplier(), FormMode.Write, supplier, true).Show();
+                new fSupplier(() => LoadData_Supplier(), Enum.FormMode.Write, supplier, true).Show();
         }
 
         #endregion
@@ -1353,7 +1416,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             var employee = _employeeList_employee[lvwEmployee_employee.SelectedIndices[0]];
             var editable = User.Permissions.Contains(Resources.Permission_EditAccountInformation);
-            var mode = editable ? FormMode.Write : FormMode.Read;
+            var mode = editable ? Enum.FormMode.Write : Enum.FormMode.Read;
 
             lvwEmployee_employee.SelectedItems.Clear();
 
@@ -1391,7 +1454,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             var employee = Helper.Control.FirstSelected(_employeeList_employee, lvwEmployee_employee);
             if (employee != null)
-                new fEmployee(this, FormMode.Write, employee, true).Show();
+                new fEmployee(this, Enum.FormMode.Write, employee, true).Show();
         }
 
         private void CreateAccount_employee()
@@ -1562,94 +1625,84 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #endregion
 
-        private void bmwButton11_Click(object sender, EventArgs e)
+        private void Export_Buy(ImportReceipt receipt)
         {
-            var supplier = cboSupplier_buy.SelectedItem as Models.Supplier;
-            var warehouse = cboWarehouse_buy.SelectedItem as Models.Warehouse;
-            var total = CalculateTotal_Buy();
-            var receipt = new ImportReceipt(User, supplier, warehouse, _items_buy, total);
-
             //Khai báo và khởi tạo đối tượng 
-            Excel.Application exApp = new Excel.Application();
-            Excel.Workbook exBook = exApp.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
-            Excel.Worksheet exSheet = (Excel.Worksheet)exBook.Worksheets[1];
+            var exApp = new Application();
+            var exBook = exApp.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
+            var exSheet = (Worksheet)exBook.Worksheets[1];
             //Định dạng chung
-            Excel.Range employeeExel = (Excel.Range)exSheet.Cells[1, 1];
-            employeeExel.Font.Size = 12;
-            employeeExel.Font.Bold = true;
-            employeeExel.Font.Color = Color.Blue;
-            employeeExel.Value = "Nhân viên: " + receipt.Employee.Name ;
+            var employeeExcel = (Range)exSheet.Cells[1, 1];
+            employeeExcel.Font.Size = 12;
+            employeeExcel.Font.Bold = true;
+            employeeExcel.Font.Color = Color.Blue;
+            employeeExcel.Value = $"Nhân viên: {receipt.Employee.Name}";
 
-            Excel.Range supplierExel = (Excel.Range)exSheet.Cells[2, 1];
-            supplierExel.Font.Size = 12;
-            supplierExel.Font.Bold = true;
-            supplierExel.Font.Color = Color.Blue;
-            supplierExel.Value = "Nhà cung cấp: " ;
+            var supplierExcel = (Range)exSheet.Cells[2, 1];
+            supplierExcel.Font.Size = 12;
+            supplierExcel.Font.Bold = true;
+            supplierExcel.Font.Color = Color.Blue;
+            supplierExcel.Value = $"Nhà cung cấp: {receipt.Supplier.Name}";
 
-            Excel.Range idExel = (Excel.Range)exSheet.Cells[3, 1];
-            idExel.Font.Size = 12;
-            idExel.Font.Bold = true;
-            idExel.Font.Color = Color.Blue;
-            //Todo
-            idExel.Value = "Mã hóa đơn: " ;
+            var idExcel = (Range)exSheet.Cells[3, 1];
+            idExcel.Font.Size = 12;
+            idExcel.Font.Bold = true;
+            idExcel.Font.Color = Color.Blue;
+            idExcel.Value = $"Mã hóa đơn: {receipt.Id}";
 
-            Excel.Range header = (Excel.Range)exSheet.Cells[ 5, 2];
-            exSheet.get_Range("B5:G5").Merge(true);
+            var header = (Range)exSheet.Cells[5, 2];
+            exSheet.Range["B5:G5"].Merge(true);
             header.Font.Size = 13;
             header.Font.Bold = true;
             header.Font.Color = Color.Red;
             header.Value = "HÓA ĐƠN NHẬP";
 
-            
+
             // Định dang tiêu đề bảng
-            exSheet.get_Range("A7:F7").Font.Bold = true;
-            exSheet.get_Range("A7:F7").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            exSheet.Range["A7:F7"].Font.Bold = true;
+            exSheet.Range["A7:F7"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
 
-            exSheet.get_Range("A7").Value = "ID";
-            exSheet.get_Range("B7").Value = "Tên hàng";
-            exSheet.get_Range("B7").ColumnWidth = 20;
-            exSheet.get_Range("C7").Value = "Quy cách";
-            exSheet.get_Range("D7").Value = "Số lượng";
-            exSheet.get_Range("E7").Value = "Đơn giá";
-
-            exSheet.get_Range("F7").Value = "Tổng tiền";
+            exSheet.Range["A7"].Value = "ID";
+            exSheet.Range["B7"].Value = "Tên hàng";
+            exSheet.Range["B7"].ColumnWidth = 20;
+            exSheet.Range["C7"].Value = "Quy cách";
+            exSheet.Range["D7"].Value = "Số lượng";
+            exSheet.Range["E7"].Value = "Đơn giá";
+            exSheet.Range["F7"].Value = "Tổng tiền";
 
             //In dữ liệu
-            int i = 8;
-            for ( int j = 0; i < _materials.Count; i++, j++)
+            var i = 8;
+            for (var j = 0; j < receipt.Materials.Count; i++, j++)
             {
-                exSheet.get_Range("A" + (i).ToString() + ":F" + (i).ToString()).Font.Bold = false;
-
-                exSheet.get_Range("A" + (i).ToString()).Value = _materials[j].Id.ToString();
-                exSheet.get_Range("B" + (i).ToString()).Value = _materials[j].Name;
-                exSheet.get_Range("C" + (i).ToString()).Value = _materials[j].Specialization;
-                exSheet.get_Range("D" + (i).ToString()).Value = _materials[j].Numerous;
-                exSheet.get_Range("E" + (i).ToString()).Value = _materials[j].ImportUnitPrice;
+                var material = receipt.Materials[j];
+                exSheet.Range[$"A{i}:F{i}"].Font.Bold = false;
+                exSheet.Range[$"A{i}"].Value = material.Id.ToString();
+                exSheet.Range[$"B{i}"].Value = material.Name;
+                exSheet.Range[$"C{i}"].Value = material.Specialization;
+                exSheet.Range[$"D{i}"].Value = material.Numerous;
+                exSheet.Range[$"E{i}"].Value = material.ImportUnitPrice;
+                exSheet.Range[$"F{i}"].Value = material.ImportUnitPrice * material.Numerous;
             }
 
-            Excel.Range totalReceipt = (Excel.Range)exSheet.Cells[i, 1];
-            exSheet.get_Range($"A{i}:E{i}").Merge(true);
+            var totalReceipt = (Range)exSheet.Cells[i, 1];
+            exSheet.Range[$"A{i}:E{i}"].Merge(true);
             totalReceipt.Font.Bold = true;
-            totalReceipt.HorizontalAlignment = Excel.XlHAlign.xlHAlignRight;
-            totalReceipt.Value = "Tông tiền";
+            totalReceipt.HorizontalAlignment = XlHAlign.xlHAlignRight;
+            totalReceipt.Value = "Tổng tiền";
 
-            exSheet.get_Range("F" + (i).ToString()).Value = receipt.TotalPrice.ToString();
+            exSheet.Range["F" + i].Value = Helper.Format.String(receipt.TotalPrice);
 
             exSheet.Name = "hàng";
             exBook.Activate();//kích hoạt
 
-            dlgSave.Filter = "Excel Document(*.xlsx)|*.xlsx ";
+            dlgSave.Filter = "Excel Document(*.xlsx)|*.xlsx";
             dlgSave.FilterIndex = 1;
             dlgSave.AddExtension = true;
             dlgSave.DefaultExt = ".xlsx";
             if (dlgSave.ShowDialog() == DialogResult.OK)
-                exBook.SaveAs(dlgSave.FileName.ToString());//Lưu file Excel
+                exBook.SaveAs(dlgSave.FileName);//Lưu file Excel
 
             exApp.Quit();
-
-
-
-
         }
     }
 }

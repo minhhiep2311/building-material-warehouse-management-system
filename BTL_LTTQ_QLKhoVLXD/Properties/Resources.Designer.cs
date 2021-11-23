@@ -215,6 +215,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thêm kho {0} thành công!.
+        /// </summary>
+        internal static string MessageBox_Message_AddWarehouseSuccessfully {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_AddWarehouseSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bạn không thể xóa tài khoản của mình!.
         /// </summary>
         internal static string MessageBox_Message_CannotSelfDeleteAccount {
@@ -399,11 +408,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hãy nhập đầy đủ thông tin !.
+        ///   Looks up a localized string similar to Hãy nhập đầy đủ thông tin!.
         /// </summary>
-        internal static string MessageBox_Message_EnterFullPersonalInfo {
+        internal static string MessageBox_Message_EnterFulllInfo {
             get {
-                return ResourceManager.GetString("MessageBox_Message_EnterFullPersonalInfo", resourceCulture);
+                return ResourceManager.GetString("MessageBox_Message_EnterFulllInfo", resourceCulture);
             }
         }
         

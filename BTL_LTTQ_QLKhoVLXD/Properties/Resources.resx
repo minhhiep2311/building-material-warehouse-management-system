@@ -169,8 +169,8 @@
   <data name="MessageBox_Message_SystemError" xml:space="preserve">
     <value>Lỗi hệ thống! Hãy thử lại sau</value>
   </data>
-  <data name="MessageBox_Message_EnterFullPersonalInfo" xml:space="preserve">
-    <value>Hãy nhập đầy đủ thông tin !</value>
+  <data name="MessageBox_Message_EnterFulllInfo" xml:space="preserve">
+    <value>Hãy nhập đầy đủ thông tin!</value>
   </data>
   <data name="MessageBox_Message_InvalidNameFormat" xml:space="preserve">
     <value>Định dạng họ tên không chính xác! Hãy thử lại</value>
@@ -304,5 +304,8 @@
   </data>
   <data name="MessageBox_Message_CreateReceiptSuccessfully" xml:space="preserve">
     <value>Tạo hóa đơn thành công! Bạn có muốn xuất hóa đơn không?</value>
+  </data>
+  <data name="MessageBox_Message_AddWarehouseSuccessfully" xml:space="preserve">
+    <value>Thêm kho {0} thành công!</value>
   </data>
 </root>
