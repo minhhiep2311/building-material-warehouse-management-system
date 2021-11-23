@@ -278,6 +278,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Xác nhận tạo hóa đơn?.
+        /// </summary>
+        internal static string MessageBox_Message_ConfirmCreateReceipt {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ConfirmCreateReceipt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bạn có chắc chắc muốn xóa các tài khoản sau không?
         ///{0}.
         /// </summary>
@@ -341,6 +350,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         internal static string MessageBox_Message_CreateAccountSuccessfully {
             get {
                 return ResourceManager.GetString("MessageBox_Message_CreateAccountSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tạo hóa đơn thành công! Bạn có muốn xuất hóa đơn không?.
+        /// </summary>
+        internal static string MessageBox_Message_CreateReceiptSuccessfully {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_CreateReceiptSuccessfully", resourceCulture);
             }
         }
         

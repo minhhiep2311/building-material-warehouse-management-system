@@ -10,48 +10,32 @@ using FormMode = BTL_LTTQ_QLKhoVLXD.Utils.Enum.FormMode;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
 {
-    /*public partial class fWareHouse : Form
+    public partial class fWareHouse : Form
     {
         private readonly fTaskManager _parentForm;
         private readonly Models.Supplier _supplier;
         private readonly FormMode _mode;
         private readonly bool _startEdit;
 
-        public fWareHouse(fTaskManager form, FormMode mode = FormMode.Create, Models.WareHouse wareHouse = null, bool startEdit = false)
+        public fWareHouse(fTaskManager form)
         {
             InitializeComponent();
-            _mode = mode;
-            _wareHouse = wareHouse;
             _parentForm = form;
-            _startEdit = startEdit;
         }
 
         #region Events
         private void fWareHouse_Load(object sender, EventArgs e)
         {
             BindData();
-            ConfigureAccessibility();
+            //ConfigureAccessibility();
         }
 
-        private void chkEdit_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkEdit.Checked)
-            {
-                txtName.ReadOnly = false;
-                txtArea.ReadOnly = false;
-            }
-            else
-            {
-                txtName.ReadOnly = true;
-                txtArea.ReadOnly = true;
-            }
-        }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (_mode == FormMode.Create)
-                TryCreate();
-            else
-                TryChangeInformation();
+            //if (_mode == FormMode.Create)
+            //    TryCreate();
+            //else
+            //    TryChangeInformation();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -66,68 +50,65 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
             if (_mode == FormMode.Create)
                 return;
 
-            txtName.Text = _wareHouse.Name;
-            txtArea.Text = _wareHouse.Area;
+            //txtName.Text = _wareHouse.Name;
+            //txtArea.Text = _wareHouse.Area;
         }
 
-        private void ConfigureAccessibility()
-        {
-            chkEdit.Visible = _mode == FormMode.Write;
-            switch (_mode)
-            {
-                case FormMode.Write:
-                    if (_startEdit)
-                        chkEdit.Checked = true;
-                    return;
-                case FormMode.Create:
-                    chkEdit.Checked = true;
-                    btnSave.Text = Resources.Form_ButtonSave;
-                    Text = Resources.Form_Text_AddNewSupplier;
-                    break;
-                case FormMode.Read:
-                    txtName.ReadOnly = true;
-                    txtArea.ReadOnly = true;
-                    return;
+        //private void ConfigureAccessibility()
+        //{
+        //    chkEdit.Visible = _mode == FormMode.Write;
+        //    switch (_mode)
+        //    {
+        //        case FormMode.Write:
+        //            if (_startEdit)
+        //                chkEdit.Checked = true;
+        //            return;
+        //        case FormMode.Create:
+        //            chkEdit.Checked = true;
+        //            btnSave.Text = Resources.Form_ButtonSave;
+        //            Text = Resources.Form_Text_AddNewSupplier;
+        //            break;
+        //        case FormMode.Read:
+        //            txtName.ReadOnly = true;
+        //            txtArea.ReadOnly = true;
+        //            return;
 
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
+        //        default:
+        //            throw new ArgumentOutOfRangeException();
+        //    }
+        //}
 
-        private void TryCreate()
-        {
-            if (!ValidInput())
-                return;
+        //private void TryCreate()
+        //{
+        //    if (!ValidInput())
+        //        return;
 
-            var name = txtName.Text;
-            var name = txtArea.Text;
-            var newWareHouse = new Models.WareHouse(name, area);
+        //    var name = txtName.Text;
+        //    var name = txtArea.Text;
+        //    var newWareHouse = new Models.WareHouse(name, area);
 
-            if (CreateSupplier(ref newSupplier) &&
-                AddNewPhoneNumbers(phoneNumbers, newSupplier))
-            {
-                MessageBox.Show(
-                    Resources.MessageBox_Message_AddEmployeeSuccessfully,
-                    Resources.MessageBox_Caption_Notification,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
-                _parentForm.LoadData_Supplier();
-            }
-            else
-                MessageBox.Show(
-                    Resources.MessageBox_Message_SystemError,
-                    Resources.MessageBox_Caption_Notification,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+        //    if (CreateSupplier(ref newSupplier) &&
+        //        AddNewPhoneNumbers(phoneNumbers, newSupplier))
+        //    {
+        //        MessageBox.Show(
+        //            Resources.MessageBox_Message_AddEmployeeSuccessfully,
+        //            Resources.MessageBox_Caption_Notification,
+        //            MessageBoxButtons.OK,
+        //            MessageBoxIcon.Information
+        //        );
+        //        _parentForm.LoadData_Supplier();
+        //    }
+        //    else
+        //        MessageBox.Show(
+        //            Resources.MessageBox_Message_SystemError,
+        //            Resources.MessageBox_Caption_Notification,
+        //            MessageBoxButtons.OK,
+        //            MessageBoxIcon.Error
+        //        );
 
-            Close();
-        }
-
+        //    Close();
+        //}
 
         #endregion
-
-
-    }*/
+    }
 }
