@@ -119,6 +119,7 @@
       <DependentUpon>fWarehouse.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\ExportReceipt.cs" />
     <Compile Include="Models\MaterialUnit.cs" />
     <Compile Include="Models\ImportReceipt.cs" />
     <Compile Include="Models\Supplier.cs" />

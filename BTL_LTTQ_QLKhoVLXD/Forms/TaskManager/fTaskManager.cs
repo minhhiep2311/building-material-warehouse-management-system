@@ -152,6 +152,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #region Buy Properties
 
         private readonly List<Models.Material> _items_buy = new List<Models.Material>();
+        private double _total_sell;
 
         #endregion
 
@@ -256,6 +257,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             btnDeleteItem_buy.Enabled = true;
         }
 
+        private void nmrVat_sell_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnCreateReceipt_Buy_Click(object sender, EventArgs e)
         {
             if (!ConfirmCreateReceipt_Buy())
@@ -281,11 +287,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                     MessageBoxIcon.Error
                 );
             }
-        }
-
-        private void btnPrintReceipt_Buy_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnCancel_buy_Click(object sender, EventArgs e)
@@ -383,7 +384,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void BindTotal_Buy()
         {
             var sum = CalculateTotal_Buy();
-            txtTotalMoney_Buy.Text = Helper.Format.String(sum);
+            txtTotalMoney_buy.Text = Helper.Format.String(sum);
         }
 
         private double CalculateTotal_Buy()
@@ -418,7 +419,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #region Sell Properties
 
-        private List<Models.Material> _items_sell = new List<Models.Material>();
+        private readonly List<Models.Material> _items_sell = new List<Models.Material>();
 
         #endregion
 
@@ -505,7 +506,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             }
 
-            CalculateTotal_Sell();
+            txtTotalMoney_sell.Text = Helper.Format.String(CalculateTotal_Sell());
         }
 
         private void btnDeleteItem_sell_Click(object sender, EventArgs e)
@@ -531,17 +532,40 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnCreateReceipt_sell_Click(object sender, EventArgs e)
         {
+            if (!ConfirmCreateReceipt_Sell())
+                return;
 
-        }
+            var created = CreateReceipt_Sell();
+            if (created)
+            {
+                var export = MessageBox.Show(
+                    Resources.MessageBox_Message_CreateReceiptSuccessfully,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information
+                ) == DialogResult.Yes;
 
-        private void btnPrintReceipt_sell_Click(object sender, EventArgs e)
-        {
-
+            }
+            else
+            {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_SystemError,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
 
         private void btnCancelReceipt_sell_Click(object sender, EventArgs e)
         {
-
+            cboCustomer_sell.SelectedIndex = -1;
+            txtAddress_sell.Text = "";
+            cboWarehouse_sell.SelectedIndex = -1;
+            txtSpecialization_sell.Text = "";
+            nmrUnitPrice_sell.Value = 0;
+            nmrMaterialAmount_sell.Value = 0;
+            lvwItem_sell.Items.Clear();
         }
 
         #endregion
@@ -588,10 +612,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 nmrMaterialAmount_sell.Value != 0;
         }
 
-        private void CalculateTotal_Sell()
+        private double CalculateTotal_Sell()
         {
-            var sum = _items_sell.Select(x => x.ImportUnitPrice * x.Numerous).Sum(x => x);
-            txtTotalMoney_sell.Text = Helper.Format.String(sum);
+            return _items_sell.Select(x => x.ImportUnitPrice * x.Numerous).Sum(x => x);
         }
 
         private void TryDeleteItem_Sell()
@@ -625,7 +648,27 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 lvwItem_sell.Items.RemoveAt(idx);
             });
 
-            CalculateTotal_Sell();
+            txtTotalMoney_sell.Text = Helper.Format.String(CalculateTotal_Sell());
+        }
+
+        private static bool ConfirmCreateReceipt_Sell()
+        {
+            return MessageBox.Show(
+                Resources.MessageBox_Message_ConfirmCreateReceipt,
+                Resources.MessageBox_Caption_Notification,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            ) == DialogResult.Yes;
+        }
+
+        private bool CreateReceipt_Sell()
+        {
+            var supplier = cboCustomer_sell.SelectedItem as Models.Supplier;
+            var warehouse = cboWarehouse_sell.SelectedItem as Models.Warehouse;
+            var total = CalculateTotal_Sell();
+            var vat = Convert.ToDouble(nmrVat_sell.Value);
+            var receipt = new ExportReceipt(User, supplier, warehouse, _items_sell, total, vat, "");
+            return ReceiptService.CreateExportReceipt(receipt);
         }
 
         #endregion
@@ -633,6 +676,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #endregion
 
         #region Material
+
         #region Material Properties
 
         #endregion

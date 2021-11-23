@@ -62,7 +62,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCancel_buy = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlTotalMoney = new System.Windows.Forms.Panel();
             this.lblTotalMoney_Buy = new System.Windows.Forms.Label();
-            this.txtTotalMoney_Buy = new System.Windows.Forms.TextBox();
+            this.txtTotalMoney_buy = new System.Windows.Forms.TextBox();
             this.btnCreateReceipt_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlItem_buy = new System.Windows.Forms.Panel();
             this.btnDeleteItem_buy = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
@@ -93,7 +93,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSell = new System.Windows.Forms.TabPage();
             this.grbItem_sell = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
             this.lvwItem_sell = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnlBottom_sell = new System.Windows.Forms.Panel();
             this.btnCancelReceipt_sell = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlTotalMoney_sell = new System.Windows.Forms.Panel();
             this.lblTotalMoney_sell = new System.Windows.Forms.Label();
@@ -289,6 +289,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.label3 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.pnlReason_sell = new System.Windows.Forms.Panel();
+            this.lblReason_sell = new System.Windows.Forms.Label();
+            this.txtReason_sell = new System.Windows.Forms.TextBox();
+            this.pnlCost_sell = new System.Windows.Forms.Panel();
+            this.lblCost_sell = new System.Windows.Forms.Label();
+            this.txtCost_sell = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.cms_employee.SuspendLayout();
             this.cms_supplier.SuspendLayout();
@@ -309,7 +315,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlTitle_buy.SuspendLayout();
             this.tpgSell.SuspendLayout();
             this.grbItem_sell.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pnlBottom_sell.SuspendLayout();
             this.pnlTotalMoney_sell.SuspendLayout();
             this.panel8.SuspendLayout();
             this.pnlVat_sell.SuspendLayout();
@@ -392,6 +398,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.pnlReason_sell.SuspendLayout();
+            this.pnlCost_sell.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -708,7 +716,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // pnlTotalMoney
             // 
             this.pnlTotalMoney.Controls.Add(this.lblTotalMoney_Buy);
-            this.pnlTotalMoney.Controls.Add(this.txtTotalMoney_Buy);
+            this.pnlTotalMoney.Controls.Add(this.txtTotalMoney_buy);
             this.pnlTotalMoney.Location = new System.Drawing.Point(464, 6);
             this.pnlTotalMoney.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTotalMoney.Name = "pnlTotalMoney";
@@ -726,14 +734,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lblTotalMoney_Buy.TabIndex = 12;
             this.lblTotalMoney_Buy.Text = "Tổng tiền:";
             // 
-            // txtTotalMoney_Buy
+            // txtTotalMoney_buy
             // 
-            this.txtTotalMoney_Buy.Location = new System.Drawing.Point(87, 3);
-            this.txtTotalMoney_Buy.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTotalMoney_Buy.Name = "txtTotalMoney_Buy";
-            this.txtTotalMoney_Buy.ReadOnly = true;
-            this.txtTotalMoney_Buy.Size = new System.Drawing.Size(192, 23);
-            this.txtTotalMoney_Buy.TabIndex = 13;
+            this.txtTotalMoney_buy.Location = new System.Drawing.Point(87, 3);
+            this.txtTotalMoney_buy.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTotalMoney_buy.Name = "txtTotalMoney_buy";
+            this.txtTotalMoney_buy.ReadOnly = true;
+            this.txtTotalMoney_buy.Size = new System.Drawing.Size(192, 23);
+            this.txtTotalMoney_buy.TabIndex = 13;
             // 
             // btnCreateReceipt_Buy
             // 
@@ -1099,7 +1107,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.grbItem_sell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.grbItem_sell.Controls.Add(this.lvwItem_sell);
-            this.grbItem_sell.Controls.Add(this.panel4);
+            this.grbItem_sell.Controls.Add(this.pnlBottom_sell);
             this.grbItem_sell.Controls.Add(this.panel8);
             this.grbItem_sell.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grbItem_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -1126,7 +1134,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwItem_sell.Margin = new System.Windows.Forms.Padding(2);
             this.lvwItem_sell.Name = "lvwItem_sell";
             this.lvwItem_sell.OwnerDraw = true;
-            this.lvwItem_sell.Size = new System.Drawing.Size(769, 163);
+            this.lvwItem_sell.Size = new System.Drawing.Size(769, 106);
             this.lvwItem_sell.Sortable = true;
             this.lvwItem_sell.SortableColumns = null;
             this.lvwItem_sell.TabIndex = 19;
@@ -1134,17 +1142,20 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwItem_sell.View = System.Windows.Forms.View.Details;
             this.lvwItem_sell.SelectedIndexChanged += new System.EventHandler(this.lvwItem_sell_SelectedIndexChanged);
             // 
-            // panel4
+            // pnlBottom_sell
             // 
-            this.panel4.Controls.Add(this.btnCancelReceipt_sell);
-            this.panel4.Controls.Add(this.pnlTotalMoney_sell);
-            this.panel4.Controls.Add(this.btnCreateReceipt_sell);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(2, 284);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(769, 40);
-            this.panel4.TabIndex = 18;
+            this.pnlBottom_sell.Controls.Add(this.pnlCost_sell);
+            this.pnlBottom_sell.Controls.Add(this.pnlReason_sell);
+            this.pnlBottom_sell.Controls.Add(this.pnlVat_sell);
+            this.pnlBottom_sell.Controls.Add(this.btnCancelReceipt_sell);
+            this.pnlBottom_sell.Controls.Add(this.pnlTotalMoney_sell);
+            this.pnlBottom_sell.Controls.Add(this.btnCreateReceipt_sell);
+            this.pnlBottom_sell.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom_sell.Location = new System.Drawing.Point(2, 227);
+            this.pnlBottom_sell.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlBottom_sell.Name = "pnlBottom_sell";
+            this.pnlBottom_sell.Size = new System.Drawing.Size(769, 97);
+            this.pnlBottom_sell.TabIndex = 18;
             // 
             // btnCancelReceipt_sell
             // 
@@ -1152,7 +1163,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCancelReceipt_sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelReceipt_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCancelReceipt_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnCancelReceipt_sell.Location = new System.Drawing.Point(157, 6);
+            this.btnCancelReceipt_sell.Location = new System.Drawing.Point(157, 56);
             this.btnCancelReceipt_sell.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelReceipt_sell.Name = "btnCancelReceipt_sell";
             this.btnCancelReceipt_sell.Size = new System.Drawing.Size(129, 28);
@@ -1165,17 +1176,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlTotalMoney_sell.Controls.Add(this.lblTotalMoney_sell);
             this.pnlTotalMoney_sell.Controls.Add(this.txtTotalMoney_sell);
-            this.pnlTotalMoney_sell.Location = new System.Drawing.Point(464, 6);
+            this.pnlTotalMoney_sell.Location = new System.Drawing.Point(514, 6);
             this.pnlTotalMoney_sell.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTotalMoney_sell.Name = "pnlTotalMoney_sell";
-            this.pnlTotalMoney_sell.Size = new System.Drawing.Size(297, 28);
+            this.pnlTotalMoney_sell.Size = new System.Drawing.Size(247, 35);
             this.pnlTotalMoney_sell.TabIndex = 19;
             // 
             // lblTotalMoney_sell
             // 
             this.lblTotalMoney_sell.AutoSize = true;
             this.lblTotalMoney_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTotalMoney_sell.Location = new System.Drawing.Point(12, 6);
+            this.lblTotalMoney_sell.Location = new System.Drawing.Point(2, 6);
             this.lblTotalMoney_sell.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalMoney_sell.Name = "lblTotalMoney_sell";
             this.lblTotalMoney_sell.Size = new System.Drawing.Size(72, 17);
@@ -1184,11 +1195,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // txtTotalMoney_sell
             // 
-            this.txtTotalMoney_sell.Location = new System.Drawing.Point(87, 3);
+            this.txtTotalMoney_sell.Location = new System.Drawing.Point(78, 3);
             this.txtTotalMoney_sell.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalMoney_sell.Name = "txtTotalMoney_sell";
             this.txtTotalMoney_sell.ReadOnly = true;
-            this.txtTotalMoney_sell.Size = new System.Drawing.Size(192, 23);
+            this.txtTotalMoney_sell.Size = new System.Drawing.Size(149, 23);
             this.txtTotalMoney_sell.TabIndex = 13;
             // 
             // btnCreateReceipt_sell
@@ -1197,7 +1208,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCreateReceipt_sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateReceipt_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCreateReceipt_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnCreateReceipt_sell.Location = new System.Drawing.Point(9, 6);
+            this.btnCreateReceipt_sell.Location = new System.Drawing.Point(9, 56);
             this.btnCreateReceipt_sell.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateReceipt_sell.Name = "btnCreateReceipt_sell";
             this.btnCreateReceipt_sell.Size = new System.Drawing.Size(129, 28);
@@ -1208,7 +1219,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.pnlVat_sell);
             this.panel8.Controls.Add(this.pnlNumerous_sell);
             this.panel8.Controls.Add(this.btnDeleteItem_sell);
             this.panel8.Controls.Add(this.pnlSpecialization_sell);
@@ -1228,7 +1238,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlVat_sell.Controls.Add(this.lblVatPercent);
             this.pnlVat_sell.Controls.Add(this.nmrVat_sell);
             this.pnlVat_sell.Controls.Add(this.lblVat_sell);
-            this.pnlVat_sell.Location = new System.Drawing.Point(619, 54);
+            this.pnlVat_sell.Location = new System.Drawing.Point(362, 4);
             this.pnlVat_sell.Margin = new System.Windows.Forms.Padding(2);
             this.pnlVat_sell.Name = "pnlVat_sell";
             this.pnlVat_sell.Size = new System.Drawing.Size(148, 37);
@@ -1259,6 +1269,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.nmrVat_sell.Size = new System.Drawing.Size(62, 23);
             this.nmrVat_sell.TabIndex = 9;
             this.nmrVat_sell.ThousandsSeparator = true;
+            this.nmrVat_sell.ValueChanged += new System.EventHandler(this.nmrVat_sell_ValueChanged);
             // 
             // lblVat_sell
             // 
@@ -3626,6 +3637,64 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.textBox4.Size = new System.Drawing.Size(319, 23);
             this.textBox4.TabIndex = 1;
             // 
+            // pnlReason_sell
+            // 
+            this.pnlReason_sell.Controls.Add(this.txtReason_sell);
+            this.pnlReason_sell.Controls.Add(this.lblReason_sell);
+            this.pnlReason_sell.Location = new System.Drawing.Point(9, 4);
+            this.pnlReason_sell.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlReason_sell.Name = "pnlReason_sell";
+            this.pnlReason_sell.Size = new System.Drawing.Size(349, 37);
+            this.pnlReason_sell.TabIndex = 26;
+            // 
+            // lblReason_sell
+            // 
+            this.lblReason_sell.AutoSize = true;
+            this.lblReason_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblReason_sell.Location = new System.Drawing.Point(2, 9);
+            this.lblReason_sell.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblReason_sell.Name = "lblReason_sell";
+            this.lblReason_sell.Size = new System.Drawing.Size(43, 17);
+            this.lblReason_sell.TabIndex = 1;
+            this.lblReason_sell.Text = "Lý do";
+            // 
+            // txtReason_sell
+            // 
+            this.txtReason_sell.Location = new System.Drawing.Point(55, 6);
+            this.txtReason_sell.Name = "txtReason_sell";
+            this.txtReason_sell.Size = new System.Drawing.Size(291, 23);
+            this.txtReason_sell.TabIndex = 11;
+            // 
+            // pnlCost_sell
+            // 
+            this.pnlCost_sell.Controls.Add(this.lblCost_sell);
+            this.pnlCost_sell.Controls.Add(this.txtCost_sell);
+            this.pnlCost_sell.Location = new System.Drawing.Point(514, 45);
+            this.pnlCost_sell.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlCost_sell.Name = "pnlCost_sell";
+            this.pnlCost_sell.Size = new System.Drawing.Size(247, 35);
+            this.pnlCost_sell.TabIndex = 27;
+            // 
+            // lblCost_sell
+            // 
+            this.lblCost_sell.AutoSize = true;
+            this.lblCost_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblCost_sell.Location = new System.Drawing.Point(2, 9);
+            this.lblCost_sell.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCost_sell.Name = "lblCost_sell";
+            this.lblCost_sell.Size = new System.Drawing.Size(76, 17);
+            this.lblCost_sell.TabIndex = 12;
+            this.lblCost_sell.Text = "Thành tiền";
+            // 
+            // txtCost_sell
+            // 
+            this.txtCost_sell.Location = new System.Drawing.Point(78, 7);
+            this.txtCost_sell.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCost_sell.Name = "txtCost_sell";
+            this.txtCost_sell.ReadOnly = true;
+            this.txtCost_sell.Size = new System.Drawing.Size(149, 23);
+            this.txtCost_sell.TabIndex = 13;
+            // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3668,7 +3737,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlTitle_buy.ResumeLayout(false);
             this.tpgSell.ResumeLayout(false);
             this.grbItem_sell.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            this.pnlBottom_sell.ResumeLayout(false);
             this.pnlTotalMoney_sell.ResumeLayout(false);
             this.pnlTotalMoney_sell.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -3788,6 +3857,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.pnlReason_sell.ResumeLayout(false);
+            this.pnlReason_sell.PerformLayout();
+            this.pnlCost_sell.ResumeLayout(false);
+            this.pnlCost_sell.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3927,7 +4000,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private BmwButton btnCancel_buy;
         private System.Windows.Forms.Panel pnlTotalMoney;
         private System.Windows.Forms.Label lblTotalMoney_Buy;
-        private System.Windows.Forms.TextBox txtTotalMoney_Buy;
+        private System.Windows.Forms.TextBox txtTotalMoney_buy;
         private BmwButton btnCreateReceipt_Buy;
         private System.Windows.Forms.Panel pnlItem_buy;
         private BmwButton btnDeleteItem_buy;
@@ -4008,7 +4081,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.RadioButton rdbExport_receipt;
         private BmwGroupBox grbItem_sell;
         private BmwListView lvwItem_sell;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnlBottom_sell;
         private BmwButton btnCancelReceipt_sell;
         private System.Windows.Forms.Panel pnlTotalMoney_sell;
         private System.Windows.Forms.Label lblTotalMoney_sell;
@@ -4048,5 +4121,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private BmwButton btnWareHouse_material;
         private BmwButton bmwButton11;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Panel pnlReason_sell;
+        private System.Windows.Forms.TextBox txtReason_sell;
+        private System.Windows.Forms.Label lblReason_sell;
+        private System.Windows.Forms.Panel pnlCost_sell;
+        private System.Windows.Forms.Label lblCost_sell;
+        private System.Windows.Forms.TextBox txtCost_sell;
     }
 }
