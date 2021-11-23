@@ -167,6 +167,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             txtAddress_buy.Text = (cboSupplier_buy.SelectedItem as Models.Supplier)?.Address;
             lblAddress_buy.Focus();
+            TryEnableCreateReceipt_Buy();
         }
 
         private void btnAddSupplier_buy_Click(object sender, EventArgs e)
@@ -192,6 +193,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             txtSpecialization_buy.Text = selectedItem.Specialization;
             nmrUnitPrice_buy.Value = Convert.ToDecimal(selectedItem.ImportUnitPrice);
             lblSpecialization_buy.Focus();
+            TryEnableCreateReceipt_Buy();
         }
 
         private void btnAddMaterial_buy_Click(object sender, EventArgs e)
@@ -234,6 +236,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             }
 
+            TryEnableCreateReceipt_Buy();
             BindTotal_Buy();
         }
 
@@ -341,8 +344,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var shouldDeleteItemIds = lvwItem_buy.SelectedIndices.Cast<int>().ToList();
             var shouldDeleteSupplierNames = shouldDeleteItemIds.Select(x => _items_buy[x].Name);
 
-            if (ConfirmDeleteItem_Buy(shouldDeleteSupplierNames))
-                DeleteItem_Buy(shouldDeleteItemIds);
+            if (!ConfirmDeleteItem_Buy(shouldDeleteSupplierNames))
+                return;
+
+            DeleteItem_Buy(shouldDeleteItemIds);
+            TryEnableCreateReceipt_Buy();
         }
 
         private static bool ConfirmDeleteItem_Buy(IEnumerable<string> shouldDeleteSupplierNames)
@@ -365,6 +371,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             });
 
             BindTotal_Buy();
+        }
+
+        private void TryEnableCreateReceipt_Buy()
+        {
+            btnCreateReceipt_Buy.Enabled = cboSupplier_buy.SelectedIndex != -1 &&
+                cboWarehouse_buy.SelectedIndex != -1 &&
+                lvwItem_buy.Items.Count > 0;
         }
 
         private void BindTotal_Buy()
@@ -657,7 +670,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnWareHouse_material_Click(object sender, EventArgs e)
         {
-            new fWareHouse(this).ShowDialog();
+            new fWarehouse().ShowDialog();
         }
         #endregion
 

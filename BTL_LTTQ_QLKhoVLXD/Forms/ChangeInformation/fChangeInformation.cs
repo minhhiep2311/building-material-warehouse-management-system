@@ -197,7 +197,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation
                 return true;
 
             MessageBox.Show(
-                Resources.MessageBox_Message_EnterFullPersonalInfo,
+                Resources.MessageBox_Message_EnterFulllInfo,
                 Resources.MessageBox_Caption_Notification,
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error

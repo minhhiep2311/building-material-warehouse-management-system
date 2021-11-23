@@ -1,7 +1,7 @@
 ﻿
 namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
 {
-    partial class fWareHouse
+    partial class fWarehouse
     {
         /// <summary>
         /// Required designer variable.
@@ -48,9 +48,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
             this.grbInfo.Controls.Add(this.lblName);
             this.grbInfo.Controls.Add(this.lblAddress);
             this.grbInfo.ForeColor = System.Drawing.Color.White;
-            this.grbInfo.Location = new System.Drawing.Point(12, 12);
+            this.grbInfo.Location = new System.Drawing.Point(9, 10);
+            this.grbInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grbInfo.Name = "grbInfo";
-            this.grbInfo.Size = new System.Drawing.Size(520, 114);
+            this.grbInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbInfo.Size = new System.Drawing.Size(390, 93);
             this.grbInfo.TabIndex = 6;
             this.grbInfo.TabStop = false;
             this.grbInfo.Text = "Thông tin kho hàng";
@@ -59,35 +61,39 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
             // 
             this.txtArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtArea.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtArea.Location = new System.Drawing.Point(147, 67);
+            this.txtArea.Location = new System.Drawing.Point(110, 54);
+            this.txtArea.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtArea.Name = "txtArea";
-            this.txtArea.Size = new System.Drawing.Size(359, 26);
+            this.txtArea.Size = new System.Drawing.Size(270, 23);
             this.txtArea.TabIndex = 4;
             // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtName.Location = new System.Drawing.Point(147, 23);
+            this.txtName.Location = new System.Drawing.Point(110, 19);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(359, 26);
+            this.txtName.Size = new System.Drawing.Size(270, 23);
             this.txtName.TabIndex = 3;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(6, 29);
+            this.lblName.Location = new System.Drawing.Point(4, 24);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(96, 17);
+            this.lblName.Size = new System.Drawing.Size(74, 13);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Tên kho hàng";
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(6, 67);
+            this.lblAddress.Location = new System.Drawing.Point(4, 54);
+            this.lblAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(63, 17);
+            this.lblAddress.Size = new System.Drawing.Size(51, 13);
             this.lblAddress.TabIndex = 1;
             this.lblAddress.Text = "Diện tích";
             // 
@@ -95,9 +101,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
             // 
             this.pnlButton.Controls.Add(this.btnCancel);
             this.pnlButton.Controls.Add(this.btnSave);
-            this.pnlButton.Location = new System.Drawing.Point(21, 141);
+            this.pnlButton.Location = new System.Drawing.Point(16, 115);
+            this.pnlButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Size = new System.Drawing.Size(464, 58);
+            this.pnlButton.Size = new System.Drawing.Size(348, 47);
             this.pnlButton.TabIndex = 19;
             // 
             // btnCancel
@@ -107,9 +114,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnCancel.Location = new System.Drawing.Point(291, 3);
+            this.btnCancel.Location = new System.Drawing.Point(218, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(110, 45);
+            this.btnCancel.Size = new System.Drawing.Size(82, 37);
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "Hủy bỏ";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -122,23 +130,25 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnSave.Location = new System.Drawing.Point(22, 3);
+            this.btnSave.Location = new System.Drawing.Point(16, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(110, 45);
+            this.btnSave.Size = new System.Drawing.Size(82, 37);
             this.btnSave.TabIndex = 16;
             this.btnSave.Text = "Lưu thay đổi";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // fWareHouse
+            // fWarehouse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.ClientSize = new System.Drawing.Size(546, 209);
+            this.ClientSize = new System.Drawing.Size(410, 170);
             this.Controls.Add(this.pnlButton);
             this.Controls.Add(this.grbInfo);
-            this.Name = "fWareHouse";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "fWarehouse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin kho hàng";
             this.grbInfo.ResumeLayout(false);

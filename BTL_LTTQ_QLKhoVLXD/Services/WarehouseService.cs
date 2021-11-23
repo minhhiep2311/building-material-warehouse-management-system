@@ -31,6 +31,26 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             return materialsList;
         }
 
+        public static bool Check(Warehouse warehouse)
+        {
+            var query = $"INSERT INTO warehouse(name, area) VALUES (N'{warehouse.Name}', {warehouse.Area})";
+            var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
+
+            return rowAffected > 0;
+        } 
+
+        #endregion
+
+        #region Insert
+
+        public static bool Create(Warehouse warehouse)
+        {
+            var query = $"INSERT INTO warehouse(name, area) VALUES (N'{warehouse.Name}', {warehouse.Area})";
+            var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
+
+            return rowAffected > 0;
+        }
+
         #endregion
     }
 }
