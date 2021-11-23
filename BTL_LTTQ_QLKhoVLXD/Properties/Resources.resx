@@ -299,4 +299,10 @@
     <value>Bạn có chắc chắc muốn xóa khỏi hóa đơn các vật liệu sau không?
 {0}</value>
   </data>
+  <data name="MessageBox_Message_ConfirmCreateReceipt" xml:space="preserve">
+    <value>Xác nhận tạo hóa đơn?</value>
+  </data>
+  <data name="MessageBox_Message_CreateReceiptSuccessfully" xml:space="preserve">
+    <value>Tạo hóa đơn thành công! Bạn có muốn xuất hóa đơn không?</value>
+  </data>
 </root>

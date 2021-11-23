@@ -115,6 +115,7 @@
     </Compile>
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MaterialUnit.cs" />
+    <Compile Include="Models\ImportReceipt.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Models\Warehouse.cs" />
     <Compile Include="Reports\ExportReport.cs">
@@ -124,6 +125,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Services\CustomerService.cs" />
+    <Compile Include="Services\ReceiptService.cs" />
     <Compile Include="Services\SupplierService.cs" />
     <Compile Include="Services\WarehouseService.cs" />
     <Compile Include="Utils\Enum.cs" />

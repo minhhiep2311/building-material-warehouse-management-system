@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using BTL_LTTQ_QLKhoVLXD.Controls.NumericUpDown;
 using BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee;
 using BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation;
 using BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount;
@@ -58,9 +57,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             Init_Buy();
 
             Invoke((MethodInvoker)(() =>
-           {
-               LoadData_Warehouse();
-           }));
+            {
+                LoadData_Warehouse();
+            }));
+
+            Invoke((MethodInvoker)(() =>
+            {
+                Init_Sell();
+            }));
 
             Invoke((MethodInvoker)(() =>
             {
@@ -146,7 +150,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #region Buy Properties
 
-        private List<Models.Material> _items_buy = new List<Models.Material>();
+        private readonly List<Models.Material> _items_buy = new List<Models.Material>();
 
         #endregion
 
@@ -161,7 +165,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void cboSupplier_buy_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtAddress_buy.Text = (cboSupplier_buy.SelectedItem as Models.Supplier)?.Address;
-            lblAddress_Buy.Focus();
+            lblAddress_buy.Focus();
         }
 
         private void btnAddSupplier_buy_Click(object sender, EventArgs e)
@@ -173,38 +177,37 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             }).ShowDialog();
         }
 
-        private void cboWarehouse_buy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TryUpdateItem_Buy();
-        }
-
         private void cboItem_buy_SelectedIndexChanged(object sender, EventArgs e)
         {
             TryEnableAddItem_Buy();
-            nmrMaterialAmount_Buy.Value = 0;
+            nmrMaterialAmount_buy.Value = 0;
             if (!(cboItem_buy.SelectedItem is Models.Material selectedItem))
             {
-                txtSpecializtion_buy.Text = "";
-                txtNumerous_buy.Text = "";
+                txtSpecialization_buy.Text = "";
                 nmrUnitPrice_buy.Value = 0;
                 return;
             }
 
-            txtSpecializtion_buy.Text = selectedItem.Specialization;
-            txtNumerous_buy.Text = selectedItem.Numerous.ToString();
+            txtSpecialization_buy.Text = selectedItem.Specialization;
             nmrUnitPrice_buy.Value = Convert.ToDecimal(selectedItem.ImportUnitPrice);
             lblSpecialization_buy.Focus();
         }
 
         private void btnAddMaterial_buy_Click(object sender, EventArgs e)
         {
-            lvwSupplier_supplier.SelectedItems.Clear();
-            new fSupplier(() => LoadData_Supplier()).ShowDialog();
+            lvwItem_buy.SelectedItems.Clear();
+            new fMaterial(this).ShowDialog();
         }
 
         private void nmrMaterialAmount_Buy_ValueChanged(object sender, EventArgs e)
         {
             TryEnableAddItem_Buy();
+        }
+
+        private void nmrMaterialAmount_buy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (int)Keys.Enter)
+                btnAddItem_buy.PerformClick();
         }
 
         private void btnAddItem_buy_Click(object sender, EventArgs e)
@@ -214,7 +217,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 return;
 
             material.ImportUnitPrice = Convert.ToDouble(nmrUnitPrice_buy.Value);
-            material.Numerous = Convert.ToInt32(nmrMaterialAmount_Buy.Value);
+            material.Numerous = Convert.ToInt32(nmrMaterialAmount_buy.Value);
 
             var duplicatedItemIndex = _items_buy.FindIndex(x => x.Id == material.Id);
             if (duplicatedItemIndex == -1)
@@ -230,7 +233,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             }
 
-            CalculateTotal_Buy();
+            BindTotal_Buy();
         }
 
         private void btnDeleteItem_buy_Click(object sender, EventArgs e)
@@ -251,7 +254,29 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnCreateReceipt_Buy_Click(object sender, EventArgs e)
         {
+            if (!ConfirmCreateReceipt_Buy())
+                return;
 
+            var created = CreateReceipt_Buy();
+            if (created)
+            {
+                var export = MessageBox.Show(
+                    Resources.MessageBox_Message_CreateReceiptSuccessfully,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information
+                ) == DialogResult.Yes;
+
+            }
+            else
+            {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_SystemError,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
 
         private void btnPrintReceipt_Buy_Click(object sender, EventArgs e)
@@ -261,6 +286,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnCancel_buy_Click(object sender, EventArgs e)
         {
+            cboSupplier_buy.SelectedIndex = -1;
+            txtAddress_buy.Text = "";
+            cboWarehouse_buy.SelectedIndex = -1;
+            txtSpecialization_buy.Text = "";
+            nmrUnitPrice_buy.Value = 0;
+            nmrMaterialAmount_buy.Value = 0;
             lvwItem_buy.Items.Clear();
         }
 
@@ -290,27 +321,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             cboSupplier_buy.SelectedIndex = -1;
             cboWarehouse_buy.DataSource = _warehouses;
             cboWarehouse_buy.SelectedIndex = -1;
-            nmrUnitPrice_buy.Value = 0;
-        }
-
-        private void TryUpdateItem_Buy()
-        {
-            if (cboWarehouse_buy.SelectedIndex == -1)
-            {
-                cboItem_buy.Enabled = false;
-                return;
-            }
-
-            cboItem_buy.Enabled = true;
-            var selectedWarehouse = (Warehouse)cboWarehouse_buy.SelectedItem;
-            cboItem_buy.DataSource = selectedWarehouse.GetMaterials();
+            cboItem_buy.DataSource = _materials;
             cboItem_buy.SelectedIndex = -1;
+            nmrUnitPrice_buy.Value = 0;
         }
 
         private void TryEnableAddItem_Buy()
         {
             btnAddItem_buy.Enabled = cboItem_buy.SelectedIndex != -1 &&
-                nmrMaterialAmount_Buy.Value != 0;
+                nmrMaterialAmount_buy.Value != 0;
         }
 
         private void TryDeleteItem_Buy()
@@ -321,11 +340,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var shouldDeleteItemIds = lvwItem_buy.SelectedIndices.Cast<int>().ToList();
             var shouldDeleteSupplierNames = shouldDeleteItemIds.Select(x => _items_buy[x].Name);
 
-            if (ConfirmDeleteItem_buy(shouldDeleteSupplierNames))
-                DeleteItem_buy(shouldDeleteItemIds);
+            if (ConfirmDeleteItem_Buy(shouldDeleteSupplierNames))
+                DeleteItem_Buy(shouldDeleteItemIds);
         }
 
-        private static bool ConfirmDeleteItem_buy(IEnumerable<string> shouldDeleteSupplierNames)
+        private static bool ConfirmDeleteItem_Buy(IEnumerable<string> shouldDeleteSupplierNames)
         {
             var shouldDeleteStr = string.Join(", ", shouldDeleteSupplierNames);
             return MessageBox.Show(
@@ -336,7 +355,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             ) == DialogResult.Yes;
         }
 
-        private void DeleteItem_buy(List<int> shouldDeleteItemIds)
+        private void DeleteItem_Buy(List<int> shouldDeleteItemIds)
         {
             shouldDeleteItemIds.ForEach(idx =>
             {
@@ -344,13 +363,37 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 lvwItem_buy.Items.RemoveAt(idx);
             });
 
-            CalculateTotal_Buy();
+            BindTotal_Buy();
         }
 
-        private void CalculateTotal_Buy()
+        private void BindTotal_Buy()
         {
-            var sum = _items_buy.Select(x => x.ImportUnitPrice * x.Numerous).Sum(x => x);
+            var sum = CalculateTotal_Buy();
             txtTotalMoney_Buy.Text = Helper.Format.String(sum);
+        }
+
+        private double CalculateTotal_Buy()
+        {
+            return _items_buy.Select(x => x.ImportUnitPrice * x.Numerous).Sum(x => x);
+        }
+
+        private static bool ConfirmCreateReceipt_Buy()
+        {
+            return MessageBox.Show(
+                Resources.MessageBox_Message_ConfirmCreateReceipt,
+                Resources.MessageBox_Caption_Notification,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            ) == DialogResult.Yes;
+        }
+
+        private bool CreateReceipt_Buy()
+        {
+            var supplier = cboSupplier_buy.SelectedItem as Models.Supplier;
+            var warehouse = cboWarehouse_buy.SelectedItem as Models.Warehouse;
+            var total = CalculateTotal_Buy();
+            var receipt = new ImportReceipt(User, supplier, warehouse, _items_buy, total);
+            return ReceiptService.CreateImportReceipt(receipt);
         }
 
         #endregion
@@ -359,10 +402,219 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #region Sell
 
-        private void txtCustomerName_sell_TextChanged(object sender, EventArgs e)
+        #region Sell Properties
+
+        private List<Models.Material> _items_sell = new List<Models.Material>();
+
+        #endregion
+
+        #region Sell Events
+
+        private void tpgSell_Enter(object sender, EventArgs e)
+        {
+            ResetButtons_Sell();
+            BindData_Sell();
+        }
+
+        private void cboCustomer_sell_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtAddress_sell.Text = (cboCustomer_sell.SelectedItem as Models.Supplier)?.Address;
+            lblAddress_sell.Focus();
+        }
+
+        private void btnAddCustomer_sell_Click(object sender, EventArgs e)
+        {
+            new fCustomer(this).ShowDialog();
+        }
+
+        private void cboWarehouse_sell_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TryUpdateItem_Sell();
+        }
+
+        private void cboItem_sell_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TryEnableAddItem_Sell();
+            nmrMaterialAmount_sell.Value = 0;
+            if (!(cboItem_sell.SelectedItem is Models.Material selectedItem))
+            {
+                txtSpecialization_sell.Text = "";
+                txtNumerous_sell.Text = "";
+                nmrUnitPrice_sell.Value = 0;
+                return;
+            }
+
+            txtSpecialization_sell.Text = selectedItem.Specialization;
+            txtNumerous_sell.Text = selectedItem.Numerous.ToString();
+            nmrUnitPrice_sell.Value = Convert.ToDecimal(selectedItem.ExportUnitPrice);
+            nmrMaterialAmount_sell.Maximum = selectedItem.Numerous;
+            lblSpecialization_sell.Focus();
+        }
+
+        private void btnAddMaterial_sell_Click(object sender, EventArgs e)
+        {
+            lvwItem_sell.SelectedItems.Clear();
+            new fSupplier(() => LoadData_Supplier()).ShowDialog();
+        }
+
+        private void nmrMaterialAmount_sell_ValueChanged(object sender, EventArgs e)
+        {
+            TryEnableAddItem_Sell();
+        }
+
+        private void nmrMaterialAmount_sell_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (int)Keys.Enter)
+                btnAddItem_sell.PerformClick();
+        }
+
+        private void btnAddItem_sell_Click(object sender, EventArgs e)
+        {
+            var material = (cboItem_sell.SelectedItem as Models.Material)?.Clone();
+            if (material == null)
+                return;
+
+            material.ImportUnitPrice = Convert.ToDouble(nmrUnitPrice_sell.Value);
+            material.Numerous = Convert.ToInt32(nmrMaterialAmount_sell.Value);
+
+            var duplicatedItemIndex = _items_sell.FindIndex(x => x.Id == material.Id);
+            if (duplicatedItemIndex == -1)
+            {
+                _items_sell.Add(material);
+                lvwItem_sell.Items.Add(material.ToListViewItem(Models.Material.Type.Export));
+            }
+            else
+            {
+                _items_sell[duplicatedItemIndex].Numerous += material.Numerous;
+                lvwItem_sell.Items[duplicatedItemIndex] = _items_sell[duplicatedItemIndex]
+                   .ToListViewItem(Models.Material.Type.Import);
+
+            }
+
+            CalculateTotal_Sell();
+        }
+
+        private void btnDeleteItem_sell_Click(object sender, EventArgs e)
+        {
+            TryDeleteItem_Sell();
+        }
+
+        private void ResetButtons_Sell()
+        {
+            btnDeleteItem_sell.Enabled = false;
+        }
+
+        private void lvwItem_sell_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvwItem_sell.SelectedItems.Count <= 0)
+            {
+                ResetButtons_Sell();
+                return;
+            }
+
+            btnDeleteItem_sell.Enabled = true;
+        }
+
+        private void btnCreateReceipt_sell_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void btnPrintReceipt_sell_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelReceipt_sell_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region Sell Behaviors
+
+        private void Init_Sell()
+        {
+            lvwItem_sell.Columns.Add("ID", 0);
+            lvwItem_sell.Columns.Add("Tên vật liệu", 300, HorizontalAlignment.Left);
+            lvwItem_sell.Columns.Add("Đơn giá", 100, HorizontalAlignment.Left);
+            lvwItem_sell.Columns.Add("Số lượng", 100, HorizontalAlignment.Left);
+            lvwItem_sell.Columns.Add("Đơn vị", 75, HorizontalAlignment.Left);
+            lvwItem_sell.Columns.Add("Quy cách", 150, HorizontalAlignment.Left);
+            lvwItem_sell.Sortable = false;
+        }
+
+        private void BindData_Sell()
+        {
+            cboCustomer_sell.DataSource = _suppliers;
+            cboCustomer_sell.SelectedIndex = -1;
+            cboWarehouse_sell.DataSource = _warehouses;
+            cboWarehouse_sell.SelectedIndex = -1;
+            nmrUnitPrice_sell.Value = 0;
+        }
+
+        private void TryUpdateItem_Sell()
+        {
+            if (cboWarehouse_sell.SelectedIndex == -1)
+            {
+                cboItem_sell.Enabled = false;
+                return;
+            }
+
+            cboItem_sell.Enabled = true;
+            var selectedWarehouse = (Warehouse)cboWarehouse_sell.SelectedItem;
+            cboItem_sell.DataSource = selectedWarehouse.GetMaterials();
+            cboItem_sell.SelectedIndex = -1;
+        }
+
+        private void TryEnableAddItem_Sell()
+        {
+            btnAddItem_sell.Enabled = cboItem_sell.SelectedIndex != -1 &&
+                nmrMaterialAmount_sell.Value != 0;
+        }
+
+        private void CalculateTotal_Sell()
+        {
+            var sum = _items_sell.Select(x => x.ImportUnitPrice * x.Numerous).Sum(x => x);
+            txtTotalMoney_sell.Text = Helper.Format.String(sum);
+        }
+
+        private void TryDeleteItem_Sell()
+        {
+            if (lvwItem_sell.SelectedIndices.Count <= 0)
+                return;
+
+            var shouldDeleteItemIds = lvwItem_sell.SelectedIndices.Cast<int>().ToList();
+            var shouldDeleteSupplierNames = shouldDeleteItemIds.Select(x => _items_sell[x].Name);
+
+            if (ConfirmDeleteItem_Sell(shouldDeleteSupplierNames))
+                DeleteItem_Sell(shouldDeleteItemIds);
+        }
+
+        private static bool ConfirmDeleteItem_Sell(IEnumerable<string> shouldDeleteSupplierNames)
+        {
+            var shouldDeleteStr = string.Join(", ", shouldDeleteSupplierNames);
+            return MessageBox.Show(
+                string.Format(Resources.MessageBox_Message_ConfirmDeleteItemFromImport, shouldDeleteStr),
+                Resources.MessageBox_Caption_Notification,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            ) == DialogResult.Yes;
+        }
+
+        private void DeleteItem_Sell(List<int> shouldDeleteItemIds)
+        {
+            shouldDeleteItemIds.ForEach(idx =>
+            {
+                _items_sell.RemoveAt(idx);
+                lvwItem_sell.Items.RemoveAt(idx);
+            });
+
+            CalculateTotal_Sell();
+        }
+
+        #endregion
 
         #endregion
 
@@ -515,6 +767,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             {
                 _customerList_customer = CustomerService.GetAllCustomers();
                 cache = _customerList_customer;
+                cboItem_buy.DataSource = _customerList_customer;
             }
 
             cache.ForEach(supplier =>
@@ -552,7 +805,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 new fCustomer(this, FormMode.Write, customer, true).Show();
 
         }
-
 
         #endregion
 

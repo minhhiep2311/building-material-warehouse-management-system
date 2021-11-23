@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 
@@ -41,17 +40,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 
             try
             {
-                var MaterialId = Convert.ToInt32(DatabaseProvider.Instance.ExecuteScalar(query));
-                return MaterialId;
+                var materialId = Convert.ToInt32(DatabaseProvider.Instance.ExecuteScalar(query));
+                return materialId;
             }
             catch (Exception)
             {
                 return -1;
             }
         }
-        #endregion
-        
-        #region Delete
         #endregion
         
         #region Update
