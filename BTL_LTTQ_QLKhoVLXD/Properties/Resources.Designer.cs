@@ -116,6 +116,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Excel Document(*.xlsx)|*.xlsx.
+        /// </summary>
+        internal static string FileFilter_Excel {
+            get {
+                return ResourceManager.GetString("FileFilter_Excel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lưu.
         /// </summary>
         internal static string Form_ButtonSave {

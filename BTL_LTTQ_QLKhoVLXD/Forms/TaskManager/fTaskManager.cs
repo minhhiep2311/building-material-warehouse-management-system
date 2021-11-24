@@ -68,6 +68,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             Invoke((MethodInvoker)(() =>
             {
                 Init_Sell();
+                nmrMaterialAmount_buy.TextChanged += nmrMaterialAmount_Buy_TextChanged;
             }));
 
             Invoke((MethodInvoker)(() =>
@@ -155,7 +156,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #region Buy Properties
 
         private readonly List<Models.Material> _items_buy = new List<Models.Material>();
-        private double _total_sell;
 
         #endregion
 
@@ -206,7 +206,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             new fMaterial(this).ShowDialog();
         }
 
-        private void nmrMaterialAmount_Buy_ValueChanged(object sender, EventArgs e)
+        private void nmrMaterialAmount_Buy_TextChanged(object sender, EventArgs e)
         {
             TryEnableAddItem_Buy();
         }
@@ -215,6 +215,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             if (e.KeyChar == (int)Keys.Enter)
                 btnAddItem_buy.PerformClick();
+            else 
+                TryEnableAddItem_Buy();
         }
 
         private void btnAddItem_buy_Click(object sender, EventArgs e)
@@ -340,6 +342,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void TryEnableAddItem_Buy()
         {
             btnAddItem_buy.Enabled = cboItem_buy.SelectedIndex != -1 &&
+                nmrMaterialAmount_buy.Text != "" &&
                 nmrMaterialAmount_buy.Value != 0;
         }
 
@@ -1627,11 +1630,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void Export_Buy(ImportReceipt receipt)
         {
-            //Khai báo và khởi tạo đối tượng 
             var exApp = new Application();
             var exBook = exApp.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
             var exSheet = (Worksheet)exBook.Worksheets[1];
-            //Định dạng chung
+
             var employeeExcel = (Range)exSheet.Cells[1, 1];
             employeeExcel.Font.Size = 12;
             employeeExcel.Font.Bold = true;
@@ -1656,40 +1658,48 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             warehouseExcel.Font.Color = Color.Blue;
             warehouseExcel.Value = $"Kho hàng: {receipt.Warehouse.Name}";
 
-            var header = (Range)exSheet.Cells[5, 2];
+            var header = (Range)exSheet.Cells[6, 2];
             exSheet.Range["C6:E6"].Merge(true);
             header.Font.Size = 13;
             header.Font.Bold = true;
             header.Font.Color = Color.Red;
             header.Value = "HÓA ĐƠN NHẬP";
 
-
-            // Định dang tiêu đề bảng
-            exSheet.Range["A8:G7"].Font.Bold = true;
+            exSheet.Range["A8:G8"].Font.Bold = true;
             exSheet.Range["A8:G8"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
 
-            exSheet.Range["A8"].Value = "ID";
+            exSheet.Range["A8"].Value = "Mã hàng";
             exSheet.Range["B8"].Value = "Tên hàng";
-            exSheet.Range["B8"].ColumnWidth = 20;
             exSheet.Range["C8"].Value = "Quy cách";
             exSheet.Range["D8"].Value = "Đơn vị";
             exSheet.Range["E8"].Value = "Số lượng";
             exSheet.Range["F8"].Value = "Đơn giá";
             exSheet.Range["G8"].Value = "Tổng tiền";
 
-            //In dữ liệu
-            var i = 8;
+            exSheet.Range["B8"].ColumnWidth = 40;
+            exSheet.Range["C8"].ColumnWidth = 15;
+            exSheet.Range["D8"].ColumnWidth = 10;
+            exSheet.Range["E8"].ColumnWidth = 12;
+            exSheet.Range["F8"].ColumnWidth = 15;
+            exSheet.Range["G8"].ColumnWidth = 15;
+
+            var i = 9;
             for (var j = 0; j < receipt.Materials.Count; i++, j++)
             {
                 var material = receipt.Materials[j];
-                exSheet.Range[$"A{i}:F{i}"].Font.Bold = false;
+                //exSheet.Range[$"A{i}:F{i}"].Font.Bold = false;
                 exSheet.Range[$"A{i}"].Value = material.Id.ToString();
                 exSheet.Range[$"B{i}"].Value = material.Name;
                 exSheet.Range[$"C{i}"].Value = material.Specialization;
                 exSheet.Range[$"D{i}"].Value = material.Unit.Name;
                 exSheet.Range[$"E{i}"].Value = material.Numerous;
-                exSheet.Range[$"F{i}"].Value = material.ImportUnitPrice;
-                exSheet.Range[$"G{i}"].Value = material.ImportUnitPrice * material.Numerous;
+                exSheet.Range[$"F{i}"].Value = $"'{Helper.Format.String(material.ImportUnitPrice)}";
+                exSheet.Range[$"G{i}"].Value = $"'{Helper.Format.String(material.ImportUnitPrice * material.Numerous)}";
+
+                exSheet.Range[$"C{i}"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                exSheet.Range[$"D{i}"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                exSheet.Range[$"F{i}"].HorizontalAlignment = XlHAlign.xlHAlignRight;
+                exSheet.Range[$"G{i}"].HorizontalAlignment = XlHAlign.xlHAlignRight;
             }
 
             var totalReceipt = (Range)exSheet.Cells[i, 1];
@@ -1698,17 +1708,18 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             totalReceipt.HorizontalAlignment = XlHAlign.xlHAlignRight;
             totalReceipt.Value = "Tổng tiền";
 
-            exSheet.Range[$"G{i}"].Value = Helper.Format.String(receipt.TotalPrice);
+            exSheet.Range[$"G{i}"].Value = $"'{Helper.Format.String(receipt.TotalPrice)}";
+            exSheet.Range[$"G{i}"].HorizontalAlignment = XlHAlign.xlHAlignRight;
 
-            exSheet.Name = "hàng";
-            exBook.Activate();//kích hoạt
+            exSheet.Name = "Phieu_Nhap_Kho";
+            exBook.Activate();
 
-            dlgSave.Filter = "Excel Document(*.xlsx)|*.xlsx";
+            dlgSave.Filter = Resources.FileFilter_Excel;
             dlgSave.FilterIndex = 1;
             dlgSave.AddExtension = true;
             dlgSave.DefaultExt = ".xlsx";
             if (dlgSave.ShowDialog() == DialogResult.OK)
-                exBook.SaveAs(dlgSave.FileName);//Lưu file Excel
+                exBook.SaveAs(dlgSave.FileName);
 
             exApp.Quit();
         }

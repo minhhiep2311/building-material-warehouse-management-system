@@ -308,4 +308,7 @@
   <data name="MessageBox_Message_AddWarehouseSuccessfully" xml:space="preserve">
     <value>Thêm kho {0} thành công!</value>
   </data>
+  <data name="FileFilter_Excel" xml:space="preserve">
+	  <value>Excel Document(*.xlsx)|*.xlsx</value>
+  </data>
 </root>

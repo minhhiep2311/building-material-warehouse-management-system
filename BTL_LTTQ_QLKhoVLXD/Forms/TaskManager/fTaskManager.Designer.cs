@@ -891,7 +891,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.nmrMaterialAmount_buy.Size = new System.Drawing.Size(78, 23);
             this.nmrMaterialAmount_buy.TabIndex = 9;
             this.nmrMaterialAmount_buy.ThousandsSeparator = true;
-            this.nmrMaterialAmount_buy.ValueChanged += new System.EventHandler(this.nmrMaterialAmount_Buy_ValueChanged);
             this.nmrMaterialAmount_buy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nmrMaterialAmount_buy_KeyPress);
             // 
             // lblMaterialAmount_Buy
@@ -4102,7 +4101,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private BmwNumericUpDown nmrVat_sell;
         private System.Windows.Forms.Label lblVat_sell;
         private BmwButton btnWareHouse_material;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Panel pnlReason_sell;
         private System.Windows.Forms.TextBox txtReason_sell;
         private System.Windows.Forms.Label lblReason_sell;
