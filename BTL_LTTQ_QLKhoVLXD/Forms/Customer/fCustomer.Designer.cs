@@ -185,6 +185,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
             this.chkEdit.TabIndex = 22;
             this.chkEdit.Text = "Chỉnh sửa thông tin";
             this.chkEdit.UseVisualStyleBackColor = true;
+            this.chkEdit.CheckedChanged += new System.EventHandler(this.chkEdit_CheckedChanged);
             // 
             // pnlButton
             // 

@@ -24,14 +24,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             bool startEdit = false)
         {
             InitializeComponent();
+            _afterClosed = afterClosed;
             _mode = mode;
             _supplier = supplier;
             _startEdit = startEdit;
-            _afterClosed = afterClosed;
         }
 
-
         #region Events
+
         private void fAddSupplier_Load(object sender, EventArgs e)
         {
             InitControls();
@@ -93,6 +93,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
             else
                 TryChangeInformation();
         }
+
         #endregion
 
         #region Methods
@@ -162,7 +163,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
-                _afterClosed();
             }
             else
             {
@@ -174,6 +174,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
                 );
             }
 
+            _afterClosed();
             Close();
         }
 
@@ -283,7 +284,5 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Supplier
         }
 
         #endregion
-
-
     }
 }

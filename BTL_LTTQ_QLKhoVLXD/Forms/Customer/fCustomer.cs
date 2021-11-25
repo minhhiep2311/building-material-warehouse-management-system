@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using BTL_LTTQ_QLKhoVLXD.Forms.TaskManager;
 using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
@@ -12,20 +11,23 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
 {
     public partial class fCustomer : Form
     {
-        private readonly fTaskManager _parentForm;
+        private readonly Action _afterClosed;
         private readonly Models.Customer _customer;
         private readonly FormMode _mode;
         private readonly bool _startEdit;
 
-        public fCustomer(fTaskManager form,FormMode mode = FormMode.Create,Models.Customer customer = null, bool startEdit = false)
+        public fCustomer(
+            Action afterClosed = null,
+            FormMode mode = FormMode.Create,
+            Models.Customer customer = null,
+            bool startEdit = false)
         {
             InitializeComponent();
+            _afterClosed = afterClosed;
             _mode = mode;
             _customer = customer;
-            _parentForm = form;
             _startEdit = startEdit;
         }
-
 
         #region Events
 
@@ -34,11 +36,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
             InitControls();
             BindData();
             ConfigureAccessibility();
-        }
-
-        private void fCustomer_FormClosing(object sender, FormClosingEventArgs e)
-        {
-           _parentForm.LoadData_Customer();
         }
 
         private void chkEdit_CheckedChanged(object sender, EventArgs e)
@@ -96,7 +93,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
         {
             Close();
         }
-
 
         #endregion
 
@@ -178,7 +174,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
                     MessageBoxIcon.Error
                 );
 
-            _parentForm.LoadData_Customer();
+            _afterClosed();
             Close();
         }
 
@@ -190,7 +186,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
 
         private void TryChangeInformation()
         {
-            var id = _customer.Id;
             var name = txtName.Text;
             var address = txtAddress.Text;
             var phoneNumbers = lvwPhone.Items
@@ -233,24 +228,22 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
                     MessageBoxIcon.Error
                 );
 
+            _afterClosed();
             Close();
         }
 
         private bool ValidInput()
         {
-            if (txtName.Text == "" ||
-                txtAddress.Text == "")
-            {
-                MessageBox.Show(
-                    Resources.MessageBox_Message_EnterFulllInfo,
-                    Resources.MessageBox_Caption_Notification,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-                return false;
-            }
+            if (txtName.Text != "" && txtAddress.Text != "")
+                return true;
 
-            return true;
+            MessageBox.Show(
+                Resources.MessageBox_Message_EnterFulllInfo,
+                Resources.MessageBox_Caption_Notification,
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+            );
+            return false;
         }
 
         private bool ConfirmChange()
@@ -290,7 +283,5 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
         }
 
         #endregion
-
-        
     }
 }

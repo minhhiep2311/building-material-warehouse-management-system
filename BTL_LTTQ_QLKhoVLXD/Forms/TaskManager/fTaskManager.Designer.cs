@@ -1251,7 +1251,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.nmrVat_sell.Size = new System.Drawing.Size(62, 23);
             this.nmrVat_sell.TabIndex = 9;
             this.nmrVat_sell.ThousandsSeparator = true;
-            this.nmrVat_sell.ValueChanged += new System.EventHandler(this.nmrVat_sell_ValueChanged);
             // 
             // lblVat_sell
             // 

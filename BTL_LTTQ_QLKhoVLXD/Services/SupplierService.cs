@@ -38,7 +38,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 
         public static int CreateSupplier(Supplier supplier)
         {
-            var query = "INSERT INTO supplier " +
+            var query = "INSERT INTO supplier(name, address) " +
                 "OUTPUT INSERTED.ID " +
                 $"VALUES (N'{supplier.Name}', " +
                 $"N'{supplier.Address}')";

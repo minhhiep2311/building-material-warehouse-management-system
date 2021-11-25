@@ -176,6 +176,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             new fSupplier(() =>
             {
                 LoadData_Supplier();
+                cboSupplier_buy.DataSource = _suppliers;
                 cboSupplier_buy.SelectedIndex = -1;
             }).ShowDialog();
         }
@@ -203,16 +204,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             new fMaterial(this).ShowDialog();
         }
 
-        private void nmrMaterialAmount_Buy_TextChanged(object sender, EventArgs e)
-        {
-            TryEnableAddItem_Buy();
-        }
-
         private void nmrMaterialAmount_buy_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (int)Keys.Enter)
                 btnAddItem_buy.PerformClick();
-            else 
+            else
                 TryEnableAddItem_Buy();
         }
 
@@ -259,9 +255,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             btnDeleteItem_buy.Enabled = true;
         }
 
-        private void nmrVat_sell_ValueChanged(object sender, EventArgs e)
+        private void nmrMaterialAmount_Buy_TextChanged(object sender, EventArgs e)
         {
-
+            TryEnableAddItem_Buy();
         }
 
         private void btnCreateReceipt_Buy_Click(object sender, EventArgs e)
@@ -278,10 +274,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Information
                 ) == DialogResult.Yes;
+
                 if (export)
-                {
                     ExportService.Export(receipt);
-                }
             }
             else
             {
@@ -296,6 +291,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnCancel_buy_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show(Resources.MessageBox_Message_AbortReceipt,
+                Resources.MessageBox_Caption_Notification,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning) != DialogResult.Yes)
+                return;
+
             cboSupplier_buy.SelectedIndex = -1;
             txtAddress_buy.Text = "";
             cboWarehouse_buy.SelectedIndex = -1;
@@ -446,7 +447,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnAddCustomer_sell_Click(object sender, EventArgs e)
         {
-            new fCustomer(this).ShowDialog();
+            new fCustomer(() => LoadData_Customer()).ShowDialog();
         }
 
         private void cboWarehouse_sell_SelectedIndexChanged(object sender, EventArgs e)
@@ -476,7 +477,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void btnAddMaterial_sell_Click(object sender, EventArgs e)
         {
             lvwItem_sell.SelectedItems.Clear();
-            new fSupplier(() => LoadData_Supplier()).ShowDialog();
+            new fSupplier(() =>
+            {
+                LoadData_Supplier();
+                cboCustomer_sell.DataSource = _suppliers;
+                cboCustomer_sell.SelectedIndex = -1;
+            }).ShowDialog();
         }
 
         private void nmrMaterialAmount_sell_ValueChanged(object sender, EventArgs e)
@@ -791,7 +797,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void btnAdd_Customer_Click(object sender, EventArgs e)
         {
             lvwCustomer_customer.SelectedItems.Clear();
-            new fCustomer(this).ShowDialog();
+            new fCustomer(() => LoadData_Customer()).ShowDialog();
         }
 
         private void btnEdit_Customer_Click(object sender, EventArgs e)
@@ -870,8 +876,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             var customer = Helper.Control.FirstSelected(_customerList_customer, lvwCustomer_customer);
             if (customer != null)
-                new fCustomer(this, Enum.FormMode.Write, customer, true).Show();
-
+                new fCustomer(
+                    () => LoadData_Customer(),
+                    Enum.FormMode.Write,
+                    customer, 
+                    true
+                ).Show();
         }
 
         #endregion
@@ -1004,7 +1014,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             {
                 _suppliers = SupplierService.GetAllSuppliers();
                 cache = _suppliers;
-                cboSupplier_buy.DataSource = _suppliers;
             }
 
             cache.ForEach(supplier =>

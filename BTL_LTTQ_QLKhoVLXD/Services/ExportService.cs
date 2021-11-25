@@ -12,14 +12,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 {
     public class ExportService
     {
-        private static SaveFileDialog dlgSave = new SaveFileDialog();
+        private static readonly SaveFileDialog DlgSave = new SaveFileDialog();
 
         public static void Init()
         {
-            dlgSave.Filter = Resources.FileFilter_Excel;
-            dlgSave.FilterIndex = 1;
-            dlgSave.AddExtension = true;
-            dlgSave.DefaultExt = ".xlsx";
+            DlgSave.Filter = Resources.FileFilter_Excel;
+            DlgSave.FilterIndex = 1;
+            DlgSave.AddExtension = true;
+            DlgSave.DefaultExt = ".xlsx";
         }
 
         public static void Export(ImportReceipt receipt)
@@ -107,8 +107,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             exSheet.Name = "Phieu_Nhap_Kho";
             exBook.Activate();
 
-            if (dlgSave.ShowDialog() == DialogResult.OK)
-                exBook.SaveAs(dlgSave.FileName);
+            if (DlgSave.ShowDialog() == DialogResult.OK)
+                exBook.SaveAs(DlgSave.FileName);
 
             exApp.Quit();
         }
@@ -186,8 +186,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             exSheet.Name = "Khach_Hang";
             exBook.Activate();
 
-            if (dlgSave.ShowDialog() == DialogResult.OK)
-                exBook.SaveAs(dlgSave.FileName);
+            if (DlgSave.ShowDialog() == DialogResult.OK)
+                exBook.SaveAs(DlgSave.FileName);
 
             exApp.Quit();
         }

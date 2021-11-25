@@ -197,6 +197,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bạn có chắc chắn muốn hủy hóa đơn này không?.
+        /// </summary>
+        internal static string MessageBox_Message_AbortReceipt {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_AbortReceipt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tên đăng nhập đã tồn tại! Vui lòng chọn tên đăng nhập khác.
         /// </summary>
         internal static string MessageBox_Message_AccountExisted {
