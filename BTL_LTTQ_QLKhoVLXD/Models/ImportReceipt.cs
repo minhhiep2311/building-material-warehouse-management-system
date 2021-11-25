@@ -2,7 +2,7 @@
 
 namespace BTL_LTTQ_QLKhoVLXD.Models
 {
-    internal class ImportReceipt
+    public class ImportReceipt
     {
         public int Id { get; set; }
         public User Employee { get; }

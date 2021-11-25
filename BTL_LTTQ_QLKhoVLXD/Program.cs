@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.Login;
+using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Settings;
 
 namespace BTL_LTTQ_QLKhoVLXD
@@ -18,6 +19,7 @@ namespace BTL_LTTQ_QLKhoVLXD
 
             MessageBoxManager.Register();
 
+            ExportService.Init();
             Application.Run(new fLogin());
 
             MessageBoxManager.Unregister();
