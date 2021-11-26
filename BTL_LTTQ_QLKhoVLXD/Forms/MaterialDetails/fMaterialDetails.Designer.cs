@@ -1,7 +1,7 @@
 ﻿
 namespace BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails
 {
-    partial class fMaterialDetail
+    partial class fMaterialDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -187,7 +187,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails
             this.lvwWarehouse.UseCompatibleStateImageBehavior = false;
             this.lvwWarehouse.View = System.Windows.Forms.View.Details;
             // 
-            // fMaterialDetail
+            // fMaterialDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -208,7 +208,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails
             this.Controls.Add(this.lblId);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "fMaterialDetail";
+            this.Name = "fMaterialDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi tiết vật liệu";
             this.Load += new System.EventHandler(this.fMaterialDetail_Load);

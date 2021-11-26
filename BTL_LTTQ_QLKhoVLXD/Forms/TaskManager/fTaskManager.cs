@@ -1640,7 +1640,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnDetails_material_Click(object sender, EventArgs e)
         {
-            new fMaterialDetail().ShowDialog(); 
+            new fMaterialDetails().ShowDialog(); 
         }
     }
 }
