@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Services;
 
 namespace BTL_LTTQ_QLKhoVLXD.Models
@@ -41,7 +42,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
             return new Customer(id, name, address);
         }
-
+        public ListViewItem ToListViewItem()
+        {
+            var row = new ListViewItem(Id.ToString());
+            row.SubItems.Add(Name);
+            row.SubItems.Add(Address);
+            return row;
+        }
         #endregion
 
         #region Private Methods

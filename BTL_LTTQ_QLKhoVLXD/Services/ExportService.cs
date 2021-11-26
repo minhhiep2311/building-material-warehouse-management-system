@@ -28,7 +28,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             var exBook = exApp.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
             var exSheet = (Worksheet)exBook.Worksheets[1];
 
-            var employeeExcel = (Range)exSheet.Cells[1, 1];
+            var i = 9;
+
+            var companyExel = (Range)exSheet.Cells[1, 1];
+            companyExel.Font.Size = 13;
+            companyExel.Font.Bold = true;
+            companyExel.Font.Color = Color.Blue;
+            companyExel.Value = "VẬT LIỆU XÂY DỰNG AN HIỆP - CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ AN HIỆP";
+
+            var employeeExcel = (Range)exSheet.Cells[i + 5, 6];
             employeeExcel.Font.Size = 12;
             employeeExcel.Font.Bold = true;
             employeeExcel.Font.Color = Color.Blue;
@@ -53,8 +61,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             warehouseExcel.Value = $"Kho hàng: {receipt.Warehouse.Name}";
 
             var header = (Range)exSheet.Cells[6, 3];
-            exSheet.Range["C6:E6"].Merge(true);
-            header.Font.Size = 13;
+            exSheet.Range["C6:D6"].Merge(true);
+            header.Font.Size = 14;
             header.Font.Bold = true;
             header.Font.Color = Color.Red;
             header.Value = "HÓA ĐƠN NHẬP";
@@ -77,7 +85,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             exSheet.Range["F8"].ColumnWidth = 15;
             exSheet.Range["G8"].ColumnWidth = 15;
 
-            var i = 9;
+            
             for (var j = 0; j < receipt.Materials.Count; i++, j++)
             {
                 var material = receipt.Materials[j];
@@ -126,8 +134,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             header.Value = "DANH SÁCH KHÁCH HÀNG";
 
             var time = (Range)exSheet.Cells[4, 2];
-            time.Font.Size = 13;
-            time.Font.Bold = true;
+            time.Font.Size = 12;
             time.Value = "Thời gian tạo danh sách: " + DateTime.Now;
 
             exSheet.Range["A6:G6"].Font.Bold = true;
@@ -183,7 +190,85 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 }
             }
 
-            exSheet.Name = "Khach_Hang";
+            exSheet.Name = "Khách hàng";
+            exBook.Activate();
+
+            if (dlgSave.ShowDialog() == DialogResult.OK)
+                exBook.SaveAs(dlgSave.FileName);
+
+            exApp.Quit();
+        }
+
+        public static void Export(List<Supplier> suppliers)
+        {
+            var exApp = new Application();
+            var exBook = exApp.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
+            var exSheet = (Worksheet)exBook.Worksheets[1];
+
+            var header = (Range)exSheet.Cells[2, 2];
+            exSheet.Range["B2:E2"].Merge(true);
+            header.Font.Size = 13;
+            header.Font.Bold = true;
+            header.Value = "DANH SÁCH NHÀ CUNG CẤP";
+
+            var time = (Range)exSheet.Cells[4, 2];
+            time.Font.Size = 12;
+            time.Value = "Thời gian tạo danh sách: " + DateTime.Now;
+
+            exSheet.Range["A6:G6"].Font.Bold = true;
+            exSheet.Range["A6:G6"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
+
+            exSheet.Range["A6"].Value = "STT";
+            exSheet.Range["B6"].Value = "Tên nhà cung cấp";
+            exSheet.Range["C6"].Value = "Địa chỉ";
+            exSheet.Range["D6"].Value = "Số điện thoại";
+
+            exSheet.Range["A6"].ColumnWidth = 5;
+            exSheet.Range["B6"].ColumnWidth = 60;
+            exSheet.Range["C6"].ColumnWidth = 100;
+            exSheet.Range["D6"].ColumnWidth = 15;
+
+            var i = 7;
+            for (var j = 0; j < suppliers.Count; i++, j++)
+            {
+                var supplier = suppliers[j];
+                exSheet.Range[$"A{i}"].Value = j + 1;
+                exSheet.Range[$"B{i}"].Value = supplier.Name;
+                exSheet.Range[$"C{i}"].Value = supplier.Address;
+
+                switch (supplier.PhoneNumber.Count)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        exSheet.Range[$"D{i}"].Value = $"'{supplier.PhoneNumber[0]}";
+                        break;
+                    default:
+                        {
+                            var startRow = i;
+                            for (var k = 0; k < supplier.PhoneNumber.Count; k++)
+                            {
+                                exSheet.Range[$"D{i}"].Value = $"'{supplier.PhoneNumber[k]}";
+                                if (k < supplier.PhoneNumber.Count - 1)
+                                {
+                                    i++;
+                                }
+                            }
+
+                            exSheet.Range[$"A{startRow}:A{i}"].Merge();
+                            exSheet.Range[$"B{startRow}:B{i}"].Merge();
+                            exSheet.Range[$"C{startRow}:C{i}"].Merge();
+
+                            exSheet.Range[$"A{startRow}:A{i}"].VerticalAlignment = XlVAlign.xlVAlignCenter;
+                            exSheet.Range[$"B{startRow}:B{i}"].VerticalAlignment = XlVAlign.xlVAlignCenter;
+                            exSheet.Range[$"C{startRow}:C{i}"].VerticalAlignment = XlVAlign.xlVAlignCenter;
+
+                            break;
+                        }
+                }
+            }
+
+            exSheet.Name = "Nhà cung cấp";
             exBook.Activate();
 
             if (dlgSave.ShowDialog() == DialogResult.OK)

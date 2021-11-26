@@ -5,11 +5,11 @@ using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee;
 using BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation;
 using BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount;
-using BTL_LTTQ_QLKhoVLXD.Forms.Customer;
+using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
 using BTL_LTTQ_QLKhoVLXD.Forms.Employee;
 using BTL_LTTQ_QLKhoVLXD.Forms.Material;
-using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
 using BTL_LTTQ_QLKhoVLXD.Forms.Supplier;
+using BTL_LTTQ_QLKhoVLXD.Forms.Customer;
 using BTL_LTTQ_QLKhoVLXD.Forms.WareHouse;
 using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
@@ -17,6 +17,7 @@ using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 using CheckBox = System.Windows.Forms.CheckBox;
 using Enum = BTL_LTTQ_QLKhoVLXD.Utils.Enum;
+using BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
@@ -883,6 +884,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #region Supplier Properties
 
         private Helper.Debounce _debounce_supplier;
+        private List<Models.Supplier> _supplierList_supplier;
 
         #endregion
 
@@ -974,7 +976,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnExport_supplier_Click(object sender, EventArgs e)
         {
-
+            
+            ExportService.Export(_suppliers);
         }
 
 
@@ -1010,6 +1013,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             cache.ForEach(supplier =>
                 {
                     lvwSupplier_supplier.Items.Add(supplier.ToListViewItem());
+
                 }
             );
         }
@@ -1624,5 +1628,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #endregion
 
         #endregion
+
+        private void btnDetails_material_Click(object sender, EventArgs e)
+        {
+            new fMaterialDetail().ShowDialog(); 
+        }
     }
 }
