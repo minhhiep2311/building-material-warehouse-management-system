@@ -54,7 +54,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlTotalMoney = new System.Windows.Forms.Panel();
             this.lblTotalMoney_Buy = new System.Windows.Forms.Label();
             this.txtTotalMoney_buy = new System.Windows.Forms.TextBox();
-            this.btnCreateReceipt_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnCreateReceipt_buy = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlItem_buy = new System.Windows.Forms.Panel();
             this.btnDeleteItem_buy = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlSpecialization_buy = new System.Windows.Forms.Panel();
@@ -530,7 +530,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlBottom_buy.Controls.Add(this.btnCancel_buy);
             this.pnlBottom_buy.Controls.Add(this.pnlTotalMoney);
-            this.pnlBottom_buy.Controls.Add(this.btnCreateReceipt_Buy);
+            this.pnlBottom_buy.Controls.Add(this.btnCreateReceipt_buy);
             this.pnlBottom_buy.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBottom_buy.Location = new System.Drawing.Point(3, 409);
             this.pnlBottom_buy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -582,21 +582,21 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtTotalMoney_buy.Size = new System.Drawing.Size(255, 26);
             this.txtTotalMoney_buy.TabIndex = 13;
             // 
-            // btnCreateReceipt_Buy
+            // btnCreateReceipt_buy
             // 
-            this.btnCreateReceipt_Buy.BackColor = System.Drawing.Color.White;
-            this.btnCreateReceipt_Buy.Enabled = false;
-            this.btnCreateReceipt_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateReceipt_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnCreateReceipt_Buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnCreateReceipt_Buy.Location = new System.Drawing.Point(12, 7);
-            this.btnCreateReceipt_Buy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCreateReceipt_Buy.Name = "btnCreateReceipt_Buy";
-            this.btnCreateReceipt_Buy.Size = new System.Drawing.Size(172, 34);
-            this.btnCreateReceipt_Buy.TabIndex = 14;
-            this.btnCreateReceipt_Buy.Text = "Tạo hóa đơn";
-            this.btnCreateReceipt_Buy.UseVisualStyleBackColor = false;
-            this.btnCreateReceipt_Buy.Click += new System.EventHandler(this.btnCreateReceipt_Buy_Click);
+            this.btnCreateReceipt_buy.BackColor = System.Drawing.Color.White;
+            this.btnCreateReceipt_buy.Enabled = false;
+            this.btnCreateReceipt_buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateReceipt_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCreateReceipt_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnCreateReceipt_buy.Location = new System.Drawing.Point(12, 7);
+            this.btnCreateReceipt_buy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreateReceipt_buy.Name = "btnCreateReceipt_buy";
+            this.btnCreateReceipt_buy.Size = new System.Drawing.Size(172, 34);
+            this.btnCreateReceipt_buy.TabIndex = 14;
+            this.btnCreateReceipt_buy.Text = "Tạo hóa đơn";
+            this.btnCreateReceipt_buy.UseVisualStyleBackColor = false;
+            this.btnCreateReceipt_buy.Click += new System.EventHandler(this.btnCreateReceipt_Buy_Click);
             // 
             // pnlItem_buy
             // 
@@ -828,6 +828,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.cboWarehouse_buy.Name = "cboWarehouse_buy";
             this.cboWarehouse_buy.Size = new System.Drawing.Size(669, 28);
             this.cboWarehouse_buy.TabIndex = 4;
+            this.cboWarehouse_buy.SelectedIndexChanged += new System.EventHandler(this.cboWarehouse_buy_SelectedIndexChanged);
             // 
             // lblWarehouse_buy
             // 
@@ -1040,9 +1041,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lblReason_sell.AutoSize = true;
             this.lblReason_sell.Location = new System.Drawing.Point(8, 10);
             this.lblReason_sell.Name = "lblReason_sell";
-            this.lblReason_sell.Size = new System.Drawing.Size(61, 20);
+            this.lblReason_sell.Size = new System.Drawing.Size(55, 20);
             this.lblReason_sell.TabIndex = 0;
-            this.lblReason_sell.Text = "Còn lại";
+            this.lblReason_sell.Text = "Lý do:";
             // 
             // pnlVat_sell
             // 
@@ -1071,11 +1072,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.nmrVat_sell.DecimalPlaces = 2;
             this.nmrVat_sell.Location = new System.Drawing.Point(62, 7);
             this.nmrVat_sell.Margin = new System.Windows.Forms.Padding(2);
-            this.nmrVat_sell.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
-            0});
             this.nmrVat_sell.Name = "nmrVat_sell";
             this.nmrVat_sell.Size = new System.Drawing.Size(62, 26);
             this.nmrVat_sell.TabIndex = 9;
@@ -3515,7 +3511,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Panel pnlTotalMoney;
         private System.Windows.Forms.Label lblTotalMoney_Buy;
         private System.Windows.Forms.TextBox txtTotalMoney_buy;
-        private BmwButton btnCreateReceipt_Buy;
+        private BmwButton btnCreateReceipt_buy;
         private System.Windows.Forms.Panel pnlItem_buy;
         private BmwButton btnDeleteItem_buy;
         private System.Windows.Forms.Panel pnlSpecialization_buy;

@@ -337,9 +337,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         ///   Looks up a localized string similar to Bạn có chắc chắc muốn xóa khỏi hóa đơn các vật liệu sau không?
         ///{0}.
         /// </summary>
-        internal static string MessageBox_Message_ConfirmDeleteItemFromImport {
+        internal static string MessageBox_Message_ConfirmDeleteItemFromReceipt {
             get {
-                return ResourceManager.GetString("MessageBox_Message_ConfirmDeleteItemFromImport", resourceCulture);
+                return ResourceManager.GetString("MessageBox_Message_ConfirmDeleteItemFromReceipt", resourceCulture);
             }
         }
         

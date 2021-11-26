@@ -126,6 +126,107 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             exApp.Quit();
         }
 
+        public static void Export(ExportReceipt receipt)
+        {
+            var exApp = new Application();
+            var exBook = exApp.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
+            var exSheet = (Worksheet)exBook.Worksheets[1];
+
+            var companyExel = (Range)exSheet.Cells[1, 1];
+            companyExel.Font.Size = 13;
+            companyExel.Font.Bold = true;
+            companyExel.Font.Color = Color.Blue;
+            companyExel.Value = "VẬT LIỆU XÂY DỰNG AN HIỆP - CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ AN HIỆP";
+
+            var supplierExcel = (Range)exSheet.Cells[2, 1];
+            supplierExcel.Font.Size = 12;
+            supplierExcel.Font.Bold = true;
+            supplierExcel.Font.Color = Color.Blue;
+            supplierExcel.Value = $"Nhà cung cấp: {receipt.Customer.Name}";
+
+            var idExcel = (Range)exSheet.Cells[3, 1];
+            idExcel.Font.Size = 12;
+            idExcel.Font.Bold = true;
+            idExcel.Font.Color = Color.Blue;
+            idExcel.Value = $"Mã hóa đơn: {receipt.Id}";
+
+            var warehouseExcel = (Range)exSheet.Cells[4, 1];
+            warehouseExcel.Font.Size = 12;
+            warehouseExcel.Font.Bold = true;
+            warehouseExcel.Font.Color = Color.Blue;
+            warehouseExcel.Value = $"Kho hàng: {receipt.Warehouse.Name}";
+
+            var header = (Range)exSheet.Cells[6, 3];
+            exSheet.Range["C6:D6"].Merge(true);
+            header.Font.Size = 14;
+            header.Font.Bold = true;
+            header.Font.Color = Color.Red;
+            header.Value = "HÓA ĐƠN NHẬP";
+
+            exSheet.Range["A8:G8"].Font.Bold = true;
+            exSheet.Range["A8:G8"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
+
+            exSheet.Range["A8"].Value = "Mã hàng";
+            exSheet.Range["B8"].Value = "Tên hàng";
+            exSheet.Range["C8"].Value = "Quy cách";
+            exSheet.Range["D8"].Value = "Đơn vị";
+            exSheet.Range["E8"].Value = "Số lượng";
+            exSheet.Range["F8"].Value = "Đơn giá";
+            exSheet.Range["G8"].Value = "Tổng tiền";
+
+            exSheet.Range["B8"].ColumnWidth = 40;
+            exSheet.Range["C8"].ColumnWidth = 15;
+            exSheet.Range["D8"].ColumnWidth = 10;
+            exSheet.Range["E8"].ColumnWidth = 12;
+            exSheet.Range["F8"].ColumnWidth = 15;
+            exSheet.Range["G8"].ColumnWidth = 15;
+
+            var i = 9;
+
+            for (var j = 0; j < receipt.Materials.Count; i++, j++)
+            {
+                var material = receipt.Materials[j];
+                exSheet.Range[$"A{i}"].Value = material.Id.ToString();
+                exSheet.Range[$"B{i}"].Value = material.Name;
+                exSheet.Range[$"C{i}"].Value = material.Specialization;
+                exSheet.Range[$"D{i}"].Value = material.Unit.Name;
+                exSheet.Range[$"E{i}"].Value = material.Numerous;
+                exSheet.Range[$"F{i}"].Value = $"'{Helper.Format.String(material.ImportUnitPrice)}";
+                exSheet.Range[$"G{i}"].Value = $"'{Helper.Format.String(material.ImportUnitPrice * material.Numerous)}";
+
+                exSheet.Range[$"C{i}"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                exSheet.Range[$"D{i}"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                exSheet.Range[$"F{i}"].HorizontalAlignment = XlHAlign.xlHAlignRight;
+                exSheet.Range[$"G{i}"].HorizontalAlignment = XlHAlign.xlHAlignRight;
+            }
+
+            var totalReceipt = (Range)exSheet.Cells[i, 1];
+            exSheet.Range[$"A{i}:F{i}"].Merge(true);
+            totalReceipt.Font.Bold = true;
+            totalReceipt.HorizontalAlignment = XlHAlign.xlHAlignRight;
+            totalReceipt.Value = "Tổng tiền";
+            exSheet.Range[$"G{i}"].Value = $"'{Helper.Format.String(receipt.TotalPrice)}";
+            exSheet.Range[$"G{i}"].HorizontalAlignment = XlHAlign.xlHAlignRight;
+
+            var border = exSheet.Range[$"A8:G{i}"].Borders;
+            SetBorder(border);
+
+
+            var employeeExcel = (Range)exSheet.Cells[i + 3, 5];
+            employeeExcel.Font.Size = 12;
+            employeeExcel.Font.Bold = true;
+            employeeExcel.Font.Color = Color.Blue;
+            employeeExcel.Value = $"Nhân viên: {receipt.Employee.Name}";
+
+            exSheet.Name = "Phieu_Nhap_Kho";
+            exBook.Activate();
+
+            if (DlgSave.ShowDialog() == DialogResult.OK)
+                exBook.SaveAs(DlgSave.FileName);
+
+            exApp.Quit();
+        }
+
         #endregion
 
         #region Export Customer
@@ -301,6 +402,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             border.ColorIndex = XlConstants.xlAutomatic;
             border.TintAndShade = 0;
             border.Weight = XlBorderWeight.xlThin;
+        }
+
+        internal static void Export(object receipt)
+        {
+            throw new NotImplementedException();
         }
     }
 }

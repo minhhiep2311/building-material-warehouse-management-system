@@ -295,7 +295,7 @@
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="MessageBox_Message_ConfirmDeleteItemFromImport" xml:space="preserve">
+  <data name="MessageBox_Message_ConfirmDeleteItemFromReceipt" xml:space="preserve">
     <value>Bạn có chắc chắc muốn xóa khỏi hóa đơn các vật liệu sau không?
 {0}</value>
   </data>

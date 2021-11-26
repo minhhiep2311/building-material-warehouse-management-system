@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BTL_LTTQ_QLKhoVLXD.Models
 {
-    internal class ExportReceipt
+    public class ExportReceipt
     {
         public int Id { get; set; }
         public User Employee { get; }
-        public Supplier Supplier { get; }
+        public Customer Customer { get; }
         public Warehouse Warehouse { get; }
         public List<Material> Materials { get; }
         public double TotalPrice { get; }
@@ -19,19 +15,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
         public ExportReceipt(
             User employee,
-            Supplier supplier,
+            Customer customer,
             Warehouse warehouse,
             List<Material> materials,
             double totalPrice,
             double vat, 
             string reason)
-            : this(-1, employee, supplier, warehouse, materials, totalPrice, vat, reason)
+            : this(-1, employee, customer, warehouse, materials, totalPrice, vat, reason)
         { }
 
         public ExportReceipt(
             int id,
             User employee,
-            Supplier supplier,
+            Customer customer,
             Warehouse warehouse,
             List<Material> materials,
             double totalPrice, 
@@ -40,7 +36,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
         {
             Id = id;
             Employee = employee;
-            Supplier = supplier;
+            Customer = customer;
             Warehouse = warehouse;
             Materials = materials;
             TotalPrice = totalPrice;
