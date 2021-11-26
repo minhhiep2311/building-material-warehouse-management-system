@@ -417,6 +417,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tên kho bị trùng! Hãy thử tên khác.
+        /// </summary>
+        internal static string MessageBox_Message_DuplicateWarehouse {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_DuplicateWarehouse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hãy nhập đầy đủ thông tin tài khoản!.
         /// </summary>
         internal static string MessageBox_Message_EnterFullAccountInfo {

@@ -37,6 +37,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
             var area = Convert.ToDouble(txtArea.Text);
             var newWareHouse = new Models.Warehouse(-1, name, area);
 
+            if (WarehouseExisted(newWareHouse))
+            {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_DuplicateWarehouse,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                return;
+            }
+
             if (CreateWarehouse(newWareHouse))
             {
                 MessageBox.Show(
@@ -73,6 +84,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.WareHouse
             }
 
             return valid;
+        }
+
+        private static bool WarehouseExisted(Models.Warehouse warehouse)
+        {
+            return WarehouseService.CheckExists(warehouse);
         }
 
         private static bool CreateWarehouse(Models.Warehouse warehouse)

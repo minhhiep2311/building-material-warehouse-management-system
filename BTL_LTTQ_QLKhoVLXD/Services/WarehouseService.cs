@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 
@@ -31,13 +32,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             return materialsList;
         }
 
-        public static bool Check(Warehouse warehouse)
+        public static bool CheckExists(Warehouse warehouse)
         {
-            var query = $"INSERT INTO warehouse(name, area) VALUES (N'{warehouse.Name}', {warehouse.Area})";
-            var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
+            var query = $"SELECT COUNT(*) FROM warehouse WHERE name=N'{warehouse.Name}'";
+            var warehouseExisted = Convert.ToInt32(DatabaseProvider.Instance.ExecuteScalar(query)) > 0;
 
-            return rowAffected > 0;
-        } 
+            return warehouseExisted;
+        }
 
         #endregion
 
