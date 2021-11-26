@@ -7,6 +7,7 @@ using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 using Microsoft.Office.Interop.Excel;
 using Application = Microsoft.Office.Interop.Excel.Application;
+using XlConstants = Microsoft.Office.Interop.Excel.Constants;
 
 namespace BTL_LTTQ_QLKhoVLXD.Services
 {
@@ -22,25 +23,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             DlgSave.DefaultExt = ".xlsx";
         }
 
+        #region Export Receipt
+
         public static void Export(ImportReceipt receipt)
         {
             var exApp = new Application();
             var exBook = exApp.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
             var exSheet = (Worksheet)exBook.Worksheets[1];
 
-            var i = 9;
-
             var companyExel = (Range)exSheet.Cells[1, 1];
             companyExel.Font.Size = 13;
             companyExel.Font.Bold = true;
             companyExel.Font.Color = Color.Blue;
             companyExel.Value = "VẬT LIỆU XÂY DỰNG AN HIỆP - CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ AN HIỆP";
-
-            var employeeExcel = (Range)exSheet.Cells[i + 5, 6];
-            employeeExcel.Font.Size = 12;
-            employeeExcel.Font.Bold = true;
-            employeeExcel.Font.Color = Color.Blue;
-            employeeExcel.Value = $"Nhân viên: {receipt.Employee.Name}";
 
             var supplierExcel = (Range)exSheet.Cells[2, 1];
             supplierExcel.Font.Size = 12;
@@ -85,7 +80,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             exSheet.Range["F8"].ColumnWidth = 15;
             exSheet.Range["G8"].ColumnWidth = 15;
 
-            
+            var i = 9;
+
             for (var j = 0; j < receipt.Materials.Count; i++, j++)
             {
                 var material = receipt.Materials[j];
@@ -108,9 +104,18 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             totalReceipt.Font.Bold = true;
             totalReceipt.HorizontalAlignment = XlHAlign.xlHAlignRight;
             totalReceipt.Value = "Tổng tiền";
-
             exSheet.Range[$"G{i}"].Value = $"'{Helper.Format.String(receipt.TotalPrice)}";
             exSheet.Range[$"G{i}"].HorizontalAlignment = XlHAlign.xlHAlignRight;
+
+            var border = exSheet.Range[$"A8:G{i}"].Borders;
+            SetBorder(border);
+
+
+            var employeeExcel = (Range)exSheet.Cells[i + 3, 5];
+            employeeExcel.Font.Size = 12;
+            employeeExcel.Font.Bold = true;
+            employeeExcel.Font.Color = Color.Blue;
+            employeeExcel.Value = $"Nhân viên: {receipt.Employee.Name}";
 
             exSheet.Name = "Phieu_Nhap_Kho";
             exBook.Activate();
@@ -120,6 +125,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 
             exApp.Quit();
         }
+
+        #endregion
+
+        #region Export Customer
 
         public static void Export(List<Customer> customers)
         {
@@ -190,6 +199,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 }
             }
 
+            var border = exSheet.Range[$"A6:D{i - 1}"].Borders;
+            SetBorder(border);
+
             exSheet.Name = "Khách hàng";
             exBook.Activate();
 
@@ -199,11 +211,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             exApp.Quit();
         }
 
+        #endregion
+
+        #region Export Supplier
         public static void Export(List<Supplier> suppliers)
         {
             var exApp = new Application();
             var exBook = exApp.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
-            var exSheet = (Worksheet)exBook.Worksheets[1];
+            var exSheet = (Microsoft.Office.Interop.Excel.Worksheet)exBook.Worksheets[1];
 
             var header = (Range)exSheet.Cells[2, 2];
             exSheet.Range["B2:E2"].Merge(true);
@@ -267,6 +282,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                         }
                 }
             }
+            var border = exSheet.Range[$"A6:D{i-1}"].Borders;
+            SetBorder(border);
 
             exSheet.Name = "Nhà cung cấp";
             exBook.Activate();
@@ -275,6 +292,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 exBook.SaveAs(DlgSave.FileName);
 
             exApp.Quit();
+        }
+        #endregion
+
+        private static void SetBorder(Borders border)
+        {  
+            border.LineStyle = XlLineStyle.xlContinuous;
+            border.ColorIndex = XlConstants.xlAutomatic;
+            border.TintAndShade = 0;
+            border.Weight = XlBorderWeight.xlThin;
         }
     }
 }
