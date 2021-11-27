@@ -90,7 +90,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             if (ReferenceEquals(this, obj))
                 return true;
 
-            return obj.GetType() == GetType() && Equals((User)obj);
+            return obj.GetType() == GetType() && Equals((Supplier)obj);
         }
 
         public override int GetHashCode()

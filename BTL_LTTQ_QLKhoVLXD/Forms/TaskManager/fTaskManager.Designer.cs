@@ -1010,18 +1010,18 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // txtValue_sell
             // 
-            this.txtValue_sell.Location = new System.Drawing.Point(104, 4);
+            this.txtValue_sell.Location = new System.Drawing.Point(120, 4);
             this.txtValue_sell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtValue_sell.Name = "txtValue_sell";
             this.txtValue_sell.ReadOnly = true;
-            this.txtValue_sell.Size = new System.Drawing.Size(197, 26);
+            this.txtValue_sell.Size = new System.Drawing.Size(206, 26);
             this.txtValue_sell.TabIndex = 13;
             // 
             // pnlReason_sell
             // 
             this.pnlReason_sell.Controls.Add(this.txtReason_sell);
             this.pnlReason_sell.Controls.Add(this.lblReason_sell);
-            this.pnlReason_sell.Location = new System.Drawing.Point(10, 7);
+            this.pnlReason_sell.Location = new System.Drawing.Point(3, 7);
             this.pnlReason_sell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlReason_sell.Name = "pnlReason_sell";
             this.pnlReason_sell.Size = new System.Drawing.Size(495, 43);
@@ -1039,7 +1039,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // lblReason_sell
             // 
             this.lblReason_sell.AutoSize = true;
-            this.lblReason_sell.Location = new System.Drawing.Point(8, 10);
+            this.lblReason_sell.Location = new System.Drawing.Point(5, 10);
             this.lblReason_sell.Name = "lblReason_sell";
             this.lblReason_sell.Size = new System.Drawing.Size(55, 20);
             this.lblReason_sell.TabIndex = 0;
@@ -1072,6 +1072,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.nmrVat_sell.DecimalPlaces = 2;
             this.nmrVat_sell.Location = new System.Drawing.Point(62, 7);
             this.nmrVat_sell.Margin = new System.Windows.Forms.Padding(2);
+            this.nmrVat_sell.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
             this.nmrVat_sell.Name = "nmrVat_sell";
             this.nmrVat_sell.Size = new System.Drawing.Size(62, 26);
             this.nmrVat_sell.TabIndex = 9;
@@ -1125,11 +1130,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // txtTotalMoney_sell
             // 
-            this.txtTotalMoney_sell.Location = new System.Drawing.Point(104, 4);
+            this.txtTotalMoney_sell.Location = new System.Drawing.Point(120, 4);
             this.txtTotalMoney_sell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTotalMoney_sell.Name = "txtTotalMoney_sell";
             this.txtTotalMoney_sell.ReadOnly = true;
-            this.txtTotalMoney_sell.Size = new System.Drawing.Size(197, 26);
+            this.txtTotalMoney_sell.Size = new System.Drawing.Size(206, 26);
             this.txtTotalMoney_sell.TabIndex = 13;
             // 
             // btnCreateReceipt_sell

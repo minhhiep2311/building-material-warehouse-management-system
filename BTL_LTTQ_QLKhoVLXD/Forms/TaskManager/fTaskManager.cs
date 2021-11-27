@@ -66,13 +66,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             Invoke((MethodInvoker)(() =>
             {
-                Init_Sell();
                 nmrMaterialAmount_buy.TextChanged += nmrMaterialAmount_Buy_TextChanged;
             }));
 
             Invoke((MethodInvoker)(() =>
             {
-                Init_Buy();
+                Init_Sell();
                 nmrMaterialAmount_sell.TextChanged += nmrMaterialAmount_Sell_TextChanged;
             }));
 
