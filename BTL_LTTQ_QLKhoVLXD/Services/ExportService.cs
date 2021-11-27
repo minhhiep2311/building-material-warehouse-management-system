@@ -84,8 +84,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 exSheet.Range[$"C{i}"].Value = material.Specialization;
                 exSheet.Range[$"D{i}"].Value = material.Unit.Name;
                 exSheet.Range[$"E{i}"].Value = material.Numerous;
-                exSheet.Range[$"F{i}"].Value = $"'{Helper.Format.String(material.ImportUnitPrice)}";
-                exSheet.Range[$"G{i}"].Value = $"'{Helper.Format.String(material.ImportUnitPrice * material.Numerous)}";
+                exSheet.Range[$"F{i}"].Value = $"'{Helper.Converter.ToString(material.ImportUnitPrice)}";
+                exSheet.Range[$"G{i}"].Value = $"'{Helper.Converter.ToString(material.ImportUnitPrice * material.Numerous)}";
 
                 exSheet.Range[$"C{i}"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
                 exSheet.Range[$"D{i}"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
@@ -98,7 +98,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             totalReceipt.Font.Bold = true;
             totalReceipt.HorizontalAlignment = XlHAlign.xlHAlignRight;
             totalReceipt.Value = "Tổng tiền";
-            exSheet.Range[$"G{i}"].Value = $"'{Helper.Format.String(receipt.TotalPrice)}";
+            exSheet.Range[$"G{i}"].Value = $"'{Helper.Converter.ToString(receipt.TotalPrice)}";
             exSheet.Range[$"G{i}"].HorizontalAlignment = XlHAlign.xlHAlignRight;
 
             var border = exSheet.Range[$"A8:G{i}"].Borders;
@@ -111,14 +111,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             employeeExcel.Value = $"Nhân viên: {receipt.Employee.Name}";
 
             exSheet.Name = "Phieu_Nhap_Kho";
-            
+
             RequestToSave(exApp, exBook);
         }
 
         public static void Export(ExportReceipt receipt)
         {
             var (exApp, exBook, exSheet) = InitExcelFile();
-            
+
             PrintCompany(exSheet);
 
             var supplierExcel = (Range)exSheet.Cells[2, 1];
@@ -174,8 +174,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 exSheet.Range[$"C{i}"].Value = material.Specialization;
                 exSheet.Range[$"D{i}"].Value = material.Unit.Name;
                 exSheet.Range[$"E{i}"].Value = material.Numerous;
-                exSheet.Range[$"F{i}"].Value = $"'{Helper.Format.String(material.ImportUnitPrice)}";
-                exSheet.Range[$"G{i}"].Value = $"'{Helper.Format.String(material.ImportUnitPrice * material.Numerous)}";
+                exSheet.Range[$"F{i}"].Value = $"'{Helper.Converter.ToString(material.ImportUnitPrice)}";
+                exSheet.Range[$"G{i}"].Value = $"'{Helper.Converter.ToString(material.ImportUnitPrice * material.Numerous)}";
 
                 exSheet.Range[$"C{i}"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
                 exSheet.Range[$"D{i}"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
@@ -187,7 +187,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             exSheet.Range[$"A{i}:F{i}"].Merge(true);
             vat.HorizontalAlignment = XlHAlign.xlHAlignRight;
             vat.Value = $"Thuế: {receipt.VatPercent}%";
-            exSheet.Range[$"G{i}"].Value = $"'{Helper.Format.String(receipt.Vat)}";
+            exSheet.Range[$"G{i}"].Value = $"'{Helper.Converter.ToString(receipt.Vat)}";
             exSheet.Range[$"G{i}"].HorizontalAlignment = XlHAlign.xlHAlignRight;
             i++;
 
@@ -196,7 +196,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             totalReceipt.Font.Bold = true;
             totalReceipt.HorizontalAlignment = XlHAlign.xlHAlignRight;
             totalReceipt.Value = "Tổng tiền";
-            exSheet.Range[$"G{i}"].Value = $"'{Helper.Format.String(receipt.TotalPrice)}";
+            exSheet.Range[$"G{i}"].Value = $"'{Helper.Converter.ToString(receipt.TotalPrice)}";
             exSheet.Range[$"G{i}"].HorizontalAlignment = XlHAlign.xlHAlignRight;
 
             if (!string.IsNullOrEmpty(receipt.Reason))
@@ -217,7 +217,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             employeeExcel.Value = $"Nhân viên: {receipt.Employee.Name}";
 
             exSheet.Name = "Phieu_Xuat_Kho";
-            
+
             RequestToSave(exApp, exBook);
         }
 
@@ -303,6 +303,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
         #endregion
 
         #region Export Supplier
+
         public static void Export(List<Supplier> suppliers)
         {
             var (exApp, exBook, exSheet) = InitExcelFile();
@@ -380,6 +381,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 
         #endregion
 
+        #region Export Supplier
+
+        public static void Export(List<Material> materials)
+        {
+
+        }
+
+        #endregion
+
+        #region Private Methods
+
         private static void SetBorder(Borders border)
         {
             border.LineStyle = XlLineStyle.xlContinuous;
@@ -413,5 +425,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 exBook.SaveAs(DlgSave.FileName);
             exApp.Quit();
         }
+
+        #endregion
     }
 }

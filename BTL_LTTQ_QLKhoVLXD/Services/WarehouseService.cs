@@ -21,7 +21,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
         public static List<Material> GetMaterials(Warehouse warehouse)
         {
             var query = "SELECT m.id, m.name, importUnitPrice, exportUnitPrice, specialization, amount, " +
-                "u.id AS unitId, u.name AS unitName " +
+                "u.id AS unitId, u.name AS unitName, isAvailable " +
                 "FROM material_warehouse " +
                 "JOIN material m ON material_warehouse.idMaterial = m.id " +
                 "JOIN unit u ON m.idUnit = u.id " +

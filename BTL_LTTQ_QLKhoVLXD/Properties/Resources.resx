@@ -317,4 +317,10 @@
   <data name="MessageBox_Message_DuplicateWarehouse" xml:space="preserve">
     <value>Tên kho bị trùng! Hãy thử tên khác</value>
   </data>
+  <data name="Form_ButtonCreateReceipt" xml:space="preserve">
+	  <value>Tạo hóa đơn</value>
+  </data>
+  <data name="Form_ButtonNewReceipt" xml:space="preserve">
+	  <value>Hóa đơn mới</value>
+  </data>
 </root>

@@ -49,9 +49,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(12, 32);
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(15, 35);
+            this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(76, 17);
+            this.lblId.Size = new System.Drawing.Size(90, 20);
             this.lblId.TabIndex = 1;
             this.lblId.Text = "Mã vật liệu";
             // 
@@ -59,54 +61,62 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails
             // 
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtId.Location = new System.Drawing.Point(111, 26);
-            this.txtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtId.Location = new System.Drawing.Point(139, 32);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(359, 26);
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(448, 26);
             this.txtId.TabIndex = 4;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(12, 70);
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblName.Location = new System.Drawing.Point(15, 83);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(82, 17);
+            this.lblName.Size = new System.Drawing.Size(95, 20);
             this.lblName.TabIndex = 5;
             this.lblName.Text = "Tên vật liệu";
             // 
             // lblUnit
             // 
             this.lblUnit.AutoSize = true;
-            this.lblUnit.Location = new System.Drawing.Point(12, 108);
+            this.lblUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblUnit.Location = new System.Drawing.Point(15, 131);
+            this.lblUnit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUnit.Name = "lblUnit";
-            this.lblUnit.Size = new System.Drawing.Size(48, 17);
+            this.lblUnit.Size = new System.Drawing.Size(56, 20);
             this.lblUnit.TabIndex = 6;
             this.lblUnit.Text = "Đơn vị";
             // 
             // lblSpecialization
             // 
             this.lblSpecialization.AutoSize = true;
-            this.lblSpecialization.Location = new System.Drawing.Point(12, 146);
+            this.lblSpecialization.Location = new System.Drawing.Point(15, 178);
+            this.lblSpecialization.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSpecialization.Name = "lblSpecialization";
-            this.lblSpecialization.Size = new System.Drawing.Size(68, 17);
+            this.lblSpecialization.Size = new System.Drawing.Size(80, 20);
             this.lblSpecialization.TabIndex = 7;
             this.lblSpecialization.Text = "Quy cách";
             // 
             // lblImport
             // 
             this.lblImport.AutoSize = true;
-            this.lblImport.Location = new System.Drawing.Point(12, 184);
+            this.lblImport.Location = new System.Drawing.Point(15, 225);
+            this.lblImport.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblImport.Name = "lblImport";
-            this.lblImport.Size = new System.Drawing.Size(93, 17);
+            this.lblImport.Size = new System.Drawing.Size(107, 20);
             this.lblImport.TabIndex = 8;
             this.lblImport.Text = "Đơn giá nhập";
             // 
             // lblExport
             // 
             this.lblExport.AutoSize = true;
-            this.lblExport.Location = new System.Drawing.Point(12, 222);
+            this.lblExport.Location = new System.Drawing.Point(15, 273);
+            this.lblExport.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExport.Name = "lblExport";
-            this.lblExport.Size = new System.Drawing.Size(87, 17);
+            this.lblExport.Size = new System.Drawing.Size(102, 20);
             this.lblExport.TabIndex = 9;
             this.lblExport.Text = "Đơn giá xuất";
             // 
@@ -114,58 +124,64 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtName.Location = new System.Drawing.Point(111, 64);
-            this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtName.Location = new System.Drawing.Point(139, 80);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(359, 26);
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(448, 26);
             this.txtName.TabIndex = 10;
             // 
             // txtUnit
             // 
             this.txtUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtUnit.Location = new System.Drawing.Point(111, 102);
-            this.txtUnit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUnit.Location = new System.Drawing.Point(139, 128);
+            this.txtUnit.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtUnit.Name = "txtUnit";
-            this.txtUnit.Size = new System.Drawing.Size(359, 26);
+            this.txtUnit.ReadOnly = true;
+            this.txtUnit.Size = new System.Drawing.Size(448, 26);
             this.txtUnit.TabIndex = 11;
             // 
             // txtSpecialization
             // 
             this.txtSpecialization.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSpecialization.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtSpecialization.Location = new System.Drawing.Point(111, 140);
-            this.txtSpecialization.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSpecialization.Location = new System.Drawing.Point(139, 175);
+            this.txtSpecialization.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtSpecialization.Name = "txtSpecialization";
-            this.txtSpecialization.Size = new System.Drawing.Size(359, 26);
+            this.txtSpecialization.ReadOnly = true;
+            this.txtSpecialization.Size = new System.Drawing.Size(448, 26);
             this.txtSpecialization.TabIndex = 12;
             // 
             // txtImport
             // 
             this.txtImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtImport.Location = new System.Drawing.Point(111, 178);
-            this.txtImport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtImport.Location = new System.Drawing.Point(139, 222);
+            this.txtImport.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtImport.Name = "txtImport";
-            this.txtImport.Size = new System.Drawing.Size(359, 26);
+            this.txtImport.ReadOnly = true;
+            this.txtImport.Size = new System.Drawing.Size(448, 26);
             this.txtImport.TabIndex = 13;
             // 
             // txtExport
             // 
             this.txtExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtExport.Location = new System.Drawing.Point(111, 216);
-            this.txtExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtExport.Location = new System.Drawing.Point(139, 270);
+            this.txtExport.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtExport.Name = "txtExport";
-            this.txtExport.Size = new System.Drawing.Size(359, 26);
+            this.txtExport.ReadOnly = true;
+            this.txtExport.Size = new System.Drawing.Size(448, 26);
             this.txtExport.TabIndex = 14;
             // 
             // pnlWarehouse
             // 
             this.pnlWarehouse.Controls.Add(this.lvwWarehouse);
-            this.pnlWarehouse.Location = new System.Drawing.Point(10, 288);
+            this.pnlWarehouse.Location = new System.Drawing.Point(12, 360);
+            this.pnlWarehouse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlWarehouse.Name = "pnlWarehouse";
-            this.pnlWarehouse.Size = new System.Drawing.Size(458, 169);
+            this.pnlWarehouse.Size = new System.Drawing.Size(572, 211);
             this.pnlWarehouse.TabIndex = 15;
             // 
             // lvwWarehouse
@@ -178,9 +194,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails
             this.lvwWarehouse.GridLines = true;
             this.lvwWarehouse.HideSelection = false;
             this.lvwWarehouse.Location = new System.Drawing.Point(0, 0);
+            this.lvwWarehouse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvwWarehouse.Name = "lvwWarehouse";
             this.lvwWarehouse.OwnerDraw = true;
-            this.lvwWarehouse.Size = new System.Drawing.Size(458, 169);
+            this.lvwWarehouse.Size = new System.Drawing.Size(572, 211);
             this.lvwWarehouse.Sortable = true;
             this.lvwWarehouse.SortableColumns = null;
             this.lvwWarehouse.TabIndex = 0;
@@ -189,10 +206,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails
             // 
             // fMaterialDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.ClientSize = new System.Drawing.Size(485, 478);
+            this.ClientSize = new System.Drawing.Size(606, 598);
             this.Controls.Add(this.pnlWarehouse);
             this.Controls.Add(this.txtExport);
             this.Controls.Add(this.txtImport);
@@ -206,8 +223,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fMaterialDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi tiết vật liệu";

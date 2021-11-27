@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 
 namespace BTL_LTTQ_QLKhoVLXD.Models
@@ -23,16 +25,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
         public MaterialUnit Unit { get; }
         public string Specialization { get; }
         public int Numerous { get; set; }
+        public bool IsAvailable { get; }
 
         #endregion
 
         #region Constructor
+
         public Material(
             string name,
             double importUnitPrice,
             double exportUnitPrice,
-            string specialization) :
-            this(-1, name, importUnitPrice, exportUnitPrice)
+            string specialization,
+            bool isAvailable = true) :
+            this(-1, name, importUnitPrice, exportUnitPrice, null, specialization, 0, isAvailable)
         { }
 
         public Material(
@@ -42,12 +47,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             double exportUnitPrice,
             MaterialUnit unit = null,
             string specialization = null,
-            int numerous = 0)
+            int numerous = 0,
+            bool isAvailable = true)
         {
             Id = id;
             Name = name;
             ImportUnitPrice = importUnitPrice;
             ExportUnitPrice = exportUnitPrice;
+            IsAvailable = isAvailable;
             Unit = unit;
             Specialization = specialization;
             Numerous = numerous;
@@ -63,18 +70,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             var name = Convert.ToString(data["name"]);
             var importUnitPrice = Convert.ToDouble(data["importUnitPrice"]);
             var exportUnitPrice = Convert.ToDouble(data["exportUnitPrice"]);
+            var isAvailable = Convert.ToInt32(data["isAvailable"]) == 1;
             var unit = new MaterialUnit(data["unitId"], data["unitName"]);
             var specialization = Convert.ToString(data["specialization"]);
-
-            try
-            {
-                var numerous = Convert.ToInt32(data["amount"]);
-                return new Material(id, name, importUnitPrice, exportUnitPrice, unit, specialization, numerous);
-            }
-            catch (Exception)
-            {
-                return new Material(id, name, importUnitPrice, exportUnitPrice, unit, specialization);
-            }
+            var numerous = Convert.ToInt32(data["amount"]);
+            return new Material(id, name, importUnitPrice, exportUnitPrice, unit, specialization, numerous, isAvailable);
         }
 
         public ListViewItem ToListViewItem(Type type = Type.Full)
@@ -85,21 +85,21 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             {
                 case Type.Full:
                     row.SubItems.Add(Name);
-                    row.SubItems.Add(Helper.Format.String(ImportUnitPrice));
-                    row.SubItems.Add(Helper.Format.String(ExportUnitPrice));
+                    row.SubItems.Add(Helper.Converter.ToString(ImportUnitPrice));
+                    row.SubItems.Add(Helper.Converter.ToString(ExportUnitPrice));
                     row.SubItems.Add(Unit.Name);
                     row.SubItems.Add(Specialization);
                     break;
                 case Type.Import:
                     row.SubItems.Add(Name);
-                    row.SubItems.Add(Helper.Format.String(ImportUnitPrice));
+                    row.SubItems.Add(Helper.Converter.ToString(ImportUnitPrice));
                     row.SubItems.Add(Numerous.ToString());
                     row.SubItems.Add(Unit.Name);
                     row.SubItems.Add(Specialization);
                     break;
                 case Type.Export:
                     row.SubItems.Add(Name);
-                    row.SubItems.Add(Helper.Format.String(ExportUnitPrice));
+                    row.SubItems.Add(Helper.Converter.ToString(ExportUnitPrice));
                     row.SubItems.Add(Numerous.ToString());
                     row.SubItems.Add(Unit.Name);
                     row.SubItems.Add(Specialization);
@@ -111,7 +111,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             return row;
         }
 
-
+        public List<MaterialWarehouse> GetMaterialInWarehouses()
+        {
+            return MaterialService.GetMaterialInWarehouses(this);
+        }
 
         #endregion
 

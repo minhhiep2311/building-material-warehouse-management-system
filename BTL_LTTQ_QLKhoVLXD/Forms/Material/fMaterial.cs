@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.TaskManager;
 using BTL_LTTQ_QLKhoVLXD.Properties;
@@ -40,7 +38,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
                 txtExportUnitPrice.ReadOnly = false;
                 txtImportUnitPrice.ReadOnly = false;
                 txtSpecialization.ReadOnly = false;
-
             }
             else
             {
@@ -71,8 +68,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
                 return;
 
             txtName.Text = _material.Name;
-            txtImportUnitPrice.Text = _material.ImportUnitPrice.ToString();
-            txtExportUnitPrice.Text = _material.ExportUnitPrice.ToString();
+            txtImportUnitPrice.Text = Helper.Converter.ToString(_material.ImportUnitPrice);
+            txtExportUnitPrice.Text = Helper.Converter.ToString(_material.ExportUnitPrice);
             txtSpecialization.Text = _material.Specialization;
         }
 
@@ -114,7 +111,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
             var exportUnitPrice = txtExportUnitPrice.Text;
             var specialization = txtSpecialization.Text;
 
-            var newMaterial = new Models.Material(name, Convert.ToDouble ( importUnitPrice) , Convert.ToDouble( exportUnitPrice), specialization );
+            var newMaterial = new Models.Material(name, Convert.ToDouble(importUnitPrice), Convert.ToDouble(exportUnitPrice), specialization);
 
             if (CreateMaterial(ref newMaterial))
             {
@@ -167,7 +164,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
                 return;
 
             if (ChangeInformation(newMaterial))
-            { 
+            {
                 MessageBox.Show(
                     Resources.MessageBox_Message_ChangeSuccessfully,
                     Resources.MessageBox_Caption_Notification,
@@ -188,7 +185,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
         }
         private bool ValidInput()
         {
-            if (txtName.Text != "" && txtImportUnitPrice.Text != "" && txtExportUnitPrice.Text!="")
+            if (txtName.Text != "" && txtImportUnitPrice.Text != "" && txtExportUnitPrice.Text != "")
                 return true;
 
             MessageBox.Show(

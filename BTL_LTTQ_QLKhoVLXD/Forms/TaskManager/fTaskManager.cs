@@ -5,19 +5,18 @@ using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee;
 using BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation;
 using BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount;
-using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
+using BTL_LTTQ_QLKhoVLXD.Forms.Customer;
 using BTL_LTTQ_QLKhoVLXD.Forms.Employee;
 using BTL_LTTQ_QLKhoVLXD.Forms.Material;
+using BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails;
+using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
 using BTL_LTTQ_QLKhoVLXD.Forms.Supplier;
-using BTL_LTTQ_QLKhoVLXD.Forms.Customer;
 using BTL_LTTQ_QLKhoVLXD.Forms.WareHouse;
 using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
-using CheckBox = System.Windows.Forms.CheckBox;
 using Enum = BTL_LTTQ_QLKhoVLXD.Utils.Enum;
-using BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 {
@@ -133,6 +132,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 btnEdit_supplier.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_DeleteSupplier))
                 btnDelete_supplier.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_DeleteSupplier))
+                tsmiDeleteSupplier_supplier.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_CreateAccount))
+                tsmiCreateAccount_employee.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_DeleteAccount))
+                tsmiDeleteAccount_employee.Visible = false;
         }
 
         private void DisplayUserInfo()
@@ -167,6 +172,25 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             ) == DialogResult.Yes;
         }
 
+        private static bool ConfirmExportReceipt()
+        {
+            return MessageBox.Show(
+                Resources.MessageBox_Message_CreateReceiptSuccessfully,
+                Resources.MessageBox_Caption_Notification,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information
+            ) == DialogResult.Yes;
+        }
+
+        private bool ShouldShowMenuContext(MouseEventArgs e, ListView listView)
+        {
+            if (e.Button != MouseButtons.Right)
+                return false;
+
+            var focusItem = listView.FocusedItem;
+            return focusItem != null && focusItem.Bounds.Contains(e.Location);
+        }
+
         #endregion
 
         #endregion
@@ -176,6 +200,29 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #region Buy Properties
 
         private readonly List<Models.Material> _items_buy = new List<Models.Material>();
+        private ImportReceipt _receipt_buy;
+        private bool _createdReceipt_buy;
+
+        private bool CreatedReceipt_buy
+        {
+            get => _createdReceipt_buy;
+            set
+            {
+                _createdReceipt_buy = value;
+                if (_createdReceipt_buy)
+                {
+                    btnCreateReceipt_buy.Text = Resources.Form_ButtonNewReceipt;
+                    btnExport_buy.Visible = true;
+                    btnCancel_buy.Enabled = false;
+                }
+                else
+                {
+                    btnCreateReceipt_buy.Text = Resources.Form_ButtonCreateReceipt;
+                    btnExport_buy.Visible = false;
+                    btnCancel_buy.Enabled = true;
+                }
+            }
+        }
 
         #endregion
 
@@ -286,21 +333,23 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnCreateReceipt_Buy_Click(object sender, EventArgs e)
         {
+            if (CreatedReceipt_buy)
+            {
+                ResetForm_Buy();
+                CreatedReceipt_buy = false;
+                return;
+            }
+
             if (!ConfirmCreateReceipt())
                 return;
 
-            var receipt = CreateReceipt_Buy();
-            if (receipt != null)
-            {
-                var export = MessageBox.Show(
-                    Resources.MessageBox_Message_CreateReceiptSuccessfully,
-                    Resources.MessageBox_Caption_Notification,
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Information
-                ) == DialogResult.Yes;
+            CreateReceipt_Buy();
 
-                if (export)
-                    ExportService.Export(receipt);
+            if (_receipt_buy.Id != -1)
+            {
+                CreatedReceipt_buy = true;
+                if (ConfirmExportReceipt())
+                    ExportService.Export(_receipt_buy);
             }
             else
             {
@@ -321,13 +370,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 MessageBoxIcon.Warning) != DialogResult.Yes)
                 return;
 
-            cboSupplier_buy.SelectedIndex = -1;
-            txtAddress_buy.Text = "";
-            cboWarehouse_buy.SelectedIndex = -1;
-            txtSpecialization_buy.Text = "";
-            nmrUnitPrice_buy.Value = 0;
-            nmrMaterialAmount_buy.Value = 0;
-            lvwItem_buy.Items.Clear();
+            ResetForm_Buy();
+        }
+
+        private void btnExport_buy_Click(object sender, EventArgs e)
+        {
+            ExportService.Export(_receipt_buy);
         }
 
         #endregion
@@ -404,7 +452,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void BindTotal_Buy()
         {
             var sum = CalculateTotal_Buy();
-            txtTotalMoney_buy.Text = Helper.Format.String(sum);
+            txtTotalMoney_buy.Text = Helper.Converter.ToString(sum);
         }
 
         private double CalculateTotal_Buy()
@@ -414,14 +462,26 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 .Sum(x => x);
         }
 
-        private ImportReceipt CreateReceipt_Buy()
+        private void CreateReceipt_Buy()
         {
             var supplier = cboSupplier_buy.SelectedItem as Models.Supplier;
             var warehouse = cboWarehouse_buy.SelectedItem as Warehouse;
             var total = CalculateTotal_Buy();
             var receipt = new ImportReceipt(User, supplier, warehouse, _items_buy, total);
             receipt.Id = ReceiptService.CreateImportReceipt(receipt);
-            return receipt.Id != -1 ? receipt : null;
+            _receipt_buy = receipt;
+        }
+
+        private void ResetForm_Buy()
+        {
+            cboSupplier_buy.SelectedIndex = -1;
+            txtAddress_buy.Text = "";
+            cboWarehouse_buy.SelectedIndex = -1;
+            txtSpecialization_buy.Text = "";
+            nmrUnitPrice_buy.Value = 0;
+            nmrMaterialAmount_buy.Value = 0;
+            _receipt_buy = null;
+            lvwItem_buy.Items.Clear();
         }
 
         #endregion
@@ -433,6 +493,29 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #region Sell Properties
 
         private readonly List<Models.Material> _items_sell = new List<Models.Material>();
+        private ExportReceipt _receipt_sell;
+        private bool _createdReceipt_sell;
+
+        private bool CreatedReceipt_sell
+        {
+            get => _createdReceipt_sell;
+            set
+            {
+                _createdReceipt_sell = value;
+                if (_createdReceipt_sell)
+                {
+                    btnCreateReceipt_sell.Text = Resources.Form_ButtonNewReceipt;
+                    btnExport_sell.Visible = true;
+                    btnCancelReceipt_sell.Enabled = false;
+                }
+                else
+                {
+                    btnCreateReceipt_sell.Text = Resources.Form_ButtonCreateReceipt;
+                    btnExport_sell.Visible = false;
+                    btnCancelReceipt_sell.Enabled = true;
+                }
+            }
+        }
 
         #endregion
 
@@ -553,6 +636,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             TryDeleteItem_Sell();
         }
 
+        private void btnExport_sell_Click(object sender, EventArgs e)
+        {
+            ExportService.Export(_receipt_sell);
+        }
+
         private void nmrVat_sell_ValueChanged(object sender, EventArgs e)
         {
             BindValue_Sell();
@@ -571,21 +659,23 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnCreateReceipt_sell_Click(object sender, EventArgs e)
         {
+            if (CreatedReceipt_sell)
+            {
+                ResetForm_Sell();
+                CreatedReceipt_sell = false;
+                return;
+            }
+
             if (!ConfirmCreateReceipt())
                 return;
 
-            var receipt = CreateReceipt_Sell();
-            if (receipt != null)
-            {
-                var export = MessageBox.Show(
-                    Resources.MessageBox_Message_CreateReceiptSuccessfully,
-                    Resources.MessageBox_Caption_Notification,
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Information
-                ) == DialogResult.Yes;
+            CreateReceipt_Sell();
 
-                if (export)
-                    ExportService.Export(receipt);
+            if (_receipt_sell.Id != -1)
+            {
+                CreatedReceipt_sell = true;
+                if (ConfirmExportReceipt())
+                    ExportService.Export(_receipt_sell);
             }
             else
             {
@@ -606,18 +696,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 MessageBoxIcon.Warning) != DialogResult.Yes)
                 return;
 
-            cboCustomer_sell.SelectedIndex = -1;
-            txtAddress_sell.Text = "";
-            cboWarehouse_sell.SelectedIndex = -1;
-            txtSpecialization_sell.Text = "";
-            txtNumerous_sell.Text = "";
-            nmrUnitPrice_sell.Value = 0;
-            nmrMaterialAmount_sell.Value = 0;
-            lvwItem_sell.Items.Clear();
-            txtReason_sell.Text = "";
-            nmrVat_sell.Value = 0;
-            txtTotalMoney_sell.Text = "";
-            txtValue_sell.Text = "";
+            ResetForm_Sell();
         }
 
         private void txtTotalMoney_sell_TextChanged(object sender, EventArgs e)
@@ -713,7 +792,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void BindTotal_Sell()
         {
             var sum = CalculateTotal_Sell();
-            txtTotalMoney_sell.Text = Helper.Format.String(sum);
+            txtTotalMoney_sell.Text = Helper.Converter.ToString(sum);
         }
 
         private double CalculateTotal_Sell()
@@ -732,7 +811,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             }
 
             var sum = CalculateValue_Sell();
-            txtValue_sell.Text = Helper.Format.String(sum);
+            txtValue_sell.Text = Helper.Converter.ToString(sum);
         }
 
         private double CalculateValue_Sell()
@@ -740,7 +819,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             return Convert.ToDouble(txtTotalMoney_sell.Text) * (1 + Convert.ToDouble(nmrVat_sell.Value) / 100);
         }
 
-        private ExportReceipt CreateReceipt_Sell()
+        private void CreateReceipt_Sell()
         {
             var customer = cboCustomer_sell.SelectedItem as Models.Customer;
             var warehouse = cboWarehouse_sell.SelectedItem as Warehouse;
@@ -751,7 +830,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var reason = txtReason_sell.Text;
             var receipt = new ExportReceipt(User, customer, warehouse, _items_sell, totalAfterPercent, vat, vatPercent, reason);
             receipt.Id = ReceiptService.CreateExportReceipt(receipt);
-            return receipt.Id != -1 ? receipt : null;
+            _receipt_sell = receipt;
+        }
+
+        private void ResetForm_Sell()
+        {
+            cboItem_sell.SelectedIndex = -1;
+            cboCustomer_sell.SelectedIndex = -1;
+            txtAddress_sell.Text = "";
+            cboWarehouse_sell.SelectedIndex = -1;
+            txtSpecialization_sell.Text = "";
+            txtNumerous_sell.Text = "";
+            nmrUnitPrice_sell.Value = 0;
+            nmrMaterialAmount_sell.Value = 0;
+            lvwItem_sell.Items.Clear();
+            txtReason_sell.Text = "";
+            nmrVat_sell.Value = 0;
+            txtTotalMoney_sell.Text = "";
+            txtValue_sell.Text = "";
         }
 
         #endregion
@@ -779,9 +875,65 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             _debounce_material.Pause();
         }
 
+        private void lvwMaterial_material_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (!ShouldShowMenuContext(e, lvwMaterial_material))
+                return;
+            // TODO: Add permission to menu context
+            cms_supplier.Show(Cursor.Position);
+        }
+
+        private void lvwMaterial_material_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ShowInformation_Material();
+        }
+
+        private void lvwMaterial_material_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvwMaterial_material.SelectedIndices.Count <= 0)
+            {
+                ResetButtons_Material();
+                return;
+            }
+
+            btnDetails_material.Enabled = true;
+            btnEdit_material.Enabled = true;
+            btnDelete_material.Enabled = true;
+        }
+
+        private void tsmiShowDetails_material_Click(object sender, EventArgs e)
+        {
+            ShowDetails_Material();
+        }
+
+        private void tsmiShowInformation_material_Click(object sender, EventArgs e)
+        {
+            ShowInformation_Material();
+        }
+
+        private void tsmiDelete_material_Click(object sender, EventArgs e)
+        {
+            TryDeleteMaterial_Material();
+        }
+
+        private void txtName_material_TextChanged(object sender, EventArgs e)
+        {
+            _debounce_material.HandleUpdate();
+        }
+
+        private void rdoAll_material_CheckedChanged(object sender, EventArgs e)
+        {
+            _debounce_material.HandleUpdate();
+        }
+
+        private void rdoAvailable_CheckedChanged(object sender, EventArgs e)
+        {
+            _debounce_material.HandleUpdate();
+        }
+
         private void btnDetails_material_Click(object sender, EventArgs e)
         {
-            new fMaterialDetails().ShowDialog();
+            ShowDetails_Material();
         }
 
         private void btnEdit_Material_Click(object sender, EventArgs e)
@@ -797,12 +949,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnDelete_Material_Click(object sender, EventArgs e)
         {
-
+            TryDeleteMaterial_Material();
         }
 
         private void btnExport_Material_Click(object sender, EventArgs e)
         {
-
+            ExportService.Export(_materials);
         }
 
         private void btnWareHouse_material_Click(object sender, EventArgs e)
@@ -812,7 +964,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnRefresh_Material_Click(object sender, EventArgs e)
         {
-
+            LoadData_Material();
         }
 
         #endregion
@@ -824,11 +976,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             _debounce_material = new Helper.Debounce(Search_Material);
 
             lvwMaterial_material.Columns.Add("ID", 0);
-            lvwMaterial_material.Columns.Add("Tên vật liệu", 300, HorizontalAlignment.Left);
-            lvwMaterial_material.Columns.Add("Đơn giá nhập", 150, HorizontalAlignment.Left);
-            lvwMaterial_material.Columns.Add("Đơn giá xuật", 150, HorizontalAlignment.Left);
-            lvwMaterial_material.Columns.Add("Đơn vị", 150, HorizontalAlignment.Left);
-            lvwMaterial_material.Columns.Add("Quy cách", 150, HorizontalAlignment.Left);
+            lvwMaterial_material.Columns.Add("Tên vật liệu", 175, HorizontalAlignment.Left);
+            lvwMaterial_material.Columns.Add("Đơn giá nhập", 90, HorizontalAlignment.Right);
+            lvwMaterial_material.Columns.Add("Đơn giá xuất", 85, HorizontalAlignment.Right);
+            lvwMaterial_material.Columns.Add("Đơn vị", 50, HorizontalAlignment.Left);
+            lvwMaterial_material.Columns.Add("Quy cách", 120, HorizontalAlignment.Left);
         }
 
         public void LoadData_Material(List<Models.Material> cache = null)
@@ -842,25 +994,75 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 cache = _materials;
             }
 
-            //cache.ForEach(material => lvwMaterial_material.Items.Add(material.ToListViewItem(FormMode.)));
+            cache.ForEach(material =>
+            {
+                lvwMaterial_material.Items.Add(material.ToListViewItem());
+            });
         }
 
         private void ResetButtons_Material()
         {
+            btnDetails_material.Enabled = false;
             btnEdit_material.Enabled = false;
             btnDelete_material.Enabled = false;
         }
 
         private void EditMaterial_Material()
         {
-            /*var material = Helper.Control.FirstSelected(, lvwMaterial_material);
+            var material = Helper.Control.FirstSelected(_materials, lvwMaterial_material);
             if (material != null)
-                new fMaterial(this, FormMode.Write, material , true).Show();*/
+                new fMaterial(this, Enum.FormMode.Write, material, true).Show();
         }
 
         private void Search_Material()
         {
+            var name = txtName_material.Text;
+            var status = Helper.Control.Filter.GetRadioButtons(pnlStatus_material)
+               .FirstOrDefault(x => x.Checked)?.Text;
 
+            var materials = _materials.FindAll(x =>
+            {
+                var matchName = Helper.Matcher.Match(x.Name, name);
+                var matchGender = status == "Tất cả" || x.IsAvailable;
+
+                return matchName && matchGender;
+            });
+
+            LoadData_Material(materials);
+        }
+
+        private void ShowDetails_Material()
+        {
+            var material = Helper.Control.FirstSelected(_materials, lvwMaterial_material);
+            if (material == null)
+                return;
+            
+            lvwMaterial_material.SelectedItems.Clear();
+            new fMaterialDetails(material).ShowDialog();
+        }
+
+        private void ShowInformation_Material()
+        {
+            var material = Helper.Control.FirstSelected(_materials, lvwMaterial_material);
+            if (material == null)
+                return;
+            
+            lvwMaterial_material.SelectedItems.Clear();
+            //new fSupplier(this, mode, supplier).Show();
+        }
+
+        private void TryDeleteMaterial_Material()
+        {
+            if (lvwMaterial_material.SelectedIndices.Count <= 0)
+                return;
+
+            var shouldDeleteSuppliers = lvwMaterial_material.SelectedIndices.Cast<int>()
+               .Select(x => _suppliers[x]).ToList();
+            var shouldDeleteSupplierNames = shouldDeleteSuppliers.Select(x => x.Name);
+            var shouldDeleteSupplierIds = shouldDeleteSuppliers.Select(x => x.Id).ToList();
+
+            if (ConfirmDeleteSupplier_supplier(shouldDeleteSupplierNames))
+                DeleteSupplier_supplier(shouldDeleteSupplierIds);
         }
 
         #endregion
@@ -944,10 +1146,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             cache.ForEach(supplier =>
                 {
-                    var row = new ListViewItem(supplier.Id.ToString());
-                    row.SubItems.Add(supplier.Name);
-                    row.SubItems.Add(supplier.Address);
-                    lvwCustomer_customer.Items.Add(row);
+                    lvwCustomer_customer.Items.Add(supplier.ToListViewItem());
                 }
             );
         }
@@ -1009,16 +1208,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void lvwSupplier_supplier_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button != MouseButtons.Right)
+            if (!ShouldShowMenuContext(e, lvwSupplier_supplier))
                 return;
-
-            var focusItem = lvwSupplier_supplier.FocusedItem;
-            if (focusItem == null || !focusItem.Bounds.Contains(e.Location))
-                return;
-
-            tsmiShowInformation_supplier.Visible = true;
-            tsmiDeleteSupplier_supplier.Visible = User.Permissions.Contains(Resources.Permission_DeleteSupplier);
-
             cms_supplier.Show(Cursor.Position);
         }
 
@@ -1245,16 +1436,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void lvwEmployee_employee_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button != MouseButtons.Right)
+            if (!ShouldShowMenuContext(e, lvwEmployee_employee))
                 return;
-
-            var focusItem = lvwEmployee_employee.FocusedItem;
-            if (focusItem == null || !focusItem.Bounds.Contains(e.Location))
-                return;
-
-            tsmiShowInformation_employee.Visible = true;
-            tsmiCreateAccount_employee.Visible = User.Permissions.Contains(Resources.Permission_CreateAccount);
-            tsmiDeleteAccount_employee.Visible = User.Permissions.Contains(Resources.Permission_DeleteAccount);
 
             var selectedIndices = lvwEmployee_employee.SelectedIndices;
             var selectedEmployees = selectedIndices.Cast<int>()
@@ -1733,30 +1916,5 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #endregion
 
         #endregion
-
-        private void lvwMaterial_material_MouseClick(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void lvwMaterial_material_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void lvwMaterial_material_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tsmiShowDetails_material_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tsmiShowInformation_material_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

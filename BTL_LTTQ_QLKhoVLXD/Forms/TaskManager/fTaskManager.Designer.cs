@@ -45,11 +45,18 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.cms_supplier = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiShowInformation_supplier = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteSupplier_supplier = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblCost_sell = new System.Windows.Forms.Label();
+            this.txtCost_sell = new System.Windows.Forms.TextBox();
+            this.cms_material = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiShowDetails_material = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiShowInformation_material = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDelete_material = new System.Windows.Forms.ToolStripMenuItem();
             this.tclMain = new BTL_LTTQ_QLKhoVLXD.Controls.TabControl.BmwTabControl();
             this.tpgBuy = new System.Windows.Forms.TabPage();
             this.grbItemInfor_Buy = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
             this.lvwItem_buy = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
             this.pnlBottom_buy = new System.Windows.Forms.Panel();
+            this.btnExport_buy = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnCancel_buy = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlTotalMoney = new System.Windows.Forms.Panel();
             this.lblTotalMoney_Buy = new System.Windows.Forms.Label();
@@ -85,6 +92,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbItem_sell = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
             this.lvwItem_sell = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
             this.pnlBottom_sell = new System.Windows.Forms.Panel();
+            this.btnExport_sell = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlValue_sell = new System.Windows.Forms.Panel();
             this.lblValue_sell = new System.Windows.Forms.Label();
             this.txtValue_sell = new System.Windows.Forms.TextBox();
@@ -170,19 +178,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnExport_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnWareHouse_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnRefresh_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.grbSearchMaterial_material = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
-            this.pnlSpecialization_material = new System.Windows.Forms.Panel();
-            this.lblSpecialization_material = new System.Windows.Forms.Label();
-            this.txtSpecialization_material = new System.Windows.Forms.TextBox();
-            this.pnllblExportUnitPrice_material = new System.Windows.Forms.Panel();
-            this.lblExportUnitPrice_material = new System.Windows.Forms.Label();
-            this.txtlblExportUnitPrice_material = new System.Windows.Forms.TextBox();
-            this.pnlImportUnitPrice_material = new System.Windows.Forms.Panel();
-            this.lblImportUnitPrice_material = new System.Windows.Forms.Label();
-            this.txtImportUnitPrice_material = new System.Windows.Forms.TextBox();
-            this.pnlNameMaterial_material = new System.Windows.Forms.Panel();
-            this.lblNameMaterial_material = new System.Windows.Forms.Label();
-            this.txtNameMaterial_material = new System.Windows.Forms.TextBox();
+            this.grbSearch_material = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
+            this.rdoAvailable_material = new System.Windows.Forms.RadioButton();
+            this.rdoAll_material = new System.Windows.Forms.RadioButton();
+            this.pnlNamel_material = new System.Windows.Forms.Panel();
+            this.lblName_material = new System.Windows.Forms.Label();
+            this.txtName_material = new System.Windows.Forms.TextBox();
             this.tpgStatistic = new System.Windows.Forms.TabPage();
             this.tpgCustomer = new System.Windows.Forms.TabPage();
             this.spc_customer = new System.Windows.Forms.SplitContainer();
@@ -259,17 +260,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCreateAccount_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnChangeInformation_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnResetPassword_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.lblCost_sell = new System.Windows.Forms.Label();
-            this.txtCost_sell = new System.Windows.Forms.TextBox();
-            this.grbSearch_material = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
-            this.pnlName_material = new System.Windows.Forms.Panel();
-            this.lblName_material = new System.Windows.Forms.Label();
-            this.txtName_material = new System.Windows.Forms.TextBox();
-            this.cms_material = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiShowInformation_material = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiShowDetails_material = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlStatus_material = new System.Windows.Forms.Panel();
+            this.lblStatus_material = new System.Windows.Forms.Label();
             this.cms_employee.SuspendLayout();
             this.cms_supplier.SuspendLayout();
+            this.cms_material.SuspendLayout();
             this.tclMain.SuspendLayout();
             this.tpgBuy.SuspendLayout();
             this.grbItemInfor_Buy.SuspendLayout();
@@ -321,11 +316,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_material.Panel2.SuspendLayout();
             this.spc_material.SuspendLayout();
             this.flpFunction_material.SuspendLayout();
-            this.grbSearchMaterial_material.SuspendLayout();
-            this.pnlSpecialization_material.SuspendLayout();
-            this.pnllblExportUnitPrice_material.SuspendLayout();
-            this.pnlImportUnitPrice_material.SuspendLayout();
-            this.pnlNameMaterial_material.SuspendLayout();
+            this.grbSearch_material.SuspendLayout();
+            this.pnlNamel_material.SuspendLayout();
             this.tpgCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spc_customer)).BeginInit();
             this.spc_customer.Panel1.SuspendLayout();
@@ -362,9 +354,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_employee.SuspendLayout();
             this.tpgUserSetting.SuspendLayout();
             this.flp_userSetting.SuspendLayout();
-            this.grbSearch_material.SuspendLayout();
-            this.pnlName_material.SuspendLayout();
-            this.cms_material.SuspendLayout();
+            this.pnlStatus_material.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPosition
@@ -433,21 +423,66 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tsmiShowInformation_supplier,
             this.tsmiDeleteSupplier_supplier});
             this.cms_supplier.Name = "cms_supplier";
-            this.cms_supplier.Size = new System.Drawing.Size(197, 52);
+            this.cms_supplier.Size = new System.Drawing.Size(173, 52);
             // 
             // tsmiShowInformation_supplier
             // 
             this.tsmiShowInformation_supplier.Name = "tsmiShowInformation_supplier";
-            this.tsmiShowInformation_supplier.Size = new System.Drawing.Size(196, 24);
-            this.tsmiShowInformation_supplier.Text = "Thêm thông tin";
+            this.tsmiShowInformation_supplier.Size = new System.Drawing.Size(172, 24);
+            this.tsmiShowInformation_supplier.Text = "Xem thông tin";
             this.tsmiShowInformation_supplier.Click += new System.EventHandler(this.tsmiShowInformation_supplier_Click);
             // 
             // tsmiDeleteSupplier_supplier
             // 
             this.tsmiDeleteSupplier_supplier.Name = "tsmiDeleteSupplier_supplier";
-            this.tsmiDeleteSupplier_supplier.Size = new System.Drawing.Size(196, 24);
-            this.tsmiDeleteSupplier_supplier.Text = "Xóa nhà cung cấp";
+            this.tsmiDeleteSupplier_supplier.Size = new System.Drawing.Size(172, 24);
+            this.tsmiDeleteSupplier_supplier.Text = "Xóa";
             this.tsmiDeleteSupplier_supplier.Click += new System.EventHandler(this.tsmiDeleteSupplier_supplier_Click);
+            // 
+            // lblCost_sell
+            // 
+            this.lblCost_sell.Location = new System.Drawing.Point(0, 0);
+            this.lblCost_sell.Name = "lblCost_sell";
+            this.lblCost_sell.Size = new System.Drawing.Size(100, 23);
+            this.lblCost_sell.TabIndex = 0;
+            // 
+            // txtCost_sell
+            // 
+            this.txtCost_sell.Location = new System.Drawing.Point(0, 0);
+            this.txtCost_sell.Name = "txtCost_sell";
+            this.txtCost_sell.Size = new System.Drawing.Size(100, 22);
+            this.txtCost_sell.TabIndex = 0;
+            // 
+            // cms_material
+            // 
+            this.cms_material.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cms_material.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiShowDetails_material,
+            this.tsmiShowInformation_material,
+            this.tsmiDelete_material});
+            this.cms_material.Name = "cms_material";
+            this.cms_material.Size = new System.Drawing.Size(207, 76);
+            // 
+            // tsmiShowDetails_material
+            // 
+            this.tsmiShowDetails_material.Name = "tsmiShowDetails_material";
+            this.tsmiShowDetails_material.Size = new System.Drawing.Size(206, 24);
+            this.tsmiShowDetails_material.Text = "Xem chi tiết";
+            this.tsmiShowDetails_material.Click += new System.EventHandler(this.tsmiShowDetails_material_Click);
+            // 
+            // tsmiShowInformation_material
+            // 
+            this.tsmiShowInformation_material.Name = "tsmiShowInformation_material";
+            this.tsmiShowInformation_material.Size = new System.Drawing.Size(206, 24);
+            this.tsmiShowInformation_material.Text = "Chỉnh sửa thông tin";
+            this.tsmiShowInformation_material.Click += new System.EventHandler(this.tsmiShowInformation_material_Click);
+            // 
+            // tsmiDelete_material
+            // 
+            this.tsmiDelete_material.Name = "tsmiDelete_material";
+            this.tsmiDelete_material.Size = new System.Drawing.Size(206, 24);
+            this.tsmiDelete_material.Text = "Xoá";
+            this.tsmiDelete_material.Click += new System.EventHandler(this.tsmiDelete_material_Click);
             // 
             // tclMain
             // 
@@ -531,6 +566,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // pnlBottom_buy
             // 
+            this.pnlBottom_buy.Controls.Add(this.btnExport_buy);
             this.pnlBottom_buy.Controls.Add(this.btnCancel_buy);
             this.pnlBottom_buy.Controls.Add(this.pnlTotalMoney);
             this.pnlBottom_buy.Controls.Add(this.btnCreateReceipt_buy);
@@ -540,6 +576,22 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlBottom_buy.Name = "pnlBottom_buy";
             this.pnlBottom_buy.Size = new System.Drawing.Size(1085, 49);
             this.pnlBottom_buy.TabIndex = 18;
+            // 
+            // btnExport_buy
+            // 
+            this.btnExport_buy.BackColor = System.Drawing.Color.White;
+            this.btnExport_buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnExport_buy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnExport_buy.Location = new System.Drawing.Point(404, 7);
+            this.btnExport_buy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExport_buy.Name = "btnExport_buy";
+            this.btnExport_buy.Size = new System.Drawing.Size(172, 34);
+            this.btnExport_buy.TabIndex = 21;
+            this.btnExport_buy.Text = "Xuất file";
+            this.btnExport_buy.UseVisualStyleBackColor = false;
+            this.btnExport_buy.Visible = false;
+            this.btnExport_buy.Click += new System.EventHandler(this.btnExport_buy_Click);
             // 
             // btnCancel_buy
             // 
@@ -978,6 +1030,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // pnlBottom_sell
             // 
+            this.pnlBottom_sell.Controls.Add(this.btnExport_sell);
             this.pnlBottom_sell.Controls.Add(this.pnlValue_sell);
             this.pnlBottom_sell.Controls.Add(this.pnlReason_sell);
             this.pnlBottom_sell.Controls.Add(this.pnlVat_sell);
@@ -990,6 +1043,22 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlBottom_sell.Name = "pnlBottom_sell";
             this.pnlBottom_sell.Size = new System.Drawing.Size(1085, 119);
             this.pnlBottom_sell.TabIndex = 18;
+            // 
+            // btnExport_sell
+            // 
+            this.btnExport_sell.BackColor = System.Drawing.Color.White;
+            this.btnExport_sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnExport_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnExport_sell.Location = new System.Drawing.Point(404, 69);
+            this.btnExport_sell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExport_sell.Name = "btnExport_sell";
+            this.btnExport_sell.Size = new System.Drawing.Size(172, 34);
+            this.btnExport_sell.TabIndex = 26;
+            this.btnExport_sell.Text = "Xuất file";
+            this.btnExport_sell.UseVisualStyleBackColor = false;
+            this.btnExport_sell.Visible = false;
+            this.btnExport_sell.Click += new System.EventHandler(this.btnExport_sell_Click);
             // 
             // pnlValue_sell
             // 
@@ -1905,7 +1974,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.spc_material.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.spc_material.Panel2.Controls.Add(this.flpFunction_material);
-            this.spc_material.Panel2.Controls.Add(this.grbSearchMaterial_material);
+            this.spc_material.Panel2.Controls.Add(this.grbSearch_material);
             this.spc_material.Panel2.Padding = new System.Windows.Forms.Padding(5);
             this.spc_material.Panel2MinSize = 350;
             this.spc_material.Size = new System.Drawing.Size(1101, 668);
@@ -1947,11 +2016,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_material.Controls.Add(this.btnWareHouse_material);
             this.flpFunction_material.Controls.Add(this.btnRefresh_material);
             this.flpFunction_material.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpFunction_material.Location = new System.Drawing.Point(5, 230);
+            this.flpFunction_material.Location = new System.Drawing.Point(5, 218);
             this.flpFunction_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpFunction_material.Name = "flpFunction_material";
             this.flpFunction_material.Padding = new System.Windows.Forms.Padding(5);
-            this.flpFunction_material.Size = new System.Drawing.Size(504, 433);
+            this.flpFunction_material.Size = new System.Drawing.Size(504, 445);
             this.flpFunction_material.TabIndex = 8;
             // 
             // btnDetails_material
@@ -2059,140 +2128,76 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnRefresh_material.UseVisualStyleBackColor = false;
             this.btnRefresh_material.Click += new System.EventHandler(this.btnRefresh_Material_Click);
             // 
-            // grbSearchMaterial_material
+            // grbSearch_material
             // 
-            this.grbSearchMaterial_material.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.grbSearchMaterial_material.Controls.Add(this.pnlSpecialization_material);
-            this.grbSearchMaterial_material.Controls.Add(this.pnllblExportUnitPrice_material);
-            this.grbSearchMaterial_material.Controls.Add(this.pnlImportUnitPrice_material);
-            this.grbSearchMaterial_material.Controls.Add(this.pnlNameMaterial_material);
-            this.grbSearchMaterial_material.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grbSearchMaterial_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.grbSearchMaterial_material.ForeColor = System.Drawing.Color.White;
-            this.grbSearchMaterial_material.Location = new System.Drawing.Point(5, 5);
-            this.grbSearchMaterial_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grbSearchMaterial_material.Name = "grbSearchMaterial_material";
-            this.grbSearchMaterial_material.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grbSearchMaterial_material.Size = new System.Drawing.Size(504, 225);
-            this.grbSearchMaterial_material.TabIndex = 0;
-            this.grbSearchMaterial_material.TabStop = false;
-            this.grbSearchMaterial_material.Text = "Tìm kiếm";
+            this.grbSearch_material.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.grbSearch_material.Controls.Add(this.pnlStatus_material);
+            this.grbSearch_material.Controls.Add(this.pnlNamel_material);
+            this.grbSearch_material.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbSearch_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grbSearch_material.ForeColor = System.Drawing.Color.White;
+            this.grbSearch_material.Location = new System.Drawing.Point(5, 5);
+            this.grbSearch_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grbSearch_material.Name = "grbSearch_material";
+            this.grbSearch_material.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grbSearch_material.Size = new System.Drawing.Size(504, 213);
+            this.grbSearch_material.TabIndex = 0;
+            this.grbSearch_material.TabStop = false;
+            this.grbSearch_material.Text = "Tìm kiếm";
             // 
-            // pnlSpecialization_material
+            // rdoAvailable_material
             // 
-            this.pnlSpecialization_material.Controls.Add(this.lblSpecialization_material);
-            this.pnlSpecialization_material.Controls.Add(this.txtSpecialization_material);
-            this.pnlSpecialization_material.Location = new System.Drawing.Point(5, 162);
-            this.pnlSpecialization_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlSpecialization_material.Name = "pnlSpecialization_material";
-            this.pnlSpecialization_material.Size = new System.Drawing.Size(429, 39);
-            this.pnlSpecialization_material.TabIndex = 8;
+            this.rdoAvailable_material.AutoSize = true;
+            this.rdoAvailable_material.Location = new System.Drawing.Point(231, 15);
+            this.rdoAvailable_material.Name = "rdoAvailable_material";
+            this.rdoAvailable_material.Size = new System.Drawing.Size(145, 24);
+            this.rdoAvailable_material.TabIndex = 7;
+            this.rdoAvailable_material.Text = "Còn kinh doanh";
+            this.rdoAvailable_material.UseVisualStyleBackColor = true;
+            this.rdoAvailable_material.CheckedChanged += new System.EventHandler(this.rdoAvailable_CheckedChanged);
             // 
-            // lblSpecialization_material
+            // rdoAll_material
             // 
-            this.lblSpecialization_material.AutoSize = true;
-            this.lblSpecialization_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblSpecialization_material.Location = new System.Drawing.Point(3, 9);
-            this.lblSpecialization_material.Name = "lblSpecialization_material";
-            this.lblSpecialization_material.Size = new System.Drawing.Size(80, 20);
-            this.lblSpecialization_material.TabIndex = 0;
-            this.lblSpecialization_material.Text = "Quy cách";
+            this.rdoAll_material.AutoSize = true;
+            this.rdoAll_material.Checked = true;
+            this.rdoAll_material.Location = new System.Drawing.Point(117, 15);
+            this.rdoAll_material.Name = "rdoAll_material";
+            this.rdoAll_material.Size = new System.Drawing.Size(77, 24);
+            this.rdoAll_material.TabIndex = 6;
+            this.rdoAll_material.TabStop = true;
+            this.rdoAll_material.Text = "Tất cả";
+            this.rdoAll_material.UseVisualStyleBackColor = true;
+            this.rdoAll_material.CheckedChanged += new System.EventHandler(this.rdoAll_material_CheckedChanged);
             // 
-            // txtSpecialization_material
+            // pnlNamel_material
             // 
-            this.txtSpecialization_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtSpecialization_material.Location = new System.Drawing.Point(116, 6);
-            this.txtSpecialization_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSpecialization_material.Name = "txtSpecialization_material";
-            this.txtSpecialization_material.Size = new System.Drawing.Size(295, 26);
-            this.txtSpecialization_material.TabIndex = 1;
+            this.pnlNamel_material.Controls.Add(this.lblName_material);
+            this.pnlNamel_material.Controls.Add(this.txtName_material);
+            this.pnlNamel_material.Location = new System.Drawing.Point(8, 23);
+            this.pnlNamel_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlNamel_material.Name = "pnlNamel_material";
+            this.pnlNamel_material.Size = new System.Drawing.Size(431, 39);
+            this.pnlNamel_material.TabIndex = 5;
             // 
-            // pnllblExportUnitPrice_material
+            // lblName_material
             // 
-            this.pnllblExportUnitPrice_material.Controls.Add(this.lblExportUnitPrice_material);
-            this.pnllblExportUnitPrice_material.Controls.Add(this.txtlblExportUnitPrice_material);
-            this.pnllblExportUnitPrice_material.Location = new System.Drawing.Point(5, 114);
-            this.pnllblExportUnitPrice_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnllblExportUnitPrice_material.Name = "pnllblExportUnitPrice_material";
-            this.pnllblExportUnitPrice_material.Size = new System.Drawing.Size(431, 39);
-            this.pnllblExportUnitPrice_material.TabIndex = 7;
+            this.lblName_material.AutoSize = true;
+            this.lblName_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblName_material.Location = new System.Drawing.Point(3, 9);
+            this.lblName_material.Name = "lblName_material";
+            this.lblName_material.Size = new System.Drawing.Size(95, 20);
+            this.lblName_material.TabIndex = 0;
+            this.lblName_material.Text = "Tên vật liệu";
             // 
-            // lblExportUnitPrice_material
+            // txtName_material
             // 
-            this.lblExportUnitPrice_material.AutoSize = true;
-            this.lblExportUnitPrice_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblExportUnitPrice_material.Location = new System.Drawing.Point(3, 9);
-            this.lblExportUnitPrice_material.Name = "lblExportUnitPrice_material";
-            this.lblExportUnitPrice_material.Size = new System.Drawing.Size(67, 20);
-            this.lblExportUnitPrice_material.TabIndex = 0;
-            this.lblExportUnitPrice_material.Text = "Giá bán";
-            // 
-            // txtlblExportUnitPrice_material
-            // 
-            this.txtlblExportUnitPrice_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtlblExportUnitPrice_material.Location = new System.Drawing.Point(117, 6);
-            this.txtlblExportUnitPrice_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtlblExportUnitPrice_material.Name = "txtlblExportUnitPrice_material";
-            this.txtlblExportUnitPrice_material.Size = new System.Drawing.Size(295, 26);
-            this.txtlblExportUnitPrice_material.TabIndex = 1;
-            // 
-            // pnlImportUnitPrice_material
-            // 
-            this.pnlImportUnitPrice_material.Controls.Add(this.lblImportUnitPrice_material);
-            this.pnlImportUnitPrice_material.Controls.Add(this.txtImportUnitPrice_material);
-            this.pnlImportUnitPrice_material.Location = new System.Drawing.Point(5, 70);
-            this.pnlImportUnitPrice_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlImportUnitPrice_material.Name = "pnlImportUnitPrice_material";
-            this.pnlImportUnitPrice_material.Size = new System.Drawing.Size(431, 39);
-            this.pnlImportUnitPrice_material.TabIndex = 6;
-            // 
-            // lblImportUnitPrice_material
-            // 
-            this.lblImportUnitPrice_material.AutoSize = true;
-            this.lblImportUnitPrice_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblImportUnitPrice_material.Location = new System.Drawing.Point(3, 9);
-            this.lblImportUnitPrice_material.Name = "lblImportUnitPrice_material";
-            this.lblImportUnitPrice_material.Size = new System.Drawing.Size(76, 20);
-            this.lblImportUnitPrice_material.TabIndex = 0;
-            this.lblImportUnitPrice_material.Text = "Giá nhập";
-            // 
-            // txtImportUnitPrice_material
-            // 
-            this.txtImportUnitPrice_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtImportUnitPrice_material.Location = new System.Drawing.Point(117, 6);
-            this.txtImportUnitPrice_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtImportUnitPrice_material.Name = "txtImportUnitPrice_material";
-            this.txtImportUnitPrice_material.Size = new System.Drawing.Size(295, 26);
-            this.txtImportUnitPrice_material.TabIndex = 1;
-            // 
-            // pnlNameMaterial_material
-            // 
-            this.pnlNameMaterial_material.Controls.Add(this.lblNameMaterial_material);
-            this.pnlNameMaterial_material.Controls.Add(this.txtNameMaterial_material);
-            this.pnlNameMaterial_material.Location = new System.Drawing.Point(5, 25);
-            this.pnlNameMaterial_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlNameMaterial_material.Name = "pnlNameMaterial_material";
-            this.pnlNameMaterial_material.Size = new System.Drawing.Size(431, 39);
-            this.pnlNameMaterial_material.TabIndex = 5;
-            // 
-            // lblNameMaterial_material
-            // 
-            this.lblNameMaterial_material.AutoSize = true;
-            this.lblNameMaterial_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblNameMaterial_material.Location = new System.Drawing.Point(3, 9);
-            this.lblNameMaterial_material.Name = "lblNameMaterial_material";
-            this.lblNameMaterial_material.Size = new System.Drawing.Size(95, 20);
-            this.lblNameMaterial_material.TabIndex = 0;
-            this.lblNameMaterial_material.Text = "Tên vật liệu";
-            // 
-            // txtNameMaterial_material
-            // 
-            this.txtNameMaterial_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtNameMaterial_material.Location = new System.Drawing.Point(117, 6);
-            this.txtNameMaterial_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNameMaterial_material.Name = "txtNameMaterial_material";
-            this.txtNameMaterial_material.Size = new System.Drawing.Size(295, 26);
-            this.txtNameMaterial_material.TabIndex = 1;
+            this.txtName_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtName_material.Location = new System.Drawing.Point(117, 6);
+            this.txtName_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtName_material.Name = "txtName_material";
+            this.txtName_material.Size = new System.Drawing.Size(295, 26);
+            this.txtName_material.TabIndex = 1;
+            this.txtName_material.TextChanged += new System.EventHandler(this.txtName_material_TextChanged);
             // 
             // tpgStatistic
             // 
@@ -3206,87 +3211,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnResetPassword_userSetting.UseVisualStyleBackColor = false;
             this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
             // 
-            // lblCost_sell
+            // pnlStatus_material
             // 
-            this.lblCost_sell.Location = new System.Drawing.Point(0, 0);
-            this.lblCost_sell.Name = "lblCost_sell";
-            this.lblCost_sell.Size = new System.Drawing.Size(100, 23);
-            this.lblCost_sell.TabIndex = 0;
+            this.pnlStatus_material.Controls.Add(this.lblStatus_material);
+            this.pnlStatus_material.Controls.Add(this.rdoAvailable_material);
+            this.pnlStatus_material.Controls.Add(this.rdoAll_material);
+            this.pnlStatus_material.Location = new System.Drawing.Point(8, 67);
+            this.pnlStatus_material.Name = "pnlStatus_material";
+            this.pnlStatus_material.Size = new System.Drawing.Size(431, 63);
+            this.pnlStatus_material.TabIndex = 8;
             // 
-            // txtCost_sell
+            // lblStatus_material
             // 
-            this.txtCost_sell.Location = new System.Drawing.Point(0, 0);
-            this.txtCost_sell.Name = "txtCost_sell";
-            this.txtCost_sell.Size = new System.Drawing.Size(100, 22);
-            this.txtCost_sell.TabIndex = 0;
-            // 
-            // grbSearch_material
-            // 
-            this.grbSearch_material.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.grbSearch_material.Controls.Add(this.pnlName_material);
-            this.grbSearch_material.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grbSearch_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.grbSearch_material.ForeColor = System.Drawing.Color.White;
-            this.grbSearch_material.Location = new System.Drawing.Point(7, 186);
-            this.grbSearch_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grbSearch_material.Name = "grbSearch_material";
-            this.grbSearch_material.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grbSearch_material.Size = new System.Drawing.Size(497, 171);
-            this.grbSearch_material.TabIndex = 0;
-            this.grbSearch_material.TabStop = false;
-            this.grbSearch_material.Text = "Tìm kiếm";
-            // 
-            // pnlName_material
-            // 
-            this.pnlName_material.Controls.Add(this.lblName_material);
-            this.pnlName_material.Controls.Add(this.txtName_material);
-            this.pnlName_material.Location = new System.Drawing.Point(5, 25);
-            this.pnlName_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlName_material.Name = "pnlName_material";
-            this.pnlName_material.Size = new System.Drawing.Size(461, 39);
-            this.pnlName_material.TabIndex = 5;
-            // 
-            // lblName_material
-            // 
-            this.lblName_material.AutoSize = true;
-            this.lblName_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblName_material.Location = new System.Drawing.Point(3, 9);
-            this.lblName_material.Name = "lblName_material";
-            this.lblName_material.Size = new System.Drawing.Size(127, 20);
-            this.lblName_material.TabIndex = 0;
-            this.lblName_material.Text = "Tên khách hàng";
-            // 
-            // txtName_material
-            // 
-            this.txtName_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtName_material.Location = new System.Drawing.Point(156, 6);
-            this.txtName_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtName_material.Name = "txtName_material";
-            this.txtName_material.Size = new System.Drawing.Size(295, 26);
-            this.txtName_material.TabIndex = 1;
-            // 
-            // cms_material
-            // 
-            this.cms_material.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cms_material.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiShowDetails_material,
-            this.tsmiShowInformation_material});
-            this.cms_material.Name = "cms_material";
-            this.cms_material.Size = new System.Drawing.Size(173, 52);
-            // 
-            // tsmiShowInformation_material
-            // 
-            this.tsmiShowInformation_material.Name = "tsmiShowInformation_material";
-            this.tsmiShowInformation_material.Size = new System.Drawing.Size(210, 24);
-            this.tsmiShowInformation_material.Text = "Xem thông tin";
-            this.tsmiShowInformation_material.Click += new System.EventHandler(this.tsmiShowInformation_material_Click);
-            // 
-            // tsmiShowDetails_material
-            // 
-            this.tsmiShowDetails_material.Name = "tsmiShowDetails_material";
-            this.tsmiShowDetails_material.Size = new System.Drawing.Size(210, 24);
-            this.tsmiShowDetails_material.Text = "Xem chi tiết";
-            this.tsmiShowDetails_material.Click += new System.EventHandler(this.tsmiShowDetails_material_Click);
+            this.lblStatus_material.AutoSize = true;
+            this.lblStatus_material.Location = new System.Drawing.Point(3, 17);
+            this.lblStatus_material.Name = "lblStatus_material";
+            this.lblStatus_material.Size = new System.Drawing.Size(84, 20);
+            this.lblStatus_material.TabIndex = 0;
+            this.lblStatus_material.Text = "Trạng thái";
             // 
             // fTaskManager
             // 
@@ -3304,6 +3246,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.Load += new System.EventHandler(this.fTaskManager_Load);
             this.cms_employee.ResumeLayout(false);
             this.cms_supplier.ResumeLayout(false);
+            this.cms_material.ResumeLayout(false);
             this.tclMain.ResumeLayout(false);
             this.tpgBuy.ResumeLayout(false);
             this.grbItemInfor_Buy.ResumeLayout(false);
@@ -3377,15 +3320,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             ((System.ComponentModel.ISupportInitialize)(this.spc_material)).EndInit();
             this.spc_material.ResumeLayout(false);
             this.flpFunction_material.ResumeLayout(false);
-            this.grbSearchMaterial_material.ResumeLayout(false);
-            this.pnlSpecialization_material.ResumeLayout(false);
-            this.pnlSpecialization_material.PerformLayout();
-            this.pnllblExportUnitPrice_material.ResumeLayout(false);
-            this.pnllblExportUnitPrice_material.PerformLayout();
-            this.pnlImportUnitPrice_material.ResumeLayout(false);
-            this.pnlImportUnitPrice_material.PerformLayout();
-            this.pnlNameMaterial_material.ResumeLayout(false);
-            this.pnlNameMaterial_material.PerformLayout();
+            this.grbSearch_material.ResumeLayout(false);
+            this.pnlNamel_material.ResumeLayout(false);
+            this.pnlNamel_material.PerformLayout();
             this.tpgCustomer.ResumeLayout(false);
             this.spc_customer.Panel1.ResumeLayout(false);
             this.spc_customer.Panel2.ResumeLayout(false);
@@ -3435,10 +3372,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_employee.PerformLayout();
             this.tpgUserSetting.ResumeLayout(false);
             this.flp_userSetting.ResumeLayout(false);
-            this.grbSearch_material.ResumeLayout(false);
-            this.pnlName_material.ResumeLayout(false);
-            this.pnlName_material.PerformLayout();
-            this.cms_material.ResumeLayout(false);
+            this.pnlStatus_material.ResumeLayout(false);
+            this.pnlStatus_material.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3533,10 +3468,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.TabPage tpgStatistic;
         private System.Windows.Forms.TabPage tpgMaterial;
         private System.Windows.Forms.TabPage tpgReceipt;
-        private BmwGroupBox grbSearch_material;
-        private System.Windows.Forms.Panel pnlName_material;
-        private System.Windows.Forms.Label lblName_material;
-        private System.Windows.Forms.TextBox txtName_material;
         private System.Windows.Forms.TabPage tpgSell;
         private System.Windows.Forms.Panel pnlTitle_sell;
         private System.Windows.Forms.Label lblTitle_sell;
@@ -3601,19 +3532,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private BmwButton btnDelete_material;
         private BmwButton btnExport_material;
         private BmwButton btnRefresh_material;
-        private BmwGroupBox grbSearchMaterial_material;
-        private System.Windows.Forms.Panel pnllblExportUnitPrice_material;
-        private System.Windows.Forms.Label lblExportUnitPrice_material;
-        private System.Windows.Forms.TextBox txtlblExportUnitPrice_material;
-        private System.Windows.Forms.Panel pnlImportUnitPrice_material;
-        private System.Windows.Forms.Label lblImportUnitPrice_material;
-        private System.Windows.Forms.TextBox txtImportUnitPrice_material;
-        private System.Windows.Forms.Panel pnlNameMaterial_material;
-        private System.Windows.Forms.Label lblNameMaterial_material;
-        private System.Windows.Forms.TextBox txtNameMaterial_material;
-        private System.Windows.Forms.Panel pnlSpecialization_material;
-        private System.Windows.Forms.Label lblSpecialization_material;
-        private System.Windows.Forms.TextBox txtSpecialization_material;
+        private BmwGroupBox grbSearch_material;
+        private System.Windows.Forms.Panel pnlNamel_material;
+        private System.Windows.Forms.Label lblName_material;
+        private System.Windows.Forms.TextBox txtName_material;
         private System.Windows.Forms.DateTimePicker dtpDateFrom_receipt;
         private System.Windows.Forms.DateTimePicker dtpDateTo_receipt;
         private System.Windows.Forms.Panel pnlWareHouse_receipt;
@@ -3678,5 +3600,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.ContextMenuStrip cms_material;
         private System.Windows.Forms.ToolStripMenuItem tsmiShowInformation_material;
         private System.Windows.Forms.ToolStripMenuItem tsmiShowDetails_material;
+        private BmwButton btnExport_buy;
+        private BmwButton btnExport_sell;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDelete_material;
+        private System.Windows.Forms.RadioButton rdoAvailable_material;
+        private System.Windows.Forms.RadioButton rdoAll_material;
+        private System.Windows.Forms.Panel pnlStatus_material;
+        private System.Windows.Forms.Label lblStatus_material;
     }
 }

@@ -76,7 +76,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
                     decimal.TryParse(b.SubItems[Column].Text, out var n2))
                     return CheckInvert(decimal.Compare(n1, n2));
 
-                // String Comparison
+                // ToString Comparison
                 return CheckInvert(Comparer.String(
                     a.SubItems[Column].Text,
                     b.SubItems[Column].Text)
@@ -269,9 +269,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
             }
         }
 
-        public class Format
+        public class Converter
         {
-            public static string String(double number)
+            public static string ToString(double number)
             {
                 return number.ToString("N0");
             }

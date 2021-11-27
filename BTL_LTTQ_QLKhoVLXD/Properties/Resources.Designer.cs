@@ -125,6 +125,24 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tạo hóa đơn.
+        /// </summary>
+        internal static string Form_ButtonCreateReceipt {
+            get {
+                return ResourceManager.GetString("Form_ButtonCreateReceipt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hóa đơn mới.
+        /// </summary>
+        internal static string Form_ButtonNewReceipt {
+            get {
+                return ResourceManager.GetString("Form_ButtonNewReceipt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lưu.
         /// </summary>
         internal static string Form_ButtonSave {
