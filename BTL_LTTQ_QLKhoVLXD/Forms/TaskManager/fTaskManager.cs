@@ -747,8 +747,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var total = CalculateTotal_Sell();
             var vatPercent = Convert.ToDouble(nmrVat_sell.Value);
             var vat = total * vatPercent / 100;
+            var totalAfterPercent = total + vat;
             var reason = txtReason_sell.Text;
-            var receipt = new ExportReceipt(User, customer, warehouse, _items_sell, total, vat, vatPercent, reason);
+            var receipt = new ExportReceipt(User, customer, warehouse, _items_sell, totalAfterPercent, vat, vatPercent, reason);
             receipt.Id = ReceiptService.CreateExportReceipt(receipt);
             return receipt.Id != -1 ? receipt : null;
         }
@@ -820,6 +821,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void Init_Material()
         {
+            _debounce_material = new Helper.Debounce(Search_Material);
+
             lvwMaterial_material.Columns.Add("ID", 0);
             lvwMaterial_material.Columns.Add("Tên vật liệu", 300, HorizontalAlignment.Left);
             lvwMaterial_material.Columns.Add("Đơn giá nhập", 150, HorizontalAlignment.Left);
@@ -853,6 +856,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             /*var material = Helper.Control.FirstSelected(, lvwMaterial_material);
             if (material != null)
                 new fMaterial(this, FormMode.Write, material , true).Show();*/
+        }
+
+        private void Search_Material()
+        {
+
         }
 
         #endregion
