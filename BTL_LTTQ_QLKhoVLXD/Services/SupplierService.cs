@@ -15,7 +15,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             const string query =
                 "SELECT e.id, e.name, e.address " +
                 "FROM supplier AS e " +
-                "WHERE isAvailable=1";
+                "WHERE isAvailable=1" +
+                "ORDER BY e.name";
             var result = DatabaseProvider.Instance.ExecuteQuery(query);
             var supplierList = Helper.Mapper.MapArrayOfObject(result, Supplier.FromData);
             return supplierList;

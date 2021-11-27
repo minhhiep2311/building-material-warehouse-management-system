@@ -15,7 +15,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             const string query =
                 "SELECT e.id, e.name, e.address " +
                 "FROM customer AS e " +
-                "WHERE isAvailable=1";
+                "WHERE isAvailable=1 " +
+                "ORDER BY e.name";
             var result = DatabaseProvider.Instance.ExecuteQuery(query);
             var employeeList = Helper.Mapper.MapArrayOfObject(result, Customer.FromData);
             return employeeList;

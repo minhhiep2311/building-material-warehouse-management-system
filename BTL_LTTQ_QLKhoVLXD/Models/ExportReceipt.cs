@@ -11,6 +11,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
         public List<Material> Materials { get; }
         public double TotalPrice { get; }
         public double Vat { get; }
+        public double VatPercent { get; }
         public string Reason { get; }
 
         public ExportReceipt(
@@ -19,9 +20,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             Warehouse warehouse,
             List<Material> materials,
             double totalPrice,
-            double vat, 
+            double vat,
+            double vatPercent,
             string reason)
-            : this(-1, employee, customer, warehouse, materials, totalPrice, vat, reason)
+            : this(-1, employee, customer, warehouse, materials, totalPrice, vat, vatPercent, reason)
         { }
 
         public ExportReceipt(
@@ -30,8 +32,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             Customer customer,
             Warehouse warehouse,
             List<Material> materials,
-            double totalPrice, 
+            double totalPrice,
             double vat,
+            double vatPercent,
             string reason)
         {
             Id = id;
@@ -41,6 +44,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             Materials = materials;
             TotalPrice = totalPrice;
             Vat = vat;
+            VatPercent = vatPercent;
             Reason = reason;
         }
     }

@@ -45,7 +45,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             var query = "INSERT INTO importReceiptDetails(idImportReceipt, idMaterial, numerous, unitPrice) " +
                 $"VALUES {string.Join(", ", values)}";
             var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
-            return rowAffected == receipt.Materials.Count;
+            return rowAffected >= receipt.Materials.Count;
         }
 
         private static bool LinkImportReceiptToSupplier(ImportReceipt receipt)
@@ -53,7 +53,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             var query = "INSERT INTO supplier_receipt(idImportReceipt, idSupplier) " +
                 $"VALUES({receipt.Id}, {receipt.Supplier.Id})";
             var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
-            return rowAffected == 1;
+            return rowAffected >= 1;
         }
 
         private static bool LinkImportReceiptToEmployee(ImportReceipt receipt)
@@ -61,7 +61,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             var query = "INSERT INTO employee_importReceipt(idEmployee, idImportReceipt) " +
                 $"VALUES({receipt.Employee.Id}, {receipt.Id})";
             var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
-            return rowAffected == 1;
+            return rowAffected >= 1;
         }
 
         public static int CreateExportReceipt(ExportReceipt receipt)
@@ -78,11 +78,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 
         private static int CreateNewExportReceipt(ExportReceipt receipt)
         {
-            var query = "INSERT INTO exportReceipt(date, totalPrice, idWarehouse) " +
+            var query = "INSERT INTO exportReceipt(date, totalPrice, vat, idWarehouse, reason) " +
                 "OUTPUT INSERTED.ID " +
                 $"VALUES('{DateTime.Now}', " +
                 $"{receipt.TotalPrice}, " +
-                $"{receipt.Warehouse.Id})";
+                $"{receipt.Vat}, " +
+                $"{receipt.Warehouse.Id}, " +
+                $"'{receipt.Reason}')";
 
             try
             {
@@ -102,15 +104,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             var query = "INSERT INTO exportReceiptDetails(idExportReceipt, idMaterial, numerous, unitPrice) " +
                 $"VALUES {string.Join(", ", values)}";
             var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
-            return rowAffected == receipt.Materials.Count;
+            return rowAffected >= receipt.Materials.Count;
         }
 
         private static bool LinkExportReceiptToCustomer(ExportReceipt receipt)
         {
-            var query = "INSERT INTO customer_receipt(idImportReceipt, idCustomer) " +
+            var query = "INSERT INTO customer_receipt(idExportReceipt, idCustomer) " +
                 $"VALUES({receipt.Id}, {receipt.Customer.Id})";
             var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
-            return rowAffected == 1;
+            return rowAffected >= 1;
         }
 
         private static bool LinkExportReceiptToEmployee(ExportReceipt receipt)
@@ -118,7 +120,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             var query = "INSERT INTO employee_exportReceipt(idEmployee, idExportReceipt) " +
                 $"VALUES({receipt.Employee.Id}, {receipt.Id})";
             var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
-            return rowAffected == 1;
+            return rowAffected >= 1;
         }
     }
 }

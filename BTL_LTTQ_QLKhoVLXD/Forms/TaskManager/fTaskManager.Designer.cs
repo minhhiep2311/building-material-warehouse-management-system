@@ -1032,7 +1032,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtReason_sell.Location = new System.Drawing.Point(86, 7);
             this.txtReason_sell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtReason_sell.Name = "txtReason_sell";
-            this.txtReason_sell.ReadOnly = true;
             this.txtReason_sell.Size = new System.Drawing.Size(406, 26);
             this.txtReason_sell.TabIndex = 1;
             // 
@@ -1081,6 +1080,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.nmrVat_sell.Size = new System.Drawing.Size(62, 26);
             this.nmrVat_sell.TabIndex = 9;
             this.nmrVat_sell.ThousandsSeparator = true;
+            this.nmrVat_sell.ValueChanged += new System.EventHandler(this.nmrVat_sell_ValueChanged);
             // 
             // lblVat_sell
             // 
@@ -1136,6 +1136,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtTotalMoney_sell.ReadOnly = true;
             this.txtTotalMoney_sell.Size = new System.Drawing.Size(206, 26);
             this.txtTotalMoney_sell.TabIndex = 13;
+            this.txtTotalMoney_sell.TextChanged += new System.EventHandler(this.txtTotalMoney_sell_TextChanged);
             // 
             // btnCreateReceipt_sell
             // 

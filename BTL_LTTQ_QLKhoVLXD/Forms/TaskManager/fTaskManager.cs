@@ -66,11 +66,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             Invoke((MethodInvoker)(() =>
             {
-                nmrMaterialAmount_buy.TextChanged += nmrMaterialAmount_Buy_TextChanged;
-            }));
-
-            Invoke((MethodInvoker)(() =>
-            {
                 Init_Sell();
                 nmrMaterialAmount_sell.TextChanged += nmrMaterialAmount_Sell_TextChanged;
             }));
@@ -212,6 +207,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void cboWarehouse_buy_SelectedIndexChanged(object sender, EventArgs e)
         {
             TryEnableCreateReceipt_Buy();
+            lvwItem_buy.Items.Clear();
+            _items_buy.Clear();
+            txtTotalMoney_buy.Text = "";
         }
 
         private void cboItem_buy_SelectedIndexChanged(object sender, EventArgs e)
@@ -242,11 +240,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 btnAddItem_buy.PerformClick();
             else
                 TryEnableAddItem_Buy();
-        }
-
-        private void nmrMaterialAmount_Buy_TextChanged(object sender, EventArgs e)
-        {
-            TryEnableAddItem_Buy();
         }
 
         private void btnAddItem_buy_Click(object sender, EventArgs e)
@@ -470,6 +463,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void cboWarehouse_sell_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lvwItem_sell.Items.Clear();
+            _items_sell.Clear();
+            txtTotalMoney_sell.Text = "";
+            txtValue_sell.Text = "";
             TryUpdateItem_Sell();
             TryEnableCreateReceipt_Sell();
         }
@@ -486,10 +483,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 return;
             }
 
+            var addedItems = _items_sell.FirstOrDefault(x => x.Id == selectedItem.Id)?.Numerous ?? 0;
+            var itemsLeft = selectedItem.Numerous - addedItems;
             txtSpecialization_sell.Text = selectedItem.Specialization;
-            txtNumerous_sell.Text = selectedItem.Numerous.ToString();
+            txtNumerous_sell.Text = itemsLeft.ToString();
             nmrUnitPrice_sell.Value = Convert.ToDecimal(selectedItem.ExportUnitPrice);
-            nmrMaterialAmount_sell.Maximum = selectedItem.Numerous;
+            nmrMaterialAmount_sell.Maximum = itemsLeft;
+
             lblSpecialization_sell.Focus();
         }
 
@@ -509,7 +509,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void nmrMaterialAmount_sell_ValueChanged(object sender, EventArgs e)
         {
-            // TODO
             TryEnableAddItem_Sell();
         }
 
@@ -540,6 +539,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                    .ToListViewItem(Models.Material.Type.Import);
             }
 
+            var itemsLeft = Convert.ToInt32(txtNumerous_sell.Text) - material.Numerous;
+            nmrMaterialAmount_sell.Maximum = itemsLeft;
+            nmrMaterialAmount_sell.Value = 0;
+            txtNumerous_sell.Text = itemsLeft.ToString();
+
             TryEnableCreateReceipt_Sell();
             BindTotal_Sell();
         }
@@ -549,11 +553,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             TryDeleteItem_Sell();
         }
 
-        private void TryEnableCreateReceipt_Sell()
+        private void nmrVat_sell_ValueChanged(object sender, EventArgs e)
         {
-            btnCreateReceipt_sell.Enabled = cboCustomer_sell.SelectedIndex != -1 &&
-                cboWarehouse_sell.SelectedIndex != -1 &&
-                lvwItem_sell.Items.Count > 0;
+            BindValue_Sell();
         }
 
         private void lvwItem_sell_SelectedIndexChanged(object sender, EventArgs e)
@@ -618,6 +620,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             txtValue_sell.Text = "";
         }
 
+        private void txtTotalMoney_sell_TextChanged(object sender, EventArgs e)
+        {
+            BindValue_Sell();
+        }
+
         #endregion
 
         #region Sell Behaviors
@@ -671,6 +678,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             TryEnableCreateReceipt_Sell();
         }
 
+        private void TryEnableCreateReceipt_Sell()
+        {
+            btnCreateReceipt_sell.Enabled = cboCustomer_sell.SelectedIndex != -1 &&
+                cboWarehouse_sell.SelectedIndex != -1 &&
+                lvwItem_sell.Items.Count > 0;
+        }
+
         private void DeleteItem_Sell(List<int> shouldDeleteItemIds)
         {
             shouldDeleteItemIds.ForEach(idx =>
@@ -709,13 +723,26 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 .Sum(x => x);
         }
 
+        private void BindValue_Sell()
+        {
+            var sum = CalculateValue_Sell();
+            txtValue_sell.Text = Helper.Format.String(sum);
+        }
+
+        private double CalculateValue_Sell()
+        {
+            return Convert.ToDouble(txtTotalMoney_sell.Text) * (1 + Convert.ToDouble(nmrVat_sell.Value) / 100);
+        }
+
         private ExportReceipt CreateReceipt_Sell()
         {
             var customer = cboCustomer_sell.SelectedItem as Models.Customer;
             var warehouse = cboWarehouse_sell.SelectedItem as Warehouse;
             var total = CalculateTotal_Sell();
-            var vat = Convert.ToDouble(nmrVat_sell.Value);
-            var receipt = new ExportReceipt(User, customer, warehouse, _items_sell, total, vat, "");
+            var vatPercent = Convert.ToDouble(nmrVat_sell.Value);
+            var vat = total * (1 + vatPercent / 100);
+            var reason = txtReason_sell.Text;
+            var receipt = new ExportReceipt(User, customer, warehouse, _items_sell, total, vat, vatPercent, reason);
             receipt.Id = ReceiptService.CreateExportReceipt(receipt);
             return receipt.Id != -1 ? receipt : null;
         }

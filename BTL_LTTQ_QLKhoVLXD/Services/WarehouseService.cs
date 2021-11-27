@@ -11,7 +11,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 
         public static List<Warehouse> GetAllWarehouses()
         {
-            const string query = "SELECT * FROM warehouse";
+            const string query = "SELECT * FROM warehouse ORDER BY name";
 
             var result = DatabaseProvider.Instance.ExecuteQuery(query);
             var warehousesList = Helper.Mapper.MapArrayOfObject(result, Warehouse.FromData);
@@ -25,7 +25,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 "FROM material_warehouse " +
                 "JOIN material m ON material_warehouse.idMaterial = m.id " +
                 "JOIN unit u ON m.idUnit = u.id " +
-                $"WHERE idWarehouse = {warehouse.Id}";
+                $"WHERE idWarehouse = {warehouse.Id}" +
+                "ORDER BY m.name";
 
             var result = DatabaseProvider.Instance.ExecuteQuery(query);
             var materialsList = Helper.Mapper.MapArrayOfObject(result, Material.FromData);
