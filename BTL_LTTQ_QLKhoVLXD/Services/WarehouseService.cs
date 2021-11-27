@@ -25,7 +25,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 "FROM material_warehouse " +
                 "JOIN material m ON material_warehouse.idMaterial = m.id " +
                 "JOIN unit u ON m.idUnit = u.id " +
-                $"WHERE idWarehouse = {warehouse.Id}" +
+                $"WHERE idWarehouse = {warehouse.Id} AND amount > 0" +
                 "ORDER BY m.name";
 
             var result = DatabaseProvider.Instance.ExecuteQuery(query);

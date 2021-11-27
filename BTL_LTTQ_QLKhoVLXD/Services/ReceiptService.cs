@@ -84,7 +84,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 $"{receipt.TotalPrice}, " +
                 $"{receipt.Vat}, " +
                 $"{receipt.Warehouse.Id}, " +
-                $"'{receipt.Reason}')";
+                $"N'{receipt.Reason}')";
 
             try
             {

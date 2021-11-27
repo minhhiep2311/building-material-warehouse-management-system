@@ -725,6 +725,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void BindValue_Sell()
         {
+            if (string.IsNullOrEmpty(txtTotalMoney_sell.Text))
+            {
+                txtValue_sell.Text = "";
+                return;
+            }
+
             var sum = CalculateValue_Sell();
             txtValue_sell.Text = Helper.Format.String(sum);
         }
@@ -740,7 +746,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var warehouse = cboWarehouse_sell.SelectedItem as Warehouse;
             var total = CalculateTotal_Sell();
             var vatPercent = Convert.ToDouble(nmrVat_sell.Value);
-            var vat = total * (1 + vatPercent / 100);
+            var vat = total * vatPercent / 100;
             var reason = txtReason_sell.Text;
             var receipt = new ExportReceipt(User, customer, warehouse, _items_sell, total, vat, vatPercent, reason);
             receipt.Id = ReceiptService.CreateExportReceipt(receipt);
@@ -755,24 +761,39 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #region Material Properties
 
+        private Helper.Debounce _debounce_material;
+
         #endregion
 
         #region Material Events
 
         private void tpgMaterial_Enter(object sender, EventArgs e)
         {
-            LoadData_Material();
+            ResetButtons_Material();
+            _debounce_material?.Continue();
         }
-        private void btnAdd_Material_Click(object sender, EventArgs e)
+
+        private void tpgMaterial_Leave(object sender, EventArgs e)
         {
-            lvwSupplier_supplier.SelectedItems.Clear();
-            new fMaterial(this).ShowDialog();
+            _debounce_material.Pause();
+        }
+
+        private void btnDetails_material_Click(object sender, EventArgs e)
+        {
+            new fMaterialDetails().ShowDialog();
         }
 
         private void btnEdit_Material_Click(object sender, EventArgs e)
         {
-            EditMaterial_material();
+            EditMaterial_Material();
         }
+
+        private void btnAdd_Material_Click(object sender, EventArgs e)
+        {
+            lvwMaterial_material.SelectedItems.Clear();
+            new fMaterial(this).ShowDialog();
+        }
+
         private void btnDelete_Material_Click(object sender, EventArgs e)
         {
 
@@ -783,15 +804,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         }
 
+        private void btnWareHouse_material_Click(object sender, EventArgs e)
+        {
+            new fWarehouse().ShowDialog();
+        }
+
         private void btnRefresh_Material_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnWareHouse_material_Click(object sender, EventArgs e)
-        {
-            new fWarehouse().ShowDialog();
-        }
         #endregion
 
         #region Material Behaviors
@@ -820,7 +842,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             //cache.ForEach(material => lvwMaterial_material.Items.Add(material.ToListViewItem(FormMode.)));
         }
 
-        private void EditMaterial_material()
+        private void ResetButtons_Material()
+        {
+            btnEdit_material.Enabled = false;
+            btnDelete_material.Enabled = false;
+        }
+
+        private void EditMaterial_Material()
         {
             /*var material = Helper.Control.FirstSelected(, lvwMaterial_material);
             if (material != null)
@@ -1698,9 +1726,29 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #endregion
 
-        private void btnDetails_material_Click(object sender, EventArgs e)
+        private void lvwMaterial_material_MouseClick(object sender, MouseEventArgs e)
         {
-            new fMaterialDetails().ShowDialog();
+
+        }
+
+        private void lvwMaterial_material_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void lvwMaterial_material_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmiShowDetails_material_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmiShowInformation_material_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

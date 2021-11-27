@@ -29,11 +29,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
         {
             var (exApp, exBook, exSheet) = InitExcelFile();
 
-            var companyExcel = (Range)exSheet.Cells[1, 1];
-            companyExcel.Font.Size = 13;
-            companyExcel.Font.Bold = true;
-            companyExcel.Font.Color = Color.Blue;
-            companyExcel.Value = "VẬT LIỆU XÂY DỰNG AN HIỆP - CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ AN HIỆP";
+            PrintCompany(exSheet);
 
             var supplierExcel = (Range)exSheet.Cells[2, 1];
             supplierExcel.Font.Size = 12;
@@ -115,23 +111,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             employeeExcel.Value = $"Nhân viên: {receipt.Employee.Name}";
 
             exSheet.Name = "Phieu_Nhap_Kho";
-            exBook.Activate();
-
-            if (DlgSave.ShowDialog() == DialogResult.OK)
-                exBook.SaveAs(DlgSave.FileName);
-
-            exApp.Quit();
+            
+            RequestToSave(exApp, exBook);
         }
 
         public static void Export(ExportReceipt receipt)
         {
             var (exApp, exBook, exSheet) = InitExcelFile();
-
-            var companyExcel = (Range)exSheet.Cells[1, 1];
-            companyExcel.Font.Size = 13;
-            companyExcel.Font.Bold = true;
-            companyExcel.Font.Color = Color.Blue;
-            companyExcel.Value = "VẬT LIỆU XÂY DỰNG AN HIỆP - CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ AN HIỆP";
+            
+            PrintCompany(exSheet);
 
             var supplierExcel = (Range)exSheet.Cells[2, 1];
             supplierExcel.Font.Size = 12;
@@ -229,12 +217,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             employeeExcel.Value = $"Nhân viên: {receipt.Employee.Name}";
 
             exSheet.Name = "Phieu_Xuat_Kho";
-            exBook.Activate();
-
-            if (DlgSave.ShowDialog() == DialogResult.OK)
-                exBook.SaveAs(DlgSave.FileName);
-
-            exApp.Quit();
+            
+            RequestToSave(exApp, exBook);
         }
 
         #endregion
@@ -312,12 +296,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             SetBorder(border);
 
             exSheet.Name = "Khách hàng";
-            exBook.Activate();
 
-            if (DlgSave.ShowDialog() == DialogResult.OK)
-                exBook.SaveAs(DlgSave.FileName);
-
-            exApp.Quit();
+            RequestToSave(exApp, exBook);
         }
 
         #endregion
@@ -394,12 +374,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             SetBorder(border);
 
             exSheet.Name = "Nhà cung cấp";
-            exBook.Activate();
 
-            RequestToSave(exBook);
-
-            exApp.Quit();
+            RequestToSave(exApp, exBook);
         }
+
         #endregion
 
         private static void SetBorder(Borders border)
@@ -419,10 +397,21 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             return new Tuple<Application, Workbook, Worksheet>(exApp, exBook, exSheet);
         }
 
-        private static void RequestToSave(Workbook exBook)
+        private static void PrintCompany(_Worksheet exSheet)
         {
+            var companyExcel = (Range)exSheet.Cells[1, 1];
+            companyExcel.Font.Size = 13;
+            companyExcel.Font.Bold = true;
+            companyExcel.Font.Color = Color.Blue;
+            companyExcel.Value = "VẬT LIỆU XÂY DỰNG AN HIỆP - CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ AN HIỆP";
+        }
+
+        private static void RequestToSave(_Application exApp, _Workbook exBook)
+        {
+            exBook.Activate();
             if (DlgSave.ShowDialog() == DialogResult.OK)
                 exBook.SaveAs(DlgSave.FileName);
+            exApp.Quit();
         }
     }
 }

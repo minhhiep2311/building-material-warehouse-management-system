@@ -163,13 +163,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_material = new System.Windows.Forms.SplitContainer();
             this.lvwMaterial_material = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
             this.flpFunction_material = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAdd_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnDetails_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnEdit_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnAdd_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnDelete_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnExport_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnWareHouse_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnRefresh_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.btnDetails_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.grbSearchMaterial_material = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
             this.pnlSpecialization_material = new System.Windows.Forms.Panel();
             this.lblSpecialization_material = new System.Windows.Forms.Label();
@@ -265,7 +265,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_material = new System.Windows.Forms.Panel();
             this.lblName_material = new System.Windows.Forms.Label();
             this.txtName_material = new System.Windows.Forms.TextBox();
-            this.dlgSave = new System.Windows.Forms.SaveFileDialog();
+            this.cms_material = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiShowInformation_material = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiShowDetails_material = new System.Windows.Forms.ToolStripMenuItem();
             this.cms_employee.SuspendLayout();
             this.cms_supplier.SuspendLayout();
             this.tclMain.SuspendLayout();
@@ -362,6 +364,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flp_userSetting.SuspendLayout();
             this.grbSearch_material.SuspendLayout();
             this.pnlName_material.SuspendLayout();
+            this.cms_material.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPosition
@@ -1884,6 +1887,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgMaterial.Text = "Vật liệu";
             this.tpgMaterial.UseVisualStyleBackColor = true;
             this.tpgMaterial.Enter += new System.EventHandler(this.tpgMaterial_Enter);
+            this.tpgMaterial.Leave += new System.EventHandler(this.tpgMaterial_Leave);
             // 
             // spc_material
             // 
@@ -1928,17 +1932,20 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwMaterial_material.TabIndex = 0;
             this.lvwMaterial_material.UseCompatibleStateImageBehavior = false;
             this.lvwMaterial_material.View = System.Windows.Forms.View.Details;
+            this.lvwMaterial_material.SelectedIndexChanged += new System.EventHandler(this.lvwMaterial_material_SelectedIndexChanged);
+            this.lvwMaterial_material.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvwMaterial_material_MouseClick);
+            this.lvwMaterial_material.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwMaterial_material_MouseDoubleClick);
             // 
             // flpFunction_material
             // 
             this.flpFunction_material.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.flpFunction_material.Controls.Add(this.btnAdd_material);
+            this.flpFunction_material.Controls.Add(this.btnDetails_material);
             this.flpFunction_material.Controls.Add(this.btnEdit_material);
+            this.flpFunction_material.Controls.Add(this.btnAdd_material);
             this.flpFunction_material.Controls.Add(this.btnDelete_material);
             this.flpFunction_material.Controls.Add(this.btnExport_material);
             this.flpFunction_material.Controls.Add(this.btnWareHouse_material);
             this.flpFunction_material.Controls.Add(this.btnRefresh_material);
-            this.flpFunction_material.Controls.Add(this.btnDetails_material);
             this.flpFunction_material.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpFunction_material.Location = new System.Drawing.Point(5, 230);
             this.flpFunction_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1947,20 +1954,20 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_material.Size = new System.Drawing.Size(504, 433);
             this.flpFunction_material.TabIndex = 8;
             // 
-            // btnAdd_material
+            // btnDetails_material
             // 
-            this.btnAdd_material.BackColor = System.Drawing.Color.White;
-            this.btnAdd_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAdd_material.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnAdd_material.Location = new System.Drawing.Point(8, 7);
-            this.btnAdd_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAdd_material.Name = "btnAdd_material";
-            this.btnAdd_material.Size = new System.Drawing.Size(185, 63);
-            this.btnAdd_material.TabIndex = 1;
-            this.btnAdd_material.Text = "Thêm vật liệu";
-            this.btnAdd_material.UseVisualStyleBackColor = false;
-            this.btnAdd_material.Click += new System.EventHandler(this.btnAdd_Material_Click);
+            this.btnDetails_material.BackColor = System.Drawing.Color.White;
+            this.btnDetails_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetails_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnDetails_material.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnDetails_material.Location = new System.Drawing.Point(8, 7);
+            this.btnDetails_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDetails_material.Name = "btnDetails_material";
+            this.btnDetails_material.Size = new System.Drawing.Size(185, 63);
+            this.btnDetails_material.TabIndex = 7;
+            this.btnDetails_material.Text = "Chi tiết vật liệu";
+            this.btnDetails_material.UseVisualStyleBackColor = false;
+            this.btnDetails_material.Click += new System.EventHandler(this.btnDetails_material_Click);
             // 
             // btnEdit_material
             // 
@@ -1977,13 +1984,28 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnEdit_material.UseVisualStyleBackColor = false;
             this.btnEdit_material.Click += new System.EventHandler(this.btnEdit_Material_Click);
             // 
+            // btnAdd_material
+            // 
+            this.btnAdd_material.BackColor = System.Drawing.Color.White;
+            this.btnAdd_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAdd_material.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnAdd_material.Location = new System.Drawing.Point(8, 74);
+            this.btnAdd_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd_material.Name = "btnAdd_material";
+            this.btnAdd_material.Size = new System.Drawing.Size(185, 63);
+            this.btnAdd_material.TabIndex = 1;
+            this.btnAdd_material.Text = "Thêm vật liệu";
+            this.btnAdd_material.UseVisualStyleBackColor = false;
+            this.btnAdd_material.Click += new System.EventHandler(this.btnAdd_Material_Click);
+            // 
             // btnDelete_material
             // 
             this.btnDelete_material.BackColor = System.Drawing.Color.White;
             this.btnDelete_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnDelete_material.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnDelete_material.Location = new System.Drawing.Point(8, 74);
+            this.btnDelete_material.Location = new System.Drawing.Point(199, 74);
             this.btnDelete_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete_material.Name = "btnDelete_material";
             this.btnDelete_material.Size = new System.Drawing.Size(185, 63);
@@ -1998,7 +2020,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnExport_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExport_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnExport_material.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnExport_material.Location = new System.Drawing.Point(199, 74);
+            this.btnExport_material.Location = new System.Drawing.Point(8, 141);
             this.btnExport_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExport_material.Name = "btnExport_material";
             this.btnExport_material.Size = new System.Drawing.Size(185, 63);
@@ -2013,7 +2035,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnWareHouse_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWareHouse_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnWareHouse_material.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnWareHouse_material.Location = new System.Drawing.Point(8, 141);
+            this.btnWareHouse_material.Location = new System.Drawing.Point(199, 141);
             this.btnWareHouse_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnWareHouse_material.Name = "btnWareHouse_material";
             this.btnWareHouse_material.Size = new System.Drawing.Size(185, 63);
@@ -2028,7 +2050,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnRefresh_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnRefresh_material.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnRefresh_material.Location = new System.Drawing.Point(199, 141);
+            this.btnRefresh_material.Location = new System.Drawing.Point(8, 208);
             this.btnRefresh_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh_material.Name = "btnRefresh_material";
             this.btnRefresh_material.Size = new System.Drawing.Size(185, 63);
@@ -2036,21 +2058,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnRefresh_material.Text = "Làm mới";
             this.btnRefresh_material.UseVisualStyleBackColor = false;
             this.btnRefresh_material.Click += new System.EventHandler(this.btnRefresh_Material_Click);
-            // 
-            // btnDetails_material
-            // 
-            this.btnDetails_material.BackColor = System.Drawing.Color.White;
-            this.btnDetails_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetails_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnDetails_material.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnDetails_material.Location = new System.Drawing.Point(8, 208);
-            this.btnDetails_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDetails_material.Name = "btnDetails_material";
-            this.btnDetails_material.Size = new System.Drawing.Size(185, 63);
-            this.btnDetails_material.TabIndex = 7;
-            this.btnDetails_material.Text = "Chi tiết vật liệu";
-            this.btnDetails_material.UseVisualStyleBackColor = false;
-            this.btnDetails_material.Click += new System.EventHandler(this.btnDetails_material_Click);
             // 
             // grbSearchMaterial_material
             // 
@@ -3258,6 +3265,29 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtName_material.Size = new System.Drawing.Size(295, 26);
             this.txtName_material.TabIndex = 1;
             // 
+            // cms_material
+            // 
+            this.cms_material.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cms_material.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiShowDetails_material,
+            this.tsmiShowInformation_material});
+            this.cms_material.Name = "cms_material";
+            this.cms_material.Size = new System.Drawing.Size(173, 52);
+            // 
+            // tsmiShowInformation_material
+            // 
+            this.tsmiShowInformation_material.Name = "tsmiShowInformation_material";
+            this.tsmiShowInformation_material.Size = new System.Drawing.Size(210, 24);
+            this.tsmiShowInformation_material.Text = "Xem thông tin";
+            this.tsmiShowInformation_material.Click += new System.EventHandler(this.tsmiShowInformation_material_Click);
+            // 
+            // tsmiShowDetails_material
+            // 
+            this.tsmiShowDetails_material.Name = "tsmiShowDetails_material";
+            this.tsmiShowDetails_material.Size = new System.Drawing.Size(210, 24);
+            this.tsmiShowDetails_material.Text = "Xem chi tiết";
+            this.tsmiShowDetails_material.Click += new System.EventHandler(this.tsmiShowDetails_material_Click);
+            // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -3408,6 +3438,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbSearch_material.ResumeLayout(false);
             this.pnlName_material.ResumeLayout(false);
             this.pnlName_material.PerformLayout();
+            this.cms_material.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3637,7 +3668,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private BmwButton btnWareHouse_material;
         private System.Windows.Forms.Label lblCost_sell;
         private System.Windows.Forms.TextBox txtCost_sell;
-        private System.Windows.Forms.SaveFileDialog dlgSave;
         private BmwButton btnDetails_material;
         private System.Windows.Forms.Panel pnlReason_sell;
         private System.Windows.Forms.TextBox txtReason_sell;
@@ -3645,5 +3675,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Panel pnlValue_sell;
         private System.Windows.Forms.Label lblValue_sell;
         private System.Windows.Forms.TextBox txtValue_sell;
+        private System.Windows.Forms.ContextMenuStrip cms_material;
+        private System.Windows.Forms.ToolStripMenuItem tsmiShowInformation_material;
+        private System.Windows.Forms.ToolStripMenuItem tsmiShowDetails_material;
     }
 }
