@@ -144,6 +144,7 @@
     <Compile Include="Models\MaterialUnit.cs" />
     <Compile Include="Models\ImportReceipt.cs" />
     <Compile Include="Models\MaterialWarehouse.cs" />
+    <Compile Include="Models\Receipt.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Models\Warehouse.cs" />
     <Compile Include="Services\CustomerService.cs" />

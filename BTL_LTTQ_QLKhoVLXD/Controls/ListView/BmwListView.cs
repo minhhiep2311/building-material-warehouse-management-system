@@ -128,7 +128,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Controls.ListView
             DrawArrow(e.Column, sorter.Order);
         }
 
-        private void OnColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        private static void OnColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
             HandleChangeIdColumnWidth(e);
         }
