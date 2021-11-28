@@ -103,6 +103,12 @@
     <Compile Include="Forms\Material\fMaterial.Designer.cs">
       <DependentUpon>fMaterial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReceiptDetails\fExportReceiptDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReceiptDetails\fExportReceiptDetails.Designer.cs">
+      <DependentUpon>fExportReceiptDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Supplier\fSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Material\fMaterial.resx">
       <DependentUpon>fMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReceiptDetails\fExportReceiptDetails.resx">
+      <DependentUpon>fExportReceiptDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Supplier\fSupplier.resx">
       <DependentUpon>fSupplier.cs</DependentUpon>

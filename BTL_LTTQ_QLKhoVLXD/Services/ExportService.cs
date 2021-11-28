@@ -110,7 +110,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             employeeExcel.Font.Color = Color.Blue;
             employeeExcel.Value = $"Nhân viên: {receipt.Employee.Name}";
 
-            exSheet.Name = "Phieu_Nhap_Kho";
+            exSheet.Name = "Phiếu nhập kho";
 
             RequestToSave(exApp, exBook);
         }
@@ -216,7 +216,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             employeeExcel.Font.Color = Color.Blue;
             employeeExcel.Value = $"Nhân viên: {receipt.Employee.Name}";
 
-            exSheet.Name = "Phieu_Xuat_Kho";
+            exSheet.Name = "Phiếu xuất kho";
 
             RequestToSave(exApp, exBook);
         }
@@ -318,8 +318,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             time.Font.Size = 12;
             time.Value = "Thời gian tạo danh sách: " + DateTime.Now;
 
-            exSheet.Range["A6:G6"].Font.Bold = true;
-            exSheet.Range["A6:G6"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
+            exSheet.Range["A6:D6"].Font.Bold = true;
+            exSheet.Range["A6:D6"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
 
             exSheet.Range["A6"].Value = "STT";
             exSheet.Range["B6"].Value = "Tên nhà cung cấp";
@@ -389,13 +389,52 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 
             PrintCompany(exSheet);
 
-            var header = (Range)exSheet.Cells[6, 3];
-            exSheet.Range["C6:D6"].Merge(true);
+            var header = (Range)exSheet.Cells[2, 2];
+            exSheet.Range["B2:E2"].Merge(true);
             header.Font.Size = 14;
             header.Font.Bold = true;
             header.Font.Color = Color.Red;
             header.Value = "DANH SÁCH VẬT LIỆU";
 
+            exSheet.Range["A6:G6"].Font.Bold = true;
+            exSheet.Range["A6:G6"].HorizontalAlignment = XlHAlign.xlHAlignCenter;
+
+            exSheet.Range["A6"].Value = "ID";
+            exSheet.Range["B6"].Value = "Tên vật liệu";
+            exSheet.Range["C6"].Value = "Đơn vị";
+            exSheet.Range["D6"].Value = "Quy cách";
+            exSheet.Range["E6"].Value = "Số lượng";
+            exSheet.Range["F6"].Value = "Đơn giá nhập";
+            exSheet.Range["G6"].Value = "Đơn giá xuất";
+
+            exSheet.Range["A6"].ColumnWidth = 5;
+            exSheet.Range["B6"].ColumnWidth = 40;
+            exSheet.Range["C6"].ColumnWidth = 15;
+            exSheet.Range["D6"].ColumnWidth = 10;
+            exSheet.Range["E6"].ColumnWidth = 12;
+            exSheet.Range["F6"].ColumnWidth = 15;
+            exSheet.Range["G6"].ColumnWidth = 15;
+
+            var i = 7;
+            for (var j = 0; j < materials.Count; i++, j++)
+            {
+                var material = materials[j];
+                exSheet.Range[$"A{i}"].Value = material.Id;
+                exSheet.Range[$"B{i}"].Value = material.Name;
+                exSheet.Range[$"C{i}"].Value = material.Unit;
+                exSheet.Range[$"D{i}"].Value = material.Specialization;
+                exSheet.Range[$"E{i}"].Value = material.Numerous;
+                exSheet.Range[$"F{i}"].Value = material.ImportUnitPrice;
+                exSheet.Range[$"G{i}"].Value = material.ExportUnitPrice;
+
+            }
+
+            var border = exSheet.Range[$"A6:G{i - 1}"].Borders;
+            SetBorder(border);
+
+            exSheet.Name = "Vật liệu";
+
+            RequestToSave(exApp, exBook);
         }
 
         #endregion
