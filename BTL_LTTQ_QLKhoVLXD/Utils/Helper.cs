@@ -263,6 +263,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
                        .Contains(Normalize.ToNumericPhoneNumber(text))) != null;
             }
 
+            public static bool Match(DateTime from, DateTime to, DateTime dt)
+            {
+                return from <= dt && dt <= to;
+            }
+
             private static bool CheckMatch(string sourceText, string text)
             {
                 return string.IsNullOrEmpty(text) || sourceText.ToLower().Contains(text.ToLower());
@@ -275,11 +280,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
             {
                 return number.ToString("N0");
             }
-        }
 
-        public static void Swap<T>(ref T t1, ref T t2)
-        {
-            (t1, t2) = (t2, t1);
+            public static string ToString(DateTime dateTime)
+            {
+                return dateTime.ToString("dd/MM/yyyy HH:mm:ss");
+            }
         }
     }
 }

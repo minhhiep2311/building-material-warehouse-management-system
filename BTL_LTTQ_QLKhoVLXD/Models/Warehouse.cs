@@ -18,6 +18,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
         #region Constructor
 
+        public Warehouse(string name) : this(-1, name, 0) { }
+
         public Warehouse(int id, string name, double area)
         {
             Id = id;
@@ -31,9 +33,20 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
         public static Warehouse FromData(DataRow data)
         {
-            var id = Convert.ToInt32(data["id"]);
-            var name = Convert.ToString(data["name"]);
+            int id;
+            var name = "";
             double area = 0;
+
+            try
+            {
+                id = Convert.ToInt32(data["id"]);
+                name = Convert.ToString(data["name"]);
+            }
+            catch (Exception)
+            {
+                return new Warehouse(name);
+            }
+
             try
             {
                 area = Convert.ToDouble(data["area"]);

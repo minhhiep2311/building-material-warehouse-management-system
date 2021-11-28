@@ -142,29 +142,25 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwReceipt_receipt = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
             this.flpFunction_receipt = new System.Windows.Forms.FlowLayoutPanel();
             this.btnShow_receipt = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.btnExport_Receipt = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnRefresh_Receipt = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.grbSearch_receipt = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
             this.pnlEmployeeReceipt_receipt = new System.Windows.Forms.Panel();
-            this.txtEmployeeReceipt_receipt = new System.Windows.Forms.TextBox();
+            this.txtEmployee_receipt = new System.Windows.Forms.TextBox();
             this.lblEmployeeReceipt_receipt = new System.Windows.Forms.Label();
             this.pnlReceiptType_receipt = new System.Windows.Forms.Panel();
             this.rdbExport_receipt = new System.Windows.Forms.RadioButton();
-            this.rdbImport_receipt = new System.Windows.Forms.RadioButton();
+            this.rdoImport_receipt = new System.Windows.Forms.RadioButton();
             this.lblReceiptType_receipt = new System.Windows.Forms.Label();
             this.pnlWareHouse_receipt = new System.Windows.Forms.Panel();
             this.txtWarehouse_receipt = new System.Windows.Forms.TextBox();
             this.lblWareHouse_receipt = new System.Windows.Forms.Label();
             this.pnlPartner_receipt = new System.Windows.Forms.Panel();
             this.lblPartner_receipt = new System.Windows.Forms.Label();
-            this.txtPrice_Receipt = new System.Windows.Forms.TextBox();
+            this.txtPartner_receipt = new System.Windows.Forms.TextBox();
             this.pnlDate_receipt = new System.Windows.Forms.Panel();
             this.dtpDateTo_receipt = new System.Windows.Forms.DateTimePicker();
             this.dtpDateFrom_receipt = new System.Windows.Forms.DateTimePicker();
             this.lblDate_receipt = new System.Windows.Forms.Label();
-            this.pnlID_receipt = new System.Windows.Forms.Panel();
-            this.lblId_receipt = new System.Windows.Forms.Label();
-            this.txtId_receipt = new System.Windows.Forms.TextBox();
             this.tpgMaterial = new System.Windows.Forms.TabPage();
             this.spc_material = new System.Windows.Forms.SplitContainer();
             this.lvwMaterial_material = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
@@ -309,7 +305,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlWareHouse_receipt.SuspendLayout();
             this.pnlPartner_receipt.SuspendLayout();
             this.pnlDate_receipt.SuspendLayout();
-            this.pnlID_receipt.SuspendLayout();
             this.tpgMaterial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spc_material)).BeginInit();
             this.spc_material.Panel1.SuspendLayout();
@@ -1644,14 +1639,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.flpFunction_receipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.flpFunction_receipt.Controls.Add(this.btnShow_receipt);
-            this.flpFunction_receipt.Controls.Add(this.btnExport_Receipt);
             this.flpFunction_receipt.Controls.Add(this.btnRefresh_Receipt);
             this.flpFunction_receipt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpFunction_receipt.Location = new System.Drawing.Point(5, 307);
+            this.flpFunction_receipt.Location = new System.Drawing.Point(5, 284);
             this.flpFunction_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpFunction_receipt.Name = "flpFunction_receipt";
             this.flpFunction_receipt.Padding = new System.Windows.Forms.Padding(5);
-            this.flpFunction_receipt.Size = new System.Drawing.Size(504, 299);
+            this.flpFunction_receipt.Size = new System.Drawing.Size(504, 322);
             this.flpFunction_receipt.TabIndex = 8;
             // 
             // btnShow_receipt
@@ -1669,28 +1663,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnShow_receipt.UseVisualStyleBackColor = false;
             this.btnShow_receipt.Click += new System.EventHandler(this.btnShow_receipt_Click);
             // 
-            // btnExport_Receipt
-            // 
-            this.btnExport_Receipt.BackColor = System.Drawing.Color.White;
-            this.btnExport_Receipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExport_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnExport_Receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnExport_Receipt.Location = new System.Drawing.Point(199, 7);
-            this.btnExport_Receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExport_Receipt.Name = "btnExport_Receipt";
-            this.btnExport_Receipt.Size = new System.Drawing.Size(185, 63);
-            this.btnExport_Receipt.TabIndex = 5;
-            this.btnExport_Receipt.Text = "Xuất file danh sách hóa đơn";
-            this.btnExport_Receipt.UseVisualStyleBackColor = false;
-            this.btnExport_Receipt.Click += new System.EventHandler(this.btnExport_Receipt_Click);
-            // 
             // btnRefresh_Receipt
             // 
             this.btnRefresh_Receipt.BackColor = System.Drawing.Color.White;
             this.btnRefresh_Receipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnRefresh_Receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnRefresh_Receipt.Location = new System.Drawing.Point(8, 74);
+            this.btnRefresh_Receipt.Location = new System.Drawing.Point(199, 7);
             this.btnRefresh_Receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh_Receipt.Name = "btnRefresh_Receipt";
             this.btnRefresh_Receipt.Size = new System.Drawing.Size(185, 63);
@@ -1707,7 +1686,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbSearch_receipt.Controls.Add(this.pnlWareHouse_receipt);
             this.grbSearch_receipt.Controls.Add(this.pnlPartner_receipt);
             this.grbSearch_receipt.Controls.Add(this.pnlDate_receipt);
-            this.grbSearch_receipt.Controls.Add(this.pnlID_receipt);
             this.grbSearch_receipt.Dock = System.Windows.Forms.DockStyle.Top;
             this.grbSearch_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.grbSearch_receipt.ForeColor = System.Drawing.Color.White;
@@ -1715,31 +1693,31 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbSearch_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grbSearch_receipt.Name = "grbSearch_receipt";
             this.grbSearch_receipt.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grbSearch_receipt.Size = new System.Drawing.Size(504, 302);
+            this.grbSearch_receipt.Size = new System.Drawing.Size(504, 279);
             this.grbSearch_receipt.TabIndex = 0;
             this.grbSearch_receipt.TabStop = false;
             this.grbSearch_receipt.Text = "Tìm kiếm";
             // 
             // pnlEmployeeReceipt_receipt
             // 
-            this.pnlEmployeeReceipt_receipt.Controls.Add(this.txtEmployeeReceipt_receipt);
+            this.pnlEmployeeReceipt_receipt.Controls.Add(this.txtEmployee_receipt);
             this.pnlEmployeeReceipt_receipt.Controls.Add(this.lblEmployeeReceipt_receipt);
-            this.pnlEmployeeReceipt_receipt.Location = new System.Drawing.Point(8, 244);
+            this.pnlEmployeeReceipt_receipt.Location = new System.Drawing.Point(6, 195);
             this.pnlEmployeeReceipt_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlEmployeeReceipt_receipt.Name = "pnlEmployeeReceipt_receipt";
-            this.pnlEmployeeReceipt_receipt.Size = new System.Drawing.Size(440, 39);
+            this.pnlEmployeeReceipt_receipt.Size = new System.Drawing.Size(437, 39);
             this.pnlEmployeeReceipt_receipt.TabIndex = 9;
             // 
-            // txtEmployeeReceipt_receipt
+            // txtEmployee_receipt
             // 
-            this.txtEmployeeReceipt_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtEmployeeReceipt_receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtEmployeeReceipt_receipt.Location = new System.Drawing.Point(164, 6);
-            this.txtEmployeeReceipt_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtEmployeeReceipt_receipt.Name = "txtEmployeeReceipt_receipt";
-            this.txtEmployeeReceipt_receipt.Size = new System.Drawing.Size(267, 26);
-            this.txtEmployeeReceipt_receipt.TabIndex = 2;
-            this.txtEmployeeReceipt_receipt.TextChanged += new System.EventHandler(this.txtEmployeeReceipt_receipt_TextChanged);
+            this.txtEmployee_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtEmployee_receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.txtEmployee_receipt.Location = new System.Drawing.Point(164, 6);
+            this.txtEmployee_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmployee_receipt.Name = "txtEmployee_receipt";
+            this.txtEmployee_receipt.Size = new System.Drawing.Size(267, 26);
+            this.txtEmployee_receipt.TabIndex = 2;
+            this.txtEmployee_receipt.TextChanged += new System.EventHandler(this.txtEmployee_receipt_TextChanged);
             // 
             // lblEmployeeReceipt_receipt
             // 
@@ -1754,9 +1732,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // pnlReceiptType_receipt
             // 
             this.pnlReceiptType_receipt.Controls.Add(this.rdbExport_receipt);
-            this.pnlReceiptType_receipt.Controls.Add(this.rdbImport_receipt);
+            this.pnlReceiptType_receipt.Controls.Add(this.rdoImport_receipt);
             this.pnlReceiptType_receipt.Controls.Add(this.lblReceiptType_receipt);
-            this.pnlReceiptType_receipt.Location = new System.Drawing.Point(8, 199);
+            this.pnlReceiptType_receipt.Location = new System.Drawing.Point(6, 152);
             this.pnlReceiptType_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlReceiptType_receipt.Name = "pnlReceiptType_receipt";
             this.pnlReceiptType_receipt.Size = new System.Drawing.Size(437, 39);
@@ -1773,19 +1751,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.rdbExport_receipt.Text = "HĐ Xuất";
             this.rdbExport_receipt.UseVisualStyleBackColor = true;
             // 
-            // rdbImport_receipt
+            // rdoImport_receipt
             // 
-            this.rdbImport_receipt.AutoSize = true;
-            this.rdbImport_receipt.Checked = true;
-            this.rdbImport_receipt.Location = new System.Drawing.Point(164, 7);
-            this.rdbImport_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rdbImport_receipt.Name = "rdbImport_receipt";
-            this.rdbImport_receipt.Size = new System.Drawing.Size(99, 24);
-            this.rdbImport_receipt.TabIndex = 1;
-            this.rdbImport_receipt.TabStop = true;
-            this.rdbImport_receipt.Text = "HĐ Nhập";
-            this.rdbImport_receipt.UseVisualStyleBackColor = true;
-            this.rdbImport_receipt.CheckedChanged += new System.EventHandler(this.rdbImport_receipt_CheckedChanged);
+            this.rdoImport_receipt.AutoSize = true;
+            this.rdoImport_receipt.Checked = true;
+            this.rdoImport_receipt.Location = new System.Drawing.Point(164, 7);
+            this.rdoImport_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rdoImport_receipt.Name = "rdoImport_receipt";
+            this.rdoImport_receipt.Size = new System.Drawing.Size(99, 24);
+            this.rdoImport_receipt.TabIndex = 1;
+            this.rdoImport_receipt.TabStop = true;
+            this.rdoImport_receipt.Text = "HĐ Nhập";
+            this.rdoImport_receipt.UseVisualStyleBackColor = true;
+            this.rdoImport_receipt.CheckedChanged += new System.EventHandler(this.rdoImport_receipt_CheckedChanged);
             // 
             // lblReceiptType_receipt
             // 
@@ -1801,7 +1779,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             this.pnlWareHouse_receipt.Controls.Add(this.txtWarehouse_receipt);
             this.pnlWareHouse_receipt.Controls.Add(this.lblWareHouse_receipt);
-            this.pnlWareHouse_receipt.Location = new System.Drawing.Point(8, 156);
+            this.pnlWareHouse_receipt.Location = new System.Drawing.Point(6, 109);
             this.pnlWareHouse_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlWareHouse_receipt.Name = "pnlWareHouse_receipt";
             this.pnlWareHouse_receipt.Size = new System.Drawing.Size(437, 39);
@@ -1831,8 +1809,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // pnlPartner_receipt
             // 
             this.pnlPartner_receipt.Controls.Add(this.lblPartner_receipt);
-            this.pnlPartner_receipt.Controls.Add(this.txtPrice_Receipt);
-            this.pnlPartner_receipt.Location = new System.Drawing.Point(8, 113);
+            this.pnlPartner_receipt.Controls.Add(this.txtPartner_receipt);
+            this.pnlPartner_receipt.Location = new System.Drawing.Point(6, 66);
             this.pnlPartner_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlPartner_receipt.Name = "pnlPartner_receipt";
             this.pnlPartner_receipt.Size = new System.Drawing.Size(437, 39);
@@ -1848,23 +1826,23 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lblPartner_receipt.TabIndex = 0;
             this.lblPartner_receipt.Text = "Đối tác";
             // 
-            // txtPrice_Receipt
+            // txtPartner_receipt
             // 
-            this.txtPrice_Receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtPrice_Receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtPrice_Receipt.Location = new System.Drawing.Point(164, 5);
-            this.txtPrice_Receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPrice_Receipt.Name = "txtPrice_Receipt";
-            this.txtPrice_Receipt.Size = new System.Drawing.Size(267, 26);
-            this.txtPrice_Receipt.TabIndex = 1;
-            this.txtPrice_Receipt.TextChanged += new System.EventHandler(this.txtPrice_Receipt_TextChanged);
+            this.txtPartner_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtPartner_receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.txtPartner_receipt.Location = new System.Drawing.Point(164, 5);
+            this.txtPartner_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPartner_receipt.Name = "txtPartner_receipt";
+            this.txtPartner_receipt.Size = new System.Drawing.Size(267, 26);
+            this.txtPartner_receipt.TabIndex = 1;
+            this.txtPartner_receipt.TextChanged += new System.EventHandler(this.txtPartner_receipt_TextChanged);
             // 
             // pnlDate_receipt
             // 
             this.pnlDate_receipt.Controls.Add(this.dtpDateTo_receipt);
             this.pnlDate_receipt.Controls.Add(this.dtpDateFrom_receipt);
             this.pnlDate_receipt.Controls.Add(this.lblDate_receipt);
-            this.pnlDate_receipt.Location = new System.Drawing.Point(8, 70);
+            this.pnlDate_receipt.Location = new System.Drawing.Point(6, 23);
             this.pnlDate_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDate_receipt.Name = "pnlDate_receipt";
             this.pnlDate_receipt.Size = new System.Drawing.Size(437, 39);
@@ -1902,37 +1880,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lblDate_receipt.Size = new System.Drawing.Size(74, 20);
             this.lblDate_receipt.TabIndex = 0;
             this.lblDate_receipt.Text = "Ngày lập";
-            // 
-            // pnlID_receipt
-            // 
-            this.pnlID_receipt.Controls.Add(this.lblId_receipt);
-            this.pnlID_receipt.Controls.Add(this.txtId_receipt);
-            this.pnlID_receipt.Location = new System.Drawing.Point(8, 27);
-            this.pnlID_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlID_receipt.Name = "pnlID_receipt";
-            this.pnlID_receipt.Size = new System.Drawing.Size(437, 39);
-            this.pnlID_receipt.TabIndex = 5;
-            // 
-            // lblId_receipt
-            // 
-            this.lblId_receipt.AutoSize = true;
-            this.lblId_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblId_receipt.Location = new System.Drawing.Point(3, 9);
-            this.lblId_receipt.Name = "lblId_receipt";
-            this.lblId_receipt.Size = new System.Drawing.Size(96, 20);
-            this.lblId_receipt.TabIndex = 0;
-            this.lblId_receipt.Text = "Mã hóa đơn";
-            // 
-            // txtId_receipt
-            // 
-            this.txtId_receipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtId_receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtId_receipt.Location = new System.Drawing.Point(164, 6);
-            this.txtId_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtId_receipt.Name = "txtId_receipt";
-            this.txtId_receipt.Size = new System.Drawing.Size(267, 26);
-            this.txtId_receipt.TabIndex = 1;
-            this.txtId_receipt.TextChanged += new System.EventHandler(this.txtId_receipt_TextChanged);
             // 
             // tpgMaterial
             // 
@@ -3306,8 +3253,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlPartner_receipt.PerformLayout();
             this.pnlDate_receipt.ResumeLayout(false);
             this.pnlDate_receipt.PerformLayout();
-            this.pnlID_receipt.ResumeLayout(false);
-            this.pnlID_receipt.PerformLayout();
             this.tpgMaterial.ResumeLayout(false);
             this.spc_material.Panel1.ResumeLayout(false);
             this.spc_material.Panel2.ResumeLayout(false);
@@ -3504,17 +3449,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.SplitContainer spc_receipt;
         private BmwListView lvwReceipt_receipt;
         private System.Windows.Forms.FlowLayoutPanel flpFunction_receipt;
-        private BmwButton btnExport_Receipt;
         private BmwButton btnRefresh_Receipt;
         private BmwGroupBox grbSearch_receipt;
         private System.Windows.Forms.Panel pnlPartner_receipt;
         private System.Windows.Forms.Label lblPartner_receipt;
-        private System.Windows.Forms.TextBox txtPrice_Receipt;
+        private System.Windows.Forms.TextBox txtPartner_receipt;
         private System.Windows.Forms.Panel pnlDate_receipt;
         private System.Windows.Forms.Label lblDate_receipt;
-        private System.Windows.Forms.Panel pnlID_receipt;
-        private System.Windows.Forms.Label lblId_receipt;
-        private System.Windows.Forms.TextBox txtId_receipt;
         private System.Windows.Forms.SplitContainer spc_material;
         private Controls.ComboBox.BmwComboBox cboWarehouse_buy;
         private System.Windows.Forms.Label lblWarehouse_buy;
@@ -3535,9 +3476,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Label lblWareHouse_receipt;
         private System.Windows.Forms.Panel pnlReceiptType_receipt;
         private System.Windows.Forms.Label lblReceiptType_receipt;
-        private System.Windows.Forms.RadioButton rdbImport_receipt;
+        private System.Windows.Forms.RadioButton rdoImport_receipt;
         private System.Windows.Forms.Panel pnlEmployeeReceipt_receipt;
-        private System.Windows.Forms.TextBox txtEmployeeReceipt_receipt;
+        private System.Windows.Forms.TextBox txtEmployee_receipt;
         private System.Windows.Forms.Label lblEmployeeReceipt_receipt;
         private System.Windows.Forms.RadioButton rdbExport_receipt;
         private BmwGroupBox grbItem_sell;

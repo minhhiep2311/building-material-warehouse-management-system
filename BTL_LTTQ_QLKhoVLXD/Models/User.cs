@@ -24,7 +24,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
         #region Constructors
 
-        public User(string name, string address, bool isMale, DateTime dob, EmployeePosition position, List<string> phoneNumber)
+        public User(string name, string address = null, bool isMale = default, DateTime dob = default, EmployeePosition position = null, List<string> phoneNumber = null)
             : this(-1, name, address, isMale, dob, position, null, phoneNumber)
         { }
 
@@ -54,8 +54,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
         public static User FromData(DataRow data)
         {
-            var account = Convert.ToString(data["username"]);
             var id = Convert.ToInt32(data["id"]);
+            var account = Convert.ToString(data["username"]);
             var name = Convert.ToString(data["name"]);
             var address = Convert.ToString(data["address"]);
             var isMale = Convert.ToInt32(data["isMale"]) == 1;

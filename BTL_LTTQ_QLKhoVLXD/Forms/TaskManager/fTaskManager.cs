@@ -57,15 +57,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             DisplayComponentsAccordsPermission();
             Init_Buy();
 
-            Invoke((MethodInvoker)(() =>
-            {
-                LoadData_Warehouse();
-            }));
+            Invoke((MethodInvoker)LoadData_Warehouse);
 
             Invoke((MethodInvoker)(() =>
             {
                 Init_Sell();
                 nmrMaterialAmount_sell.TextChanged += nmrMaterialAmount_Sell_TextChanged;
+            }));
+
+            Invoke((MethodInvoker)(() =>
+            {
+                Init_Receipt();
+                LoadDataExport_Receipt();
+                LoadDataImport_Receipt();
             }));
 
             Invoke((MethodInvoker)(() =>
@@ -87,10 +91,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             }));
 
             Invoke((MethodInvoker)(() =>
-           {
+            {
                Init_Customer();
                LoadData_Customer();
-           }));
+            }));
         }
 
         private void fTaskManager_FormClosing(object sender, FormClosingEventArgs e)
@@ -482,7 +486,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var supplier = cboSupplier_buy.SelectedItem as Models.Supplier;
             var warehouse = cboWarehouse_buy.SelectedItem as Warehouse;
             var total = CalculateTotal_Buy();
-            var receipt = new ImportReceipt(User, supplier, warehouse, _items_buy, total);
+            var receipt = new ImportReceipt(User, supplier, warehouse, total, DateTime.Now, _items_buy);
             receipt.Id = ReceiptService.CreateImportReceipt(receipt);
             _receipt_buy = receipt;
         }
@@ -843,7 +847,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var vat = total * vatPercent / 100;
             var totalAfterPercent = total + vat;
             var reason = txtReason_sell.Text;
-            var receipt = new ExportReceipt(User, customer, warehouse, _items_sell, totalAfterPercent, vat, vatPercent, reason);
+            var receipt = new ExportReceipt(User, customer, warehouse, totalAfterPercent, DateTime.Now, _items_sell, vat, vatPercent, reason);
             receipt.Id = ReceiptService.CreateExportReceipt(receipt);
             _receipt_sell = receipt;
         }
@@ -884,12 +888,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void tpgReceipt_Enter(object sender, EventArgs e)
         {
-            _debounce_material?.Continue();
+            _debounce_receipt?.Continue();
         }
 
         private void tpgReceipt_Leave(object sender, EventArgs e)
         {
-            _debounce_material?.Pause();
+            _debounce_receipt?.Pause();
         }
 
         private void lvwReceipt_Receipt_MouseClick(object sender, MouseEventArgs e)
@@ -921,43 +925,35 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             ShowDetails_Receipt();
         }
 
-        private void txtId_receipt_TextChanged(object sender, EventArgs e)
-        {
-            _debounce_material.HandleUpdate();
-        }
-
         private void dtpDateFrom_receipt_ValueChanged(object sender, EventArgs e)
         {
-            if (dtpDateFrom_receipt.Value > dtpDateTo_receipt.Value)
-            {
-                //Helper.Swap(ref dtpDateFrom_receipt.Value, ref dtpDateTo_receipt.Value);
-            }
-            _debounce_material.HandleUpdate();
+            _debounce_receipt.HandleUpdate();
         }
 
         private void dtpDateTo_receipt_ValueChanged(object sender, EventArgs e)
         {
-            _debounce_material.HandleUpdate();
+            _debounce_receipt.HandleUpdate();
         }
 
-        private void txtPrice_Receipt_TextChanged(object sender, EventArgs e)
+        private void txtPartner_receipt_TextChanged(object sender, EventArgs e)
         {
-            _debounce_material.HandleUpdate();
+            _debounce_receipt.HandleUpdate();
         }
 
         private void txtWarehouse_receipt_TextChanged(object sender, EventArgs e)
         {
-            _debounce_material.HandleUpdate();
+            _debounce_receipt.HandleUpdate();
         }
 
-        private void rdbImport_receipt_CheckedChanged(object sender, EventArgs e)
+        private void rdoImport_receipt_CheckedChanged(object sender, EventArgs e)
         {
-            _debounce_material.HandleUpdate();
+            _showImport_receipt = rdoImport_receipt.Checked;
+            _debounce_receipt.HandleUpdate();
         }
 
-        private void txtEmployeeReceipt_receipt_TextChanged(object sender, EventArgs e)
+        private void txtEmployee_receipt_TextChanged(object sender, EventArgs e)
         {
-            _debounce_material.HandleUpdate();
+            _debounce_receipt.HandleUpdate();
         }
 
         private void btnShow_receipt_Click(object sender, EventArgs e)
@@ -965,30 +961,106 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             ShowDetails_Receipt();
         }
 
-        private void btnExport_Receipt_Click(object sender, EventArgs e)
-        {
-            // TODO
-        }
-
         private void btnRefresh_Receipt_Click(object sender, EventArgs e)
         {
-
+            if (_showImport_receipt)
+                LoadDataImport_Receipt(_importReceipts_receipt);
+            else
+                LoadDataExport_Receipt(_exportReceipts_receipt);
         }
 
         #endregion
 
         #region Receipt Behavior
 
-        private void ShowDetails_Receipt()
+        private void Init_Receipt()
         {
+            _debounce_receipt = new Helper.Debounce(Search_Receipt);
+
+            lvwReceipt_receipt.Columns.Add("ID", 0);
+            lvwReceipt_receipt.Columns.Add("Đối tác", 700, HorizontalAlignment.Left);
+            lvwReceipt_receipt.Columns.Add("Thời gian", 170, HorizontalAlignment.Left);
+            lvwReceipt_receipt.Columns.Add("Giá trị", 120, HorizontalAlignment.Right);
+            lvwReceipt_receipt.Columns.Add("Kho", 70, HorizontalAlignment.Left);
+            lvwReceipt_receipt.Columns.Add("Nhân viên", 140, HorizontalAlignment.Left);
+        }
+
+        private void LoadDataImport_Receipt(List<ImportReceipt> cache = null)
+        {
+            lvwReceipt_receipt.Items.Clear();
+
+            if (cache == null)
+            {
+                _importReceipts_receipt = ReceiptService.GetImportReceipts();
+                cache = _importReceipts_receipt;
+            }
+
+            cache.ForEach(receipt =>
+            {
+                lvwReceipt_receipt.Items.Add(receipt.ToListViewItem());
+            });
+        }
+
+        private void LoadDataExport_Receipt(List<ExportReceipt> cache = null)
+        {
+            lvwReceipt_receipt.Items.Clear();
+
+            if (cache == null)
+            {
+                _exportReceipts_receipt = ReceiptService.GetExportReceipts();
+                cache = _exportReceipts_receipt;
+            }
+
+            cache.ForEach(receipt =>
+            {
+                lvwReceipt_receipt.Items.Add(receipt.ToListViewItem());
+            });
+        }
+
+        private void Search_Receipt()
+        {
+            var from = dtpDateFrom_receipt.Value;
+            var to = dtpDateTo_receipt.Value;
+            var partner = txtPartner_receipt.Text;
+            var warehouse = txtWarehouse_receipt.Text;
+            var user = txtEmployee_receipt.Text;
+
             if (_showImport_receipt)
             {
-                ShowDetails_Receipt(_importReceipts_receipt);
+                var receipts = _importReceipts_receipt.FindAll(x =>
+                {
+                    var matchName = Helper.Matcher.Match(from, to, x.DateTime);
+                    var matchPartner = Helper.Matcher.Match( x.Supplier.Name, partner);
+                    var matchWarehouse = Helper.Matcher.Match(x.Warehouse.Name, warehouse);
+                    var matchUser = Helper.Matcher.Match(x.Employee.Name, user);
+
+                    return matchName && matchPartner && matchWarehouse && matchUser;
+                });
+
+                LoadDataImport_Receipt(receipts);
             }
             else
             {
-                ShowDetails_Receipt(_exportReceipts_receipt);
+                var receipts = _exportReceipts_receipt.FindAll(x =>
+                {
+                    var matchName = Helper.Matcher.Match(from, to, x.DateTime);
+                    var matchPartner = Helper.Matcher.Match(x.Customer.Name, partner);
+                    var matchWarehouse = Helper.Matcher.Match(x.Warehouse.Name, warehouse);
+                    var matchUser = Helper.Matcher.Match(x.Employee.Name, user);
+
+                    return matchName && matchPartner && matchWarehouse && matchUser;
+                });
+
+                LoadDataExport_Receipt(receipts);
             }
+        }
+
+        private void ShowDetails_Receipt()
+        {
+            if (_showImport_receipt)
+                ShowDetails_Receipt(_importReceipts_receipt);
+            else
+                ShowDetails_Receipt(_exportReceipts_receipt);
         }
 
         private void ShowDetails_Receipt<T>(List<T> receipts) where T : Receipt
@@ -1312,8 +1384,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             _debounce_customer = new Helper.Debounce(Search_Customer);
 
             lvwCustomer_customer.Columns.Add("ID", 0);
-            lvwCustomer_customer.Columns.Add("Tên khách hàng", 300, HorizontalAlignment.Left);
-            lvwCustomer_customer.Columns.Add("Địa chỉ", 150, HorizontalAlignment.Left);
+            lvwCustomer_customer.Columns.Add("Tên khách hàng", 500, HorizontalAlignment.Left);
+            lvwCustomer_customer.Columns.Add("Địa chỉ",  500, HorizontalAlignment.Left);
         }
 
         public void LoadData_Customer(List<Models.Customer> cache = null)

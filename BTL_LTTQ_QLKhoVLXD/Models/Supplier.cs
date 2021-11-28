@@ -20,7 +20,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
         #region Constructors
 
-        public Supplier(string name, string address, List<string> phoneNumber): this(-1 , name, address, phoneNumber) { }
+        public Supplier(string name, string address = null, List<string> phoneNumber = null): this(-1 , name, address, phoneNumber) { }
 
         public Supplier(int id, string name, string address) : this(id, name, address, GetPhoneNumberData(id)) { }
 
