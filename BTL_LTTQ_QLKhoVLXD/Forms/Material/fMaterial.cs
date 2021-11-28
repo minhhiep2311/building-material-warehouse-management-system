@@ -35,7 +35,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
 
         private void btnAddUnit_Click(object sender, EventArgs e)
         {
-            new fUnit().ShowDialog();
+            new fUnit(this).ShowDialog();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -58,8 +58,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
         {
             if (_mode == FormMode.Create)
             {
-                var units = UnitService.GetAllUnits();
-                cboUnit.DataSource = units;
+                LoadUnits();
                 return;
             }
 
@@ -88,6 +87,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        public void LoadUnits()
+        {
+            var units = UnitService.GetAllUnits();
+            cboUnit.DataSource = units;
         }
 
         private void TryCreate()
@@ -122,6 +127,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
 
             Close();
         }
+
         private static bool CreateMaterial(ref Models.Material newMaterial)
         {
             newMaterial.Id = MaterialService.CreateMaterial(newMaterial);
