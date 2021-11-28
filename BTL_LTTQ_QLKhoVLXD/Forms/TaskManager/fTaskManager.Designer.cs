@@ -179,6 +179,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnWareHouse_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnRefresh_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.grbSearch_material = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
+            this.pnlStatus_material = new System.Windows.Forms.Panel();
+            this.lblStatus_material = new System.Windows.Forms.Label();
             this.rdoAvailable_material = new System.Windows.Forms.RadioButton();
             this.rdoAll_material = new System.Windows.Forms.RadioButton();
             this.pnlNamel_material = new System.Windows.Forms.Panel();
@@ -260,8 +262,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnCreateAccount_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnChangeInformation_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnResetPassword_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.pnlStatus_material = new System.Windows.Forms.Panel();
-            this.lblStatus_material = new System.Windows.Forms.Label();
+            this.pnlInformation = new System.Windows.Forms.Panel();
             this.cms_employee.SuspendLayout();
             this.cms_supplier.SuspendLayout();
             this.cms_material.SuspendLayout();
@@ -317,6 +318,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_material.SuspendLayout();
             this.flpFunction_material.SuspendLayout();
             this.grbSearch_material.SuspendLayout();
+            this.pnlStatus_material.SuspendLayout();
             this.pnlNamel_material.SuspendLayout();
             this.tpgCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spc_customer)).BeginInit();
@@ -354,7 +356,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_employee.SuspendLayout();
             this.tpgUserSetting.SuspendLayout();
             this.flp_userSetting.SuspendLayout();
-            this.pnlStatus_material.SuspendLayout();
+            this.pnlInformation.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPosition
@@ -2145,6 +2147,25 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbSearch_material.TabStop = false;
             this.grbSearch_material.Text = "Tìm kiếm";
             // 
+            // pnlStatus_material
+            // 
+            this.pnlStatus_material.Controls.Add(this.lblStatus_material);
+            this.pnlStatus_material.Controls.Add(this.rdoAvailable_material);
+            this.pnlStatus_material.Controls.Add(this.rdoAll_material);
+            this.pnlStatus_material.Location = new System.Drawing.Point(8, 67);
+            this.pnlStatus_material.Name = "pnlStatus_material";
+            this.pnlStatus_material.Size = new System.Drawing.Size(431, 63);
+            this.pnlStatus_material.TabIndex = 8;
+            // 
+            // lblStatus_material
+            // 
+            this.lblStatus_material.AutoSize = true;
+            this.lblStatus_material.Location = new System.Drawing.Point(3, 17);
+            this.lblStatus_material.Name = "lblStatus_material";
+            this.lblStatus_material.Size = new System.Drawing.Size(84, 20);
+            this.lblStatus_material.TabIndex = 0;
+            this.lblStatus_material.Text = "Trạng thái";
+            // 
             // rdoAvailable_material
             // 
             this.rdoAvailable_material.AutoSize = true;
@@ -3211,30 +3232,22 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnResetPassword_userSetting.UseVisualStyleBackColor = false;
             this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
             // 
-            // pnlStatus_material
+            // pnlInformation
             // 
-            this.pnlStatus_material.Controls.Add(this.lblStatus_material);
-            this.pnlStatus_material.Controls.Add(this.rdoAvailable_material);
-            this.pnlStatus_material.Controls.Add(this.rdoAll_material);
-            this.pnlStatus_material.Location = new System.Drawing.Point(8, 67);
-            this.pnlStatus_material.Name = "pnlStatus_material";
-            this.pnlStatus_material.Size = new System.Drawing.Size(431, 63);
-            this.pnlStatus_material.TabIndex = 8;
-            // 
-            // lblStatus_material
-            // 
-            this.lblStatus_material.AutoSize = true;
-            this.lblStatus_material.Location = new System.Drawing.Point(3, 17);
-            this.lblStatus_material.Name = "lblStatus_material";
-            this.lblStatus_material.Size = new System.Drawing.Size(84, 20);
-            this.lblStatus_material.TabIndex = 0;
-            this.lblStatus_material.Text = "Trạng thái";
+            this.pnlInformation.Controls.Add(this.lblUser);
+            this.pnlInformation.Controls.Add(this.lblPosition);
+            this.pnlInformation.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlInformation.Location = new System.Drawing.Point(0, 619);
+            this.pnlInformation.Name = "pnlInformation";
+            this.pnlInformation.Size = new System.Drawing.Size(1279, 57);
+            this.pnlInformation.TabIndex = 3;
             // 
             // fTaskManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1279, 676);
+            this.Controls.Add(this.pnlInformation);
             this.Controls.Add(this.tclMain);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(1297, 723);
@@ -3321,6 +3334,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_material.ResumeLayout(false);
             this.flpFunction_material.ResumeLayout(false);
             this.grbSearch_material.ResumeLayout(false);
+            this.pnlStatus_material.ResumeLayout(false);
+            this.pnlStatus_material.PerformLayout();
             this.pnlNamel_material.ResumeLayout(false);
             this.pnlNamel_material.PerformLayout();
             this.tpgCustomer.ResumeLayout(false);
@@ -3372,8 +3387,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_employee.PerformLayout();
             this.tpgUserSetting.ResumeLayout(false);
             this.flp_userSetting.ResumeLayout(false);
-            this.pnlStatus_material.ResumeLayout(false);
-            this.pnlStatus_material.PerformLayout();
+            this.pnlInformation.ResumeLayout(false);
+            this.pnlInformation.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3607,5 +3622,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.RadioButton rdoAll_material;
         private System.Windows.Forms.Panel pnlStatus_material;
         private System.Windows.Forms.Label lblStatus_material;
+        private System.Windows.Forms.Panel pnlInformation;
     }
 }

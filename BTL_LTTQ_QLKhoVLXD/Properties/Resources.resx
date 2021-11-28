@@ -203,7 +203,7 @@
     <value>Mật khẩu của bạn sẽ được thay đổi. Vẫn tiếp tục?</value>
   </data>
   <data name="TaskManager_Label_Position" xml:space="preserve">
-    <value>Vị trí: {0}</value>
+    <value>Chức vụ: {0}</value>
   </data>
   <data name="TaskManager_Label_User" xml:space="preserve">
     <value>Người dùng: {0}</value>
@@ -318,9 +318,9 @@
     <value>Tên kho bị trùng! Hãy thử tên khác</value>
   </data>
   <data name="Form_ButtonCreateReceipt" xml:space="preserve">
-	  <value>Tạo hóa đơn</value>
+    <value>Tạo hóa đơn</value>
   </data>
   <data name="Form_ButtonNewReceipt" xml:space="preserve">
-	  <value>Hóa đơn mới</value>
+    <value>Hóa đơn mới</value>
   </data>
 </root>

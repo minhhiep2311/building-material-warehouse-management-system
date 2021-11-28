@@ -624,7 +624,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vị trí: {0}.
+        ///   Looks up a localized string similar to Chức vụ: {0}.
         /// </summary>
         internal static string TaskManager_Label_Position {
             get {
