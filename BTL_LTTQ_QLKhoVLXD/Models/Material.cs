@@ -20,7 +20,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
         public int Id { get; set; }
         public string Name { get; }
-        public double ImportUnitPrice { get; }
+        public double ImportUnitPrice { get; set; }
         public double ExportUnitPrice { get; }
         public MaterialUnit Unit { get; }
         public string Specialization { get; }
