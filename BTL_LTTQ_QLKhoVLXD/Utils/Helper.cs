@@ -10,7 +10,7 @@ using SortOrder = System.Data.SqlClient.SortOrder;
 
 namespace BTL_LTTQ_QLKhoVLXD.Utils
 {
-    internal class Helper
+    public class Helper
     {
         public class Validate
         {
@@ -275,6 +275,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Utils
             {
                 return number.ToString("N0");
             }
+        }
+
+        public static void Swap<T>(ref T t1, ref T t2)
+        {
+            (t1, t2) = (t2, t1);
         }
     }
 }

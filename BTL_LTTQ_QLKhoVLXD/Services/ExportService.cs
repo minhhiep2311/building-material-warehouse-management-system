@@ -381,7 +381,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 
         #endregion
 
-        #region Export Supplier
+        #region Export Material
 
         public static void Export(List<Material> materials)
         {

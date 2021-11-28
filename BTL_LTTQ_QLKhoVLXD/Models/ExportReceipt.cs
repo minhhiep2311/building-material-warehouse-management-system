@@ -2,14 +2,9 @@
 
 namespace BTL_LTTQ_QLKhoVLXD.Models
 {
-    public class ExportReceipt
+    public class ExportReceipt : Receipt
     {
-        public int Id { get; set; }
-        public User Employee { get; }
         public Customer Customer { get; }
-        public Warehouse Warehouse { get; }
-        public List<Material> Materials { get; }
-        public double TotalPrice { get; }
         public double Vat { get; }
         public double VatPercent { get; }
         public string Reason { get; }

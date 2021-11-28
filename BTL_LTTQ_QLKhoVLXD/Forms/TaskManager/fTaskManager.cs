@@ -9,7 +9,6 @@ using BTL_LTTQ_QLKhoVLXD.Forms.Customer;
 using BTL_LTTQ_QLKhoVLXD.Forms.Employee;
 using BTL_LTTQ_QLKhoVLXD.Forms.Material;
 using BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails;
-using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
 using BTL_LTTQ_QLKhoVLXD.Forms.Supplier;
 using BTL_LTTQ_QLKhoVLXD.Forms.WareHouse;
 using BTL_LTTQ_QLKhoVLXD.Models;
@@ -128,12 +127,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 btnCreateAccount_employee.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_DeleteEmployee))
                 btnRemoveEmployee_employee.Visible = false;
-            if (!User.Permissions.Contains(Resources.Permission_EditReceipt))
-                btnEdit_Receipt.Visible = false;
-            if (!User.Permissions.Contains(Resources.Permission_AddReceipt))
-                btnAdd_Receipt.Visible = false;
-            if (!User.Permissions.Contains(Resources.Permission_DeleteReceipt))
-                btnDelete_Receipt.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_EditMaterial))
                 btnEdit_material.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_AddMaterial))
@@ -876,6 +869,155 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #endregion
 
+        #region Receipt
+
+        #region Receipt Properties
+
+        private Helper.Debounce _debounce_receipt;
+        private bool _showImport_receipt = true;
+        private List<ImportReceipt> _importReceipts_receipt = new List<ImportReceipt>();
+        private List<ExportReceipt> _exportReceipts_receipt = new List<ExportReceipt>();
+
+        #endregion
+
+        #region Receipt Events
+
+        private void tpgReceipt_Enter(object sender, EventArgs e)
+        {
+            _debounce_material?.Continue();
+        }
+
+        private void tpgReceipt_Leave(object sender, EventArgs e)
+        {
+            _debounce_material?.Pause();
+        }
+
+        private void lvwReceipt_Receipt_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (!ShouldShowMenuContext(e, lvwReceipt_receipt))
+                return;
+
+            cms_receipt.Show(Cursor.Position);
+        }
+
+        private void lvwReceipt_Receipt_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ShowDetails_Receipt();
+        }
+
+        private void lvwReceipt_Receipt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvwReceipt_receipt.SelectedIndices.Count <= 0)
+            {
+                ResetButtons_Receipt();
+                return;
+            }
+
+            btnShow_receipt.Enabled = true;
+        }
+
+        private void tsmiShowDetails_receipt_Click(object sender, EventArgs e)
+        {
+            ShowDetails_Receipt();
+        }
+
+        private void txtId_receipt_TextChanged(object sender, EventArgs e)
+        {
+            _debounce_material.HandleUpdate();
+        }
+
+        private void dtpDateFrom_receipt_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpDateFrom_receipt.Value > dtpDateTo_receipt.Value)
+            {
+                //Helper.Swap(ref dtpDateFrom_receipt.Value, ref dtpDateTo_receipt.Value);
+            }
+            _debounce_material.HandleUpdate();
+        }
+
+        private void dtpDateTo_receipt_ValueChanged(object sender, EventArgs e)
+        {
+            _debounce_material.HandleUpdate();
+        }
+
+        private void txtPrice_Receipt_TextChanged(object sender, EventArgs e)
+        {
+            _debounce_material.HandleUpdate();
+        }
+
+        private void txtWarehouse_receipt_TextChanged(object sender, EventArgs e)
+        {
+            _debounce_material.HandleUpdate();
+        }
+
+        private void rdbImport_receipt_CheckedChanged(object sender, EventArgs e)
+        {
+            _debounce_material.HandleUpdate();
+        }
+
+        private void txtEmployeeReceipt_receipt_TextChanged(object sender, EventArgs e)
+        {
+            _debounce_material.HandleUpdate();
+        }
+
+        private void btnShow_receipt_Click(object sender, EventArgs e)
+        {
+            ShowDetails_Receipt();
+        }
+
+        private void btnExport_Receipt_Click(object sender, EventArgs e)
+        {
+            // TODO
+        }
+
+        private void btnRefresh_Receipt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region Receipt Behavior
+
+        private void ShowDetails_Receipt()
+        {
+            if (_showImport_receipt)
+            {
+                ShowDetails_Receipt(_importReceipts_receipt);
+            }
+            else
+            {
+                ShowDetails_Receipt(_exportReceipts_receipt);
+            }
+        }
+
+        private void ShowDetails_Receipt<T>(List<T> receipts) where T : Receipt
+        {
+            var receipt = Helper.Control.FirstSelected(receipts, lvwMaterial_material);
+            if (receipt == null)
+                return;
+
+            lvwMaterial_material.SelectedItems.Clear();
+            // TODO
+            if (typeof(T) == typeof(ImportReceipt))
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void ResetButtons_Receipt()
+        {
+            btnShow_receipt.Enabled = false;
+        }
+
+        #endregion
+
+        #endregion
+
         #region Material
 
         #region Material Properties
@@ -944,11 +1086,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         }
 
         private void rdoAll_material_CheckedChanged(object sender, EventArgs e)
-        {
-            _debounce_material.HandleUpdate();
-        }
-
-        private void rdoAvailable_CheckedChanged(object sender, EventArgs e)
         {
             _debounce_material.HandleUpdate();
         }
@@ -1066,7 +1203,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             if (lvwMaterial_material.SelectedIndices.Count <= 0)
                 return;
-            
+
             var shouldDeleteMaterials = lvwMaterial_material.SelectedIndices.Cast<int>()
                .Select(x => _materials[x]).ToList();
             var shouldDeleteMaterialNames = shouldDeleteMaterials.Select(x => x.Name);
@@ -1938,6 +2075,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         #endregion
 
         #region UserSettings
+
         #region UserSettings Events
 
         private void btnCreateAccount_userSetting_Click(object sender, EventArgs e)
@@ -1949,15 +2087,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             new fChangeInformation(this).ShowDialog();
         }
-        private void btnResetPassword_userSetting_Click(object sender, EventArgs e)
-        {
-            new fResetPassword(User).ShowDialog();
-        }
-
-
-
-
-
 
         #endregion
 
