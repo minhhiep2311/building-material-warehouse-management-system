@@ -150,6 +150,7 @@
     <Compile Include="Services\ExportService.cs" />
     <Compile Include="Services\ReceiptService.cs" />
     <Compile Include="Services\SupplierService.cs" />
+    <Compile Include="Services\UnitService.cs" />
     <Compile Include="Services\WarehouseService.cs" />
     <Compile Include="Utils\Enum.cs" />
     <Compile Include="Utils\PermissionConstant.cs" />

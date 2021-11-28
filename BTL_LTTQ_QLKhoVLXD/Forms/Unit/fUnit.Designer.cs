@@ -79,6 +79,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Unit
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "Hủy bỏ";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -93,6 +94,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Unit
             this.btnSave.TabIndex = 16;
             this.btnSave.Text = "Lưu ";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnlUnit
             // 
@@ -103,7 +105,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Unit
             this.pnlUnit.Size = new System.Drawing.Size(464, 47);
             this.pnlUnit.TabIndex = 20;
             // 
-            // Unit
+            // fUnit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -113,7 +115,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Unit
             this.Controls.Add(this.pnlButton);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "Unit";
+            this.Name = "fUnit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đơn vị";
             this.pnlButton.ResumeLayout(false);
             this.pnlUnit.ResumeLayout(false);
