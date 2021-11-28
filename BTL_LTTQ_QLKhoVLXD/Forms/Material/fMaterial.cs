@@ -58,7 +58,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
         {
             if (_mode == FormMode.Create)
             {
-                // TODO
+                var units = UnitService.GetAllUnits();
+                cboUnit.DataSource = units;
                 return;
             }
 
