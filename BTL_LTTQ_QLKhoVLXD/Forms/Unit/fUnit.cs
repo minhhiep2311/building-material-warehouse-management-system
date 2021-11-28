@@ -26,25 +26,42 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Unit
         private void btnSave_Click(object sender, EventArgs e)
         {
             var unitExists = UnitService.CheckUnitExists(txtUnit.Text);
+
             if (unitExists)
             {
-                MessageBox.Show("jdlfafa")
+                MessageBox.Show(Resources.MessageBox_Message_UnitExisted,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                return;
             }
-            else
-            {
+            
                 var success = UnitService.AddUnit(txtUnit.Text);
                 if (success)
                 {
-                    MessageBox.Show()..;
-                        _parentForm.LoadUnits();
+                    MessageBox.Show(Resources.MessageBox_Message_AddUnitSuccessfully,
+                        Resources.MessageBox_Caption_Notification,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    _parentForm.LoadUnits();
+                    Close();
                 }
                 else
                 {
-                    MessageBox.Show(Resources.MessageBox_Message_SystemError)
+                    MessageBox.Show(Resources.MessageBox_Message_SystemError,
+                        Resources.MessageBox_Caption_Notification,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
-            }
+            
         }
 
         #endregion
+
+        private void fUnit_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

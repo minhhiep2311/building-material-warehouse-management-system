@@ -61,7 +61,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Unit
             // 
             this.pnlButton.Controls.Add(this.btnCancel);
             this.pnlButton.Controls.Add(this.btnSave);
-            this.pnlButton.Location = new System.Drawing.Point(12, 118);
+            this.pnlButton.Location = new System.Drawing.Point(12, 81);
             this.pnlButton.Name = "pnlButton";
             this.pnlButton.Size = new System.Drawing.Size(464, 58);
             this.pnlButton.TabIndex = 19;
@@ -73,9 +73,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Unit
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnCancel.Location = new System.Drawing.Point(291, 3);
+            this.btnCancel.Location = new System.Drawing.Point(301, 3);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(110, 45);
+            this.btnCancel.Size = new System.Drawing.Size(95, 40);
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "Hủy bỏ";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -88,9 +88,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Unit
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnSave.Location = new System.Drawing.Point(22, 3);
+            this.btnSave.Location = new System.Drawing.Point(59, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(110, 45);
+            this.btnSave.Size = new System.Drawing.Size(95, 40);
             this.btnSave.TabIndex = 16;
             this.btnSave.Text = "Lưu ";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -100,7 +100,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Unit
             // 
             this.pnlUnit.Controls.Add(this.lblUnit);
             this.pnlUnit.Controls.Add(this.txtUnit);
-            this.pnlUnit.Location = new System.Drawing.Point(12, 34);
+            this.pnlUnit.Location = new System.Drawing.Point(12, 12);
             this.pnlUnit.Name = "pnlUnit";
             this.pnlUnit.Size = new System.Drawing.Size(464, 47);
             this.pnlUnit.TabIndex = 20;
@@ -110,7 +110,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Unit
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.ClientSize = new System.Drawing.Size(497, 218);
+            this.ClientSize = new System.Drawing.Size(497, 160);
             this.Controls.Add(this.pnlUnit);
             this.Controls.Add(this.pnlButton);
             this.ForeColor = System.Drawing.Color.White;
@@ -118,6 +118,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Unit
             this.Name = "fUnit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đơn vị";
+            this.Load += new System.EventHandler(this.fUnit_Load);
             this.pnlButton.ResumeLayout(false);
             this.pnlUnit.ResumeLayout(false);
             this.pnlUnit.PerformLayout();

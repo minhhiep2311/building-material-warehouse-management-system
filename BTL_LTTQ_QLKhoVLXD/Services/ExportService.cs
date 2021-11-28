@@ -381,10 +381,20 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 
         #endregion
 
-        #region Export Supplier
+        #region Export Material
 
         public static void Export(List<Material> materials)
         {
+            var (exApp, exBook, exSheet) = InitExcelFile();
+
+            PrintCompany(exSheet);
+
+            var header = (Range)exSheet.Cells[6, 3];
+            exSheet.Range["C6:D6"].Merge(true);
+            header.Font.Size = 14;
+            header.Font.Bold = true;
+            header.Font.Color = Color.Red;
+            header.Value = "DANH SÁCH VẬT LIỆU";
 
         }
 

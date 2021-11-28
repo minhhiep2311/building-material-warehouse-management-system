@@ -251,6 +251,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thêm đơn vị mới thành công.
+        /// </summary>
+        internal static string MessageBox_Message_AddUnitSuccessfully {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_AddUnitSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thêm kho {0} thành công!.
         /// </summary>
         internal static string MessageBox_Message_AddWarehouseSuccessfully {
@@ -540,6 +549,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         internal static string MessageBox_Message_SystemError {
             get {
                 return ResourceManager.GetString("MessageBox_Message_SystemError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Đơn vị đã tồn tại! Vui lòng nhập đơn vị khác.
+        /// </summary>
+        internal static string MessageBox_Message_UnitExisted {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_UnitExisted", resourceCulture);
             }
         }
         

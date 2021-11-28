@@ -363,4 +363,10 @@
   <data name="MessageBox_Message_DeleteMaterialSuccessfully" xml:space="preserve">
     <value>Đã xóa {0} vật liệu!</value>
   </data>
+  <data name="MessageBox_Message_AddUnitSuccessfully" xml:space="preserve">
+    <value>Thêm đơn vị mới thành công</value>
+  </data>
+  <data name="MessageBox_Message_UnitExisted" xml:space="preserve">
+    <value>Đơn vị đã tồn tại! Vui lòng nhập đơn vị khác</value>
+  </data>
 </root>
