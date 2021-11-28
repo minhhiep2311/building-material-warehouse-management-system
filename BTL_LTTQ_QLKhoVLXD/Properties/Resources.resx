@@ -317,4 +317,40 @@
   <data name="MessageBox_Message_DuplicateWarehouse" xml:space="preserve">
     <value>Tên kho bị trùng! Hãy thử tên khác</value>
   </data>
+  <data name="Permission_AddCustomer" xml:space="preserve">
+    <value>AddCustomer</value>
+  </data>
+  <data name="Permission_AddMaterial" xml:space="preserve">
+    <value>AddMaterial</value>
+  </data>
+  <data name="Permission_AddReceipt" xml:space="preserve">
+    <value>AddReceipt</value>
+  </data>
+  <data name="Permission_AddSupplier" xml:space="preserve">
+    <value>AddSupplier</value>
+  </data>
+  <data name="Permission_CreateAccountEmployee" xml:space="preserve">
+    <value>CreateAccountEmployee</value>
+  </data>
+  <data name="Permission_DeleteCustomer" xml:space="preserve">
+    <value>DeleteCustomer</value>
+  </data>
+  <data name="Permission_DeleteMaterial" xml:space="preserve">
+    <value>DeleteMaterial</value>
+  </data>
+  <data name="Permission_DeleteReceipt" xml:space="preserve">
+    <value>DeleteReceipt</value>
+  </data>
+  <data name="Permission_EditCustomer" xml:space="preserve">
+    <value>EditCustomer</value>
+  </data>
+  <data name="Permission_EditMaterial" xml:space="preserve">
+    <value>EditMaterial</value>
+  </data>
+  <data name="Permission_EditReceipt" xml:space="preserve">
+    <value>EditReceipt</value>
+  </data>
+  <data name="Permission_WarehouseMaterial" xml:space="preserve">
+    <value>WarehouseMaterial</value>
+  </data>
 </root>

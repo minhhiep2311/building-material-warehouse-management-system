@@ -121,18 +121,48 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 btnCreateAccount_userSetting.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_ResetPassword))
                 btnResetPassword_userSetting.Visible = false;
+
             if (!User.Permissions.Contains(Resources.Permission_AddEmployee))
                 btnAdd_employee.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_EditAccountInformation))
                 btnEdit_employee.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_DeleteAccount))
                 btnRemoveAccount_employee.Visible = false;
+            //if (!User.Permissions.Contains(Resources.Permission_CreateAccountEmployee))
+               // btnCreateAccount_employee.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_DeleteEmployee))
                 btnRemoveEmployee_employee.Visible = false;
+            
+
+            if (!User.Permissions.Contains(Resources.Permission_EditReceipt))
+                btnEdit_Receipt.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_AddReceipt))
+                btnAdd_Receipt.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_DeleteReceipt))
+                btnDelete_Receipt.Visible = false;
+
+            if (!User.Permissions.Contains(Resources.Permission_EditMaterial))
+                btnEdit_material.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_AddMaterial))
+                btnAdd_material.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_DeleteMaterial))
+                btnDelete_material.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_WarehouseMaterial))
+                btnWareHouse_material.Visible = false;
+
+            if (!User.Permissions.Contains(Resources.Permission_EditCustomer))
+                btnEdit_Customer.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_AddCustomer))
+                btnAdd_Customer.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_DeleteCustomer))
+                btnDelete_Customer.Visible = false;
+
             if (!User.Permissions.Contains(Resources.Permission_EditSupplierInformation))
                 btnEdit_supplier.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_DeleteSupplier))
                 btnDelete_supplier.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_AddSupplier))
+                btnAdd_supplier.Visible = false;
         }
 
         private void DisplayUserInfo()
