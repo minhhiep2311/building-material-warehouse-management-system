@@ -507,7 +507,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tclMain.Name = "tclMain";
             this.tclMain.Padding = new System.Drawing.Point(0, 0);
             this.tclMain.SelectedIndex = 0;
-            this.tclMain.Size = new System.Drawing.Size(1279, 676);
+            this.tclMain.Size = new System.Drawing.Size(1279, 619);
             this.tclMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tclMain.TabIndex = 0;
             // 
@@ -521,7 +521,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgBuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgBuy.Name = "tpgBuy";
             this.tpgBuy.Padding = new System.Windows.Forms.Padding(5);
-            this.tpgBuy.Size = new System.Drawing.Size(1101, 668);
+            this.tpgBuy.Size = new System.Drawing.Size(1101, 611);
             this.tpgBuy.TabIndex = 0;
             this.tpgBuy.Text = "Tạo Hóa Đơn Nhập ";
             this.tpgBuy.Enter += new System.EventHandler(this.tpgBuy_Enter);
@@ -539,7 +539,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbItemInfor_Buy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grbItemInfor_Buy.Name = "grbItemInfor_Buy";
             this.grbItemInfor_Buy.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grbItemInfor_Buy.Size = new System.Drawing.Size(1091, 460);
+            this.grbItemInfor_Buy.Size = new System.Drawing.Size(1091, 403);
             this.grbItemInfor_Buy.TabIndex = 2;
             this.grbItemInfor_Buy.TabStop = false;
             this.grbItemInfor_Buy.Text = "Thông tin các mặt hàng";
@@ -557,7 +557,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwItem_buy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvwItem_buy.Name = "lvwItem_buy";
             this.lvwItem_buy.OwnerDraw = true;
-            this.lvwItem_buy.Size = new System.Drawing.Size(1085, 261);
+            this.lvwItem_buy.Size = new System.Drawing.Size(1085, 204);
             this.lvwItem_buy.Sortable = true;
             this.lvwItem_buy.SortableColumns = null;
             this.lvwItem_buy.TabIndex = 19;
@@ -572,7 +572,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlBottom_buy.Controls.Add(this.pnlTotalMoney);
             this.pnlBottom_buy.Controls.Add(this.btnCreateReceipt_buy);
             this.pnlBottom_buy.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom_buy.Location = new System.Drawing.Point(3, 409);
+            this.pnlBottom_buy.Location = new System.Drawing.Point(3, 352);
             this.pnlBottom_buy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlBottom_buy.Name = "pnlBottom_buy";
             this.pnlBottom_buy.Size = new System.Drawing.Size(1085, 49);
@@ -985,7 +985,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgSell.Name = "tpgSell";
             this.tpgSell.Padding = new System.Windows.Forms.Padding(5);
-            this.tpgSell.Size = new System.Drawing.Size(1101, 668);
+            this.tpgSell.Size = new System.Drawing.Size(1101, 611);
             this.tpgSell.TabIndex = 1;
             this.tpgSell.Text = "Tạo Hóa Đơn Bán";
             this.tpgSell.Enter += new System.EventHandler(this.tpgSell_Enter);
@@ -1003,7 +1003,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbItem_sell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grbItem_sell.Name = "grbItem_sell";
             this.grbItem_sell.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grbItem_sell.Size = new System.Drawing.Size(1091, 460);
+            this.grbItem_sell.Size = new System.Drawing.Size(1091, 403);
             this.grbItem_sell.TabIndex = 3;
             this.grbItem_sell.TabStop = false;
             this.grbItem_sell.Text = "Thông tin các mặt hàng";
@@ -1021,7 +1021,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwItem_sell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvwItem_sell.Name = "lvwItem_sell";
             this.lvwItem_sell.OwnerDraw = true;
-            this.lvwItem_sell.Size = new System.Drawing.Size(1085, 144);
+            this.lvwItem_sell.Size = new System.Drawing.Size(1085, 138);
             this.lvwItem_sell.Sortable = true;
             this.lvwItem_sell.SortableColumns = null;
             this.lvwItem_sell.TabIndex = 19;
@@ -1039,10 +1039,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlBottom_sell.Controls.Add(this.pnlTotalMoney_sell);
             this.pnlBottom_sell.Controls.Add(this.btnCreateReceipt_sell);
             this.pnlBottom_sell.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom_sell.Location = new System.Drawing.Point(3, 292);
+            this.pnlBottom_sell.Location = new System.Drawing.Point(3, 286);
             this.pnlBottom_sell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlBottom_sell.Name = "pnlBottom_sell";
-            this.pnlBottom_sell.Size = new System.Drawing.Size(1085, 166);
+            this.pnlBottom_sell.Size = new System.Drawing.Size(1085, 115);
             this.pnlBottom_sell.TabIndex = 18;
             // 
             // btnExport_sell
@@ -2489,7 +2489,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSupplier.Location = new System.Drawing.Point(174, 4);
             this.tpgSupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgSupplier.Name = "tpgSupplier";
-            this.tpgSupplier.Size = new System.Drawing.Size(1101, 668);
+            this.tpgSupplier.Size = new System.Drawing.Size(1101, 611);
             this.tpgSupplier.TabIndex = 6;
             this.tpgSupplier.Text = "Nhà cung cấp";
             this.tpgSupplier.UseVisualStyleBackColor = true;
@@ -2515,7 +2515,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_supplier.Panel2.Controls.Add(this.grbSearch_supplier);
             this.spc_supplier.Panel2.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.spc_supplier.Panel2MinSize = 350;
-            this.spc_supplier.Size = new System.Drawing.Size(1101, 668);
+            this.spc_supplier.Size = new System.Drawing.Size(1101, 611);
             this.spc_supplier.SplitterDistance = 586;
             this.spc_supplier.SplitterWidth = 1;
             this.spc_supplier.TabIndex = 0;
@@ -2533,7 +2533,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwSupplier_supplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvwSupplier_supplier.Name = "lvwSupplier_supplier";
             this.lvwSupplier_supplier.OwnerDraw = true;
-            this.lvwSupplier_supplier.Size = new System.Drawing.Size(586, 668);
+            this.lvwSupplier_supplier.Size = new System.Drawing.Size(586, 611);
             this.lvwSupplier_supplier.Sortable = true;
             this.lvwSupplier_supplier.SortableColumns = null;
             this.lvwSupplier_supplier.TabIndex = 0;
@@ -2556,7 +2556,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_supplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpFunction_supplier.Name = "flpFunction_supplier";
             this.flpFunction_supplier.Padding = new System.Windows.Forms.Padding(5);
-            this.flpFunction_supplier.Size = new System.Drawing.Size(500, 476);
+            this.flpFunction_supplier.Size = new System.Drawing.Size(500, 419);
             this.flpFunction_supplier.TabIndex = 6;
             // 
             // btnAdd_supplier
@@ -2748,7 +2748,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgEmployee.Location = new System.Drawing.Point(174, 4);
             this.tpgEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgEmployee.Name = "tpgEmployee";
-            this.tpgEmployee.Size = new System.Drawing.Size(1101, 668);
+            this.tpgEmployee.Size = new System.Drawing.Size(1101, 611);
             this.tpgEmployee.TabIndex = 7;
             this.tpgEmployee.Text = "Nhân viên";
             this.tpgEmployee.UseVisualStyleBackColor = true;
@@ -2774,7 +2774,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_employee.Panel2.Controls.Add(this.pnlSearch_employe);
             this.spc_employee.Panel2.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.spc_employee.Panel2MinSize = 350;
-            this.spc_employee.Size = new System.Drawing.Size(1101, 668);
+            this.spc_employee.Size = new System.Drawing.Size(1101, 611);
             this.spc_employee.SplitterDistance = 586;
             this.spc_employee.SplitterWidth = 1;
             this.spc_employee.TabIndex = 5;
@@ -2792,7 +2792,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwEmployee_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvwEmployee_employee.Name = "lvwEmployee_employee";
             this.lvwEmployee_employee.OwnerDraw = true;
-            this.lvwEmployee_employee.Size = new System.Drawing.Size(586, 668);
+            this.lvwEmployee_employee.Size = new System.Drawing.Size(586, 611);
             this.lvwEmployee_employee.Sortable = true;
             this.lvwEmployee_employee.SortableColumns = null;
             this.lvwEmployee_employee.TabIndex = 2;
@@ -2816,7 +2816,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpFunction_employee.Name = "flpFunction_employee";
             this.flpFunction_employee.Padding = new System.Windows.Forms.Padding(5);
-            this.flpFunction_employee.Size = new System.Drawing.Size(500, 322);
+            this.flpFunction_employee.Size = new System.Drawing.Size(500, 265);
             this.flpFunction_employee.TabIndex = 4;
             // 
             // btnAdd_employee
@@ -3158,7 +3158,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgUserSetting.Location = new System.Drawing.Point(174, 4);
             this.tpgUserSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgUserSetting.Name = "tpgUserSetting";
-            this.tpgUserSetting.Size = new System.Drawing.Size(1101, 668);
+            this.tpgUserSetting.Size = new System.Drawing.Size(1101, 611);
             this.tpgUserSetting.TabIndex = 8;
             this.tpgUserSetting.Text = "Quản lý người dùng";
             this.tpgUserSetting.UseVisualStyleBackColor = true;
@@ -3174,7 +3174,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flp_userSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flp_userSetting.Name = "flp_userSetting";
             this.flp_userSetting.Padding = new System.Windows.Forms.Padding(20);
-            this.flp_userSetting.Size = new System.Drawing.Size(1101, 668);
+            this.flp_userSetting.Size = new System.Drawing.Size(1101, 611);
             this.flp_userSetting.TabIndex = 2;
             // 
             // btnChangeInformation_userSetting
@@ -3226,8 +3226,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1279, 676);
-            this.Controls.Add(this.pnlInformation);
             this.Controls.Add(this.tclMain);
+            this.Controls.Add(this.pnlInformation);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(1297, 723);
             this.Name = "fTaskManager";
