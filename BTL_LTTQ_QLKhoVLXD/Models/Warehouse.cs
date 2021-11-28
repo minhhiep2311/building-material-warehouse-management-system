@@ -33,7 +33,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
         {
             var id = Convert.ToInt32(data["id"]);
             var name = Convert.ToString(data["name"]);
-            var area = Convert.ToDouble(data["area"]);
+            double area = 0;
+            try
+            {
+                area = Convert.ToDouble(data["area"]);
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
 
             return new Warehouse(id, name, area);
         }

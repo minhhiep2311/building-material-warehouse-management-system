@@ -43,6 +43,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
             return new Customer(id, name, address);
         }
+
         public ListViewItem ToListViewItem()
         {
             var row = new ListViewItem(Id.ToString());
@@ -50,6 +51,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             row.SubItems.Add(Address);
             return row;
         }
+
         #endregion
 
         #region Private Methods

@@ -11,19 +11,32 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 
         public static List<Material> GetAllMaterials()
         {
-            const string query = "SELECT m.id, " +
-                                 "m.name, " +
-                                 "importUnitPrice, " +
-                                 "exportUnitPrice, " +
-                                 "u.id AS unitId, " +
-                                 "u.Name AS unitName, " +
-                                 "specialization " +
-                                 "FROM material AS m " +
-                                 "JOIN unit AS u ON m.idUnit=u.id";
+            const string query =
+                "SELECT m.id, m.name, importUnitPrice, exportUnitPrice, u.id AS unitId, u.Name AS unitName, specialization, amount, isAvailable " +
+                "FROM material AS m " +
+                "JOIN unit AS u ON m.idUnit = u.id " +
+                "JOIN (SELECT id, ISNULL(SUM(amount), 0) as amount " +
+                "FROM material " +
+                "LEFT JOIN material_warehouse mw ON material.id = mw.idMaterial " +
+                "GROUP BY id) " +
+                "AS t ON t.id=m.id " +
+                "ORDER BY m.name";
 
             var result = DatabaseProvider.Instance.ExecuteQuery(query);
             var materialList = Helper.Mapper.MapArrayOfObject(result, Material.FromData);
             return materialList;
+        }
+
+        public static List<MaterialWarehouse> GetMaterialInWarehouses(Material material)
+        {
+            var query = "SELECT idWarehouse AS id, name, amount " +
+                "FROM material_warehouse " +
+                "JOIN warehouse w ON material_warehouse.idWarehouse = w.id " +
+                $"WHERE idMaterial = {material.Id} AND amount > 0";
+
+            var result = DatabaseProvider.Instance.ExecuteQuery(query);
+            var materialWarehouseList = Helper.Mapper.MapArrayOfObject(result, MaterialWarehouse.FromData);
+            return materialWarehouseList;
         }
 
         #endregion
@@ -49,15 +62,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             }
         }
         #endregion
-        
+
         #region Update
         public static bool ChangeMaterialInformation(Material material)
         {
-            var query = $"UPDATE supplier SET name = N'{material.Name}', " +
-                $" importUnitPrice = N'{material.ImportUnitPrice}', " +
-                $" exportUnitPrice = N'{material.ExportUnitPrice}', " +
-                $" specialization = N'{material.Specialization}', " +
-                $"WHERE id = N'{material.Id}'";
+            var query = "UPDATE material SET " +
+                $"importUnitPrice = {material.ImportUnitPrice}, " +
+                $"exportUnitPrice = {material.ExportUnitPrice} " +
+                $"WHERE id = {material.Id}";
             var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
 
             return rowAffected > 0;

@@ -353,4 +353,10 @@
   <data name="Permission_WarehouseMaterial" xml:space="preserve">
     <value>WarehouseMaterial</value>
   </data>
+  <data name="Form_ButtonCreateReceipt" xml:space="preserve">
+	  <value>Tạo hóa đơn</value>
+  </data>
+  <data name="Form_ButtonNewReceipt" xml:space="preserve">
+	  <value>Hóa đơn mới</value>
+  </data>
 </root>

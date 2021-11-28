@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.TaskManager;
 using BTL_LTTQ_QLKhoVLXD.Properties;
@@ -15,14 +13,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
         private readonly fTaskManager _parentForm;
         private readonly Models.Material _material;
         private readonly FormMode _mode;
-        private readonly bool _startEdit;
-        public fMaterial(fTaskManager form, FormMode mode = FormMode.Create, Models.Material material = null, bool startEdit = false)
+
+        public fMaterial(
+            fTaskManager form,
+            FormMode mode = FormMode.Create,
+            Models.Material material = null)
         {
             InitializeComponent();
             _mode = mode;
             _material = material;
             _parentForm = form;
-            _startEdit = startEdit;
         }
 
         #region Events
@@ -32,24 +32,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
             ConfigureAccessibility();
         }
 
-        private void chkEdit_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkEdit.Checked)
-            {
-                txtName.ReadOnly = false;
-                txtExportUnitPrice.ReadOnly = false;
-                txtImportUnitPrice.ReadOnly = false;
-                txtSpecialization.ReadOnly = false;
-
-            }
-            else
-            {
-                txtName.ReadOnly = true;
-                txtExportUnitPrice.ReadOnly = true;
-                txtImportUnitPrice.ReadOnly = true;
-                txtSpecialization.ReadOnly = true;
-            }
-        }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
@@ -71,34 +53,26 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
                 return;
 
             txtName.Text = _material.Name;
-            txtImportUnitPrice.Text = _material.ImportUnitPrice.ToString();
-            txtExportUnitPrice.Text = _material.ExportUnitPrice.ToString();
+            txtImportUnitPrice.Text = Helper.Converter.ToString(_material.ImportUnitPrice);
+            txtExportUnitPrice.Text = Helper.Converter.ToString(_material.ExportUnitPrice);
             txtSpecialization.Text = _material.Specialization;
         }
 
         private void ConfigureAccessibility()
         {
-            chkEdit.Visible = _mode == FormMode.Write;
             switch (_mode)
             {
-                case FormMode.Write:
-                    if (_startEdit)
-                        chkEdit.Checked = true;
-                    return;
                 case FormMode.Create:
-                    chkEdit.Checked = true;
                     btnSave.Text = Resources.Form_ButtonSave;
                     Text = Resources.Form_Text_AddNewMaterial;
-                    break;
+                    return;
+                case FormMode.Write:
                 case FormMode.Read:
                     txtName.ReadOnly = true;
-                    txtExportUnitPrice.ReadOnly = true;
-                    txtImportUnitPrice.ReadOnly = true;
                     txtSpecialization.ReadOnly = true;
-                    btnSave.Visible = false;
-                    btnCancel.Visible = false;
+                    cboUnit.Enabled = false;
+                    btnAddUnit.Enabled = false;
                     return;
-
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -114,7 +88,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
             var exportUnitPrice = txtExportUnitPrice.Text;
             var specialization = txtSpecialization.Text;
 
-            var newMaterial = new Models.Material(name, Convert.ToDouble ( importUnitPrice) , Convert.ToDouble( exportUnitPrice), specialization );
+            var newMaterial = new Models.Material(name, Convert.ToDouble(importUnitPrice), Convert.ToDouble(exportUnitPrice), specialization);
 
             if (CreateMaterial(ref newMaterial))
             {
@@ -144,12 +118,14 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
 
         private void TryChangeInformation()
         {
-            var name = txtName.Text;
-            var importUnitPrice = txtImportUnitPrice.Text;
-            var exportUnitPrice = txtExportUnitPrice.Text;
-            var specialization = txtSpecialization.Text;
+            var importUnitPrice = Convert.ToDouble(txtImportUnitPrice.Text);
+            var exportUnitPrice = Convert.ToDouble(txtExportUnitPrice.Text);
 
-            var newMaterial = new Models.Material(name, Convert.ToDouble(importUnitPrice), Convert.ToDouble(exportUnitPrice), specialization);
+            var newMaterial = new Models.Material(
+                _material.Id, 
+                _material.Name, 
+                importUnitPrice, 
+                exportUnitPrice);
 
             if (_material.Equals(newMaterial))
             {
@@ -167,7 +143,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
                 return;
 
             if (ChangeInformation(newMaterial))
-            { 
+            {
                 MessageBox.Show(
                     Resources.MessageBox_Message_ChangeSuccessfully,
                     Resources.MessageBox_Caption_Notification,
@@ -188,7 +164,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
         }
         private bool ValidInput()
         {
-            if (txtName.Text != "" && txtImportUnitPrice.Text != "" && txtExportUnitPrice.Text!="")
+            if (txtName.Text != "" && txtImportUnitPrice.Text != "" && txtExportUnitPrice.Text != "")
                 return true;
 
             MessageBox.Show(
@@ -213,8 +189,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
         {
             return MaterialService.ChangeMaterialInformation(newMaterial);
         }
+
         #endregion
-
-
     }
 }
