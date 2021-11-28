@@ -9,6 +9,7 @@ using BTL_LTTQ_QLKhoVLXD.Forms.Customer;
 using BTL_LTTQ_QLKhoVLXD.Forms.Employee;
 using BTL_LTTQ_QLKhoVLXD.Forms.Material;
 using BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails;
+using BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails;
 using BTL_LTTQ_QLKhoVLXD.Forms.Supplier;
 using BTL_LTTQ_QLKhoVLXD.Forms.WareHouse;
 using BTL_LTTQ_QLKhoVLXD.Models;
@@ -1077,7 +1078,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             }
             else
             {
-
+                new fExportReceiptDetails(receipt as ExportReceipt).ShowDialog();
             }
         }
 
