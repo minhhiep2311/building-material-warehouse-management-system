@@ -116,8 +116,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void DisplayComponentsAccordsPermission()
         {
-            if (!User.Permissions.Contains(Resources.Permission_CreateAccount))
-                btnCreateAccount_userSetting.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_ResetPassword))
                 btnResetPassword_userSetting.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_AddEmployee))
@@ -126,18 +124,42 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 btnEdit_employee.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_DeleteAccount))
                 btnRemoveAccount_employee.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_CreateAccountEmployee))
+                btnCreateAccount_employee.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_DeleteEmployee))
                 btnRemoveEmployee_employee.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_EditReceipt))
+                btnEdit_Receipt.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_AddReceipt))
+                btnAdd_Receipt.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_DeleteReceipt))
+                btnDelete_Receipt.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_EditMaterial))
+                btnEdit_material.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_AddMaterial))
+                btnAdd_material.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_DeleteMaterial))
+                btnDelete_material.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_WarehouseMaterial))
+                btnWareHouse_material.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_EditCustomer))
+                btnEdit_Customer.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_AddCustomer))
+                btnAdd_Customer.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_DeleteCustomer))
+                btnDelete_Customer.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_EditSupplierInformation))
                 btnEdit_supplier.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_DeleteSupplier))
                 btnDelete_supplier.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_DeleteSupplier))
                 tsmiDeleteSupplier_supplier.Visible = false;
-            if (!User.Permissions.Contains(Resources.Permission_CreateAccount))
+            if (!User.Permissions.Contains(Resources.Permission_CreateAccountEmployee))
                 tsmiCreateAccount_employee.Visible = false;
             if (!User.Permissions.Contains(Resources.Permission_DeleteAccount))
                 tsmiDeleteAccount_employee.Visible = false;
+            if (!User.Permissions.Contains(Resources.Permission_AddSupplier))
+                btnAdd_supplier.Visible = false;
         }
 
         private void DisplayUserInfo()
@@ -880,12 +902,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             if (!ShouldShowMenuContext(e, lvwMaterial_material))
                 return;
             // TODO: Add permission to menu context
-            cms_supplier.Show(Cursor.Position);
+            cms_material.Show(Cursor.Position);
         }
 
         private void lvwMaterial_material_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            ShowInformation_Material();
+            ShowDetails_Material();
         }
 
         private void lvwMaterial_material_SelectedIndexChanged(object sender, EventArgs e)
@@ -908,7 +930,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void tsmiShowInformation_material_Click(object sender, EventArgs e)
         {
-            ShowInformation_Material();
+            EditMaterial_Material();
         }
 
         private void tsmiDelete_material_Click(object sender, EventArgs e)
@@ -977,8 +999,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             lvwMaterial_material.Columns.Add("ID", 0);
             lvwMaterial_material.Columns.Add("Tên vật liệu", 175, HorizontalAlignment.Left);
-            lvwMaterial_material.Columns.Add("Đơn giá nhập", 90, HorizontalAlignment.Right);
-            lvwMaterial_material.Columns.Add("Đơn giá xuất", 85, HorizontalAlignment.Right);
+            lvwMaterial_material.Columns.Add("Giá nhập", 80, HorizontalAlignment.Right);
+            lvwMaterial_material.Columns.Add("Giá xuất", 80, HorizontalAlignment.Right);
             lvwMaterial_material.Columns.Add("Đơn vị", 50, HorizontalAlignment.Left);
             lvwMaterial_material.Columns.Add("Quy cách", 120, HorizontalAlignment.Left);
         }
@@ -1011,7 +1033,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             var material = Helper.Control.FirstSelected(_materials, lvwMaterial_material);
             if (material != null)
-                new fMaterial(this, Enum.FormMode.Write, material, true).Show();
+                new fMaterial(this, Enum.FormMode.Write, material).Show();
         }
 
         private void Search_Material()
@@ -1041,28 +1063,53 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             new fMaterialDetails(material).ShowDialog();
         }
 
-        private void ShowInformation_Material()
-        {
-            var material = Helper.Control.FirstSelected(_materials, lvwMaterial_material);
-            if (material == null)
-                return;
-            
-            lvwMaterial_material.SelectedItems.Clear();
-            //new fSupplier(this, mode, supplier).Show();
-        }
-
         private void TryDeleteMaterial_Material()
         {
             if (lvwMaterial_material.SelectedIndices.Count <= 0)
                 return;
 
-            var shouldDeleteSuppliers = lvwMaterial_material.SelectedIndices.Cast<int>()
-               .Select(x => _suppliers[x]).ToList();
-            var shouldDeleteSupplierNames = shouldDeleteSuppliers.Select(x => x.Name);
-            var shouldDeleteSupplierIds = shouldDeleteSuppliers.Select(x => x.Id).ToList();
+            var shouldDeleteMaterials = lvwMaterial_material.SelectedIndices.Cast<int>()
+               .Select(x => _materials[x]).ToList();
+            var shouldDeleteMaterialNames = shouldDeleteMaterials.Select(x => x.Name);
+            var shouldDeleteMaterialIds = shouldDeleteMaterials.Select(x => x.Id).ToList();
 
-            if (ConfirmDeleteSupplier_supplier(shouldDeleteSupplierNames))
-                DeleteSupplier_supplier(shouldDeleteSupplierIds);
+            if (ConfirmDeleteMaterial_Material(shouldDeleteMaterialNames))
+                DeleteMaterial_Material(shouldDeleteMaterialIds);
+        }
+
+        private static bool ConfirmDeleteMaterial_Material(IEnumerable<string> shouldDeleteMaterialNames)
+        {
+            var shouldDeleteStr = string.Join(", ", shouldDeleteMaterialNames);
+            return MessageBox.Show(
+                string.Format(Resources.MessageBox_Message_ConfirmDeleteMaterial, shouldDeleteStr),
+                Resources.MessageBox_Caption_Notification,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            ) == DialogResult.Yes;
+        }
+
+        private void DeleteMaterial_Material(List<int> shouldDeleteMaterialIds)
+        {
+            if (MaterialService.DeleteMaterial(shouldDeleteMaterialIds))
+            {
+                MessageBox.Show(
+                    string.Format(Resources.MessageBox_Message_DeleteMaterialSuccessfully, shouldDeleteMaterialIds.Count),
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            else
+            {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_SystemError,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            LoadData_Supplier();
         }
 
         #endregion

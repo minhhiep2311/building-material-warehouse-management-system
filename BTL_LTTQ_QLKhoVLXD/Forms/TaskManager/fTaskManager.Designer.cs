@@ -259,7 +259,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtName_employee = new System.Windows.Forms.TextBox();
             this.tpgUserSetting = new System.Windows.Forms.TabPage();
             this.flp_userSetting = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCreateAccount_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnChangeInformation_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnResetPassword_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlInformation = new System.Windows.Forms.Panel();
@@ -1022,7 +1021,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwItem_sell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvwItem_sell.Name = "lvwItem_sell";
             this.lvwItem_sell.OwnerDraw = true;
-            this.lvwItem_sell.Size = new System.Drawing.Size(1085, 191);
+            this.lvwItem_sell.Size = new System.Drawing.Size(1085, 144);
             this.lvwItem_sell.Sortable = true;
             this.lvwItem_sell.SortableColumns = null;
             this.lvwItem_sell.TabIndex = 19;
@@ -1040,10 +1039,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlBottom_sell.Controls.Add(this.pnlTotalMoney_sell);
             this.pnlBottom_sell.Controls.Add(this.btnCreateReceipt_sell);
             this.pnlBottom_sell.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom_sell.Location = new System.Drawing.Point(3, 339);
+            this.pnlBottom_sell.Location = new System.Drawing.Point(3, 292);
             this.pnlBottom_sell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlBottom_sell.Name = "pnlBottom_sell";
-            this.pnlBottom_sell.Size = new System.Drawing.Size(1085, 119);
+            this.pnlBottom_sell.Size = new System.Drawing.Size(1085, 166);
             this.pnlBottom_sell.TabIndex = 18;
             // 
             // btnExport_sell
@@ -3167,7 +3166,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // flp_userSetting
             // 
             this.flp_userSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.flp_userSetting.Controls.Add(this.btnCreateAccount_userSetting);
             this.flp_userSetting.Controls.Add(this.btnChangeInformation_userSetting);
             this.flp_userSetting.Controls.Add(this.btnResetPassword_userSetting);
             this.flp_userSetting.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -3179,24 +3177,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flp_userSetting.Size = new System.Drawing.Size(1101, 668);
             this.flp_userSetting.TabIndex = 2;
             // 
-            // btnCreateAccount_userSetting
-            // 
-            this.btnCreateAccount_userSetting.BackColor = System.Drawing.Color.White;
-            this.btnCreateAccount_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateAccount_userSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnCreateAccount_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnCreateAccount_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_add;
-            this.btnCreateAccount_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreateAccount_userSetting.Location = new System.Drawing.Point(40, 40);
-            this.btnCreateAccount_userSetting.Margin = new System.Windows.Forms.Padding(20);
-            this.btnCreateAccount_userSetting.Name = "btnCreateAccount_userSetting";
-            this.btnCreateAccount_userSetting.Size = new System.Drawing.Size(205, 91);
-            this.btnCreateAccount_userSetting.TabIndex = 0;
-            this.btnCreateAccount_userSetting.Text = "Tạo tài khoản";
-            this.btnCreateAccount_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCreateAccount_userSetting.UseVisualStyleBackColor = false;
-            this.btnCreateAccount_userSetting.Click += new System.EventHandler(this.btnCreateAccount_userSetting_Click);
-            // 
             // btnChangeInformation_userSetting
             // 
             this.btnChangeInformation_userSetting.BackColor = System.Drawing.Color.White;
@@ -3204,7 +3184,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnChangeInformation_userSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnChangeInformation_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnChangeInformation_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChangeInformation_userSetting.Location = new System.Drawing.Point(285, 40);
+            this.btnChangeInformation_userSetting.Location = new System.Drawing.Point(40, 40);
             this.btnChangeInformation_userSetting.Margin = new System.Windows.Forms.Padding(20);
             this.btnChangeInformation_userSetting.Name = "btnChangeInformation_userSetting";
             this.btnChangeInformation_userSetting.Size = new System.Drawing.Size(205, 91);
@@ -3222,7 +3202,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnResetPassword_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnResetPassword_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.unlock;
             this.btnResetPassword_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnResetPassword_userSetting.Location = new System.Drawing.Point(530, 40);
+            this.btnResetPassword_userSetting.Location = new System.Drawing.Point(285, 40);
             this.btnResetPassword_userSetting.Margin = new System.Windows.Forms.Padding(20);
             this.btnResetPassword_userSetting.Name = "btnResetPassword_userSetting";
             this.btnResetPassword_userSetting.Size = new System.Drawing.Size(205, 91);
@@ -3230,7 +3210,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnResetPassword_userSetting.Text = "Đặt lại mật khẩu";
             this.btnResetPassword_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnResetPassword_userSetting.UseVisualStyleBackColor = false;
-            this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
             // 
             // pnlInformation
             // 
@@ -3407,7 +3386,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSupplier_supplier;
         private System.Windows.Forms.TabPage tpgUserSetting;
         private System.Windows.Forms.FlowLayoutPanel flp_userSetting;
-        private BmwButton btnCreateAccount_userSetting;
         private BmwButton btnChangeInformation_userSetting;
         private BmwButton btnResetPassword_userSetting;
         private System.Windows.Forms.TabPage tpgEmployee;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 
 namespace BTL_LTTQ_QLKhoVLXD.Models
 {
@@ -11,6 +12,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
         {
             Id = Convert.ToInt32(id);
             Name = Convert.ToString(name);
+        }
+
+        public static MaterialUnit FromData(DataRow data)
+        {
+            var id = Convert.ToInt32(data["id"]);
+            var name = Convert.ToString(data["name"]);
+
+            return new MaterialUnit(id, name);
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

@@ -23,8 +23,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails
         private void Init()
         {
             lvwWarehouse.Columns.Add("ID", 0);
-            lvwWarehouse.Columns.Add("Tên kho", 100, HorizontalAlignment.Left);
-            lvwWarehouse.Columns.Add("Số lượng", 100, HorizontalAlignment.Left);
+            lvwWarehouse.Columns.Add("Tên kho", 200, HorizontalAlignment.Left);
+            lvwWarehouse.Columns.Add("Số lượng", 150, HorizontalAlignment.Left);
             lblExport.Focus();
         }
 
