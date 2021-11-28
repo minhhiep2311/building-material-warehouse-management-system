@@ -252,9 +252,6 @@
   <data name="Permission_AddEmployee" xml:space="preserve">
     <value>AddEmployee</value>
   </data>
-  <data name="Permission_CreateAccount" xml:space="preserve">
-    <value>CreateAccount</value>
-  </data>
   <data name="Permission_DeleteAccount" xml:space="preserve">
     <value>DeleteSupplier</value>
   </data>
@@ -354,9 +351,16 @@
     <value>WarehouseMaterial</value>
   </data>
   <data name="Form_ButtonCreateReceipt" xml:space="preserve">
-	  <value>Tạo hóa đơn</value>
+    <value>Tạo hóa đơn</value>
   </data>
   <data name="Form_ButtonNewReceipt" xml:space="preserve">
-	  <value>Hóa đơn mới</value>
+    <value>Hóa đơn mới</value>
+  </data>
+  <data name="MessageBox_Message_ConfirmDeleteMaterial" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa các vật liệu sau không?
+{0}</value>
+  </data>
+  <data name="MessageBox_Message_DeleteMaterialSuccessfully" xml:space="preserve">
+    <value>Đã xóa {0} vật liệu!</value>
   </data>
 </root>

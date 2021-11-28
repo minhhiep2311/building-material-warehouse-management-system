@@ -362,6 +362,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bạn có chắc chắn muốn xóa các vật liệu sau không?
+        ///{0}.
+        /// </summary>
+        internal static string MessageBox_Message_ConfirmDeleteMaterial {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ConfirmDeleteMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bạn có chắc chắn muốn xóa các nhà cung cấp sau không?
         ///{0}.
         /// </summary>
@@ -413,6 +423,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         internal static string MessageBox_Message_DeleteAccountSuccessfully {
             get {
                 return ResourceManager.GetString("MessageBox_Message_DeleteAccountSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Đã xóa {0} vật liệu!.
+        /// </summary>
+        internal static string MessageBox_Message_DeleteMaterialSuccessfully {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_DeleteMaterialSuccessfully", resourceCulture);
             }
         }
         
@@ -593,15 +612,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         internal static string Permission_AddSupplier {
             get {
                 return ResourceManager.GetString("Permission_AddSupplier", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to CreateAccount.
-        /// </summary>
-        internal static string Permission_CreateAccount {
-            get {
-                return ResourceManager.GetString("Permission_CreateAccount", resourceCulture);
             }
         }
         

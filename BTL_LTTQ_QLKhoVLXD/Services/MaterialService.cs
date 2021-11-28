@@ -75,5 +75,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             return rowAffected > 0;
         }
         #endregion
+
+        #region Delete
+
+        public static bool DeleteMaterial(List<int> shouldDeleteMaterialIds)
+        {
+            // TODO
+            return true;
+        }
+
+        #endregion
     }
 }

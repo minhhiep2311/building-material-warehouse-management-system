@@ -192,6 +192,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
             this.btnAddUnit.TabIndex = 11;
             this.btnAddUnit.Text = "+";
             this.btnAddUnit.UseVisualStyleBackColor = false;
+            this.btnAddUnit.Click += new System.EventHandler(this.btnAddUnit_Click);
             // 
             // grbInfo
             // 

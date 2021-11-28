@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using BTL_LTTQ_QLKhoVLXD.Forms.TaskManager;
+using BTL_LTTQ_QLKhoVLXD.Forms.Unit;
 using BTL_LTTQ_QLKhoVLXD.Properties;
 using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
@@ -32,6 +33,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
             ConfigureAccessibility();
         }
 
+        private void btnAddUnit_Click(object sender, EventArgs e)
+        {
+            new fUnit().ShowDialog();
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
@@ -44,18 +50,23 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Material
             else
                 TryChangeInformation();
         }
+
         #endregion
 
         #region Methods
         private void BindData()
         {
             if (_mode == FormMode.Create)
+            {
+                // TODO
                 return;
+            }
 
             txtName.Text = _material.Name;
             txtImportUnitPrice.Text = Helper.Converter.ToString(_material.ImportUnitPrice);
             txtExportUnitPrice.Text = Helper.Converter.ToString(_material.ExportUnitPrice);
             txtSpecialization.Text = _material.Specialization;
+            cboUnit.Text = _material.Unit.Name;
         }
 
         private void ConfigureAccessibility()

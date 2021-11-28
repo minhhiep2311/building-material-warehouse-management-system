@@ -179,6 +179,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnWareHouse_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnRefresh_material = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.grbSearch_material = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
+            this.pnlStatus_material = new System.Windows.Forms.Panel();
+            this.lblStatus_material = new System.Windows.Forms.Label();
             this.rdoAvailable_material = new System.Windows.Forms.RadioButton();
             this.rdoAll_material = new System.Windows.Forms.RadioButton();
             this.pnlNamel_material = new System.Windows.Forms.Panel();
@@ -257,11 +259,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.txtName_employee = new System.Windows.Forms.TextBox();
             this.tpgUserSetting = new System.Windows.Forms.TabPage();
             this.flp_userSetting = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCreateAccount_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnChangeInformation_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnResetPassword_userSetting = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.pnlStatus_material = new System.Windows.Forms.Panel();
-            this.lblStatus_material = new System.Windows.Forms.Label();
             this.cms_employee.SuspendLayout();
             this.cms_supplier.SuspendLayout();
             this.cms_material.SuspendLayout();
@@ -317,6 +316,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_material.SuspendLayout();
             this.flpFunction_material.SuspendLayout();
             this.grbSearch_material.SuspendLayout();
+            this.pnlStatus_material.SuspendLayout();
             this.pnlNamel_material.SuspendLayout();
             this.tpgCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spc_customer)).BeginInit();
@@ -354,7 +354,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_employee.SuspendLayout();
             this.tpgUserSetting.SuspendLayout();
             this.flp_userSetting.SuspendLayout();
-            this.pnlStatus_material.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPosition
@@ -2145,6 +2144,25 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbSearch_material.TabStop = false;
             this.grbSearch_material.Text = "Tìm kiếm";
             // 
+            // pnlStatus_material
+            // 
+            this.pnlStatus_material.Controls.Add(this.lblStatus_material);
+            this.pnlStatus_material.Controls.Add(this.rdoAvailable_material);
+            this.pnlStatus_material.Controls.Add(this.rdoAll_material);
+            this.pnlStatus_material.Location = new System.Drawing.Point(8, 67);
+            this.pnlStatus_material.Name = "pnlStatus_material";
+            this.pnlStatus_material.Size = new System.Drawing.Size(431, 63);
+            this.pnlStatus_material.TabIndex = 8;
+            // 
+            // lblStatus_material
+            // 
+            this.lblStatus_material.AutoSize = true;
+            this.lblStatus_material.Location = new System.Drawing.Point(3, 17);
+            this.lblStatus_material.Name = "lblStatus_material";
+            this.lblStatus_material.Size = new System.Drawing.Size(84, 20);
+            this.lblStatus_material.TabIndex = 0;
+            this.lblStatus_material.Text = "Trạng thái";
+            // 
             // rdoAvailable_material
             // 
             this.rdoAvailable_material.AutoSize = true;
@@ -3146,7 +3164,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // flp_userSetting
             // 
             this.flp_userSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.flp_userSetting.Controls.Add(this.btnCreateAccount_userSetting);
             this.flp_userSetting.Controls.Add(this.btnChangeInformation_userSetting);
             this.flp_userSetting.Controls.Add(this.btnResetPassword_userSetting);
             this.flp_userSetting.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -3158,24 +3175,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flp_userSetting.Size = new System.Drawing.Size(1101, 668);
             this.flp_userSetting.TabIndex = 2;
             // 
-            // btnCreateAccount_userSetting
-            // 
-            this.btnCreateAccount_userSetting.BackColor = System.Drawing.Color.White;
-            this.btnCreateAccount_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateAccount_userSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnCreateAccount_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnCreateAccount_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.user_add;
-            this.btnCreateAccount_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreateAccount_userSetting.Location = new System.Drawing.Point(40, 40);
-            this.btnCreateAccount_userSetting.Margin = new System.Windows.Forms.Padding(20);
-            this.btnCreateAccount_userSetting.Name = "btnCreateAccount_userSetting";
-            this.btnCreateAccount_userSetting.Size = new System.Drawing.Size(205, 91);
-            this.btnCreateAccount_userSetting.TabIndex = 0;
-            this.btnCreateAccount_userSetting.Text = "Tạo tài khoản";
-            this.btnCreateAccount_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCreateAccount_userSetting.UseVisualStyleBackColor = false;
-            this.btnCreateAccount_userSetting.Click += new System.EventHandler(this.btnCreateAccount_userSetting_Click);
-            // 
             // btnChangeInformation_userSetting
             // 
             this.btnChangeInformation_userSetting.BackColor = System.Drawing.Color.White;
@@ -3183,7 +3182,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnChangeInformation_userSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnChangeInformation_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnChangeInformation_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChangeInformation_userSetting.Location = new System.Drawing.Point(285, 40);
+            this.btnChangeInformation_userSetting.Location = new System.Drawing.Point(40, 40);
             this.btnChangeInformation_userSetting.Margin = new System.Windows.Forms.Padding(20);
             this.btnChangeInformation_userSetting.Name = "btnChangeInformation_userSetting";
             this.btnChangeInformation_userSetting.Size = new System.Drawing.Size(205, 91);
@@ -3201,7 +3200,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnResetPassword_userSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnResetPassword_userSetting.Image = global::BTL_LTTQ_QLKhoVLXD.Properties.Resources.unlock;
             this.btnResetPassword_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnResetPassword_userSetting.Location = new System.Drawing.Point(530, 40);
+            this.btnResetPassword_userSetting.Location = new System.Drawing.Point(285, 40);
             this.btnResetPassword_userSetting.Margin = new System.Windows.Forms.Padding(20);
             this.btnResetPassword_userSetting.Name = "btnResetPassword_userSetting";
             this.btnResetPassword_userSetting.Size = new System.Drawing.Size(205, 91);
@@ -3210,25 +3209,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnResetPassword_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnResetPassword_userSetting.UseVisualStyleBackColor = false;
             this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
-            // 
-            // pnlStatus_material
-            // 
-            this.pnlStatus_material.Controls.Add(this.lblStatus_material);
-            this.pnlStatus_material.Controls.Add(this.rdoAvailable_material);
-            this.pnlStatus_material.Controls.Add(this.rdoAll_material);
-            this.pnlStatus_material.Location = new System.Drawing.Point(8, 67);
-            this.pnlStatus_material.Name = "pnlStatus_material";
-            this.pnlStatus_material.Size = new System.Drawing.Size(431, 63);
-            this.pnlStatus_material.TabIndex = 8;
-            // 
-            // lblStatus_material
-            // 
-            this.lblStatus_material.AutoSize = true;
-            this.lblStatus_material.Location = new System.Drawing.Point(3, 17);
-            this.lblStatus_material.Name = "lblStatus_material";
-            this.lblStatus_material.Size = new System.Drawing.Size(84, 20);
-            this.lblStatus_material.TabIndex = 0;
-            this.lblStatus_material.Text = "Trạng thái";
             // 
             // fTaskManager
             // 
@@ -3321,6 +3301,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_material.ResumeLayout(false);
             this.flpFunction_material.ResumeLayout(false);
             this.grbSearch_material.ResumeLayout(false);
+            this.pnlStatus_material.ResumeLayout(false);
+            this.pnlStatus_material.PerformLayout();
             this.pnlNamel_material.ResumeLayout(false);
             this.pnlNamel_material.PerformLayout();
             this.tpgCustomer.ResumeLayout(false);
@@ -3372,8 +3354,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlName_employee.PerformLayout();
             this.tpgUserSetting.ResumeLayout(false);
             this.flp_userSetting.ResumeLayout(false);
-            this.pnlStatus_material.ResumeLayout(false);
-            this.pnlStatus_material.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3392,7 +3372,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSupplier_supplier;
         private System.Windows.Forms.TabPage tpgUserSetting;
         private System.Windows.Forms.FlowLayoutPanel flp_userSetting;
-        private BmwButton btnCreateAccount_userSetting;
         private BmwButton btnChangeInformation_userSetting;
         private BmwButton btnResetPassword_userSetting;
         private System.Windows.Forms.TabPage tpgEmployee;
