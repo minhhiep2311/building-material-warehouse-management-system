@@ -1585,7 +1585,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgReceipt.Location = new System.Drawing.Point(174, 4);
             this.tpgReceipt.Margin = new System.Windows.Forms.Padding(0);
             this.tpgReceipt.Name = "tpgReceipt";
-            this.tpgReceipt.Size = new System.Drawing.Size(1101, 668);
+            this.tpgReceipt.Size = new System.Drawing.Size(1101, 611);
             this.tpgReceipt.TabIndex = 2;
             this.tpgReceipt.Text = "Quản lý hóa đơn";
             this.tpgReceipt.UseVisualStyleBackColor = true;
@@ -1609,7 +1609,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_receipt.Panel2.Controls.Add(this.grbSearch_receipt);
             this.spc_receipt.Panel2.Padding = new System.Windows.Forms.Padding(5);
             this.spc_receipt.Panel2MinSize = 350;
-            this.spc_receipt.Size = new System.Drawing.Size(1101, 668);
+            this.spc_receipt.Size = new System.Drawing.Size(1101, 611);
             this.spc_receipt.SplitterDistance = 586;
             this.spc_receipt.SplitterWidth = 1;
             this.spc_receipt.TabIndex = 4;
@@ -1627,7 +1627,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwReceipt_Receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvwReceipt_Receipt.Name = "lvwReceipt_Receipt";
             this.lvwReceipt_Receipt.OwnerDraw = true;
-            this.lvwReceipt_Receipt.Size = new System.Drawing.Size(586, 668);
+            this.lvwReceipt_Receipt.Size = new System.Drawing.Size(586, 611);
             this.lvwReceipt_Receipt.Sortable = true;
             this.lvwReceipt_Receipt.SortableColumns = null;
             this.lvwReceipt_Receipt.TabIndex = 0;
@@ -1647,7 +1647,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_receipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpFunction_receipt.Name = "flpFunction_receipt";
             this.flpFunction_receipt.Padding = new System.Windows.Forms.Padding(5);
-            this.flpFunction_receipt.Size = new System.Drawing.Size(504, 356);
+            this.flpFunction_receipt.Size = new System.Drawing.Size(504, 299);
             this.flpFunction_receipt.TabIndex = 8;
             // 
             // btnAdd_Receipt
@@ -1952,7 +1952,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgMaterial.Location = new System.Drawing.Point(174, 4);
             this.tpgMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgMaterial.Name = "tpgMaterial";
-            this.tpgMaterial.Size = new System.Drawing.Size(1101, 668);
+            this.tpgMaterial.Size = new System.Drawing.Size(1101, 611);
             this.tpgMaterial.TabIndex = 3;
             this.tpgMaterial.Text = "Vật liệu";
             this.tpgMaterial.UseVisualStyleBackColor = true;
@@ -1978,7 +1978,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.spc_material.Panel2.Controls.Add(this.grbSearch_material);
             this.spc_material.Panel2.Padding = new System.Windows.Forms.Padding(5);
             this.spc_material.Panel2MinSize = 350;
-            this.spc_material.Size = new System.Drawing.Size(1101, 668);
+            this.spc_material.Size = new System.Drawing.Size(1101, 611);
             this.spc_material.SplitterDistance = 586;
             this.spc_material.SplitterWidth = 1;
             this.spc_material.TabIndex = 4;
@@ -1996,7 +1996,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lvwMaterial_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvwMaterial_material.Name = "lvwMaterial_material";
             this.lvwMaterial_material.OwnerDraw = true;
-            this.lvwMaterial_material.Size = new System.Drawing.Size(586, 668);
+            this.lvwMaterial_material.Size = new System.Drawing.Size(586, 611);
             this.lvwMaterial_material.Sortable = true;
             this.lvwMaterial_material.SortableColumns = null;
             this.lvwMaterial_material.TabIndex = 0;
@@ -2021,7 +2021,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpFunction_material.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpFunction_material.Name = "flpFunction_material";
             this.flpFunction_material.Padding = new System.Windows.Forms.Padding(5);
-            this.flpFunction_material.Size = new System.Drawing.Size(504, 445);
+            this.flpFunction_material.Size = new System.Drawing.Size(504, 388);
             this.flpFunction_material.TabIndex = 8;
             // 
             // btnDetails_material
@@ -2224,7 +2224,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgStatistic.Location = new System.Drawing.Point(174, 4);
             this.tpgStatistic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgStatistic.Name = "tpgStatistic";
-            this.tpgStatistic.Size = new System.Drawing.Size(1101, 668);
+            this.tpgStatistic.Size = new System.Drawing.Size(1101, 611);
             this.tpgStatistic.TabIndex = 4;
             this.tpgStatistic.Text = "Thống kê";
             this.tpgStatistic.UseVisualStyleBackColor = true;

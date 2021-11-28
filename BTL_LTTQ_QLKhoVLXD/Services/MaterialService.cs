@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 
@@ -64,6 +65,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
         #endregion
 
         #region Update
+
         public static bool ChangeMaterialInformation(Material material)
         {
             var query = "UPDATE material SET " +
@@ -74,14 +76,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 
             return rowAffected > 0;
         }
-        #endregion
-
-        #region Delete
 
         public static bool DeleteMaterial(List<int> shouldDeleteMaterialIds)
         {
-            // TODO
-            return true;
+            var materialList = string.Join(", ", shouldDeleteMaterialIds);
+            var query = "UPDATE material SET isAvailable = 0 " +
+                $"WHERE id IN ({materialList})";
+            var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
+
+            return rowAffected > 0;
         }
 
         #endregion

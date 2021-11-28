@@ -1007,7 +1007,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         public void LoadData_Material(List<Models.Material> cache = null)
         {
-
             lvwMaterial_material.Items.Clear();
 
             if (cache == null)
@@ -1045,9 +1044,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var materials = _materials.FindAll(x =>
             {
                 var matchName = Helper.Matcher.Match(x.Name, name);
-                var matchGender = status == "Tất cả" || x.IsAvailable;
+                var matchStatus = status == "Tất cả" || x.IsAvailable;
 
-                return matchName && matchGender;
+                return matchName && matchStatus;
             });
 
             LoadData_Material(materials);
@@ -1058,7 +1057,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var material = Helper.Control.FirstSelected(_materials, lvwMaterial_material);
             if (material == null)
                 return;
-            
+
             lvwMaterial_material.SelectedItems.Clear();
             new fMaterialDetails(material).ShowDialog();
         }
@@ -1067,7 +1066,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         {
             if (lvwMaterial_material.SelectedIndices.Count <= 0)
                 return;
-
+            
             var shouldDeleteMaterials = lvwMaterial_material.SelectedIndices.Cast<int>()
                .Select(x => _materials[x]).ToList();
             var shouldDeleteMaterialNames = shouldDeleteMaterials.Select(x => x.Name);
@@ -1109,7 +1108,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 );
             }
 
-            LoadData_Supplier();
+            LoadData_Material();
         }
 
         #endregion
