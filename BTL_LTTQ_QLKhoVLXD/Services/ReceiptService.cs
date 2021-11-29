@@ -42,6 +42,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             return receipts;
         }
 
+        public static List<Material> GetMaterialsFromImportReceipt(ImportReceipt receipt)
+        {
+            return new List<Material>();
+        }
+
+        public static List<Material> GetMaterialsFromEportReceipt(ExportReceipt receipt)
+        {
+            return new List<Material>();
+        }
         #endregion
 
         #region Insert

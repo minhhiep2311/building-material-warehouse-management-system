@@ -71,5 +71,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
             return new ExportReceipt(id, employee, customer, warehouse, totalPrice, date);
         }
+
     }
 }

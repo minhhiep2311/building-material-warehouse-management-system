@@ -1066,15 +1066,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void ShowDetails_Receipt<T>(List<T> receipts) where T : Receipt
         {
-            var receipt = Helper.Control.FirstSelected(receipts, lvwMaterial_material);
+            var receipt = Helper.Control.FirstSelected(receipts, lvwReceipt_receipt);
             if (receipt == null)
                 return;
 
-            lvwMaterial_material.SelectedItems.Clear();
-            // TODO
+            lvwReceipt_receipt.SelectedItems.Clear();
+            
             if (typeof(T) == typeof(ImportReceipt))
             {
-
+                new fImportReceiptDetails(receipt as ImportReceipt).ShowDialog();
             }
             else
             {
