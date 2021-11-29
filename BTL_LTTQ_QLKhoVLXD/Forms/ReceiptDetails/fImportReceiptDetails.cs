@@ -1,4 +1,5 @@
 ﻿using BTL_LTTQ_QLKhoVLXD.Models;
+using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
     public partial class fImportReceiptDetails : Form
     {
         private readonly ImportReceipt _importReceipt;
-        private List<Models.Material> _materials;
 
         public fImportReceiptDetails(ImportReceipt importReceipt)
         {
@@ -26,7 +26,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-
+            ExportService.Export(_importReceipt);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -46,9 +46,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             txtDate.Text = Helper.Converter.ToString(_importReceipt.DateTime);
             txtTotalPrice.Text = Helper.Converter.ToString(_importReceipt.TotalPrice);
 
-            _materials = _importReceipt.GetMaterials();
+            _importReceipt.Materials = _importReceipt.GetMaterials();
 
-            _materials.ForEach(material =>
+            _importReceipt.Materials.ForEach(material =>
             {
                 lvwMaterial.Items.Add(material.ToListViewItem());
             });
