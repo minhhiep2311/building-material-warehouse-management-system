@@ -241,7 +241,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             this.btnExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnExport.Location = new System.Drawing.Point(25, 3);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(134, 39);
+            this.btnExport.Size = new System.Drawing.Size(180, 39);
             this.btnExport.TabIndex = 17;
             this.btnExport.Text = "Xuất hóa đơn";
             this.btnExport.UseVisualStyleBackColor = false;
@@ -254,9 +254,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnExit.Location = new System.Drawing.Point(368, 3);
+            this.btnExit.Location = new System.Drawing.Point(316, 3);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(134, 39);
+            this.btnExit.Size = new System.Drawing.Size(180, 39);
             this.btnExit.TabIndex = 18;
             this.btnExit.Text = "Đóng";
             this.btnExit.UseVisualStyleBackColor = false;

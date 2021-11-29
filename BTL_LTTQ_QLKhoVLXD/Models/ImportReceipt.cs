@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 
 namespace BTL_LTTQ_QLKhoVLXD.Models
@@ -59,6 +60,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             var totalPrice = Convert.ToDouble(data["totalPrice"]);
 
             return new ImportReceipt(id, employee, supplier, warehouse, totalPrice, date);
+        }
+
+        public List<Material> GetMaterials()
+        {
+            return ReceiptService.GetMaterialsFromImportReceipt(this);
         }
     }
 }

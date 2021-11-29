@@ -93,8 +93,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             Invoke((MethodInvoker)(() =>
             {
-               Init_Customer();
-               LoadData_Customer();
+                Init_Customer();
+                LoadData_Customer();
             }));
         }
 
@@ -596,12 +596,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             lblSpecialization_sell.Focus();
         }
 
-        private void btnAddMaterial_sell_Click(object sender, EventArgs e)
-        {
-            lvwItem_sell.SelectedItems.Clear();
-            new fMaterial(this).ShowDialog();
-        }
-
         private void nmrMaterialAmount_sell_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (int)Keys.Enter)
@@ -848,7 +842,18 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             var vat = total * vatPercent / 100;
             var totalAfterPercent = total + vat;
             var reason = txtReason_sell.Text;
-            var receipt = new ExportReceipt(User, customer, warehouse, totalAfterPercent, DateTime.Now, _items_sell, vat, vatPercent, reason);
+
+            var receipt = new ExportReceipt(
+                User,
+                customer,
+                warehouse,
+                totalAfterPercent,
+                DateTime.Now,
+                vat,
+                reason,
+                vatPercent,
+                _items_sell
+            );
             receipt.Id = ReceiptService.CreateExportReceipt(receipt);
             _receipt_sell = receipt;
         }
@@ -972,7 +977,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #endregion
 
-        #region Receipt Behavior
+        #region Receipt Behaviors
 
         private void Init_Receipt()
         {
@@ -1031,7 +1036,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 var receipts = _importReceipts_receipt.FindAll(x =>
                 {
                     var matchName = Helper.Matcher.Match(from, to, x.DateTime);
-                    var matchPartner = Helper.Matcher.Match( x.Supplier.Name, partner);
+                    var matchPartner = Helper.Matcher.Match(x.Supplier.Name, partner);
                     var matchWarehouse = Helper.Matcher.Match(x.Warehouse.Name, warehouse);
                     var matchUser = Helper.Matcher.Match(x.Employee.Name, user);
 
@@ -1071,7 +1076,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 return;
 
             lvwReceipt_receipt.SelectedItems.Clear();
-            
+
             if (typeof(T) == typeof(ImportReceipt))
             {
                 new fImportReceiptDetails(receipt as ImportReceipt).ShowDialog();
@@ -1386,7 +1391,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
             lvwCustomer_customer.Columns.Add("ID", 0);
             lvwCustomer_customer.Columns.Add("Tên khách hàng", 500, HorizontalAlignment.Left);
-            lvwCustomer_customer.Columns.Add("Địa chỉ",  500, HorizontalAlignment.Left);
+            lvwCustomer_customer.Columns.Add("Địa chỉ", 500, HorizontalAlignment.Left);
         }
 
         public void LoadData_Customer(List<Models.Customer> cache = null)

@@ -2,31 +2,26 @@
 using BTL_LTTQ_QLKhoVLXD.Utils;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
 {
     public partial class fImportReceiptDetails : Form
     {
-        private readonly ImportReceipt importReceipt;
+        private readonly ImportReceipt _importReceipt;
+        private List<Models.Material> _materials;
 
         public fImportReceiptDetails(ImportReceipt importReceipt)
         {
             InitializeComponent();
-            this.importReceipt = importReceipt;
+            _importReceipt = importReceipt;
         }
 
         #region Events
         private void fImportReceiptDetails_Load(object sender, EventArgs e)
         {
             Init();
-            Binddata();
+            BindData();
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -40,16 +35,23 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
         }
 
         #endregion
-        #region Behavior
-        private void Binddata()
-        {
-            txtId.Text = importReceipt.Id.ToString();
-            txtEmployee.Text = importReceipt.Employee.Name;
-            txtSupplier.Text = importReceipt.Supplier.Name;
-            txtWarehouse.Text = importReceipt.Warehouse.Name;
-            txtDate.Text = Helper.Converter.ToString(importReceipt.DateTime);
-            txtTotalPrice.Text = Helper.Converter.ToString(importReceipt.TotalPrice);
 
+        #region Behavior
+        private void BindData()
+        {
+            txtId.Text = _importReceipt.Id.ToString();
+            txtEmployee.Text = _importReceipt.Employee.Name;
+            txtSupplier.Text = _importReceipt.Supplier.Name;
+            txtWarehouse.Text = _importReceipt.Warehouse.Name;
+            txtDate.Text = Helper.Converter.ToString(_importReceipt.DateTime);
+            txtTotalPrice.Text = Helper.Converter.ToString(_importReceipt.TotalPrice);
+
+            _materials = _importReceipt.GetMaterials();
+
+            _materials.ForEach(material =>
+            {
+                lvwMaterial.Items.Add(material.ToListViewItem());
+            });
         }
 
         private void Init()
@@ -63,7 +65,5 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
         }
 
         #endregion
-
-
     }
 }

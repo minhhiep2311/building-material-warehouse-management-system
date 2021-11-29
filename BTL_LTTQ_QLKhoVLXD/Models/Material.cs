@@ -31,13 +31,23 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
         #region Constructor
 
+        private Material(
+            int id,
+            string name,
+            double exportUnitPrice,
+            string specialization,
+            MaterialUnit unit,
+            int numerous) :
+            this(id, name, 0, exportUnitPrice, specialization, true, unit, numerous)
+        { }
+
         public Material(
             string name,
             double importUnitPrice,
             double exportUnitPrice,
             string specialization,
             bool isAvailable = true) :
-            this(-1, name, importUnitPrice, exportUnitPrice, null, specialization, 0, isAvailable)
+            this(-1, name, importUnitPrice, exportUnitPrice, specialization, isAvailable)
         { }
 
         public Material(
@@ -45,10 +55,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             string name,
             double importUnitPrice,
             double exportUnitPrice,
-            MaterialUnit unit = null,
             string specialization = null,
-            int numerous = 0,
-            bool isAvailable = true)
+            bool isAvailable = true,
+            MaterialUnit unit = null,
+            int numerous = 0)
         {
             Id = id;
             Name = name;
@@ -74,7 +84,18 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             var unit = new MaterialUnit(data["unitId"], data["unitName"]);
             var specialization = Convert.ToString(data["specialization"]);
             var numerous = Convert.ToInt32(data["amount"]);
-            return new Material(id, name, importUnitPrice, exportUnitPrice, unit, specialization, numerous, isAvailable);
+            return new Material(id, name, importUnitPrice, exportUnitPrice, specialization, isAvailable, unit, numerous);
+        }
+
+        public static Material FromExportReceipt(DataRow data)
+        {
+            var id = Convert.ToInt32(data["id"]);
+            var name = Convert.ToString(data["name"]);
+            var unit = new MaterialUnit(data["unitName"]);
+            var specialization = Convert.ToString(data["specialization"]);
+            var numerous = Convert.ToInt32(data["numerous"]);
+            var unitPrice = Convert.ToDouble(data["unitPrice"]);
+            return new Material(id, name, unitPrice, specialization, unit, numerous);
         }
 
         public ListViewItem ToListViewItem(Type type = Type.Full)
@@ -127,7 +148,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
 
         public Material Clone()
         {
-            return new Material(Id, Name, ImportUnitPrice, ExportUnitPrice, Unit, Specialization);
+            return new Material(Id, Name, ImportUnitPrice, ExportUnitPrice, Specialization, true, Unit);
         }
 
         public bool Equals(Material other)

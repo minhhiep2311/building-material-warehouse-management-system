@@ -118,7 +118,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lblSpecialization_sell = new System.Windows.Forms.Label();
             this.btnAddItem_sell = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlItemName_sell = new System.Windows.Forms.Panel();
-            this.btnAddMaterial_sell = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.cboItem_sell = new BTL_LTTQ_QLKhoVLXD.Controls.ComboBox.BmwComboBox();
             this.lblItemName_sell = new System.Windows.Forms.Label();
             this.pnlItemNumerous_sell = new System.Windows.Forms.Panel();
@@ -1328,7 +1327,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // pnlItemName_sell
             // 
-            this.pnlItemName_sell.Controls.Add(this.btnAddMaterial_sell);
             this.pnlItemName_sell.Controls.Add(this.cboItem_sell);
             this.pnlItemName_sell.Controls.Add(this.lblItemName_sell);
             this.pnlItemName_sell.Location = new System.Drawing.Point(3, 14);
@@ -1336,22 +1334,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlItemName_sell.Name = "pnlItemName_sell";
             this.pnlItemName_sell.Size = new System.Drawing.Size(519, 50);
             this.pnlItemName_sell.TabIndex = 18;
-            // 
-            // btnAddMaterial_sell
-            // 
-            this.btnAddMaterial_sell.BackColor = System.Drawing.Color.White;
-            this.btnAddMaterial_sell.FlatAppearance.BorderSize = 0;
-            this.btnAddMaterial_sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddMaterial_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnAddMaterial_sell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnAddMaterial_sell.Location = new System.Drawing.Point(476, 12);
-            this.btnAddMaterial_sell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAddMaterial_sell.Name = "btnAddMaterial_sell";
-            this.btnAddMaterial_sell.Size = new System.Drawing.Size(32, 28);
-            this.btnAddMaterial_sell.TabIndex = 14;
-            this.btnAddMaterial_sell.Text = "+";
-            this.btnAddMaterial_sell.UseVisualStyleBackColor = false;
-            this.btnAddMaterial_sell.Click += new System.EventHandler(this.btnAddMaterial_sell_Click);
             // 
             // cboItem_sell
             // 
@@ -1362,7 +1344,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.cboItem_sell.Location = new System.Drawing.Point(93, 12);
             this.cboItem_sell.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboItem_sell.Name = "cboItem_sell";
-            this.cboItem_sell.Size = new System.Drawing.Size(376, 28);
+            this.cboItem_sell.Size = new System.Drawing.Size(423, 28);
             this.cboItem_sell.TabIndex = 3;
             this.cboItem_sell.SelectedIndexChanged += new System.EventHandler(this.cboItem_sell_SelectedIndexChanged);
             // 
@@ -3499,7 +3481,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.Label lblSpecialization_sell;
         private BmwButton btnAddItem_sell;
         private System.Windows.Forms.Panel pnlItemName_sell;
-        private BmwButton btnAddMaterial_sell;
         private Controls.ComboBox.BmwComboBox cboItem_sell;
         private System.Windows.Forms.Label lblItemName_sell;
         private System.Windows.Forms.Panel pnlItemNumerous_sell;

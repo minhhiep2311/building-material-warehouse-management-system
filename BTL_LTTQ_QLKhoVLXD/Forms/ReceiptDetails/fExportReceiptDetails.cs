@@ -1,6 +1,7 @@
 ﻿using BTL_LTTQ_QLKhoVLXD.Models;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 
@@ -8,13 +9,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
 {
     public partial class fExportReceiptDetails : Form
     {
-        private readonly ExportReceipt exportReceipt;
+        private readonly ExportReceipt _exportReceipt;
+        private List<Models.Material> _materials;
 
         public fExportReceiptDetails(ExportReceipt exportReceipt)
         {
             InitializeComponent();
-            this.exportReceipt = exportReceipt;
+            _exportReceipt = exportReceipt;
         }
+
         #region Events
         private void fExportReceiptDetails_Load(object sender, EventArgs e)
         {
@@ -32,26 +35,26 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             Close();
         }
         #endregion
-        #region Behavior
+        
+        #region Behaviors
+        
         private void BindData()
         {
-            txtId.Text = exportReceipt.Id.ToString();
-            txtEmployee.Text = exportReceipt.Employee.Name;
-            txtCustomer.Text = exportReceipt.Customer.Name;
-            txtWarehouse.Text = exportReceipt.Warehouse.Name;
-            txtVat.Text = Helper.Converter.ToString(exportReceipt.Vat);
-            txtVatPercent.Text = Helper.Converter.ToString(exportReceipt.VatPercent);
-            txtDate.Text = Helper.Converter.ToString(exportReceipt.DateTime);
-            txtReason.Text = exportReceipt.Reason;
-            txtTotalPrice.Text = Helper.Converter.ToString(exportReceipt.TotalPrice);
+            txtId.Text = _exportReceipt.Id.ToString();
+            txtEmployee.Text = _exportReceipt.Employee.Name;
+            txtCustomer.Text = _exportReceipt.Customer.Name;
+            txtWarehouse.Text = _exportReceipt.Warehouse.Name;
+            txtVat.Text = Helper.Converter.ToString(_exportReceipt.Vat);
+            txtDate.Text = Helper.Converter.ToString(_exportReceipt.DateTime);
+            txtReason.Text = _exportReceipt.Reason;
+            txtTotalPrice.Text = Helper.Converter.ToString(_exportReceipt.TotalPrice);
 
-            /*var materialWarehouses = exportReceipt.GetExportReceipts();
+            _materials = _exportReceipt.GetMaterials();
 
-            materialWarehouses.ForEach(materialWarehouse =>
+            _materials.ForEach(material =>
             {
-                lvwMaterial.Items.Add(materialWarehouse.ToListViewItem());
-            }
-            );*/
+                lvwMaterial.Items.Add(material.ToListViewItem());
+            });
         }
 
         private void Init()
@@ -65,7 +68,5 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
         }
 
         #endregion
-
-       
     }
 }

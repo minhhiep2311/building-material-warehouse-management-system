@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 
 namespace BTL_LTTQ_QLKhoVLXD.Models
@@ -19,11 +20,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             Warehouse warehouse,
             double totalPrice,
             DateTime dateTime,
-            List<Material> materials,
             double vat,
+            string reason,
             double vatPercent,
-            string reason)
-            : this(-1, employee, customer, warehouse, totalPrice, dateTime, materials, vat, vatPercent, reason)
+            List<Material> materials)
+            : this(-1, employee, customer, warehouse, totalPrice, dateTime, vat, reason, vatPercent, materials)
         { }
 
         public ExportReceipt(
@@ -33,10 +34,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             Warehouse warehouse,
             double totalPrice,
             DateTime dateTime,
-            List<Material> materials = null,
             double vat = default,
+            string reason = null,
             double vatPercent = default,
-            string reason = null)
+            List<Material> materials = null)
         {
             Id = id;
             Employee = employee;
@@ -44,10 +45,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             Warehouse = warehouse;
             TotalPrice = totalPrice;
             DateTime = dateTime;
-            Materials = materials;
             Vat = vat;
             VatPercent = vatPercent;
             Reason = reason;
+            Materials = materials;
         }
 
         public virtual ListViewItem ToListViewItem()
@@ -60,6 +61,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             row.SubItems.Add(Employee.Name);
             return row;
         }
+
         public static ExportReceipt FromData(DataRow data)
         {
             var id = Convert.ToInt32(data["id"]);
@@ -68,9 +70,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Models
             var warehouse = new Warehouse(Convert.ToString(data["name"]));
             var date = Convert.ToDateTime(data["date"]);
             var totalPrice = Convert.ToDouble(data["totalPrice"]);
+            var vat = Convert.ToDouble(data["vat"]);
+            var reason = Convert.ToString(data["reason"]);
 
-            return new ExportReceipt(id, employee, customer, warehouse, totalPrice, date);
+            return new ExportReceipt(id, employee, customer, warehouse, totalPrice, date, vat, reason);
         }
 
+        public List<Material> GetMaterials()
+        {
+            return ReceiptService.GetMaterialsFromExportReceipt(this);
+        }
     }
 }

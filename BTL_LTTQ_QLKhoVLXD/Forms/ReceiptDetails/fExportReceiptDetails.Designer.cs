@@ -38,21 +38,19 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             this.lblCustomer = new System.Windows.Forms.Label();
             this.pnlInfor = new System.Windows.Forms.Panel();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
+            this.txtReason = new System.Windows.Forms.TextBox();
             this.txtDate = new System.Windows.Forms.TextBox();
+            this.txtVat = new System.Windows.Forms.TextBox();
             this.txtWarehouse = new System.Windows.Forms.TextBox();
             this.txtCustomer = new System.Windows.Forms.TextBox();
             this.txtEmployee = new System.Windows.Forms.TextBox();
+            this.lblReason = new System.Windows.Forms.Label();
+            this.lblVat = new System.Windows.Forms.Label();
             this.grbMaterial = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
             this.lvwMaterial = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
             this.btnExport = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnExit = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtReason = new System.Windows.Forms.TextBox();
-            this.lblReason = new System.Windows.Forms.Label();
-            this.txtVatPercent = new System.Windows.Forms.TextBox();
-            this.txtVat = new System.Windows.Forms.TextBox();
-            this.lblVatPercent = new System.Windows.Forms.Label();
-            this.lblVat = new System.Windows.Forms.Label();
             this.pnlInfor.SuspendLayout();
             this.grbMaterial.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -99,7 +97,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(10, 288);
+            this.lblTotalPrice.Location = new System.Drawing.Point(10, 254);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(68, 17);
             this.lblTotalPrice.TabIndex = 8;
@@ -108,7 +106,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(10, 220);
+            this.lblDate.Location = new System.Drawing.Point(10, 186);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(64, 17);
             this.lblDate.TabIndex = 9;
@@ -128,7 +126,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             this.pnlInfor.Controls.Add(this.txtTotalPrice);
             this.pnlInfor.Controls.Add(this.txtReason);
             this.pnlInfor.Controls.Add(this.txtDate);
-            this.pnlInfor.Controls.Add(this.txtVatPercent);
             this.pnlInfor.Controls.Add(this.txtVat);
             this.pnlInfor.Controls.Add(this.txtWarehouse);
             this.pnlInfor.Controls.Add(this.txtCustomer);
@@ -138,37 +135,58 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             this.pnlInfor.Controls.Add(this.lblReason);
             this.pnlInfor.Controls.Add(this.lblWarehouse);
             this.pnlInfor.Controls.Add(this.txtId);
-            this.pnlInfor.Controls.Add(this.lblVatPercent);
             this.pnlInfor.Controls.Add(this.lblTotalPrice);
             this.pnlInfor.Controls.Add(this.lblVat);
             this.pnlInfor.Controls.Add(this.lblDate);
             this.pnlInfor.Controls.Add(this.lblCustomer);
             this.pnlInfor.Location = new System.Drawing.Point(8, 12);
             this.pnlInfor.Name = "pnlInfor";
-            this.pnlInfor.Size = new System.Drawing.Size(780, 322);
+            this.pnlInfor.Size = new System.Drawing.Size(780, 291);
             this.pnlInfor.TabIndex = 15;
             // 
             // txtTotalPrice
             // 
             this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtTotalPrice.Location = new System.Drawing.Point(181, 282);
+            this.txtTotalPrice.Location = new System.Drawing.Point(181, 248);
             this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(581, 26);
             this.txtTotalPrice.TabIndex = 21;
             // 
+            // txtReason
+            // 
+            this.txtReason.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReason.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.txtReason.Location = new System.Drawing.Point(181, 214);
+            this.txtReason.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtReason.Name = "txtReason";
+            this.txtReason.ReadOnly = true;
+            this.txtReason.Size = new System.Drawing.Size(581, 26);
+            this.txtReason.TabIndex = 20;
+            // 
             // txtDate
             // 
             this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtDate.Location = new System.Drawing.Point(181, 214);
+            this.txtDate.Location = new System.Drawing.Point(181, 180);
             this.txtDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDate.Name = "txtDate";
             this.txtDate.ReadOnly = true;
             this.txtDate.Size = new System.Drawing.Size(581, 26);
             this.txtDate.TabIndex = 19;
+            // 
+            // txtVat
+            // 
+            this.txtVat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.txtVat.Location = new System.Drawing.Point(181, 146);
+            this.txtVat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtVat.Name = "txtVat";
+            this.txtVat.ReadOnly = true;
+            this.txtVat.Size = new System.Drawing.Size(581, 26);
+            this.txtVat.TabIndex = 17;
             // 
             // txtWarehouse
             // 
@@ -203,13 +221,31 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             this.txtEmployee.Size = new System.Drawing.Size(581, 26);
             this.txtEmployee.TabIndex = 14;
             // 
+            // lblReason
+            // 
+            this.lblReason.AutoSize = true;
+            this.lblReason.Location = new System.Drawing.Point(10, 220);
+            this.lblReason.Name = "lblReason";
+            this.lblReason.Size = new System.Drawing.Size(43, 17);
+            this.lblReason.TabIndex = 13;
+            this.lblReason.Text = "Lý do";
+            // 
+            // lblVat
+            // 
+            this.lblVat.AutoSize = true;
+            this.lblVat.Location = new System.Drawing.Point(10, 152);
+            this.lblVat.Name = "lblVat";
+            this.lblVat.Size = new System.Drawing.Size(35, 17);
+            this.lblVat.TabIndex = 11;
+            this.lblVat.Text = "VAT";
+            // 
             // grbMaterial
             // 
             this.grbMaterial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.grbMaterial.Controls.Add(this.lvwMaterial);
             this.grbMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.grbMaterial.ForeColor = System.Drawing.Color.White;
-            this.grbMaterial.Location = new System.Drawing.Point(8, 340);
+            this.grbMaterial.Location = new System.Drawing.Point(8, 309);
             this.grbMaterial.Name = "grbMaterial";
             this.grbMaterial.Size = new System.Drawing.Size(780, 232);
             this.grbMaterial.TabIndex = 16;
@@ -244,7 +280,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             this.btnExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnExport.Location = new System.Drawing.Point(25, 3);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(134, 39);
+            this.btnExport.Size = new System.Drawing.Size(180, 39);
             this.btnExport.TabIndex = 17;
             this.btnExport.Text = "Xuất hóa đơn";
             this.btnExport.UseVisualStyleBackColor = false;
@@ -257,9 +293,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnExit.Location = new System.Drawing.Point(368, 3);
+            this.btnExit.Location = new System.Drawing.Point(315, 3);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(134, 39);
+            this.btnExit.Size = new System.Drawing.Size(180, 39);
             this.btnExit.TabIndex = 18;
             this.btnExit.Text = "Đóng";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -269,77 +305,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             // 
             this.panel1.Controls.Add(this.btnExport);
             this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Location = new System.Drawing.Point(136, 592);
+            this.panel1.Location = new System.Drawing.Point(137, 547);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(518, 59);
             this.panel1.TabIndex = 19;
-            // 
-            // txtReason
-            // 
-            this.txtReason.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReason.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtReason.Location = new System.Drawing.Point(181, 248);
-            this.txtReason.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtReason.Name = "txtReason";
-            this.txtReason.ReadOnly = true;
-            this.txtReason.Size = new System.Drawing.Size(581, 26);
-            this.txtReason.TabIndex = 20;
-            // 
-            // lblReason
-            // 
-            this.lblReason.AutoSize = true;
-            this.lblReason.Location = new System.Drawing.Point(14, 254);
-            this.lblReason.Name = "lblReason";
-            this.lblReason.Size = new System.Drawing.Size(43, 17);
-            this.lblReason.TabIndex = 13;
-            this.lblReason.Text = "Lý do";
-            // 
-            // txtVatPercent
-            // 
-            this.txtVatPercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVatPercent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtVatPercent.Location = new System.Drawing.Point(181, 180);
-            this.txtVatPercent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtVatPercent.Name = "txtVatPercent";
-            this.txtVatPercent.ReadOnly = true;
-            this.txtVatPercent.Size = new System.Drawing.Size(581, 26);
-            this.txtVatPercent.TabIndex = 18;
-            // 
-            // txtVat
-            // 
-            this.txtVat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txtVat.Location = new System.Drawing.Point(181, 146);
-            this.txtVat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtVat.Name = "txtVat";
-            this.txtVat.ReadOnly = true;
-            this.txtVat.Size = new System.Drawing.Size(581, 26);
-            this.txtVat.TabIndex = 17;
-            // 
-            // lblVatPercent
-            // 
-            this.lblVatPercent.AutoSize = true;
-            this.lblVatPercent.Location = new System.Drawing.Point(10, 186);
-            this.lblVatPercent.Name = "lblVatPercent";
-            this.lblVatPercent.Size = new System.Drawing.Size(47, 17);
-            this.lblVatPercent.TabIndex = 12;
-            this.lblVatPercent.Text = "%VAT";
-            // 
-            // lblVat
-            // 
-            this.lblVat.AutoSize = true;
-            this.lblVat.Location = new System.Drawing.Point(10, 152);
-            this.lblVat.Name = "lblVat";
-            this.lblVat.Size = new System.Drawing.Size(35, 17);
-            this.lblVat.TabIndex = 11;
-            this.lblVat.Text = "VAT";
             // 
             // fExportReceiptDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.ClientSize = new System.Drawing.Size(800, 663);
+            this.ClientSize = new System.Drawing.Size(800, 611);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grbMaterial);
             this.Controls.Add(this.pnlInfor);
@@ -378,10 +354,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
         private Controls.Button.BmwButton btnExit;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtReason;
-        private System.Windows.Forms.TextBox txtVatPercent;
         private System.Windows.Forms.TextBox txtVat;
         private System.Windows.Forms.Label lblReason;
-        private System.Windows.Forms.Label lblVatPercent;
         private System.Windows.Forms.Label lblVat;
     }
 }

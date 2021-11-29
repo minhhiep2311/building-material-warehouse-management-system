@@ -29,7 +29,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
         public static List<ExportReceipt> GetExportReceipts()
         {
             const string query =
-                "SELECT iR.id, date, totalPrice, w.name, e.name AS customerName, s.name AS supplierName " +
+                "SELECT iR.id, date, totalPrice, w.name, e.name AS customerName, s.name AS supplierName, vat, reason " +
                 "FROM exportReceipt AS iR " +
                 "JOIN warehouse w ON iR.idWarehouse = w.id " +
                 "JOIN employee_exportReceipt eiR ON iR.id = eiR.idExportReceipt " +
@@ -44,12 +44,30 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
 
         public static List<Material> GetMaterialsFromImportReceipt(ImportReceipt receipt)
         {
-            return new List<Material>();
+            var query =
+                "SELECT e.idImportReceipt AS id, e.numerous, e.unitPrice, m.name, m.specialization, u.name AS unitName " +
+                "FROM importReceiptDetails AS e " +
+                "JOIN material m ON e.idMaterial = m.id " +
+                "JOIN unit u ON m.idUnit = u.id " +
+                $"WHERE idImportReceipt = {receipt.Id}";
+
+            var result = DatabaseProvider.Instance.ExecuteQuery(query);
+            var materials = Helper.Mapper.MapArrayOfObject(result, Material.FromExportReceipt);
+            return materials;
         }
 
-        public static List<Material> GetMaterialsFromEportReceipt(ExportReceipt receipt)
+        public static List<Material> GetMaterialsFromExportReceipt(ExportReceipt receipt)
         {
-            return new List<Material>();
+            var query =
+                "SELECT e.idExportReceipt AS id, e.numerous, e.unitPrice, m.name, m.specialization, u.name AS unitName " +
+                "FROM exportReceiptDetails AS e " +
+                "JOIN material m ON e.idMaterial = m.id " +
+                "JOIN unit u ON m.idUnit = u.id " +
+                $"WHERE idExportReceipt = {receipt.Id}";
+
+            var result = DatabaseProvider.Instance.ExecuteQuery(query);
+            var materials = Helper.Mapper.MapArrayOfObject(result, Material.FromExportReceipt);
+            return materials;
         }
         #endregion
 
