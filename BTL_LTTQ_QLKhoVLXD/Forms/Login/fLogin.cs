@@ -17,7 +17,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
 
         private void chkShowPassword_CheckStateChanged(object sender, EventArgs e)
         {
-            txbPassWord.UseSystemPasswordChar = !chkShowPassword.Checked;
+            txtPassWord.UseSystemPasswordChar = !chkShowPassword.Checked;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
                 return;
 
             var userName = txbUserName.Text;
-            var passWord = txbPassWord.Text;
+            var passWord = txtPassWord.Text;
 
             var user = AccountService.Auth(userName, passWord);
 
@@ -73,7 +73,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
                 RedirectToApp(user);
 
                 // After close app form
-                txbPassWord.Text = "";
+                txtPassWord.Text = "";
                 Show();
             }
             else
@@ -87,7 +87,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
 
         private static void RedirectToApp(User user)
         {
-            (new TaskManager.fTaskManager(user)).ShowDialog();
+            new TaskManager.fTaskManager(user).ShowDialog();
         }
 
         private bool ValidInput()
@@ -102,7 +102,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
                 );
                 return false;
             }
-            if (txbPassWord.Text == "")
+            if (txtPassWord.Text == "")
             {
                 MessageBox.Show(
                     Resources.MessageBox_Message_EnterPassword, 
@@ -127,7 +127,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
                 RedirectToApp(user);
 
                 // After close app form
-                txbPassWord.Text = "";
+                txtPassWord.Text = "";
                 Show();
             }
             else

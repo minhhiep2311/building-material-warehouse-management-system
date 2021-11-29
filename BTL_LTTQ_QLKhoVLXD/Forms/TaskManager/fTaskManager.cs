@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using BTL_LTTQ_QLKhoVLXD.Forms.AddEmployee;
 using BTL_LTTQ_QLKhoVLXD.Forms.ChangeInformation;
 using BTL_LTTQ_QLKhoVLXD.Forms.CreateAccount;
 using BTL_LTTQ_QLKhoVLXD.Forms.Customer;
@@ -10,6 +9,7 @@ using BTL_LTTQ_QLKhoVLXD.Forms.Employee;
 using BTL_LTTQ_QLKhoVLXD.Forms.Material;
 using BTL_LTTQ_QLKhoVLXD.Forms.MaterialDetails;
 using BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails;
+using BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword;
 using BTL_LTTQ_QLKhoVLXD.Forms.Supplier;
 using BTL_LTTQ_QLKhoVLXD.Forms.WareHouse;
 using BTL_LTTQ_QLKhoVLXD.Models;
@@ -77,6 +77,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             {
                 Init_Material();
                 LoadData_Material();
+            }));
+
+            Invoke((MethodInvoker)(() =>
+            {
+                Init_Statistic();
+                UpdateChart_Statistic();
             }));
 
             Invoke((MethodInvoker)(() =>
@@ -202,7 +208,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             ) == DialogResult.Yes;
         }
 
-        private bool ShouldShowMenuContext(MouseEventArgs e, ListView listView)
+        private static bool ShouldShowMenuContext(MouseEventArgs e, ListView listView)
         {
             if (e.Button != MouseButtons.Right)
                 return false;
@@ -1330,6 +1336,50 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #endregion
 
+        #region Statistic
+
+        #region Statistic Events
+
+        private void cboYear_statistic_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //UpdateChart_Statistic();
+        }
+
+        private void cboYear_statistic_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+            UpdateChart_Statistic();
+        }
+
+        #endregion
+
+        #region Statistic Behaviors
+
+        private void Init_Statistic()
+        {
+            cboYear_statistic.DataSource = new List<int> {2020, 2021};
+        }
+
+        private void UpdateChart_Statistic()
+        {
+            chart_statistic.Series["income"].Points.Clear();
+            chart_statistic.Series["outcome"].Points.Clear();
+            chart_statistic.Series["profit"].Points.Clear();
+
+            var year = Convert.ToInt32(cboYear_statistic.SelectedItem);
+            var charts = ReceiptService.GetChart(year);
+            charts.ForEach(chart =>
+            {
+                chart_statistic.Series["income"].Points.AddXY(chart.Month, chart.Income);
+                chart_statistic.Series["outcome"].Points.AddXY(chart.Month, chart.Outcome);
+                chart_statistic.Series["profit"].Points.AddXY(chart.Month, chart.Profit);
+            });
+        }
+
+        #endregion
+
+        #endregion
+
         #region Customer
 
         #region Customer Properties
@@ -1476,7 +1526,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void lvwSupplier_supplier_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            ShowInformation_Supplier();
+            EditSupplier_supplier();
         }
 
         private void lvwSupplier_supplier_SelectedIndexChanged(object sender, EventArgs e)
@@ -1493,7 +1543,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void tsmiShowInformation_supplier_Click(object sender, EventArgs e)
         {
-            ShowInformation_Supplier();
+            EditSupplier_supplier();
         }
 
         private void tsmiDeleteSupplier_supplier_Click(object sender, EventArgs e)
@@ -1570,7 +1620,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             cache.ForEach(supplier =>
                 {
                     lvwSupplier_supplier.Items.Add(supplier.ToListViewItem());
-
                 }
             );
         }
@@ -1597,20 +1646,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             });
 
             LoadData_Supplier(suppliers);
-        }
-
-        private void ShowInformation_Supplier()
-        {
-            if (lvwSupplier_supplier.SelectedIndices.Count <= 0)
-                return;
-
-            var supplier = _suppliers[lvwSupplier_supplier.SelectedIndices[0]];
-            var editable = User.Permissions.Contains(Resources.Permission_EditSupplierInformation);
-            var mode = editable ? Enum.FormMode.Write : Enum.FormMode.Read;
-
-            lvwSupplier_supplier.SelectedItems.Clear();
-
-            //new fSupplier(this, mode, supplier).Show();
         }
 
         private void TryDeleteSupplier_supplier()
@@ -2156,9 +2191,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #region UserSettings Events
 
-        private void btnCreateAccount_userSetting_Click(object sender, EventArgs e)
+        private void btnResetPassword_userSetting_Click(object sender, EventArgs e)
         {
-            new fAddEmployee().ShowDialog();
+            new fResetPassword(_user).ShowDialog();
         }
 
         private void btnChangeInformation_userSetting_Click(object sender, EventArgs e)

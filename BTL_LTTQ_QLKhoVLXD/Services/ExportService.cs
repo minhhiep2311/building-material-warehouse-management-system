@@ -421,7 +421,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
                 var material = materials[j];
                 exSheet.Range[$"A{i}"].Value = material.Id;
                 exSheet.Range[$"B{i}"].Value = material.Name;
-                exSheet.Range[$"C{i}"].Value = material.Unit;
+                exSheet.Range[$"C{i}"].Value = material.Unit.Name;
                 exSheet.Range[$"D{i}"].Value = material.Specialization;
                 exSheet.Range[$"E{i}"].Value = material.Numerous;
                 exSheet.Range[$"F{i}"].Value = material.ImportUnitPrice;

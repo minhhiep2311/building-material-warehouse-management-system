@@ -48,12 +48,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             this.lblVat = new System.Windows.Forms.Label();
             this.grbMaterial = new BTL_LTTQ_QLKhoVLXD.Controls.GroupBox.BmwGroupBox();
             this.lvwMaterial = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
-            this.btnExport = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.btnExit = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlInfor.SuspendLayout();
             this.grbMaterial.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtId
@@ -271,52 +267,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             this.lvwMaterial.UseCompatibleStateImageBehavior = false;
             this.lvwMaterial.View = System.Windows.Forms.View.Details;
             // 
-            // btnExport
-            // 
-            this.btnExport.BackColor = System.Drawing.Color.White;
-            this.btnExport.FlatAppearance.BorderSize = 0;
-            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnExport.Location = new System.Drawing.Point(25, 3);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(180, 39);
-            this.btnExport.TabIndex = 17;
-            this.btnExport.Text = "Xuất hóa đơn";
-            this.btnExport.UseVisualStyleBackColor = false;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.White;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.btnExit.Location = new System.Drawing.Point(315, 3);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(180, 39);
-            this.btnExit.TabIndex = 18;
-            this.btnExit.Text = "Đóng";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnExport);
-            this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Location = new System.Drawing.Point(137, 547);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(518, 59);
-            this.panel1.TabIndex = 19;
-            // 
             // fExportReceiptDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.ClientSize = new System.Drawing.Size(800, 611);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(800, 554);
             this.Controls.Add(this.grbMaterial);
             this.Controls.Add(this.pnlInfor);
             this.ForeColor = System.Drawing.Color.White;
@@ -328,7 +284,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             this.pnlInfor.ResumeLayout(false);
             this.pnlInfor.PerformLayout();
             this.grbMaterial.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -350,9 +305,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
         private System.Windows.Forms.TextBox txtEmployee;
         private Controls.GroupBox.BmwGroupBox grbMaterial;
         private Controls.ListView.BmwListView lvwMaterial;
-        private Controls.Button.BmwButton btnExport;
-        private Controls.Button.BmwButton btnExit;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtReason;
         private System.Windows.Forms.TextBox txtVat;
         private System.Windows.Forms.Label lblReason;

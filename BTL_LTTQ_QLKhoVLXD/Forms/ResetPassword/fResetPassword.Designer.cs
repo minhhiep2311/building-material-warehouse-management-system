@@ -38,8 +38,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCancel = new BmwButton();
-            this.btnSave = new BmwButton();
+            this.btnCancel = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnSave = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlUsername.SuspendLayout();
             this.pnlPassword.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -125,20 +125,30 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCancel.Location = new System.Drawing.Point(230, 3);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(116, 34);
+            this.btnCancel.Size = new System.Drawing.Size(147, 34);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(63, 3);
+            this.btnSave.BackColor = System.Drawing.Color.White;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnSave.Location = new System.Drawing.Point(32, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(116, 34);
+            this.btnSave.Size = new System.Drawing.Size(147, 34);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Lưu thay đổi";
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // fResetPassword

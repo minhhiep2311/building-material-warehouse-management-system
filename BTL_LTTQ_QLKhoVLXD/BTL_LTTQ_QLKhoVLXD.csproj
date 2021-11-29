@@ -52,6 +52,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -151,6 +152,7 @@
     <Compile Include="Forms\Warehouse\fWarehouse.Designer.cs">
       <DependentUpon>fWarehouse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Chart.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\ExportReceipt.cs" />
     <Compile Include="Models\MaterialUnit.cs" />

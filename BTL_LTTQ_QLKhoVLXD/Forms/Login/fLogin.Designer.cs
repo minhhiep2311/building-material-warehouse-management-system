@@ -36,7 +36,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.chkShowPassword = new System.Windows.Forms.CheckBox();
-            this.txbPassWord = new System.Windows.Forms.TextBox();
+            this.txtPassWord = new System.Windows.Forms.TextBox();
             this.lblPassWord = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txbUserName = new System.Windows.Forms.TextBox();
@@ -91,7 +91,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
             // panel3
             // 
             this.panel3.Controls.Add(this.chkShowPassword);
-            this.panel3.Controls.Add(this.txbPassWord);
+            this.panel3.Controls.Add(this.txtPassWord);
             this.panel3.Controls.Add(this.lblPassWord);
             this.panel3.Location = new System.Drawing.Point(25, 127);
             this.panel3.Name = "panel3";
@@ -110,16 +110,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
             this.chkShowPassword.UseVisualStyleBackColor = true;
             this.chkShowPassword.CheckStateChanged += new System.EventHandler(this.chkShowPassword_CheckStateChanged);
             // 
-            // txbPassWord
+            // txtPassWord
             // 
-            this.txbPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPassWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.txbPassWord.Location = new System.Drawing.Point(170, 3);
-            this.txbPassWord.Name = "txbPassWord";
-            this.txbPassWord.Size = new System.Drawing.Size(347, 26);
-            this.txbPassWord.TabIndex = 2;
-            this.txbPassWord.UseSystemPasswordChar = true;
-            this.txbPassWord.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbPassWord_KeyDown);
+            this.txtPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.txtPassWord.Location = new System.Drawing.Point(170, 3);
+            this.txtPassWord.Name = "txtPassWord";
+            this.txtPassWord.Size = new System.Drawing.Size(347, 26);
+            this.txtPassWord.TabIndex = 2;
+            this.txtPassWord.UseSystemPasswordChar = true;
+            this.txtPassWord.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbPassWord_KeyDown);
             // 
             // lblPassWord
             // 
@@ -195,7 +195,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
         private BmwButton btnLogin;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txbPassWord;
+        private System.Windows.Forms.TextBox txtPassWord;
         private System.Windows.Forms.Label lblPassWord;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txbUserName;

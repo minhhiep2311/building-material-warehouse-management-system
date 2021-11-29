@@ -1,8 +1,6 @@
 ﻿using BTL_LTTQ_QLKhoVLXD.Models;
-using BTL_LTTQ_QLKhoVLXD.Services;
 using BTL_LTTQ_QLKhoVLXD.Utils;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 
@@ -24,16 +22,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
             Init();
             BindData();
         }
-
-        private void btnExport_Click(object sender, EventArgs e)
-        {
-            ExportService.Export(_exportReceipt);
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        
         #endregion
         
         #region Behaviors
@@ -60,10 +49,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
         private void Init()
         {
             lvwMaterial.Columns.Add("ID", 0);
-            lvwMaterial.Columns.Add("Tên vật liệu", 300, HorizontalAlignment.Left);
-            lvwMaterial.Columns.Add("Đơn giá", 100, HorizontalAlignment.Left);
-            lvwMaterial.Columns.Add("Số lượng", 100, HorizontalAlignment.Left);
-            lvwMaterial.Columns.Add("Đơn vị", 75, HorizontalAlignment.Left);
+            lvwMaterial.Columns.Add("Tên vật liệu", 200, HorizontalAlignment.Left);
+            lvwMaterial.Columns.Add("Đơn giá", 100, HorizontalAlignment.Right);
+            lvwMaterial.Columns.Add("Số lượng", 80, HorizontalAlignment.Left);
+            lvwMaterial.Columns.Add("Đơn vị", 70, HorizontalAlignment.Left);
             lvwMaterial.Columns.Add("Quy cách", 150, HorizontalAlignment.Left);
         }
 

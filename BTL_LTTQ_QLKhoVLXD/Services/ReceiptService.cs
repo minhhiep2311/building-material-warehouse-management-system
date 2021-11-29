@@ -70,6 +70,37 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             return materials;
         }
 
+        public static List<Chart> GetChart(int year)
+        {
+            var query = " " +
+                "SELECT t.month, income, outcome, income - outcome AS profit " +
+                "FROM (" +
+                "SELECT miy.month AS month, SUM(t1.iTotal) AS outcome " +
+                "FROM monthInYear miy " +
+                "LEFT JOIN ( " +
+                "SELECT totalPrice AS iTotal, date " +
+                "FROM importReceipt " +
+                ") t1 ON miy.month = MONTH(t1.date) " +
+                $"WHERE YEAR(date) = {year} " +
+                "GROUP BY miy.month " +
+                ") AS t " +
+                "JOIN " +
+                "( " +
+                "SELECT miy.month AS month, SUM(t2.eTotal) AS income " +
+                "FROM monthInYear miy " +
+                "LEFT JOIN ( " +
+                "SELECT totalPrice AS eTotal, date " +
+                "FROM exportReceipt " +
+                ") t2 ON miy.month = MONTH(t2.date) " +
+                $"WHERE YEAR(date) = {year} " +
+                "GROUP BY miy.month " +
+                ") t3 ON t.month = t3.month";
+
+            var result = DatabaseProvider.Instance.ExecuteQuery(query);
+            var charts = Helper.Mapper.MapArrayOfObject(result, Chart.FromData);
+            return charts;
+        }
+
         #endregion
 
         #region Insert

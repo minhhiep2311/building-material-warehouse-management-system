@@ -35,6 +35,11 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.cms_employee = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -180,6 +185,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lblName_material = new System.Windows.Forms.Label();
             this.txtName_material = new System.Windows.Forms.TextBox();
             this.tpgStatistic = new System.Windows.Forms.TabPage();
+            this.chart_statistic = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblYear_statistic = new System.Windows.Forms.Label();
+            this.cboYear_statistic = new BTL_LTTQ_QLKhoVLXD.Controls.ComboBox.BmwComboBox();
             this.tpgCustomer = new System.Windows.Forms.TabPage();
             this.spc_customer = new System.Windows.Forms.SplitContainer();
             this.lvwCustomer_customer = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
@@ -313,6 +321,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.grbSearch_material.SuspendLayout();
             this.pnlStatus_material.SuspendLayout();
             this.pnlNamel_material.SuspendLayout();
+            this.tpgStatistic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_statistic)).BeginInit();
             this.tpgCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spc_customer)).BeginInit();
             this.spc_customer.Panel1.SuspendLayout();
@@ -982,7 +992,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgSell.Padding = new System.Windows.Forms.Padding(5);
             this.tpgSell.Size = new System.Drawing.Size(1101, 611);
             this.tpgSell.TabIndex = 1;
-            this.tpgSell.Text = "Tạo Hóa Đơn Bán";
+            this.tpgSell.Text = "Tạo Hóa Đơn Xuất";
             this.tpgSell.Enter += new System.EventHandler(this.tpgSell_Enter);
             // 
             // grbItem_sell
@@ -1554,7 +1564,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.lblTitle_sell.Name = "lblTitle_sell";
             this.lblTitle_sell.Size = new System.Drawing.Size(1091, 38);
             this.lblTitle_sell.TabIndex = 1;
-            this.lblTitle_sell.Text = "HÓA ĐƠN BÁN HÀNG";
+            this.lblTitle_sell.Text = "HÓA ĐƠN XUẤT HÀNG";
             this.lblTitle_sell.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tpgReceipt
@@ -2029,6 +2039,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnWareHouse_material.TabIndex = 6;
             this.btnWareHouse_material.Text = "Quản lý kho";
             this.btnWareHouse_material.UseVisualStyleBackColor = false;
+            this.btnWareHouse_material.Visible = false;
             this.btnWareHouse_material.Click += new System.EventHandler(this.btnWareHouse_material_Click);
             // 
             // btnRefresh_material
@@ -2137,6 +2148,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             // 
             // tpgStatistic
             // 
+            this.tpgStatistic.Controls.Add(this.chart_statistic);
+            this.tpgStatistic.Controls.Add(this.lblYear_statistic);
+            this.tpgStatistic.Controls.Add(this.cboYear_statistic);
             this.tpgStatistic.Location = new System.Drawing.Point(174, 4);
             this.tpgStatistic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpgStatistic.Name = "tpgStatistic";
@@ -2144,6 +2158,56 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.tpgStatistic.TabIndex = 4;
             this.tpgStatistic.Text = "Thống kê";
             this.tpgStatistic.UseVisualStyleBackColor = true;
+            // 
+            // chart_statistic
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart_statistic.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart_statistic.Legends.Add(legend2);
+            this.chart_statistic.Location = new System.Drawing.Point(3, 66);
+            this.chart_statistic.Name = "chart_statistic";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.LegendText = "Thu";
+            series4.Name = "income";
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.LegendText = "Chi";
+            series5.Name = "outcome";
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.LegendText = "Lợi nhuận";
+            series6.Name = "profit";
+            this.chart_statistic.Series.Add(series4);
+            this.chart_statistic.Series.Add(series5);
+            this.chart_statistic.Series.Add(series6);
+            this.chart_statistic.Size = new System.Drawing.Size(1090, 542);
+            this.chart_statistic.TabIndex = 2;
+            this.chart_statistic.Text = "chart1";
+            // 
+            // lblYear_statistic
+            // 
+            this.lblYear_statistic.AutoSize = true;
+            this.lblYear_statistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblYear_statistic.Location = new System.Drawing.Point(335, 25);
+            this.lblYear_statistic.Name = "lblYear_statistic";
+            this.lblYear_statistic.Size = new System.Drawing.Size(44, 20);
+            this.lblYear_statistic.TabIndex = 1;
+            this.lblYear_statistic.Text = "Năm";
+            // 
+            // cboYear_statistic
+            // 
+            this.cboYear_statistic.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboYear_statistic.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboYear_statistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cboYear_statistic.FormattingEnabled = true;
+            this.cboYear_statistic.Location = new System.Drawing.Point(396, 22);
+            this.cboYear_statistic.Name = "cboYear_statistic";
+            this.cboYear_statistic.Size = new System.Drawing.Size(121, 28);
+            this.cboYear_statistic.TabIndex = 0;
+            this.cboYear_statistic.SelectedIndexChanged += new System.EventHandler(this.cboYear_statistic_SelectedIndexChanged);
+            this.cboYear_statistic.SelectedValueChanged += new System.EventHandler(this.cboYear_statistic_SelectedValueChanged);
             // 
             // tpgCustomer
             // 
@@ -2894,7 +2958,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlPosition_employee.Location = new System.Drawing.Point(8, 250);
             this.pnlPosition_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlPosition_employee.Name = "pnlPosition_employee";
-            this.pnlPosition_employee.Size = new System.Drawing.Size(421, 46);
+            this.pnlPosition_employee.Size = new System.Drawing.Size(472, 76);
             this.pnlPosition_employee.TabIndex = 6;
             // 
             // flpPosition_employee
@@ -2902,7 +2966,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.flpPosition_employee.Location = new System.Drawing.Point(132, 2);
             this.flpPosition_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpPosition_employee.Name = "flpPosition_employee";
-            this.flpPosition_employee.Size = new System.Drawing.Size(285, 41);
+            this.flpPosition_employee.Size = new System.Drawing.Size(320, 56);
             this.flpPosition_employee.TabIndex = 0;
             // 
             // lblPosition_employee
@@ -3126,6 +3190,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.btnResetPassword_userSetting.Text = "Đặt lại mật khẩu";
             this.btnResetPassword_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnResetPassword_userSetting.UseVisualStyleBackColor = false;
+            this.btnResetPassword_userSetting.Click += new System.EventHandler(this.btnResetPassword_userSetting_Click);
             // 
             // pnlInformation
             // 
@@ -3246,6 +3311,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             this.pnlStatus_material.PerformLayout();
             this.pnlNamel_material.ResumeLayout(false);
             this.pnlNamel_material.PerformLayout();
+            this.tpgStatistic.ResumeLayout(false);
+            this.tpgStatistic.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_statistic)).EndInit();
             this.tpgCustomer.ResumeLayout(false);
             this.spc_customer.Panel1.ResumeLayout(false);
             this.spc_customer.Panel2.ResumeLayout(false);
@@ -3526,5 +3594,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
         private System.Windows.Forms.ToolStripMenuItem tsmiShowDetails_receipt;
         private BmwButton btnShow_receipt;
         private System.Windows.Forms.TextBox txtWarehouse_receipt;
+        private System.Windows.Forms.Label lblYear_statistic;
+        private Controls.ComboBox.BmwComboBox cboYear_statistic;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_statistic;
     }
 }

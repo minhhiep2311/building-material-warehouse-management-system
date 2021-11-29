@@ -196,7 +196,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             // dtpDob
             // 
             this.dtpDob.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.dtpDob.CustomFormat = "                               dd-MM-yyyy";
+            this.dtpDob.CustomFormat = "                                  dd-MM-yyyy";
             this.dtpDob.Enabled = false;
             this.dtpDob.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
