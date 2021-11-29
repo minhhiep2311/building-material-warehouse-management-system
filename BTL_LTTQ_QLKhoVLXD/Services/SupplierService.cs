@@ -96,8 +96,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
         public static bool ChangeSupplierInformation(Supplier supplier)
         {
             var query = $"UPDATE supplier SET name = N'{supplier.Name}', " +
-                $"address = N'{supplier.Address}', " +
-                $"WHERE id = N'{supplier.Id}'";
+                $"address = N'{supplier.Address}' " +
+                $"WHERE id = {supplier.Id}";
             var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
 
             return rowAffected > 0;

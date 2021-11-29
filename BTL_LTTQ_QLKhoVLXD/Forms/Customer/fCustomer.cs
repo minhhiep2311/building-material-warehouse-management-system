@@ -186,6 +186,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
 
         private void TryChangeInformation()
         {
+            var id = _customer.Id;
             var name = txtName.Text;
             var address = txtAddress.Text;
             var phoneNumbers = lvwPhone.Items
@@ -193,7 +194,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Customer
                .Select(item => item.Text)
                .ToList();
 
-            var newCustomer = new Models.Customer(name, address, phoneNumbers);
+            var newCustomer = new Models.Customer(id, name, address, phoneNumbers);
 
             if (_customer.Equals(newCustomer))
             {

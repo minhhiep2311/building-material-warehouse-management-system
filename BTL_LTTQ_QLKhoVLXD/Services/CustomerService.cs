@@ -68,15 +68,17 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
         #endregion
 
         #region Update
+
         public static bool ChangeCustomerInformation(Customer customer)
         {
-            var query = $"UPDATE supplier SET name = N'{customer.Name}', " +
-                $"address = N'{customer.Address}', " +
-                $"WHERE id = N'{customer.Id}'";
+            var query = $"UPDATE customer SET name = N'{customer.Name}', " +
+                $"address = N'{customer.Address}' " +
+                $"WHERE id = {customer.Id}";
             var rowAffected = DatabaseProvider.Instance.ExecuteNonQuery(query);
 
             return rowAffected > 0;
         }
+
         #endregion
 
         #region Delete
