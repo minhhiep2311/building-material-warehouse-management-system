@@ -69,6 +69,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Services
             var materials = Helper.Mapper.MapArrayOfObject(result, Material.FromExportReceipt);
             return materials;
         }
+
         #endregion
 
         #region Insert

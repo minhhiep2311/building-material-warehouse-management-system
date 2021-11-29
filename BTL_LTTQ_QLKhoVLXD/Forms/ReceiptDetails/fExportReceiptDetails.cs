@@ -53,7 +53,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ReceiptDetails
 
             _materials.ForEach(material =>
             {
-                lvwMaterial.Items.Add(material.ToListViewItem());
+                lvwMaterial.Items.Add(material.ToListViewItem(Models.Material.Type.Export));
             });
         }
 
