@@ -147,7 +147,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(147, 34);
             this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "Lưu thay đổi";
+            this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -156,7 +156,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ResetPassword
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
-            this.ClientSize = new System.Drawing.Size(436, 194);
+            this.ClientSize = new System.Drawing.Size(432, 194);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPassword);
             this.Controls.Add(this.pnlUsername);

@@ -369,4 +369,11 @@
   <data name="MessageBox_Message_UnitExisted" xml:space="preserve">
     <value>Đơn vị đã tồn tại! Vui lòng nhập đơn vị khác</value>
   </data>
+  <data name="MessageBox_Message_ConfirmDeleteCustomer" xml:space="preserve">
+    <value>Bạn có chắc chắc muốn xóa các khách hàng sau không?
+{0}</value>
+  </data>
+  <data name="MessageBox_Message_DeleteCustomerSuccessfully" xml:space="preserve">
+    <value>Đã xóa {0} nhà khách hàng!</value>
+  </data>
 </root>

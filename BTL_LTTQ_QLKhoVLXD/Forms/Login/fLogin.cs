@@ -22,8 +22,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Login
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            ForceLogin();
-            //TryLogin();
+            //ForceLogin();
+            TryLogin();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

@@ -351,6 +351,16 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bạn có chắc chắc muốn xóa các khách hàng sau không?
+        ///{0}.
+        /// </summary>
+        internal static string MessageBox_Message_ConfirmDeleteCustomer {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_ConfirmDeleteCustomer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bạn có chắc chắc muốn xóa các nhân viên sau không?
         ///{0}.
         /// </summary>
@@ -432,6 +442,15 @@ namespace BTL_LTTQ_QLKhoVLXD.Properties {
         internal static string MessageBox_Message_DeleteAccountSuccessfully {
             get {
                 return ResourceManager.GetString("MessageBox_Message_DeleteAccountSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Đã xóa {0} nhà khách hàng!.
+        /// </summary>
+        internal static string MessageBox_Message_DeleteCustomerSuccessfully {
+            get {
+                return ResourceManager.GetString("MessageBox_Message_DeleteCustomerSuccessfully", resourceCulture);
             }
         }
         

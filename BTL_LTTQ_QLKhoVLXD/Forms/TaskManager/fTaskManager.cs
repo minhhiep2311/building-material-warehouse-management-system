@@ -1342,12 +1342,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void cboYear_statistic_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //UpdateChart_Statistic();
-        }
-
-        private void cboYear_statistic_SelectedValueChanged(object sender, EventArgs e)
-        {
-
             UpdateChart_Statistic();
         }
 
@@ -1390,6 +1384,51 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         #region Customer Events
 
+        private void tpgCustomer_Enter(object sender, EventArgs e)
+        {
+            ResetButtons_Customer();
+            _debounce_customer?.Continue();
+        }
+
+        private void tpgCustomer_Leave(object sender, EventArgs e)
+        {
+            _debounce_customer?.Continue();
+        }
+
+        private void lvwCustomer_customer_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (!ShouldShowMenuContext(e, lvwCustomer_customer))
+                return;
+            cms_customer.Show(Cursor.Position);
+        }
+
+        private void lvwCustomer_customer_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            EditCustomer_customer();
+        }
+
+        private void lvwCustomer_customer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvwCustomer_customer.SelectedIndices.Count <= 0)
+            {
+                ResetButtons_Customer();
+                return;
+            }
+
+            btnEdit_Customer.Enabled = true;
+            btnDelete_Customer.Enabled = true;
+        }
+
+        private void tsmiShowInformation_customer_Click(object sender, EventArgs e)
+        {
+            EditCustomer_customer();
+        }
+
+        private void tsmiDelete_customer_Click(object sender, EventArgs e)
+        {
+            TryDeleteCustomer_Customer();
+        }
+
         private void txtName_customer_TextChanged(object sender, EventArgs e)
         {
             _debounce_customer.HandleUpdate();
@@ -1418,7 +1457,7 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
 
         private void btnDelete_Customer_Click(object sender, EventArgs e)
         {
-
+            TryDeleteCustomer_Customer();
         }
 
         private void btnExport_Customer_Click(object sender, EventArgs e)
@@ -1455,9 +1494,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 cboItem_buy.DataSource = _customers;
             }
 
-            cache.ForEach(supplier =>
+            cache.ForEach(customer =>
                 {
-                    lvwCustomer_customer.Items.Add(supplier.ToListViewItem());
+                    lvwCustomer_customer.Items.Add(customer.ToListViewItem());
                 }
             );
         }
@@ -1490,6 +1529,61 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                     customer,
                     true
                 ).Show();
+        }
+
+        private void TryDeleteCustomer_Customer()
+        {
+            if (lvwCustomer_customer.SelectedIndices.Count <= 0)
+                return;
+
+            var shouldDeleteCustomers = lvwCustomer_customer.SelectedIndices.Cast<int>()
+               .Select(x => _customers[x]).ToList();
+            var shouldDeleteCustomerNames = shouldDeleteCustomers.Select(x => x.Name);
+            var shouldDeleteCustomerIds = shouldDeleteCustomers.Select(x => x.Id).ToList();
+
+            if (ConfirmDeleteCustomer_Customer(shouldDeleteCustomerNames))
+                DeleteCustomer_Customer(shouldDeleteCustomerIds);
+        }
+
+        private static bool ConfirmDeleteCustomer_Customer(IEnumerable<string> shouldDeleteCustomerNames)
+        {
+            var shouldDeleteStr = string.Join(", ", shouldDeleteCustomerNames);
+            return MessageBox.Show(
+                string.Format(Resources.MessageBox_Message_ConfirmDeleteCustomer, shouldDeleteStr),
+                Resources.MessageBox_Caption_Notification,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            ) == DialogResult.Yes;
+        }
+
+        private void DeleteCustomer_Customer(List<int> shouldDeleteCustomerIds)
+        {
+            if (CustomerService.DeleteCustomer(shouldDeleteCustomerIds))
+            {
+                MessageBox.Show(
+                    string.Format(Resources.MessageBox_Message_DeleteCustomerSuccessfully, shouldDeleteCustomerIds.Count),
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            else
+            {
+                MessageBox.Show(
+                    Resources.MessageBox_Message_SystemError,
+                    Resources.MessageBox_Caption_Notification,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            LoadData_Customer();
+        }
+
+        private void ResetButtons_Customer()
+        {
+            btnEdit_Customer.Enabled = false;
+            btnDelete_Customer.Enabled = false;
         }
 
         #endregion
@@ -1662,6 +1756,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
                 DeleteSupplier_supplier(shouldDeleteSupplierIds);
         }
 
+        private void EditSupplier_supplier()
+        {
+            var supplier = Helper.Control.FirstSelected(_suppliers, lvwSupplier_supplier);
+            if (supplier != null)
+                new fSupplier(() => LoadData_Supplier(), Enum.FormMode.Write, supplier, true).Show();
+        }
+
         private static bool ConfirmDeleteSupplier_supplier(IEnumerable<string> shouldDeleteSupplierNames)
         {
             var shouldDeleteStr = string.Join(", ", shouldDeleteSupplierNames);
@@ -1673,12 +1774,12 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             ) == DialogResult.Yes;
         }
 
-        private void DeleteSupplier_supplier(List<int> shouldDeleteSupplierIds)
+        private void DeleteSupplier_supplier(List<int> shouldDeleteCustomerIds)
         {
-            if (SupplierService.DeleteSupplier(shouldDeleteSupplierIds))
+            if (SupplierService.DeleteSupplier(shouldDeleteCustomerIds))
             {
                 MessageBox.Show(
-                    string.Format(Resources.MessageBox_Message_DeleteSupplierSuccessfully, shouldDeleteSupplierIds.Count),
+                    string.Format(Resources.MessageBox_Message_DeleteSupplierSuccessfully, shouldDeleteCustomerIds.Count),
                     Resources.MessageBox_Caption_Notification,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
@@ -1695,13 +1796,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.TaskManager
             }
 
             LoadData_Supplier();
-        }
-
-        private void EditSupplier_supplier()
-        {
-            var supplier = Helper.Control.FirstSelected(_suppliers, lvwSupplier_supplier);
-            if (supplier != null)
-                new fSupplier(() => LoadData_Supplier(), Enum.FormMode.Write, supplier, true).Show();
         }
 
         #endregion

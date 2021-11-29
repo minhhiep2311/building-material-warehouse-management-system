@@ -52,13 +52,13 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.lblName = new System.Windows.Forms.Label();
             this.grbPhone = new System.Windows.Forms.GroupBox();
             this.btnModifyPhone = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
-            this.lvwPhone = new System.Windows.Forms.ListView();
             this.btnRemovePhone = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnAddPhone = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.pnlButton = new System.Windows.Forms.Panel();
             this.btnCancel = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.btnSave = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.chkEdit = new System.Windows.Forms.CheckBox();
+            this.lvwPhone = new BTL_LTTQ_QLKhoVLXD.Controls.ListView.BmwListView();
             this.grbInfo.SuspendLayout();
             this.pnlPosition.SuspendLayout();
             this.pnlAddress.SuspendLayout();
@@ -245,8 +245,8 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             // 
             // grbPhone
             // 
-            this.grbPhone.Controls.Add(this.btnModifyPhone);
             this.grbPhone.Controls.Add(this.lvwPhone);
+            this.grbPhone.Controls.Add(this.btnModifyPhone);
             this.grbPhone.Controls.Add(this.btnRemovePhone);
             this.grbPhone.Controls.Add(this.btnAddPhone);
             this.grbPhone.ForeColor = System.Drawing.Color.White;
@@ -271,19 +271,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.btnModifyPhone.Text = "Chỉnh sửa";
             this.btnModifyPhone.UseVisualStyleBackColor = false;
             this.btnModifyPhone.Click += new System.EventHandler(this.btnModifyPhone_Click);
-            // 
-            // lvwPhone
-            // 
-            this.lvwPhone.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lvwPhone.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvwPhone.HideSelection = false;
-            this.lvwPhone.LabelEdit = true;
-            this.lvwPhone.Location = new System.Drawing.Point(3, 18);
-            this.lvwPhone.Name = "lvwPhone";
-            this.lvwPhone.Size = new System.Drawing.Size(339, 108);
-            this.lvwPhone.TabIndex = 7;
-            this.lvwPhone.UseCompatibleStateImageBehavior = false;
-            this.lvwPhone.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwPhone_MouseDoubleClick);
             // 
             // btnRemovePhone
             // 
@@ -364,6 +351,25 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             this.chkEdit.UseVisualStyleBackColor = true;
             this.chkEdit.CheckedChanged += new System.EventHandler(this.chkEdit_CheckedChanged);
             // 
+            // lvwPhone
+            // 
+            this.lvwPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.lvwPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lvwPhone.ForeColor = System.Drawing.Color.White;
+            this.lvwPhone.FullRowSelect = true;
+            this.lvwPhone.GridLines = true;
+            this.lvwPhone.HideSelection = false;
+            this.lvwPhone.Location = new System.Drawing.Point(7, 22);
+            this.lvwPhone.Name = "lvwPhone";
+            this.lvwPhone.OwnerDraw = true;
+            this.lvwPhone.Size = new System.Drawing.Size(338, 97);
+            this.lvwPhone.Sortable = true;
+            this.lvwPhone.SortableColumns = null;
+            this.lvwPhone.TabIndex = 11;
+            this.lvwPhone.UseCompatibleStateImageBehavior = false;
+            this.lvwPhone.View = System.Windows.Forms.View.Details;
+            this.lvwPhone.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwPhone_MouseDoubleClick);
+            // 
             // fEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -415,7 +421,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.GroupBox grbPhone;
         private BmwButton btnModifyPhone;
-        private System.Windows.Forms.ListView lvwPhone;
         private BmwButton btnRemovePhone;
         private BmwButton btnAddPhone;
         private System.Windows.Forms.Panel pnlButton;
@@ -427,5 +432,6 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
         private System.Windows.Forms.Label lblPosition;
         private BmwComboBox cboPosition;
         private BmwGroupBox grbInfo;
+        private BmwListView lvwPhone;
     }
 }

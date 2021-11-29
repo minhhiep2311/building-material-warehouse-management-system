@@ -34,10 +34,10 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             this.lblNew = new System.Windows.Forms.Label();
             this.txtOld = new System.Windows.Forms.TextBox();
             this.txtNew = new System.Windows.Forms.TextBox();
-            this.btnOld = new BmwButton();
-            this.btnNew = new BmwButton();
-            this.btnSave = new BmwButton();
-            this.btnCancel = new BmwButton();
+            this.btnOld = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnNew = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnSave = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
+            this.btnCancel = new BTL_LTTQ_QLKhoVLXD.Controls.Button.BmwButton();
             this.SuspendLayout();
             // 
             // lblOld
@@ -82,38 +82,58 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.ChangePassword
             // 
             // btnOld
             // 
-            this.btnOld.Location = new System.Drawing.Point(440, 50);
+            this.btnOld.BackColor = System.Drawing.Color.White;
+            this.btnOld.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnOld.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnOld.Location = new System.Drawing.Point(440, 48);
             this.btnOld.Name = "btnOld";
-            this.btnOld.Size = new System.Drawing.Size(145, 26);
+            this.btnOld.Size = new System.Drawing.Size(145, 29);
             this.btnOld.TabIndex = 4;
             this.btnOld.Text = "Hiện mật khẩu";
+            this.btnOld.UseVisualStyleBackColor = false;
             this.btnOld.Click += new System.EventHandler(this.btnOld_Click);
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(440, 99);
+            this.btnNew.BackColor = System.Drawing.Color.White;
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
+            this.btnNew.Location = new System.Drawing.Point(440, 97);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(145, 26);
+            this.btnNew.Size = new System.Drawing.Size(145, 29);
             this.btnNew.TabIndex = 5;
             this.btnNew.Text = "Hiện mật khẩu";
+            this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.White;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnSave.Location = new System.Drawing.Point(172, 155);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 38);
             this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Lưu thay đổi";
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(128)))), ((int)(((byte)(189)))));
             this.btnCancel.Location = new System.Drawing.Point(329, 155);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 38);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Hủy bỏ";
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // fChangePassword
