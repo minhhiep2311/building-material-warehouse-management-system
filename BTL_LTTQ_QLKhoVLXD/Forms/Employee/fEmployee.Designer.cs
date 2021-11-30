@@ -85,6 +85,9 @@ namespace BTL_LTTQ_QLKhoVLXD.Forms.Employee
             // 
             // lvwPhone
             // 
+            this.lvwPhone.FullRowSelect = true;
+            this.lvwPhone.GridLines = true;
+            this.lvwPhone.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvwPhone.HideSelection = false;
             this.lvwPhone.LabelEdit = true;
             this.lvwPhone.Location = new System.Drawing.Point(3, 18);
